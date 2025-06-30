@@ -4,8 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "type:check": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

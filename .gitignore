@@ -10,6 +10,8 @@ yarn.lock
 .vinxi
 .eslintcache
 
+.next
+
 .nitro/
 .tanstack/
 /build/
