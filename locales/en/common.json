@@ -1,0 +1,47 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "contact": "Contact",
+    "admin": "Administration"
+  },
+  "common": {
+    "language": "Language",
+    "czech": "Čeština",
+    "english": "English",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "welcome": "Welcome"
+  },
+  "meta": {
+    "title": "Pulmonology.cz - Specialized Respiratory Care",
+    "description": "Professional pulmonological care, diagnosis and treatment of respiratory and lung diseases."
+  },
+  "admin": {
+    "title": "Administration",
+    "loginTitle": "Admin Panel Login",
+    "loginSubtitle": "Enter your credentials to access",
+    "email": "Email address",
+    "password": "Password",
+    "login": "Sign In",
+    "logout": "Sign Out",
+    "loggingIn": "Signing in...",
+    "welcomeMessage": "Welcome! You have successfully logged in.",
+    "loggedInAs": "Logged in as",
+    "errors": {
+      "userNotFound": "User with this email was not found",
+      "wrongPassword": "Incorrect password",
+      "invalidEmail": "Invalid email format",
+      "tooManyRequests": "Too many login attempts. Please try again later",
+      "genericError": "Login error. Please check your credentials and try again"
+    }
+  }
+}
