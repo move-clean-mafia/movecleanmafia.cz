@@ -70,12 +70,19 @@
     "title": "Náš tým",
     "subtitle": "Zkušení odborníci",
     "description": "Náš tým tvoří zkušení lékaři a zdravotní sestry specializující se na pulmonologii a alergologii.",
+    "loremText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "experience": "Zkušenosti",
     "experienceDescription": "Dlouholeté zkušenosti v oboru a neustálé vzdělávání zaručují kvalitní péči.",
     "approach": "Individuální přístup",
     "approachDescription": "Každému pacientovi věnujeme maximální pozornost a péči.",
     "teamIntroduction": "Představení týmu",
-    "teamIntroductionDescription": "Podrobné informace o našem týmu odborníků budou brzy dostupné. Můžete nás kontaktovat přímo pro více informací o našich lékařích a jejich specializacích."
+    "teamIntroductionDescription": "Podrobné informace o našem týmu odborníků budou brzy dostupné. Můžete nás kontaktovat přímo pro více informací o našich lékařích a jejich specializacích.",
+    "doctors": "Lékaři",
+    "nurses": "Zdravotní sestry",
+    "administration": "Administrativní část",
+    "doctorBio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "nurseBio": "Zkušená zdravotní sestra specializující se na pulmonologickou péči a péči o pacienty s respiračními onemocněními.",
+    "adminBio": "Zodpovědná za administrativní chod kliniky a koordinaci péče o pacienty."
   },
   "news": {
     "title": "Aktuality",

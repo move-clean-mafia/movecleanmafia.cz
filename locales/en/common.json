@@ -70,12 +70,19 @@
     "title": "Our Team",
     "subtitle": "Experienced Specialists",
     "description": "Our team consists of experienced doctors and nurses specializing in pulmonology and allergology.",
+    "loremText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "experience": "Experience",
     "experienceDescription": "Many years of experience in the field and continuous education guarantee quality care.",
     "approach": "Individual Approach",
     "approachDescription": "We give maximum attention and care to each patient.",
     "teamIntroduction": "Team Introduction",
-    "teamIntroductionDescription": "Detailed information about our team of specialists will be available soon. You can contact us directly for more information about our doctors and their specializations."
+    "teamIntroductionDescription": "Detailed information about our team of specialists will be available soon. You can contact us directly for more information about our doctors and their specializations.",
+    "doctors": "Doctors",
+    "nurses": "Nurses",
+    "administration": "Administration",
+    "doctorBio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "nurseBio": "Experienced nurse specializing in pulmonological care for patients with respiratory diseases.",
+    "adminBio": "Responsible for administrative operations of the clinic and coordination of patient care."
   },
   "news": {
     "title": "News",
