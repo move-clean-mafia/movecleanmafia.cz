@@ -6,33 +6,31 @@ import { useTranslation } from 'react-i18next';
 import { supportedLanguages, type SupportedLanguage } from '../lib/i18n';
 
 export const LanguageSwitcher: React.FC = () => {
-  const router = useRouter();
-  const pathname = usePathname();
   const { t, i18n } = useTranslation();
+  const pathname = usePathname();
+  const router = useRouter();
 
-  const handleLanguageChange = (newLocale: SupportedLanguage) => {
-    // Get current path without locale
+  const switchToLanguage = (language: SupportedLanguage) => {
+    // Update the URL by replacing the current locale with the new one
     const segments = pathname.split('/');
-    const currentLocale = segments[1];
-
-    let newPath = pathname;
-    if (supportedLanguages.includes(currentLocale as SupportedLanguage)) {
-      // Replace current locale with new locale
-      segments[1] = newLocale;
-      newPath = segments.join('/');
+    if (
+      segments[1] &&
+      supportedLanguages.includes(segments[1] as SupportedLanguage)
+    ) {
+      segments[1] = language;
     } else {
-      // Add locale to path
-      newPath = `/${newLocale}${pathname}`;
+      segments.splice(1, 0, language);
     }
 
-    // Set cookie for persistence
-    document.cookie = `locale=${newLocale}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+    const newPath = segments.join('/');
 
-    // Navigate to new path
+    // Set a cookie to remember the language preference
+    document.cookie = `SELECTED_LANGUAGE=${language}; path=/; max-age=31536000; SameSite=Lax`;
+
     router.push(newPath);
   };
 
-  const currentLocale = i18n.language as SupportedLanguage;
+  const currentLanguage = (i18n.language as SupportedLanguage) || 'cs';
 
   return (
     <div className="flex items-center gap-2 bg-white rounded-lg shadow-sm border p-2">
@@ -41,21 +39,30 @@ export const LanguageSwitcher: React.FC = () => {
       </span>
 
       <div className="flex gap-1">
-        {supportedLanguages.map((locale) => (
-          <button
-            key={locale}
-            onClick={() => handleLanguageChange(locale)}
-            className={`px-3 py-1 text-sm rounded transition-colors ${
-              currentLocale === locale
-                ? 'bg-blue-600 text-white'
-                : 'text-gray-600 hover:bg-gray-100'
-            }`}
-            type="button"
-            aria-label={`Switch to ${locale === 'cs' ? 'Czech' : 'English'}`}
-          >
-            {locale === 'cs' ? 'Čeština' : 'English'}
-          </button>
-        ))}
+        <button
+          onClick={() => switchToLanguage('cs')}
+          className={`px-3 py-1 text-sm rounded transition-colors ${
+            currentLanguage === 'cs'
+              ? 'bg-blue-600 text-white'
+              : 'text-gray-600 hover:bg-gray-100'
+          }`}
+          type="button"
+          aria-label="Switch to Czech"
+        >
+          {t('common.czech')}
+        </button>
+        <button
+          onClick={() => switchToLanguage('en')}
+          className={`px-3 py-1 text-sm rounded transition-colors ${
+            currentLanguage === 'en'
+              ? 'bg-blue-600 text-white'
+              : 'text-gray-600 hover:bg-gray-100'
+          }`}
+          type="button"
+          aria-label="Switch to English"
+        >
+          {t('common.english')}
+        </button>
       </div>
     </div>
   );

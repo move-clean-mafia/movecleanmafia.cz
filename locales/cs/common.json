@@ -1,10 +1,29 @@
 {
   "navigation": {
     "home": "Domů",
-    "about": "O nás",
+    "clinic": "Klinika",
     "services": "Služby",
+    "ourTeam": "Náš tým",
+    "news": "Novinky",
+    "certificates": "Certifikáty",
     "contact": "Kontakt",
+    "photogallery": "Fotogalerie",
     "admin": "Administrace"
+  },
+  "header": {
+    "phone1": "+420 731 832 518",
+    "phone2": "+420 777 717 618",
+    "openingHours": "Ordinační hodiny",
+    "monThu": "PO - ČT",
+    "fri": "PÁ",
+    "sat": "SO",
+    "monWed": "PO - ST",
+    "thuFri": "ČT - PÁ",
+    "satSun": "SO - NE",
+    "closed": "Zavřeno",
+    "mainClinic": "Hlavní klinika",
+    "branchCenter": "Pobočka - Centrum",
+    "menu": "MENU"
   },
   "common": {
     "language": "Jazyk",

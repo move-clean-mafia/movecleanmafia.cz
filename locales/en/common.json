@@ -1,10 +1,29 @@
 {
   "navigation": {
     "home": "Home",
-    "about": "About Us",
+    "clinic": "Clinic",
     "services": "Services",
+    "ourTeam": "Our Team",
+    "news": "News",
+    "certificates": "Certificates",
     "contact": "Contact",
+    "photogallery": "Photo Gallery",
     "admin": "Administration"
+  },
+  "header": {
+    "phone1": "+420 731 832 518",
+    "phone2": "+420 777 717 618",
+    "openingHours": "Opening Hours",
+    "monThu": "MON - THU",
+    "fri": "FRI",
+    "sat": "SAT",
+    "monWed": "MON - WED",
+    "thuFri": "THU - FRI",
+    "satSun": "SAT - SUN",
+    "closed": "Closed",
+    "mainClinic": "Main Clinic",
+    "branchCenter": "Branch - Center",
+    "menu": "MENU"
   },
   "common": {
     "language": "Language",

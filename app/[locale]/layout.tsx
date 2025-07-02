@@ -1,20 +1,24 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Oswald, Source_Sans_3 } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { supportedLanguages, type SupportedLanguage } from '../../lib/i18n';
 import { getServerTranslations } from '../../lib/i18n-server';
 import { I18nProvider } from '../../components/i18n-provider';
+import { Header } from '../../components/header';
 import '../globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+const oswald = Oswald({
+  variable: '--font-oswald',
+  subsets: ['latin', 'latin-ext'],
+  weight: ['200', '300', '400', '500', '600', '700'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const sourceSans = Source_Sans_3({
+  variable: '--font-source-sans',
+  subsets: ['latin', 'latin-ext'],
+  weight: ['200', '300', '400', '600', '700'],
+  style: ['normal', 'italic'],
 });
 
 interface LocaleLayoutProps {
@@ -54,14 +58,15 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
 
   return (
     <html lang={locale} dir="ltr">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${oswald.variable} ${sourceSans.variable} antialiased`}>
         <I18nProvider
           locale={locale as SupportedLanguage}
           translations={translations}
         >
-          {children}
+          <div className="min-h-screen bg-gray-50">
+            <Header />
+            <main className="flex-1">{children}</main>
+          </div>
         </I18nProvider>
       </body>
     </html>
