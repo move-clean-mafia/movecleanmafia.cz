@@ -4,6 +4,18 @@ const nextConfig: NextConfig = {
   // Ensure static files are served properly
   trailingSlash: false,
 
+  // Configure images for external domains
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
+
   // Configure static file serving for locale files
   async headers() {
     return [
