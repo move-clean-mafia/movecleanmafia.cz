@@ -5,7 +5,6 @@
     "services": "Služby",
     "ourTeam": "Náš tým",
     "news": "Novinky",
-    "certificates": "Certifikáty",
     "contact": "Kontakt",
     "photogallery": "Fotogalerie",
     "admin": "Administrace"
@@ -44,6 +43,77 @@
   "accessibility": {
     "switchToCzech": "Přepnout na češtinu",
     "switchToEnglish": "Přepnout na angličtinu"
+  },
+  "clinic": {
+    "title": "Naše klinika",
+    "subtitle": "Moderní pulmonologické centrum",
+    "description": "Naše klinika poskytuje špičkovou pulmonologickou péči s využitím nejmodernějších technologií a individuálního přístupu ke každému pacientovi.",
+    "facilities": "Naše vybavení",
+    "facilitiesDescription": "Disponujeme nejmodernějšími diagnostickými a léčebnými zařízeními pro komplexní péči o pacienty s onemocněními dýchacích cest.",
+    "team": "Náš tým",
+    "teamDescription": "Tým zkušených odborníků s dlouholetou praxí v oblasti pneumologie a alergologie.",
+    "qualityCareTitle": "Kvalitní péče na prvním místě",
+    "qualityCareDescription": "Kombinujeme moderní technologie s lidským přístupem pro dosažení nejlepších výsledků léčby."
+  },
+  "services": {
+    "title": "Naše služby",
+    "subtitle": "Komplexní pulmonologická péče",
+    "description": "Nabízíme široké spektrum služeb v oblasti diagnostiky a léčby onemocnění dýchacích cest a plic.",
+    "consultation": "Odborné konzultace",
+    "consultationDescription": "Komplexní vyšetření a diagnostika plicních onemocnění.",
+    "spirometry": "Spirometrie",
+    "spirometryDescription": "Vyšetření plicních funkcí pro stanovení diagnózy.",
+    "allergology": "Alergologie",
+    "allergologyDescription": "Diagnostika a léčba alergických onemocnění dýchacích cest."
+  },
+  "ourTeam": {
+    "title": "Náš tým",
+    "subtitle": "Zkušení odborníci",
+    "description": "Náš tým tvoří zkušení lékaři a zdravotní sestry specializující se na pulmonologii a alergologii.",
+    "experience": "Zkušenosti",
+    "experienceDescription": "Dlouholeté zkušenosti v oboru a neustálé vzdělávání zaručují kvalitní péči.",
+    "approach": "Individuální přístup",
+    "approachDescription": "Každému pacientovi věnujeme maximální pozornost a péči.",
+    "teamIntroduction": "Představení týmu",
+    "teamIntroductionDescription": "Podrobné informace o našem týmu odborníků budou brzy dostupné. Můžete nás kontaktovat přímo pro více informací o našich lékařích a jejich specializacích."
+  },
+  "news": {
+    "title": "Aktuality",
+    "subtitle": "Nejnovější informace",
+    "description": "Sledujte nejnovější informace z oblasti pulmonologie a aktuality z naší kliniky.",
+    "comingSoon": "Připravujeme pro vás",
+    "comingSoonDescription": "Sekce aktualit je v přípravě. Brzy zde naleznete nejnovější informace a novinky z oboru."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Kontaktní informace",
+    "description": "Zavolejte nám nebo nás navštivte v naší ordinaci. Rádi vám poskytneme více informací o našich službách.",
+    "mainClinic": "Hlavní klinika",
+    "branchOffice": "Pobočka - Centrum",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "address": "Adresa",
+    "openingHours": "Ordinační hodiny",
+    "addressToBeDetermined": "Adresa bude doplněna",
+    "haveQuestions": "Máte dotazy?",
+    "contactUsDescription": "Neváhejte nás kontaktovat. Rádi zodpovíme všechny vaše dotazy a poskytneme více informací o našich službách."
+  },
+  "photogallery": {
+    "title": "Fotogalerie",
+    "subtitle": "Prohlédněte si naše prostory",
+    "description": "Seznamte se s prostředím naší kliniky a moderním vybavením, které používáme pro diagnostiku a léčbu.",
+    "comingSoon": "Galerie se připravuje",
+    "comingSoonDescription": "Fotogalerie je v přípravě. Brzy zde naleznete fotografie našich prostor a vybavení.",
+    "clinicExterior": "Exteriér kliniky",
+    "clinicExteriorDescription": "Budova a okolí kliniky",
+    "interior": "Interiér",
+    "interiorDescription": "Čekárny a ordinace",
+    "equipment": "Vybavení",
+    "equipmentDescription": "Moderní diagnostické přístroje",
+    "certificates": "Certifikáty",
+    "certificatesDescription": "Ocenění a certifikace",
+    "wantToVisit": "Chcete navštívit naši kliniku?",
+    "visitDescription": "Kontaktujte nás a domluvte si návštěvu. Rádi vám ukážeme naše prostory a představíme naše služby."
   },
   "common": {
     "language": "Jazyk",

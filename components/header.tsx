@@ -20,7 +20,6 @@ export const Header: React.FC = () => {
     { key: 'services', href: `/${locale}/services` },
     { key: 'ourTeam', href: `/${locale}/our-team` },
     { key: 'news', href: `/${locale}/news` },
-    { key: 'certificates', href: `/${locale}/certificates` },
     { key: 'contact', href: `/${locale}/contact` },
     { key: 'photogallery', href: `/${locale}/photogallery` },
   ];

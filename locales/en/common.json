@@ -5,7 +5,6 @@
     "services": "Services",
     "ourTeam": "Our Team",
     "news": "News",
-    "certificates": "Certificates",
     "contact": "Contact",
     "photogallery": "Photo Gallery",
     "admin": "Administration"
@@ -44,6 +43,77 @@
   "accessibility": {
     "switchToCzech": "Switch to Czech",
     "switchToEnglish": "Switch to English"
+  },
+  "clinic": {
+    "title": "Our Clinic",
+    "subtitle": "Modern Pulmonological Center",
+    "description": "Our clinic provides top-quality pulmonological care using the latest technologies and an individual approach to each patient.",
+    "facilities": "Our Equipment",
+    "facilitiesDescription": "We have the most modern diagnostic and therapeutic equipment for comprehensive care of patients with respiratory diseases.",
+    "team": "Our Team",
+    "teamDescription": "A team of experienced specialists with many years of experience in pneumology and allergology.",
+    "qualityCareTitle": "Quality Care First",
+    "qualityCareDescription": "We combine modern technology with a human approach to achieve the best treatment results."
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive Pulmonological Care",
+    "description": "We offer a wide range of services in the field of diagnosis and treatment of respiratory and lung diseases.",
+    "consultation": "Professional Consultations",
+    "consultationDescription": "Comprehensive examination and diagnosis of lung diseases.",
+    "spirometry": "Spirometry",
+    "spirometryDescription": "Lung function tests for diagnosis.",
+    "allergology": "Allergology",
+    "allergologyDescription": "Diagnosis and treatment of allergic respiratory diseases."
+  },
+  "ourTeam": {
+    "title": "Our Team",
+    "subtitle": "Experienced Specialists",
+    "description": "Our team consists of experienced doctors and nurses specializing in pulmonology and allergology.",
+    "experience": "Experience",
+    "experienceDescription": "Many years of experience in the field and continuous education guarantee quality care.",
+    "approach": "Individual Approach",
+    "approachDescription": "We give maximum attention and care to each patient.",
+    "teamIntroduction": "Team Introduction",
+    "teamIntroductionDescription": "Detailed information about our team of specialists will be available soon. You can contact us directly for more information about our doctors and their specializations."
+  },
+  "news": {
+    "title": "News",
+    "subtitle": "Latest Information",
+    "description": "Follow the latest information from the field of pulmonology and news from our clinic.",
+    "comingSoon": "Coming Soon",
+    "comingSoonDescription": "The news section is in preparation. You will soon find the latest information and news from the field here."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Contact Information",
+    "description": "Call us or visit us at our clinic. We will be happy to provide you with more information about our services.",
+    "mainClinic": "Main Clinic",
+    "branchOffice": "Branch Office - Center",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "openingHours": "Opening Hours",
+    "addressToBeDetermined": "Address will be added",
+    "haveQuestions": "Have Questions?",
+    "contactUsDescription": "Do not hesitate to contact us. We will be happy to answer all your questions and provide more information about our services."
+  },
+  "photogallery": {
+    "title": "Photo Gallery",
+    "subtitle": "Take a look at our facilities",
+    "description": "Get acquainted with our clinic environment and modern equipment used for diagnosis and treatment.",
+    "comingSoon": "Gallery in Preparation",
+    "comingSoonDescription": "The photo gallery is in preparation. You will soon find photos of our facilities and equipment here.",
+    "clinicExterior": "Clinic Exterior",
+    "clinicExteriorDescription": "Building and clinic surroundings",
+    "interior": "Interior",
+    "interiorDescription": "Waiting rooms and offices",
+    "equipment": "Equipment",
+    "equipmentDescription": "Modern diagnostic equipment",
+    "certificates": "Certificates",
+    "certificatesDescription": "Awards and certifications",
+    "wantToVisit": "Want to visit our clinic?",
+    "visitDescription": "Contact us and arrange a visit. We will be happy to show you our facilities and introduce our services."
   },
   "common": {
     "language": "Language",
