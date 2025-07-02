@@ -23,7 +23,27 @@
     "closed": "Zavřeno",
     "mainClinic": "Hlavní klinika",
     "branchCenter": "Pobočka - Centrum",
-    "menu": "MENU"
+    "menu": "MENU",
+    "closeMainMenu": "Zavřít hlavní menu",
+    "openMainMenu": "Otevřít hlavní menu"
+  },
+  "homepage": {
+    "heroTitle": "Specializovaná pulmonologická péče",
+    "heroDescription": "Odborná pulmonologická péče, diagnostika a léčba onemocnění dýchacích cest a plic.",
+    "welcomeTitle": "Vítejte",
+    "welcomeDescription": "Vítejte na našem webu specializované pulmonologické péče. Nabízíme komplexní služby v oblasti diagnostiky a léčby onemocnění dýchacích cest.",
+    "diagnosticsTitle": "Diagnostika",
+    "diagnosticsDescription": "Moderní diagnostické metody pro nemoci plic a dýchacích cest s využitím nejnovějších technologií.",
+    "treatmentTitle": "Léčba",
+    "treatmentDescription": "Individuální přístup k léčbě každého pacienta s důrazem na komplexní péči.",
+    "preventionTitle": "Prevence",
+    "preventionDescription": "Poradenství a preventivní opatření pro zachování zdraví dýchacích cest.",
+    "footerCopyright": "© 2024 Pulmonologie.cz",
+    "footerTagline": "Specializovaná pulmonologická péče • Diagnostika • Léčba • Prevence"
+  },
+  "accessibility": {
+    "switchToCzech": "Přepnout na češtinu",
+    "switchToEnglish": "Přepnout na angličtinu"
   },
   "common": {
     "language": "Jazyk",

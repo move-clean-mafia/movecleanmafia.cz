@@ -43,7 +43,9 @@ export const Header: React.FC = () => {
                 aria-expanded={isMobileMenuOpen}
               >
                 <span className="sr-only">
-                  {isMobileMenuOpen ? 'Close main menu' : 'Open main menu'}
+                  {isMobileMenuOpen
+                    ? t('header.closeMainMenu')
+                    : t('header.openMainMenu')}
                 </span>
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />
@@ -289,9 +291,7 @@ export const Header: React.FC = () => {
                       <div className="flex items-center justify-center">
                         <Clock className="w-4 h-4 text-white mr-2" />
                         <h4 className="text-sm font-semibold text-white font-heading">
-                          {locale === 'cs'
-                            ? 'Ordinační hodiny'
-                            : 'Opening Hours'}
+                          {t('header.openingHours')}
                         </h4>
                       </div>
                     </div>
@@ -303,13 +303,13 @@ export const Header: React.FC = () => {
                         <div className="flex items-center space-x-2 mb-2">
                           <div className="w-2.5 h-2.5 bg-teal-500 rounded-full"></div>
                           <h5 className="text-sm font-semibold text-gray-900 font-source-sans">
-                            {locale === 'cs' ? 'Hlavní klinika' : 'Main Clinic'}
+                            {t('header.mainClinic')}
                           </h5>
                         </div>
                         <div className="space-y-0.5 ml-4">
                           <div className="flex items-center justify-between py-0.5">
                             <span className="text-xs font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
-                              {locale === 'cs' ? 'PO - ČT' : 'MON - THU'}
+                              {t('header.monThu')}
                             </span>
                             <span className="text-xs font-bold text-gray-900 bg-teal-50 px-2 py-0.5 rounded-md ml-2">
                               8:00 - 20:00
@@ -317,7 +317,7 @@ export const Header: React.FC = () => {
                           </div>
                           <div className="flex items-center justify-between py-0.5">
                             <span className="text-xs font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
-                              {locale === 'cs' ? 'PÁ' : 'FRI'}
+                              {t('header.fri')}
                             </span>
                             <span className="text-xs font-bold text-gray-900 bg-teal-50 px-2 py-0.5 rounded-md ml-2">
                               8:00 - 15:00
@@ -325,7 +325,7 @@ export const Header: React.FC = () => {
                           </div>
                           <div className="flex items-center justify-between py-0.5">
                             <span className="text-xs font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
-                              {locale === 'cs' ? 'SO' : 'SAT'}
+                              {t('header.sat')}
                             </span>
                             <span className="text-xs font-bold text-gray-900 bg-teal-50 px-2 py-0.5 rounded-md ml-2">
                               8:00 - 14:00
@@ -342,15 +342,13 @@ export const Header: React.FC = () => {
                         <div className="flex items-center space-x-2 mb-2">
                           <div className="w-2.5 h-2.5 bg-teal-400 rounded-full"></div>
                           <h5 className="text-sm font-semibold text-gray-900 font-source-sans">
-                            {locale === 'cs'
-                              ? 'Pobočka - Centrum'
-                              : 'Branch - Center'}
+                            {t('header.branchCenter')}
                           </h5>
                         </div>
                         <div className="space-y-0.5 ml-4">
                           <div className="flex items-center justify-between py-0.5">
                             <span className="text-xs font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
-                              {locale === 'cs' ? 'PO - ST' : 'MON - WED'}
+                              {t('header.monWed')}
                             </span>
                             <span className="text-xs font-bold text-gray-900 bg-teal-50 px-2 py-0.5 rounded-md ml-2">
                               9:00 - 18:00
@@ -358,7 +356,7 @@ export const Header: React.FC = () => {
                           </div>
                           <div className="flex items-center justify-between py-0.5">
                             <span className="text-xs font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
-                              {locale === 'cs' ? 'ČT - PÁ' : 'THU - FRI'}
+                              {t('header.thuFri')}
                             </span>
                             <span className="text-xs font-bold text-gray-900 bg-teal-50 px-2 py-0.5 rounded-md ml-2">
                               8:00 - 16:00
@@ -366,10 +364,10 @@ export const Header: React.FC = () => {
                           </div>
                           <div className="flex items-center justify-between py-0.5">
                             <span className="text-xs font-medium text-red-500 font-source-sans min-w-0 flex-shrink-0">
-                              {locale === 'cs' ? 'SO - NE' : 'SAT - SUN'}
+                              {t('header.satSun')}
                             </span>
                             <span className="text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-md ml-2">
-                              {locale === 'cs' ? 'Zavřeno' : 'Closed'}
+                              {t('header.closed')}
                             </span>
                           </div>
                         </div>

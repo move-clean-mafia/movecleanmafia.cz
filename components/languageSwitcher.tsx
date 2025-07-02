@@ -47,7 +47,7 @@ export const LanguageSwitcher: React.FC = () => {
               : 'text-gray-600 hover:bg-gray-100'
           }`}
           type="button"
-          aria-label="Switch to Czech"
+          aria-label={t('accessibility.switchToCzech')}
         >
           {t('common.czech')}
         </button>
@@ -59,7 +59,7 @@ export const LanguageSwitcher: React.FC = () => {
               : 'text-gray-600 hover:bg-gray-100'
           }`}
           type="button"
-          aria-label="Switch to English"
+          aria-label={t('accessibility.switchToEnglish')}
         >
           {t('common.english')}
         </button>

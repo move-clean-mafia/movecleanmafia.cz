@@ -6,6 +6,7 @@ import { supportedLanguages, type SupportedLanguage } from '../../lib/i18n';
 import { getServerTranslations } from '../../lib/i18n-server';
 import { I18nProvider } from '../../components/i18n-provider';
 import { Header } from '../../components/header';
+import { Footer } from '../../components/footer';
 import '../globals.css';
 
 const oswald = Oswald({
@@ -63,9 +64,10 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
           locale={locale as SupportedLanguage}
           translations={translations}
         >
-          <div className="min-h-screen bg-gray-50">
+          <div className="min-h-screen bg-gray-50 flex flex-col">
             <Header />
             <main className="flex-1">{children}</main>
+            <Footer />
           </div>
         </I18nProvider>
       </body>

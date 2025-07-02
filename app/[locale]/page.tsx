@@ -11,16 +11,14 @@ const HomePage = async ({ params }: HomePageProps) => {
   const { t } = await getTranslation(locale as SupportedLanguage);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pb-8">
       {/* Hero Section */}
       <div className="text-center mb-16">
         <h1 className="text-5xl font-bold text-gray-900 mb-6">
-          {locale === 'cs'
-            ? 'Specializovaná pulmonologická péče'
-            : 'Specialized Pulmonological Care'}
+          {t('homepage.heroTitle')}
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          {t('meta.description')}
+          {t('homepage.heroDescription')}
         </p>
       </div>
 
@@ -28,12 +26,10 @@ const HomePage = async ({ params }: HomePageProps) => {
       <div className="bg-white rounded-xl shadow-sm border p-8 mb-16">
         <div className="text-center">
           <h2 className="text-3xl font-semibold mb-6 text-blue-600">
-            {t('common.welcome')}
+            {t('homepage.welcomeTitle')}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {locale === 'cs'
-              ? 'Vítejte na našem webu specializované pulmonologické péče. Nabízíme komplexní služby v oblasti diagnostiky a léčby onemocnění dýchacích cest.'
-              : 'Welcome to our specialized pulmonological care website. We offer comprehensive services in the field of diagnosis and treatment of respiratory diseases.'}
+            {t('homepage.welcomeDescription')}
           </p>
         </div>
       </div>
@@ -57,12 +53,10 @@ const HomePage = async ({ params }: HomePageProps) => {
             </svg>
           </div>
           <h3 className="text-xl font-semibold mb-3 text-gray-900">
-            {locale === 'cs' ? 'Diagnostika' : 'Diagnostics'}
+            {t('homepage.diagnosticsTitle')}
           </h3>
           <p className="text-gray-600">
-            {locale === 'cs'
-              ? 'Moderní diagnostické metody pro nemoci plic a dýchacích cest s využitím nejnovějších technologií.'
-              : 'Modern diagnostic methods for lung and respiratory diseases using the latest technologies.'}
+            {t('homepage.diagnosticsDescription')}
           </p>
         </div>
 
@@ -83,13 +77,9 @@ const HomePage = async ({ params }: HomePageProps) => {
             </svg>
           </div>
           <h3 className="text-xl font-semibold mb-3 text-gray-900">
-            {locale === 'cs' ? 'Léčba' : 'Treatment'}
+            {t('homepage.treatmentTitle')}
           </h3>
-          <p className="text-gray-600">
-            {locale === 'cs'
-              ? 'Individuální přístup k léčbě každého pacienta s důrazem na komplexní péči.'
-              : 'Individual approach to treatment for each patient with emphasis on comprehensive care.'}
-          </p>
+          <p className="text-gray-600">{t('homepage.treatmentDescription')}</p>
         </div>
 
         <div className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-shadow duration-300">
@@ -109,34 +99,11 @@ const HomePage = async ({ params }: HomePageProps) => {
             </svg>
           </div>
           <h3 className="text-xl font-semibold mb-3 text-gray-900">
-            {locale === 'cs' ? 'Prevence' : 'Prevention'}
+            {t('homepage.preventionTitle')}
           </h3>
-          <p className="text-gray-600">
-            {locale === 'cs'
-              ? 'Poradenství a preventivní opatření pro zachování zdraví dýchacích cest.'
-              : 'Counseling and preventive measures for maintaining respiratory health.'}
-          </p>
+          <p className="text-gray-600">{t('homepage.preventionDescription')}</p>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-white border-t mt-16 -mx-4 sm:-mx-6 lg:-mx-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-600 mb-4 md:mb-0">
-              <span>© 2024 Pulmonologie.cz</span>
-            </div>
-            <div className="flex items-center space-x-6">
-              <a
-                href={`/${locale}/admin`}
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
-              >
-                {t('navigation.admin')}
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

@@ -23,7 +23,27 @@
     "closed": "Closed",
     "mainClinic": "Main Clinic",
     "branchCenter": "Branch - Center",
-    "menu": "MENU"
+    "menu": "MENU",
+    "closeMainMenu": "Close main menu",
+    "openMainMenu": "Open main menu"
+  },
+  "homepage": {
+    "heroTitle": "Specialized Pulmonological Care",
+    "heroDescription": "Professional pulmonological care, diagnosis and treatment of respiratory and lung diseases.",
+    "welcomeTitle": "Welcome",
+    "welcomeDescription": "Welcome to our specialized pulmonological care website. We offer comprehensive services in the field of diagnosis and treatment of respiratory diseases.",
+    "diagnosticsTitle": "Diagnostics",
+    "diagnosticsDescription": "Modern diagnostic methods for lung and respiratory diseases using the latest technologies.",
+    "treatmentTitle": "Treatment",
+    "treatmentDescription": "Individual approach to treatment for each patient with emphasis on comprehensive care.",
+    "preventionTitle": "Prevention",
+    "preventionDescription": "Counseling and preventive measures for maintaining respiratory health.",
+    "footerCopyright": "© 2024 Pulmonology.cz",
+    "footerTagline": "Specialized Pulmonological Care • Diagnostics • Treatment • Prevention"
+  },
+  "accessibility": {
+    "switchToCzech": "Switch to Czech",
+    "switchToEnglish": "Switch to English"
   },
   "common": {
     "language": "Language",
