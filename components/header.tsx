@@ -70,18 +70,24 @@ export const Header: React.FC = () => {
               {/* Phone Numbers with Opening Hours Popup - Desktop only */}
               <div className="hidden lg:flex items-center space-x-3">
                 <div className="flex flex-col space-y-1">
-                  <div className="flex items-center space-x-2">
+                  <a
+                    href="tel:+420731832518"
+                    className="flex items-center space-x-2 hover:bg-teal-50 rounded-md p-1 transition-colors duration-200"
+                  >
                     <Phone className="w-4 h-4 text-teal-600" />
                     <span className="font-source-sans font-light text-sm leading-5 tracking-wide text-gray-600">
                       +420 731 832 518
                     </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
+                  </a>
+                  <a
+                    href="tel:+420777717618"
+                    className="flex items-center space-x-2 hover:bg-teal-50 rounded-md p-1 transition-colors duration-200"
+                  >
                     <Phone className="w-4 h-4 text-teal-600" />
                     <span className="font-source-sans font-light text-sm leading-5 tracking-wide text-gray-600">
                       +420 777 717 618
                     </span>
-                  </div>
+                  </a>
                 </div>
 
                 {/* Opening Hours Popup */}
@@ -254,24 +260,30 @@ export const Header: React.FC = () => {
 
               {/* Mobile contact info */}
               <div className="mt-3 pt-3 border-t border-gray-200">
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-3">
+                <div className="flex space-x-1">
+                  <a
+                    href="tel:+420731832518"
+                    className="flex items-center space-x-2 hover:bg-teal-50 rounded-md p-2 transition-colors duration-200 flex-1"
+                  >
                     <Phone className="w-4 h-4 text-teal-600" />
-                    <span className="font-source-sans font-light text-sm leading-5 tracking-wide text-gray-600">
+                    <span className="font-source-sans font-light text-xs leading-4 tracking-wide text-gray-600">
                       +420 731 832 518
                     </span>
-                  </div>
-                  <div className="flex items-center space-x-3">
+                  </a>
+                  <a
+                    href="tel:+420777717618"
+                    className="flex items-center space-x-2 hover:bg-teal-50 rounded-md p-2 transition-colors duration-200 flex-1"
+                  >
                     <Phone className="w-4 h-4 text-teal-600" />
-                    <span className="font-source-sans font-light text-sm leading-5 tracking-wide text-gray-600">
+                    <span className="font-source-sans font-light text-xs leading-4 tracking-wide text-gray-600">
                       +420 777 717 618
                     </span>
-                  </div>
+                  </a>
                 </div>
 
                 {/* Mobile opening hours */}
-                <div className="mt-3">
-                  <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-xl overflow-hidden shadow-md">
+                <div className="flex mt-4 justify-center">
+                  <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-xl overflow-hidden shadow-md max-w-xs w-full">
                     {/* Header */}
                     <div className="px-4 py-2.5">
                       <div className="flex items-center justify-center">

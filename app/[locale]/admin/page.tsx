@@ -16,7 +16,7 @@ interface AdminPageProps {
   params: { locale: string };
 }
 
-const AdminPage: React.FC<AdminPageProps> = ({ params }) => {
+const AdminPage: React.FC<AdminPageProps> = () => {
   const { t } = useTranslation();
   const pathname = usePathname();
   const locale = pathname.split('/')[1]; // Extract locale from pathname
@@ -55,7 +55,6 @@ const AdminPage: React.FC<AdminPageProps> = ({ params }) => {
 
       if (userCredential.user) {
         setIsAuthenticated(true);
-        console.log('Successfully logged in:', userCredential.user.email);
       }
     } catch (error: any) {
       console.error('Login error:', error);
