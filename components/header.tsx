@@ -39,7 +39,7 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-white border-b border-gray-200">
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 backdrop-blur-sm bg-white/95 shadow-sm">
       {/* Main navigation */}
       <div className="bg-white w-full">
         <div className="w-full px-2 sm:px-4 lg:px-6 xl:px-8">
