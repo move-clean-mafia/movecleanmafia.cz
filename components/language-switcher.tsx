@@ -62,16 +62,9 @@ export const LanguageSwitcher: React.FC = () => {
         <Button
           variant="outline"
           size="sm"
-          className="h-10 px-3 bg-white border-gray-200 hover:bg-gray-50 hover:border-teal-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200"
+          className="h-10 w-10 p-0 bg-white border-gray-200 hover:bg-gray-50 hover:border-teal-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200"
         >
-          <Globe className="w-4 h-4 mr-2 text-teal-600" />
-          <span className="text-sm font-medium text-gray-700 mr-1">
-            {currentLanguage.flag}
-          </span>
-          <span className="text-sm font-medium text-gray-700 mr-2 hidden sm:inline">
-            {currentLanguage.nativeName}
-          </span>
-          <ChevronDown className="w-3 h-3 text-gray-500" />
+          <Globe className="w-4 h-4 text-teal-600" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent

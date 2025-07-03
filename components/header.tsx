@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { Phone, Clock, Menu, X, ChevronDown } from 'lucide-react';
+import { Phone, Clock, Menu, X } from 'lucide-react';
 import { LanguageSwitcher } from './language-switcher';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 
@@ -32,8 +32,8 @@ export const Header: React.FC = () => {
     <header className="bg-white border-b border-gray-200">
       {/* Main navigation */}
       <div className="bg-white w-full">
-        <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+        <div className="w-full px-2 sm:px-4 lg:px-6 xl:px-8">
+          <div className="flex items-center h-20">
             {/* Mobile menu button */}
             <div className="lg:hidden">
               <button
@@ -55,7 +55,7 @@ export const Header: React.FC = () => {
             </div>
 
             {/* Logo and Contact Info */}
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-3 lg:space-x-4">
               {/* Logo */}
               <Link href={`/${locale}`} className="flex items-center">
                 <Image
@@ -63,39 +63,40 @@ export const Header: React.FC = () => {
                   alt="Pulmonology - Klinika doktora Didyka"
                   width={200}
                   height={48}
-                  className="h-12 w-auto"
+                  className="h-8 sm:h-10 lg:h-11 w-auto"
                   priority
                 />
               </Link>
 
               {/* Phone Numbers with Opening Hours Popup - Desktop only */}
-              <div className="hidden lg:flex items-center space-x-3">
-                <div className="flex flex-col space-y-1">
-                  <a
-                    href={`tel:${t('header.phone1')}`}
-                    className="flex items-center space-x-2 hover:bg-teal-50 rounded-md p-1 transition-colors duration-200"
-                  >
-                    <Phone className="w-4 h-4 text-teal-600" />
-                    <span className="font-source-sans font-light text-sm leading-5 tracking-wide text-gray-600">
-                      {t('header.phone1')}
-                    </span>
-                  </a>
-                  <a
-                    href={`tel:${t('header.phone2')}`}
-                    className="flex items-center space-x-2 hover:bg-teal-50 rounded-md p-1 transition-colors duration-200"
-                  >
-                    <Phone className="w-4 h-4 text-teal-600" />
-                    <span className="font-source-sans font-light text-sm leading-5 tracking-wide text-gray-600">
-                      {t('header.phone2')}
-                    </span>
-                  </a>
+              <div className="hidden lg:flex items-center space-x-2">
+                <div className="flex items-center space-x-2">
+                  <Phone className="w-4 h-4 text-teal-600" />
+                  <div className="flex flex-col space-y-0.5">
+                    <a
+                      href={`tel:${t('header.phone1')}`}
+                      className="hover:bg-teal-50 rounded-md px-1 py-0.5 transition-colors duration-200"
+                    >
+                      <span className="font-source-sans font-light text-xs lg:text-sm xl:text-base leading-5 tracking-wide text-gray-600">
+                        {t('header.phone1')}
+                      </span>
+                    </a>
+                    <a
+                      href={`tel:${t('header.phone2')}`}
+                      className="hover:bg-teal-50 rounded-md px-1 py-0.5 transition-colors duration-200"
+                    >
+                      <span className="font-source-sans font-light text-xs lg:text-sm xl:text-base leading-5 tracking-wide text-gray-600">
+                        {t('header.phone2')}
+                      </span>
+                    </a>
+                  </div>
                 </div>
 
                 {/* Opening Hours Popup */}
                 <Popover>
                   <PopoverTrigger asChild>
                     <button className="p-2 hover:bg-teal-50 rounded-full transition-colors duration-200 group">
-                      <ChevronDown className="w-4 h-4 text-gray-500 group-hover:text-teal-600 transition-colors duration-200" />
+                      <Clock className="w-5 h-5 text-gray-500 group-hover:text-teal-600 transition-colors duration-200" />
                     </button>
                   </PopoverTrigger>
                   <PopoverContent
@@ -109,7 +110,7 @@ export const Header: React.FC = () => {
                       <div className="bg-gradient-to-r from-teal-500 to-teal-600 px-6 py-4">
                         <div className="flex items-center justify-center">
                           <Clock className="w-5 h-5 text-white mr-3" />
-                          <h3 className="text-base font-semibold text-white font-heading">
+                          <h3 className="text-base lg:text-lg font-semibold text-white font-heading">
                             {t('header.openingHours')}
                           </h3>
                         </div>
@@ -121,7 +122,7 @@ export const Header: React.FC = () => {
                         <div className="space-y-2">
                           <div className="flex items-center space-x-2 mb-2">
                             <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                            <h4 className="font-semibold text-gray-900 font-source-sans">
+                            <h4 className="font-semibold text-gray-900 font-source-sans text-sm lg:text-base">
                               {t('header.mainClinic')}
                             </h4>
                           </div>
@@ -176,7 +177,7 @@ export const Header: React.FC = () => {
                         <div className="space-y-2">
                           <div className="flex items-center space-x-2 mb-2">
                             <div className="w-3 h-3 bg-teal-400 rounded-full"></div>
-                            <h4 className="font-semibold text-gray-900 font-source-sans">
+                            <h4 className="font-semibold text-gray-900 font-source-sans text-sm lg:text-base">
                               {t('header.branchCenter')}
                             </h4>
                           </div>
@@ -214,22 +215,24 @@ export const Header: React.FC = () => {
               </div>
             </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  className="px-4 py-2 font-source-sans font-light text-gray-600 hover:text-teal-600 hover:bg-teal-50 rounded-md transition-all duration-200 uppercase text-base leading-6 tracking-wide"
-                >
-                  {t(`navigation.${item.key}`).toUpperCase()}
-                </Link>
-              ))}
-            </nav>
+            {/* Desktop Navigation and Language Switcher */}
+            <div className="hidden lg:flex items-center ml-auto space-x-4 xl:space-x-6">
+              <nav className="flex items-center space-x-1 xl:space-x-2">
+                {navigationItems.map((item) => (
+                  <Link
+                    key={item.key}
+                    href={item.href}
+                    className="px-2 xl:px-4 py-2 font-source-sans font-light text-gray-600 hover:text-teal-600 hover:bg-teal-50 rounded-md transition-all duration-200 uppercase text-xs lg:text-sm xl:text-base leading-6 tracking-wide"
+                  >
+                    {t(`navigation.${item.key}`).toUpperCase()}
+                  </Link>
+                ))}
+              </nav>
 
-            {/* Language switcher */}
-            <div className="flex items-center">
-              <LanguageSwitcher />
+              {/* Language switcher */}
+              <div className="flex items-center">
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
         </div>
@@ -251,7 +254,7 @@ export const Header: React.FC = () => {
                   alt="Pulmonology - Klinika doktora Didyka"
                   width={140}
                   height={28}
-                  className="h-7 w-auto"
+                  className="h-6 sm:h-7 w-auto"
                 />
                 <button
                   onClick={toggleMobileMenu}
@@ -268,7 +271,7 @@ export const Header: React.FC = () => {
                     key={item.key}
                     href={item.href}
                     onClick={toggleMobileMenu}
-                    className="block px-3 py-1.5 font-source-sans font-light text-gray-600 hover:text-teal-600 hover:bg-teal-50 rounded-md transition-colors duration-200 uppercase text-sm leading-6 tracking-wide"
+                    className="block px-3 py-1.5 font-source-sans font-light text-gray-600 hover:text-teal-600 hover:bg-teal-50 rounded-md transition-colors duration-200 uppercase text-sm sm:text-base leading-6 tracking-wide"
                   >
                     {t(`navigation.${item.key}`).toUpperCase()}
                   </Link>
@@ -277,13 +280,13 @@ export const Header: React.FC = () => {
 
               {/* Mobile contact info */}
               <div className="mt-3 pt-3 border-t border-gray-200">
-                <div className="flex space-x-1">
+                <div className="flex space-x-0.5">
                   <a
                     href={`tel:${t('header.phone1')}`}
                     className="flex items-center space-x-2 hover:bg-teal-50 rounded-md p-2 transition-colors duration-200 flex-1"
                   >
                     <Phone className="w-4 h-4 text-teal-600" />
-                    <span className="font-source-sans font-light text-xs leading-4 tracking-wide text-gray-600">
+                    <span className="font-source-sans font-light text-xs sm:text-sm leading-4 tracking-wide text-gray-600">
                       {t('header.phone1')}
                     </span>
                   </a>
@@ -292,7 +295,7 @@ export const Header: React.FC = () => {
                     className="flex items-center space-x-2 hover:bg-teal-50 rounded-md p-2 transition-colors duration-200 flex-1"
                   >
                     <Phone className="w-4 h-4 text-teal-600" />
-                    <span className="font-source-sans font-light text-xs leading-4 tracking-wide text-gray-600">
+                    <span className="font-source-sans font-light text-xs sm:text-sm leading-4 tracking-wide text-gray-600">
                       {t('header.phone2')}
                     </span>
                   </a>
@@ -305,7 +308,7 @@ export const Header: React.FC = () => {
                     <div className="px-4 py-2.5">
                       <div className="flex items-center justify-center">
                         <Clock className="w-4 h-4 text-white mr-2" />
-                        <h4 className="text-sm font-semibold text-white font-heading">
+                        <h4 className="text-sm sm:text-base font-semibold text-white font-heading">
                           {t('header.openingHours')}
                         </h4>
                       </div>
@@ -317,7 +320,7 @@ export const Header: React.FC = () => {
                       <div className="mb-3">
                         <div className="flex items-center space-x-2 mb-2">
                           <div className="w-2.5 h-2.5 bg-teal-500 rounded-full"></div>
-                          <h5 className="text-sm font-semibold text-gray-900 font-source-sans">
+                          <h5 className="text-sm sm:text-base font-semibold text-gray-900 font-source-sans">
                             {t('header.mainClinic')}
                           </h5>
                         </div>
@@ -372,7 +375,7 @@ export const Header: React.FC = () => {
                       <div>
                         <div className="flex items-center space-x-2 mb-2">
                           <div className="w-2.5 h-2.5 bg-teal-400 rounded-full"></div>
-                          <h5 className="text-sm font-semibold text-gray-900 font-source-sans">
+                          <h5 className="text-sm sm:text-base font-semibold text-gray-900 font-source-sans">
                             {t('header.branchCenter')}
                           </h5>
                         </div>
