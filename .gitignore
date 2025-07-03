@@ -28,3 +28,4 @@ translations/
 /playwright/.cache/
 
 .env.local
+tsconfig.tsbuildinfo

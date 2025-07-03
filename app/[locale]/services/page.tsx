@@ -6,7 +6,7 @@ import {
   Activity,
   Zap,
   Wind,
-  Cigarette,
+  Gauge,
   Moon,
   Heart,
   Microscope,
@@ -66,7 +66,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
     },
     {
       id: 'breath-co-analyzer',
-      icon: Cigarette,
+      icon: Gauge,
       title: t('services.breathCoAnalyzer.title'),
       description: t('services.breathCoAnalyzer.shortDescription'),
       iconBgColor: 'bg-gradient-to-r from-brand-secondary to-brand-light',

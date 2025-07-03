@@ -9,6 +9,7 @@ import {
   Clock,
   Info,
   AlertCircle,
+  Target,
 } from 'lucide-react';
 import { ContentCard, CallToAction } from '../../../../components/ui';
 import Link from 'next/link';
@@ -187,7 +188,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
             <ContentCard className="mb-0">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <div className="w-8 h-8 bg-brand-light/30 rounded-lg flex items-center justify-center mr-3">
-                  <Check className="w-5 h-5 text-brand-primary" />
+                  <Target className="w-5 h-5 text-brand-primary" />
                 </div>
                 {serviceData?.whenUsed ||
                   (locale === 'cs' ? 'Kdy se používá?' : 'When is it used?')}
