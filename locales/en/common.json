@@ -401,6 +401,7 @@
       "noReservationsFound": "No reservations found",
       "noResultsOnPage": "No results on this page",
       "dateCreated": "Date created",
+      "reservationDate": "Reservation Date",
       "name": "Name",
       "contact": "Contact",
       "service": "Service",
@@ -522,6 +523,9 @@
       "serviceTypeRequired": "Service selection is required",
       "clinic": "Select Clinic",
       "clinicRequired": "Clinic selection is required",
+      "reservationDate": "Reservation Date",
+      "reservationDateRequired": "Reservation date is required",
+      "reservationDatePlaceholder": "Select date",
       "submit": "Submit",
       "submitting": "Submitting...",
       "cancel": "Cancel"

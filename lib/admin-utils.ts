@@ -68,6 +68,7 @@ export interface Reservation {
   preferredTime: string;
   serviceType: string;
   clinic: string;
+  reservationDate: any;
   status: 'pending' | 'confirmed' | 'cancelled' | 'completed';
   createdAt: any;
   userAgent: string;

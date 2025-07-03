@@ -124,6 +124,14 @@ const ReservationDetailsModal: React.FC<ReservationDetailsModalProps> = ({
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-600">
+                  {t('admin.reservations.reservationDate')}
+                </label>
+                <p className="text-gray-900 font-medium">
+                  {formatDate(reservation.reservationDate)}
+                </p>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-600">
                   {t('admin.reservations.status')}
                 </label>
                 <div className="mt-1">{getStatusBadge(reservation.status)}</div>

@@ -112,7 +112,7 @@ const ReservationManagement: React.FC<ReservationManagementProps> = ({
         let bValue = b[sortField];
 
         // Handle date sorting
-        if (sortField === 'createdAt') {
+        if (sortField === 'createdAt' || sortField === 'reservationDate') {
           aValue = aValue?.toDate ? aValue.toDate() : new Date(aValue);
           bValue = bValue?.toDate ? bValue.toDate() : new Date(bValue);
         }
@@ -340,11 +340,11 @@ const ReservationManagement: React.FC<ReservationManagementProps> = ({
                     </th>
                     <th
                       className="text-left p-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-50"
-                      onClick={() => handleSort('createdAt')}
+                      onClick={() => handleSort('reservationDate')}
                     >
                       <div className="flex items-center gap-1">
-                        {t('admin.reservations.dateCreated')}
-                        {getSortIcon('createdAt')}
+                        {t('admin.reservations.reservationDate')}
+                        {getSortIcon('reservationDate')}
                       </div>
                     </th>
                   </tr>
@@ -419,7 +419,7 @@ const ReservationManagement: React.FC<ReservationManagementProps> = ({
                           </Select>
                         </td>
                         <td className="p-2 text-sm">
-                          {formatDate(reservation.createdAt)}
+                          {formatDate(reservation.reservationDate)}
                         </td>
                       </tr>
                     ))

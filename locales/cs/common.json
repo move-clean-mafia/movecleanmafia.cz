@@ -401,6 +401,7 @@
       "noReservationsFound": "Nebyly nalezeny žádné rezervace",
       "noResultsOnPage": "Na této stránce nejsou žádné výsledky",
       "dateCreated": "Datum vytvoření",
+      "reservationDate": "Datum rezervace",
       "name": "Jméno",
       "contact": "Kontakt",
       "service": "Služba",
@@ -522,6 +523,9 @@
       "serviceTypeRequired": "Výběr služby je povinný",
       "clinic": "Vyberte kliniku",
       "clinicRequired": "Výběr kliniky je povinný",
+      "reservationDate": "Datum rezervace",
+      "reservationDateRequired": "Datum rezervace je povinné",
+      "reservationDatePlaceholder": "Vyberte datum",
       "submit": "Odeslat",
       "submitting": "Odesílání...",
       "cancel": "Zrušit"

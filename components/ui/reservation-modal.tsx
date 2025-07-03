@@ -4,10 +4,18 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { Calendar, Phone, Mail, Clock, Stethoscope } from 'lucide-react';
+import {
+  Calendar,
+  Phone,
+  Mail,
+  Clock,
+  Stethoscope,
+  CalendarDays,
+} from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase';
+import { format } from 'date-fns';
 
 import {
   Dialog,
@@ -59,6 +67,9 @@ const createReservationSchema = (t: (key: string) => string) =>
       .min(1, t('reservation.form.preferredTimeRequired')),
     serviceType: z.string().min(1, t('reservation.form.serviceTypeRequired')),
     clinic: z.string().min(1, t('reservation.form.clinicRequired')),
+    reservationDate: z.date({
+      required_error: t('reservation.form.reservationDateRequired'),
+    }),
   });
 
 type ReservationFormData = z.infer<ReturnType<typeof createReservationSchema>>;
@@ -82,6 +93,7 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
       preferredTime: '',
       serviceType: '',
       clinic: '',
+      reservationDate: undefined,
     },
   });
 
@@ -97,6 +109,7 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
         preferredTime: data.preferredTime,
         serviceType: data.serviceType,
         clinic: data.clinic,
+        reservationDate: data.reservationDate,
         status: 'pending',
         createdAt: serverTimestamp(),
       };
@@ -248,7 +261,7 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
                             <SelectTrigger className="h-12 w-32 border-2 border-gray-200 focus:border-brand-primary rounded-lg">
                               <SelectValue />
                             </SelectTrigger>
-                            <SelectContent className="bg-white border border-gray-200 shadow-lg">
+                            <SelectContent className="bg-white border border-gray-200 shadow-xl rounded-lg">
                               {regionCodeOptions.map((option) => (
                                 <SelectItem
                                   key={option.value}
@@ -307,6 +320,42 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
               )}
             />
 
+            {/* Reservation Date Field */}
+            <FormField
+              control={form.control}
+              name="reservationDate"
+              render={({ field }) => (
+                <FormItem className="flex flex-col">
+                  <FormLabel className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+                    {t('reservation.form.reservationDate')}*
+                  </FormLabel>
+                  <FormControl>
+                    <div className="relative">
+                      <CalendarDays className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                      <Input
+                        type="date"
+                        {...field}
+                        value={
+                          field.value ? format(field.value, 'yyyy-MM-dd') : ''
+                        }
+                        onChange={(e) => {
+                          const dateValue = e.target.value;
+                          if (dateValue) {
+                            field.onChange(new Date(dateValue));
+                          } else {
+                            field.onChange(undefined);
+                          }
+                        }}
+                        min={format(new Date(), 'yyyy-MM-dd')}
+                        className="h-12 pl-10 border-2 border-gray-200 focus:border-brand-primary hover:border-brand-primary rounded-lg transition-colors"
+                      />
+                    </div>
+                  </FormControl>
+                  <FormMessage className="text-red-500" />
+                </FormItem>
+              )}
+            />
+
             {/* Preferred Time Field */}
             <FormField
               control={form.control}
@@ -332,7 +381,7 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
                         </div>
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-white border border-gray-200 shadow-lg">
+                    <SelectContent className="bg-white border border-gray-200 shadow-xl rounded-lg">
                       {timeOptions.map((option) => (
                         <SelectItem key={option.value} value={option.value}>
                           {option.label}
@@ -368,7 +417,7 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
                         </div>
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-white border border-gray-200 shadow-lg">
+                    <SelectContent className="bg-white border border-gray-200 shadow-xl rounded-lg">
                       {serviceOptions.map((option) => (
                         <SelectItem key={option.value} value={option.value}>
                           {option.label}
@@ -404,7 +453,7 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
                         </div>
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-white border border-gray-200 shadow-lg">
+                    <SelectContent className="bg-white border border-gray-200 shadow-xl rounded-lg">
                       {clinicOptions.map((option) => (
                         <SelectItem key={option.value} value={option.value}>
                           {option.label}
