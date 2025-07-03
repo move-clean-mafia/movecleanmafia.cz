@@ -6,6 +6,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Calendar, Phone, Mail, Clock, Stethoscope } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 import {
   Dialog,
@@ -42,15 +44,16 @@ interface ReservationModalProps {
 const createReservationSchema = (t: (key: string) => string) =>
   z.object({
     name: z.string().min(2, t('reservation.form.nameRequired')),
+    regionCode: z.string().min(1, 'Region code is required'),
     phone: z
       .string()
       .min(9, t('reservation.form.phoneRequired'))
-      .regex(/^[+]?[0-9\s\-()]+$/, t('reservation.form.phoneInvalid')),
+      .regex(/^[0-9\s\-()]+$/, t('reservation.form.phoneInvalid')),
     email: z
       .string()
       .min(1, t('reservation.form.emailRequired'))
       .email(t('reservation.form.emailInvalid')),
-    message: z.string().min(10, t('reservation.form.messageRequired')),
+    message: z.string().optional(),
     preferredTime: z
       .string()
       .min(1, t('reservation.form.preferredTimeRequired')),
@@ -72,6 +75,7 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
     resolver: zodResolver(reservationSchema),
     defaultValues: {
       name: '',
+      regionCode: '+420',
       phone: '',
       email: '',
       message: '',
@@ -81,11 +85,25 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
     },
   });
 
-  const onSubmit = async (_data: ReservationFormData) => {
+  const onSubmit = async (data: ReservationFormData) => {
     setIsSubmitting(true);
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      // Prepare data for Firebase
+      const reservationData = {
+        name: data.name,
+        phone: `${data.regionCode} ${data.phone}`,
+        email: data.email,
+        message: data.message || '', // Handle optional message
+        preferredTime: data.preferredTime,
+        serviceType: data.serviceType,
+        clinic: data.clinic,
+        status: 'pending',
+        createdAt: serverTimestamp(),
+      };
+
+      // Save to Firebase Firestore
+      await addDoc(collection(db, 'reservations'), reservationData);
+
       setIsSuccess(true);
       form.reset();
       setTimeout(() => {
@@ -94,6 +112,8 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
       }, 3000);
     } catch (error) {
       console.error('Reservation error:', error);
+      // You might want to show an error message to the user here
+      alert('Error submitting reservation. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -107,6 +127,21 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
     { value: 'morning', label: t('reservation.timeOptions.morning') },
     { value: 'afternoon', label: t('reservation.timeOptions.afternoon') },
     { value: 'evening', label: t('reservation.timeOptions.evening') },
+  ];
+
+  const regionCodeOptions = [
+    { value: '+420', label: '+420 (Czech Republic)', flag: '🇨🇿' },
+    { value: '+380', label: '+380 (Ukraine)', flag: '🇺🇦' },
+    { value: '+421', label: '+421 (Slovakia)', flag: '🇸🇰' },
+    { value: '+43', label: '+43 (Austria)', flag: '🇦🇹' },
+    { value: '+49', label: '+49 (Germany)', flag: '🇩🇪' },
+    { value: '+48', label: '+48 (Poland)', flag: '🇵🇱' },
+    { value: '+36', label: '+36 (Hungary)', flag: '🇭🇺' },
+    { value: '+44', label: '+44 (United Kingdom)', flag: '🇬🇧' },
+    { value: '+33', label: '+33 (France)', flag: '🇫🇷' },
+    { value: '+39', label: '+39 (Italy)', flag: '🇮🇹' },
+    { value: '+34', label: '+34 (Spain)', flag: '🇪🇸' },
+    { value: '+1', label: '+1 (USA/Canada)', flag: '🇺🇸' },
   ];
 
   const serviceOptions = [
@@ -200,14 +235,46 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
                     {t('reservation.form.phone')}*
                   </FormLabel>
                   <FormControl>
-                    <div className="relative">
-                      <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                      <Input
-                        {...field}
-                        type="tel"
-                        placeholder={t('reservation.form.phonePlaceholder')}
-                        className="h-12 pl-10 border-2 border-gray-200 focus:border-brand-primary focus:ring-brand-primary rounded-lg"
+                    <div className="flex gap-2">
+                      {/* Region Code Select */}
+                      <FormField
+                        control={form.control}
+                        name="regionCode"
+                        render={({ field: regionField }) => (
+                          <Select
+                            onValueChange={regionField.onChange}
+                            defaultValue={regionField.value}
+                          >
+                            <SelectTrigger className="h-12 w-32 border-2 border-gray-200 focus:border-brand-primary rounded-lg">
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent className="bg-white border border-gray-200 shadow-lg">
+                              {regionCodeOptions.map((option) => (
+                                <SelectItem
+                                  key={option.value}
+                                  value={option.value}
+                                >
+                                  <div className="flex items-center">
+                                    <span className="mr-2">{option.flag}</span>
+                                    {option.value}
+                                  </div>
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                        )}
                       />
+
+                      {/* Phone Number Input */}
+                      <div className="relative flex-1">
+                        <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <Input
+                          {...field}
+                          type="tel"
+                          placeholder={t('reservation.form.phonePlaceholder')}
+                          className="h-12 pl-10 border-2 border-gray-200 focus:border-brand-primary focus:ring-brand-primary rounded-lg"
+                        />
+                      </div>
                     </div>
                   </FormControl>
                   <FormMessage className="text-red-500" />
@@ -357,7 +424,7 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
-                    {t('reservation.form.message')}*
+                    {t('reservation.form.message')}
                   </FormLabel>
                   <FormControl>
                     <Textarea
