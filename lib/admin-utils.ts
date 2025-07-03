@@ -79,8 +79,10 @@ export interface NewsItem {
   id: string;
   title: string;
   content: string;
-  summary: string;
+  perex: string;
+  mainImage: string;
   published: boolean;
+  publishedAt: any;
   createdAt: any;
   updatedAt: any;
 }
