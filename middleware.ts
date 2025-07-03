@@ -1,12 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supportedLanguages, defaultLanguage } from './lib/i18n';
+import {
+  supportedLanguages,
+  defaultLanguage,
+  SupportedLanguage,
+} from './lib/i18n';
 
 const getLocale = (request: NextRequest): string => {
   // Check if locale is in the pathname
   const pathname = request.nextUrl.pathname;
   const pathLocale = pathname.split('/')[1];
 
-  if (supportedLanguages.includes(pathLocale as any)) {
+  if (supportedLanguages.includes(pathLocale as SupportedLanguage)) {
     return pathLocale;
   }
 
@@ -22,7 +26,10 @@ const getLocale = (request: NextRequest): string => {
 
   // Check cookie
   const cookieLocale = request.cookies.get('locale')?.value;
-  if (cookieLocale && supportedLanguages.includes(cookieLocale as any)) {
+  if (
+    cookieLocale &&
+    supportedLanguages.includes(cookieLocale as SupportedLanguage)
+  ) {
     return cookieLocale;
   }
 
@@ -34,7 +41,9 @@ export function middleware(request: NextRequest) {
 
   // Check if pathname already includes locale
   const pathLocale = pathname.split('/')[1];
-  const hasLocale = supportedLanguages.includes(pathLocale as any);
+  const hasLocale = supportedLanguages.includes(
+    pathLocale as SupportedLanguage,
+  );
 
   // Skip middleware for certain paths
   if (

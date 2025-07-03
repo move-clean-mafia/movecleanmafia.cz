@@ -54,7 +54,7 @@ export const getServerTranslations = async (
     ? (locale as SupportedLanguage)
     : defaultLanguage;
 
-  const translations: Record<string, any> = {};
+  const translations: Record<string, Record<string, string>> = {};
 
   for (const ns of namespaces) {
     try {

@@ -39,7 +39,7 @@ interface ReservationModalProps {
   children: React.ReactNode;
 }
 
-const createReservationSchema = (t: any) =>
+const createReservationSchema = (t: (key: string) => string) =>
   z.object({
     name: z.string().min(2, t('reservation.form.nameRequired')),
     phone: z
@@ -81,12 +81,11 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ children }) => {
     },
   });
 
-  const onSubmit = async (data: ReservationFormData) => {
+  const onSubmit = async (_data: ReservationFormData) => {
     setIsSubmitting(true);
     try {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      console.log('Reservation data:', data);
       setIsSuccess(true);
       form.reset();
       setTimeout(() => {

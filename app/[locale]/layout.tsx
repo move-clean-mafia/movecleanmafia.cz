@@ -32,19 +32,10 @@ export const generateStaticParams = async () => {
   return supportedLanguages.map((locale) => ({ locale }));
 };
 
-export const generateMetadata = async ({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> => {
-  const { locale } = await params;
-  const { translations } = await getServerTranslations(locale);
-
+export const generateMetadata = async (): Promise<Metadata> => {
   return {
-    title: translations.common?.meta?.title || 'Pulmonology.cz',
-    description:
-      translations.common?.meta?.description ||
-      'Professional pulmonological care',
+    title: 'Pulmonology.cz',
+    description: 'Professional pulmonological care',
   };
 };
 

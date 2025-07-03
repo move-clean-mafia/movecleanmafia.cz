@@ -58,11 +58,12 @@ const AdminPage: React.FC<AdminPageProps> = () => {
       if (userCredential.user) {
         setIsAuthenticated(true);
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Login error:', error);
 
       // Handle specific Firebase Auth errors with translations
-      switch (error.code) {
+      const firebaseError = error as { code?: string };
+      switch (firebaseError.code) {
         case 'auth/user-not-found':
           setError(t('admin.errors.userNotFound'));
           break;

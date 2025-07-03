@@ -8,7 +8,7 @@ import { type SupportedLanguage } from '../lib/i18n';
 
 interface I18nProviderProps {
   locale: SupportedLanguage;
-  translations: Record<string, any>;
+  translations: Record<string, Record<string, string>>;
   children: React.ReactNode;
 }
 
