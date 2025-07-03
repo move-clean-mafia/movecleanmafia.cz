@@ -1,4 +1,4 @@
-export { Button, buttonVariants } from './button';
+export { Button } from './button';
 export {
   Card,
   CardContent,
@@ -36,3 +36,8 @@ export {
   PopoverContent,
   PopoverAnchor,
 } from './popover';
+export { StatCard } from './stat-card';
+export { TeamMember } from './team-member';
+export { TeamCard } from './team-card';
+export { MissionStatement } from './mission-statement';
+export { StatsSection } from './stats-section';

@@ -81,7 +81,20 @@
     "administration": "Administration",
     "doctorBio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "nurseBio": "Experienced nurse specializing in pulmonological care for patients with respiratory diseases.",
-    "adminBio": "Responsible for administrative operations of the clinic and coordination of patient care."
+    "adminBio": "Responsible for administrative operations of the clinic and coordination of patient care.",
+    "teamExperts": "Team of Experts",
+    "satisfiedPatients": "Satisfied Patients",
+    "yearsExperience": "Years of Experience",
+    "specializedServices": "Specialized Services",
+    "ourMission": "Our Mission",
+    "missionDescription": "We provide the highest quality care in the field of pulmonology and allergology with an emphasis on individual approach to each patient. Our team is here for you.",
+    "supportTeam": "Support Team",
+    "jurij15Years": "15+ years of experience",
+    "ala12Years": "12+ years of experience",
+    "pulmonologistAllergist": "Pulmonologist & Allergist",
+    "allergySpecialist": "Specialization in Allergology",
+    "nurse": "Nurse",
+    "admin": "Administrative Worker"
   },
   "news": {
     "title": "News",

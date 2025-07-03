@@ -81,7 +81,20 @@
     "administration": "Administrativní část",
     "doctorBio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "nurseBio": "Zkušená zdravotní sestra specializující se na pulmonologickou péči a péči o pacienty s respiračními onemocněními.",
-    "adminBio": "Zodpovědná za administrativní chod kliniky a koordinaci péče o pacienty."
+    "adminBio": "Zodpovědná za administrativní chod kliniky a koordinaci péče o pacienty.",
+    "teamExperts": "Tým expertů",
+    "satisfiedPatients": "Spokojených pacientů",
+    "yearsExperience": "Let zkušeností",
+    "specializedServices": "Specializované služby",
+    "ourMission": "Naše mise",
+    "missionDescription": "Poskytujeme nejkvalitnější péči v oblasti pulmonologie a alergologie s důrazem na individuální přístup k každému pacientovi. Náš tým je tu pro vás.",
+    "supportTeam": "Podpůrný tým",
+    "jurij15Years": "15+ let praxe",
+    "ala12Years": "12+ let praxe",
+    "pulmonologistAllergist": "Pulmonolog & Alergolog",
+    "allergySpecialist": "Specializace na alergologii",
+    "nurse": "Zdravotní sestra",
+    "admin": "Administrativní pracovník"
   },
   "news": {
     "title": "Aktuality",
