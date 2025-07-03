@@ -114,8 +114,16 @@
     "address": "Address",
     "openingHours": "Opening Hours",
     "addressToBeDetermined": "Address will be added",
+    "emailToBeDetermined": "Email will be added",
     "haveQuestions": "Have Questions?",
-    "contactUsDescription": "Do not hesitate to contact us. We will be happy to answer all your questions and provide more information about our services."
+    "contactUsDescription": "Do not hesitate to contact us. We will be happy to answer all your questions and provide more information about our services.",
+    "mapTitle": "Where to Find Us",
+    "mapSubtitle": "Our clinics are strategically located for easy access by all patients.",
+    "mapPlaceholder": "Clinic Location Map",
+    "mapDescription": "Interactive Google Maps will be integrated here showing both clinic locations.",
+    "mapLocation": "Map Location",
+    "mapIntegration": "Google Maps will be integrated here",
+    "coordinates": "Coordinates"
   },
   "photogallery": {
     "title": "Photo Gallery",

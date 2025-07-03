@@ -114,8 +114,16 @@
     "address": "Adresa",
     "openingHours": "Ordinační hodiny",
     "addressToBeDetermined": "Adresa bude doplněna",
+    "emailToBeDetermined": "E-mail bude doplněn",
     "haveQuestions": "Máte dotazy?",
-    "contactUsDescription": "Neváhejte nás kontaktovat. Rádi zodpovíme všechny vaše dotazy a poskytneme více informací o našich službách."
+    "contactUsDescription": "Neváhejte nás kontaktovat. Rádi zodpovíme všechny vaše dotazy a poskytneme více informací o našich službách.",
+    "mapTitle": "Kde nás najdete",
+    "mapSubtitle": "Naše kliniky jsou strategicky umístěny pro snadnou dostupnost všech pacientů.",
+    "mapPlaceholder": "Mapa umístění klinik",
+    "mapDescription": "Zde bude integrována interaktivní mapa Google Maps s označením obou klinik.",
+    "mapLocation": "Mapa polohy",
+    "mapIntegration": "Google Maps bude integrována zde",
+    "coordinates": "Souřadnice"
   },
   "photogallery": {
     "title": "Fotogalerie",

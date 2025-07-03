@@ -2,7 +2,6 @@ import React from 'react';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
 import {
-  HeroSection,
   CallToAction,
   StatsSection,
   MissionStatement,
@@ -84,10 +83,15 @@ const OurTeamPage = async ({ params }: OurTeamPageProps) => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Hero Section */}
         <div className="text-center mb-20">
-          <HeroSection
-            title={t('ourTeam.title')}
-            subtitle={t('ourTeam.description')}
-          />
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 tracking-tight">
+              {t('ourTeam.title')}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+              {t('ourTeam.description')}
+            </p>
+            <div className="w-48 h-2 mx-auto rounded-full bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-primary"></div>
+          </div>
         </div>
 
         {/* Statistics Section */}

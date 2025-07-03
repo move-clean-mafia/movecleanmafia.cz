@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card, CardContent } from './card';
-import { Phone, MapPin, Clock } from 'lucide-react';
+import { Phone, MapPin, Clock, Mail } from 'lucide-react';
 
 interface ContactInfo {
   phones: string[];
+  emails?: string[];
   address: string;
   hours: Array<{
     days: string;
@@ -18,6 +19,7 @@ interface ContactCardProps {
   contactInfo: ContactInfo;
   labels: {
     phone: string;
+    email: string;
     address: string;
     openingHours: string;
   };
@@ -57,6 +59,26 @@ const ContactCard: React.FC<ContactCardProps> = ({
               </div>
             </div>
           </div>
+
+          {contactInfo.emails && contactInfo.emails.length > 0 && (
+            <div className="flex items-start">
+              <Mail className="w-5 h-5 text-teal-600 mr-3 mt-0.5" />
+              <div>
+                <p className="font-medium text-gray-900 mb-1">{labels.email}</p>
+                <div className="space-y-1">
+                  {contactInfo.emails.map((email) => (
+                    <a
+                      key={email}
+                      href={`mailto:${email}`}
+                      className="text-teal-600 hover:text-teal-700 block"
+                    >
+                      {email}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
 
           <div className="flex items-start">
             <MapPin className="w-5 h-5 text-teal-600 mr-3 mt-0.5" />
