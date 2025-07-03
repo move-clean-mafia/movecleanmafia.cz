@@ -136,6 +136,10 @@
     "mapIntegration": "Google Maps bude integrována zde",
     "coordinates": "Souřadnice"
   },
+  "callToAction": {
+    "bookOnline": "Objednat se online",
+    "availability": "Online rezervace je k dispozici 24/7 • Telefon: Po-Pá 7:00-18:00"
+  },
   "photogallery": {
     "title": "Fotogalerie",
     "subtitle": "Prohlédněte si naše prostory",
@@ -189,6 +193,67 @@
       "invalidEmail": "Nesprávný formát e-mailu",
       "tooManyRequests": "Příliš mnoho pokusů o přihlášení. Zkuste to později",
       "genericError": "Chyba při přihlašování. Zkontrolujte údaje a zkuste to znovu"
+    }
+  },
+  "reservation": {
+    "title": "Objednat se",
+    "subtitle": "Rezervace termínu",
+    "description": "Vyplňte formulář níže a my se vám ozveme pro potvrzení termínu.",
+    "form": {
+      "name": "Vaše jméno",
+      "namePlaceholder": "Vaše jméno",
+      "nameRequired": "Jméno je povinné",
+      "phone": "Telefon",
+      "phonePlaceholder": "Telefon",
+      "phoneRequired": "Telefon je povinný",
+      "phoneInvalid": "Neplatný formát telefonu",
+      "email": "Email",
+      "emailPlaceholder": "Email",
+      "emailRequired": "Email je povinný",
+      "emailInvalid": "Neplatný formát emailu",
+      "message": "Vaše zpráva",
+      "messagePlaceholder": "Popište váš problém nebo požadavek...",
+      "messageRequired": "Zpráva je povinná",
+      "preferredTime": "Preferuji čas",
+      "preferredTimeRequired": "Výběr času je povinný",
+      "serviceType": "Mám zájem o",
+      "serviceTypeRequired": "Výběr služby je povinný",
+      "clinic": "Vyberte kliniku",
+      "clinicRequired": "Výběr kliniky je povinný",
+      "submit": "Odeslat",
+      "submitting": "Odesílání...",
+      "cancel": "Zrušit"
+    },
+    "timeOptions": {
+      "noPreference": "Nerozhonduje",
+      "morning": "Dopoledne",
+      "afternoon": "Odpoledne",
+      "evening": "Večer"
+    },
+    "services": {
+      "consultation": "Konzultace",
+      "examination": "Vyšetření",
+      "followUp": "Kontrola",
+      "spirometry": "Spirometrie",
+      "bronchoscopy": "Bronchoskopie",
+      "allergyTesting": "Alergologické testy",
+      "urgent": "Mám akutní problém"
+    },
+    "clinics": {
+      "main": "Hlavní klinika - Masarykova 2000/92, Ústí nad Labem",
+      "branch": "Pobočka - Centrum (adresa bude upřesněna)"
+    },
+    "success": {
+      "title": "Rezervace odeslána",
+      "message": "Děkujeme za vaši rezervaci. Brzy se vám ozveme pro potvrzení termínu."
+    },
+    "error": {
+      "title": "Chyba při odesílání",
+      "message": "Omlouváme se, ale při odesílání rezervace došlo k chybě. Zkuste to prosím znovu."
+    },
+    "privacy": {
+      "notice": "Vaše osobní údaje budou použity pouze pro účely vyřešení vašeho dotazu případně objednání.",
+      "policyLink": "Zásady zpracování osobních údajů"
     }
   }
 }

@@ -136,6 +136,10 @@
     "mapIntegration": "Google Maps will be integrated here",
     "coordinates": "Coordinates"
   },
+  "callToAction": {
+    "bookOnline": "Book Online",
+    "availability": "Online booking available 24/7 • Phone: Mon-Fri 7:00-18:00"
+  },
   "photogallery": {
     "title": "Photo Gallery",
     "subtitle": "Take a look at our facilities",
@@ -189,6 +193,67 @@
       "invalidEmail": "Invalid email format",
       "tooManyRequests": "Too many login attempts. Please try again later",
       "genericError": "Login error. Please check your credentials and try again"
+    }
+  },
+  "reservation": {
+    "title": "Book Appointment",
+    "subtitle": "Appointment Reservation",
+    "description": "Fill out the form below and we will contact you to confirm your appointment.",
+    "form": {
+      "name": "Your Name",
+      "namePlaceholder": "Your name",
+      "nameRequired": "Name is required",
+      "phone": "Phone",
+      "phonePlaceholder": "Phone",
+      "phoneRequired": "Phone is required",
+      "phoneInvalid": "Invalid phone format",
+      "email": "Email",
+      "emailPlaceholder": "Email",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email format",
+      "message": "Your Message",
+      "messagePlaceholder": "Describe your problem or request...",
+      "messageRequired": "Message is required",
+      "preferredTime": "Preferred Time",
+      "preferredTimeRequired": "Time selection is required",
+      "serviceType": "I'm interested in",
+      "serviceTypeRequired": "Service selection is required",
+      "clinic": "Select Clinic",
+      "clinicRequired": "Clinic selection is required",
+      "submit": "Submit",
+      "submitting": "Submitting...",
+      "cancel": "Cancel"
+    },
+    "timeOptions": {
+      "noPreference": "No preference",
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "evening": "Evening"
+    },
+    "services": {
+      "consultation": "Consultation",
+      "examination": "Examination",
+      "followUp": "Follow-up",
+      "spirometry": "Spirometry",
+      "bronchoscopy": "Bronchoscopy",
+      "allergyTesting": "Allergy Testing",
+      "urgent": "I have an urgent problem"
+    },
+    "clinics": {
+      "main": "Main Clinic - Masarykova 2000/92, Ústí nad Labem",
+      "branch": "Branch Office - Center (address to be specified)"
+    },
+    "success": {
+      "title": "Reservation Sent",
+      "message": "Thank you for your reservation. We will contact you soon to confirm your appointment."
+    },
+    "error": {
+      "title": "Submission Error",
+      "message": "We're sorry, but there was an error submitting your reservation. Please try again."
+    },
+    "privacy": {
+      "notice": "Your personal data will be used only for the purpose of resolving your inquiry or appointment.",
+      "policyLink": "Privacy Policy"
     }
   }
 }

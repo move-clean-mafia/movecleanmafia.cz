@@ -7,7 +7,10 @@ import { getServerTranslations } from '../../lib/i18n-server';
 import { I18nProvider } from '../../components/i18n-provider';
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
+import { FloatingReservationButton } from '../../components/ui/floating-reservation-button';
 import '../globals.css';
+import { CallToAction } from '@/components/ui';
+import { t } from 'i18next';
 
 const oswald = Oswald({
   variable: '--font-oswald',
@@ -68,6 +71,7 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
+            <FloatingReservationButton />
           </div>
         </I18nProvider>
       </body>
