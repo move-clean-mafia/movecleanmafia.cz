@@ -72,21 +72,21 @@ export const Header: React.FC = () => {
               <div className="hidden lg:flex items-center space-x-3">
                 <div className="flex flex-col space-y-1">
                   <a
-                    href="tel:+420731832518"
+                    href={`tel:${t('header.phone1')}`}
                     className="flex items-center space-x-2 hover:bg-teal-50 rounded-md p-1 transition-colors duration-200"
                   >
                     <Phone className="w-4 h-4 text-teal-600" />
                     <span className="font-source-sans font-light text-sm leading-5 tracking-wide text-gray-600">
-                      +420 731 832 518
+                      {t('header.phone1')}
                     </span>
                   </a>
                   <a
-                    href="tel:+420777717618"
+                    href={`tel:${t('header.phone2')}`}
                     className="flex items-center space-x-2 hover:bg-teal-50 rounded-md p-1 transition-colors duration-200"
                   >
                     <Phone className="w-4 h-4 text-teal-600" />
                     <span className="font-source-sans font-light text-sm leading-5 tracking-wide text-gray-600">
-                      +420 777 717 618
+                      {t('header.phone2')}
                     </span>
                   </a>
                 </div>
@@ -128,26 +128,42 @@ export const Header: React.FC = () => {
                           <div className="space-y-1 ml-5">
                             <div className="flex justify-between items-center py-0.5">
                               <span className="text-sm font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
-                                {t('header.monThu')}
+                                {t('header.monday')}
                               </span>
                               <span className="text-sm font-bold text-gray-900 bg-teal-50 px-2.5 py-1 rounded-md ml-1">
-                                8:00 - 20:00
+                                {t('header.mondayHours')}
                               </span>
                             </div>
                             <div className="flex justify-between items-center py-0.5">
                               <span className="text-sm font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
-                                {t('header.fri')}
+                                {t('header.tuesday')}
                               </span>
                               <span className="text-sm font-bold text-gray-900 bg-teal-50 px-2.5 py-1 rounded-md ml-1">
-                                8:00 - 15:00
+                                {t('header.tuesdayHours')}
                               </span>
                             </div>
                             <div className="flex justify-between items-center py-0.5">
                               <span className="text-sm font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
-                                {t('header.sat')}
+                                {t('header.wednesday')}
                               </span>
                               <span className="text-sm font-bold text-gray-900 bg-teal-50 px-2.5 py-1 rounded-md ml-1">
-                                8:00 - 14:00
+                                {t('header.wednesdayHours')}
+                              </span>
+                            </div>
+                            <div className="flex justify-between items-center py-0.5">
+                              <span className="text-sm font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
+                                {t('header.thursday')}
+                              </span>
+                              <span className="text-sm font-bold text-gray-900 bg-teal-50 px-2.5 py-1 rounded-md ml-1">
+                                {t('header.thursdayHours')}
+                              </span>
+                            </div>
+                            <div className="flex justify-between items-center py-0.5">
+                              <span className="text-sm font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
+                                {t('header.friday')}
+                              </span>
+                              <span className="text-sm font-bold text-gray-900 bg-teal-50 px-2.5 py-1 rounded-md ml-1">
+                                {t('header.fridayHours')}
                               </span>
                             </div>
                           </div>
@@ -263,21 +279,21 @@ export const Header: React.FC = () => {
               <div className="mt-3 pt-3 border-t border-gray-200">
                 <div className="flex space-x-1">
                   <a
-                    href="tel:+420731832518"
+                    href={`tel:${t('header.phone1')}`}
                     className="flex items-center space-x-2 hover:bg-teal-50 rounded-md p-2 transition-colors duration-200 flex-1"
                   >
                     <Phone className="w-4 h-4 text-teal-600" />
                     <span className="font-source-sans font-light text-xs leading-4 tracking-wide text-gray-600">
-                      +420 731 832 518
+                      {t('header.phone1')}
                     </span>
                   </a>
                   <a
-                    href="tel:+420777717618"
+                    href={`tel:${t('header.phone2')}`}
                     className="flex items-center space-x-2 hover:bg-teal-50 rounded-md p-2 transition-colors duration-200 flex-1"
                   >
                     <Phone className="w-4 h-4 text-teal-600" />
                     <span className="font-source-sans font-light text-xs leading-4 tracking-wide text-gray-600">
-                      +420 777 717 618
+                      {t('header.phone2')}
                     </span>
                   </a>
                 </div>
@@ -308,26 +324,42 @@ export const Header: React.FC = () => {
                         <div className="space-y-0.5 ml-4">
                           <div className="flex items-center justify-between py-0.5">
                             <span className="text-xs font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
-                              {t('header.monThu')}
+                              {t('header.monday')}
                             </span>
                             <span className="text-xs font-bold text-gray-900 bg-teal-50 px-2 py-0.5 rounded-md ml-2">
-                              8:00 - 20:00
+                              {t('header.mondayHours')}
                             </span>
                           </div>
                           <div className="flex items-center justify-between py-0.5">
                             <span className="text-xs font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
-                              {t('header.fri')}
+                              {t('header.tuesday')}
                             </span>
                             <span className="text-xs font-bold text-gray-900 bg-teal-50 px-2 py-0.5 rounded-md ml-2">
-                              8:00 - 15:00
+                              {t('header.tuesdayHours')}
                             </span>
                           </div>
                           <div className="flex items-center justify-between py-0.5">
                             <span className="text-xs font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
-                              {t('header.sat')}
+                              {t('header.wednesday')}
                             </span>
                             <span className="text-xs font-bold text-gray-900 bg-teal-50 px-2 py-0.5 rounded-md ml-2">
-                              8:00 - 14:00
+                              {t('header.wednesdayHours')}
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between py-0.5">
+                            <span className="text-xs font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
+                              {t('header.thursday')}
+                            </span>
+                            <span className="text-xs font-bold text-gray-900 bg-teal-50 px-2 py-0.5 rounded-md ml-2">
+                              {t('header.thursdayHours')}
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between py-0.5">
+                            <span className="text-xs font-medium text-teal-600 font-source-sans min-w-0 flex-shrink-0">
+                              {t('header.friday')}
+                            </span>
+                            <span className="text-xs font-bold text-gray-900 bg-teal-50 px-2 py-0.5 rounded-md ml-2">
+                              {t('header.fridayHours')}
                             </span>
                           </div>
                         </div>

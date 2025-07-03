@@ -14,17 +14,19 @@ const ContactPage = async ({ params }: ContactPageProps) => {
   const clinicsData = [
     {
       name: t('contact.mainClinic'),
-      phones: ['+420 731 832 518', '+420 777 717 618'],
-      emails: ['info@pulmonologie.cz', 'ordinace@pulmonologie.cz'],
-      address: t('contact.addressToBeDetermined'),
+      phones: ['+420 725 555 095'],
+      emails: ['info.plicni@post.cz', 'plicni.ambulance@post.cz'],
+      address: t('contact.mainClinicAddress'),
       hours: [
-        { days: t('header.monThu'), time: '8:00 - 16:00' },
-        { days: t('header.fri'), time: '8:00 - 14:00' },
-        { days: t('header.sat'), time: '8:00 - 12:00' },
+        { days: t('header.monday'), time: t('header.mondayHours') },
+        { days: t('header.tuesday'), time: t('header.tuesdayHours') },
+        { days: t('header.wednesday'), time: t('header.wednesdayHours') },
+        { days: t('header.thursday'), time: t('header.thursdayHours') },
+        { days: t('header.friday'), time: t('header.fridayHours') },
       ],
       coordinates: {
-        lat: 50.0755,
-        lng: 14.4378,
+        lat: 50.667684,
+        lng: 14.02908,
       },
       dotColor: 'bg-teal-500',
     },

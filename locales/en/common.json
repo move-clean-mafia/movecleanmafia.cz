@@ -10,7 +10,7 @@
     "admin": "Administration"
   },
   "header": {
-    "phone1": "+420 731 832 518",
+    "phone1": "+420 725 555 095",
     "phone2": "+420 777 717 618",
     "openingHours": "Opening Hours",
     "monThu": "MON - THU",
@@ -24,7 +24,17 @@
     "branchCenter": "Branch - Center",
     "menu": "MENU",
     "closeMainMenu": "Close main menu",
-    "openMainMenu": "Open main menu"
+    "openMainMenu": "Open main menu",
+    "monday": "MONDAY",
+    "tuesday": "TUESDAY",
+    "wednesday": "WEDNESDAY",
+    "thursday": "THURSDAY",
+    "friday": "FRIDAY",
+    "mondayHours": "8:00 - 14:00 (urgent 7:00 - 9:00)",
+    "tuesdayHours": "7:00 - 14:00 (urgent 7:00 - 9:00)",
+    "wednesdayHours": "8:00 - 15:00 (urgent 7:00 - 9:00)",
+    "thursdayHours": "12:00 - 18:00",
+    "fridayHours": "7:00 - 12:00 (urgent 7:00 - 9:00)"
   },
   "homepage": {
     "heroTitle": "Specialized Pulmonological Care",
@@ -113,6 +123,7 @@
     "email": "Email",
     "address": "Address",
     "openingHours": "Opening Hours",
+    "mainClinicAddress": "Masarykova 2000/92, Ústí nad Labem, 400 01",
     "addressToBeDetermined": "Address will be added",
     "emailToBeDetermined": "Email will be added",
     "haveQuestions": "Have Questions?",

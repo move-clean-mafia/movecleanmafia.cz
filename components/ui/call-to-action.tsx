@@ -12,7 +12,7 @@ interface CallToActionProps {
 const CallToAction: React.FC<CallToActionProps> = ({
   title,
   description,
-  phoneNumbers = ['+420 731 832 518', '+420 777 717 618'],
+  phoneNumbers = ['+420 725 555 095'],
   className = '',
 }) => {
   return (
