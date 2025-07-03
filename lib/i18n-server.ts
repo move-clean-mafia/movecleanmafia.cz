@@ -23,6 +23,7 @@ const initI18next = async (lng: SupportedLanguage, ns: string | string[]) => {
       fallbackNS: 'common',
       defaultNS: 'common',
       ns,
+      returnObjects: true,
       interpolation: {
         escapeValue: false,
       },

@@ -115,7 +115,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50">
+    <div className="min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pb-8">
         {/* Hero Section */}
         <div className="text-center mb-20">

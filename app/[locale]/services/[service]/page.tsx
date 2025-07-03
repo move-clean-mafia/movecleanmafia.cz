@@ -57,8 +57,6 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
   // Get service data with proper fallback
   const serviceData = t(`services.${serviceKey}` as any) as any;
 
-  console.log(serviceData);
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -74,14 +72,14 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
         </div>
 
         {/* Hero Section */}
-        <div className="text-center mb-16">
+        <div className="mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
             {serviceData?.title || 'Service'}
           </h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+          <p className="text-xl text-gray-600 max-w-4xl leading-relaxed mb-8">
             {serviceData?.subtitle || 'Professional medical service'}
           </p>
-          <div className="w-32 h-1 mx-auto rounded-full bg-gradient-to-r from-brand-primary to-brand-secondary"></div>
+          <div className="w-32 h-1 rounded-full bg-gradient-to-r from-brand-primary to-brand-secondary"></div>
         </div>
 
         {/* Main Content Layout */}
@@ -142,9 +140,9 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
           </div>
 
           {/* Right Column - Content */}
-          <div className="xl:col-span-2 space-y-8">
+          <div className="xl:col-span-2 space-y-6">
             {/* Main Description */}
-            <ContentCard>
+            <ContentCard className="mb-0">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 {serviceData?.title || 'Medical Service'}
               </h2>
@@ -155,7 +153,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
                 </p>
 
                 {serviceData?.additionalInfo && (
-                  <div className="mt-6 p-4 bg-brand-light/20 rounded-lg border-l-4 border-brand-primary">
+                  <div className="mt-4 p-4 bg-brand-light/20 rounded-lg border-l-4 border-brand-primary">
                     <p className="text-gray-700 leading-relaxed">
                       {serviceData.additionalInfo}
                     </p>
@@ -169,7 +167,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
                 )}
 
                 {serviceData?.procedure && (
-                  <div className="mt-6 p-4 bg-brand-light/20 rounded-lg border-l-4 border-brand-secondary">
+                  <div className="mt-4 p-4 bg-brand-light/20 rounded-lg border-l-4 border-brand-secondary">
                     <p className="text-gray-700 leading-relaxed">
                       {serviceData.procedure}
                     </p>
@@ -177,7 +175,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
                 )}
 
                 {serviceData?.advantages && (
-                  <div className="mt-6 p-4 bg-brand-light/20 rounded-lg border-l-4 border-brand-light">
+                  <div className="mt-4 p-4 bg-brand-light/20 rounded-lg border-l-4 border-brand-light">
                     <p className="text-gray-700 leading-relaxed">
                       {serviceData.advantages}
                     </p>
@@ -185,38 +183,8 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
                 )}
               </div>
             </ContentCard>
-
-            {/* Preparation and Normal Values */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {serviceData?.preparation && (
-                <ContentCard>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                    <Info className="w-5 h-5 mr-2 text-brand-primary" />
-                    {locale === 'cs'
-                      ? 'Příprava na vyšetření'
-                      : 'Examination Preparation'}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    {serviceData.preparation}
-                  </p>
-                </ContentCard>
-              )}
-
-              {serviceData?.normalValues && (
-                <ContentCard>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                    <Check className="w-5 h-5 mr-2 text-brand-secondary" />
-                    {locale === 'cs' ? 'Normální hodnoty' : 'Normal Values'}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    {serviceData.normalValues}
-                  </p>
-                </ContentCard>
-              )}
-            </div>
-
             {/* When Used Section */}
-            <ContentCard>
+            <ContentCard className="mb-0">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <div className="w-8 h-8 bg-brand-light/30 rounded-lg flex items-center justify-center mr-3">
                   <Check className="w-5 h-5 text-brand-primary" />
@@ -224,20 +192,109 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
                 {serviceData?.whenUsed ||
                   (locale === 'cs' ? 'Kdy se používá?' : 'When is it used?')}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {serviceData?.uses &&
                   serviceData.uses.map((use: string, index: number) => (
-                    <div key={index} className="flex items-start">
+                    <div key={index} className="flex items-start text-left">
                       <div className="w-2 h-2 bg-brand-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-gray-700">{use}</span>
+                      <span className="text-gray-700 leading-relaxed">
+                        {use}
+                      </span>
                     </div>
                   ))}
               </div>
             </ContentCard>
 
+            {/* Additional Information Cards */}
+            {(() => {
+              const infoCards = [];
+
+              // Parameters card
+              if (serviceData?.parameters) {
+                infoCards.push(
+                  <ContentCard key="parameters" className="mb-0">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center">
+                      <Info className="w-5 h-5 mr-2 text-brand-secondary" />
+                      {locale === 'cs'
+                        ? 'Sledované parametry'
+                        : 'Monitored Parameters'}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-left">
+                      {serviceData.parameters}
+                    </p>
+                  </ContentCard>,
+                );
+              }
+
+              // Preparation card
+              if (serviceData?.preparation) {
+                infoCards.push(
+                  <ContentCard key="preparation" className="mb-0">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center">
+                      <Info className="w-5 h-5 mr-2 text-brand-primary" />
+                      {locale === 'cs'
+                        ? 'Příprava na vyšetření'
+                        : 'Examination Preparation'}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-left">
+                      {serviceData.preparation}
+                    </p>
+                  </ContentCard>,
+                );
+              }
+
+              // Normal values card
+              if (serviceData?.normalValues) {
+                infoCards.push(
+                  <ContentCard key="normalValues" className="mb-0">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center">
+                      <Check className="w-5 h-5 mr-2 text-brand-secondary" />
+                      {locale === 'cs' ? 'Normální hodnoty' : 'Normal Values'}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-left">
+                      {serviceData.normalValues}
+                    </p>
+                  </ContentCard>,
+                );
+              }
+
+              // Principle card
+              if (serviceData?.principle) {
+                infoCards.push(
+                  <ContentCard key="principle" className="mb-0">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center">
+                      <Microscope className="w-5 h-5 mr-2 text-brand-primary" />
+                      {locale === 'cs'
+                        ? 'Princip vyšetření'
+                        : 'Examination Principle'}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-left">
+                      {serviceData.principle}
+                    </p>
+                  </ContentCard>,
+                );
+              }
+
+              // Render cards in rows of 2
+              const rows = [];
+              for (let i = 0; i < infoCards.length; i += 2) {
+                const rowCards = infoCards.slice(i, i + 2);
+                rows.push(
+                  <div
+                    key={i}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                  >
+                    {rowCards}
+                  </div>,
+                );
+              }
+
+              return rows;
+            })()}
+
             {/* How It Works Section */}
             {serviceData?.howItWorks && serviceData?.steps && (
-              <ContentCard>
+              <ContentCard className="mb-0">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                   <div className="w-8 h-8 bg-brand-light/30 rounded-lg flex items-center justify-center mr-3">
                     <Microscope className="w-5 h-5 text-brand-secondary" />
@@ -257,66 +314,29 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
               </ContentCard>
             )}
 
-            {/* Additional Technical Information */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {serviceData?.principle && (
-                <ContentCard>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                    <Microscope className="w-5 h-5 mr-2 text-brand-primary" />
-                    {locale === 'cs'
-                      ? 'Princip vyšetření'
-                      : 'Examination Principle'}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    {serviceData.principle}
-                  </p>
-                </ContentCard>
-              )}
-
-              {serviceData?.parameters && (
-                <ContentCard>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                    <Info className="w-5 h-5 mr-2 text-brand-secondary" />
-                    {locale === 'cs'
-                      ? 'Sledované parametry'
-                      : 'Monitored Parameters'}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    {serviceData.parameters}
-                  </p>
-                </ContentCard>
-              )}
-            </div>
-
             {/* Importance Section */}
-            <ContentCard>
-              <div className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white p-8 rounded-xl">
-                <h3 className="text-2xl font-bold mb-4 flex items-center">
-                  <Heart className="w-6 h-6 mr-3" />
-                  {locale === 'cs'
-                    ? 'Proč je důležité?'
-                    : 'Why is it important?'}
-                </h3>
-                <p className="text-lg leading-relaxed">
-                  {serviceData?.importance ||
-                    'This examination is crucial for accurate diagnosis and effective treatment planning.'}
-                </p>
-              </div>
-            </ContentCard>
+            <div className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white p-8 rounded-xl">
+              <h3 className="text-2xl font-bold mb-4 flex items-center">
+                <Heart className="w-6 h-6 mr-3" />
+                {locale === 'cs' ? 'Proč je důležité?' : 'Why is it important?'}
+              </h3>
+              <p className="text-lg leading-relaxed">
+                {serviceData?.importance ||
+                  'This examination is crucial for accurate diagnosis and effective treatment planning.'}
+              </p>
+            </div>
 
             {/* Contraindications */}
             {serviceData?.contraindications && (
-              <ContentCard>
-                <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
-                  <h3 className="text-xl font-bold text-red-900 mb-4 flex items-center">
-                    <AlertCircle className="w-5 h-5 mr-2" />
-                    {locale === 'cs' ? 'Kontraindikace' : 'Contraindications'}
-                  </h3>
-                  <p className="text-red-800 leading-relaxed">
-                    {serviceData.contraindications}
-                  </p>
-                </div>
-              </ContentCard>
+              <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-red-900 mb-4 flex items-center">
+                  <AlertCircle className="w-5 h-5 mr-2" />
+                  {locale === 'cs' ? 'Kontraindikace' : 'Contraindications'}
+                </h3>
+                <p className="text-red-800 leading-relaxed">
+                  {serviceData.contraindications}
+                </p>
+              </div>
             )}
           </div>
         </div>
