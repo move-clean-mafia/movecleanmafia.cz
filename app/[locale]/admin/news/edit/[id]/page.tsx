@@ -151,7 +151,10 @@ const EditNewsPage: React.FC = () => {
     setUploadingImage(true);
     try {
       const timestamp = Date.now();
-      const imageRef = ref(storage, `news-images/${timestamp}-${file.name}`);
+      const imageRef = ref(
+        storage,
+        `news-images/${newsId}/${timestamp}-${file.name}`,
+      );
       await uploadBytes(imageRef, file);
       const downloadURL = await getDownloadURL(imageRef);
 
@@ -218,7 +221,10 @@ const EditNewsPage: React.FC = () => {
 
       // Upload to Firebase Storage
       const timestamp = Date.now();
-      const imageRef = ref(storage, `news-images/${timestamp}-${file.name}`);
+      const imageRef = ref(
+        storage,
+        `news-images/${newsId}/${timestamp}-${file.name}`,
+      );
 
       uploadBytes(imageRef, file)
         .then(() => getDownloadURL(imageRef))

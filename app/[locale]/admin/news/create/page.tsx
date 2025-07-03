@@ -49,6 +49,9 @@ const CreateNewsPage: React.FC = () => {
   const [imagePreview, setImagePreview] = useState<string>('');
   const [uploadingImage, setUploadingImage] = useState(false);
   const [content, setContent] = useState('');
+  const [newsId] = useState(
+    () => `news_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+  );
 
   const form = useForm<NewsFormData>({
     resolver: zodResolver(newsSchema),
@@ -91,7 +94,10 @@ const CreateNewsPage: React.FC = () => {
     setUploadingImage(true);
     try {
       const timestamp = Date.now();
-      const imageRef = ref(storage, `news-images/${timestamp}-${file.name}`);
+      const imageRef = ref(
+        storage,
+        `news-images/${newsId}/${timestamp}-${file.name}`,
+      );
       await uploadBytes(imageRef, file);
       const downloadURL = await getDownloadURL(imageRef);
 
@@ -110,6 +116,7 @@ const CreateNewsPage: React.FC = () => {
       const publishedAtDate = new Date(data.publishedAt);
 
       await addDoc(collection(db, 'news'), {
+        id: newsId,
         title: data.title,
         perex: data.perex,
         content: content,
@@ -157,7 +164,10 @@ const CreateNewsPage: React.FC = () => {
 
       // Upload to Firebase Storage
       const timestamp = Date.now();
-      const imageRef = ref(storage, `news-images/${timestamp}-${file.name}`);
+      const imageRef = ref(
+        storage,
+        `news-images/${newsId}/${timestamp}-${file.name}`,
+      );
 
       uploadBytes(imageRef, file)
         .then(() => getDownloadURL(imageRef))
