@@ -37,6 +37,7 @@ const containerStyle = {
 
 const mapOptions = {
   styles: [
+    // Hide default POI and transit labels
     {
       featureType: 'poi',
       elementType: 'labels',
@@ -47,7 +48,131 @@ const mapOptions = {
       elementType: 'labels',
       stylers: [{ visibility: 'off' }],
     },
+    // Water styling with brand colors
+    {
+      featureType: 'water',
+      elementType: 'geometry',
+      stylers: [
+        { color: '#A8C3C5' }, // brand-light
+        { lightness: 17 },
+      ],
+    },
+    {
+      featureType: 'water',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#537E86' }], // brand-secondary
+    },
+    {
+      featureType: 'water',
+      elementType: 'labels.text.stroke',
+      stylers: [{ color: '#ffffff' }],
+    },
+    // Landscape styling
+    {
+      featureType: 'landscape',
+      elementType: 'geometry',
+      stylers: [{ color: '#f5f5f5' }, { lightness: 20 }],
+    },
+    // Road styling with brand colors
+    {
+      featureType: 'road.highway',
+      elementType: 'geometry.fill',
+      stylers: [{ color: '#68949B' }], // brand-primary
+    },
+    {
+      featureType: 'road.highway',
+      elementType: 'geometry.stroke',
+      stylers: [
+        { color: '#537E86' }, // brand-secondary
+        { lightness: 29 },
+        { weight: 0.2 },
+      ],
+    },
+    {
+      featureType: 'road.arterial',
+      elementType: 'geometry',
+      stylers: [
+        { color: '#A8C3C5' }, // brand-light
+        { lightness: 18 },
+      ],
+    },
+    {
+      featureType: 'road.local',
+      elementType: 'geometry',
+      stylers: [{ color: '#ffffff' }, { lightness: 16 }],
+    },
+    // Administrative boundaries
+    {
+      featureType: 'administrative',
+      elementType: 'geometry.fill',
+      stylers: [
+        { color: '#68949B' }, // brand-primary
+        { lightness: 20 },
+      ],
+    },
+    {
+      featureType: 'administrative',
+      elementType: 'geometry.stroke',
+      stylers: [
+        { color: '#537E86' }, // brand-secondary
+        { lightness: 17 },
+        { weight: 1.2 },
+      ],
+    },
+    // Parks and green spaces
+    {
+      featureType: 'poi.park',
+      elementType: 'geometry',
+      stylers: [
+        { color: '#A8C3C5' }, // brand-light
+        { lightness: 21 },
+      ],
+    },
+    // Text styling
+    {
+      featureType: 'poi.park',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#537E86' }], // brand-secondary
+    },
+    {
+      featureType: 'road',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#8C827D' }], // brand-text
+    },
+    {
+      featureType: 'road',
+      elementType: 'labels.text.stroke',
+      stylers: [{ color: '#ffffff' }],
+    },
+    // Business and other POI
+    {
+      featureType: 'poi.business',
+      elementType: 'geometry',
+      stylers: [{ color: '#f5f5f5' }, { lightness: 17 }],
+    },
+    // Medical facilities highlighting
+    {
+      featureType: 'poi.medical',
+      elementType: 'geometry',
+      stylers: [
+        { color: '#68949B' }, // brand-primary
+        { lightness: 19 },
+      ],
+    },
+    {
+      featureType: 'poi.medical',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#537E86' }], // brand-secondary
+    },
   ],
+  // Additional map options
+  disableDefaultUI: false,
+  zoomControl: true,
+  mapTypeControl: false,
+  scaleControl: true,
+  streetViewControl: false,
+  rotateControl: false,
+  fullscreenControl: true,
 };
 
 const GoogleMapComponent: React.FC<GoogleMapProps> = ({

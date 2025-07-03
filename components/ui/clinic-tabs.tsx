@@ -75,103 +75,105 @@ const ClinicTabs: React.FC<ClinicTabsProps> = ({ clinics, labels }) => {
                 : 'opacity-0 transform translate-y-4 absolute inset-0 pointer-events-none'
             }`}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:h-[600px]">
               {/* Clinic Information */}
-              <div className="transform transition-all duration-700 hover:scale-105">
-                <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 relative">
+              <div className="transform transition-all duration-700 hover:scale-105 lg:h-full">
+                <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 relative h-full">
                   {/* Background Pattern */}
                   <div className="absolute top-0 right-0 w-32 h-32 opacity-5">
                     <div className="w-full h-full bg-gradient-to-br from-brand-primary to-brand-secondary transform rotate-45 translate-x-16 -translate-y-16"></div>
                   </div>
 
-                  <div className="relative z-10 p-8">
-                    <div className="flex items-center mb-6">
-                      <div
-                        className={`w-3 h-3 ${clinic.dotColor} rounded-full mr-3`}
-                      ></div>
-                      <h3 className="text-2xl font-bold text-gray-900">
-                        {clinic.name}
-                      </h3>
-                    </div>
+                  <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center mb-6">
+                        <div
+                          className={`w-3 h-3 ${clinic.dotColor} rounded-full mr-3`}
+                        ></div>
+                        <h3 className="text-2xl font-bold text-gray-900">
+                          {clinic.name}
+                        </h3>
+                      </div>
 
-                    {/* Contact Information */}
-                    <div className="space-y-4">
-                      {/* Phones */}
-                      <div className="flex items-start">
-                        <Phone className="w-5 h-5 text-teal-600 mr-3 mt-0.5" />
-                        <div>
-                          <p className="font-medium text-gray-900 mb-1">
-                            {labels.phone}
-                          </p>
-                          <div className="space-y-1">
-                            {clinic.phones.map((phone) => (
-                              <a
-                                key={phone}
-                                href={`tel:${phone}`}
-                                className="text-teal-600 hover:text-teal-700 block"
-                              >
-                                {phone}
-                              </a>
-                            ))}
+                      {/* Contact Information */}
+                      <div className="space-y-4">
+                        {/* Phones */}
+                        <div className="flex items-start">
+                          <Phone className="w-5 h-5 text-teal-600 mr-3 mt-0.5" />
+                          <div>
+                            <p className="font-medium text-gray-900 mb-1">
+                              {labels.phone}
+                            </p>
+                            <div className="space-y-1">
+                              {clinic.phones.map((phone) => (
+                                <a
+                                  key={phone}
+                                  href={`tel:${phone}`}
+                                  className="text-teal-600 hover:text-teal-700 block"
+                                >
+                                  {phone}
+                                </a>
+                              ))}
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      {/* Emails */}
-                      <div className="flex items-start">
-                        <Mail className="w-5 h-5 text-teal-600 mr-3 mt-0.5" />
-                        <div>
-                          <p className="font-medium text-gray-900 mb-1">
-                            {labels.email}
-                          </p>
-                          <div className="space-y-1">
-                            {clinic.emails.map((email) => (
-                              <a
-                                key={email}
-                                href={`mailto:${email}`}
-                                className="text-teal-600 hover:text-teal-700 block"
-                              >
-                                {email}
-                              </a>
-                            ))}
+                        {/* Emails */}
+                        <div className="flex items-start">
+                          <Mail className="w-5 h-5 text-teal-600 mr-3 mt-0.5" />
+                          <div>
+                            <p className="font-medium text-gray-900 mb-1">
+                              {labels.email}
+                            </p>
+                            <div className="space-y-1">
+                              {clinic.emails.map((email) => (
+                                <a
+                                  key={email}
+                                  href={`mailto:${email}`}
+                                  className="text-teal-600 hover:text-teal-700 block"
+                                >
+                                  {email}
+                                </a>
+                              ))}
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      {/* Address */}
-                      <div className="flex items-start">
-                        <MapPin className="w-5 h-5 text-teal-600 mr-3 mt-0.5" />
-                        <div>
-                          <p className="font-medium text-gray-900 mb-1">
-                            {labels.address}
-                          </p>
-                          <p className="text-gray-600">{clinic.address}</p>
+                        {/* Address */}
+                        <div className="flex items-start">
+                          <MapPin className="w-5 h-5 text-teal-600 mr-3 mt-0.5" />
+                          <div>
+                            <p className="font-medium text-gray-900 mb-1">
+                              {labels.address}
+                            </p>
+                            <p className="text-gray-600">{clinic.address}</p>
+                          </div>
                         </div>
-                      </div>
 
-                      {/* Hours */}
-                      <div className="flex items-start">
-                        <Clock className="w-5 h-5 text-teal-600 mr-3 mt-0.5" />
-                        <div>
-                          <p className="font-medium text-gray-900 mb-1">
-                            {labels.openingHours}
-                          </p>
-                          <div className="space-y-1">
-                            {clinic.hours.map((hour, hourIndex) => (
-                              <div
-                                key={hourIndex}
-                                className={`text-sm ${
-                                  hour.isSpecial
-                                    ? 'text-red-600'
-                                    : 'text-gray-600'
-                                }`}
-                              >
-                                <span className="font-medium">
-                                  {hour.days}:
-                                </span>{' '}
-                                {hour.time}
-                              </div>
-                            ))}
+                        {/* Hours */}
+                        <div className="flex items-start">
+                          <Clock className="w-5 h-5 text-teal-600 mr-3 mt-0.5" />
+                          <div>
+                            <p className="font-medium text-gray-900 mb-1">
+                              {labels.openingHours}
+                            </p>
+                            <div className="space-y-1">
+                              {clinic.hours.map((hour, hourIndex) => (
+                                <div
+                                  key={hourIndex}
+                                  className={`text-sm ${
+                                    hour.isSpecial
+                                      ? 'text-red-600'
+                                      : 'text-gray-600'
+                                  }`}
+                                >
+                                  <span className="font-medium">
+                                    {hour.days}:
+                                  </span>{' '}
+                                  {hour.time}
+                                </div>
+                              ))}
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -181,7 +183,7 @@ const ClinicTabs: React.FC<ClinicTabsProps> = ({ clinics, labels }) => {
               </div>
 
               {/* Map Section */}
-              <div className="transform transition-all duration-700 hover:scale-105">
+              <div className="transform transition-all duration-700 hover:scale-105 lg:h-full">
                 <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 relative h-full">
                   {/* Background Pattern */}
                   <div className="absolute top-0 left-0 w-32 h-32 opacity-5">
@@ -197,7 +199,7 @@ const ClinicTabs: React.FC<ClinicTabsProps> = ({ clinics, labels }) => {
                     </div>
 
                     {/* Map Container */}
-                    <div className="flex-1">
+                    <div className="flex-1 min-h-0">
                       {clinic.coordinates ? (
                         <GoogleMap
                           markers={[
