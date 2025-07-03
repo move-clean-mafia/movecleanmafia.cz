@@ -10,6 +10,7 @@
     "admin": "Administration"
   },
   "header": {
+    "contactUs": "Contact Us",
     "phone1": "+420 725 555 095",
     "phone2": "+420 777 717 618",
     "openingHours": "Opening Hours",
@@ -194,6 +195,26 @@
       "tooManyRequests": "Too many login attempts. Please try again later",
       "genericError": "Login error. Please check your credentials and try again"
     }
+  },
+  "insurance": {
+    "title": "Insurance Companies",
+    "subtitle": "We accept patients from the following insurance companies"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Information",
+    "openingHours": "Opening Hours",
+    "emergencyContact": "Emergency Contact",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "mainClinic": "Main Clinic",
+    "branchCenter": "Branch - Center",
+    "followUs": "Follow Us",
+    "legal": "Legal Information",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy"
   },
   "reservation": {
     "title": "Book Appointment",

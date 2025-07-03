@@ -10,6 +10,7 @@
     "admin": "Administrace"
   },
   "header": {
+    "contactUs": "Kontaktujte nás",
     "phone1": "+420 725 555 095",
     "phone2": "+420 777 717 618",
     "openingHours": "Ordinační hodiny",
@@ -194,6 +195,26 @@
       "tooManyRequests": "Příliš mnoho pokusů o přihlášení. Zkuste to později",
       "genericError": "Chyba při přihlašování. Zkontrolujte údaje a zkuste to znovu"
     }
+  },
+  "insurance": {
+    "title": "Pojišťovny",
+    "subtitle": "Přijímáme pacienty z následujících pojišťoven"
+  },
+  "footer": {
+    "quickLinks": "Rychlé odkazy",
+    "contactInfo": "Kontaktní informace",
+    "openingHours": "Ordinační hodiny",
+    "emergencyContact": "Urgentní kontakt",
+    "address": "Adresa",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "mainClinic": "Hlavní klinika",
+    "branchCenter": "Pobočka - Centrum",
+    "followUs": "Sledujte nás",
+    "legal": "Právní informace",
+    "privacyPolicy": "Zásady ochrany osobních údajů",
+    "termsOfService": "Obchodní podmínky",
+    "cookiePolicy": "Zásady cookies"
   },
   "reservation": {
     "title": "Objednat se",

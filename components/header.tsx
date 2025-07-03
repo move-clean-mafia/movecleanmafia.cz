@@ -14,6 +14,8 @@ export const Header: React.FC = () => {
   const pathname = usePathname();
   const locale = pathname.split('/')[1] || 'cs';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobilePhonePopupOpen, setIsMobilePhonePopupOpen] = useState(false);
+  const [isClockPopupOpen, setIsClockPopupOpen] = useState(false);
 
   const navigationItems = [
     { key: 'clinic', href: `/${locale}/clinic` },
@@ -28,32 +30,20 @@ export const Header: React.FC = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const toggleMobilePhonePopup = () => {
+    setIsMobilePhonePopupOpen(!isMobilePhonePopupOpen);
+  };
+
+  const toggleClockPopup = () => {
+    setIsClockPopupOpen(!isClockPopupOpen);
+  };
+
   return (
     <header className="bg-white border-b border-gray-200">
       {/* Main navigation */}
       <div className="bg-white w-full">
         <div className="w-full px-2 sm:px-4 lg:px-6 xl:px-8">
           <div className="flex items-center h-20">
-            {/* Mobile menu button */}
-            <div className="lg:hidden">
-              <button
-                onClick={toggleMobileMenu}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-teal-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
-                aria-expanded={isMobileMenuOpen}
-              >
-                <span className="sr-only">
-                  {isMobileMenuOpen
-                    ? t('header.closeMainMenu')
-                    : t('header.openMainMenu')}
-                </span>
-                {isMobileMenuOpen ? (
-                  <X className="h-6 w-6" />
-                ) : (
-                  <Menu className="h-6 w-6" />
-                )}
-              </button>
-            </div>
-
             {/* Logo and Contact Info */}
             <div className="flex items-center space-x-3 lg:space-x-4">
               {/* Logo */}
@@ -68,35 +58,72 @@ export const Header: React.FC = () => {
                 />
               </Link>
 
-              {/* Phone Numbers with Opening Hours Popup - Desktop only */}
-              <div className="hidden lg:flex items-center space-x-2">
-                <div className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4 text-teal-600" />
-                  <div className="flex flex-col space-y-0.5">
-                    <a
-                      href={`tel:${t('header.phone1')}`}
-                      className="hover:bg-teal-50 rounded-md px-1 py-0.5 transition-colors duration-200"
-                    >
-                      <span className="font-source-sans font-light text-xs lg:text-sm xl:text-base leading-5 tracking-wide text-gray-600">
-                        {t('header.phone1')}
-                      </span>
-                    </a>
-                    <a
-                      href={`tel:${t('header.phone2')}`}
-                      className="hover:bg-teal-50 rounded-md px-1 py-0.5 transition-colors duration-200"
-                    >
-                      <span className="font-source-sans font-light text-xs lg:text-sm xl:text-base leading-5 tracking-wide text-gray-600">
-                        {t('header.phone2')}
-                      </span>
-                    </a>
-                  </div>
-                </div>
-
-                {/* Opening Hours Popup */}
-                <Popover>
+              {/* Phone Popup - All devices */}
+              <div className="">
+                <Popover
+                  open={isMobilePhonePopupOpen}
+                  onOpenChange={setIsMobilePhonePopupOpen}
+                >
                   <PopoverTrigger asChild>
-                    <button className="p-2 hover:bg-teal-50 rounded-full transition-colors duration-200 group">
-                      <Clock className="w-5 h-5 text-gray-500 group-hover:text-teal-600 transition-colors duration-200" />
+                    <button
+                      onClick={toggleMobilePhonePopup}
+                      className="p-2 rounded-full bg-teal-50 hover:bg-teal-100 transition-colors duration-200"
+                    >
+                      <Phone className="w-5 h-5 text-teal-600" />
+                    </button>
+                  </PopoverTrigger>
+                  <PopoverContent
+                    className="w-64 p-0"
+                    align="start"
+                    side="bottom"
+                    sideOffset={8}
+                  >
+                    <div className="bg-white rounded-xl border border-gray-100 shadow-xl overflow-hidden">
+                      <div className="bg-gradient-to-r from-teal-500 to-teal-600 px-4 py-3">
+                        <div className="flex items-center justify-center">
+                          <Phone className="w-4 h-4 text-white mr-2" />
+                          <h3 className="text-sm font-semibold text-white">
+                            {t('header.contactUs')}
+                          </h3>
+                        </div>
+                      </div>
+                      <div className="p-4 space-y-3">
+                        <a
+                          href={`tel:${t('header.phone1')}`}
+                          className="flex items-center space-x-3 p-2 hover:bg-teal-50 rounded-md transition-colors duration-200"
+                        >
+                          <Phone className="w-4 h-4 text-teal-600" />
+                          <span className="font-source-sans font-medium text-gray-900">
+                            {t('header.phone1')}
+                          </span>
+                        </a>
+                        <a
+                          href={`tel:${t('header.phone2')}`}
+                          className="flex items-center space-x-3 p-2 hover:bg-teal-50 rounded-md transition-colors duration-200"
+                        >
+                          <Phone className="w-4 h-4 text-teal-600" />
+                          <span className="font-source-sans font-medium text-gray-900">
+                            {t('header.phone2')}
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              </div>
+
+              {/* Clock Popup - All devices */}
+              <div className="">
+                <Popover
+                  open={isClockPopupOpen}
+                  onOpenChange={setIsClockPopupOpen}
+                >
+                  <PopoverTrigger asChild>
+                    <button
+                      onClick={toggleClockPopup}
+                      className="p-2 rounded-full bg-teal-50 hover:bg-teal-100 transition-colors duration-200"
+                    >
+                      <Clock className="w-5 h-5 text-teal-600" />
                     </button>
                   </PopoverTrigger>
                   <PopoverContent
@@ -233,6 +260,26 @@ export const Header: React.FC = () => {
               <div className="flex items-center">
                 <LanguageSwitcher />
               </div>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="flex lg:hidden ml-auto">
+              <button
+                onClick={toggleMobileMenu}
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-teal-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
+                aria-expanded={isMobileMenuOpen}
+              >
+                <span className="sr-only">
+                  {isMobileMenuOpen
+                    ? t('header.closeMainMenu')
+                    : t('header.openMainMenu')}
+                </span>
+                {isMobileMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </button>
             </div>
           </div>
         </div>
