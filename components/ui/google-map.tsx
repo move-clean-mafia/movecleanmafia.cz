@@ -206,18 +206,6 @@ const GoogleMapComponent: React.FC<GoogleMapProps> = ({
         : 14.4378,
   };
 
-  const onLoad = useCallback((_mapInstance: any) => {
-    console.log('Google Maps loaded successfully');
-    // Store map instance if needed for future use
-    // setMap(_mapInstance);
-  }, []);
-
-  const onUnmount = useCallback(() => {
-    console.log('Google Maps unmounted');
-    // Clean up map instance
-    // setMap(null);
-  }, []);
-
   const handleMarkerClick = useCallback((marker: MarkerData) => {
     setSelectedMarker(marker);
   }, []);
@@ -288,8 +276,6 @@ const GoogleMapComponent: React.FC<GoogleMapProps> = ({
         center={mapCenter}
         zoom={zoom}
         options={mapOptions}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
       >
         {markers.map((marker, index) => (
           <Marker

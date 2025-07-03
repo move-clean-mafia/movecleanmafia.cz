@@ -27,7 +27,6 @@ const SimpleGoogleMap: React.FC<SimpleGoogleMapProps> = ({
         script.defer = true;
 
         script.onload = () => {
-          console.log('Google Maps script loaded');
           if (mapRef.current && window.google) {
             const map = new window.google.maps.Map(mapRef.current, {
               center: center,
@@ -40,7 +39,6 @@ const SimpleGoogleMap: React.FC<SimpleGoogleMapProps> = ({
               title: 'Clinic Location',
             });
 
-            console.log('Map created successfully');
             setIsLoading(false);
           }
         };

@@ -79,6 +79,7 @@ export default defineConfig([
       '*.min.js',
       'pnpm-lock.yaml',
       'public/**',
+      '.next/**',
     ],
   },
 ]);

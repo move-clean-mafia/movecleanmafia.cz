@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
-import { Globe, ChevronDown, Check } from 'lucide-react';
+import { Globe, Check } from 'lucide-react';
 import { Button } from './ui/button';
 import {
   DropdownMenu,
@@ -36,9 +36,6 @@ const languages: Language[] = [
 export const LanguageSwitcher: React.FC = () => {
   const pathname = usePathname();
   const currentLocale = pathname.split('/')[1] || 'cs';
-
-  const currentLanguage =
-    languages.find((lang) => lang.code === currentLocale) || languages[0];
 
   const switchToLanguage = (languageCode: string) => {
     const segments = pathname.split('/');

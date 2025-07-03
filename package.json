@@ -14,8 +14,7 @@
     "test:unit": "vitest",
     "test:unit:coverage": "vitest run --coverage",
     "prepare": "husky install",
-    "lint-staged": "lint-staged",
-    "pull-translations": "prusalator-sync --pull"
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.10",
