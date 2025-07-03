@@ -399,6 +399,7 @@
       "loading": "Loading...",
       "loadingReservations": "Loading reservations...",
       "noReservationsFound": "No reservations found",
+      "noResultsOnPage": "No results on this page",
       "dateCreated": "Date created",
       "name": "Name",
       "contact": "Contact",
@@ -419,6 +420,23 @@
         "ipAddress": "IP Address",
         "userAgent": "User Agent",
         "close": "Close"
+      },
+      "sorting": {
+        "sortBy": "Sort by",
+        "ascending": "Ascending",
+        "descending": "Descending",
+        "unsorted": "Unsorted"
+      },
+      "pagination": {
+        "itemsPerPage": "Items per page",
+        "showing": "Showing",
+        "to": "to",
+        "of": "of",
+        "results": "results",
+        "previous": "Previous",
+        "next": "Next",
+        "page": "Page",
+        "goToPage": "Go to page"
       }
     },
     "news": {

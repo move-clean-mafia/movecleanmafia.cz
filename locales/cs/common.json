@@ -399,6 +399,7 @@
       "loading": "Načítání...",
       "loadingReservations": "Načítání rezervací...",
       "noReservationsFound": "Nebyly nalezeny žádné rezervace",
+      "noResultsOnPage": "Na této stránce nejsou žádné výsledky",
       "dateCreated": "Datum vytvoření",
       "name": "Jméno",
       "contact": "Kontakt",
@@ -419,6 +420,23 @@
         "ipAddress": "IP adresa",
         "userAgent": "User Agent",
         "close": "Zavřít"
+      },
+      "sorting": {
+        "sortBy": "Řadit podle",
+        "ascending": "Vzestupně",
+        "descending": "Sestupně",
+        "unsorted": "Neřazeno"
+      },
+      "pagination": {
+        "itemsPerPage": "Položek na stránku",
+        "showing": "Zobrazeno",
+        "to": "až",
+        "of": "z celkem",
+        "results": "výsledků",
+        "previous": "Předchozí",
+        "next": "Další",
+        "page": "Stránka",
+        "goToPage": "Přejít na stránku"
       }
     },
     "news": {
