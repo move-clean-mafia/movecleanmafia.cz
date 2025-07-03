@@ -8,6 +8,7 @@ import { I18nProvider } from '../../components/i18n-provider';
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
 import { FloatingReservationButton } from '../../components/ui/floating-reservation-button';
+import { Toaster } from '../../components/ui/toaster';
 import '../globals.css';
 
 const oswald = Oswald({
@@ -61,6 +62,7 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
             <main className="flex-1">{children}</main>
             <Footer />
             <FloatingReservationButton />
+            <Toaster />
           </div>
         </I18nProvider>
       </body>

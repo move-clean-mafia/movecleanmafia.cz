@@ -36,6 +36,8 @@ import {
 } from 'lucide-react';
 import { NewsItem } from '../../../../../../lib/admin-utils';
 import MDEditor from '@uiw/react-md-editor';
+import ImageManagement from '../../../../../../components/admin/image-management';
+import { useToast } from '../../../../../../components/ui/use-toast';
 
 const newsSchema = z.object({
   title: z.string().min(1, 'Title is required').max(200, 'Title is too long'),
@@ -50,6 +52,7 @@ type NewsFormData = z.infer<typeof newsSchema>;
 
 const EditNewsPage: React.FC = () => {
   const { t } = useTranslation();
+  const { toast } = useToast();
   const router = useRouter();
   const params = useParams();
   const newsId = params?.id as string;
@@ -60,6 +63,7 @@ const EditNewsPage: React.FC = () => {
   const [uploadingImage, setUploadingImage] = useState(false);
   const [newsData, setNewsData] = useState<NewsItem | null>(null);
   const [content, setContent] = useState('');
+  const [imageUploadTrigger, setImageUploadTrigger] = useState(0);
 
   const form = useForm<NewsFormData>({
     resolver: zodResolver(newsSchema),
@@ -82,7 +86,11 @@ const EditNewsPage: React.FC = () => {
         const newsDoc = await getDoc(doc(db, 'news', newsId));
 
         if (!newsDoc.exists()) {
-          alert('News article not found');
+          toast({
+            title: 'Error',
+            description: 'News article not found',
+            variant: 'destructive',
+          });
           router.push('/admin');
           return;
         }
@@ -112,7 +120,11 @@ const EditNewsPage: React.FC = () => {
         }
       } catch (error) {
         console.error('Error fetching news:', error);
-        alert('Failed to load news article');
+        toast({
+          title: 'Error',
+          description: 'Failed to load news article',
+          variant: 'destructive',
+        });
         router.push('/admin');
       } finally {
         setIsFetching(false);
@@ -130,13 +142,21 @@ const EditNewsPage: React.FC = () => {
 
     // Validate file type
     if (!file.type.startsWith('image/')) {
-      alert('Please select an image file');
+      toast({
+        title: 'Error',
+        description: 'Please select an image file',
+        variant: 'destructive',
+      });
       return;
     }
 
     // Validate file size (max 5MB)
     if (file.size > 5 * 1024 * 1024) {
-      alert('Image size must be less than 5MB');
+      toast({
+        title: 'Error',
+        description: 'Image size must be less than 5MB',
+        variant: 'destructive',
+      });
       return;
     }
 
@@ -160,9 +180,14 @@ const EditNewsPage: React.FC = () => {
 
       form.setValue('mainImage', downloadURL);
       setUploadingImage(false);
+      setImageUploadTrigger((prev) => prev + 1);
     } catch (error) {
       console.error('Error uploading image:', error);
-      alert('Failed to upload image. Please try again.');
+      toast({
+        title: 'Error',
+        description: 'Failed to upload image. Please try again.',
+        variant: 'destructive',
+      });
       setUploadingImage(false);
     }
   };
@@ -187,7 +212,11 @@ const EditNewsPage: React.FC = () => {
       router.push('/admin');
     } catch (error) {
       console.error('Error updating news:', error);
-      alert('Failed to update news article. Please try again.');
+      toast({
+        title: 'Error',
+        description: 'Failed to update news article. Please try again.',
+        variant: 'destructive',
+      });
     } finally {
       setIsLoading(false);
     }
@@ -229,6 +258,7 @@ const EditNewsPage: React.FC = () => {
       uploadBytes(imageRef, file)
         .then(() => getDownloadURL(imageRef))
         .then((downloadURL) => {
+          setImageUploadTrigger((prev) => prev + 1);
           resolve(downloadURL);
         })
         .catch((error) => {
@@ -472,17 +502,23 @@ const EditNewsPage: React.FC = () => {
                                         await navigator.clipboard.writeText(
                                           `![Image](${url})`,
                                         );
-                                        alert(
-                                          t(
+                                        toast({
+                                          title: t(
                                             'admin.news.form.imageUploadSuccess',
                                           ),
-                                        );
+                                          variant: 'success',
+                                        });
                                       } catch (error) {
-                                        alert(
-                                          error instanceof Error
-                                            ? error.message
-                                            : t('admin.news.form.uploadFailed'),
-                                        );
+                                        toast({
+                                          title: 'Error',
+                                          description:
+                                            error instanceof Error
+                                              ? error.message
+                                              : t(
+                                                  'admin.news.form.uploadFailed',
+                                                ),
+                                          variant: 'destructive',
+                                        });
                                       }
                                     }
                                   }}
@@ -511,6 +547,12 @@ const EditNewsPage: React.FC = () => {
                 />
               </CardContent>
             </Card>
+
+            {/* Image Management */}
+            <ImageManagement
+              newsId={newsId}
+              onImageUploaded={imageUploadTrigger}
+            />
 
             {/* Publishing Options */}
             <Card className="border-brand-light/30 shadow-lg">
