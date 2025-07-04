@@ -3,8 +3,8 @@
 import React from 'react';
 import { Phone, Calendar } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
 import { Button } from './button';
-import { ReservationModal } from './reservation-modal';
 
 interface CallToActionProps {
   title: string;
@@ -39,15 +39,16 @@ const CallToAction: React.FC<CallToActionProps> = ({
             {/* Action Buttons */}
             <div className="flex flex-col lg:flex-row gap-4 justify-center items-center max-w-2xl mx-auto">
               {/* Reservation Button - Primary CTA */}
-              <ReservationModal>
-                <Button
-                  size="lg"
-                  className="w-full lg:w-auto bg-white text-[#68949B] hover:bg-gray-50 hover:scale-105 transition-all duration-300 shadow-xl border-2 border-white/30 font-bold text-lg px-8 py-4 h-auto"
-                >
+              <Button
+                asChild
+                size="lg"
+                className="w-full lg:w-auto bg-white text-[#68949B] hover:bg-gray-50 hover:scale-105 transition-all duration-300 shadow-xl border-2 border-white/30 font-bold text-lg px-8 py-4 h-auto"
+              >
+                <Link href="/reservation">
                   <Calendar className="w-5 h-5 mr-3" />
                   {t('callToAction.bookOnline')}
-                </Button>
-              </ReservationModal>
+                </Link>
+              </Button>
 
               {/* Divider */}
               <div className="hidden lg:block w-px h-12 bg-white/30"></div>

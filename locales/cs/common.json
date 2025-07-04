@@ -595,10 +595,22 @@
     "title": "Objednat se",
     "subtitle": "Rezervace termínu",
     "description": "Vyplňte formulář níže a my se vám ozveme pro potvrzení termínu.",
+    "reservationDetails": "Detaily rezervace",
+    "reservationDetailsDescription": "Vyplňte prosím formulář níže pro naplánování termínu. Všechna pole označená * jsou povinná.",
+    "whatToExpect": "Co můžete očekávat",
+    "expectationItems": {
+      "confirmationEmail": "Obdržíte potvrzovací e-mail do 24 hodin",
+      "teamContact": "Náš tým vás bude kontaktovat pro potvrzení detailů termínu",
+      "arriveEarly": "Dostavte se prosím 15 minut před termínem",
+      "bringDocuments": "Přineste si pojistnou kartu a relevantní lékařské záznamy"
+    },
+    "needHelp": "Potřebujete pomoc?",
+    "needHelpDescription": "Pokud máte jakékoli dotazy nebo potřebujete pomoc s rezervací, neváhejte nás kontaktovat:",
     "form": {
       "name": "Vaše jméno",
       "namePlaceholder": "Vaše jméno",
       "nameRequired": "Jméno je povinné",
+      "regionCodeRequired": "Kód regionu je povinný",
       "phone": "Telefon",
       "phonePlaceholder": "Telefon",
       "phoneRequired": "Telefon je povinný",
@@ -623,7 +635,8 @@
       "security": "Bezpečnostní ověření",
       "recaptchaRequired": "Prosím dokončete bezpečnostní ověření pro pokračování",
       "submitting": "Odesílání...",
-      "cancel": "Zrušit"
+      "cancel": "Zrušit",
+      "submitError": "Chyba při odesílání rezervace. Zkuste to prosím znovu."
     },
     "timeOptions": {
       "noPreference": "Nerozhonduje",
@@ -645,8 +658,29 @@
       "branch": "Pobočka - Centrum (adresa bude upřesněna)"
     },
     "success": {
-      "title": "Rezervace odeslána",
-      "message": "Děkujeme za vaši rezervaci. Brzy se vám ozveme pro potvrzení termínu."
+      "title": "Rezervace potvrzena!",
+      "subtitle": "Děkujeme za naplánování termínu u nás. Obdrželi jsme vaši rezervaci a brzy vás budeme kontaktovat pro potvrzení detailů.",
+      "whatHappensNext": "Co bude následovat?",
+      "whatHappensNextDescription": "Zde je to, co od nás můžete očekávat v následujících dnech:",
+      "steps": {
+        "confirmationEmail": "Potvrzovací e-mail",
+        "confirmationEmailDescription": "Obdržíte potvrzovací e-mail do 24 hodin s detaily vaší rezervace.",
+        "personalContact": "Osobní kontakt",
+        "personalContactDescription": "Náš tým vám zavolá pro potvrzení času termínu a zodpovězení případných dotazů.",
+        "appointmentReminder": "Připomínka termínu",
+        "appointmentReminderDescription": "Pošleme vám připomínku 24 hodin před naplánovaným termínem."
+      },
+      "importantInformation": "Důležité informace",
+      "importantItems": {
+        "arriveEarly": "Dostavte se prosím 15 minut před termínem",
+        "bringInsurance": "Přineste si pojistnou kartu a platný průkaz totožnosti",
+        "bringRecords": "Pokud máte lékařské záznamy nebo výsledky testů, přineste si je s sebou",
+        "cancellation": "Pokud potřebujete zrušit nebo přeložit termín, kontaktujte nás prosím alespoň 24 hodin předem"
+      },
+      "needToContact": "Potřebujete nás kontaktovat?",
+      "needToContactDescription": "Pokud máte jakékoli dotazy nebo potřebujete změnit termín, neváhejte se ozvat:",
+      "returnHome": "Zpět domů",
+      "viewServices": "Zobrazit naše služby"
     },
     "error": {
       "title": "Chyba při odesílání",

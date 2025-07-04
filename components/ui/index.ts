@@ -18,7 +18,7 @@ export * from './label';
 export * from './map-section';
 export * from './mission-statement';
 export * from './popover';
-export * from './reservation-modal';
+export * from './reservation-form';
 export * from './select';
 export * from './stat-card';
 export * from './stats-section';

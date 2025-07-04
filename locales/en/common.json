@@ -595,10 +595,22 @@
     "title": "Book Appointment",
     "subtitle": "Appointment Reservation",
     "description": "Fill out the form below and we will contact you to confirm your appointment.",
+    "reservationDetails": "Reservation Details",
+    "reservationDetailsDescription": "Please fill out the form below to schedule your appointment. All fields marked with * are required.",
+    "whatToExpect": "What to Expect",
+    "expectationItems": {
+      "confirmationEmail": "You'll receive a confirmation email within 24 hours",
+      "teamContact": "Our team will contact you to confirm your appointment details",
+      "arriveEarly": "Please arrive 15 minutes early for your appointment",
+      "bringDocuments": "Bring your insurance card and any relevant medical records"
+    },
+    "needHelp": "Need Help?",
+    "needHelpDescription": "If you have any questions or need assistance with your reservation, please don't hesitate to contact us:",
     "form": {
       "name": "Your Name",
       "namePlaceholder": "Your name",
       "nameRequired": "Name is required",
+      "regionCodeRequired": "Region code is required",
       "phone": "Phone",
       "phonePlaceholder": "Phone",
       "phoneRequired": "Phone is required",
@@ -623,7 +635,8 @@
       "submitting": "Submitting...",
       "security": "Security Verification",
       "recaptchaRequired": "Please complete the security verification to continue",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "submitError": "Error submitting reservation. Please try again."
     },
     "timeOptions": {
       "noPreference": "No preference",
@@ -645,8 +658,29 @@
       "branch": "Branch Office - Center (address to be specified)"
     },
     "success": {
-      "title": "Reservation Sent",
-      "message": "Thank you for your reservation. We will contact you soon to confirm your appointment."
+      "title": "Reservation Confirmed!",
+      "subtitle": "Thank you for scheduling your appointment with us. We've received your reservation and will contact you soon to confirm the details.",
+      "whatHappensNext": "What Happens Next?",
+      "whatHappensNextDescription": "Here's what you can expect from us in the coming days:",
+      "steps": {
+        "confirmationEmail": "Confirmation Email",
+        "confirmationEmailDescription": "You'll receive a confirmation email within 24 hours with your reservation details.",
+        "personalContact": "Personal Contact",
+        "personalContactDescription": "Our team will call you to confirm your appointment time and answer any questions you may have.",
+        "appointmentReminder": "Appointment Reminder",
+        "appointmentReminderDescription": "We'll send you a reminder 24 hours before your scheduled appointment."
+      },
+      "importantInformation": "Important Information",
+      "importantItems": {
+        "arriveEarly": "Please arrive 15 minutes early for your appointment",
+        "bringInsurance": "Bring your insurance card and a valid ID",
+        "bringRecords": "If you have any medical records or test results, please bring them with you",
+        "cancellation": "If you need to cancel or reschedule, please contact us at least 24 hours in advance"
+      },
+      "needToContact": "Need to Contact Us?",
+      "needToContactDescription": "If you have any questions or need to make changes to your appointment, please don't hesitate to reach out:",
+      "returnHome": "Return to Home",
+      "viewServices": "View Our Services"
     },
     "error": {
       "title": "Submission Error",

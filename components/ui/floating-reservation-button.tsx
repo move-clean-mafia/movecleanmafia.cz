@@ -3,20 +3,21 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
 import { Button } from './button';
-import { ReservationModal } from './reservation-modal';
 
 const FloatingReservationButton: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <div className="fixed bottom-6 right-6 z-[80]">
-      <ReservationModal>
-        <Button
-          className="group relative h-14 w-14 rounded-full bg-gradient-to-br from-[#68949B] to-[#537E86] shadow-2xl hover:shadow-3xl hover:from-[#537E86] hover:to-[#68949B] transition-all duration-300 transform hover:scale-110 border-2 border-white/20 backdrop-blur-sm"
-          size="lg"
-          aria-label={t('callToAction.bookOnline')}
-        >
+      <Button
+        asChild
+        className="group relative h-14 w-14 rounded-full bg-gradient-to-br from-[#68949B] to-[#537E86] shadow-2xl hover:shadow-3xl hover:from-[#537E86] hover:to-[#68949B] transition-all duration-300 transform hover:scale-110 border-2 border-white/20 backdrop-blur-sm"
+        size="lg"
+        aria-label={t('callToAction.bookOnline')}
+      >
+        <Link href="/reservation">
           <Calendar className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
 
           {/* Floating tooltip */}
@@ -27,8 +28,8 @@ const FloatingReservationButton: React.FC = () => {
 
           {/* Pulse animation */}
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#68949B] to-[#537E86] opacity-75 animate-ping"></div>
-        </Button>
-      </ReservationModal>
+        </Link>
+      </Button>
     </div>
   );
 };
