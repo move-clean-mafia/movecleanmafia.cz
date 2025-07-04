@@ -49,7 +49,52 @@
     "preventionTitle": "Prevention",
     "preventionDescription": "Counseling and preventive measures for maintaining respiratory health.",
     "footerCopyright": "© 2024 Pulmonology.cz",
-    "footerTagline": "Specialized Pulmonological Care • Diagnostics • Treatment • Prevention"
+    "footerTagline": "Specialized Pulmonological Care • Diagnostics • Treatment • Prevention",
+    "services": {
+      "title": "Our Key Services",
+      "subtitle": "We specialize in comprehensive pulmonological care using the latest technologies and diagnostic methods."
+    },
+    "team": {
+      "title": "Why Choose Us?",
+      "subtitle": "We combine the expertise of our doctors with state-of-the-art equipment to achieve the best treatment results.",
+      "philosophyTitle": "Our Care Philosophy",
+      "philosophyDescription": "We believe in an individual approach to each patient. We combine the latest technologies with a human approach and create an environment where every patient feels safe and receives the highest quality care.",
+      "viewAllTeam": "Meet Our Full Team"
+    },
+    "features": {
+      "modernEquipment": "State-of-the-Art Equipment",
+      "modernEquipmentDescription": "We have the latest diagnostic and therapeutic devices for precise and efficient examination.",
+      "personalizedCare": "Personalized Care",
+      "personalizedCareDescription": "Every patient is unique to us. We tailor treatment to the specific needs of each patient.",
+      "safeEnvironment": "Safe Environment",
+      "safeEnvironmentDescription": "We maintain the highest standards of hygiene and safety for the comfort and health of our patients."
+    },
+    "testimonials": {
+      "title": "What Our Patients Say",
+      "subtitle": "The trust of our patients is our best recommendation. Read about their experiences with our care.",
+      "patient1": {
+        "name": "Jana Novotná",
+        "comment": "Excellent approach by the doctors and modern equipment. The spirometry examination was quick and professional.",
+        "date": "March 2024"
+      },
+      "patient2": {
+        "name": "Petr Svoboda",
+        "comment": "I finally found a clinic where they really care about me. The doctor explained everything and helped with my breathing problems.",
+        "date": "February 2024"
+      },
+      "patient3": {
+        "name": "Marie Dvořáková",
+        "comment": "The bodyplethysmography was performed very professionally. The staff was kind and the environment pleasant.",
+        "date": "January 2024"
+      }
+    },
+    "news": {
+      "title": "News & Articles",
+      "subtitle": "Stay informed about the latest findings in pulmonology and health tips from our experts.",
+      "viewAllNews": "View All News",
+      "noNews": "No Articles Available",
+      "noNewsDescription": "Currently, there are no published articles available. You will soon find useful information and news here."
+    }
   },
   "accessibility": {
     "switchToCzech": "Switch to Czech",

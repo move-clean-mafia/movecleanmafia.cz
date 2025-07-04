@@ -49,7 +49,52 @@
     "preventionTitle": "Prevence",
     "preventionDescription": "Poradenství a preventivní opatření pro zachování zdraví dýchacích cest.",
     "footerCopyright": "© 2024 Pulmonologie.cz",
-    "footerTagline": "Specializovaná pulmonologická péče • Diagnostika • Léčba • Prevence"
+    "footerTagline": "Specializovaná pulmonologická péče • Diagnostika • Léčba • Prevence",
+    "services": {
+      "title": "Naše klíčové služby",
+      "subtitle": "Specializujeme se na komplexní pulmonologickou péči s využitím nejmodernějších technologií a diagnostických metod."
+    },
+    "team": {
+      "title": "Proč si vybrat nás?",
+      "subtitle": "Kombinujeme odbornost našich lékařů s nejmodernějším vybavením pro dosažení nejlepších výsledků léčby.",
+      "philosophyTitle": "Naše filozofie péče",
+      "philosophyDescription": "Věříme v individuální přístup ke každému pacientovi. Kombinujeme nejmodernější technologie s lidským přístupem a vytváříme prostředí, kde se každý pacient cítí v bezpečí a je mu poskytována péče nejvyšší kvality.",
+      "viewAllTeam": "Poznat celý tým"
+    },
+    "features": {
+      "modernEquipment": "Nejmodernější vybavení",
+      "modernEquipmentDescription": "Disponujeme nejnovějšími diagnostickými a léčebnými přístroji pro přesné a efektivní vyšetření.",
+      "personalizedCare": "Individualizovaná péče",
+      "personalizedCareDescription": "Každý pacient je pro nás jedinečný. Přizpůsobujeme léčbu specifickým potřebám každého pacienta.",
+      "safeEnvironment": "Bezpečné prostředí",
+      "safeEnvironmentDescription": "Dbáme na nejvyšší standardy hygieny a bezpečnosti pro pohodlí a zdraví našich pacientů."
+    },
+    "testimonials": {
+      "title": "Co říkají naši pacienti",
+      "subtitle": "Důvěra našich pacientů je pro nás nejlepším doporučením. Přečtěte si, jaké jsou jejich zkušenosti s naší péčí.",
+      "patient1": {
+        "name": "Jana Novotná",
+        "comment": "Skvělý přístup lékařů a moderní vybavení. Vyšetření spirometrie proběhlo rychle a profesionálně.",
+        "date": "Březen 2024"
+      },
+      "patient2": {
+        "name": "Petr Svoboda",
+        "comment": "Konečně jsem našel kliniku, kde se mi skutečně věnují. Doktor mi vše vysvětlil a pomohl s mými dýchacími problémy.",
+        "date": "Únor 2024"
+      },
+      "patient3": {
+        "name": "Marie Dvořáková",
+        "comment": "Bodypletysmografie byla provedena velmi profesionálně. Personál byl milý a prostředí příjemné.",
+        "date": "Leden 2024"
+      }
+    },
+    "news": {
+      "title": "Novinky a články",
+      "subtitle": "Zůstaňte informováni o nejnovějších poznatcích v pulmonologii a zdravotních tipech od našich odborníků.",
+      "viewAllNews": "Zobrazit všechny novinky",
+      "noNews": "Žádné články k dispozici",
+      "noNewsDescription": "V současné době nejsou k dispozici žádné publikované články. Brzy zde najdete užitečné informace a novinky."
+    }
   },
   "accessibility": {
     "switchToCzech": "Přepnout na češtinu",

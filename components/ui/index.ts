@@ -35,3 +35,7 @@ export * from './news-image';
 export * from './news-detail-image';
 export * from './image-skeleton';
 export * from './clinic-tabs-dynamic';
+export * from './homepage-service-cards';
+export * from './homepage-team-showcase';
+export * from './homepage-testimonials';
+export * from './homepage-recent-news';

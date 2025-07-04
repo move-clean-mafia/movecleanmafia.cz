@@ -9,8 +9,32 @@ import {
   Stethoscope,
   Building2,
   Calendar,
+  Activity,
+  Wind,
+  Zap,
+  Gauge,
+  Moon,
+  Heart,
+  Award,
+  Shield,
 } from 'lucide-react';
-import { CallToAction } from '../../components/ui';
+import {
+  CallToAction,
+  HomepageServiceCards,
+  HomepageTeamShowcase,
+  HomepageTestimonials,
+  HomepageRecentNews,
+} from '../../components/ui';
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  orderBy,
+  limit,
+} from 'firebase/firestore';
+import { db } from '../../firebase';
+import { ClientNewsItem } from '../../lib/admin-utils';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -19,6 +43,178 @@ interface HomePageProps {
 const HomePage = async ({ params }: HomePageProps) => {
   const { locale } = await params;
   const { t } = await getTranslation(locale as SupportedLanguage);
+
+  // Fetch recent news for the homepage
+  let recentNews: ClientNewsItem[] = [];
+  try {
+    const newsQuery = query(
+      collection(db, 'news'),
+      where('published', '==', true),
+      orderBy('publishedAt', 'desc'),
+      limit(3),
+    );
+    const querySnapshot = await getDocs(newsQuery);
+    recentNews = querySnapshot.docs.map((doc) => {
+      const data = doc.data();
+
+      // Convert Firebase Timestamps to ISO strings for client components
+      const convertTimestamp = (timestamp: any) => {
+        if (!timestamp) return null;
+        if (timestamp.toDate && typeof timestamp.toDate === 'function') {
+          return timestamp.toDate().toISOString();
+        }
+        if (timestamp instanceof Date) {
+          return timestamp.toISOString();
+        }
+        if (typeof timestamp === 'string') {
+          return timestamp;
+        }
+        return null;
+      };
+
+      return {
+        id: doc.id,
+        title: data.title || '',
+        content: data.content || '',
+        perex: data.perex || '',
+        mainImage: data.mainImage || '',
+        published: data.published || false,
+        publishedAt: convertTimestamp(data.publishedAt),
+        createdAt: convertTimestamp(data.createdAt),
+        updatedAt: convertTimestamp(data.updatedAt),
+      } as ClientNewsItem;
+    });
+  } catch (error) {
+    console.error('Error fetching recent news:', error);
+    recentNews = [];
+  }
+
+  // Prepare news data for the homepage component
+  const newsForHomepage = recentNews.map((article) => ({
+    id: article.id,
+    title: article.title,
+    perex: article.perex,
+    mainImage: article.mainImage,
+    publishedAt: article.publishedAt || '',
+    formattedDate: article.publishedAt
+      ? new Date(article.publishedAt).toLocaleDateString(locale, {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        })
+      : '',
+  }));
+
+  // Define key services for homepage
+  const keyServices = [
+    {
+      id: 'spirometry',
+      title: t('services.spirometry.title'),
+      description: t('services.spirometry.shortDescription'),
+      icon: Activity,
+      href: `/${locale}/services/spirometry`,
+    },
+    {
+      id: 'bodyplethysmography',
+      title: t('services.bodyplethysmography.title'),
+      description: t('services.bodyplethysmography.shortDescription'),
+      icon: Stethoscope,
+      href: `/${locale}/services/bodyplethysmography`,
+    },
+    {
+      id: 'feno-analyzer',
+      title: t('services.fenoAnalyzer.title'),
+      description: t('services.fenoAnalyzer.shortDescription'),
+      icon: Wind,
+      href: `/${locale}/services/feno-analyzer`,
+    },
+    {
+      id: 'oscillometry',
+      title: t('services.oscillometry.title'),
+      description: t('services.oscillometry.shortDescription'),
+      icon: Zap,
+      href: `/${locale}/services/oscillometry`,
+    },
+    {
+      id: 'breath-co-analyzer',
+      title: t('services.breathCoAnalyzer.title'),
+      description: t('services.breathCoAnalyzer.shortDescription'),
+      icon: Gauge,
+      href: `/${locale}/services/breath-co-analyzer`,
+    },
+    {
+      id: 'sleep-study',
+      title: t('services.sleepStudy.title'),
+      description: t('services.sleepStudy.shortDescription'),
+      icon: Moon,
+      href: `/${locale}/services/sleep-study`,
+    },
+  ];
+
+  // Define team members for homepage
+  const keyDoctors = [
+    {
+      name: 'MUDr. Jurij Didyk',
+      specialty: t('ourTeam.pulmonologistAllergist'),
+      experience: t('ourTeam.jurij15Years'),
+      imageSrc:
+        'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+    },
+    {
+      name: 'MUDr. Ala Stelmashok',
+      specialty: t('ourTeam.allergySpecialist'),
+      experience: t('ourTeam.ala12Years'),
+      imageSrc:
+        'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+    },
+  ];
+
+  // Define clinic features for homepage
+  const clinicFeatures = [
+    {
+      icon: Award,
+      title: t('homepage.features.modernEquipment'),
+      description: t('homepage.features.modernEquipmentDescription'),
+    },
+    {
+      icon: Heart,
+      title: t('homepage.features.personalizedCare'),
+      description: t('homepage.features.personalizedCareDescription'),
+    },
+    {
+      icon: Shield,
+      title: t('homepage.features.safeEnvironment'),
+      description: t('homepage.features.safeEnvironmentDescription'),
+    },
+  ];
+
+  // Define testimonials for homepage
+  const testimonials = [
+    {
+      id: '1',
+      name: t('homepage.testimonials.patient1.name'),
+      rating: 5,
+      comment: t('homepage.testimonials.patient1.comment'),
+      service: t('services.spirometry.title'),
+      date: t('homepage.testimonials.patient1.date'),
+    },
+    {
+      id: '2',
+      name: t('homepage.testimonials.patient2.name'),
+      rating: 5,
+      comment: t('homepage.testimonials.patient2.comment'),
+      service: t('services.consultation'),
+      date: t('homepage.testimonials.patient2.date'),
+    },
+    {
+      id: '3',
+      name: t('homepage.testimonials.patient3.name'),
+      rating: 5,
+      comment: t('homepage.testimonials.patient3.comment'),
+      service: t('services.bodyplethysmography.title'),
+      date: t('homepage.testimonials.patient3.date'),
+    },
+  ];
 
   return (
     <div className="min-h-screen">
@@ -216,6 +412,47 @@ const HomePage = async ({ params }: HomePageProps) => {
           </div>
         </div>
       </section>
+
+      {/* Block 2: Our Key Services */}
+      <HomepageServiceCards
+        locale={locale}
+        services={keyServices}
+        title={t('homepage.services.title')}
+        subtitle={t('homepage.services.subtitle')}
+        learnMoreText={t('services.learnMore')}
+      />
+
+      {/* Block 3: Why Choose Us? (Technology and Team) */}
+      <HomepageTeamShowcase
+        locale={locale}
+        doctors={keyDoctors}
+        title={t('homepage.team.title')}
+        subtitle={t('homepage.team.subtitle')}
+        philosophyTitle={t('homepage.team.philosophyTitle')}
+        philosophyDescription={t('homepage.team.philosophyDescription')}
+        viewAllTeamText={t('homepage.team.viewAllTeam')}
+        features={clinicFeatures}
+      />
+
+      {/* Block 4: Testimonials From Our Patients */}
+      <HomepageTestimonials
+        testimonials={testimonials}
+        title={t('homepage.testimonials.title')}
+        subtitle={t('homepage.testimonials.subtitle')}
+      />
+
+      {/* Block 5: News & Articles */}
+      <HomepageRecentNews
+        locale={locale}
+        news={newsForHomepage}
+        title={t('homepage.news.title')}
+        subtitle={t('homepage.news.subtitle')}
+        readMoreText={t('news.readMore')}
+        viewAllNewsText={t('homepage.news.viewAllNews')}
+        publishedText={t('news.published')}
+        noNewsText={t('homepage.news.noNews')}
+        noNewsDescription={t('homepage.news.noNewsDescription')}
+      />
 
       {/* Call to Action Section */}
       <section className="py-20 bg-gradient-to-br from-brand-light/5 to-brand-primary/5">
