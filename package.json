@@ -28,6 +28,7 @@
     "@radix-ui/react-toast": "^1.2.14",
     "@react-google-maps/api": "^2.20.7",
     "@uiw/react-md-editor": "^4.0.7",
+    "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "2.1.1",

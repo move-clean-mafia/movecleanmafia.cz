@@ -10,7 +10,7 @@ const FloatingReservationButton: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-6 right-6 z-[80]">
       <ReservationModal>
         <Button
           className="group relative h-14 w-14 rounded-full bg-gradient-to-br from-[#68949B] to-[#537E86] shadow-2xl hover:shadow-3xl hover:from-[#537E86] hover:to-[#68949B] transition-all duration-300 transform hover:scale-110 border-2 border-white/20 backdrop-blur-sm"
