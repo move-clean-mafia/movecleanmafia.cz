@@ -166,7 +166,7 @@ export const Footer: React.FC = () => {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href={`/${locale}/privacy-policy`}
+                    href={`/${locale}/privacy`}
                     className="text-sm text-gray-600 hover:text-teal-600 transition-colors duration-200"
                   >
                     {t('footer.privacyPolicy')}

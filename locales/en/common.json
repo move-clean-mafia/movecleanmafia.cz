@@ -690,5 +690,75 @@
       "notice": "Your personal data will be used only for the purpose of resolving your inquiry or appointment.",
       "policyLink": "Privacy Policy"
     }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Information on Personal Data Processing under GDPR",
+    "description": "According to Regulation (EU) 2016/679 of the European Parliament and of the Council on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and the instruction of data subjects",
+    "gdprNotice": "According to Regulation (EU) 2016/679 of the European Parliament and of the Council on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and the instruction of data subjects (hereinafter referred to as \\\"GDPR\\\"), Kvalident s.r.o. hereby informs you, in accordance with Article 12 of the GDPR, about the processing of your personal data and your rights.",
+    "dataProcessingScope": {
+      "title": "Scope of Personal Data Processing",
+      "content": "Personal data is processed to the extent that the respective data subject has provided it to the controller in connection with the conclusion of a contractual or other legal relationship with the controller, or that the controller has otherwise collected and processes in accordance with applicable legal regulations to the extent necessary to fulfill the purpose for which the personal data is processed."
+    },
+    "dataSources": {
+      "title": "Sources of Personal Data",
+      "intro": "Personal data is primarily obtained by the controller in the following ways:",
+      "items": [
+        "Directly from data subjects, particularly during registration, in connection with the provision of healthcare services and the maintenance of medical documentation",
+        "Orally, in writing, via email, by phone, through websites, contact forms, business cards, etc.",
+        "Otherwise, especially from publicly accessible registers, lists, and records, from business relationships, or from cooperating entities based on contractual relationships, etc."
+      ]
+    },
+    "dataSubjectCategories": {
+      "title": "Categories of Data Subjects",
+      "intro": "A data subject may be a natural or legal person, in particular:",
+      "items": [
+        "A patient",
+        "A client of the controller",
+        "An employee of the controller, a job applicant",
+        "A service provider",
+        "Another person who is in a contractual relationship with the controller",
+        "Persons authorized to access medical documentation",
+        "Etc."
+      ]
+    },
+    "recipientCategories": {
+      "title": "Categories of Personal Data Recipients",
+      "intro": "The data controller is authorized to provide personal data especially to the following recipients:",
+      "items": [
+        "Insurance companies",
+        "Providers of healthcare and social services",
+        "Patients",
+        "Public institutions",
+        "State and other authorities within the scope of fulfilling legal obligations under relevant legal regulations",
+        "Persons in a contractual relationship",
+        "Other recipients (e.g., transfer of personal data abroad – EU countries)"
+      ]
+    },
+    "processingPurpose": {
+      "title": "Purpose of Personal Data Processing",
+      "intro": "The controller processes personal data primarily for the following purposes:",
+      "items": [
+        "For the purpose contained within the consent of the data subject",
+        "The specific purpose is specified according to the nature and scope of the transfer in the relevant consent text with which the data subject is acquainted",
+        "Within business relationships and negotiations of contractual relationships, contract fulfillment",
+        "The purpose of processing personal data is the adequate fulfillment of the subject matter of the contract and cooperation with the contractual party, this mainly involves email addresses, names, and surnames of contact persons",
+        "For the purpose of protecting the rights of the controller, recipient, or other affected persons (e.g., legal disputes, CCTV recordings for property protection)",
+        "For the purpose of maintaining archives based on law and the controller's internal regulations",
+        "For the purpose of personnel administration",
+        "Conclusion of an employment relationship, maintenance of a personnel file",
+        "In dealings before public administration bodies",
+        "For the purpose of fulfilling the controller's legal obligations",
+        "For the purpose of protecting the vital interests of the data subject"
+      ]
+    },
+    "retentionPeriod": {
+      "title": "Retention Period of Personal Data",
+      "content": "In accordance with the periods specified in the relevant legal regulations, the relevant contracts, and the controller's filing and shredding regulations. This is for the period necessary to ensure the rights and obligations arising from the contractual relationship and from the relevant legal regulations, and also for the duration of the granted consent to process personal data."
+    },
+    "contactInfo": {
+      "title": "Contact Information",
+      "description": "If you have any questions regarding the processing of personal data, please contact us:"
+    }
   }
 }

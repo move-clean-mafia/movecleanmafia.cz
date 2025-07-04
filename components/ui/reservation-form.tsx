@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { format } from 'date-fns';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 import {
   Form,
@@ -75,6 +75,8 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
 }) => {
   const { t } = useTranslation();
   const router = useRouter();
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1] || 'cs';
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const reservationSchema = createReservationSchema(t);
@@ -432,10 +434,15 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
         {/* Privacy Notice */}
         <div className="bg-gray-50 rounded-lg p-4 text-sm text-gray-600">
           <p>
-            {t('reservation.privacy.notice')}{' '}
-            <span className="text-brand-primary underline cursor-pointer">
-              {t('reservation.privacy.policyLink')}
-            </span>
+            {t('reservation.privacyNotice.notice')}{' '}
+            <a
+              href={`/${locale}/privacy`}
+              className="text-brand-primary underline hover:text-brand-secondary transition-colors duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('reservation.privacyNotice.policyLink')}
+            </a>
           </p>
         </div>
 

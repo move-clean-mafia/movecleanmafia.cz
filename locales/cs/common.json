@@ -686,9 +686,79 @@
       "title": "Chyba při odesílání",
       "message": "Omlouváme se, ale při odesílání rezervace došlo k chybě. Zkuste to prosím znovu."
     },
-    "privacy": {
+    "privacyNotice": {
       "notice": "Vaše osobní údaje budou použity pouze pro účely vyřešení vašeho dotazu případně objednání.",
       "policyLink": "Zásady zpracování osobních údajů"
+    }
+  },
+  "privacy": {
+    "title": "Zásady ochrany osobních údajů",
+    "subtitle": "Informace o zpracování osobních údajů dle GDPR",
+    "description": "Dle nařízení Evropského parlamentu a Rady (EU) 2016/679 o ochraně fyzických osob v souvislosti se zpracováním osobních údajů a poučení subjektů údajů",
+    "gdprNotice": "Dle nařízení Evropského parlamentu a Rady (EU) 2016/679 o ochraně fyzických osob v souvislosti se zpracováním osobních údajů a poučení subjektů údajů (dále jen \"GDPR\") Kvalident s.r.o. Vás tímto v souladu s čl. 12 GDPR informuje o zpracování Vašich osobních údajů a o Vašich právech.",
+    "dataProcessingScope": {
+      "title": "Rozsah zpracování osobních údajů",
+      "content": "Osobní údaje jsou zpracovány v rozsahu, v jakém je příslušný subjekt údajů správci poskytl, a to v souvislosti s uzavřením smluvního či jiného právního vztahu se správcem, nebo které správce shromáždil jinak a zpracovává je v souladu s platnými právními předpisy v rozsahu nezbytně nutném pro splnění účelu, pro který jsou osobní údaje zpracovávány."
+    },
+    "dataSources": {
+      "title": "Zdroje osobních údajů",
+      "intro": "Osobní údaje jsou správcem získávány zejména následujícím způsobem:",
+      "items": [
+        "od subjektů údajů zejména v rámci registrace, v souvislosti s poskytováním zdravotních služeb a vedením zdravotnické dokumentace",
+        "formou ústní, písemnou, e-maily, telefonicky, webové stránky, kontaktní formuláře, vizitky aj.",
+        "jiným způsobem zejména z veřejně přístupných rejstříků, seznamů a evidencí, z obchodních vztahů, vztahů spolupracujících subjektů na základě smluvních vztahů apod."
+      ]
+    },
+    "dataSubjectCategories": {
+      "title": "Kategorie subjektů údajů",
+      "intro": "Subjektem údajů může být fyzická či právnická osoba, a to zejména:",
+      "items": [
+        "pacient",
+        "klient správce",
+        "zaměstnanec správce, uchazeč o zaměstnání",
+        "dodavatel služby",
+        "jiná osoba, která je ve smluvním vztahu ke správci",
+        "osoby s oprávněním přístupu do zdravotnické dokumentace",
+        "apod."
+      ]
+    },
+    "recipientCategories": {
+      "title": "Kategorie příjemců osobních údajů",
+      "intro": "Správce údajů je oprávněn poskytovat osobní údaje zejména těmto příjemcům:",
+      "items": [
+        "pojišťovnám",
+        "poskytovatelům zdravotních a sociálních služeb",
+        "pacientům",
+        "veřejným ústavům",
+        "státním a jiným orgánům v rámci plnění zákonných povinností stanovených příslušnými právními předpisy",
+        "osobám ve smluvním vztahu",
+        "dalším příjemcům (např. předání osobních údajů do zahraničí – státy EU)"
+      ]
+    },
+    "processingPurpose": {
+      "title": "Účel zpracování osobních údajů",
+      "intro": "Správce zpracovává osobní údaje zejména z následujících důvodů:",
+      "items": [
+        "za účelem obsaženým v rámci souhlasu subjektu údajů",
+        "konkrétní účel je specifikován podle povahy a rozsahu předávání v příslušném textu souhlasu, se kterým je subjekt údajů seznámen",
+        "v rámci obchodních vztahů a jednání o smluvním vztahu, plnění smlouvy",
+        "účelem zpracování osobních údajů je adekvátní plnění předmětu smlouvy a spolupráce se smluvní stranou, jedná se zejména o e-mailové adresy, jména a příjmení kontaktních osob",
+        "za účelem ochrany práv správce, příjemce nebo jiných dotčených osob (např. soudní spory, záznamy kamerového systému pro ochranu majetku správce)",
+        "za účelem vedení archivnictví na základě zákona a vnitřních předpisů správce",
+        "za účelem vedení personální agendy",
+        "uzavření pracovněprávního vztahu, vedení personálního spisu",
+        "v rámci jednání před orgány státní správy",
+        "za účelem plnění zákonných povinností ze strany správce",
+        "za účelem ochrany životně důležitých zájmů subjektu údajů"
+      ]
+    },
+    "retentionPeriod": {
+      "title": "Doba zpracování osobních údajů",
+      "content": "V souladu se lhůtami uvedenými v příslušných právních předpisech, příslušných smlouvách, ve spisovém a skartačním řádu správce. Jde o dobu nezbytně nutnou k zajištění práv a povinností plynoucích jak ze závazkového vztahu, tak i z příslušných právních předpisů a dále po dobu udělení souhlasu o zpracování osobních údajů."
+    },
+    "contactInfo": {
+      "title": "Kontaktní informace",
+      "description": "Pokud máte jakékoli dotazy ohledně zpracování osobních údajů, kontaktujte nás:"
     }
   }
 }
