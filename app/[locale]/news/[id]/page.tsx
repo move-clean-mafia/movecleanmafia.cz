@@ -12,8 +12,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import ShareButton from '../../../../components/ui/share-button';
-import { CallToAction, RelatedArticles } from '@/components/ui';
-import Image from 'next/image';
+import {
+  CallToAction,
+  RelatedArticles,
+  NewsDetailImage,
+} from '@/components/ui';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 
@@ -70,16 +73,7 @@ const NewsDetailPage = async ({ params }: NewsDetailPageProps) => {
         {/* Article Header */}
         <Card className="border-brand-light/30 shadow-xl overflow-hidden mb-12 bg-white/80 backdrop-blur-sm">
           {article.mainImage && (
-            <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden">
-              <Image
-                src={article.mainImage}
-                alt={article.title}
-                fill
-                className="w-full h-full object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
-            </div>
+            <NewsDetailImage src={article.mainImage} alt={article.title} />
           )}
 
           <CardContent className="p-8 md:p-12">

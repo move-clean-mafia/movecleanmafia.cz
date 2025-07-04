@@ -63,9 +63,30 @@ export const formatDate = (
   locale: string = 'cs',
 ): string => {
   if (!timestamp) return '';
-  const dateObj =
-    timestamp instanceof Timestamp ? timestamp.toDate() : new Date(timestamp);
-  return format(dateObj, formatString, { locale: getDateLocale(locale) });
+
+  try {
+    let dateObj: Date;
+
+    if (timestamp instanceof Timestamp) {
+      dateObj = timestamp.toDate();
+    } else if (timestamp instanceof Date) {
+      dateObj = timestamp;
+    } else if (typeof timestamp === 'string') {
+      dateObj = new Date(timestamp);
+    } else {
+      return '';
+    }
+
+    // Validate that the date is valid
+    if (isNaN(dateObj.getTime())) {
+      return '';
+    }
+
+    return format(dateObj, formatString, { locale: getDateLocale(locale) });
+  } catch (error) {
+    console.error('Error formatting date:', error);
+    return '';
+  }
 };
 
 export const formatTime = (
@@ -85,15 +106,36 @@ export const formatDateTime = (
 // Legacy function for backward compatibility - uses old format
 export const formatDateLegacy = (timestamp: FirebaseTimestamp): string => {
   if (!timestamp) return 'N/A';
-  const date =
-    timestamp instanceof Timestamp ? timestamp.toDate() : new Date(timestamp);
-  return date.toLocaleDateString('cs-CZ', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  });
+
+  try {
+    let date: Date;
+
+    if (timestamp instanceof Timestamp) {
+      date = timestamp.toDate();
+    } else if (timestamp instanceof Date) {
+      date = timestamp;
+    } else if (typeof timestamp === 'string') {
+      date = new Date(timestamp);
+    } else {
+      return 'N/A';
+    }
+
+    // Validate that the date is valid
+    if (isNaN(date.getTime())) {
+      return 'N/A';
+    }
+
+    return date.toLocaleDateString('cs-CZ', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  } catch (error) {
+    console.error('Error formatting legacy date:', error);
+    return 'N/A';
+  }
 };
 
 export interface Reservation {
@@ -122,4 +164,17 @@ export interface NewsItem {
   publishedAt: FirebaseTimestamp;
   createdAt: FirebaseTimestamp;
   updatedAt: FirebaseTimestamp;
+}
+
+// Interface for client-side news items (with ISO string timestamps)
+export interface ClientNewsItem {
+  id: string;
+  title: string;
+  content: string;
+  perex: string;
+  mainImage: string;
+  published: boolean;
+  publishedAt: string | null;
+  createdAt: string | null;
+  updatedAt: string | null;
 }

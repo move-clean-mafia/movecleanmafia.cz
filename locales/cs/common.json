@@ -311,7 +311,16 @@
     "published": "Publikováno",
     "relatedArticles": "Související články",
     "relatedArticlesDescription": "Objevte další zajímavé články z naší kliniky",
-    "viewAllNews": "Zobrazit všechny novinky"
+    "viewAllNews": "Zobrazit všechny novinky",
+    "pagination": {
+      "previous": "Předchozí",
+      "next": "Další",
+      "page": "Stránka",
+      "of": "z",
+      "showing": "Zobrazeno",
+      "to": "až",
+      "results": "výsledků"
+    }
   },
   "contact": {
     "title": "Kontakt",

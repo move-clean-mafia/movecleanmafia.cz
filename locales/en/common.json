@@ -311,7 +311,16 @@
     "published": "Published",
     "relatedArticles": "Related Articles",
     "relatedArticlesDescription": "Discover more interesting articles from our clinic",
-    "viewAllNews": "View All News"
+    "viewAllNews": "View All News",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "page": "Page",
+      "of": "of",
+      "showing": "Showing",
+      "to": "to",
+      "results": "results"
+    }
   },
   "contact": {
     "title": "Contact",
