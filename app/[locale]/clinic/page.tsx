@@ -8,6 +8,7 @@ import {
   FeatureCard,
   Card,
   CardContent,
+  CallToAction,
 } from '../../../components/ui';
 
 interface ClinicPageProps {
@@ -56,7 +57,7 @@ const ClinicPage = async ({ params }: ClinicPageProps) => {
         ))}
       </div>
 
-      <Card className="bg-gradient-to-r from-teal-50 to-blue-50 border-0">
+      <Card className="bg-gradient-to-r from-teal-50 to-blue-50 border-0 mb-16">
         <CardContent className="p-8">
           <div className="text-center">
             <div className="flex justify-center items-center mb-4">
@@ -76,6 +77,12 @@ const ClinicPage = async ({ params }: ClinicPageProps) => {
           </div>
         </CardContent>
       </Card>
+      <section className="relative">
+        <CallToAction
+          title={t('contact.haveQuestions')}
+          description={t('contact.contactUsDescription')}
+        />
+      </section>
     </div>
   );
 };

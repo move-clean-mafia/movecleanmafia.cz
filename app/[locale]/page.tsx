@@ -2,7 +2,12 @@ import React from 'react';
 import { getTranslation } from '../../lib/i18n-server';
 import { type SupportedLanguage } from '../../lib/i18n';
 import { CheckCircle, Heart, BookOpen } from 'lucide-react';
-import { HeroSection, ContentCard, FeatureCard } from '../../components/ui';
+import {
+  HeroSection,
+  ContentCard,
+  FeatureCard,
+  CallToAction,
+} from '../../components/ui';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -52,7 +57,7 @@ const HomePage = async ({ params }: HomePageProps) => {
         </p>
       </ContentCard>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         {features.map((feature, index) => (
           <FeatureCard
             key={index}
@@ -64,6 +69,12 @@ const HomePage = async ({ params }: HomePageProps) => {
           />
         ))}
       </div>
+      <section className="relative">
+        <CallToAction
+          title={t('contact.haveQuestions')}
+          description={t('contact.contactUsDescription')}
+        />
+      </section>
     </div>
   );
 };
