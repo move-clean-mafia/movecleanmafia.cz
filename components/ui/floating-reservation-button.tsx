@@ -19,6 +19,7 @@ const FloatingReservationButton: React.FC = () => {
         >
           <Calendar className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
 
+          {/* Floating tooltip */}
           <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
             {t('callToAction.bookOnline')}
             <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-0 h-0 border-t-4 border-b-4 border-l-4 border-transparent border-l-gray-900"></div>
