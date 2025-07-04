@@ -175,6 +175,7 @@ const ImageManagement: React.FC<ImageManagementProps> = ({
             {t('admin.news.form.uploadedImages')}
           </h3>
           <Button
+            type="button"
             variant="outline"
             size="sm"
             onClick={loadImages}
@@ -242,6 +243,7 @@ const ImageManagement: React.FC<ImageManagementProps> = ({
                     {/* Action Buttons */}
                     <div className="flex gap-2 mt-3">
                       <Button
+                        type="button"
                         variant="outline"
                         size="sm"
                         onClick={() => handleCopyUrl(image.url)}
@@ -251,6 +253,7 @@ const ImageManagement: React.FC<ImageManagementProps> = ({
                         {t('admin.news.form.copyUrl')}
                       </Button>
                       <Button
+                        type="button"
                         variant="outline"
                         size="sm"
                         onClick={() =>
@@ -262,6 +265,7 @@ const ImageManagement: React.FC<ImageManagementProps> = ({
                         {t('admin.news.form.copyMarkdown')}
                       </Button>
                       <Button
+                        type="button"
                         variant="outline"
                         size="sm"
                         onClick={() => handleDeleteImage(image.name)}

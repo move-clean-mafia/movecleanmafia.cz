@@ -25,3 +25,4 @@ export * from './stats-section';
 export * from './team-card';
 export * from './team-member';
 export * from './textarea';
+export * from './share-button';

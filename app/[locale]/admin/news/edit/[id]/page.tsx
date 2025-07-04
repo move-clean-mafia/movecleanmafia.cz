@@ -41,7 +41,7 @@ import { useToast } from '../../../../../../components/ui/use-toast';
 
 const newsSchema = z.object({
   title: z.string().min(1, 'Title is required').max(200, 'Title is too long'),
-  perex: z.string().min(1, 'Perex is required').max(300, 'Perex is too long'),
+  perex: z.string().optional(),
   content: z.string().min(1, 'Content is required'),
   mainImage: z.string().min(1, 'Main image is required'),
   published: z.boolean(),
