@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { deleteDoc, doc } from 'firebase/firestore';
+import { deleteDoc, doc, Timestamp } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
@@ -94,13 +94,21 @@ const NewsManagement: React.FC<NewsManagementProps> = ({
     // Apply sorting
     if (sortField) {
       filtered.sort((a, b) => {
-        let aValue = a[sortField];
-        let bValue = b[sortField];
+        let aValue: any = a[sortField];
+        let bValue: any = b[sortField];
 
         // Handle date sorting
         if (sortField === 'createdAt' || sortField === 'updatedAt') {
-          aValue = aValue?.toDate ? aValue.toDate() : new Date(aValue);
-          bValue = bValue?.toDate ? bValue.toDate() : new Date(bValue);
+          const aDate =
+            aValue instanceof Timestamp
+              ? aValue.toDate()
+              : new Date(aValue || 0);
+          const bDate =
+            bValue instanceof Timestamp
+              ? bValue.toDate()
+              : new Date(bValue || 0);
+          aValue = aDate;
+          bValue = bDate;
         }
 
         // Handle boolean sorting (published)
@@ -114,6 +122,11 @@ const NewsManagement: React.FC<NewsManagementProps> = ({
           aValue = aValue.toLowerCase();
           bValue = bValue.toLowerCase();
         }
+
+        // Handle null/undefined values
+        if (!aValue && !bValue) return 0;
+        if (!aValue) return sortDirection === 'asc' ? -1 : 1;
+        if (!bValue) return sortDirection === 'asc' ? 1 : -1;
 
         if (aValue < bValue) return sortDirection === 'asc' ? -1 : 1;
         if (aValue > bValue) return sortDirection === 'asc' ? 1 : -1;

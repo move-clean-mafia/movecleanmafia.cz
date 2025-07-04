@@ -1,4 +1,10 @@
 import { TFunction } from 'i18next';
+import { format } from 'date-fns';
+import { cs, enUS } from 'date-fns/locale';
+import { Timestamp } from 'firebase/firestore';
+
+// Type for Firebase timestamp or Date
+export type FirebaseTimestamp = Timestamp | Date | string | null | undefined;
 
 export const translateServiceType = (
   serviceType: string,
@@ -47,9 +53,40 @@ export const translateStatus = (status: string, t: TFunction): string => {
   return statusMap[status] || status;
 };
 
-export const formatDate = (timestamp: any): string => {
+export const getDateLocale = (locale: string) => {
+  return locale === 'cs' ? cs : enUS;
+};
+
+export const formatDate = (
+  timestamp: FirebaseTimestamp,
+  formatString: string = 'PPP',
+  locale: string = 'cs',
+): string => {
+  if (!timestamp) return '';
+  const dateObj =
+    timestamp instanceof Timestamp ? timestamp.toDate() : new Date(timestamp);
+  return format(dateObj, formatString, { locale: getDateLocale(locale) });
+};
+
+export const formatTime = (
+  timestamp: FirebaseTimestamp,
+  locale: string = 'cs',
+): string => {
+  return formatDate(timestamp, 'HH:mm', locale);
+};
+
+export const formatDateTime = (
+  timestamp: FirebaseTimestamp,
+  locale: string = 'cs',
+): string => {
+  return formatDate(timestamp, 'PPP HH:mm', locale);
+};
+
+// Legacy function for backward compatibility - uses old format
+export const formatDateLegacy = (timestamp: FirebaseTimestamp): string => {
   if (!timestamp) return 'N/A';
-  const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+  const date =
+    timestamp instanceof Timestamp ? timestamp.toDate() : new Date(timestamp);
   return date.toLocaleDateString('cs-CZ', {
     year: 'numeric',
     month: 'short',
@@ -68,9 +105,9 @@ export interface Reservation {
   preferredTime: string;
   serviceType: string;
   clinic: string;
-  reservationDate: any;
+  reservationDate: FirebaseTimestamp;
   status: 'pending' | 'confirmed' | 'cancelled' | 'completed';
-  createdAt: any;
+  createdAt: FirebaseTimestamp;
   userAgent: string;
   ip: string;
 }
@@ -82,7 +119,7 @@ export interface NewsItem {
   perex: string;
   mainImage: string;
   published: boolean;
-  publishedAt: any;
-  createdAt: any;
-  updatedAt: any;
+  publishedAt: FirebaseTimestamp;
+  createdAt: FirebaseTimestamp;
+  updatedAt: FirebaseTimestamp;
 }

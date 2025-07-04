@@ -3,7 +3,7 @@ import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
 import { collection, getDocs, query, where, orderBy } from 'firebase/firestore';
 import { db } from '../../../firebase';
-import { NewsItem } from '../../../lib/admin-utils';
+import { NewsItem, formatDate } from '../../../lib/admin-utils';
 import {
   Card,
   CardContent,
@@ -40,16 +40,6 @@ const NewsPage = async ({ params }: NewsPageProps) => {
   } catch (error) {
     console.error('Error fetching news:', error);
   }
-
-  const formatDate = (date: any) => {
-    if (!date) return '';
-    const dateObj = date?.toDate ? date.toDate() : new Date(date);
-    return dateObj.toLocaleDateString(locale, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">
@@ -112,7 +102,7 @@ const NewsPage = async ({ params }: NewsPageProps) => {
                     </Badge>
                     <div className="flex items-center gap-1 text-sm text-brand-text">
                       <Clock className="w-3 h-3" />
-                      {formatDate(article.publishedAt)}
+                      {formatDate(article.publishedAt, 'PPP', locale)}
                     </div>
                   </div>
                   <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-brand-primary transition-colors line-clamp-2">

@@ -308,7 +308,10 @@
     "noArticlesDescription": "We're working on bringing you the latest news and updates. Check back soon!",
     "readMore": "Read More",
     "backToNews": "Back to News",
-    "published": "Published"
+    "published": "Published",
+    "relatedArticles": "Related Articles",
+    "relatedArticlesDescription": "Discover more interesting articles from our clinic",
+    "viewAllNews": "View All News"
   },
   "contact": {
     "title": "Contact",

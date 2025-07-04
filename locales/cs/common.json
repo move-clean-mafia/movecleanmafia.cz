@@ -308,7 +308,10 @@
     "noArticlesDescription": "Pracujeme na tom, abychom vám přinesli nejnovější zprávy a aktuality. Zkontrolujte to brzy!",
     "readMore": "Číst více",
     "backToNews": "Zpět na novinky",
-    "published": "Publikováno"
+    "published": "Publikováno",
+    "relatedArticles": "Související články",
+    "relatedArticlesDescription": "Objevte další zajímavé články z naší kliniky",
+    "viewAllNews": "Zobrazit všechny novinky"
   },
   "contact": {
     "title": "Kontakt",

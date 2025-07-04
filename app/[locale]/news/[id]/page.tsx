@@ -3,7 +3,7 @@ import { getTranslation } from '../../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../../lib/i18n';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../../../firebase';
-import { NewsItem } from '../../../../lib/admin-utils';
+import { NewsItem, formatDate, formatTime } from '../../../../lib/admin-utils';
 import { Card, CardContent } from '../../../../components/ui/card';
 import { Button } from '../../../../components/ui/button';
 import { Badge } from '../../../../components/ui/badge';
@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import ShareButton from '../../../../components/ui/share-button';
-import { CallToAction } from '@/components/ui';
+import { CallToAction, RelatedArticles } from '@/components/ui';
 import Image from 'next/image';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -44,40 +44,22 @@ const NewsDetailPage = async ({ params }: NewsDetailPageProps) => {
     notFound();
   }
 
-  const formatDate = (date: any) => {
-    if (!date) return '';
-    const dateObj = date?.toDate ? date.toDate() : new Date(date);
-    return dateObj.toLocaleDateString(locale, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  };
-
-  const formatTime = (date: any) => {
-    if (!date) return '';
-    const dateObj = date?.toDate ? date.toDate() : new Date(date);
-    return dateObj.toLocaleTimeString(locale, {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-brand-light to-brand-primary rounded-full blur-3xl"></div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
+      {/* Enhanced Background Pattern */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-brand-light to-brand-primary rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-brand-secondary to-brand-primary rounded-full blur-3xl opacity-30"></div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         {/* Back Button */}
         <div className="mb-8">
           <Link href="/news">
             <Button
               variant="outline"
-              className="border-brand-light/50 text-brand-text hover:border-brand-primary hover:text-brand-primary"
+              className="border-brand-light/50 text-brand-text hover:border-brand-primary hover:text-brand-primary hover:bg-brand-primary/5 transition-all duration-300 shadow-sm hover:shadow-md"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               {t('news.backToNews')}
@@ -86,9 +68,9 @@ const NewsDetailPage = async ({ params }: NewsDetailPageProps) => {
         </div>
 
         {/* Article Header */}
-        <Card className="border-brand-light/30 shadow-lg overflow-hidden mb-8">
+        <Card className="border-brand-light/30 shadow-xl overflow-hidden mb-12 bg-white/80 backdrop-blur-sm">
           {article.mainImage && (
-            <div className="relative h-64 md:h-80 overflow-hidden">
+            <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden">
               <Image
                 src={article.mainImage}
                 alt={article.title}
@@ -96,41 +78,41 @@ const NewsDetailPage = async ({ params }: NewsDetailPageProps) => {
                 className="w-full h-full object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
             </div>
           )}
 
-          <CardContent className="p-8">
+          <CardContent className="p-8 md:p-12">
             {/* Meta Information */}
-            <div className="flex flex-wrap items-center gap-4 mb-6">
+            <div className="flex flex-wrap items-center gap-4 mb-8">
               <Badge
                 variant="outline"
-                className="border-brand-primary/30 text-brand-primary"
+                className="border-brand-primary/30 text-brand-primary bg-brand-primary/5"
               >
                 {t('news.published')}
               </Badge>
               <div className="flex items-center gap-1 text-sm text-brand-text">
                 <Calendar className="w-4 h-4" />
-                {formatDate(article.publishedAt)}
+                {formatDate(article.publishedAt, 'PPP', locale)}
               </div>
               <div className="flex items-center gap-1 text-sm text-brand-text">
                 <Clock className="w-4 h-4" />
-                {formatTime(article.publishedAt)}
+                {formatTime(article.publishedAt, locale)}
               </div>
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
               {article.title}
             </h1>
 
             {/* Perex */}
-            <p className="text-lg text-brand-text mb-6 leading-relaxed">
+            <p className="text-lg md:text-xl text-brand-text mb-8 leading-relaxed font-medium">
               {article.perex}
             </p>
 
-            {/* Article Content (no Card) */}
-            <div className="prose-custom px-8 py-8">
+            {/* Article Content */}
+            <div className="prose-custom prose-lg max-w-none text-gray-800 leading-relaxed">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeRaw]}
@@ -139,19 +121,22 @@ const NewsDetailPage = async ({ params }: NewsDetailPageProps) => {
               </ReactMarkdown>
             </div>
 
-            {/* Share Button at the end */}
-            <div className="px-8 pb-8">
+            {/* Share Button */}
+            <div className="mt-12 pt-8 border-t border-brand-light/30">
               <ShareButton
                 title={article.title}
                 text={article.perex}
                 url={`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/news/${article.id}`}
-                className="border-brand-light/50 text-brand-text hover:border-brand-primary hover:text-brand-primary"
+                className="border-brand-light/50 text-brand-text hover:border-brand-primary hover:text-brand-primary hover:bg-brand-primary/5"
               />
             </div>
           </CardContent>
         </Card>
 
-        <section className="relative">
+        {/* Related Articles */}
+        <RelatedArticles currentArticleId={article.id} locale={locale} t={t} />
+
+        <section className="relative mt-20">
           <CallToAction
             title={t('contact.haveQuestions')}
             description={t('contact.contactUsDescription')}
