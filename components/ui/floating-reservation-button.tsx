@@ -26,7 +26,7 @@ const FloatingReservationButton: React.FC = () => {
           </div>
 
           {/* Pulse animation */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#68949B] to-[#537E86] opacity-75 animate-ping-slow"></div>
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#68949B] to-[#537E86] opacity-75 animate-ping"></div>
         </Button>
       </ReservationModal>
     </div>
