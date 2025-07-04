@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Oswald, Source_Sans_3 } from 'next/font/google';
 import { notFound } from 'next/navigation';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { supportedLanguages, type SupportedLanguage } from '../../lib/i18n';
 import { getServerTranslations } from '../../lib/i18n-server';
 import { I18nProvider } from '../../components/i18n-provider';
@@ -65,6 +66,7 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
             <Toaster />
           </div>
         </I18nProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
