@@ -12,12 +12,20 @@ export const metadata: Metadata = {
 
 interface ReservationPageProps {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-const ReservationPage = async ({ params }: ReservationPageProps) => {
+const ReservationPage = async ({
+  params,
+  searchParams,
+}: ReservationPageProps) => {
   const { locale } = await params;
+  const { clinic } = await searchParams;
 
   const { t } = await getTranslation(locale as SupportedLanguage);
+
+  // Handle preselected clinic from URL parameters
+  const preselectedClinic = typeof clinic === 'string' ? clinic : undefined;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 relative overflow-hidden">
@@ -55,7 +63,7 @@ const ReservationPage = async ({ params }: ReservationPageProps) => {
                 </p>
               </div>
 
-              <ReservationForm />
+              <ReservationForm preselectedClinic={preselectedClinic} />
             </div>
 
             {/* Additional Information */}

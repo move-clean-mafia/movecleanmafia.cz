@@ -66,12 +66,14 @@ interface ReservationFormProps {
   onSuccess?: () => void;
   showCancel?: boolean;
   onCancel?: () => void;
+  preselectedClinic?: string;
 }
 
 const ReservationForm: React.FC<ReservationFormProps> = ({
   onSuccess,
   showCancel = false,
   onCancel,
+  preselectedClinic,
 }) => {
   const { t } = useTranslation();
   const router = useRouter();
@@ -91,7 +93,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
       message: '',
       preferredTime: '',
       serviceType: '',
-      clinic: '',
+      clinic: preselectedClinic || '',
       reservationDate: undefined,
     },
   });
@@ -386,7 +388,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
               <FormLabel className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
                 {t('reservation.form.clinic')}*
               </FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select onValueChange={field.onChange} value={field.value}>
                 <FormControl>
                   <SelectTrigger className="h-12 border-2 border-gray-200 focus:border-brand-primary rounded-lg">
                     <div className="flex items-center">

@@ -689,6 +689,10 @@
     "privacy": {
       "notice": "Your personal data will be used only for the purpose of resolving your inquiry or appointment.",
       "policyLink": "Privacy Policy"
+    },
+    "privacyNotice": {
+      "notice": "Your personal data will be used only for the purpose of resolving your inquiry or appointment.",
+      "policyLink": "Privacy Policy"
     }
   },
   "privacy": {
