@@ -621,6 +621,8 @@
       "reservationDatePlaceholder": "Select date",
       "submit": "Submit",
       "submitting": "Submitting...",
+      "security": "Security Verification",
+      "recaptchaRequired": "Please complete the security verification to continue",
       "cancel": "Cancel"
     },
     "timeOptions": {

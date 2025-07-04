@@ -620,6 +620,8 @@
       "reservationDateRequired": "Datum rezervace je povinné",
       "reservationDatePlaceholder": "Vyberte datum",
       "submit": "Odeslat",
+      "security": "Bezpečnostní ověření",
+      "recaptchaRequired": "Prosím dokončete bezpečnostní ověření pro pokračování",
       "submitting": "Odesílání...",
       "cancel": "Zrušit"
     },
