@@ -751,6 +751,54 @@
     "privacyNotice": {
       "notice": "Vaše osobní údaje budou použity pouze pro účely vyřešení vašeho dotazu případně objednání.",
       "policyLink": "Zásady zpracování osobních údajů"
+    },
+    "email": {
+      "confirmation": {
+        "subject": "Potvrzení termínu - Pulmonology.cz",
+        "greeting": "Vážený/á {{name}},",
+        "title": "Váš termín byl potvrzen",
+        "subtitle": "Děkujeme, že jste si u nás objednal/a termín. Obdrželi jsme vaši rezervaci a brzy vás budeme kontaktovat pro potvrzení finálních detailů.",
+        "appointmentDetails": "Detaily termínu",
+        "personalInfo": "Osobní informace",
+        "name": "Jméno",
+        "email": "Email",
+        "phone": "Telefon",
+        "service": "Služba",
+        "clinic": "Klinika",
+        "preferredTime": "Preferovaný čas",
+        "reservationDate": "Datum rezervace",
+        "message": "Vaše zpráva",
+        "reservationId": "ID rezervace",
+        "whatHappensNext": "Co bude následovat?",
+        "whatHappensNextDescription": "Zde je to, co od nás můžete očekávat v následujících dnech:",
+        "steps": {
+          "personalContact": "Osobní kontakt",
+          "personalContactDescription": "Náš tým vám zavolá do 24 hodin pro potvrzení času termínu a zodpovězení případných dotazů.",
+          "appointmentReminder": "Připomínka termínu",
+          "appointmentReminderDescription": "Pošleme vám připomínku 24 hodin před naplánovaným termínem.",
+          "preparation": "Příprava",
+          "preparationDescription": "Dostavte se prosím 15 minut před termínem a přineste si pojistnou kartu a relevantní lékařské záznamy."
+        },
+        "importantInformation": "Důležité informace",
+        "importantItems": [
+          "Dostavte se prosím 15 minut před termínem",
+          "Přineste si pojistnou kartu a platný průkaz totožnosti",
+          "Pokud máte lékařské záznamy nebo výsledky testů, přineste si je s sebou",
+          "Pokud potřebujete zrušit nebo přeložit termín, kontaktujte nás prosím alespoň 24 hodin předem"
+        ],
+        "contactInfo": "Kontaktní informace",
+        "contactInfoDescription": "Pokud máte jakékoli dotazy nebo potřebujete změnit termín, neváhejte se ozvat:",
+        "phone": "Telefon",
+        "email": "Email",
+        "address": "Adresa",
+        "openingHours": "Ordinační hodiny",
+        "mondayToFriday": "Pondělí - Pátek: 8:00 - 18:00",
+        "footer": "Toto je automatická zpráva. Neodpovídejte prosím na tento email.",
+        "regards": "S pozdravem,",
+        "team": "Tým Pulmonology.cz",
+        "unsubscribe": "Pokud již nechcete dostávat naše emaily, kontaktujte nás prosím.",
+        "privacyNotice": "Vaše osobní údaje jsou zpracovávány v souladu s našimi Zásadami ochrany osobních údajů."
+      }
     }
   },
   "privacy": {

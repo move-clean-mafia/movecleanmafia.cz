@@ -755,6 +755,54 @@
     "privacyNotice": {
       "notice": "Your personal data will be used only for the purpose of resolving your inquiry or appointment.",
       "policyLink": "Privacy Policy"
+    },
+    "email": {
+      "confirmation": {
+        "subject": "Appointment Confirmation - Pulmonology.cz",
+        "greeting": "Dear {{name}},",
+        "title": "Your Appointment Has Been Confirmed",
+        "subtitle": "Thank you for scheduling your appointment with us. We have received your reservation and will contact you soon to confirm the final details.",
+        "appointmentDetails": "Appointment Details",
+        "personalInfo": "Personal Information",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "service": "Service",
+        "clinic": "Clinic",
+        "preferredTime": "Preferred Time",
+        "reservationDate": "Reservation Date",
+        "message": "Your Message",
+        "reservationId": "Reservation ID",
+        "whatHappensNext": "What Happens Next?",
+        "whatHappensNextDescription": "Here's what you can expect from us in the coming days:",
+        "steps": {
+          "personalContact": "Personal Contact",
+          "personalContactDescription": "Our team will call you within 24 hours to confirm your appointment time and answer any questions you may have.",
+          "appointmentReminder": "Appointment Reminder",
+          "appointmentReminderDescription": "We'll send you a reminder 24 hours before your scheduled appointment.",
+          "preparation": "Preparation",
+          "preparationDescription": "Please arrive 15 minutes early and bring your insurance card and any relevant medical records."
+        },
+        "importantInformation": "Important Information",
+        "importantItems": [
+          "Please arrive 15 minutes early for your appointment",
+          "Bring your insurance card and a valid ID",
+          "If you have any medical records or test results, please bring them with you",
+          "If you need to cancel or reschedule, please contact us at least 24 hours in advance"
+        ],
+        "contactInfo": "Contact Information",
+        "contactInfoDescription": "If you have any questions or need to make changes to your appointment, please don't hesitate to reach out:",
+        "phone": "Phone",
+        "email": "Email",
+        "address": "Address",
+        "openingHours": "Opening Hours",
+        "mondayToFriday": "Monday - Friday: 8:00 - 18:00",
+        "footer": "This is an automated message. Please do not reply to this email.",
+        "regards": "Best regards,",
+        "team": "Pulmonology.cz Team",
+        "unsubscribe": "If you no longer wish to receive emails from us, please contact us.",
+        "privacyNotice": "Your personal data is processed in accordance with our Privacy Policy."
+      }
     }
   },
   "privacy": {

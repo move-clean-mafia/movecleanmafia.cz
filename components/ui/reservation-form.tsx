@@ -13,8 +13,6 @@ import {
   CalendarDays,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../../firebase';
 import { format } from 'date-fns';
 import { useRouter, usePathname } from 'next/navigation';
 
@@ -101,7 +99,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
   const onSubmit = async (data: ReservationFormData) => {
     setIsSubmitting(true);
     try {
-      // Prepare data for Firebase
+      // Prepare data for API submission
       const reservationData = {
         name: data.name,
         phone: `${data.regionCode} ${data.phone}`,
@@ -110,20 +108,30 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
         preferredTime: data.preferredTime,
         serviceType: data.serviceType,
         clinic: data.clinic,
-        reservationDate: data.reservationDate,
-        status: 'pending',
-        createdAt: serverTimestamp(),
+        reservationDate: data.reservationDate?.toISOString(),
+        locale: locale, // Include user's current locale
       };
 
-      // Save to Firebase Firestore
-      await addDoc(collection(db, 'reservations'), reservationData);
+      // Submit via API route (which will handle both Firebase and email)
+      const response = await fetch('/api/submit-reservation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reservationData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to submit reservation');
+      }
 
       // Handle success
       if (onSuccess) {
         onSuccess();
       } else {
         // Navigate to success page
-        router.push('/reservation/success');
+        router.push(`/${locale}/reservation/success`);
       }
     } catch (error) {
       console.error('Reservation error:', error);

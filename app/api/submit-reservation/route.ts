@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../../firebase';
+import { sendAppointmentConfirmationEmail } from '../../../lib/email-service';
+import { type SupportedLanguage } from '../../../lib/i18n';
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,6 +16,8 @@ export async function POST(request: NextRequest) {
       'preferredTime',
       'serviceType',
       'clinic',
+      'reservationDate',
+      'locale',
     ];
     for (const field of requiredFields) {
       if (!data[field]) {
@@ -33,6 +37,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate locale
+    const supportedLocales = ['cs', 'en'];
+    if (!supportedLocales.includes(data.locale)) {
+      return NextResponse.json({ error: 'Invalid locale' }, { status: 400 });
+    }
+
+    // Validate and parse reservation date
+    let reservationDate: Date;
+    try {
+      reservationDate = new Date(data.reservationDate);
+      if (isNaN(reservationDate.getTime())) {
+        throw new Error('Invalid date');
+      }
+    } catch {
+      return NextResponse.json(
+        { error: 'Invalid reservation date format' },
+        { status: 400 },
+      );
+    }
+
     // Prepare data for Firebase
     const reservationData = {
       name: String(data.name).trim(),
@@ -42,6 +66,8 @@ export async function POST(request: NextRequest) {
       preferredTime: String(data.preferredTime),
       serviceType: String(data.serviceType),
       clinic: String(data.clinic),
+      reservationDate: reservationDate,
+      locale: String(data.locale),
       status: 'pending',
       createdAt: serverTimestamp(),
       userAgent: request.headers.get('user-agent') || 'unknown',
@@ -53,6 +79,31 @@ export async function POST(request: NextRequest) {
       collection(db, 'reservations'),
       reservationData,
     );
+
+    // Send confirmation email
+    try {
+      const emailResult = await sendAppointmentConfirmationEmail({
+        name: reservationData.name,
+        email: reservationData.email,
+        phone: reservationData.phone,
+        service: reservationData.serviceType,
+        clinic: reservationData.clinic,
+        preferredTime: reservationData.preferredTime,
+        reservationDate: reservationData.reservationDate.toISOString(),
+        message: reservationData.message,
+        reservationId: docRef.id,
+        locale: reservationData.locale as SupportedLanguage,
+      });
+
+      if (!emailResult.success) {
+        console.error('Failed to send confirmation email:', emailResult.error);
+        // Note: We don't fail the reservation if email fails
+        // The reservation is still created successfully
+      }
+    } catch (emailError) {
+      console.error('Email service error:', emailError);
+      // Continue with successful response even if email fails
+    }
 
     return NextResponse.json(
       {
