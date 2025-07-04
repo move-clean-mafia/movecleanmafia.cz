@@ -23,10 +23,10 @@ const HomePage = async ({ params }: HomePageProps) => {
   return (
     <div className="min-h-screen">
       {/* Interactive Split-Screen Hero Section */}
-      <section className="relative h-screen overflow-hidden">
-        <div className="flex h-full">
-          {/* Left Block - Main Clinic */}
-          <div className="group relative flex-1 transition-all duration-700 ease-in-out hover:flex-[1.3] cursor-pointer">
+      <section className="relative min-h-screen overflow-hidden">
+        <div className="flex flex-col lg:flex-row h-full min-h-screen">
+          {/* Main Clinic Block */}
+          <div className="group relative flex-1 transition-all duration-700 ease-in-out lg:hover:flex-[1.3] cursor-pointer">
             {/* Background Image */}
             <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/90 to-brand-secondary/90">
               <img
@@ -37,10 +37,10 @@ const HomePage = async ({ params }: HomePageProps) => {
             </div>
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-700"></div>
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-700"></div>
 
             {/* Content */}
-            <div className="relative z-10 flex flex-col justify-center items-center h-full p-8 text-white text-center">
+            <div className="relative z-10 flex flex-col justify-center items-center h-full min-h-[50vh] lg:min-h-screen p-8 text-white text-center">
               <div className="transform transition-all duration-700 group-hover:scale-110">
                 <div className="mb-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-4">
@@ -48,15 +48,24 @@ const HomePage = async ({ params }: HomePageProps) => {
                   </div>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 font-heading">
+                <h2
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading"
+                  style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
+                >
                   {t('contact.mainClinic')}
                 </h2>
 
-                <p className="text-xl md:text-2xl mb-8 max-w-md mx-auto leading-relaxed opacity-90">
+                <p
+                  className="text-lg md:text-xl lg:text-2xl mb-8 max-w-md mx-auto leading-relaxed opacity-90"
+                  style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
+                >
                   {t('contact.mainClinicAddress')}
                 </p>
 
-                <div className="space-y-3 mb-8 text-lg">
+                <div
+                  className="space-y-3 mb-8 text-base md:text-lg"
+                  style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
+                >
                   <div className="flex items-center justify-center space-x-2">
                     <Phone className="w-5 h-5" />
                     <span>+420 725 555 095</span>
@@ -81,8 +90,8 @@ const HomePage = async ({ params }: HomePageProps) => {
             </div>
           </div>
 
-          {/* Right Block - Branch Office */}
-          <div className="group relative flex-1 transition-all duration-700 ease-in-out hover:flex-[1.3] cursor-pointer">
+          {/* Branch Office Block */}
+          <div className="group relative flex-1 transition-all duration-700 ease-in-out lg:hover:flex-[1.3] cursor-pointer">
             {/* Background Image */}
             <div className="absolute inset-0 bg-gradient-to-br from-brand-light/90 to-brand-primary/90">
               <img
@@ -93,10 +102,10 @@ const HomePage = async ({ params }: HomePageProps) => {
             </div>
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-700"></div>
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-700"></div>
 
             {/* Content */}
-            <div className="relative z-10 flex flex-col justify-center items-center h-full p-8 text-white text-center">
+            <div className="relative z-10 flex flex-col justify-center items-center h-full min-h-[50vh] lg:min-h-screen p-8 text-white text-center">
               <div className="transform transition-all duration-700 group-hover:scale-110">
                 <div className="mb-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-4">
@@ -104,15 +113,24 @@ const HomePage = async ({ params }: HomePageProps) => {
                   </div>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 font-heading">
+                <h2
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading"
+                  style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
+                >
                   {t('contact.branchOffice')}
                 </h2>
 
-                <p className="text-xl md:text-2xl mb-8 max-w-md mx-auto leading-relaxed opacity-90">
+                <p
+                  className="text-lg md:text-xl lg:text-2xl mb-8 max-w-md mx-auto leading-relaxed opacity-90"
+                  style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
+                >
                   {t('contact.addressToBeDetermined')}
                 </p>
 
-                <div className="space-y-3 mb-8 text-lg">
+                <div
+                  className="space-y-3 mb-8 text-base md:text-lg"
+                  style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
+                >
                   <div className="flex items-center justify-center space-x-2">
                     <Phone className="w-5 h-5" />
                     <span>+420 731 832 518</span>

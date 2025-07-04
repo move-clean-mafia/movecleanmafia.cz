@@ -34,3 +34,4 @@ export * from './news-list';
 export * from './news-image';
 export * from './news-detail-image';
 export * from './image-skeleton';
+export * from './clinic-tabs-dynamic';
