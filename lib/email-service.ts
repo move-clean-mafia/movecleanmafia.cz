@@ -274,9 +274,7 @@ export const sendAppointmentConfirmationEmail = async (
 
     // Send the email
     const result = await resend.emails.send({
-      from:
-        process.env.RESEND_FROM_EMAIL ||
-        'Pulmonology.cz <noreply@pulmonology.cz>',
+      from: 'Pulmonology.cz <noreply@pulmonology.cz>',
       to: [reservationData.email],
       subject: translations.subject,
       html: emailHtml,
