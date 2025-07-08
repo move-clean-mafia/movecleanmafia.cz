@@ -1,6 +1,11 @@
 import React from 'react';
+import { Metadata } from 'next';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
+import {
+  generatePageMetadata,
+  pageMetadata,
+} from '../../../lib/metadata-utils';
 import {
   Stethoscope,
   Activity,
@@ -17,6 +22,19 @@ import Link from 'next/link';
 
 interface ServicesPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ServicesPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = pageMetadata.services[locale as 'cs' | 'en'];
+
+  return generatePageMetadata({
+    ...metadata,
+    url: `/${locale}/services`,
+    locale,
+  });
 }
 
 const ServicesPage = async ({ params }: ServicesPageProps) => {

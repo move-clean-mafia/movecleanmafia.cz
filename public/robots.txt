@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /
+
+# Sitemap location (uncomment when ready to allow indexing)
+# Sitemap: https://pulmonology.cz/sitemap.xml
+
+# Crawl-delay: 1 

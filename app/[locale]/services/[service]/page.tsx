@@ -1,6 +1,8 @@
 import React from 'react';
+import { Metadata } from 'next';
 import { getTranslation } from '../../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../../lib/i18n';
+import { generatePageMetadata } from '../../../../lib/metadata-utils';
 import {
   Heart,
   Microscope,
@@ -18,6 +20,45 @@ import Image from 'next/image';
 
 interface ServiceDetailPageProps {
   params: Promise<{ locale: string; service: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ServiceDetailPageProps): Promise<Metadata> {
+  const { locale, service } = await params;
+  const { t } = await getTranslation(locale as SupportedLanguage);
+
+  // Check if service exists
+  if (!serviceTranslationMap[service as keyof typeof serviceTranslationMap]) {
+    return {
+      title: 'Service Not Found',
+    };
+  }
+
+  const serviceKey =
+    serviceTranslationMap[service as keyof typeof serviceTranslationMap];
+  const serviceData = t(`services.${serviceKey}` as any) as any;
+
+  const title = serviceData?.title || 'Medical Service';
+  const description =
+    serviceData?.subtitle ||
+    serviceData?.description ||
+    'Professional medical examination and diagnosis service.';
+  const keywords = [
+    serviceData?.title || 'medical service',
+    'pulmonology',
+    'respiratory health',
+    locale === 'cs' ? 'plicní lékařství' : 'pulmonary medicine',
+  ];
+
+  return generatePageMetadata({
+    title,
+    description,
+    keywords,
+    url: `/${locale}/services/${service}`,
+    locale,
+    image: serviceImageMap[service as keyof typeof serviceImageMap],
+  });
 }
 
 const serviceImageMap = {

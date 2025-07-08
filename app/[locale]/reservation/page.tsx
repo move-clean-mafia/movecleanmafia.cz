@@ -4,15 +4,27 @@ import { Button } from '../../../components/ui/button';
 import { ReservationForm } from '../../../components/ui/reservation-form';
 import { SupportedLanguage } from '@/lib/i18n';
 import { getTranslation } from '@/lib/i18n-server';
-
-export const metadata: Metadata = {
-  title: 'Book Appointment | Pulmonology.cz',
-  description: 'Schedule your appointment with our pulmonology specialists',
-};
+import {
+  generatePageMetadata,
+  pageMetadata,
+} from '../../../lib/metadata-utils';
 
 interface ReservationPageProps {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ReservationPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = pageMetadata.reservation[locale as 'cs' | 'en'];
+
+  return generatePageMetadata({
+    ...metadata,
+    url: `/${locale}/reservation`,
+    locale,
+  });
 }
 
 const ReservationPage = async ({

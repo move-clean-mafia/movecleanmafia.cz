@@ -1,6 +1,8 @@
 import React from 'react';
+import { Metadata } from 'next';
 import { getTranslation } from '../../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../../lib/i18n';
+import { generatePageMetadata } from '../../../../lib/metadata-utils';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../../../firebase';
 import { NewsItem, formatDate, formatTime } from '../../../../lib/admin-utils';
@@ -22,6 +24,50 @@ import rehypeRaw from 'rehype-raw';
 
 interface NewsDetailPageProps {
   params: Promise<{ locale: string; id: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: NewsDetailPageProps): Promise<Metadata> {
+  const { locale, id } = await params;
+
+  try {
+    // Fetch article data
+    const docRef = doc(db, 'news', id);
+    const docSnap = await getDoc(docRef);
+
+    if (!docSnap.exists()) {
+      return {
+        title: 'Article Not Found',
+      };
+    }
+
+    const article = docSnap.data();
+    const title = article.title || 'News Article';
+    const description =
+      article.perex ||
+      article.content?.substring(0, 160) ||
+      'Latest news from our pulmonology clinic.';
+    const keywords = [
+      'news',
+      'pulmonology',
+      'respiratory health',
+      locale === 'cs' ? 'novinky' : 'latest updates',
+    ];
+
+    return generatePageMetadata({
+      title,
+      description,
+      keywords,
+      url: `/${locale}/news/${id}`,
+      locale,
+      image: article.mainImage || '/pulmonology-logo.png',
+    });
+  } catch {
+    return {
+      title: 'News Article',
+    };
+  }
 }
 
 const NewsDetailPage = async ({ params }: NewsDetailPageProps) => {

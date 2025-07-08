@@ -1,14 +1,32 @@
 import React from 'react';
+import { Metadata } from 'next';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
 import { collection, getDocs, query, where, orderBy } from 'firebase/firestore';
 import { db } from '../../../firebase';
 import { ClientNewsItem } from '../../../lib/admin-utils';
 import { CallToAction, NewsPagination, NewsList } from '@/components/ui';
+import {
+  generatePageMetadata,
+  pageMetadata,
+} from '../../../lib/metadata-utils';
 
 interface NewsPageProps {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ page?: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: NewsPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = pageMetadata.news[locale as 'cs' | 'en'];
+
+  return generatePageMetadata({
+    ...metadata,
+    url: `/${locale}/news`,
+    locale,
+  });
 }
 
 const NewsPage = async ({ params, searchParams }: NewsPageProps) => {

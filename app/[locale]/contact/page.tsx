@@ -1,10 +1,28 @@
 import React from 'react';
+import { Metadata } from 'next';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
+import {
+  generatePageMetadata,
+  pageMetadata,
+} from '../../../lib/metadata-utils';
 import { ClinicTabs, CallToAction } from '../../../components/ui';
 
 interface ContactPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ContactPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = pageMetadata.contact[locale as 'cs' | 'en'];
+
+  return generatePageMetadata({
+    ...metadata,
+    url: `/${locale}/contact`,
+    locale,
+  });
 }
 
 const ContactPage = async ({ params }: ContactPageProps) => {

@@ -1,6 +1,11 @@
 import React from 'react';
+import { Metadata } from 'next';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
+import {
+  generatePageMetadata,
+  pageMetadata,
+} from '../../../lib/metadata-utils';
 import {
   CallToAction,
   StatsSection,
@@ -11,6 +16,19 @@ import {
 
 interface OurTeamPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: OurTeamPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = pageMetadata.team[locale as 'cs' | 'en'];
+
+  return generatePageMetadata({
+    ...metadata,
+    url: `/${locale}/our-team`,
+    locale,
+  });
 }
 
 const OurTeamPage = async ({ params }: OurTeamPageProps) => {

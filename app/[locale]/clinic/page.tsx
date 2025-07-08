@@ -1,12 +1,30 @@
 import React from 'react';
+import { Metadata } from 'next';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
+import {
+  generatePageMetadata,
+  pageMetadata,
+} from '../../../lib/metadata-utils';
 import { CallToAction } from '../../../components/ui';
 import { ClinicTabsDynamic } from '../../../components/ui/clinic-tabs-dynamic';
 
 interface ClinicPageProps {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ClinicPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = pageMetadata.clinic[locale as 'cs' | 'en'];
+
+  return generatePageMetadata({
+    ...metadata,
+    url: `/${locale}/clinic`,
+    locale,
+  });
 }
 
 const ClinicPage = async ({ params, searchParams }: ClinicPageProps) => {

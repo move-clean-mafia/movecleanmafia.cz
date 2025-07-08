@@ -5,14 +5,26 @@ import { SupportedLanguage } from '@/lib/i18n';
 import { getTranslation } from '@/lib/i18n-server';
 import { Button } from '../../../components/ui/button';
 import { CallToAction } from '@/components/ui/call-to-action';
-
-export const metadata: Metadata = {
-  title: 'Privacy Policy | Pulmonology.cz',
-  description: 'Information on personal data processing under GDPR',
-};
+import {
+  generatePageMetadata,
+  pageMetadata,
+} from '../../../lib/metadata-utils';
 
 interface PrivacyPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: PrivacyPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = pageMetadata.privacy[locale as 'cs' | 'en'];
+
+  return generatePageMetadata({
+    ...metadata,
+    url: `/${locale}/privacy`,
+    locale,
+  });
 }
 
 const PrivacyPage = async ({ params }: PrivacyPageProps) => {

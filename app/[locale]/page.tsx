@@ -1,6 +1,8 @@
 import React from 'react';
+import { Metadata } from 'next';
 import { getTranslation } from '../../lib/i18n-server';
 import { type SupportedLanguage } from '../../lib/i18n';
+import { generatePageMetadata, pageMetadata } from '../../lib/metadata-utils';
 import {
   MapPin,
   Phone,
@@ -38,6 +40,19 @@ import { ClientNewsItem } from '../../lib/admin-utils';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: HomePageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = pageMetadata.home[locale as 'cs' | 'en'];
+
+  return generatePageMetadata({
+    ...metadata,
+    url: `/${locale}`,
+    locale,
+  });
 }
 
 const HomePage = async ({ params }: HomePageProps) => {
