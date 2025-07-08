@@ -186,7 +186,11 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-6"
+        autoComplete="on"
+      >
         {/* Name Field */}
         <FormField
           control={form.control}
@@ -201,6 +205,9 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                   {...field}
                   placeholder={t('reservation.form.namePlaceholder')}
                   className="h-12 border-2 border-gray-200 focus:border-brand-primary focus:ring-brand-primary rounded-lg"
+                  autoComplete="name"
+                  name="name"
+                  autoFocus
                 />
               </FormControl>
               <FormMessage className="text-red-500" />
@@ -253,6 +260,8 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                       type="tel"
                       placeholder={t('reservation.form.phonePlaceholder')}
                       className="h-12 pl-10 border-2 border-gray-200 focus:border-brand-primary focus:ring-brand-primary rounded-lg"
+                      autoComplete="tel"
+                      name="phone"
                     />
                   </div>
                 </div>
@@ -279,6 +288,8 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                     type="email"
                     placeholder={t('reservation.form.emailPlaceholder')}
                     className="h-12 pl-10 border-2 border-gray-200 focus:border-brand-primary focus:ring-brand-primary rounded-lg"
+                    autoComplete="email"
+                    name="email"
                   />
                 </div>
               </FormControl>
@@ -313,6 +324,8 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                     }}
                     min={format(new Date(), 'yyyy-MM-dd')}
                     className="h-12 pl-10 border-2 border-gray-200 focus:border-brand-primary hover:border-brand-primary rounded-lg transition-colors"
+                    autoComplete="off"
+                    name="reservationDate"
                   />
                 </div>
               </FormControl>
@@ -398,12 +411,14 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
               </FormLabel>
               <Select onValueChange={field.onChange} value={field.value}>
                 <FormControl>
-                  <SelectTrigger className="h-12 border-2 border-gray-200 focus:border-brand-primary rounded-lg">
-                    <div className="flex items-center">
+                  <SelectTrigger className="h-12 border-2 border-gray-200 focus:border-brand-primary rounded-lg w-full max-w-full">
+                    <div className="flex items-center min-w-0 w-full">
                       <Stethoscope className="w-4 h-4 text-gray-400 mr-2" />
-                      <SelectValue
-                        placeholder={t('reservation.clinics.main')}
-                      />
+                      <div className="overflow-hidden text-ellipsis whitespace-nowrap min-w-0 w-full">
+                        <SelectValue
+                          placeholder={t('reservation.clinics.main')}
+                        />
+                      </div>
                     </div>
                   </SelectTrigger>
                 </FormControl>
@@ -434,6 +449,8 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                   {...field}
                   placeholder={t('reservation.form.messagePlaceholder')}
                   className="min-h-[100px] border-2 border-gray-200 focus:border-brand-primary focus:ring-brand-primary rounded-lg resize-none"
+                  autoComplete="off"
+                  name="message"
                 />
               </FormControl>
               <FormMessage className="text-red-500" />

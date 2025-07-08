@@ -103,7 +103,7 @@ const AppointmentConfirmationEmail: React.FC<
               src={`${baseUrl}/pulmonology-logo.png`}
               width="180"
               height="auto"
-              alt="Pulmonology.cz"
+              alt="Pulmonology.cz logo - Pulmonary Clinic"
               style={logo}
             />
           </Section>
@@ -218,7 +218,6 @@ const AppointmentConfirmationEmail: React.FC<
               <Text style={text}>{t.whatHappensNextDescription}</Text>
 
               <Section style={stepCard}>
-                <Text style={stepNumber}>1</Text>
                 <div>
                   <Text style={stepTitle}>{t.steps.personalContact}</Text>
                   <Text style={stepDescription}>
@@ -228,7 +227,6 @@ const AppointmentConfirmationEmail: React.FC<
               </Section>
 
               <Section style={stepCard}>
-                <Text style={stepNumber}>2</Text>
                 <div>
                   <Text style={stepTitle}>{t.steps.appointmentReminder}</Text>
                   <Text style={stepDescription}>
@@ -238,7 +236,6 @@ const AppointmentConfirmationEmail: React.FC<
               </Section>
 
               <Section style={stepCard}>
-                <Text style={stepNumber}>3</Text>
                 <div>
                   <Text style={stepTitle}>{t.steps.preparation}</Text>
                   <Text style={stepDescription}>
@@ -266,7 +263,11 @@ const AppointmentConfirmationEmail: React.FC<
               <Row style={contactRow}>
                 <Column style={contactColumn}>
                   <Text style={contactLabel}>{t.contactPhoneLabel}:</Text>
-                  <Link href="tel:+420725555095" style={contactLink}>
+                  <Link
+                    href="tel:+420725555095"
+                    style={contactLink}
+                    aria-label="Call clinic"
+                  >
                     +420 725 555 095
                   </Link>
                 </Column>
@@ -275,6 +276,7 @@ const AppointmentConfirmationEmail: React.FC<
                   <Link
                     href="mailto:pulmonology.cz@gmail.com"
                     style={contactLink}
+                    aria-label="Email clinic"
                   >
                     pulmonology.cz@gmail.com
                   </Link>
@@ -328,6 +330,10 @@ const container = {
   margin: '0 auto',
   padding: '20px 0 48px',
   marginBottom: '64px',
+  width: '640px', // Increased width for better readability
+  maxWidth: '100%', // Responsive for mobile
+  borderRadius: '16px', // More modern look
+  boxShadow: '0 4px 24px rgba(0,0,0,0.06)', // Subtle shadow
 };
 
 const header = {
@@ -342,23 +348,26 @@ const logo = {
 };
 
 const content = {
-  padding: '24px',
+  padding: '32px', // More padding for better spacing
+  textAlign: 'left' as const, // Ensure left alignment
 };
 
 const h1 = {
   color: '#1f2937',
-  fontSize: '24px',
+  fontSize: '26px',
   fontWeight: '600',
   lineHeight: '1.25',
   margin: '16px 0',
+  textAlign: 'left' as const,
 };
 
 const h2 = {
   color: '#059669',
-  fontSize: '28px',
+  fontSize: '30px',
   fontWeight: '700',
   lineHeight: '1.2',
   margin: '24px 0 16px',
+  textAlign: 'left' as const,
 };
 
 const h3 = {
@@ -367,6 +376,7 @@ const h3 = {
   fontWeight: '600',
   lineHeight: '1.3',
   margin: '24px 0 16px',
+  textAlign: 'left' as const,
 };
 
 const text = {
@@ -379,9 +389,10 @@ const text = {
 const card = {
   backgroundColor: '#f9fafb',
   border: '1px solid #e5e7eb',
-  borderRadius: '8px',
-  padding: '24px',
-  margin: '24px 0',
+  borderRadius: '12px', // More pronounced rounding
+  padding: '28px', // More padding
+  margin: '28px 0',
+  boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
 };
 
 const detailRow = {
@@ -418,26 +429,11 @@ const nextStepsSection = {
 const stepCard = {
   backgroundColor: '#eff6ff',
   border: '1px solid #dbeafe',
-  borderRadius: '8px',
-  padding: '16px',
-  margin: '16px 0',
+  borderRadius: '10px',
+  padding: '18px',
+  margin: '18px 0',
   display: 'flex',
   alignItems: 'flex-start',
-};
-
-const stepNumber = {
-  backgroundColor: '#059669',
-  color: '#ffffff',
-  fontSize: '14px',
-  fontWeight: '600',
-  borderRadius: '50%',
-  width: '24px',
-  height: '24px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  marginRight: '16px',
-  flexShrink: 0,
 };
 
 const stepTitle = {
@@ -457,9 +453,10 @@ const stepDescription = {
 const importantSection = {
   backgroundColor: '#fef3c7',
   border: '1px solid #fbbf24',
-  borderRadius: '8px',
+  borderRadius: '10px',
   padding: '24px',
   margin: '24px 0',
+  boxShadow: '0 1px 4px rgba(251,191,36,0.08)',
 };
 
 const listItem = {
@@ -472,9 +469,10 @@ const listItem = {
 const contactSection = {
   backgroundColor: '#f0fdf4',
   border: '1px solid #bbf7d0',
-  borderRadius: '8px',
+  borderRadius: '10px',
   padding: '24px',
   margin: '24px 0',
+  boxShadow: '0 1px 4px rgba(16,185,129,0.08)',
 };
 
 const contactRow = {
@@ -501,9 +499,10 @@ const contactValue = {
 
 const contactLink = {
   color: '#059669',
-  fontSize: '14px',
+  fontSize: '15px',
   fontWeight: '500',
-  textDecoration: 'none',
+  textDecoration: 'underline', // Make links more visible
+  wordBreak: 'break-all' as const,
 };
 
 const buttonSection = {
@@ -513,14 +512,15 @@ const buttonSection = {
 
 const button = {
   backgroundColor: '#059669',
-  borderRadius: '8px',
+  borderRadius: '10px',
   color: '#ffffff',
-  fontSize: '16px',
-  fontWeight: '600',
+  fontSize: '17px',
+  fontWeight: '700',
   textDecoration: 'none',
   textAlign: 'center' as const,
   display: 'inline-block',
-  padding: '12px 24px',
+  padding: '14px 32px',
+  boxShadow: '0 2px 8px rgba(5,150,105,0.08)',
 };
 
 const footer = {
