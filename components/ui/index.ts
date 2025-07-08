@@ -39,3 +39,5 @@ export * from './homepage-service-cards';
 export * from './homepage-team-showcase';
 export * from './homepage-testimonials';
 export * from './homepage-recent-news';
+export * from './switch';
+export * from './separator';

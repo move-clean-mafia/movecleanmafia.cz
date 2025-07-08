@@ -805,6 +805,129 @@
       }
     }
   },
+  "cookieConsent": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking 'Accept All', you consent to our use of cookies.",
+    "necessary": "Necessary",
+    "necessaryDescription": "These cookies are essential for the website to function properly. They cannot be disabled.",
+    "analytics": "Analytics",
+    "analyticsDescription": "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.",
+    "marketing": "Marketing",
+    "marketingDescription": "These cookies are used to track visitors across websites to display relevant advertisements.",
+    "preferences": "Preferences",
+    "preferencesDescription": "These cookies allow the website to remember choices you make and provide enhanced, more personal features.",
+    "acceptAll": "Accept All",
+    "acceptNecessary": "Accept Necessary Only",
+    "customize": "Customize",
+    "savePreferences": "Save Preferences",
+    "learnMore": "Learn More",
+    "cookiePolicy": "Cookie Policy",
+    "banner": {
+      "title": "We use cookies",
+      "description": "We use cookies to enhance your browsing experience and analyze site traffic. By continuing to use this site, you consent to our use of cookies.",
+      "accept": "Accept All",
+      "decline": "Decline",
+      "settings": "Settings"
+    }
+  },
+  "cookiePolicy": {
+    "title": "Cookie Policy",
+    "subtitle": "Information about how we use cookies and similar technologies",
+    "whatAreCookies": {
+      "title": "What are Cookies?",
+      "description": "Cookies are small text files that are stored on your device when you visit our website. They help us provide you with a better experience and understand how you use our site.",
+      "examples": [
+        "Remembering your language preferences",
+        "Analyzing website traffic and usage patterns",
+        "Providing personalized content and recommendations",
+        "Ensuring the website functions properly"
+      ]
+    },
+    "types": {
+      "title": "Types of Cookies We Use",
+      "necessary": {
+        "title": "Necessary Cookies",
+        "description": "These cookies are essential for the website to function properly and cannot be disabled.",
+        "examples": [
+          "Session management and security",
+          "Language preference storage",
+          "Cookie consent preferences",
+          "Basic website functionality"
+        ]
+      },
+      "analytics": {
+        "title": "Analytics Cookies",
+        "description": "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.",
+        "examples": [
+          "Page views and navigation patterns",
+          "Time spent on pages",
+          "Traffic sources and user behavior",
+          "Website performance metrics"
+        ]
+      },
+      "marketing": {
+        "title": "Marketing Cookies",
+        "description": "These cookies are used to track visitors across websites to display relevant advertisements.",
+        "examples": [
+          "Ad targeting and personalization",
+          "Campaign effectiveness measurement",
+          "Cross-site tracking for advertising",
+          "Social media integration"
+        ]
+      },
+      "preferences": {
+        "title": "Preferences Cookies",
+        "description": "These cookies allow the website to remember choices you make and provide enhanced, more personal features.",
+        "examples": [
+          "User interface customization",
+          "Content personalization",
+          "Form data retention",
+          "Accessibility settings"
+        ]
+      }
+    },
+    "management": {
+      "title": "Managing Your Cookie Preferences",
+      "description": "You have several options for managing cookies on our website:",
+      "methods": [
+        {
+          "title": "Browser Settings",
+          "description": "You can control cookies through your browser settings. Most browsers allow you to block or delete cookies, though this may affect website functionality."
+        },
+        {
+          "title": "Cookie Consent Banner",
+          "description": "Use our cookie consent banner to choose which types of cookies you want to allow. You can change these settings at any time."
+        },
+        {
+          "title": "Third-Party Opt-Outs",
+          "description": "For third-party cookies, you can use opt-out tools provided by the respective services (e.g., Google Analytics opt-out)."
+        }
+      ]
+    },
+    "thirdParty": {
+      "title": "Third-Party Cookies",
+      "description": "We use some third-party services that may set their own cookies:",
+      "purpose": "Purpose",
+      "privacy": "Privacy Policy",
+      "viewPrivacy": "View Privacy Policy",
+      "services": [
+        {
+          "name": "Google Analytics",
+          "purpose": "Website analytics and performance monitoring",
+          "privacy": "https://policies.google.com/privacy"
+        },
+        {
+          "name": "Vercel Analytics",
+          "purpose": "Website performance and user experience analytics",
+          "privacy": "https://vercel.com/legal/privacy-policy"
+        }
+      ]
+    },
+    "updates": {
+      "title": "Updates to This Policy",
+      "description": "We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new Cookie Policy on this page and updating the 'Last Updated' date."
+    }
+  },
   "privacy": {
     "title": "Privacy Policy",
     "subtitle": "Information on Personal Data Processing under GDPR",

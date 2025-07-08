@@ -189,6 +189,19 @@ export const Footer: React.FC = () => {
                   </a>
                 </li>
                 <li>
+                  <button
+                    onClick={() => {
+                      // This will be handled by the cookie consent component
+                      window.dispatchEvent(
+                        new CustomEvent('openCookieSettings'),
+                      );
+                    }}
+                    className="text-sm text-gray-600 hover:text-teal-600 transition-colors duration-200 text-left"
+                  >
+                    {t('cookieConsent.customize')}
+                  </button>
+                </li>
+                <li>
                   <a
                     href={`/${locale}/admin`}
                     className="text-sm text-gray-600 hover:text-teal-600 transition-colors duration-200"

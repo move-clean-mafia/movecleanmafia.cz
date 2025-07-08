@@ -11,6 +11,7 @@ import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
 import { FloatingReservationButton } from '../../components/ui/floating-reservation-button';
 import { Toaster } from '../../components/ui/toaster';
+import { CookieConsent } from '../../components/cookie-consent';
 import '../globals.css';
 
 const oswald = Oswald({
@@ -187,6 +188,7 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
             <Footer />
             <FloatingReservationButton />
             <Toaster />
+            <CookieConsent />
           </div>
         </I18nProvider>
         <SpeedInsights />

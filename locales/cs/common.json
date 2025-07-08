@@ -801,6 +801,129 @@
       }
     }
   },
+  "cookieConsent": {
+    "title": "Nastavení cookies",
+    "description": "Používáme cookies pro zlepšení vašeho zážitku z procházení, analýzu návštěvnosti webu a personalizaci obsahu. Kliknutím na 'Přijmout vše' souhlasíte s používáním cookies.",
+    "necessary": "Nezbytné",
+    "necessaryDescription": "Tyto cookies jsou nezbytné pro správné fungování webu. Nelze je vypnout.",
+    "analytics": "Analytické",
+    "analyticsDescription": "Tyto cookies nám pomáhají pochopit, jak návštěvníci interagují s naším webem, sbíráním a anonymním reportováním informací.",
+    "marketing": "Marketingové",
+    "marketingDescription": "Tyto cookies se používají ke sledování návštěvníků napříč weby pro zobrazování relevantních reklam.",
+    "preferences": "Preference",
+    "preferencesDescription": "Tyto cookies umožňují webu zapamatovat si vaše volby a poskytovat vylepšené, více personalizované funkce.",
+    "acceptAll": "Přijmout vše",
+    "acceptNecessary": "Přijmout pouze nezbytné",
+    "customize": "Přizpůsobit",
+    "savePreferences": "Uložit preference",
+    "learnMore": "Více informací",
+    "cookiePolicy": "Zásady cookies",
+    "banner": {
+      "title": "Používáme cookies",
+      "description": "Používáme cookies pro zlepšení vašeho zážitku z procházení a analýzu návštěvnosti webu. Pokračováním v používání tohoto webu souhlasíte s používáním cookies.",
+      "accept": "Přijmout vše",
+      "decline": "Odmítnout",
+      "settings": "Nastavení"
+    }
+  },
+  "cookiePolicy": {
+    "title": "Zásady cookies",
+    "subtitle": "Informace o tom, jak používáme cookies a podobné technologie",
+    "whatAreCookies": {
+      "title": "Co jsou cookies?",
+      "description": "Cookies jsou malé textové soubory, které se ukládají na vaše zařízení při návštěvě našeho webu. Pomáhají nám poskytovat vám lepší zážitek a pochopit, jak náš web používáte.",
+      "examples": [
+        "Zapamatování vašich jazykových preferencí",
+        "Analýza návštěvnosti webu a vzorců používání",
+        "Poskytování personalizovaného obsahu a doporučení",
+        "Zajištění správného fungování webu"
+      ]
+    },
+    "types": {
+      "title": "Typy cookies, které používáme",
+      "necessary": {
+        "title": "Nezbytné cookies",
+        "description": "Tyto cookies jsou nezbytné pro správné fungování webu a nelze je vypnout.",
+        "examples": [
+          "Správa relací a zabezpečení",
+          "Ukládání jazykových preferencí",
+          "Preference souhlasu s cookies",
+          "Základní funkčnost webu"
+        ]
+      },
+      "analytics": {
+        "title": "Analytické cookies",
+        "description": "Tyto cookies nám pomáhají pochopit, jak návštěvníci interagují s naším webem, sbíráním a anonymním reportováním informací.",
+        "examples": [
+          "Zobrazení stránek a navigační vzorce",
+          "Čas strávený na stránkách",
+          "Zdroje návštěvnosti a chování uživatelů",
+          "Metriky výkonu webu"
+        ]
+      },
+      "marketing": {
+        "title": "Marketingové cookies",
+        "description": "Tyto cookies se používají ke sledování návštěvníků napříč weby pro zobrazování relevantních reklam.",
+        "examples": [
+          "Cílení reklam a personalizace",
+          "Měření efektivity kampaní",
+          "Cross-site sledování pro reklamy",
+          "Integrace sociálních sítí"
+        ]
+      },
+      "preferences": {
+        "title": "Cookies preferencí",
+        "description": "Tyto cookies umožňují webu zapamatovat si vaše volby a poskytovat vylepšené, více personalizované funkce.",
+        "examples": [
+          "Přizpůsobení uživatelského rozhraní",
+          "Personalizace obsahu",
+          "Uchování dat z formulářů",
+          "Nastavení přístupnosti"
+        ]
+      }
+    },
+    "management": {
+      "title": "Správa vašich preferencí cookies",
+      "description": "Máte několik možností pro správu cookies na našem webu:",
+      "methods": [
+        {
+          "title": "Nastavení prohlížeče",
+          "description": "Cookies můžete ovládat prostřednictvím nastavení prohlížeče. Většina prohlížečů umožňuje blokovat nebo mazat cookies, i když to může ovlivnit funkčnost webu."
+        },
+        {
+          "title": "Banner souhlasu s cookies",
+          "description": "Použijte náš banner souhlasu s cookies pro výběr, které typy cookies chcete povolit. Tato nastavení můžete kdykoli změnit."
+        },
+        {
+          "title": "Opt-out třetích stran",
+          "description": "Pro cookies třetích stran můžete použít opt-out nástroje poskytované příslušnými službami (např. Google Analytics opt-out)."
+        }
+      ]
+    },
+    "thirdParty": {
+      "title": "Cookies třetích stran",
+      "description": "Používáme některé služby třetích stran, které mohou nastavovat vlastní cookies:",
+      "purpose": "Účel",
+      "privacy": "Zásady ochrany osobních údajů",
+      "viewPrivacy": "Zobrazit zásady ochrany osobních údajů",
+      "services": [
+        {
+          "name": "Google Analytics",
+          "purpose": "Analytika webu a sledování výkonu",
+          "privacy": "https://policies.google.com/privacy"
+        },
+        {
+          "name": "Vercel Analytics",
+          "purpose": "Analytika výkonu webu a uživatelského zážitku",
+          "privacy": "https://vercel.com/legal/privacy-policy"
+        }
+      ]
+    },
+    "updates": {
+      "title": "Aktualizace těchto zásad",
+      "description": "Tyto zásady cookies můžeme čas od času aktualizovat, abychom odráželi změny v našich postupech nebo z jiných provozních, právních nebo regulačních důvodů. O významných změnách vás budeme informovat zveřejněním nových zásad cookies na této stránce a aktualizací data 'Poslední aktualizace'."
+    }
+  },
   "privacy": {
     "title": "Zásady ochrany osobních údajů",
     "subtitle": "Informace o zpracování osobních údajů dle GDPR",

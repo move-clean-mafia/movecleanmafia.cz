@@ -282,4 +282,18 @@ export const pageMetadata = {
       ],
     },
   },
+  cookiePolicy: {
+    cs: {
+      title: 'Zásady cookies - Informace o cookies',
+      description:
+        'Informace o tom, jak používáme cookies a podobné technologie na našem webu. Seznamte se s našimi zásadami cookies.',
+      keywords: ['cookies', 'zásady', 'technologie', 'sledování', 'preference'],
+    },
+    en: {
+      title: 'Cookie Policy - Information about Cookies',
+      description:
+        'Information about how we use cookies and similar technologies on our website. Learn about our cookie policies.',
+      keywords: ['cookies', 'policy', 'technology', 'tracking', 'preferences'],
+    },
+  },
 };
