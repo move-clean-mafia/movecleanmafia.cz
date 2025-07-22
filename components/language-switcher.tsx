@@ -65,9 +65,9 @@ export const LanguageSwitcher: React.FC = () => {
         <Button
           variant="outline"
           size="sm"
-          className="h-10 w-10 p-0 bg-white border-gray-200 hover:bg-gray-50 hover:border-teal-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200"
+          className="h-10 w-10 p-0 bg-white border-gray-200 hover:bg-gray-50 hover:border-brand-primary focus:ring-2 focus:ring-brand-primary focus:border-brand-primary transition-all duration-200"
         >
-          <Globe className="w-4 h-4 text-teal-600" />
+          <Globe className="w-4 h-4 text-brand-primary" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
@@ -78,7 +78,7 @@ export const LanguageSwitcher: React.FC = () => {
           <DropdownMenuItem
             key={language.code}
             onClick={() => switchToLanguage(language.code)}
-            className="flex items-center justify-between px-3 py-2 text-sm cursor-pointer hover:bg-teal-50 hover:text-teal-700 rounded-md transition-all duration-150 focus:bg-teal-50 focus:text-teal-700"
+            className="flex items-center justify-between px-3 py-2 text-sm cursor-pointer hover:bg-brand-light hover:text-brand-secondary rounded-md transition-all duration-150 focus:bg-brand-light focus:text-brand-secondary"
           >
             <div className="flex items-center">
               <span className="text-lg mr-3">{language.flag}</span>
@@ -90,7 +90,7 @@ export const LanguageSwitcher: React.FC = () => {
               </div>
             </div>
             {currentLocale === language.code && (
-              <Check className="w-4 h-4 text-teal-600" />
+              <Check className="w-4 h-4 text-brand-primary" />
             )}
           </DropdownMenuItem>
         ))}

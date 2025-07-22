@@ -17,11 +17,176 @@
     "moving": "Moving",
     "cleaning": "Cleaning",
     "packing": "Packing",
-    "storage": "Storage"
+    "storage": "Storage",
+    "title": "Our Services",
+    "subtitle": "Complete moving and cleaning services for your home and office",
+    "movingDescription": "Professional moving of apartments, houses and offices with complete service",
+    "cleaningDescription": "Thorough cleaning of households and commercial spaces with professional products",
+    "packingDescription": "Safe packing and packaging of all your belongings with professional materials",
+    "storageDescription": "Safe storage of your belongings in our climate-controlled warehouses",
+    "movingFeatures": [
+      "Furniture disassembly",
+      "Safe transportation",
+      "Assembly at new location",
+      "Cargo insurance"
+    ],
+    "cleaningFeatures": [
+      "General cleaning",
+      "Post-move cleaning",
+      "Office spaces",
+      "Eco-friendly products"
+    ],
+    "packingFeatures": [
+      "Professional packing",
+      "Quality materials",
+      "Box labeling",
+      "Inventory"
+    ],
+    "storageFeatures": [
+      "Climate-controlled warehouses",
+      "24/7 security",
+      "Insurance",
+      "Flexible terms"
+    ],
+    "whyChooseUs": "Why Choose Us?",
+    "whyChooseUsSubtitle": "Reliable services with years of experience and highest quality",
+    "speed": "Speed",
+    "speedDescription": "Efficient and fast execution of all work",
+    "safety": "Safety",
+    "safetyDescription": "Your belongings are safe with our insurance",
+    "quality": "Quality",
+    "qualityDescription": "Highest quality services and care for your belongings",
+    "ctaTitle": "Let's Start Working Together",
+    "ctaSubtitle": "Contact us and get a free consultation and price quote",
+    "contactUs": "Contact Us"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Meet our team of professionals with years of experience",
+    "stats": {
+      "clients": "Happy Clients",
+      "experience": "Years of Experience",
+      "moves": "Successful Moves",
+      "availability": "Availability"
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraph1": "MoveCleanMafia was born from the need to provide reliable and quality moving and cleaning services. We started as a small team of enthusiasts with a vision to change the way people think about moving and cleaning.",
+      "paragraph2": "Today we are proud to offer comprehensive services that include not only moving and cleaning, but also packing, storage and much more. Our goal is always to exceed our clients' expectations."
+    },
+    "values": {
+      "title": "Our Values",
+      "mission": {
+        "title": "Our Mission",
+        "description": "To provide the highest quality moving and cleaning services with emphasis on customer satisfaction"
+      },
+      "values": {
+        "title": "Our Values",
+        "description": "Reliability, quality, transparency and individual approach to each client"
+      },
+      "commitments": {
+        "title": "Our Commitments",
+        "description": "We guarantee the safety of your belongings, meeting deadlines and professional approach"
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "Meet the experts who stand behind the success of our company",
+      "members": {
+        "director": {
+          "name": "John Smith",
+          "position": "Company Director",
+          "experience": "15 years experience",
+          "description": "Specialist in logistics and moving project management"
+        },
+        "cleaning": {
+          "name": "Mary Johnson",
+          "position": "Cleaning Services Manager",
+          "experience": "12 years experience",
+          "description": "Expert in professional cleaning and space sanitization"
+        },
+        "transport": {
+          "name": "Peter Brown",
+          "position": "Transport Manager",
+          "experience": "10 years experience",
+          "description": "Specialist in safe transportation and cargo handling"
+        }
+      }
+    },
+    "cta": {
+      "title": "Work With Us",
+      "subtitle": "Trust our experience and let us take care of your moving and cleaning",
+      "contact": "Contact Us",
+      "services": "Our Services"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Contact us for a free consultation and price quote",
+    "form": {
+      "title": "Write to Us",
+      "subtitle": "Fill out the form and we will contact you within 24 hours",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Your last name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+1 (234) 567-890",
+      "service": "Service Interest",
+      "servicePlaceholder": "Select service",
+      "message": "Message",
+      "messagePlaceholder": "Describe your requirements and we will prepare an individual offer for you...",
+      "send": "Send Message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "subtitle": "We are here for you every day. Do not hesitate to contact us in any way.",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "hours": "Working Hours",
+      "emergency": {
+        "title": "Emergency Contact",
+        "subtitle": "For urgent requests call 24/7"
+      }
+    },
+    "map": {
+      "title": "Where to Find Us",
+      "subtitle": "Our office is located in the city center with good transport connections",
+      "placeholder": "Map will be available soon"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "movingTime": {
+        "question": "How long does moving take?",
+        "answer": "Moving time depends on apartment size and amount of belongings. Usually 4-8 hours."
+      },
+      "insurance": {
+        "question": "Are belongings insured?",
+        "answer": "Yes, all transported belongings are fully insured against damage."
+      },
+      "pricing": {
+        "question": "What is the price of services?",
+        "answer": "Price is set individually according to the scope of work. We offer free price quotes."
+      },
+      "weekends": {
+        "question": "Do you work on weekends?",
+        "answer": "Yes, we provide services on weekends and holidays. Contact us for booking."
+      }
+    }
   },
   "features": {
     "reliability": "Reliability",
     "quality": "Quality",
     "speed": "Speed"
+  },
+  "header": {
+    "contactUs": "Contact Us",
+    "phone1": "+1 (234) 567-890",
+    "phone2": "+1 (987) 654-321",
+    "openMainMenu": "Open main menu",
+    "closeMainMenu": "Close main menu"
   }
 }

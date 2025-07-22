@@ -31,30 +31,30 @@
     --radius: 0.5rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
+    --background: 0 0% 3.9%; /* Deep Black */
+    --foreground: 0 0% 98%; /* White */
+    --card: 0 0% 3.9%; /* Deep Black */
+    --card-foreground: 0 0% 98%; /* White */
+    --popover: 0 0% 3.9%; /* Deep Black */
+    --popover-foreground: 0 0% 98%; /* White */
+    --primary: 43 58% 65%; /* Vintage Gold */
+    --primary-foreground: 0 0% 3.9%; /* Deep Black */
+    --secondary: 30 35% 30%; /* Rich Brown */
+    --secondary-foreground: 0 0% 98%; /* White */
     --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --muted-foreground: 0 0% 80%; /* Light Grey */
+    --accent: 43 58% 65%; /* Vintage Gold */
+    --accent-foreground: 0 0% 3.9%; /* Deep Black */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --ring: 43 58% 65%; /* Vintage Gold */
+    --chart-1: 43 58% 65%; /* Vintage Gold */
+    --chart-2: 30 35% 30%; /* Rich Brown */
+    --chart-3: 0 0% 80%; /* Light Grey */
+    --chart-4: 0 0% 98%; /* White */
+    --chart-5: 43 58% 65%; /* Vintage Gold */
   }
 }
 
@@ -127,7 +127,7 @@
   .prose-custom h4,
   .prose-custom h5,
   .prose-custom h6 {
-    @apply text-gray-900 font-bold;
+    @apply text-brand-primary font-bold;
   }
 
   .prose-custom h2 {
@@ -147,7 +147,7 @@
   }
 
   .prose-custom strong {
-    @apply text-gray-900;
+    @apply text-brand-primary;
   }
 
   .prose-custom blockquote {
@@ -172,7 +172,7 @@
   }
 
   .prose-custom pre {
-    @apply bg-gray-100 p-4 rounded-lg overflow-x-auto;
+    @apply bg-brand-light p-4 rounded-lg overflow-x-auto;
   }
 
   .prose-custom pre code {

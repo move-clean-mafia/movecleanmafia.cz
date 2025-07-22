@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <a
                     href={`/${locale}`}
-                    className="text-sm text-gray-600 hover:text-teal-600 transition-colors duration-200"
+                    className="text-sm text-gray-600 hover:text-brand-primary transition-colors duration-200"
                   >
                     {t('navigation.home')}
                   </a>
@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <a
                     href={`/${locale}/services`}
-                    className="text-sm text-gray-600 hover:text-teal-600 transition-colors duration-200"
+                    className="text-sm text-gray-600 hover:text-brand-primary transition-colors duration-200"
                   >
                     {t('navigation.services')}
                   </a>
@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <a
                     href={`/${locale}/about`}
-                    className="text-sm text-gray-600 hover:text-teal-600 transition-colors duration-200"
+                    className="text-sm text-gray-600 hover:text-brand-primary transition-colors duration-200"
                   >
                     {t('navigation.about')}
                   </a>
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <a
                     href={`/${locale}/contact`}
-                    className="text-sm text-gray-600 hover:text-teal-600 transition-colors duration-200"
+                    className="text-sm text-gray-600 hover:text-brand-primary transition-colors duration-200"
                   >
                     {t('navigation.contact')}
                   </a>
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
                       <span className="font-medium">{t('footer.phone')}:</span>{' '}
                       <a
                         href="tel:+420725555095"
-                        className="hover:text-teal-600 transition-colors duration-200"
+                        className="hover:text-brand-primary transition-colors duration-200"
                       >
                         {t('header.phone1')}
                       </a>
@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
                     <p className="text-sm text-gray-600">
                       <a
                         href="tel:+420777717618"
-                        className="hover:text-teal-600 transition-colors duration-200"
+                        className="hover:text-brand-primary transition-colors duration-200"
                       >
                         {t('header.phone2')}
                       </a>
@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
                       <span className="font-medium">{t('footer.email')}:</span>{' '}
                       <a
                         href="mailto:info@movecleanmafia.cz"
-                        className="hover:text-teal-600 transition-colors duration-200"
+                        className="hover:text-brand-primary transition-colors duration-200"
                       >
                         info@movecleanmafia.cz
                       </a>
@@ -108,7 +108,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <a
                     href={`/${locale}/privacy`}
-                    className="text-sm text-gray-600 hover:text-teal-600 transition-colors duration-200"
+                    className="text-sm text-gray-600 hover:text-brand-primary transition-colors duration-200"
                   >
                     {t('footer.privacyPolicy')}
                   </a>
@@ -116,7 +116,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <a
                     href={`/${locale}/terms-of-service`}
-                    className="text-sm text-gray-600 hover:text-teal-600 transition-colors duration-200"
+                    className="text-sm text-gray-600 hover:text-brand-primary transition-colors duration-200"
                   >
                     {t('footer.termsOfService')}
                   </a>
@@ -124,7 +124,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <a
                     href={`/${locale}/cookie-policy`}
-                    className="text-sm text-gray-600 hover:text-teal-600 transition-colors duration-200"
+                    className="text-sm text-gray-600 hover:text-brand-primary transition-colors duration-200"
                   >
                     {t('footer.cookiePolicy')}
                   </a>
@@ -137,7 +137,7 @@ export const Footer: React.FC = () => {
                         new CustomEvent('openCookieSettings'),
                       );
                     }}
-                    className="text-sm text-gray-600 hover:text-teal-600 transition-colors duration-200 text-left"
+                    className="text-sm text-gray-600 hover:text-brand-primary transition-colors duration-200 text-left"
                   >
                     {t('cookieConsent.customize')}
                   </button>

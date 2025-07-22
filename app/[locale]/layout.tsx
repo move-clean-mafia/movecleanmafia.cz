@@ -102,7 +102,7 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
           locale={locale as SupportedLanguage}
           translations={translations}
         >
-          <div className="min-h-screen bg-gray-50 flex flex-col">
+          <div className="min-h-screen bg-brand-light flex flex-col">
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />

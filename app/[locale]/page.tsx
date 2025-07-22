@@ -105,7 +105,7 @@ const HomePage = async ({ params }: HomePageProps) => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-emerald-100">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-light to-brand-primary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-heading">
             {t('hero.title')}
@@ -116,13 +116,13 @@ const HomePage = async ({ params }: HomePageProps) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={`/${locale}/services`}
-              className="inline-flex items-center px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300"
+              className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-secondary transition-colors duration-300"
             >
               {t('navigation.services')}
             </a>
             <a
               href={`/${locale}/contact`}
-              className="inline-flex items-center px-8 py-4 bg-white text-green-600 font-semibold rounded-lg border-2 border-green-600 hover:bg-green-50 transition-colors duration-300"
+              className="inline-flex items-center px-8 py-4 bg-white text-brand-primary font-semibold rounded-lg border-2 border-brand-primary hover:bg-brand-light transition-colors duration-300"
             >
               {t('hero.cta')}
             </a>
@@ -144,10 +144,10 @@ const HomePage = async ({ params }: HomePageProps) => {
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light to-brand-primary/10 hover:shadow-lg transition-shadow duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-8 h-8 text-brand-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -168,10 +168,10 @@ const HomePage = async ({ params }: HomePageProps) => {
               </p>
             </div>
 
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light to-brand-primary/10 hover:shadow-lg transition-shadow duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-8 h-8 text-brand-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -192,10 +192,10 @@ const HomePage = async ({ params }: HomePageProps) => {
               </p>
             </div>
 
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light to-brand-primary/10 hover:shadow-lg transition-shadow duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-8 h-8 text-brand-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -216,10 +216,10 @@ const HomePage = async ({ params }: HomePageProps) => {
               </p>
             </div>
 
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light to-brand-primary/10 hover:shadow-lg transition-shadow duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-8 h-8 text-brand-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -255,9 +255,9 @@ const HomePage = async ({ params }: HomePageProps) => {
           {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-8 h-8 text-brand-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -279,9 +279,9 @@ const HomePage = async ({ params }: HomePageProps) => {
             </div>
 
             <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-8 h-8 text-brand-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -303,9 +303,9 @@ const HomePage = async ({ params }: HomePageProps) => {
             </div>
 
             <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-8 h-8 text-brand-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -330,17 +330,17 @@ const HomePage = async ({ params }: HomePageProps) => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-to-br from-green-600 to-emerald-700">
+      <section className="py-20 bg-gradient-to-br from-brand-primary to-brand-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-heading">
             {pageContent.ctaTitle}
           </h2>
-          <p className="text-xl text-green-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-brand-light mb-8 max-w-3xl mx-auto">
             {pageContent.ctaSubtitle}
           </p>
           <a
             href={`/${locale}/contact`}
-            className="inline-flex items-center px-8 py-4 bg-white text-green-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300"
+            className="inline-flex items-center px-8 py-4 bg-white text-brand-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300"
           >
             {t('hero.cta')}
           </a>

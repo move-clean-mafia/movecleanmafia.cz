@@ -57,10 +57,12 @@ export default {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         brand: {
-          primary: '#68949B',
-          secondary: '#537E86',
-          light: '#A8C3C5',
-          text: '#8C827D',
+          primary: '#D6B977', // Vintage Gold
+          secondary: '#6B4F2C', // Rich Brown
+          light: '#FDF6E3', // Warm Neutral
+          text: '#CCCCCC', // Light Grey
+          dark: '#0A0A0A', // Deep Black
+          white: '#FFFFFF', // White
         },
         chart: {
           1: 'hsl(var(--chart-1))',
