@@ -2,17 +2,12 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Oswald, Source_Sans_3 } from 'next/font/google';
 import { notFound } from 'next/navigation';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/next';
 import { supportedLanguages, type SupportedLanguage } from '../../lib/i18n';
 import { getServerTranslations } from '../../lib/i18n-server';
 import { I18nProvider } from '../../components/i18n-provider';
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
-import { FloatingReservationButton } from '../../components/ui/floating-reservation-button';
 import { Toaster } from '../../components/ui/toaster';
-import { CookieConsent } from '../../components/cookie-consent';
-import Script from 'next/script';
 import '../globals.css';
 
 const oswald = Oswald({
@@ -27,8 +22,6 @@ const sourceSans = Source_Sans_3({
   weight: ['200', '300', '400', '600', '700'],
   style: ['normal', 'italic'],
 });
-
-const GTM_ID = 'GTM-K7GBVGWX';
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -46,101 +39,48 @@ export const generateMetadata = async ({
 }): Promise<Metadata> => {
   const { locale } = await params;
 
-  const isCzech = locale === 'cs';
+  const getTitle = (locale: string): string => {
+    switch (locale) {
+      case 'cs':
+        return 'MoveCleanMafia.cz - Profesionální přeprava a úklid';
+      case 'ua':
+        return 'MoveCleanMafia.ua - Професійні перевезення та прибирання';
+      default:
+        return 'MoveCleanMafia.com - Professional Moving & Cleaning';
+    }
+  };
 
-  const title = isCzech
-    ? 'Pulmonologie.cz - Profesionální plicní péče'
-    : 'Pulmonology.cz - Professional Pulmonological Care';
+  const getDescription = (locale: string): string => {
+    switch (locale) {
+      case 'cs':
+        return 'Spolehlivé služby přepravy a úklidu pro domácnosti a firmy';
+      case 'ua':
+        return 'Надійні послуги перевезення та прибирання для домогосподарств та компаній';
+      default:
+        return 'Reliable moving and cleaning services for households and businesses';
+    }
+  };
 
-  const description = isCzech
-    ? 'Specializovaná plicní péče a respirační zdravotní služby v České republice'
-    : 'Specialized pulmonological care and respiratory health services in Czech Republic';
-
-  const keywords = isCzech
-    ? [
-        'plicní lékařství',
-        'respirační zdraví',
-        'plicní péče',
-        'pulmonolog',
-        'Česká republika',
-      ]
-    : [
-        'pulmonology',
-        'respiratory health',
-        'lung care',
-        'pulmonologist',
-        'Czech Republic',
-      ];
+  const getTitleTemplate = (locale: string): string => {
+    switch (locale) {
+      case 'cs':
+        return '%s | MoveCleanMafia.cz';
+      case 'ua':
+        return '%s | MoveCleanMafia.ua';
+      default:
+        return '%s | MoveCleanMafia.com';
+    }
+  };
 
   return {
     title: {
-      template: isCzech ? '%s | Pulmonologie.cz' : '%s | Pulmonology.cz',
-      default: title,
+      template: getTitleTemplate(locale),
+      default: getTitle(locale),
     },
-    description,
-    keywords,
-    authors: [{ name: isCzech ? 'Pulmonologie.cz' : 'Pulmonology.cz' }],
-    creator: isCzech ? 'Pulmonologie.cz' : 'Pulmonology.cz',
-    publisher: isCzech ? 'Pulmonologie.cz' : 'Pulmonology.cz',
+    description: getDescription(locale),
     robots: {
-      index: false,
-      follow: false,
-      googleBot: {
-        index: false,
-        follow: false,
-      },
-    },
-    icons: {
-      icon: [
-        {
-          url: '/favicon/favicon-16x16.png',
-          sizes: '16x16',
-          type: 'image/png',
-        },
-        {
-          url: '/favicon/favicon-32x32.png',
-          sizes: '32x32',
-          type: 'image/png',
-        },
-      ],
-      apple: [
-        {
-          url: '/favicon/apple-touch-icon.png',
-          sizes: '180x180',
-          type: 'image/png',
-        },
-      ],
-      other: [
-        {
-          rel: 'mask-icon',
-          url: '/favicon/safari-pinned-tab.svg',
-          color: '#000000',
-        },
-      ],
-    },
-    manifest: '/favicon/site.webmanifest',
-    openGraph: {
-      type: 'website',
-      locale: isCzech ? 'cs_CZ' : 'en_US',
-      url: `https://pulmonology.cz/${locale}`,
-      title,
-      description,
-      siteName: isCzech ? 'Pulmonologie.cz' : 'Pulmonology.cz',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-    },
-    verification: {
-      google: 'your-google-verification-code',
-    },
-    alternates: {
-      canonical: `https://pulmonology.cz/${locale}`,
-      languages: {
-        cs: 'https://pulmonology.cz/cs',
-        en: 'https://pulmonology.cz/en',
-      },
+      index: true,
+      follow: true,
     },
   };
 };
@@ -157,49 +97,7 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
 
   return (
     <html lang={locale} dir="ltr">
-      <head>
-        <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon/favicon-16x16.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicon/apple-touch-icon.png"
-        />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="theme-color" content="#ffffff" />
-        {/* Google Tag Manager */}
-        <Script id="gtm-script" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','${GTM_ID}');`}
-        </Script>
-        {/* End Google Tag Manager */}
-      </head>
       <body className={`${oswald.variable} ${sourceSans.variable} antialiased`}>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <I18nProvider
           locale={locale as SupportedLanguage}
           translations={translations}
@@ -208,13 +106,9 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
-            <FloatingReservationButton />
             <Toaster />
-            <CookieConsent />
           </div>
         </I18nProvider>
-        <SpeedInsights />
-        <Analytics />
       </body>
     </html>
   );

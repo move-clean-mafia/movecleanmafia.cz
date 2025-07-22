@@ -112,7 +112,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({
   ) => {
     if (key === 'necessary') return; // Cannot disable necessary cookies
 
-    setPreferences((prev) => ({
+    setPreferences((prev: CookiePreferences) => ({
       ...prev,
       [key]: value,
     }));

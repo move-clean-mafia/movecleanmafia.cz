@@ -2,41 +2,6 @@ import React from 'react';
 import { Metadata } from 'next';
 import { getTranslation } from '../../lib/i18n-server';
 import { type SupportedLanguage } from '../../lib/i18n';
-import { generatePageMetadata, pageMetadata } from '../../lib/metadata-utils';
-import {
-  MapPin,
-  Phone,
-  Clock,
-  ArrowRight,
-  Stethoscope,
-  Building2,
-  Calendar,
-  Activity,
-  Wind,
-  Zap,
-  Gauge,
-  Moon,
-  Heart,
-  Award,
-  Shield,
-} from 'lucide-react';
-import {
-  CallToAction,
-  HomepageServiceCards,
-  HomepageTeamShowcase,
-  HomepageTestimonials,
-  HomepageRecentNews,
-} from '../../components/ui';
-import {
-  collection,
-  getDocs,
-  query,
-  where,
-  orderBy,
-  limit,
-} from 'firebase/firestore';
-import { db } from '../../firebase';
-import { ClientNewsItem } from '../../lib/admin-utils';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -46,436 +11,339 @@ export async function generateMetadata({
   params,
 }: HomePageProps): Promise<Metadata> {
   const { locale } = await params;
-  const metadata = pageMetadata.home[locale as 'cs' | 'en'];
+  let title: string;
+  let description: string;
 
-  return generatePageMetadata({
-    ...metadata,
-    url: `/${locale}`,
-    locale,
-  });
+  switch (locale) {
+    case 'cs':
+      title = 'MoveCleanMafia.cz - Profesionální přeprava a úklid';
+      description =
+        'Spolehlivé služby přepravy a úklidu pro domácnosti a firmy';
+      break;
+    case 'ua':
+      title = 'MoveCleanMafia.ua - Професійні перевезення та прибирання';
+      description =
+        'Надійні послуги перевезення та прибирання для домогосподарств та компаній';
+      break;
+    default:
+      title = 'MoveCleanMafia.com - Professional Moving & Cleaning';
+      description =
+        'Reliable moving and cleaning services for households and businesses';
+      break;
+  }
+
+  return {
+    title,
+    description,
+  };
 }
 
 const HomePage = async ({ params }: HomePageProps) => {
   const { locale } = await params;
   const { t } = await getTranslation(locale as SupportedLanguage);
 
-  // Fetch recent news for the homepage
-  let recentNews: ClientNewsItem[] = [];
-  try {
-    const newsQuery = query(
-      collection(db, 'news'),
-      where('published', '==', true),
-      orderBy('publishedAt', 'desc'),
-      limit(3),
-    );
-    const querySnapshot = await getDocs(newsQuery);
-    recentNews = querySnapshot.docs.map((doc) => {
-      const data = doc.data();
+  let pageContent;
 
-      // Convert Firebase Timestamps to ISO strings for client components
-      const convertTimestamp = (timestamp: any) => {
-        if (!timestamp) return null;
-        if (timestamp.toDate && typeof timestamp.toDate === 'function') {
-          return timestamp.toDate().toISOString();
-        }
-        if (timestamp instanceof Date) {
-          return timestamp.toISOString();
-        }
-        if (typeof timestamp === 'string') {
-          return timestamp;
-        }
-        return null;
+  switch (locale) {
+    case 'cs':
+      pageContent = {
+        servicesTitle: 'Naše služby',
+        servicesSubtitle:
+          'Kompletní služby přepravy a úklidu pro váš domov a kancelář',
+        movingDescription: 'Profesionální stěhování bytů, domů a kanceláří',
+        cleaningDescription: 'Důkladný úklid domácností a komerčních prostor',
+        packingDescription: 'Bezpečné balení a zabalení všech vašich věcí',
+        storageDescription: 'Bezpečné skladování vašich věcí v našich skladech',
+        whyUsTitle: 'Proč si vybrat nás?',
+        reliabilityDescription: 'Spolehlivé služby s mnohaletými zkušenostmi',
+        qualityDescription: 'Nejvyšší kvalita služeb a péče o vaše věci',
+        speedDescription: 'Rychlé a efektivní provedení všech prací',
+        ctaTitle: 'Začněme spolupracovat',
+        ctaSubtitle: 'Kontaktujte nás a získejte bezplatnou konzultaci',
       };
-
-      return {
-        id: doc.id,
-        title: data.title || '',
-        content: data.content || '',
-        perex: data.perex || '',
-        mainImage: data.mainImage || '',
-        published: data.published || false,
-        publishedAt: convertTimestamp(data.publishedAt),
-        createdAt: convertTimestamp(data.createdAt),
-        updatedAt: convertTimestamp(data.updatedAt),
-      } as ClientNewsItem;
-    });
-  } catch (error) {
-    console.error('Error fetching recent news:', error);
-    recentNews = [];
+      break;
+    case 'ua':
+      pageContent = {
+        servicesTitle: 'Наші послуги',
+        servicesSubtitle:
+          'Повний спектр послуг перевезення та прибирання для вашого дому та офісу',
+        movingDescription: 'Професійне перевезення квартир, будинків та офісів',
+        cleaningDescription:
+          'Ретельне прибирання домогосподарств та комерційних приміщень',
+        packingDescription: 'Безпечне пакування та упаковка всіх ваших речей',
+        storageDescription: 'Безпечне зберігання ваших речей на наших складах',
+        whyUsTitle: 'Чому обрати нас?',
+        reliabilityDescription: 'Надійні послуги з багаторічним досвідом',
+        qualityDescription: 'Найвища якість послуг та догляд за вашими речами',
+        speedDescription: 'Швидке та ефективне виконання всіх робіт',
+        ctaTitle: 'Почнемо співпрацювати',
+        ctaSubtitle: "Зв'яжіться з нами та отримайте безкоштовну консультацію",
+      };
+      break;
+    default:
+      pageContent = {
+        servicesTitle: 'Our Services',
+        servicesSubtitle:
+          'Complete moving and cleaning services for your home and office',
+        movingDescription:
+          'Professional moving of apartments, houses and offices',
+        cleaningDescription:
+          'Thorough cleaning of households and commercial spaces',
+        packingDescription: 'Safe packing and packaging of all your belongings',
+        storageDescription: 'Safe storage of your belongings in our warehouses',
+        whyUsTitle: 'Why Choose Us?',
+        reliabilityDescription: 'Reliable services with years of experience',
+        qualityDescription:
+          'Highest quality services and care for your belongings',
+        speedDescription: 'Fast and efficient execution of all work',
+        ctaTitle: "Let's Start Working Together",
+        ctaSubtitle: 'Contact us and get a free consultation',
+      };
+      break;
   }
-
-  // Prepare news data for the homepage component
-  const newsForHomepage = recentNews.map((article) => ({
-    id: article.id,
-    title: article.title,
-    perex: article.perex,
-    mainImage: article.mainImage,
-    publishedAt: article.publishedAt || '',
-    formattedDate: article.publishedAt
-      ? new Date(article.publishedAt).toLocaleDateString(locale, {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric',
-        })
-      : '',
-  }));
-
-  // Define key services for homepage
-  const keyServices = [
-    {
-      id: 'spirometry',
-      title: t('services.spirometry.title'),
-      description: t('services.spirometry.shortDescription'),
-      icon: Activity,
-      href: `/${locale}/services/spirometry`,
-    },
-    {
-      id: 'bodyplethysmography',
-      title: t('services.bodyplethysmography.title'),
-      description: t('services.bodyplethysmography.shortDescription'),
-      icon: Stethoscope,
-      href: `/${locale}/services/bodyplethysmography`,
-    },
-    {
-      id: 'feno-analyzer',
-      title: t('services.fenoAnalyzer.title'),
-      description: t('services.fenoAnalyzer.shortDescription'),
-      icon: Wind,
-      href: `/${locale}/services/feno-analyzer`,
-    },
-    {
-      id: 'oscillometry',
-      title: t('services.oscillometry.title'),
-      description: t('services.oscillometry.shortDescription'),
-      icon: Zap,
-      href: `/${locale}/services/oscillometry`,
-    },
-    {
-      id: 'breath-co-analyzer',
-      title: t('services.breathCoAnalyzer.title'),
-      description: t('services.breathCoAnalyzer.shortDescription'),
-      icon: Gauge,
-      href: `/${locale}/services/breath-co-analyzer`,
-    },
-    {
-      id: 'sleep-study',
-      title: t('services.sleepStudy.title'),
-      description: t('services.sleepStudy.shortDescription'),
-      icon: Moon,
-      href: `/${locale}/services/sleep-study`,
-    },
-  ];
-
-  // Define team members for homepage
-  const keyDoctors = [
-    {
-      name: 'MUDr. Jurij Didyk',
-      specialty: t('ourTeam.pulmonologistAllergist'),
-      experience: t('ourTeam.jurij15Years'),
-      imageSrc:
-        'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-    },
-    {
-      name: 'MUDr. Ala Stelmashok',
-      specialty: t('ourTeam.allergySpecialist'),
-      experience: t('ourTeam.ala12Years'),
-      imageSrc:
-        'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-    },
-  ];
-
-  // Define clinic features for homepage
-  const clinicFeatures = [
-    {
-      icon: Award,
-      title: t('homepage.features.modernEquipment'),
-      description: t('homepage.features.modernEquipmentDescription'),
-    },
-    {
-      icon: Heart,
-      title: t('homepage.features.personalizedCare'),
-      description: t('homepage.features.personalizedCareDescription'),
-    },
-    {
-      icon: Shield,
-      title: t('homepage.features.safeEnvironment'),
-      description: t('homepage.features.safeEnvironmentDescription'),
-    },
-  ];
-
-  // Define testimonials for homepage
-  const testimonials = [
-    {
-      id: '1',
-      name: t('homepage.testimonials.patient1.name'),
-      rating: 5,
-      comment: t('homepage.testimonials.patient1.comment'),
-      service: t('services.spirometry.title'),
-      date: t('homepage.testimonials.patient1.date'),
-    },
-    {
-      id: '2',
-      name: t('homepage.testimonials.patient2.name'),
-      rating: 5,
-      comment: t('homepage.testimonials.patient2.comment'),
-      service: t('services.consultation'),
-      date: t('homepage.testimonials.patient2.date'),
-    },
-    {
-      id: '3',
-      name: t('homepage.testimonials.patient3.name'),
-      rating: 5,
-      comment: t('homepage.testimonials.patient3.comment'),
-      service: t('services.bodyplethysmography.title'),
-      date: t('homepage.testimonials.patient3.date'),
-    },
-  ];
 
   return (
     <div className="min-h-screen">
-      {/* Interactive Split-Screen Hero Section */}
-      <section className="relative min-h-screen overflow-hidden">
-        <div className="flex flex-col lg:flex-row h-full min-h-screen">
-          {/* Main Clinic Block */}
-          <div className="group relative flex-1 transition-all duration-700 ease-in-out lg:hover:flex-[1.3] cursor-pointer">
-            {/* Background Image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/90 to-brand-secondary/90">
-              <img
-                src="/clinic/clinic_1.jpg"
-                alt="Main Clinic"
-                className="w-full h-full object-cover mix-blend-overlay transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-700"></div>
-
-            {/* Content */}
-            <div className="relative z-10 flex flex-col justify-center items-center h-full min-h-[50vh] lg:min-h-screen p-8 text-white text-center">
-              <div className="transform transition-all duration-700 group-hover:scale-110">
-                <div className="mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-4">
-                    <Building2 className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-
-                <h2
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading"
-                  style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
-                >
-                  {t('contact.mainClinic')}
-                </h2>
-
-                <p
-                  className="text-lg md:text-xl lg:text-2xl mb-8 max-w-md mx-auto leading-relaxed opacity-90"
-                  style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
-                >
-                  {t('contact.mainClinicAddress')}
-                </p>
-
-                <div
-                  className="space-y-3 mb-8 text-base md:text-lg"
-                  style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
-                >
-                  <div className="flex items-center justify-center space-x-2">
-                    <Phone className="w-5 h-5" />
-                    <span>+420 725 555 095</span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2">
-                    <Clock className="w-5 h-5" />
-                    <span>
-                      {t('header.monday')} - {t('header.friday')}
-                    </span>
-                  </div>
-                </div>
-
-                <a
-                  href={`/${locale}/reservation?clinic=main`}
-                  className="inline-flex items-center px-8 py-4 bg-white text-brand-primary font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg transform hover:scale-105 group"
-                >
-                  <Calendar className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
-                  {t('callToAction.bookOnline')}
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Branch Office Block */}
-          <div className="group relative flex-1 transition-all duration-700 ease-in-out lg:hover:flex-[1.3] cursor-pointer">
-            {/* Background Image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-light/90 to-brand-primary/90">
-              <img
-                src="/clinic/clinic_2.jpg"
-                alt="Branch Office"
-                className="w-full h-full object-cover mix-blend-overlay transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-700"></div>
-
-            {/* Content */}
-            <div className="relative z-10 flex flex-col justify-center items-center h-full min-h-[50vh] lg:min-h-screen p-8 text-white text-center">
-              <div className="transform transition-all duration-700 group-hover:scale-110">
-                <div className="mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-4">
-                    <Stethoscope className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-
-                <h2
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading"
-                  style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
-                >
-                  {t('contact.branchOffice')}
-                </h2>
-
-                <p
-                  className="text-lg md:text-xl lg:text-2xl mb-8 max-w-md mx-auto leading-relaxed opacity-90"
-                  style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
-                >
-                  {t('contact.addressToBeDetermined')}
-                </p>
-
-                <div
-                  className="space-y-3 mb-8 text-base md:text-lg"
-                  style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
-                >
-                  <div className="flex items-center justify-center space-x-2">
-                    <Phone className="w-5 h-5" />
-                    <span>+420 731 832 518</span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2">
-                    <Clock className="w-5 h-5" />
-                    <span>
-                      {t('header.monWed')} - {t('header.thuFri')}
-                    </span>
-                  </div>
-                </div>
-
-                <a
-                  href={`/${locale}/reservation?clinic=branch`}
-                  className="inline-flex items-center px-8 py-4 bg-white text-brand-primary font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg transform hover:scale-105 group"
-                >
-                  <Calendar className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
-                  {t('callToAction.bookOnline')}
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="animate-bounce">
-            <div className="w-1 h-8 bg-white/50 rounded-full"></div>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-emerald-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-heading">
+            {t('hero.title')}
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            {t('hero.subtitle')}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={`/${locale}/services`}
+              className="inline-flex items-center px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300"
+            >
+              {t('navigation.services')}
+            </a>
+            <a
+              href={`/${locale}/contact`}
+              className="inline-flex items-center px-8 py-4 bg-white text-green-600 font-semibold rounded-lg border-2 border-green-600 hover:bg-green-50 transition-colors duration-300"
+            >
+              {t('hero.cta')}
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Welcome Section */}
+      {/* Services Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-heading">
-              {t('homepage.welcomeTitle')}
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
+              {pageContent.servicesTitle}
             </h2>
-            <p className="text-xl text-brand-text max-w-3xl mx-auto leading-relaxed">
-              {t('homepage.welcomeDescription')}
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              {pageContent.servicesSubtitle}
             </p>
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+                <svg
+                  className="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
+                {t('services.moving')}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {pageContent.movingDescription}
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+                <svg
+                  className="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
+                {t('services.cleaning')}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {pageContent.cleaningDescription}
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+                <svg
+                  className="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
+                {t('services.packing')}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {pageContent.packingDescription}
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+                <svg
+                  className="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-14 0h14"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
+                {t('services.storage')}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {pageContent.storageDescription}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
+              {pageContent.whyUsTitle}
+            </h2>
           </div>
 
           {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light/10 to-brand-primary/10 hover:from-brand-light/20 hover:to-brand-primary/20 transition-all duration-300 hover:shadow-xl">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/10 rounded-full mb-6 group-hover:bg-brand-primary/20 transition-colors duration-300">
-                <Stethoscope className="w-8 h-8 text-brand-primary" />
+            <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+                <svg
+                  className="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                {t('homepage.diagnosticsTitle')}
+                {t('features.reliability')}
               </h3>
-              <p className="text-brand-text leading-relaxed">
-                {t('homepage.diagnosticsDescription')}
+              <p className="text-gray-600 leading-relaxed">
+                {pageContent.reliabilityDescription}
               </p>
             </div>
 
-            <div className="group text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light/10 to-brand-primary/10 hover:from-brand-light/20 hover:to-brand-primary/20 transition-all duration-300 hover:shadow-xl">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/10 rounded-full mb-6 group-hover:bg-brand-primary/20 transition-colors duration-300">
-                <Building2 className="w-8 h-8 text-brand-primary" />
+            <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+                <svg
+                  className="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                  />
+                </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                {t('homepage.treatmentTitle')}
+                {t('features.quality')}
               </h3>
-              <p className="text-brand-text leading-relaxed">
-                {t('homepage.treatmentDescription')}
+              <p className="text-gray-600 leading-relaxed">
+                {pageContent.qualityDescription}
               </p>
             </div>
 
-            <div className="group text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light/10 to-brand-primary/10 hover:from-brand-light/20 hover:to-brand-primary/20 transition-all duration-300 hover:shadow-xl">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/10 rounded-full mb-6 group-hover:bg-brand-primary/20 transition-colors duration-300">
-                <MapPin className="w-8 h-8 text-brand-primary" />
+            <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+                <svg
+                  className="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                {t('homepage.preventionTitle')}
+                {t('features.speed')}
               </h3>
-              <p className="text-brand-text leading-relaxed">
-                {t('homepage.preventionDescription')}
+              <p className="text-gray-600 leading-relaxed">
+                {pageContent.speedDescription}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Block 2: Our Key Services */}
-      <HomepageServiceCards
-        locale={locale}
-        services={keyServices}
-        title={t('homepage.services.title')}
-        subtitle={t('homepage.services.subtitle')}
-        learnMoreText={t('services.learnMore')}
-      />
-
-      {/* Block 3: Why Choose Us? (Technology and Team) */}
-      <HomepageTeamShowcase
-        locale={locale}
-        doctors={keyDoctors}
-        title={t('homepage.team.title')}
-        subtitle={t('homepage.team.subtitle')}
-        philosophyTitle={t('homepage.team.philosophyTitle')}
-        philosophyDescription={t('homepage.team.philosophyDescription')}
-        viewAllTeamText={t('homepage.team.viewAllTeam')}
-        features={clinicFeatures}
-      />
-
-      {/* Block 4: Testimonials From Our Patients */}
-      <HomepageTestimonials
-        testimonials={testimonials}
-        title={t('homepage.testimonials.title')}
-        subtitle={t('homepage.testimonials.subtitle')}
-      />
-
-      {/* Block 5: News & Articles */}
-      <HomepageRecentNews
-        locale={locale}
-        news={newsForHomepage}
-        title={t('homepage.news.title')}
-        subtitle={t('homepage.news.subtitle')}
-        readMoreText={t('news.readMore')}
-        viewAllNewsText={t('homepage.news.viewAllNews')}
-        publishedText={t('news.published')}
-        noNewsText={t('homepage.news.noNews')}
-        noNewsDescription={t('homepage.news.noNewsDescription')}
-      />
-
       {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-to-br from-brand-light/5 to-brand-primary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CallToAction
-            title={t('contact.haveQuestions')}
-            description={t('contact.contactUsDescription')}
-          />
+      <section className="py-20 bg-gradient-to-br from-green-600 to-emerald-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-heading">
+            {pageContent.ctaTitle}
+          </h2>
+          <p className="text-xl text-green-100 mb-8 max-w-3xl mx-auto">
+            {pageContent.ctaSubtitle}
+          </p>
+          <a
+            href={`/${locale}/contact`}
+            className="inline-flex items-center px-8 py-4 bg-white text-green-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300"
+          >
+            {t('hero.cta')}
+          </a>
         </div>
       </section>
     </div>

@@ -31,6 +31,12 @@ const languages: Language[] = [
     nativeName: 'English',
     flag: '🇺🇸',
   },
+  {
+    code: 'ua',
+    name: 'Ukrainian',
+    nativeName: 'Українська',
+    flag: '🇺🇦',
+  },
 ];
 
 export const LanguageSwitcher: React.FC = () => {
