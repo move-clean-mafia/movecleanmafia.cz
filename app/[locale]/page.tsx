@@ -2,6 +2,35 @@ import React from 'react';
 import { Metadata } from 'next';
 import { getTranslation } from '../../lib/i18n-server';
 import { type SupportedLanguage } from '../../lib/i18n';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '../../components/ui/card';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '../../components/ui/tabs';
+import { Badge } from '../../components/ui/badge';
+
+import {
+  Truck,
+  Sparkles,
+  Package,
+  Warehouse,
+  Clock,
+  Shield,
+  Star,
+  Check,
+  Phone,
+  Mail,
+  MapPin,
+  ArrowRight,
+} from 'lucide-react';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -42,65 +71,90 @@ const HomePage = async ({ params }: HomePageProps) => {
   const { locale } = await params;
   const { t } = await getTranslation(locale as SupportedLanguage);
 
-  let pageContent;
+  // Get detailed services data
+  const movingServices = t(
+    'detailedServices.movingAndTransport.items',
+  ) as unknown as Array<{
+    name: string;
+    unit: string;
+    price: string;
+  }>;
 
-  switch (locale) {
-    case 'cs':
-      pageContent = {
-        servicesTitle: 'Naše služby',
-        servicesSubtitle:
-          'Kompletní služby přepravy a úklidu pro váš domov a kancelář',
-        movingDescription: 'Profesionální stěhování bytů, domů a kanceláří',
-        cleaningDescription: 'Důkladný úklid domácností a komerčních prostor',
-        packingDescription: 'Bezpečné balení a zabalení všech vašich věcí',
-        storageDescription: 'Bezpečné skladování vašich věcí v našich skladech',
-        whyUsTitle: 'Proč si vybrat nás?',
-        reliabilityDescription: 'Spolehlivé služby s mnohaletými zkušenostmi',
-        qualityDescription: 'Nejvyšší kvalita služeb a péče o vaše věci',
-        speedDescription: 'Rychlé a efektivní provedení všech prací',
-        ctaTitle: 'Začněme spolupracovat',
-        ctaSubtitle: 'Kontaktujte nás a získejte bezplatnou konzultaci',
-      };
-      break;
-    case 'ua':
-      pageContent = {
-        servicesTitle: 'Наші послуги',
-        servicesSubtitle:
-          'Повний спектр послуг перевезення та прибирання для вашого дому та офісу',
-        movingDescription: 'Професійне перевезення квартир, будинків та офісів',
-        cleaningDescription:
-          'Ретельне прибирання домогосподарств та комерційних приміщень',
-        packingDescription: 'Безпечне пакування та упаковка всіх ваших речей',
-        storageDescription: 'Безпечне зберігання ваших речей на наших складах',
-        whyUsTitle: 'Чому обрати нас?',
-        reliabilityDescription: 'Надійні послуги з багаторічним досвідом',
-        qualityDescription: 'Найвища якість послуг та догляд за вашими речами',
-        speedDescription: 'Швидке та ефективне виконання всіх робіт',
-        ctaTitle: 'Почнемо співпрацювати',
-        ctaSubtitle: "Зв'яжіться з нами та отримайте безкоштовну консультацію",
-      };
-      break;
-    default:
-      pageContent = {
-        servicesTitle: 'Our Services',
-        servicesSubtitle:
-          'Complete moving and cleaning services for your home and office',
-        movingDescription:
-          'Professional moving of apartments, houses and offices',
-        cleaningDescription:
-          'Thorough cleaning of households and commercial spaces',
-        packingDescription: 'Safe packing and packaging of all your belongings',
-        storageDescription: 'Safe storage of your belongings in our warehouses',
-        whyUsTitle: 'Why Choose Us?',
-        reliabilityDescription: 'Reliable services with years of experience',
-        qualityDescription:
-          'Highest quality services and care for your belongings',
-        speedDescription: 'Fast and efficient execution of all work',
-        ctaTitle: "Let's Start Working Together",
-        ctaSubtitle: 'Contact us and get a free consultation',
-      };
-      break;
-  }
+  const cleaningPackages = t(
+    'detailedServices.cleaningPackages.packages',
+  ) as unknown as {
+    s_size: {
+      title: string;
+      description: string;
+      included: string[];
+    };
+    m_size: {
+      title: string;
+      description: string;
+      included: string[];
+    };
+    xl_size: {
+      title: string;
+      description: string;
+      included: string[];
+    };
+  };
+
+  const dryCleaningServices = t(
+    'detailedServices.dryCleaning.items',
+  ) as unknown as Array<{
+    name: string;
+    price: string;
+  }>;
+
+  const services = [
+    {
+      icon: Truck,
+      title: t('services.moving'),
+      description: t('services.movingDescription'),
+      features: t('services.movingFeatures') as unknown as string[],
+      highlightPrice: movingServices[0]?.price || '350-450 Kč',
+    },
+    {
+      icon: Sparkles,
+      title: t('services.cleaning'),
+      description: t('services.cleaningDescription'),
+      features: t('services.cleaningFeatures') as unknown as string[],
+      highlightPrice: 'od 250 Kč/m²',
+    },
+    {
+      icon: Package,
+      title: t('services.packing'),
+      description: t('services.packingDescription'),
+      features: t('services.packingFeatures') as unknown as string[],
+      highlightPrice: '350-450 Kč',
+    },
+    {
+      icon: Warehouse,
+      title: t('services.storage'),
+      description: t('services.storageDescription'),
+      features: t('services.storageFeatures') as unknown as string[],
+      highlightPrice: 'Flexibilní',
+    },
+  ];
+
+  const benefits = [
+    {
+      icon: Clock,
+      title: t('services.speed'),
+      description: t('services.speedDescription'),
+    },
+    {
+      icon: Shield,
+      title: t('services.safety'),
+      description: t('services.safetyDescription'),
+    },
+    {
+      icon: Star,
+      title: t('services.quality'),
+      description: t('services.qualityDescription'),
+    },
+  ];
 
   return (
     <div className="min-h-screen">
@@ -130,200 +184,291 @@ const HomePage = async ({ params }: HomePageProps) => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Overview Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
-              {pageContent.servicesTitle}
+              {t('services.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              {pageContent.servicesSubtitle}
+              {t('services.subtitle')}
             </p>
           </div>
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light to-brand-primary/10 hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
-                <svg
-                  className="w-8 h-8 text-brand-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                {t('services.moving')}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {pageContent.movingDescription}
-              </p>
-            </div>
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <CardHeader className="bg-gradient-to-r from-brand-light to-brand-primary/20 border-b border-brand-primary/30">
+                  <div className="flex items-center space-x-3">
+                    <div className="p-2 bg-brand-primary rounded-lg">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <CardTitle className="text-xl font-heading font-bold text-gray-900">
+                      {service.title}
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="p-6">
+                  <CardDescription className="text-gray-600 font-light mb-4 text-base">
+                    {service.description}
+                  </CardDescription>
+                  <div className="mb-4">
+                    <Badge variant="secondary" className="font-medium">
+                      Od {service.highlightPrice}
+                    </Badge>
+                  </div>
+                  <div className="space-y-2">
+                    {service.features
+                      .slice(0, 3)
+                      .map((feature, featureIndex) => (
+                        <div
+                          key={featureIndex}
+                          className="flex items-center space-x-2"
+                        >
+                          <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          <span className="text-sm font-light text-gray-700">
+                            {feature}
+                          </span>
+                        </div>
+                      ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light to-brand-primary/10 hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
-                <svg
-                  className="w-8 h-8 text-brand-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                {t('services.cleaning')}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {pageContent.cleaningDescription}
-              </p>
-            </div>
+      {/* Pricing Highlights Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
+              Cenové nabídky
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Transparentní ceny pro všechny naše služby
+            </p>
+          </div>
 
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light to-brand-primary/10 hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
-                <svg
-                  className="w-8 h-8 text-brand-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Moving Services Highlight */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader className="bg-brand-primary text-white">
+                <CardTitle className="text-xl font-heading">
+                  {t('detailedServices.movingAndTransport.title')}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  {movingServices.slice(0, 4).map((service, index) => (
+                    <div
+                      key={index}
+                      className="flex justify-between items-center"
+                    >
+                      <span className="text-sm font-light text-gray-700">
+                        {service.name}
+                      </span>
+                      <Badge variant="outline" className="font-medium">
+                        {service.price}
+                      </Badge>
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href={`/${locale}/services`}
+                  className="inline-flex items-center mt-4 text-brand-primary hover:text-brand-secondary font-medium"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                {t('services.packing')}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {pageContent.packingDescription}
-              </p>
-            </div>
+                  Zobrazit všechny ceny
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </a>
+              </CardContent>
+            </Card>
 
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light to-brand-primary/10 hover:shadow-lg transition-shadow duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
-                <svg
-                  className="w-8 h-8 text-brand-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+            {/* Cleaning Packages Highlight */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader className="bg-brand-primary text-white">
+                <CardTitle className="text-xl font-heading">
+                  {t('detailedServices.cleaningPackages.title')}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <Tabs defaultValue="s_size" className="w-full">
+                  <TabsList className="grid w-full grid-cols-3 mb-4">
+                    <TabsTrigger value="s_size" className="text-xs">
+                      S
+                    </TabsTrigger>
+                    <TabsTrigger value="m_size" className="text-xs">
+                      M
+                    </TabsTrigger>
+                    <TabsTrigger value="xl_size" className="text-xs">
+                      XL
+                    </TabsTrigger>
+                  </TabsList>
+
+                  <TabsContent value="s_size">
+                    <div className="space-y-2">
+                      <p className="text-sm text-gray-600">
+                        {cleaningPackages.s_size.description}
+                      </p>
+                      <div className="text-xs text-gray-500">
+                        {cleaningPackages.s_size.included.length} služeb
+                        zahrnuto
+                      </div>
+                    </div>
+                  </TabsContent>
+
+                  <TabsContent value="m_size">
+                    <div className="space-y-2">
+                      <p className="text-sm text-gray-600">
+                        {cleaningPackages.m_size.description}
+                      </p>
+                      <div className="text-xs text-gray-500">
+                        {cleaningPackages.m_size.included.length} služeb
+                        zahrnuto
+                      </div>
+                    </div>
+                  </TabsContent>
+
+                  <TabsContent value="xl_size">
+                    <div className="space-y-2">
+                      <p className="text-sm text-gray-600">
+                        {cleaningPackages.xl_size.description}
+                      </p>
+                      <div className="text-xs text-gray-500">
+                        {cleaningPackages.xl_size.included.length} služeb
+                        zahrnuto
+                      </div>
+                    </div>
+                  </TabsContent>
+                </Tabs>
+                <a
+                  href={`/${locale}/services`}
+                  className="inline-flex items-center mt-4 text-brand-primary hover:text-brand-secondary font-medium"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-14 0h14"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                {t('services.storage')}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {pageContent.storageDescription}
-              </p>
-            </div>
+                  Zobrazit detaily
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Dry Cleaning Highlight */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader className="bg-brand-primary text-white">
+                <CardTitle className="text-xl font-heading">
+                  {t('detailedServices.dryCleaning.title')}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  {dryCleaningServices.slice(0, 4).map((service, index) => (
+                    <div
+                      key={index}
+                      className="flex justify-between items-center"
+                    >
+                      <span className="text-sm font-light text-gray-700">
+                        {service.name}
+                      </span>
+                      <Badge variant="outline" className="font-medium">
+                        {service.price}
+                      </Badge>
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href={`/${locale}/services`}
+                  className="inline-flex items-center mt-4 text-brand-primary hover:text-brand-secondary font-medium"
+                >
+                  Zobrazit všechny ceny
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </a>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
-              {pageContent.whyUsTitle}
+              {t('services.whyChooseUs')}
             </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {t('services.whyChooseUsSubtitle')}
+            </p>
           </div>
 
           {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light to-brand-primary/10 hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
+                  <benefit.icon className="w-8 h-8 text-brand-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
+              Kontaktní informace
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Jsme tu pro vás každý den. Neváhejte nás kontaktovat.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
-                <svg
-                  className="w-8 h-8 text-brand-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+                <Phone className="w-8 h-8 text-brand-primary" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                {t('features.reliability')}
+                Telefon
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {pageContent.reliabilityDescription}
-              </p>
+              <p className="text-gray-600 mb-2">{t('header.phone1')}</p>
+              <p className="text-gray-600">{t('header.phone2')}</p>
             </div>
 
             <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
-                <svg
-                  className="w-8 h-8 text-brand-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                  />
-                </svg>
+                <Mail className="w-8 h-8 text-brand-primary" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                {t('features.quality')}
+                Email
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {pageContent.qualityDescription}
-              </p>
+              <p className="text-gray-600">info@movecleanmafia.cz</p>
             </div>
 
             <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
-                <svg
-                  className="w-8 h-8 text-brand-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
+                <MapPin className="w-8 h-8 text-brand-primary" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                {t('features.speed')}
+                Adresa
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {pageContent.speedDescription}
-              </p>
+              <p className="text-gray-600">Praha, Česká republika</p>
             </div>
           </div>
         </div>
@@ -333,17 +478,25 @@ const HomePage = async ({ params }: HomePageProps) => {
       <section className="py-20 bg-gradient-to-br from-brand-primary to-brand-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-heading">
-            {pageContent.ctaTitle}
+            {t('services.ctaTitle')}
           </h2>
           <p className="text-xl text-brand-light mb-8 max-w-3xl mx-auto">
-            {pageContent.ctaSubtitle}
+            {t('services.ctaSubtitle')}
           </p>
-          <a
-            href={`/${locale}/contact`}
-            className="inline-flex items-center px-8 py-4 bg-white text-brand-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300"
-          >
-            {t('hero.cta')}
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={`/${locale}/contact`}
+              className="inline-flex items-center px-8 py-4 bg-white text-brand-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300"
+            >
+              {t('services.contactUs')}
+            </a>
+            <a
+              href={`tel:${t('header.phone1')}`}
+              className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-primary transition-colors duration-300"
+            >
+              {t('header.phone1')}
+            </a>
+          </div>
         </div>
       </section>
     </div>

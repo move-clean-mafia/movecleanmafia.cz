@@ -188,5 +188,140 @@
     "phone2": "+420 987 654 321",
     "openMainMenu": "Otevřít hlavní menu",
     "closeMainMenu": "Zavřít hlavní menu"
+  },
+  "detailedServices": {
+    "movingAndTransport": {
+      "title": "Stěhování a doplňkové služby",
+      "items": [
+        {
+          "name": "Stěhovák-balič",
+          "unit": "za hodinu/osobu",
+          "price": "350-450 Kč"
+        },
+        {
+          "name": "Řidič + přistavení vozu",
+          "unit": "za hodinu",
+          "price": "350 Kč"
+        },
+        {
+          "name": "Auto s řidičem",
+          "unit": "za hodinu",
+          "price": "700-900 Kč"
+        },
+        {
+          "name": "Auto + 1 stěhovák",
+          "unit": "za hodinu",
+          "price": "1200 Kč"
+        },
+        {
+          "name": "Auto + 2 stěhováci",
+          "unit": "za hodinu",
+          "price": "1600 Kč"
+        },
+        {
+          "name": "Příplatek za těžké břemeno",
+          "unit": "za kus/patro",
+          "price": "od 250 Kč"
+        },
+        {
+          "name": "Demontáž/montáž nábytku",
+          "unit": "za hodinu/osobu",
+          "price": "450 Kč"
+        }
+      ]
+    },
+    "cleaningPackages": {
+      "title": "Úklidové balíčky",
+      "packages": {
+        "s_size": {
+          "title": "Minimální úklid 'S size'",
+          "description": "Základní úklid pro udržení čistoty a pořádku v menších prostorách.",
+          "included": [
+            "Mytí podlah",
+            "Vysávání koberců",
+            "Odstranění prachu ze všech dostupných povrchů",
+            "Čištění zrcadel a skleněných povrchů",
+            "Vynesení odpadků",
+            "Dezinfekce klik a vypínačů",
+            "Čištění kuchyňského dřezu a pracovních desek",
+            "Čištění vnějších povrchů kuchyňských spotřebičů",
+            "Čištění a dezinfekce toalety, umyvadla a sprchy/vany"
+          ]
+        },
+        "m_size": {
+          "title": "Podpůrný úklid 'M size'",
+          "description": "Pravidelný úklid pro udržení dokonalé čistoty ve vašem domově.",
+          "included": [
+            "Vše z balíčku 'S size'",
+            "Mytí kuchyňské linky",
+            "Čištění mikrovlnné trouby uvnitř",
+            "Výměna ložního prádla (pokud je připraveno)",
+            "Leštění nábytku",
+            "Odstranění vodního kamene z vodovodních baterií a sprchových hlavic"
+          ]
+        },
+        "xl_size": {
+          "title": "Generální úklid 'XL size'",
+          "description": "Důkladný a hloubkový úklid, který zanechá váš domov zářivě čistý.",
+          "included": [
+            "Vše z balíčků 'S' a 'M'",
+            "Mytí oken (uvnitř)",
+            "Čištění vnitřku skříní a zásuvek",
+            "Hloubkové čištění kuchyňských spotřebičů (trouba, lednice)",
+            "Čištění obkladů a spár v koupelně a kuchyni",
+            "Mytí dveří a zárubní",
+            "Čištění radiátorů",
+            "Hloubkové čištění podlahových lišt"
+          ]
+        }
+      }
+    },
+    "dryCleaning": {
+      "title": "Chemické čištění",
+      "items": [
+        {
+          "name": "Koberec",
+          "price": "od 250 Kč/m²"
+        },
+        {
+          "name": "Pohovka 2-místná",
+          "price": "od 1000 Kč"
+        },
+        {
+          "name": "Pohovka 3-místná",
+          "price": "od 1200 Kč"
+        },
+        {
+          "name": "Rohová pohovka",
+          "price": "od 1500 Kč"
+        },
+        {
+          "name": "Křeslo",
+          "price": "od 450 Kč"
+        },
+        {
+          "name": "Matrace - jedna strana",
+          "price": "od 500 Kč"
+        },
+        {
+          "name": "Židle s opěradlem",
+          "price": "od 150 Kč"
+        }
+      ]
+    },
+    "packingServices": {
+      "title": "Balicí služby",
+      "items": [
+        {
+          "name": "Balič",
+          "unit": "za hodinu/osobu",
+          "price": "350-450 Kč"
+        }
+      ]
+    },
+    "materialPurchase": {
+      "title": "Nákup materiálu",
+      "description": "Zajištění a dodání potřebných materiálů pro úklid nebo stěhování, abyste se nemuseli o nic starat."
+    }
   }
 }

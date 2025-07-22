@@ -188,5 +188,140 @@
     "phone2": "+1 (987) 654-321",
     "openMainMenu": "Open main menu",
     "closeMainMenu": "Close main menu"
+  },
+  "detailedServices": {
+    "movingAndTransport": {
+      "title": "Moving and Additional Services",
+      "items": [
+        {
+          "name": "Mover-packer",
+          "unit": "per hour/person",
+          "price": "350-450 CZK"
+        },
+        {
+          "name": "Driver + vehicle delivery",
+          "unit": "per hour",
+          "price": "350 CZK"
+        },
+        {
+          "name": "Car with driver",
+          "unit": "per hour",
+          "price": "700-900 CZK"
+        },
+        {
+          "name": "Car + 1 mover",
+          "unit": "per hour",
+          "price": "1200 CZK"
+        },
+        {
+          "name": "Car + 2 movers",
+          "unit": "per hour",
+          "price": "1600 CZK"
+        },
+        {
+          "name": "Surcharge for heavy items",
+          "unit": "per item/floor",
+          "price": "from 250 CZK"
+        },
+        {
+          "name": "Furniture disassembly/assembly",
+          "unit": "per hour/person",
+          "price": "450 CZK"
+        }
+      ]
+    },
+    "cleaningPackages": {
+      "title": "Cleaning Packages",
+      "packages": {
+        "s_size": {
+          "title": "Minimal Cleaning 'S size'",
+          "description": "Basic cleaning to maintain cleanliness and order in smaller spaces.",
+          "included": [
+            "Floor mopping",
+            "Carpet vacuuming",
+            "Dust removal from all accessible surfaces",
+            "Cleaning mirrors and glass surfaces",
+            "Taking out the trash",
+            "Disinfecting door handles and switches",
+            "Cleaning the kitchen sink and countertops",
+            "Cleaning the exterior of kitchen appliances",
+            "Cleaning and disinfecting the toilet, sink, and shower/bathtub"
+          ]
+        },
+        "m_size": {
+          "title": "Maintenance Cleaning 'M size'",
+          "description": "Regular cleaning to maintain perfect cleanliness in your home.",
+          "included": [
+            "Everything from the 'S size' package",
+            "Washing kitchen counters",
+            "Cleaning the inside of the microwave",
+            "Changing bed linen (if prepared)",
+            "Polishing furniture",
+            "Removing limescale from faucets and showerheads"
+          ]
+        },
+        "xl_size": {
+          "title": "General Cleaning 'XL size'",
+          "description": "A thorough, deep clean that will leave your home sparkling clean.",
+          "included": [
+            "Everything from 'S' and 'M' packages",
+            "Washing windows (inside)",
+            "Cleaning inside cabinets and drawers",
+            "Deep cleaning of kitchen appliances (oven, fridge)",
+            "Cleaning tiles and grout in the bathroom and kitchen",
+            "Washing doors and door frames",
+            "Cleaning radiators",
+            "Deep cleaning of baseboards"
+          ]
+        }
+      }
+    },
+    "dryCleaning": {
+      "title": "Dry Cleaning",
+      "items": [
+        {
+          "name": "Carpet",
+          "price": "from 250 CZK/m²"
+        },
+        {
+          "name": "2-seater sofa",
+          "price": "from 1000 CZK"
+        },
+        {
+          "name": "3-seater sofa",
+          "price": "from 1200 CZK"
+        },
+        {
+          "name": "Corner sofa",
+          "price": "from 1500 CZK"
+        },
+        {
+          "name": "Armchair",
+          "price": "from 450 CZK"
+        },
+        {
+          "name": "Mattress - one side",
+          "price": "from 500 CZK"
+        },
+        {
+          "name": "Chair with backrest",
+          "price": "from 150 CZK"
+        }
+      ]
+    },
+    "packingServices": {
+      "title": "Packing Services",
+      "items": [
+        {
+          "name": "Packer",
+          "unit": "per hour/person",
+          "price": "350-450 CZK"
+        }
+      ]
+    },
+    "materialPurchase": {
+      "title": "Material Purchase",
+      "description": "Procurement and delivery of necessary materials for cleaning or moving, so you don't have to worry about a thing."
+    }
   }
 }
