@@ -194,7 +194,6 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
             services={services}
             locale={locale}
             showPrices={false}
-            showFeatures={true}
             className="animate-fade-in-up"
           />
         </div>

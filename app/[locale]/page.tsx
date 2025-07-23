@@ -16,7 +16,6 @@ import {
   TabsTrigger,
 } from '../../components/ui/tabs';
 import { Badge } from '../../components/ui/badge';
-import ServicesHeroGrid from '../../components/services-hero-grid';
 import BenefitsGrid from '../../components/benefits-grid';
 
 import {
@@ -32,6 +31,7 @@ import {
   MapPin,
   ArrowRight,
 } from 'lucide-react';
+import ServicesGrid from '@/components/services-grid';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -233,11 +233,10 @@ const HomePage = async ({ params }: HomePageProps) => {
           </div>
 
           {/* Hero Services Grid */}
-          <ServicesHeroGrid
+          <ServicesGrid
             services={services}
             locale={locale}
-            showPrices={true}
-            showFeatures={true}
+            showPrices={false}
             className="animate-fade-in-up"
           />
         </div>
