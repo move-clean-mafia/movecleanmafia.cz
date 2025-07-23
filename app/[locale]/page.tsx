@@ -1,11 +1,11 @@
 import React from 'react';
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { getTranslation } from '../../lib/i18n-server';
 import { type SupportedLanguage } from '../../lib/i18n';
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from '../../components/ui/card';
@@ -16,6 +16,8 @@ import {
   TabsTrigger,
 } from '../../components/ui/tabs';
 import { Badge } from '../../components/ui/badge';
+import ServicesHeroGrid from '../../components/services-hero-grid';
+import BenefitsGrid from '../../components/benefits-grid';
 
 import {
   Truck,
@@ -25,7 +27,6 @@ import {
   Clock,
   Shield,
   Star,
-  Check,
   Phone,
   Mail,
   MapPin,
@@ -114,6 +115,8 @@ const HomePage = async ({ params }: HomePageProps) => {
       description: t('services.movingDescription'),
       features: t('services.movingFeatures') as unknown as string[],
       highlightPrice: movingServices[0]?.price || '350-450 Kč',
+      image: '/images/moving.jpg',
+      imageAlt: t('homepage.heroImages.moving'),
     },
     {
       icon: Sparkles,
@@ -121,6 +124,8 @@ const HomePage = async ({ params }: HomePageProps) => {
       description: t('services.cleaningDescription'),
       features: t('services.cleaningFeatures') as unknown as string[],
       highlightPrice: 'od 250 Kč/m²',
+      image: '/images/cleaning.jpg',
+      imageAlt: t('homepage.heroImages.cleaning'),
     },
     {
       icon: Package,
@@ -128,6 +133,8 @@ const HomePage = async ({ params }: HomePageProps) => {
       description: t('services.packingDescription'),
       features: t('services.packingFeatures') as unknown as string[],
       highlightPrice: '350-450 Kč',
+      image: '/images/packing.jpg',
+      imageAlt: 'Profesionální balení',
     },
     {
       icon: Warehouse,
@@ -135,6 +142,8 @@ const HomePage = async ({ params }: HomePageProps) => {
       description: t('services.storageDescription'),
       features: t('services.storageFeatures') as unknown as string[],
       highlightPrice: 'Flexibilní',
+      image: '/images/storage.jpg',
+      imageAlt: 'Bezpečné skladování',
     },
   ];
 
@@ -158,89 +167,79 @@ const HomePage = async ({ params }: HomePageProps) => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-light to-brand-primary/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-heading">
-            {t('hero.title')}
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            {t('hero.subtitle')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`/${locale}/services`}
-              className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-secondary transition-colors duration-300"
-            >
-              {t('navigation.services')}
-            </a>
-            <a
-              href={`/${locale}/contact`}
-              className="inline-flex items-center px-8 py-4 bg-white text-brand-primary font-semibold rounded-lg border-2 border-brand-primary hover:bg-brand-light transition-colors duration-300"
-            >
-              {t('hero.cta')}
-            </a>
+      {/* Hero Section with Images */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Images */}
+        <div className="absolute inset-0 flex">
+          <div className="relative w-1/2 h-full overflow-hidden">
+            <Image
+              src="/images/moving_hp.jpg"
+              alt={t('homepage.heroImages.moving')}
+              fill
+              className="object-cover transition-transform duration-700 hover:scale-105"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/30"></div>
+          </div>
+          <div className="relative w-1/2 h-full overflow-hidden">
+            <Image
+              src="/images/cleaning_hp.jpg"
+              alt={t('homepage.heroImages.cleaning')}
+              fill
+              className="object-cover transition-transform duration-700 hover:scale-105"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/30"></div>
+          </div>
+        </div>
+
+        {/* Content Overlay */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="animate-fade-in-up">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-heading drop-shadow-lg">
+              {t('hero.title')}
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto drop-shadow-lg">
+              {t('hero.subtitle')}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={`/${locale}/services`}
+                className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                {t('navigation.services')}
+              </a>
+              <a
+                href={`/${locale}/contact`}
+                className="inline-flex items-center px-8 py-4 bg-white/90 text-brand-primary font-semibold rounded-lg border-2 border-white hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                {t('hero.cta')}
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Overview Section */}
+      {/* Services Overview Section with Modern Grid Layout */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
-              {t('services.title')}
+              {t('homepage.servicesSection.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              {t('services.subtitle')}
+              {t('homepage.servicesSection.subtitle')}
             </p>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <CardHeader className="bg-gradient-to-r from-brand-light to-brand-primary/20 border-b border-brand-primary/30">
-                  <div className="flex items-center space-x-3">
-                    <div className="p-2 bg-brand-primary rounded-lg">
-                      <service.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <CardTitle className="text-xl font-heading font-bold text-gray-900">
-                      {service.title}
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <CardDescription className="text-gray-600 font-light mb-4 text-base">
-                    {service.description}
-                  </CardDescription>
-                  <div className="mb-4">
-                    <Badge variant="secondary" className="font-medium">
-                      Od {service.highlightPrice}
-                    </Badge>
-                  </div>
-                  <div className="space-y-2">
-                    {service.features
-                      .slice(0, 3)
-                      .map((feature, featureIndex) => (
-                        <div
-                          key={featureIndex}
-                          className="flex items-center space-x-2"
-                        >
-                          <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          <span className="text-sm font-light text-gray-700">
-                            {feature}
-                          </span>
-                        </div>
-                      ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {/* Hero Services Grid */}
+          <ServicesHeroGrid
+            services={services}
+            locale={locale}
+            showPrices={true}
+            showFeatures={true}
+            className="animate-fade-in-up"
+          />
         </div>
       </section>
 
@@ -258,7 +257,7 @@ const HomePage = async ({ params }: HomePageProps) => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Moving Services Highlight */}
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <CardHeader className="bg-brand-primary text-white">
                 <CardTitle className="text-xl font-heading">
                   {t('detailedServices.movingAndTransport.title')}
@@ -291,7 +290,7 @@ const HomePage = async ({ params }: HomePageProps) => {
             </Card>
 
             {/* Cleaning Packages Highlight */}
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <CardHeader className="bg-brand-primary text-white">
                 <CardTitle className="text-xl font-heading">
                   {t('detailedServices.cleaningPackages.title')}
@@ -358,7 +357,7 @@ const HomePage = async ({ params }: HomePageProps) => {
             </Card>
 
             {/* Dry Cleaning Highlight */}
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <CardHeader className="bg-brand-primary text-white">
                 <CardTitle className="text-xl font-heading">
                   {t('detailedServices.dryCleaning.title')}
@@ -405,25 +404,8 @@ const HomePage = async ({ params }: HomePageProps) => {
             </p>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="text-center p-8 rounded-2xl bg-gradient-to-br from-brand-light to-brand-primary/10 hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
-                  <benefit.icon className="w-8 h-8 text-brand-primary" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          {/* Benefits Grid */}
+          <BenefitsGrid benefits={benefits} />
         </div>
       </section>
 
@@ -440,7 +422,7 @@ const HomePage = async ({ params }: HomePageProps) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300">
+            <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
                 <Phone className="w-8 h-8 text-brand-primary" />
               </div>
@@ -451,7 +433,7 @@ const HomePage = async ({ params }: HomePageProps) => {
               <p className="text-gray-600">{t('header.phone2')}</p>
             </div>
 
-            <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300">
+            <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
                 <Mail className="w-8 h-8 text-brand-primary" />
               </div>
@@ -461,7 +443,7 @@ const HomePage = async ({ params }: HomePageProps) => {
               <p className="text-gray-600">info@movecleanmafia.cz</p>
             </div>
 
-            <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300">
+            <div className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/20 rounded-full mb-6">
                 <MapPin className="w-8 h-8 text-brand-primary" />
               </div>
@@ -486,13 +468,13 @@ const HomePage = async ({ params }: HomePageProps) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={`/${locale}/contact`}
-              className="inline-flex items-center px-8 py-4 bg-white text-brand-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300"
+              className="inline-flex items-center px-8 py-4 bg-white text-brand-primary font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               {t('services.contactUs')}
             </a>
             <a
               href={`tel:${t('header.phone1')}`}
-              className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-primary transition-colors duration-300"
+              className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-primary transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               {t('header.phone1')}
             </a>

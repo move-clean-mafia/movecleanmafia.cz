@@ -11,7 +11,8 @@
   "hero": {
     "title": "Profesionální přeprava a úklid",
     "subtitle": "Spolehlivé služby pro váš domov a kancelář",
-    "cta": "Objednat služby"
+    "cta": "Objednat služby",
+    "imageAlt": "Profesionální stěhování a úklid"
   },
   "services": {
     "moving": "Stěhování",
@@ -59,6 +60,16 @@
     "ctaTitle": "Začněme spolupracovat",
     "ctaSubtitle": "Kontaktujte nás a získejte bezplatnou konzultaci a cenovou nabídku",
     "contactUs": "Kontaktovat"
+  },
+  "homepage": {
+    "heroImages": {
+      "moving": "Profesionální stěhování",
+      "cleaning": "Profesionální úklid"
+    },
+    "servicesSection": {
+      "title": "Naše hlavní služby",
+      "subtitle": "Kompletní řešení pro váš domov a kancelář"
+    }
   },
   "about": {
     "title": "O nás",

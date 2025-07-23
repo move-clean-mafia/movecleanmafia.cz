@@ -11,7 +11,8 @@
   "hero": {
     "title": "Professional Moving & Cleaning",
     "subtitle": "Reliable services for your home and office",
-    "cta": "Order Services"
+    "cta": "Order Services",
+    "imageAlt": "Professional moving and cleaning"
   },
   "services": {
     "moving": "Moving",
@@ -59,6 +60,16 @@
     "ctaTitle": "Let's Start Working Together",
     "ctaSubtitle": "Contact us and get a free consultation and price quote",
     "contactUs": "Contact Us"
+  },
+  "homepage": {
+    "heroImages": {
+      "moving": "Professional Moving",
+      "cleaning": "Professional Cleaning"
+    },
+    "servicesSection": {
+      "title": "Our Main Services",
+      "subtitle": "Complete solutions for your home and office"
+    }
   },
   "about": {
     "title": "About Us",

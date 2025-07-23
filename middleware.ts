@@ -51,6 +51,7 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/api/') ||
     pathname.startsWith('/locales/') ||
     pathname.includes('.') ||
+    pathname.includes('previewServiceWorker') ||
     hasLocale
   ) {
     return NextResponse.next();
@@ -83,7 +84,8 @@ export const config = {
      * - favicon.ico (favicon file)
      * - locales (translation files)
      * - public files with extensions
+     * - service worker files
      */
-    '/((?!api|_next/static|_next/image|favicon.ico|locales|.*\\.).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|locales|previewServiceWorker|.*\\.).*)',
   ],
 };
