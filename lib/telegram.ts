@@ -31,8 +31,8 @@ export const sendTelegramMessage = async (
   message: string,
   parseMode: 'HTML' | 'Markdown' = 'HTML',
 ): Promise<void> => {
-  const botToken = process.env.NEXT_TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.NEXT_TELEGRAM_CHAT_ID;
+  const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
 
   if (!botToken || !chatId) {
     console.warn('Telegram configuration missing. Skipping notification.');

@@ -2,6 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Oswald, Source_Sans_3 } from 'next/font/google';
 import { notFound } from 'next/navigation';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { supportedLanguages, type SupportedLanguage } from '../../lib/i18n';
 import { getServerTranslations } from '../../lib/i18n-server';
 import { I18nProvider } from '../../components/i18n-provider';
@@ -112,6 +114,8 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
               <FloatingReservationButton />
               <Toaster />
             </div>
+            <Analytics />
+            <SpeedInsights />
           </QueryProvider>
         </I18nProvider>
       </body>
