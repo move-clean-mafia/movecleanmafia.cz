@@ -45,13 +45,13 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white border-b border-gray-200 backdrop-blur-sm bg-white/95 shadow-sm">
+      <header className="sticky top-0 z-50 bg-white border-b-2 border-gray-300 backdrop-blur-sm bg-white/95 shadow-lg">
         {/* Main navigation */}
         <div className="bg-white w-full">
           <div className="w-full px-2 sm:px-4 lg:px-6 xl:px-8">
-            <div className="flex items-center h-20">
+            <div className="flex items-center h-24">
               {/* Logo */}
-              <Link href={`/${locale}`} className="flex-shrink-0 mr-6">
+              <Link href={`/${locale}`} className="flex-shrink-0 mr-8">
                 <Logo
                   width={160}
                   height={48}
@@ -60,7 +60,7 @@ export const Header: React.FC = () => {
               </Link>
 
               {/* Contact Info */}
-              <div className="flex items-center space-x-3 lg:space-x-4">
+              <div className="flex items-center space-x-4 lg:space-x-5">
                 {/* Phone Popup - All devices */}
                 <div className="">
                   <Popover
@@ -70,7 +70,7 @@ export const Header: React.FC = () => {
                     <PopoverTrigger asChild>
                       <button
                         onClick={toggleMobilePhonePopup}
-                        className="p-2 rounded-full bg-brand-light hover:bg-brand-primary/20 transition-colors duration-200"
+                        className="p-3 rounded-lg bg-brand-light hover:bg-brand-primary/20 transition-colors duration-200 border border-gray-200 shadow-sm"
                       >
                         <Phone className="w-5 h-5 text-brand-primary" />
                       </button>
@@ -81,11 +81,11 @@ export const Header: React.FC = () => {
                       side="bottom"
                       sideOffset={8}
                     >
-                      <div className="bg-white rounded-xl border border-gray-100 shadow-xl overflow-hidden">
+                      <div className="bg-white rounded-xl border-2 border-gray-200 shadow-xl overflow-hidden">
                         <div className="bg-gradient-to-r from-brand-primary to-brand-secondary px-4 py-3">
                           <div className="flex items-center justify-center">
                             <Phone className="w-4 h-4 text-white mr-2" />
-                            <h3 className="text-sm font-semibold text-white">
+                            <h3 className="text-sm font-bold text-white">
                               {t('header.contactUs')}
                             </h3>
                           </div>
@@ -93,19 +93,19 @@ export const Header: React.FC = () => {
                         <div className="p-4 space-y-3">
                           <a
                             href={`tel:${t('header.phone1')}`}
-                            className="flex items-center space-x-3 p-2 hover:bg-brand-light rounded-md transition-colors duration-200"
+                            className="flex items-center space-x-3 p-3 hover:bg-brand-light rounded-lg transition-colors duration-200 border border-transparent hover:border-gray-200"
                           >
                             <Phone className="w-4 h-4 text-brand-primary" />
-                            <span className="font-source-sans font-medium text-gray-900">
+                            <span className="font-source-sans font-semibold text-gray-900">
                               {t('header.phone1')}
                             </span>
                           </a>
                           <a
                             href={`tel:${t('header.phone2')}`}
-                            className="flex items-center space-x-3 p-2 hover:bg-brand-light rounded-md transition-colors duration-200"
+                            className="flex items-center space-x-3 p-3 hover:bg-brand-light rounded-lg transition-colors duration-200 border border-transparent hover:border-gray-200"
                           >
                             <Phone className="w-4 h-4 text-brand-primary" />
-                            <span className="font-source-sans font-medium text-gray-900">
+                            <span className="font-source-sans font-semibold text-gray-900">
                               {t('header.phone2')}
                             </span>
                           </a>
@@ -117,13 +117,13 @@ export const Header: React.FC = () => {
               </div>
 
               {/* Desktop Navigation and Language Switcher */}
-              <div className="hidden lg:flex items-center ml-auto space-x-4 xl:space-x-6">
-                <nav className="flex items-center space-x-1 xl:space-x-2">
+              <div className="hidden lg:flex items-center ml-auto space-x-6 xl:space-x-8">
+                <nav className="flex items-center space-x-2 xl:space-x-3">
                   {navigationItems.map((item) => (
                     <Link
                       key={item.key}
                       href={item.href}
-                      className="px-2 xl:px-4 py-2 font-source-sans font-light text-gray-600 hover:text-brand-primary hover:bg-brand-light rounded-md transition-all duration-200 uppercase text-xs lg:text-sm xl:text-base leading-6 tracking-wide"
+                      className="px-4 xl:px-6 py-3 font-source-sans font-bold text-gray-700 hover:text-brand-primary hover:bg-brand-light rounded-lg transition-all duration-200 uppercase text-sm xl:text-base leading-6 tracking-wider border-2 border-transparent hover:border-brand-primary/20 shadow-sm hover:shadow-md"
                     >
                       {t(`navigation.${item.key}`).toUpperCase()}
                     </Link>
@@ -137,14 +137,14 @@ export const Header: React.FC = () => {
               </div>
 
               {/* Mobile controls */}
-              <div className="flex lg:hidden ml-auto items-center space-x-2">
+              <div className="flex lg:hidden ml-auto items-center space-x-3">
                 {/* Language switcher */}
                 <LanguageSwitcher />
 
                 {/* Mobile menu button */}
                 <button
                   onClick={toggleMobileMenu}
-                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-brand-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary"
+                  className="inline-flex items-center justify-center p-3 rounded-lg text-gray-600 hover:text-brand-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary border border-gray-200 shadow-sm"
                   aria-expanded={isMobileMenuOpen}
                 >
                   <span className="sr-only">
@@ -168,7 +168,7 @@ export const Header: React.FC = () => {
       {isMobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 z-[60] bg-gray-600 bg-opacity-50"
+            className="fixed inset-0 z-[60] bg-gray-800 bg-opacity-60"
             onClick={toggleMobileMenu}
             aria-label={t('header.closeMainMenu')}
             tabIndex={0}
@@ -178,16 +178,16 @@ export const Header: React.FC = () => {
                 toggleMobileMenu();
             }}
           ></div>
-          <div className="fixed top-0 right-0 w-full max-w-sm min-w-[280px] h-full bg-white shadow-lg z-[70] transform transition-transform duration-300 ease-in-out">
-            <div className="p-4 sm:p-6 h-full overflow-y-auto">
+          <div className="fixed top-0 right-0 w-full max-w-sm min-w-[280px] h-full bg-white shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out border-l-2 border-gray-300">
+            <div className="p-4 sm:p-6 h-full overflow-y-auto flex flex-col">
               {/* Mobile header */}
-              <div className="flex justify-between items-center mb-6">
+              <div className="flex justify-between items-center mb-8">
                 <div className="flex items-center space-x-3">
                   <Logo width={120} height={36} />
                 </div>
                 <button
                   onClick={toggleMobileMenu}
-                  className="p-2 rounded-md text-gray-400 hover:text-gray-500"
+                  className="p-3 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 border border-gray-200 shadow-sm"
                   aria-label={t('header.closeMainMenu')}
                 >
                   <X className="h-6 w-6" />
@@ -195,37 +195,40 @@ export const Header: React.FC = () => {
               </div>
 
               {/* Mobile navigation */}
-              <nav className="space-y-1 mb-6">
+              <nav className="space-y-2 mb-8">
                 {navigationItems.map((item) => (
                   <Link
                     key={item.key}
                     href={item.href}
                     onClick={toggleMobileMenu}
-                    className="block px-3 py-1.5 font-source-sans font-light text-gray-600 hover:text-brand-primary hover:bg-brand-light rounded-md transition-colors duration-200 uppercase text-sm sm:text-base leading-6 tracking-wide"
+                    className="block px-4 py-3 font-source-sans font-bold text-gray-700 hover:text-brand-primary hover:bg-brand-light rounded-lg transition-colors duration-200 uppercase text-sm sm:text-base leading-6 tracking-wider border-2 border-transparent hover:border-brand-primary/20 shadow-sm"
                   >
                     {t(`navigation.${item.key}`).toUpperCase()}
                   </Link>
                 ))}
               </nav>
 
+              {/* Spacer to push contact info lower */}
+              <div className="flex-1"></div>
+
               {/* Mobile contact info */}
-              <div className="pt-3 border-t border-gray-200">
-                <div className="flex space-x-0.5">
+              <div className="pt-4 border-t-2 border-gray-200">
+                <div className="flex flex-col space-y-3 items-center">
                   <a
                     href={`tel:${t('header.phone1')}`}
-                    className="flex items-center space-x-2 hover:bg-brand-light rounded-md p-2 transition-colors duration-200 flex-1"
+                    className="flex items-center justify-center space-x-3 hover:bg-brand-light rounded-lg p-3 transition-colors duration-200 w-full max-w-xs border border-transparent hover:border-gray-200 shadow-sm"
                   >
                     <Phone className="w-4 h-4 text-brand-primary" />
-                    <span className="font-source-sans font-light text-xs sm:text-sm leading-4 tracking-wide text-gray-600">
+                    <span className="font-source-sans font-semibold text-sm leading-4 tracking-wide text-gray-700">
                       {t('header.phone1')}
                     </span>
                   </a>
                   <a
                     href={`tel:${t('header.phone2')}`}
-                    className="flex items-center space-x-2 hover:bg-brand-light rounded-md p-2 transition-colors duration-200 flex-1"
+                    className="flex items-center justify-center space-x-3 hover:bg-brand-light rounded-lg p-3 transition-colors duration-200 w-full max-w-xs border border-transparent hover:border-gray-200 shadow-sm"
                   >
                     <Phone className="w-4 h-4 text-brand-primary" />
-                    <span className="font-source-sans font-light text-xs sm:text-sm leading-4 tracking-wide text-gray-600">
+                    <span className="font-source-sans font-semibold text-sm leading-4 tracking-wide text-gray-700">
                       {t('header.phone2')}
                     </span>
                   </a>

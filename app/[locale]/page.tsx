@@ -11,7 +11,6 @@ import {
 } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
 import BenefitsGrid from '../../components/benefits-grid';
-import ImageSlider from '../../components/image-slider';
 import { CTASection } from '../../components/cta-section';
 
 import {
@@ -182,119 +181,55 @@ const HomePage = async ({ params }: HomePageProps) => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Modern Split Layout */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Modern Background with Parallax Effect */}
-        <div className="absolute inset-0 flex">
-          {/* Desktop: Split Layout */}
-          <div className="hidden md:flex w-full">
-            {/* Left Side - Moving */}
-            <div className="relative w-1/2 h-full overflow-hidden group">
-              <Image
-                src="/images/moving_hp.jpg"
-                alt={t('homepage.heroImages.moving')}
-                fill
-                className="object-cover transition-all duration-1000 group-hover:scale-110 group-hover:rotate-1"
-                priority
-              />
-              <div className="absolute inset-0 bg-black/30 z-10"></div>
-              {/* Floating Elements */}
-              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse z-20"></div>
-              <div className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-brand-light/20 rounded-full blur-lg animate-pulse delay-1000 z-20"></div>
-            </div>
-
-            {/* Right Side - Cleaning */}
-            <div className="relative w-1/2 h-full overflow-hidden group">
-              <Image
-                src="/images/cleaning_hp.jpg"
-                alt={t('homepage.heroImages.cleaning')}
-                fill
-                className="object-cover transition-all duration-1000 group-hover:scale-110 group-hover:-rotate-1"
-                priority
-              />
-              <div className="absolute inset-0 bg-black/30 z-10"></div>
-              {/* Floating Elements */}
-              <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-white/10 rounded-full blur-xl animate-pulse delay-500 z-20"></div>
-              <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-brand-light/20 rounded-full blur-lg animate-pulse delay-1500 z-20"></div>
-            </div>
-          </div>
-
-          {/* Mobile: Image Slider */}
-          <div className="md:hidden w-full h-full">
-            <ImageSlider
-              images={[
-                {
-                  src: '/images/moving_hp.jpg',
-                  alt: t('homepage.heroImages.moving'),
-                  title: t('services.moving'),
-                  description: t('services.movingDescription'),
-                },
-                {
-                  src: '/images/cleaning_hp.jpg',
-                  alt: t('homepage.heroImages.cleaning'),
-                  title: t('services.cleaning'),
-                  description: t('services.cleaningDescription'),
-                },
-                {
-                  src: '/images/moving.jpg',
-                  alt: t('homepage.heroImages.moving'),
-                  title: t('services.moving'),
-                  description: t('services.movingDescription'),
-                },
-                {
-                  src: '/images/cleaning.jpg',
-                  alt: t('homepage.heroImages.cleaning'),
-                  title: t('services.cleaning'),
-                  description: t('services.cleaningDescription'),
-                },
-                {
-                  src: '/images/packing.jpg',
-                  alt: t('services.packing'),
-                  title: t('services.packing'),
-                  description: t('services.packingDescription'),
-                },
-                {
-                  src: '/images/storage.jpg',
-                  alt: t('services.storage'),
-                  title: t('services.storage'),
-                  description: t('services.storageDescription'),
-                },
-              ]}
-              interval={4000}
-              className="w-full h-full"
-            />
-          </div>
+      {/* Hero Section with New Design */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Background Image with Blur Effect */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero.jpg"
+            alt={t('hero.imageAlt')}
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        {/* Central Content Overlay with Glass Effect */}
-        <div className="relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="backdrop-blur-sm bg-white/10 rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl">
-            <div className="animate-fade-in-up">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-heading drop-shadow-2xl leading-tight">
-                {t('hero.title')}
-              </h1>
-              <p className="text-xl md:text-2xl lg:text-3xl text-white/95 mb-8 max-w-4xl mx-auto drop-shadow-lg font-light">
-                {t('hero.subtitle')}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <a
-                  href={`/${locale}/services#detailed-services`}
-                  className="group inline-flex items-center px-8 py-4 bg-white/95 text-brand-primary font-semibold rounded-2xl hover:bg-white transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-3xl backdrop-blur-sm"
-                >
-                  {t('navigation.services')}
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                </a>
-                <a
-                  href={`/${locale}/contact`}
-                  className="group inline-flex items-center px-8 py-4 bg-transparent text-white font-semibold rounded-2xl border-2 border-white/80 hover:bg-white/10 transition-all duration-500 transform hover:scale-105 shadow-2xl backdrop-blur-sm"
-                >
-                  {t('hero.cta')}
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                </a>
+        {/* Content Container */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex flex-col lg:flex-row items-center min-h-screen">
+            {/* Left Side - Text Content */}
+            <div className="lg:w-1/2 text-white space-y-8 py-48 lg:py-0">
+              <div className="animate-fade-in-up">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight drop-shadow-2xl">
+                  {t('hero.title')}
+                </h1>
+                <p className="text-xl md:text-2xl lg:text-3xl mt-6 text-white/95 drop-shadow-lg font-light max-w-2xl">
+                  {t('hero.subtitle')}
+                </p>
+
+                {/* CTA Button */}
+                <div className="mt-10">
+                  <a
+                    href={`/${locale}/contact`}
+                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl bg-[length:200%_100%] hover:bg-[length:200%_100%] animate-gradient-x"
+                  >
+                    {t('hero.cta')}
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </a>
+                </div>
               </div>
             </div>
+
+            {/* Right Side - Empty for balance */}
+            <div className="lg:w-1/2"></div>
           </div>
         </div>
+
+        {/* Floating decorative elements */}
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/10 rounded-full blur-xl z-20"></div>
+        <div className="absolute top-1/2 right-1/3 w-20 h-20 bg-white/5 rounded-full blur-xl z-20"></div>
       </section>
 
       {/* Services Overview Section with Modern Grid Layout */}

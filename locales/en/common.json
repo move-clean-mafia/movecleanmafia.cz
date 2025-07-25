@@ -536,6 +536,12 @@
     "price": "Price",
     "pricing": "Pricing",
     "approximatePrices": "Approximate prices",
-    "whatIncluded": "What's included"
+    "whatIncluded": "What's included",
+    "areaRanges": {
+      "upTo35": "up to 35 m²",
+      "upTo50": "up to 50 m²",
+      "upTo70": "up to 70 m²",
+      "over70": "over 70 m²"
+    }
   }
 }

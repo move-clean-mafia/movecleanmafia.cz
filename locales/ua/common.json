@@ -536,6 +536,12 @@
     "price": "Ціна",
     "pricing": "Цінові пропозиції",
     "approximatePrices": "Ціни орієнтовні",
-    "whatIncluded": "Що включено в ціну"
+    "whatIncluded": "Що включено в ціну",
+    "areaRanges": {
+      "upTo35": "до 35 м²",
+      "upTo50": "до 50 м²",
+      "upTo70": "до 70 м²",
+      "over70": "понад 70 м²"
+    }
   }
 }

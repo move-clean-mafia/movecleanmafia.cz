@@ -121,25 +121,33 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ t }) => {
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <div className="text-sm text-gray-600 mb-1">до 35 м²</div>
+              <div className="text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
+                {t('servicesPage.areaRanges.upTo35') as string}
+              </div>
               <div className="text-xl font-bold text-brand-primary">
                 {packageData.prices.upTo35}
               </div>
             </div>
             <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <div className="text-sm text-gray-600 mb-1">до 50 м²</div>
+              <div className="text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
+                {t('servicesPage.areaRanges.upTo50') as string}
+              </div>
               <div className="text-xl font-bold text-brand-primary">
                 {packageData.prices.upTo50}
               </div>
             </div>
             <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <div className="text-sm text-gray-600 mb-1">до 70 м²</div>
+              <div className="text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
+                {t('servicesPage.areaRanges.upTo70') as string}
+              </div>
               <div className="text-xl font-bold text-brand-primary">
                 {packageData.prices.upTo70}
               </div>
             </div>
             <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <div className="text-sm text-gray-600 mb-1">свыше 70 м²</div>
+              <div className="text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
+                {t('servicesPage.areaRanges.over70') as string}
+              </div>
               <div className="text-xl font-bold text-brand-primary">
                 {packageData.prices.over70}
               </div>
