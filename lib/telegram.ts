@@ -61,6 +61,8 @@ export const sendTelegramMessage = async (
       },
     );
 
+    console.log('TG_RESPONSE', response);
+
     if (!response.ok) {
       const errorData = await response.json();
       console.error('Telegram API error:', errorData);
