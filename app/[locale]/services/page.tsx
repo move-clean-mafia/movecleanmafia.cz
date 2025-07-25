@@ -210,7 +210,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       <section id="detailed-services" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Moving and Transportation Services */}
-          <div className="mb-16">
+          <div id="moving-services" className="mb-16">
             <div className="text-center mb-12">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-6">
                 <Truck className="w-8 h-8 text-white" />
@@ -266,7 +266,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
           <CleaningPackages locale={locale as SupportedLanguage} t={t} />
 
           {/* Dry Cleaning Services */}
-          <div className="mb-16">
+          <div id="dry-cleaning" className="mb-16">
             <div className="text-center mb-12">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-6">
                 <Sparkles className="w-8 h-8 text-white" />
@@ -302,7 +302,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
           </div>
 
           {/* Packing Services */}
-          <div className="mb-16">
+          <div id="packing-services" className="mb-16">
             <div className="text-center mb-12">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-6">
                 <Package className="w-8 h-8 text-white" />

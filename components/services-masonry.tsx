@@ -20,6 +20,8 @@ interface ServicesMasonryProps {
   showPrices?: boolean;
   showFeatures?: boolean;
   className?: string;
+  t?: (key: string) => string;
+  useSpecificLinks?: boolean;
 }
 
 const ServicesMasonry = ({
@@ -28,6 +30,8 @@ const ServicesMasonry = ({
   showPrices = false,
   showFeatures = true,
   className = '',
+  t,
+  useSpecificLinks = false,
 }: ServicesMasonryProps) => {
   // Define different heights for masonry effect
   const heights = ['h-80', 'h-96', 'h-80', 'h-96'];
@@ -125,10 +129,20 @@ const ServicesMasonry = ({
                 </div>
 
                 <a
-                  href={`/${locale}/services`}
+                  href={
+                    useSpecificLinks && t
+                      ? service.title === t('services.moving')
+                        ? `/${locale}/services#moving-services`
+                        : service.title === t('services.cleaning')
+                          ? `/${locale}/services#cleaning-packages`
+                          : service.title === t('services.packing')
+                            ? `/${locale}/services#packing-services`
+                            : `/${locale}/services#detailed-services`
+                      : `/${locale}/services#detailed-services`
+                  }
                   className="inline-flex items-center px-6 py-3 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-xl group/link"
                 >
-                  Zjistit více
+                  {t ? t('servicesGrid.learnMore') : 'Zjistit více'}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-200" />
                 </a>
               </div>

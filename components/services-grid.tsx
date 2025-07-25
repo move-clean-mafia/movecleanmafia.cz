@@ -21,6 +21,7 @@ interface ServicesGridProps {
   showFeatures?: boolean;
   className?: string;
   t: (key: string) => string;
+  useSpecificLinks?: boolean;
 }
 
 const ServicesGrid = ({
@@ -30,6 +31,7 @@ const ServicesGrid = ({
   showFeatures = true,
   className = '',
   t,
+  useSpecificLinks = false,
 }: ServicesGridProps) => {
   return (
     <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${className}`}>
@@ -105,7 +107,17 @@ const ServicesGrid = ({
             {/* CTA Button */}
             <div className="flex justify-between items-center">
               <a
-                href={`/${locale}/services`}
+                href={
+                  useSpecificLinks
+                    ? service.title === t('services.moving')
+                      ? `/${locale}/services#moving-services`
+                      : service.title === t('services.cleaning')
+                        ? `/${locale}/services#cleaning-packages`
+                        : service.title === t('services.packing')
+                          ? `/${locale}/services#packing-services`
+                          : `/${locale}/services#detailed-services`
+                    : `/${locale}/services#detailed-services`
+                }
                 className="inline-flex items-center px-6 py-3 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg group/link"
               >
                 {t('servicesGrid.learnMore')}

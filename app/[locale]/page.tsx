@@ -278,7 +278,7 @@ const HomePage = async ({ params }: HomePageProps) => {
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <a
-                  href={`/${locale}/services`}
+                  href={`/${locale}/services#detailed-services`}
                   className="group inline-flex items-center px-8 py-4 bg-white/95 text-brand-primary font-semibold rounded-2xl hover:bg-white transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-3xl backdrop-blur-sm"
                 >
                   {t('navigation.services')}
@@ -316,6 +316,7 @@ const HomePage = async ({ params }: HomePageProps) => {
             showPrices={false}
             className="animate-fade-in-up"
             t={t}
+            useSpecificLinks={true}
           />
         </div>
       </section>
@@ -361,7 +362,7 @@ const HomePage = async ({ params }: HomePageProps) => {
                   ))}
                 </div>
                 <a
-                  href={`/${locale}/services#detailed-services`}
+                  href={`/${locale}/services#moving-services`}
                   className="group/link inline-flex items-center mt-6 text-brand-primary hover:text-brand-secondary font-medium transition-colors duration-300"
                 >
                   {t('homepage.pricingSection.showAllPrices')}
@@ -398,7 +399,7 @@ const HomePage = async ({ params }: HomePageProps) => {
                   ))}
                 </div>
                 <a
-                  href={`/${locale}/services#detailed-services`}
+                  href={`/${locale}/services#dry-cleaning`}
                   className="group/link inline-flex items-center mt-4 text-brand-primary hover:text-brand-secondary font-medium transition-colors duration-300"
                 >
                   {t('homepage.pricingSection.showAllPrices')}

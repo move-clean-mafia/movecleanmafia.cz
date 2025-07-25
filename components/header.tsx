@@ -19,6 +19,7 @@ export const Header: React.FC = () => {
   const navigationItems = [
     { key: 'home', href: `/${locale}` },
     { key: 'services', href: `/${locale}/services` },
+    { key: 'prices', href: `/${locale}/services#detailed-services` },
     { key: 'about', href: `/${locale}/about` },
     { key: 'contact', href: `/${locale}/contact` },
   ];

@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <a
-                    href={`/${locale}/services`}
+                    href={`/${locale}/services#detailed-services`}
                     className="text-sm text-gray-600 hover:text-brand-primary transition-colors duration-200"
                   >
                     {t('navigation.services')}
