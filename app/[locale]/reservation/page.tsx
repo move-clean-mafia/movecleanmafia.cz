@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import {
   Card,
@@ -96,7 +96,11 @@ const ReservationPage = async ({ params }: ReservationPageProps) => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-6">
-                <ReservationForm locale={locale} />
+                <Suspense
+                  fallback={<div className="text-center py-8">Loading...</div>}
+                >
+                  <ReservationForm locale={locale} />
+                </Suspense>
               </CardContent>
             </Card>
           </div>

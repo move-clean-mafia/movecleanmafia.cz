@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   // Ensure static files are served properly
   trailingSlash: false,
 
+  // Skip error pages during static generation
+  skipTrailingSlashRedirect: true,
+
   // Configure images for external domains
   images: {
     remotePatterns: [
