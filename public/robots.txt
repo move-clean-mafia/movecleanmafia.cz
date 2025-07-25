@@ -2,6 +2,6 @@ User-agent: *
 Disallow: /
 
 # Sitemap location (uncomment when ready to allow indexing)
-# Sitemap: https://pulmonology.cz/sitemap.xml
+# Sitemap: https://movecleanmafia.cz/sitemap.xml
 
 # Crawl-delay: 1 
