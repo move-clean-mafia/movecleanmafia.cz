@@ -212,7 +212,7 @@ const HomePage = async ({ params }: HomePageProps) => {
                 {/* CTA Button */}
                 <div className="mt-10">
                   <a
-                    href={`/${locale}/contact`}
+                    href={`/${locale}/reservation?service=moving`}
                     className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl bg-[length:200%_100%] hover:bg-[length:200%_100%] animate-gradient-x"
                   >
                     {t('hero.cta')}
@@ -434,7 +434,10 @@ const HomePage = async ({ params }: HomePageProps) => {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section
+        id="contact"
+        className="py-20 bg-gradient-to-br from-gray-50 to-gray-100"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-heading">

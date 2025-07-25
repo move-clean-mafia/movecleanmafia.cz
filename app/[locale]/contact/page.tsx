@@ -149,7 +149,7 @@ const ContactPage = async ({ params }: ContactPageProps) => {
       </section>
 
       {/* Contact Form and Info Section */}
-      <section className="py-16">
+      <section id="contact" className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}

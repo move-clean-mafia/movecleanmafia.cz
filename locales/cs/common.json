@@ -543,5 +543,57 @@
       "upTo70": "do 70 m²",
       "over70": "nad 70 m²"
     }
+  },
+  "reservation": {
+    "title": "Online Rezervace",
+    "subtitle": "Rezervujte si naše služby rychle a jednoduše online",
+    "formTitle": "Rezervační formulář",
+    "formSubtitle": "Vyplňte formulář a my vás budeme kontaktovat do 24 hodin",
+    "personalInfo": "Osobní údaje",
+    "serviceDetails": "Detaily služby",
+    "additionalInfo": "Další informace",
+    "service": "Služba",
+    "servicePlaceholder": "Vyberte službu",
+    "cleaningPackage": "Typ úklidu",
+    "cleaningPackagePlaceholder": "Vyberte typ úklidu",
+    "preferredDate": "Preferovaný datum",
+    "preferredTime": "Preferovaný čas",
+    "selectTime": "Vyberte čas",
+    "pickupAddress": "Adresa vykládky",
+    "deliveryAddress": "Adresa vyložení",
+    "address": "Adresa",
+    "pickupAddressPlaceholder": "Zadejte adresu, odkud se bude stěhovat...",
+    "deliveryAddressPlaceholder": "Zadejte adresu, kam se bude stěhovat...",
+    "addressPlaceholder": "Zadejte adresu, kde se bude služba provádět...",
+    "apartmentSize": "Velikost bytu/kanceláře (m²)",
+    "apartmentSizePlaceholder": "např. 65",
+    "message": "Zpráva",
+    "messagePlaceholder": "Popište vaše požadavky, speciální požadavky, poznámky...",
+    "submitReservation": "Odeslat rezervaci",
+    "timeSlots": {
+      "morning": "Ráno (8:00-12:00)",
+      "afternoon": "Odpoledne (12:00-16:00)",
+      "evening": "Večer (16:00-20:00)"
+    },
+    "cleaningPackages": {
+      "maintenance": "Údržbový úklid",
+      "general": "Generální úklid",
+      "postRenovation": "Úklid po rekonstrukci"
+    },
+    "services": {
+      "moving": "Stěhování",
+      "cleaning": "Úklid",
+      "packing": "Balení",
+      "storage": "Skladování",
+      "other": "Jiné"
+    },
+    "success": {
+      "title": "Rezervace byla úspěšně odeslána!",
+      "description": "Děkujeme za vaši rezervaci. Budeme vás kontaktovat do 24 hodin pro potvrzení detailů."
+    },
+    "error": {
+      "title": "Odeslání rezervace se nezdařilo",
+      "description": "Při odesílání rezervace došlo k chybě. Zkuste to prosím znovu nebo nás kontaktujte přímo."
+    }
   }
 }

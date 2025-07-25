@@ -40,10 +40,15 @@ export const CTASection: React.FC<CTASectionProps> = ({
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <a
-            href={`/${locale}/contact`}
+            href={`/${locale}/reservation?service=moving`}
             className="group inline-flex items-center justify-center px-10 py-4 bg-white text-brand-secondary font-source-sans font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
-            {primaryButtonText || t('services.contactUs')}
+            {primaryButtonText ||
+              (locale === 'cs'
+                ? 'Rezervovat'
+                : locale === 'ua'
+                  ? 'Забронювати'
+                  : 'Book Now')}
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
           </a>
           <a

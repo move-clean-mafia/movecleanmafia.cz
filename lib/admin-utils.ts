@@ -1,7 +1,20 @@
 import { TFunction } from 'i18next';
 import { format } from 'date-fns';
 import { cs, enUS } from 'date-fns/locale';
-import { Timestamp } from 'firebase/firestore';
+import {
+  collection,
+  addDoc,
+  serverTimestamp,
+  doc,
+  updateDoc,
+  getDoc,
+  getDocs,
+  query,
+  where,
+  orderBy,
+  Timestamp,
+} from 'firebase/firestore';
+import { db } from '../firebase';
 
 // Type for Firebase timestamp or Date
 export type FirebaseTimestamp = Timestamp | Date | string | null | undefined;
@@ -138,22 +151,6 @@ export const formatDateLegacy = (timestamp: FirebaseTimestamp): string => {
   }
 };
 
-export interface Reservation {
-  id: string;
-  name: string;
-  phone: string;
-  email: string;
-  message: string;
-  preferredTime: string;
-  serviceType: string;
-  clinic: string;
-  reservationDate: FirebaseTimestamp;
-  status: 'pending' | 'confirmed' | 'cancelled' | 'completed';
-  createdAt: FirebaseTimestamp;
-  userAgent: string;
-  ip: string;
-}
-
 export interface NewsItem {
   id: string;
   title: string;
@@ -178,3 +175,174 @@ export interface ClientNewsItem {
   createdAt: string | null;
   updatedAt: string | null;
 }
+
+// Types for reservation data
+export interface ReservationData {
+  // Personal Information
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+
+  // Service Details
+  service: 'moving' | 'cleaning' | 'packing' | 'storage' | 'other';
+  package?: 'maintenance' | 'general' | 'postRenovation';
+
+  // Scheduling
+  preferredDate: string;
+  preferredTime: 'morning' | 'afternoon' | 'evening';
+
+  // Address Information
+  pickupAddress?: string;
+  deliveryAddress?: string;
+  address?: string;
+
+  // Additional Details
+  apartmentSize?: string;
+  message?: string;
+
+  // System Fields
+  status: 'pending' | 'confirmed' | 'in_progress' | 'completed' | 'cancelled';
+  source: 'website' | 'phone' | 'email';
+  locale: 'cs' | 'en' | 'ua';
+  ipAddress?: string;
+  userAgent?: string;
+
+  // Pricing
+  estimatedPrice?: number;
+  finalPrice?: number;
+  currency: 'CZK' | 'EUR' | 'USD';
+
+  // Admin Notes
+  adminNotes?: string;
+  assignedTo?: string;
+}
+
+export interface Reservation extends ReservationData {
+  id: string;
+  createdAt: FirebaseTimestamp;
+  updatedAt: FirebaseTimestamp;
+}
+
+/**
+ * Create a new reservation in Firebase
+ */
+export const createReservation = async (
+  reservationData: Omit<ReservationData, 'status' | 'createdAt' | 'updatedAt'>,
+  requestInfo?: { ipAddress?: string; userAgent?: string },
+): Promise<string> => {
+  try {
+    const reservationToSave = {
+      ...reservationData,
+      status: 'pending' as const,
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+      ipAddress: requestInfo?.ipAddress,
+      userAgent: requestInfo?.userAgent,
+    };
+
+    const docRef = await addDoc(
+      collection(db, 'reservations'),
+      reservationToSave,
+    );
+    return docRef.id;
+  } catch (error) {
+    console.error('Error creating reservation:', error);
+    throw new Error('Failed to create reservation');
+  }
+};
+
+/**
+ * Get a reservation by ID
+ */
+export const getReservationById = async (
+  id: string,
+): Promise<Reservation | null> => {
+  try {
+    const docRef = doc(db, 'reservations', id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      return { id: docSnap.id, ...docSnap.data() } as Reservation;
+    }
+    return null;
+  } catch (error) {
+    console.error('Error getting reservation:', error);
+    throw new Error('Failed to get reservation');
+  }
+};
+
+/**
+ * Update a reservation
+ */
+export const updateReservation = async (
+  id: string,
+  updates: Partial<ReservationData>,
+): Promise<void> => {
+  try {
+    const docRef = doc(db, 'reservations', id);
+    await updateDoc(docRef, {
+      ...updates,
+      updatedAt: serverTimestamp(),
+    });
+  } catch (error) {
+    console.error('Error updating reservation:', error);
+    throw new Error('Failed to update reservation');
+  }
+};
+
+/**
+ * Get all reservations with optional filtering
+ */
+export const getReservations = async (filters?: {
+  status?: ReservationData['status'];
+  service?: ReservationData['service'];
+  limit?: number;
+}): Promise<Reservation[]> => {
+  try {
+    let q = query(collection(db, 'reservations'));
+
+    // Apply filters
+    if (filters?.status) {
+      q = query(q, where('status', '==', filters.status));
+    }
+    if (filters?.service) {
+      q = query(q, where('service', '==', filters.service));
+    }
+
+    // Always order by creation date (newest first)
+    q = query(q, orderBy('createdAt', 'desc'));
+
+    const querySnapshot = await getDocs(q);
+    const reservations = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    })) as Reservation[];
+
+    // Apply limit if specified
+    if (filters?.limit) {
+      return reservations.slice(0, filters.limit);
+    }
+
+    return reservations;
+  } catch (error) {
+    console.error('Error getting reservations:', error);
+    throw new Error('Failed to get reservations');
+  }
+};
+
+/**
+ * Get pending reservations
+ */
+export const getPendingReservations = async (): Promise<Reservation[]> => {
+  return getReservations({ status: 'pending' });
+};
+
+/**
+ * Get reservations by service type
+ */
+export const getReservationsByService = async (
+  service: ReservationData['service'],
+): Promise<Reservation[]> => {
+  return getReservations({ service });
+};

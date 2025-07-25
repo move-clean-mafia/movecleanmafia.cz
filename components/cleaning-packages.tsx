@@ -43,7 +43,7 @@ interface AdditionalService {
   price: string;
 }
 
-const CleaningPackages: React.FC<CleaningPackagesProps> = ({ t }) => {
+const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
   const packages = t('detailedServices.cleaningPackages.packages') as {
     maintenance: PackageData;
     general: PackageData;
@@ -214,14 +214,53 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ t }) => {
 
               <TabsContent value="maintenance" className="space-y-4">
                 {renderPackageContent(packages.maintenance)}
+                {/* Reservation Button */}
+                <div className="flex justify-end pt-6">
+                  <a
+                    href={`/${locale}/reservation?service=cleaning&package=maintenance`}
+                    className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    {locale === 'cs'
+                      ? 'Rezervovat'
+                      : locale === 'ua'
+                        ? 'Забронювати'
+                        : 'Book Now'}
+                  </a>
+                </div>
               </TabsContent>
 
               <TabsContent value="general" className="space-y-4">
                 {renderPackageContent(packages.general)}
+                {/* Reservation Button */}
+                <div className="flex justify-end pt-6">
+                  <a
+                    href={`/${locale}/reservation?service=cleaning&package=general`}
+                    className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    {locale === 'cs'
+                      ? 'Rezervovat'
+                      : locale === 'ua'
+                        ? 'Забронювати'
+                        : 'Book Now'}
+                  </a>
+                </div>
               </TabsContent>
 
               <TabsContent value="postRenovation" className="space-y-4">
                 {renderPackageContent(packages.postRenovation)}
+                {/* Reservation Button */}
+                <div className="flex justify-end pt-6">
+                  <a
+                    href={`/${locale}/reservation?service=cleaning&package=postRenovation`}
+                    className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    {locale === 'cs'
+                      ? 'Rezervovat'
+                      : locale === 'ua'
+                        ? 'Забронювати'
+                        : 'Book Now'}
+                  </a>
+                </div>
               </TabsContent>
             </Tabs>
           </div>
@@ -258,12 +297,28 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ t }) => {
                   </span>
                   <Badge
                     variant="secondary"
-                    className="font-source-sans font-bold bg-brand-primary text-white border-0 px-3 py-1 flex-shrink-0"
+                    className="font-source-sans font-bold bg-brand-primary text-white border-0 px-3 py-1 flex-shrink-0 text-xs"
                   >
-                    {service.price}
+                    <div className="break-words text-center">
+                      {service.price}
+                    </div>
                   </Badge>
                 </div>
               ))}
+            </div>
+
+            {/* Reservation Button for Additional Services */}
+            <div className="flex justify-end mt-8">
+              <a
+                href={`/${locale}/reservation?service=cleaning`}
+                className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                {locale === 'cs'
+                  ? 'Rezervovat'
+                  : locale === 'ua'
+                    ? 'Забронювати'
+                    : 'Book Now'}
+              </a>
             </div>
           </div>
         </div>

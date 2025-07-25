@@ -251,12 +251,26 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                             {service.unit}
                           </td>
                           <td className="py-6 px-6 font-source-sans font-bold text-brand-primary text-right text-lg">
-                            {service.price}
+                            <div className="break-words">{service.price}</div>
                           </td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
+                </div>
+
+                {/* Reservation Button */}
+                <div className="mt-8 flex justify-end">
+                  <a
+                    href={`/${locale}/reservation?service=moving`}
+                    className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    {locale === 'cs'
+                      ? 'Rezervovat'
+                      : locale === 'ua'
+                        ? 'Забронювати'
+                        : 'Book Now'}
+                  </a>
                 </div>
               </div>
             </div>
@@ -285,17 +299,33 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                       key={index}
                       className="flex justify-between items-center p-6 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors duration-200 group"
                     >
-                      <span className="font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors">
+                      <span className="font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors flex-1 pr-4">
                         {service.name}
                       </span>
                       <Badge
                         variant="secondary"
-                        className="font-source-sans font-bold bg-brand-primary text-white border-0 px-4 py-2"
+                        className="font-source-sans font-bold bg-brand-primary text-white border-0 px-4 py-2 flex-shrink-0 text-xs"
                       >
-                        {service.price}
+                        <div className="break-words text-center">
+                          {service.price}
+                        </div>
                       </Badge>
                     </div>
                   ))}
+                </div>
+
+                {/* Reservation Button */}
+                <div className="mt-8 flex justify-end">
+                  <a
+                    href={`/${locale}/reservation?service=cleaning`}
+                    className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    {locale === 'cs'
+                      ? 'Rezervovat'
+                      : locale === 'ua'
+                        ? 'Забронювати'
+                        : 'Book Now'}
+                  </a>
                 </div>
               </div>
             </div>
@@ -343,12 +373,26 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                             {service.unit}
                           </td>
                           <td className="py-6 px-6 font-source-sans font-bold text-brand-primary text-right text-lg">
-                            {service.price}
+                            <div className="break-words">{service.price}</div>
                           </td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
+                </div>
+
+                {/* Reservation Button */}
+                <div className="mt-8 flex justify-end">
+                  <a
+                    href={`/${locale}/reservation?service=packing`}
+                    className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    {locale === 'cs'
+                      ? 'Rezervovat'
+                      : locale === 'ua'
+                        ? 'Забронювати'
+                        : 'Book Now'}
+                  </a>
                 </div>
               </div>
             </div>

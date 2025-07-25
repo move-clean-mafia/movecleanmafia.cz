@@ -5,8 +5,10 @@ import { notFound } from 'next/navigation';
 import { supportedLanguages, type SupportedLanguage } from '../../lib/i18n';
 import { getServerTranslations } from '../../lib/i18n-server';
 import { I18nProvider } from '../../components/i18n-provider';
+import { QueryProvider } from '../../components/query-provider';
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
+import { FloatingReservationButton } from '../../components/floating-reservation-button';
 import { Toaster } from '../../components/ui/toaster';
 import '../globals.css';
 
@@ -102,12 +104,15 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
           locale={locale as SupportedLanguage}
           translations={translations}
         >
-          <div className="min-h-screen bg-brand-light flex flex-col">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-            <Toaster />
-          </div>
+          <QueryProvider>
+            <div className="min-h-screen bg-brand-light flex flex-col">
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+              <FloatingReservationButton />
+              <Toaster />
+            </div>
+          </QueryProvider>
         </I18nProvider>
       </body>
     </html>

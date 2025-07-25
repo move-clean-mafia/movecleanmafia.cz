@@ -81,7 +81,7 @@ const ServicesGrid = ({
           </div>
 
           {/* Content Card */}
-          <div className="p-8 bg-white">
+          <div className="p-8 bg-white flex flex-col min-h-[300px]">
             {/* Description */}
             <p className="text-gray-600 leading-relaxed mb-6 text-lg font-light">
               {service.description}
@@ -104,8 +104,11 @@ const ServicesGrid = ({
               </div>
             )}
 
-            {/* CTA Button */}
-            <div className="flex justify-between items-center">
+            {/* Spacer to push buttons to bottom */}
+            <div className="flex-1"></div>
+
+            {/* CTA Buttons */}
+            <div className="flex justify-between items-center pt-6">
               <a
                 href={
                   useSpecificLinks
@@ -118,21 +121,22 @@ const ServicesGrid = ({
                           : `/${locale}/services#detailed-services`
                     : `/${locale}/services#detailed-services`
                 }
-                className="inline-flex items-center px-6 py-3 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg group/link"
+                className="inline-flex items-center justify-center px-6 py-3 border-2 border-brand-primary text-brand-primary font-semibold rounded-xl hover:bg-brand-primary hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg group/link min-w-[140px] h-12"
               >
                 {t('servicesGrid.learnMore')}
                 <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-200" />
               </a>
 
-              {/* Additional Info */}
-              <div className="text-right">
-                <div className="text-sm text-gray-500 font-light">
-                  {t('servicesGrid.professionalServices')}
-                </div>
-                <div className="text-xs text-gray-400">
-                  {t('servicesGrid.insuranceGuarantee')}
-                </div>
-              </div>
+              <a
+                href={`/${locale}/reservation?service=${service.title === t('services.moving') ? 'moving' : service.title === t('services.cleaning') ? 'cleaning' : service.title === t('services.packing') ? 'packing' : 'storage'}`}
+                className="inline-flex items-center justify-center px-6 py-3 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg group/book min-w-[140px] h-12"
+              >
+                {locale === 'cs'
+                  ? 'Rezervovat'
+                  : locale === 'ua'
+                    ? 'Забронювати'
+                    : 'Book'}
+              </a>
             </div>
           </div>
 

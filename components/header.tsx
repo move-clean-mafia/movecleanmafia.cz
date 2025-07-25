@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { Phone, Menu, X } from 'lucide-react';
 import { LanguageSwitcher } from './language-switcher';
-import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import Logo from './logo';
 
 export const Header: React.FC = () => {
@@ -14,7 +13,6 @@ export const Header: React.FC = () => {
   const pathname = usePathname();
   const locale = pathname.split('/')[1] || 'cs';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobilePhonePopupOpen, setIsMobilePhonePopupOpen] = useState(false);
 
   const navigationItems = [
     { key: 'home', href: `/${locale}` },
@@ -26,10 +24,6 @@ export const Header: React.FC = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const toggleMobilePhonePopup = () => {
-    setIsMobilePhonePopupOpen(!isMobilePhonePopupOpen);
   };
 
   useEffect(() => {
@@ -61,59 +55,14 @@ export const Header: React.FC = () => {
 
               {/* Contact Info */}
               <div className="flex items-center space-x-4 lg:space-x-5">
-                {/* Phone Popup - All devices */}
-                <div className="">
-                  <Popover
-                    open={isMobilePhonePopupOpen}
-                    onOpenChange={setIsMobilePhonePopupOpen}
-                  >
-                    <PopoverTrigger asChild>
-                      <button
-                        onClick={toggleMobilePhonePopup}
-                        className="p-3 rounded-lg bg-brand-light hover:bg-brand-primary/20 transition-colors duration-200 border border-gray-200 shadow-sm"
-                      >
-                        <Phone className="w-5 h-5 text-brand-primary" />
-                      </button>
-                    </PopoverTrigger>
-                    <PopoverContent
-                      className="w-64 p-0"
-                      align="start"
-                      side="bottom"
-                      sideOffset={8}
-                    >
-                      <div className="bg-white rounded-xl border-2 border-gray-200 shadow-xl overflow-hidden">
-                        <div className="bg-gradient-to-r from-brand-primary to-brand-secondary px-4 py-3">
-                          <div className="flex items-center justify-center">
-                            <Phone className="w-4 h-4 text-white mr-2" />
-                            <h3 className="text-sm font-bold text-white">
-                              {t('header.contactUs')}
-                            </h3>
-                          </div>
-                        </div>
-                        <div className="p-4 space-y-3">
-                          <a
-                            href={`tel:${t('header.phone1')}`}
-                            className="flex items-center space-x-3 p-3 hover:bg-brand-light rounded-lg transition-colors duration-200 border border-transparent hover:border-gray-200"
-                          >
-                            <Phone className="w-4 h-4 text-brand-primary" />
-                            <span className="font-source-sans font-semibold text-gray-900">
-                              {t('header.phone1')}
-                            </span>
-                          </a>
-                          <a
-                            href={`tel:${t('header.phone2')}`}
-                            className="flex items-center space-x-3 p-3 hover:bg-brand-light rounded-lg transition-colors duration-200 border border-transparent hover:border-gray-200"
-                          >
-                            <Phone className="w-4 h-4 text-brand-primary" />
-                            <span className="font-source-sans font-semibold text-gray-900">
-                              {t('header.phone2')}
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </PopoverContent>
-                  </Popover>
-                </div>
+                {/* Phone Button - Direct Call */}
+                <a
+                  href={`tel:${t('header.phone1')}`}
+                  className="p-3 rounded-lg bg-brand-light hover:bg-brand-primary/20 transition-colors duration-200 border border-gray-200 shadow-sm"
+                  aria-label={t('header.phone1')}
+                >
+                  <Phone className="w-5 h-5 text-brand-primary" />
+                </a>
               </div>
 
               {/* Desktop Navigation and Language Switcher */}
@@ -221,15 +170,6 @@ export const Header: React.FC = () => {
                     <Phone className="w-4 h-4 text-brand-primary" />
                     <span className="font-source-sans font-semibold text-sm leading-4 tracking-wide text-gray-700">
                       {t('header.phone1')}
-                    </span>
-                  </a>
-                  <a
-                    href={`tel:${t('header.phone2')}`}
-                    className="flex items-center justify-center space-x-3 hover:bg-brand-light rounded-lg p-3 transition-colors duration-200 w-full max-w-xs border border-transparent hover:border-gray-200 shadow-sm"
-                  >
-                    <Phone className="w-4 h-4 text-brand-primary" />
-                    <span className="font-source-sans font-semibold text-sm leading-4 tracking-wide text-gray-700">
-                      {t('header.phone2')}
                     </span>
                   </a>
                 </div>

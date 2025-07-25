@@ -1,0 +1,179 @@
+interface TelegramMessage {
+  chat_id: string;
+  text: string;
+  parse_mode?: 'HTML' | 'Markdown';
+  disable_web_page_preview?: boolean;
+}
+
+interface ReservationSummary {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  service: string;
+  package?: string;
+  preferredDate: string;
+  preferredTime: string;
+  pickupAddress?: string;
+  deliveryAddress?: string;
+  address?: string;
+  apartmentSize?: string;
+  message?: string;
+  locale: string;
+  createdAt: string;
+}
+
+/**
+ * Send a message to Telegram channel
+ */
+export const sendTelegramMessage = async (
+  message: string,
+  parseMode: 'HTML' | 'Markdown' = 'HTML',
+): Promise<void> => {
+  const botToken = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+
+  if (!botToken || !chatId) {
+    console.warn('Telegram configuration missing. Skipping notification.');
+    return;
+  }
+
+  const telegramMessage: TelegramMessage = {
+    chat_id: chatId,
+    text: message,
+    parse_mode: parseMode,
+    disable_web_page_preview: true,
+  };
+
+  try {
+    const response = await fetch(
+      `https://api.telegram.org/bot${botToken}/sendMessage`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(telegramMessage),
+      },
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Telegram API error:', errorData);
+      throw new Error(`Telegram API error: ${errorData.description}`);
+    }
+  } catch (error) {
+    console.error('Failed to send Telegram notification:', error);
+    // Don't throw error to avoid breaking the reservation flow
+  }
+};
+
+/**
+ * Format reservation data for Telegram message
+ */
+export const formatReservationForTelegram = (
+  reservation: ReservationSummary,
+): string => {
+  const truncateMessage = (message: string, maxLength: number = 200) => {
+    if (message.length <= maxLength) return message;
+    return message.substring(0, maxLength) + '...';
+  };
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('cs-CZ', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
+  const formatTime = (time: string) => {
+    const timeMap: Record<string, string> = {
+      morning: '8:00-12:00',
+      afternoon: '12:00-16:00',
+      evening: '16:00-20:00',
+    };
+    return timeMap[time] || time;
+  };
+
+  const getLocaleName = (locale: string) => {
+    const localeMap: Record<string, string> = {
+      cs: 'Czech',
+      en: 'English',
+      ua: 'Ukrainian',
+    };
+    return localeMap[locale] || locale.toUpperCase();
+  };
+
+  const getServiceEmoji = (service: string) => {
+    const emojiMap: Record<string, string> = {
+      moving: '🚚',
+      cleaning: '🧹',
+      packing: '📦',
+      storage: '🏪',
+      other: '❓',
+    };
+    return emojiMap[service] || '❓';
+  };
+
+  const serviceEmoji = getServiceEmoji(reservation.service);
+  const packageText = reservation.package
+    ? `\n📦 <b>Package:</b> ${reservation.package}`
+    : '';
+
+  const addressSection =
+    reservation.service === 'moving'
+      ? `📍 <b>Pickup Address:</b> ${truncateMessage(reservation.pickupAddress || 'Not provided', 100)}
+📍 <b>Delivery Address:</b> ${truncateMessage(reservation.deliveryAddress || 'Not provided', 100)}`
+      : `📍 <b>Address:</b> ${truncateMessage(reservation.address || 'Not provided', 100)}`;
+
+  const apartmentSizeText = reservation.apartmentSize
+    ? `\n🏠 <b>Apartment Size:</b> ${reservation.apartmentSize} m²`
+    : '';
+
+  const messageText = reservation.message
+    ? `\n💬 <b>Message:</b> ${truncateMessage(reservation.message)}`
+    : '';
+
+  const localeText = getLocaleName(reservation.locale);
+
+  return `🔔 <b>NEW RESERVATION RECEIVED</b> 🔔
+
+${serviceEmoji} <b>Service:</b> ${reservation.service}${packageText}
+
+👤 <b>Customer:</b> ${reservation.firstName} ${reservation.lastName}
+📧 <b>Email:</b> ${reservation.email}
+📞 <b>Phone:</b> ${reservation.phone}
+
+📅 <b>Date:</b> ${formatDate(reservation.preferredDate)}
+⏰ <b>Time:</b> ${formatTime(reservation.preferredTime)}
+
+${addressSection}${apartmentSizeText}${messageText}
+
+🌍 <b>Language:</b> ${localeText}
+🆔 <b>Reservation ID:</b> <code>${reservation.id}</code>
+📅 <b>Submitted:</b> ${formatDate(reservation.createdAt)}`;
+};
+
+/**
+ * Send reservation notification to Telegram
+ */
+export const sendReservationNotification = async (
+  reservation: ReservationSummary,
+): Promise<void> => {
+  const message = formatReservationForTelegram(reservation);
+  await sendTelegramMessage(message, 'HTML');
+};
+
+/**
+ * Send simple notification message
+ */
+export const sendSimpleNotification = async (
+  title: string,
+  message: string,
+): Promise<void> => {
+  const formattedMessage = `🔔 <b>${title}</b>\n\n${message}`;
+  await sendTelegramMessage(formattedMessage, 'HTML');
+};

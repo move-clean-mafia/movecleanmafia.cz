@@ -543,5 +543,57 @@
       "upTo70": "up to 70 m²",
       "over70": "over 70 m²"
     }
+  },
+  "reservation": {
+    "title": "Online Reservation",
+    "subtitle": "Book our services quickly and easily online",
+    "formTitle": "Booking Form",
+    "formSubtitle": "Fill out the form and we will contact you within 24 hours",
+    "personalInfo": "Personal Information",
+    "serviceDetails": "Service Details",
+    "additionalInfo": "Additional Information",
+    "service": "Service",
+    "servicePlaceholder": "Select service",
+    "cleaningPackage": "Cleaning Package",
+    "cleaningPackagePlaceholder": "Select cleaning package",
+    "preferredDate": "Preferred Date",
+    "preferredTime": "Preferred Time",
+    "selectTime": "Select time",
+    "pickupAddress": "Pickup Address",
+    "deliveryAddress": "Delivery Address",
+    "address": "Address",
+    "pickupAddressPlaceholder": "Enter the address from where to move...",
+    "deliveryAddressPlaceholder": "Enter the address where to move...",
+    "addressPlaceholder": "Enter the address where the service will be provided...",
+    "apartmentSize": "Apartment/Office Size (m²)",
+    "apartmentSizePlaceholder": "e.g. 65",
+    "message": "Message",
+    "messagePlaceholder": "Describe your requirements, special requests, notes...",
+    "submitReservation": "Submit Reservation",
+    "timeSlots": {
+      "morning": "Morning (8:00-12:00)",
+      "afternoon": "Afternoon (12:00-16:00)",
+      "evening": "Evening (16:00-20:00)"
+    },
+    "cleaningPackages": {
+      "maintenance": "Maintenance Cleaning",
+      "general": "General Cleaning",
+      "postRenovation": "Post-Renovation Cleaning"
+    },
+    "services": {
+      "moving": "Moving",
+      "cleaning": "Cleaning",
+      "packing": "Packing",
+      "storage": "Storage",
+      "other": "Other"
+    },
+    "success": {
+      "title": "Reservation Submitted Successfully!",
+      "description": "Thank you for your reservation. We will contact you within 24 hours to confirm the details."
+    },
+    "error": {
+      "title": "Reservation Submission Failed",
+      "description": "There was an error submitting your reservation. Please try again or contact us directly."
+    }
   }
 }
