@@ -3,21 +3,22 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Pulmonology.cz',
-    default: 'Pulmonology.cz - Professional Pulmonological Care',
+    template: '%s | MoveCleanMafia.cz',
+    default: 'MoveCleanMafia.cz - Professional Moving & Cleaning Services',
   },
   description:
-    'Specialized pulmonological care and respiratory health services in Czech Republic',
+    'Professional moving and cleaning services for households and businesses in Czech Republic',
   keywords: [
-    'pulmonology',
-    'respiratory health',
-    'lung care',
-    'pulmonologist',
+    'moving services',
+    'cleaning services',
+    'professional cleaning',
+    'house moving',
+    'office cleaning',
     'Czech Republic',
   ],
-  authors: [{ name: 'Pulmonology.cz' }],
-  creator: 'Pulmonology.cz',
-  publisher: 'Pulmonology.cz',
+  authors: [{ name: 'MoveCleanMafia.cz' }],
+  creator: 'MoveCleanMafia.cz',
+  publisher: 'MoveCleanMafia.cz',
   robots: {
     index: false,
     follow: false,
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
       {
         rel: 'mask-icon',
         url: '/favicon/safari-pinned-tab.svg',
-        color: '#000000',
+        color: '#6B4F2C',
       },
     ],
   },
@@ -50,26 +51,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'cs_CZ',
-    url: 'https://pulmonology.cz',
-    title: 'Pulmonology.cz - Professional Pulmonological Care',
+    url: 'https://movecleanmafia.cz',
+    title: 'MoveCleanMafia.cz - Professional Moving & Cleaning Services',
     description:
-      'Specialized pulmonological care and respiratory health services',
-    siteName: 'Pulmonology.cz',
+      'Professional moving and cleaning services for households and businesses',
+    siteName: 'MoveCleanMafia.cz',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pulmonology.cz - Professional Pulmonological Care',
+    title: 'MoveCleanMafia.cz - Professional Moving & Cleaning Services',
     description:
-      'Specialized pulmonological care and respiratory health services',
+      'Professional moving and cleaning services for households and businesses',
   },
   verification: {
     google: 'tAjavF9M2DplYyPZUChDkwHhQKU7ewlYPJdAGG62nUY',
   },
   alternates: {
-    canonical: 'https://pulmonology.cz',
+    canonical: 'https://movecleanmafia.cz',
     languages: {
-      cs: 'https://pulmonology.cz/cs',
-      en: 'https://pulmonology.cz/en',
+      cs: 'https://movecleanmafia.cz/cs',
+      en: 'https://movecleanmafia.cz/en',
+      uk: 'https://movecleanmafia.ua/ua',
     },
   },
 };
@@ -84,6 +86,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning>
       <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
         <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
         <link
           rel="icon"
@@ -103,8 +106,8 @@ export default function RootLayout({
           href="/favicon/apple-touch-icon.png"
         />
         <link rel="manifest" href="/favicon/site.webmanifest" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="msapplication-TileColor" content="#6B4F2C" />
+        <meta name="theme-color" content="#D6B977" />
       </head>
       <body suppressHydrationWarning>{children}</body>
     </html>

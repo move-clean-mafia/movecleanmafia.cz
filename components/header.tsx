@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next';
 import { Phone, Menu, X } from 'lucide-react';
 import { LanguageSwitcher } from './language-switcher';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
+import Logo from './logo';
+import LogoIcon from './logo-icon';
 
 export const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -48,6 +50,15 @@ export const Header: React.FC = () => {
         <div className="bg-white w-full">
           <div className="w-full px-2 sm:px-4 lg:px-6 xl:px-8">
             <div className="flex items-center h-20">
+              {/* Logo */}
+              <Link href={`/${locale}`} className="flex-shrink-0 mr-6">
+                <Logo
+                  width={160}
+                  height={48}
+                  className="hover:opacity-80 transition-opacity duration-200"
+                />
+              </Link>
+
               {/* Contact Info */}
               <div className="flex items-center space-x-3 lg:space-x-4">
                 {/* Phone Popup - All devices */}
@@ -167,9 +178,12 @@ export const Header: React.FC = () => {
             <div className="p-4 sm:p-6 h-full overflow-y-auto">
               {/* Mobile header */}
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-lg font-semibold text-gray-900">
-                  {t('navigation.home')}
-                </h2>
+                <div className="flex items-center space-x-3">
+                  <LogoIcon width={32} height={32} />
+                  <h2 className="text-lg font-semibold text-gray-900">
+                    {t('navigation.home')}
+                  </h2>
+                </div>
                 <button
                   onClick={toggleMobileMenu}
                   className="p-2 rounded-md text-gray-400 hover:text-gray-500"
