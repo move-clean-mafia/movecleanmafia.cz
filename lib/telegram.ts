@@ -65,10 +65,12 @@ export const sendTelegramMessage = async (
 
     if (!response.ok) {
       const errorData = await response.json();
+      console.log('TG_ERROR_DATA', errorData);
       console.error('Telegram API error:', errorData);
       throw new Error(`Telegram API error: ${errorData.description}`);
     }
   } catch (error) {
+    console.log('TG_ERROR', error);
     console.error('Failed to send Telegram notification:', error);
     // Don't throw error to avoid breaking the reservation flow
   }
