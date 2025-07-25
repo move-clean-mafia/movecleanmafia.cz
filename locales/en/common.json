@@ -150,6 +150,7 @@
   "contact": {
     "title": "Contact",
     "subtitle": "Contact us for a free consultation and price quote",
+    "address": "Address",
     "form": {
       "title": "Write to Us",
       "subtitle": "Fill out the form and we will contact you within 24 hours",
@@ -595,5 +596,40 @@
       "title": "Reservation Submission Failed",
       "description": "There was an error submitting your reservation. Please try again or contact us directly."
     }
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Information",
+    "phone": "Phone",
+    "email": "Email",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "tagline": "Professional moving and cleaning - your reliability is our priority"
+  },
+  "cookieConsent": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to improve your experience on our website. You can choose which types of cookies to allow.",
+    "banner": {
+      "title": "We use cookies",
+      "description": "We use cookies to improve your experience. By continuing, you agree to their use.",
+      "accept": "Accept All",
+      "decline": "Decline",
+      "settings": "Settings"
+    },
+    "necessary": "Necessary cookies",
+    "necessaryDescription": "These cookies are essential for the website to function properly and cannot be disabled.",
+    "analytics": "Analytics cookies",
+    "analyticsDescription": "Help us understand how visitors use our website.",
+    "marketing": "Marketing cookies",
+    "marketingDescription": "Used to display relevant ads and content.",
+    "preferences": "Preference cookies",
+    "preferencesDescription": "Store your preferences and settings.",
+    "acceptNecessary": "Accept Necessary Only",
+    "savePreferences": "Save Preferences",
+    "learnMore": "Learn More",
+    "cookiePolicy": "Cookie Policy",
+    "customize": "Customize Cookies"
   }
 }

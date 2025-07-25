@@ -150,6 +150,7 @@
   "contact": {
     "title": "Kontakt",
     "subtitle": "Kontaktujte nás pro bezplatnou konzultaci a cenovou nabídku",
+    "address": "Adresa",
     "form": {
       "title": "Napište nám",
       "subtitle": "Vyplňte formulář a my se vám ozveme do 24 hodin",
@@ -595,5 +596,40 @@
       "title": "Odeslání rezervace se nezdařilo",
       "description": "Při odesílání rezervace došlo k chybě. Zkuste to prosím znovu nebo nás kontaktujte přímo."
     }
+  },
+  "footer": {
+    "quickLinks": "Užitečné odkazy",
+    "contactInfo": "Kontaktní informace",
+    "phone": "Telefon",
+    "email": "Email",
+    "legal": "Právní informace",
+    "privacyPolicy": "Ochrana osobních údajů",
+    "termsOfService": "Podmínky použití",
+    "cookiePolicy": "Zásady cookies",
+    "tagline": "Profesionální přeprava a úklid - vaše spolehlivost je naší prioritou"
+  },
+  "cookieConsent": {
+    "title": "Nastavení cookies",
+    "description": "Používáme cookies pro zlepšení vašeho zážitku na našich stránkách. Můžete si vybrat, které typy cookies povolíte.",
+    "banner": {
+      "title": "Používáme cookies",
+      "description": "Používáme cookies pro zlepšení vašeho zážitku. Pokračováním souhlasíte s jejich použitím.",
+      "accept": "Přijmout vše",
+      "decline": "Odmítnout",
+      "settings": "Nastavení"
+    },
+    "necessary": "Nezbytné cookies",
+    "necessaryDescription": "Tyto cookies jsou nezbytné pro správné fungování webu a nelze je vypnout.",
+    "analytics": "Analytické cookies",
+    "analyticsDescription": "Pomáhají nám pochopit, jak návštěvníci používají náš web.",
+    "marketing": "Marketingové cookies",
+    "marketingDescription": "Používají se k zobrazování relevantních reklam a obsahu.",
+    "preferences": "Preferenční cookies",
+    "preferencesDescription": "Ukládají vaše preference a nastavení.",
+    "acceptNecessary": "Přijmout pouze nezbytné",
+    "savePreferences": "Uložit nastavení",
+    "learnMore": "Více informací",
+    "cookiePolicy": "Zásady cookies",
+    "customize": "Nastavit cookies"
   }
 }
