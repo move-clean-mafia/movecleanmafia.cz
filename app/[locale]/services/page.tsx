@@ -3,16 +3,11 @@ import { Metadata } from 'next';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
 
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from '../../../components/ui/tabs';
 import { Badge } from '../../../components/ui/badge';
 import ServicesGrid from '../../../components/services-grid';
 import BenefitsGrid from '../../../components/benefits-grid';
 import { CTASection } from '../../../components/cta-section';
+import CleaningPackages from '../../../components/cleaning-packages';
 
 import {
   Truck,
@@ -22,7 +17,6 @@ import {
   Clock,
   Shield,
   Star,
-  Check,
   Award,
 } from 'lucide-react';
 
@@ -126,26 +120,6 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
     unit: string;
     price: string;
   }>;
-
-  const cleaningPackages = t(
-    'detailedServices.cleaningPackages.packages',
-  ) as unknown as {
-    s_size: {
-      title: string;
-      description: string;
-      included: string[];
-    };
-    m_size: {
-      title: string;
-      description: string;
-      included: string[];
-    };
-    xl_size: {
-      title: string;
-      description: string;
-      included: string[];
-    };
-  };
 
   const dryCleaningServices = t(
     'detailedServices.dryCleaning.items',
@@ -289,107 +263,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
           </div>
 
           {/* Cleaning Packages */}
-          <div className="mb-16">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-6">
-                <Sparkles className="w-8 h-8 text-white" />
-              </div>
-              <h2 className="text-4xl sm:text-5xl font-oswald font-light text-gray-900 mb-4">
-                {t('detailedServices.cleaningPackages.title')}
-              </h2>
-              <div className="w-24 h-1 bg-brand-primary mx-auto rounded-full"></div>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-              <div className="p-8">
-                <Tabs defaultValue="s_size" className="w-full">
-                  <TabsList className="grid w-full grid-cols-3 mb-8 bg-gray-100 p-1 rounded-xl">
-                    <TabsTrigger
-                      value="s_size"
-                      className="font-oswald rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200"
-                    >
-                      {cleaningPackages.s_size.title}
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="m_size"
-                      className="font-oswald rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200"
-                    >
-                      {cleaningPackages.m_size.title}
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="xl_size"
-                      className="font-oswald rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200"
-                    >
-                      {cleaningPackages.xl_size.title}
-                    </TabsTrigger>
-                  </TabsList>
-
-                  <TabsContent value="s_size" className="space-y-6">
-                    <p className="text-gray-600 font-source-sans font-light text-lg leading-relaxed">
-                      {cleaningPackages.s_size.description}
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {cleaningPackages.s_size.included.map((item, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors duration-200"
-                        >
-                          <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0">
-                            <Check className="w-4 h-4 text-white" />
-                          </div>
-                          <span className="font-source-sans font-light text-gray-700">
-                            {item}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </TabsContent>
-
-                  <TabsContent value="m_size" className="space-y-6">
-                    <p className="text-gray-600 font-source-sans font-light text-lg leading-relaxed">
-                      {cleaningPackages.m_size.description}
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {cleaningPackages.m_size.included.map((item, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors duration-200"
-                        >
-                          <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0">
-                            <Check className="w-4 h-4 text-white" />
-                          </div>
-                          <span className="font-source-sans font-light text-gray-700">
-                            {item}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </TabsContent>
-
-                  <TabsContent value="xl_size" className="space-y-6">
-                    <p className="text-gray-600 font-source-sans font-light text-lg leading-relaxed">
-                      {cleaningPackages.xl_size.description}
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {cleaningPackages.xl_size.included.map((item, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors duration-200"
-                        >
-                          <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0">
-                            <Check className="w-4 h-4 text-white" />
-                          </div>
-                          <span className="font-source-sans font-light text-gray-700">
-                            {item}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </TabsContent>
-                </Tabs>
-              </div>
-            </div>
-          </div>
+          <CleaningPackages locale={locale as SupportedLanguage} t={t} />
 
           {/* Dry Cleaning Services */}
           <div className="mb-16">

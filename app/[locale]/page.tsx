@@ -9,12 +9,6 @@ import {
   CardHeader,
   CardTitle,
 } from '../../components/ui/card';
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from '../../components/ui/tabs';
 import { Badge } from '../../components/ui/badge';
 import BenefitsGrid from '../../components/benefits-grid';
 import ImageSlider from '../../components/image-slider';
@@ -32,6 +26,7 @@ import {
   Mail,
   MapPin,
   ArrowRight,
+  Home,
 } from 'lucide-react';
 import ServicesGrid from '@/components/services-grid';
 
@@ -83,32 +78,50 @@ const HomePage = async ({ params }: HomePageProps) => {
     price: string;
   }>;
 
-  const cleaningPackages = t(
-    'detailedServices.cleaningPackages.packages',
-  ) as unknown as {
-    s_size: {
-      title: string;
-      description: string;
-      included: string[];
-    };
-    m_size: {
-      title: string;
-      description: string;
-      included: string[];
-    };
-    xl_size: {
-      title: string;
-      description: string;
-      included: string[];
-    };
-  };
-
   const dryCleaningServices = t(
     'detailedServices.dryCleaning.items',
   ) as unknown as Array<{
     name: string;
     price: string;
   }>;
+
+  const cleaningPackages = t(
+    'detailedServices.cleaningPackages.packages',
+  ) as unknown as {
+    maintenance: {
+      title: string;
+      description: string;
+      duration: string;
+      prices: {
+        upTo35: string;
+        upTo50: string;
+        upTo70: string;
+        over70: string;
+      };
+    };
+    general: {
+      title: string;
+      description: string;
+      duration: string;
+      prices: {
+        upTo35: string;
+        upTo50: string;
+        upTo70: string;
+        over70: string;
+      };
+    };
+    postRenovation: {
+      title: string;
+      description: string;
+      duration: string;
+      prices: {
+        upTo35: string;
+        upTo50: string;
+        upTo70: string;
+        over70: string;
+      };
+    };
+  };
 
   const services = [
     {
@@ -357,83 +370,6 @@ const HomePage = async ({ params }: HomePageProps) => {
               </CardContent>
             </Card>
 
-            {/* Cleaning Packages Highlight */}
-            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 bg-white/80 backdrop-blur-sm">
-              <CardHeader className="bg-gradient-to-r from-brand-secondary to-brand-primary text-white rounded-t-lg">
-                <CardTitle className="text-xl font-heading flex items-center">
-                  <Sparkles className="w-6 h-6 mr-3" />
-                  {t('detailedServices.cleaningPackages.title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6">
-                <Tabs defaultValue="s_size" className="w-full">
-                  <TabsList className="grid w-full grid-cols-3 mb-4 bg-gray-100">
-                    <TabsTrigger
-                      value="s_size"
-                      className="text-xs data-[state=active]:bg-brand-primary data-[state=active]:text-white"
-                    >
-                      S
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="m_size"
-                      className="text-xs data-[state=active]:bg-brand-primary data-[state=active]:text-white"
-                    >
-                      M
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="xl_size"
-                      className="text-xs data-[state=active]:bg-brand-primary data-[state=active]:text-white"
-                    >
-                      XL
-                    </TabsTrigger>
-                  </TabsList>
-
-                  <TabsContent value="s_size">
-                    <div className="space-y-2">
-                      <p className="text-sm text-gray-600">
-                        {cleaningPackages.s_size.description}
-                      </p>
-                      <div className="text-xs text-gray-500">
-                        {cleaningPackages.s_size.included.length}{' '}
-                        {t('homepage.pricingSection.servicesIncluded')}
-                      </div>
-                    </div>
-                  </TabsContent>
-
-                  <TabsContent value="m_size">
-                    <div className="space-y-2">
-                      <p className="text-sm text-gray-600">
-                        {cleaningPackages.m_size.description}
-                      </p>
-                      <div className="text-xs text-gray-500">
-                        {cleaningPackages.m_size.included.length}{' '}
-                        {t('homepage.pricingSection.servicesIncluded')}
-                      </div>
-                    </div>
-                  </TabsContent>
-
-                  <TabsContent value="xl_size">
-                    <div className="space-y-2">
-                      <p className="text-sm text-gray-600">
-                        {cleaningPackages.xl_size.description}
-                      </p>
-                      <div className="text-xs text-gray-500">
-                        {cleaningPackages.xl_size.included.length}{' '}
-                        {t('homepage.pricingSection.servicesIncluded')}
-                      </div>
-                    </div>
-                  </TabsContent>
-                </Tabs>
-                <a
-                  href={`/${locale}/services#detailed-services`}
-                  className="group/link inline-flex items-center mt-4 text-brand-primary hover:text-brand-secondary font-medium transition-colors duration-300"
-                >
-                  {t('homepage.pricingSection.showDetails')}
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
-                </a>
-              </CardContent>
-            </Card>
-
             {/* Dry Cleaning Highlight */}
             <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 bg-white/80 backdrop-blur-sm">
               <CardHeader className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white rounded-t-lg">
@@ -463,6 +399,76 @@ const HomePage = async ({ params }: HomePageProps) => {
                 </div>
                 <a
                   href={`/${locale}/services#detailed-services`}
+                  className="group/link inline-flex items-center mt-4 text-brand-primary hover:text-brand-secondary font-medium transition-colors duration-300"
+                >
+                  {t('homepage.pricingSection.showAllPrices')}
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Cleaning Packages Highlight */}
+            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 bg-white/80 backdrop-blur-sm">
+              <CardHeader className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white rounded-t-lg">
+                <CardTitle className="text-xl font-heading flex items-center">
+                  <Home className="w-6 h-6 mr-3" />
+                  {t('detailedServices.cleaningPackages.title')}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <span className="text-sm font-light text-gray-700">
+                      {cleaningPackages.maintenance.title}
+                    </span>
+                    <Badge
+                      variant="outline"
+                      className="font-medium bg-brand-primary/10 border-brand-primary/20 text-brand-primary"
+                    >
+                      {t('detailedServices.cleaningPackages.from')}{' '}
+                      {cleaningPackages.maintenance.prices.upTo35}
+                    </Badge>
+                  </div>
+                  <div className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <span className="text-sm font-light text-gray-700">
+                      {cleaningPackages.general.title}
+                    </span>
+                    <Badge
+                      variant="outline"
+                      className="font-medium bg-brand-primary/10 border-brand-primary/20 text-brand-primary"
+                    >
+                      {t('detailedServices.cleaningPackages.from')}{' '}
+                      {cleaningPackages.general.prices.upTo35}
+                    </Badge>
+                  </div>
+                  <div className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <span className="text-sm font-light text-gray-700">
+                      {cleaningPackages.postRenovation.title}
+                    </span>
+                    <Badge
+                      variant="outline"
+                      className="font-medium bg-brand-primary/10 border-brand-primary/20 text-brand-primary"
+                    >
+                      {t('detailedServices.cleaningPackages.from')}{' '}
+                      {cleaningPackages.postRenovation.prices.upTo35}
+                    </Badge>
+                  </div>
+                  <div className="flex justify-between items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <span className="text-sm font-light text-gray-700">
+                      {t(
+                        'detailedServices.cleaningPackages.additionalServices.title',
+                      )}
+                    </span>
+                    <Badge
+                      variant="outline"
+                      className="font-medium bg-brand-primary/10 border-brand-primary/20 text-brand-primary"
+                    >
+                      {t('detailedServices.cleaningPackages.onRequest')}
+                    </Badge>
+                  </div>
+                </div>
+                <a
+                  href={`/${locale}/services#cleaning-packages`}
                   className="group/link inline-flex items-center mt-4 text-brand-primary hover:text-brand-secondary font-medium transition-colors duration-300"
                 >
                   {t('homepage.pricingSection.showAllPrices')}

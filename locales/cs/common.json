@@ -260,49 +260,221 @@
     },
     "cleaningPackages": {
       "title": "Úklidové balíčky",
+      "subtitle": "Profesionální úklidové služby pro váš domov",
       "packages": {
-        "s_size": {
-          "title": "Minimální úklid 'S size'",
-          "description": "Základní úklid pro udržení čistoty a pořádku v menších prostorách.",
-          "included": [
-            "Mytí podlah",
-            "Vysávání koberců",
-            "Odstranění prachu ze všech dostupných povrchů",
-            "Čištění zrcadel a skleněných povrchů",
-            "Vynesení odpadků",
-            "Dezinfekce klik a vypínačů",
-            "Čištění kuchyňského dřezu a pracovních desek",
-            "Čištění vnějších povrchů kuchyňských spotřebičů",
-            "Čištění a dezinfekce toalety, umyvadla a sprchy/vany"
-          ]
+        "maintenance": {
+          "title": "Podpůrný úklid",
+          "description": "Pro pravidelné udržování čistoty a pořádku.",
+          "duration": "1,5-2 hodiny",
+          "prices": {
+            "upTo35": "900 Kč",
+            "upTo50": "1080 Kč",
+            "upTo70": "1200 Kč",
+            "over70": "1300 Kč"
+          },
+          "areas": {
+            "room": {
+              "title": "Pokoj",
+              "items": [
+                "Vyleštit zrcadla",
+                "Prostřít prach z dostupných povrchů",
+                "Odstranit prach z domácích spotřebičů",
+                "Vysát koberec",
+                "Umýt podlahu a lišty"
+              ]
+            },
+            "kitchen": {
+              "title": "Kuchyně",
+              "items": [
+                "Prostřít techniku od prachu",
+                "Prostřít pracovní desku a obklad",
+                "Umýt dřez a baterii",
+                "Umýt sporák",
+                "Umýt jídelní stůl",
+                "Prostřít dostupná místa od prachu",
+                "Vynést odpadky a vyměnit pytel",
+                "Umýt podlahu"
+              ]
+            },
+            "bathroom": {
+              "title": "Koupelna a toaleta",
+              "items": [
+                "Umýt umyvadlo",
+                "Umýt toaletu",
+                "Vyleštit všechny baterie",
+                "Umýt podlahu"
+              ]
+            }
+          }
         },
-        "m_size": {
-          "title": "Podpůrný úklid 'M size'",
-          "description": "Pravidelný úklid pro udržení dokonalé čistoty ve vašem domově.",
-          "included": [
-            "Vše z balíčku 'S size'",
-            "Mytí kuchyňské linky",
-            "Čištění mikrovlnné trouby uvnitř",
-            "Výměna ložního prádla (pokud je připraveno)",
-            "Leštění nábytku",
-            "Odstranění vodního kamene z vodovodních baterií a sprchových hlavic"
-          ]
+        "general": {
+          "title": "Generální úklid",
+          "description": "Hluboké a důkladné čištění všech zón. Vhodné pro lehké skvrny, bez hlubokých znečištění.",
+          "duration": "2-4 hodiny a déle",
+          "prices": {
+            "upTo35": "1600 Kč",
+            "upTo50": "1900 Kč",
+            "upTo70": "2300 Kč",
+            "over70": "dohodou"
+          },
+          "areas": {
+            "room": {
+              "title": "Pokoj",
+              "items": [
+                "Umýt zrcadla a skleněné povrchy",
+                "Prostřít prach ze všech dostupných povrchů",
+                "Vysát koberec",
+                "Umýt podlahu a lišty",
+                "Prostřít vypínače a dveřní kliky",
+                "Vyměnit a přečistit postel (pokud leží na posteli čisté prádlo)",
+                "Postříkat postel a nábytek s měkkými povrchy, osvěžovač textilu \"Lenor\"",
+                "Prostřít vypínače",
+                "Prostřít radiátory (shora)"
+              ]
+            },
+            "kitchen": {
+              "title": "Kuchyně",
+              "items": [
+                "Prostřít kuchyňskou linku zvenčí (skříně, obklad, pracovní deska)",
+                "Prostřít všechny dostupné povrchy",
+                "Prostřít techniku od prachu",
+                "Umýt sporák",
+                "Umýt zvenčí (troubu, digestoř, mikrovlnku)",
+                "Umýt nádobí do 10 minut",
+                "Umýt dřez a baterii",
+                "Prostřít vypínače a dveřní kliky",
+                "Umýt podlahu a lišty",
+                "Vynést odpadky, vyměnit pytel (umýt kbelík)"
+              ]
+            },
+            "bathroom": {
+              "title": "Koupelna a toaleta",
+              "items": [
+                "Umýt vanu nebo sprchový kout",
+                "Umýt umyvadlo, baterii",
+                "Prostřít všechny povrchy",
+                "Prostřít vypínače a dveřní kliky",
+                "Umýt toaletu a dezinfikovat",
+                "Umýt podlahu"
+              ]
+            }
+          }
         },
-        "xl_size": {
-          "title": "Generální úklid 'XL size'",
-          "description": "Důkladný a hloubkový úklid, který zanechá váš domov zářivě čistý.",
-          "included": [
-            "Vše z balíčků 'S' a 'M'",
-            "Mytí oken (uvnitř)",
-            "Čištění vnitřku skříní a zásuvek",
-            "Hloubkové čištění kuchyňských spotřebičů (trouba, lednice)",
-            "Čištění obkladů a spár v koupelně a kuchyni",
-            "Mytí dveří a zárubní",
-            "Čištění radiátorů",
-            "Hloubkové čištění podlahových lišt"
-          ]
+        "postRenovation": {
+          "title": "Generální úklid po rekonstrukci",
+          "description": "Komplexní úklid pro odstranění stavebního prachu a znečištění.",
+          "duration": "4+ hodin",
+          "prices": {
+            "upTo35": "3300 Kč",
+            "upTo50": "3600 Kč",
+            "upTo70": "4000 Kč",
+            "over70": "4400 Kč"
+          },
+          "areas": {
+            "room": {
+              "title": "Pokoj",
+              "items": [
+                "Umýt zrcadla a skleněné povrchy",
+                "Prostřít prach ze všech povrchů, dostupných a těžko dostupných",
+                "Umýt radiátory",
+                "Umýt dveře (vstupní a mezi pokoji)",
+                "Odstranit pavučiny ze stěn",
+                "Umýt vypínače, zásuvky",
+                "Vyměnit a přečistit postel (pokud leží na posteli čisté prádlo)",
+                "Postříkat postel a nábytek s měkkými povrchy, osvěžovač textilu \"Lenor\"",
+                "Vysát koberec",
+                "Umýt podlahu a lišty"
+              ]
+            },
+            "kitchen": {
+              "title": "Kuchyně",
+              "items": [
+                "Prostřít kuchyňskou linku zvenčí (skříně, obklad, pracovní deska)",
+                "Prostřít všechny povrchy",
+                "Umýt sporák",
+                "Prostřít techniku od prachu",
+                "Umýt zvenčí a zevnitř (troubu, digestoř, mikrovlnku)",
+                "Umýt lednici",
+                "Umýt zásuvky a vypínače",
+                "Umýt nádobí do 10 minut",
+                "Odstranit pavučiny ze stěn",
+                "Umýt dřez, baterii",
+                "Umýt podlahu a lišty",
+                "Vynést odpadky, vyměnit pytel (umýt kbelík)"
+              ]
+            },
+            "bathroom": {
+              "title": "Koupelna a toaleta",
+              "items": [
+                "Umýt vanu nebo sprchový kout",
+                "Umýt umyvadlo, baterii",
+                "Prostřít všechny povrchy",
+                "Umýt toaletu a dezinfikovat",
+                "Umýt zrcadlo",
+                "Umýt stěny",
+                "Prostřít vypínače a zásuvky",
+                "Umýt podlahu"
+              ]
+            }
+          }
         }
-      }
+      },
+      "additionalServices": {
+        "title": "Dodatečné služby",
+        "subtitle": "Rozšiřte svůj balíček o další služby",
+        "services": [
+          {
+            "name": "Umýt kuchyňské skříňky zevnitř",
+            "price": "od 320 Kč"
+          },
+          {
+            "name": "Umýt pokojové skříňky zevnitř",
+            "price": "od 390 Kč"
+          },
+          {
+            "name": "Umýt lustr",
+            "price": "od 250 Kč"
+          },
+          {
+            "name": "Umýt myčku nádobí",
+            "price": "od 290 Kč"
+          },
+          {
+            "name": "Umýt troubu",
+            "price": "400 Kč"
+          },
+          {
+            "name": "Umýt digestoř",
+            "price": "400 Kč"
+          },
+          {
+            "name": "Umýt mikrovlnku",
+            "price": "od 210 Kč"
+          },
+          {
+            "name": "Umýt lednici kompletně",
+            "price": "od 350 Kč"
+          },
+          {
+            "name": "Vyčistit toaletu domácího mazlíčka",
+            "price": "310 Kč"
+          },
+          {
+            "name": "Uklidit/umýt balkon",
+            "price": "od 450 Kč (malý), od 650 Kč (velký)"
+          },
+          {
+            "name": "Dovoz/odvoz klíčů",
+            "price": "350 Kč"
+          },
+          {
+            "name": "Umýt okna",
+            "price": "1 m² = 120 Kč"
+          }
+        ]
+      },
+      "onRequest": "na požádání",
+      "from": "od"
     },
     "dryCleaning": {
       "title": "Chemické čištění",
@@ -361,6 +533,9 @@
   "servicesPage": {
     "service": "Služba",
     "unit": "Jednotka",
-    "price": "Cena"
+    "price": "Cena",
+    "pricing": "Cenové nabídky",
+    "approximatePrices": "Ceny orientační",
+    "whatIncluded": "Co je zahrnuto v ceně"
   }
 }
