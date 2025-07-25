@@ -31,8 +31,8 @@ export const sendTelegramMessage = async (
   message: string,
   parseMode: 'HTML' | 'Markdown' = 'HTML',
 ): Promise<void> => {
-  const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const botToken = process.env.NEXT_TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.NEXT_TELEGRAM_CHAT_ID;
 
   if (!botToken || !chatId) {
     console.warn('Telegram configuration missing. Skipping notification.');
@@ -165,15 +165,4 @@ export const sendReservationNotification = async (
 ): Promise<void> => {
   const message = formatReservationForTelegram(reservation);
   await sendTelegramMessage(message, 'HTML');
-};
-
-/**
- * Send simple notification message
- */
-export const sendSimpleNotification = async (
-  title: string,
-  message: string,
-): Promise<void> => {
-  const formattedMessage = `🔔 <b>${title}</b>\n\n${message}`;
-  await sendTelegramMessage(formattedMessage, 'HTML');
 };
