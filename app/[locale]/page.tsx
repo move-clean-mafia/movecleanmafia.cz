@@ -18,6 +18,7 @@ import {
 import { Badge } from '../../components/ui/badge';
 import BenefitsGrid from '../../components/benefits-grid';
 import ImageSlider from '../../components/image-slider';
+import { CTASection } from '../../components/cta-section';
 
 import {
   Truck,
@@ -542,38 +543,7 @@ const HomePage = async ({ params }: HomePageProps) => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-primary relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-heading">
-            {t('services.ctaTitle')}
-          </h2>
-          <p className="text-xl text-brand-light mb-8 max-w-3xl mx-auto">
-            {t('services.ctaSubtitle')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a
-              href={`/${locale}/contact`}
-              className="group inline-flex items-center px-8 py-4 bg-white text-brand-primary font-semibold rounded-2xl hover:bg-gray-100 transition-all duration-500 transform hover:scale-105 shadow-2xl"
-            >
-              {t('services.contactUs')}
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
-            <a
-              href={`tel:${t('header.phone1')}`}
-              className="group inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-2xl hover:bg-white hover:text-brand-primary transition-all duration-500 transform hover:scale-105 shadow-2xl"
-            >
-              {t('header.phone1')}
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </section>
+      <CTASection locale={locale as SupportedLanguage} t={t} />
     </div>
   );
 };

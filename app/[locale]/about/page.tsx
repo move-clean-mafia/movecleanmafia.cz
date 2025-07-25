@@ -19,6 +19,7 @@ import {
   Heart,
   CheckCircle,
 } from 'lucide-react';
+import { CTASection } from '../../../components/cta-section';
 
 interface AboutPageProps {
   params: Promise<{ locale: string }>;
@@ -262,30 +263,15 @@ const AboutPage = async ({ params }: AboutPageProps) => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-brand-primary to-brand-secondary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-oswald font-light text-white mb-4">
-            {t('about.cta.title')}
-          </h2>
-          <p className="text-xl font-source-sans font-light text-brand-light mb-8 max-w-2xl mx-auto">
-            {t('about.cta.subtitle')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`/${locale}/contact`}
-              className="inline-flex items-center justify-center px-8 py-3 bg-white text-brand-primary font-source-sans font-medium rounded-lg hover:bg-gray-100 transition-colors duration-200"
-            >
-              {t('about.cta.contact')}
-            </a>
-            <a
-              href={`/${locale}/services`}
-              className="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-source-sans font-medium rounded-lg hover:bg-white hover:text-brand-primary transition-colors duration-200"
-            >
-              {t('about.cta.services')}
-            </a>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        locale={locale as SupportedLanguage}
+        t={t}
+        title={t('about.cta.title')}
+        subtitle={t('about.cta.subtitle')}
+        primaryButtonText={t('about.cta.contact')}
+        secondaryButtonText={t('about.cta.services')}
+        secondaryButtonLink={`/${locale}/services`}
+      />
     </div>
   );
 };
