@@ -22,24 +22,11 @@ const reservationSchema = z.object({
 });
 
 export async function POST(request: NextRequest) {
-  console.log('🔍 [API] POST /api/reservations called');
-
   try {
     const body = await request.json();
-    console.log('🔍 [API] Request body received:', {
-      firstName: body.firstName,
-      lastName: body.lastName,
-      email: body.email,
-      service: body.service,
-      package: body.package,
-      date: body.date,
-      time: body.time,
-      locale: body.locale,
-    });
 
     // Validate the request body
     const validatedData = reservationSchema.parse(body);
-    console.log('✅ [API] Request validation passed');
 
     // Extract request information
     const ipAddress =
@@ -47,8 +34,6 @@ export async function POST(request: NextRequest) {
       request.headers.get('x-real-ip') ||
       'unknown';
     const userAgent = request.headers.get('user-agent') || 'unknown';
-
-    console.log('🔍 [API] Request metadata:', { ipAddress, userAgent });
 
     // Prepare reservation data for Firebase
     const reservationData = {
@@ -74,16 +59,11 @@ export async function POST(request: NextRequest) {
       currency: 'CZK' as const,
     };
 
-    console.log('🔍 [API] Saving to Firebase...');
     // Save to Firebase
     const reservationId = await createReservation(reservationData, {
       ipAddress,
       userAgent,
     });
-    console.log(
-      '✅ [API] Reservation saved to Firebase with ID:',
-      reservationId,
-    );
 
     // Prepare Telegram notification data
     const telegramData = {
@@ -105,28 +85,14 @@ export async function POST(request: NextRequest) {
       createdAt: new Date().toISOString(),
     };
 
-    console.log('🔍 [API] Sending Telegram notification...');
-    console.log('🔍 [API] Telegram data prepared:', {
-      id: telegramData.id,
-      service: telegramData.service,
-      customer: `${telegramData.firstName} ${telegramData.lastName}`,
-      email: telegramData.email,
-    });
-
     // Send Telegram notification and await it to ensure it completes
     try {
       await sendReservationNotification(telegramData);
-      console.log('✅ [API] Telegram notification sent successfully');
     } catch (telegramError) {
       console.error('❌ [API] Telegram notification failed:', telegramError);
-      console.error('❌ [API] Telegram error details:', {
-        message: (telegramError as Error)?.message,
-        stack: (telegramError as Error)?.stack,
-      });
       // Don't fail the entire request if Telegram fails
     }
 
-    console.log('✅ [API] Returning success response');
     // Return success response
     return NextResponse.json(
       {
@@ -138,12 +104,8 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     console.error('❌ [API] Reservation submission error:', error);
-    console.error('❌ [API] Error type:', (error as Error)?.constructor?.name);
-    console.error('❌ [API] Error message:', (error as Error)?.message);
-    console.error('❌ [API] Error stack:', (error as Error)?.stack);
 
     if (error instanceof z.ZodError) {
-      console.log('❌ [API] Validation error, returning 400');
       return NextResponse.json(
         {
           success: false,
@@ -154,7 +116,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log('❌ [API] Internal error, returning 500');
     return NextResponse.json(
       {
         success: false,

@@ -31,24 +31,13 @@ export const sendTelegramMessage = async (
   message: string,
   parseMode: 'HTML' | 'Markdown' = 'HTML',
 ): Promise<void> => {
-  console.log('🔍 [TG] sendTelegramMessage called');
-  console.log('🔍 [TG] Message length:', message.length);
-  console.log('🔍 [TG] Parse mode:', parseMode);
-
   const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
   const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
-
-  console.log('🔍 [TG] Bot token exists:', !!botToken);
-  console.log('🔍 [TG] Chat ID exists:', !!chatId);
-  console.log('🔍 [TG] Bot token length:', botToken?.length || 0);
-  console.log('🔍 [TG] Chat ID:', chatId);
 
   if (!botToken || !chatId) {
     console.warn(
       '⚠️ [TG] Telegram configuration missing. Skipping notification.',
     );
-    console.warn('⚠️ [TG] Bot token missing:', !botToken);
-    console.warn('⚠️ [TG] Chat ID missing:', !chatId);
     return;
   }
 
@@ -59,17 +48,7 @@ export const sendTelegramMessage = async (
     disable_web_page_preview: true,
   };
 
-  console.log('🔍 [TG] Preparing to send message to Telegram API');
-  console.log(
-    '🔍 [TG] API URL:',
-    `https://api.telegram.org/bot${botToken.substring(0, 10)}.../sendMessage`,
-  );
-  console.log('🔍 [TG] Message preview:', message.substring(0, 100) + '...');
-
   try {
-    console.log('🔍 [TG] Making fetch request to Telegram API...');
-    const startTime = Date.now();
-
     const response = await fetch(
       `https://api.telegram.org/bot${botToken}/sendMessage`,
       {
@@ -81,40 +60,17 @@ export const sendTelegramMessage = async (
       },
     );
 
-    const endTime = Date.now();
-    console.log(
-      '🔍 [TG] Fetch request completed in',
-      endTime - startTime,
-      'ms',
-    );
-    console.log('🔍 [TG] Response status:', response.status);
-    console.log('🔍 [TG] Response status text:', response.statusText);
-    console.log(
-      '🔍 [TG] Response headers:',
-      Object.fromEntries(response.headers.entries()),
-    );
-
     if (!response.ok) {
-      console.error(
-        '❌ [TG] Response not OK, attempting to read error data...',
-      );
       const errorData = await response.json();
-      console.error('❌ [TG] Error data:', errorData);
       console.error('❌ [TG] Telegram API error:', errorData);
       throw new Error(`Telegram API error: ${errorData.description}`);
     }
 
-    console.log('✅ [TG] Response is OK, reading response body...');
     const responseData = await response.json();
-    console.log('✅ [TG] Telegram API response:', responseData);
-    console.log('✅ [TG] Message sent successfully!');
+    console.log('✅ [TG] Message sent successfully:', responseData.ok);
   } catch (error) {
-    console.error('❌ [TG] Exception caught in sendTelegramMessage:');
-    console.error('❌ [TG] Error type:', error?.constructor?.name);
-    console.error('❌ [TG] Full error object:', error);
-
+    console.error('❌ [TG] Failed to send Telegram notification:', error);
     // Don't throw error to avoid breaking the reservation flow
-    console.log('🔍 [TG] Continuing without throwing error...');
   }
 };
 
@@ -124,10 +80,6 @@ export const sendTelegramMessage = async (
 export const formatReservationForTelegram = (
   reservation: ReservationSummary,
 ): string => {
-  console.log('🔍 [TG] formatReservationForTelegram called');
-  console.log('🔍 [TG] Reservation ID:', reservation.id);
-  console.log('🔍 [TG] Service:', reservation.service);
-
   const truncateMessage = (message: string, maxLength: number = 200) => {
     if (message.length <= maxLength) return message;
     return message.substring(0, maxLength) + '...';
@@ -192,7 +144,7 @@ export const formatReservationForTelegram = (
 
   const localeText = getLocaleName(reservation.locale);
 
-  const formattedMessage = `🔔 <b>NEW RESERVATION RECEIVED</b> 🔔
+  return `🔔 <b>NEW RESERVATION RECEIVED</b> 🔔
 
 ${serviceEmoji} <b>Service:</b> ${reservation.service}${packageText}
 
@@ -208,14 +160,6 @@ ${addressSection}${apartmentSizeText}${messageText}
 🌍 <b>Language:</b> ${localeText}
 🆔 <b>Reservation ID:</b> <code>${reservation.id}</code>
 📅 <b>Submitted:</b> ${formatDate(reservation.createdAt)}`;
-
-  console.log('🔍 [TG] Formatted message length:', formattedMessage.length);
-  console.log(
-    '🔍 [TG] Formatted message preview:',
-    formattedMessage.substring(0, 200) + '...',
-  );
-
-  return formattedMessage;
 };
 
 /**
@@ -224,28 +168,15 @@ ${addressSection}${apartmentSizeText}${messageText}
 export const sendReservationNotification = async (
   reservation: ReservationSummary,
 ): Promise<void> => {
-  console.log('🔍 [TG] sendReservationNotification called');
-  console.log('🔍 [TG] Reservation data:', {
-    id: reservation.id,
-    service: reservation.service,
-    customer: `${reservation.firstName} ${reservation.lastName}`,
-    email: reservation.email,
-    phone: reservation.phone,
-    date: reservation.preferredDate,
-    time: reservation.preferredTime,
-    locale: reservation.locale,
-  });
-
   try {
-    console.log('🔍 [TG] Formatting message...');
     const message = formatReservationForTelegram(reservation);
-    console.log('🔍 [TG] Message formatted, sending to Telegram...');
-
     await sendTelegramMessage(message, 'HTML');
-    console.log('✅ [TG] sendReservationNotification completed successfully');
+    console.log(
+      '✅ [TG] Reservation notification sent for ID:',
+      reservation.id,
+    );
   } catch (error) {
-    console.error('❌ [TG] Error in sendReservationNotification:');
-    console.error('❌ [TG] Error type:', error?.constructor?.name);
+    console.error('❌ [TG] Failed to send reservation notification:', error);
     throw error; // Re-throw to be caught by the caller
   }
 };
