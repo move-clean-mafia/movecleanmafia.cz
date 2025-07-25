@@ -69,6 +69,22 @@
     "servicesSection": {
       "title": "Наші основні послуги",
       "subtitle": "Повні рішення для вашого дому та офісу"
+    },
+    "pricingSection": {
+      "title": "Цінові пропозиції",
+      "subtitle": "Прозорі ціни для всіх наших послуг",
+      "showAllPrices": "Показати всі ціни",
+      "showDetails": "Показати деталі",
+      "servicesIncluded": "послуг включено"
+    },
+    "contactSection": {
+      "title": "Контактна інформація",
+      "subtitle": "Ми тут для вас кожен день. Не соромтеся зв'язуватися з нами.",
+      "phone": "Телефон",
+      "email": "Email",
+      "address": "Адреса",
+      "addressValue": "Прага, Чеська Республіка",
+      "emailValue": "info@movecleanmafia.cz"
     }
   },
   "about": {
@@ -198,7 +214,8 @@
     "phone1": "+380 12 345 67 89",
     "phone2": "+380 98 765 43 21",
     "openMainMenu": "Відкрити головне меню",
-    "closeMainMenu": "Закрити головне меню"
+    "closeMainMenu": "Закрити головне меню",
+    "language": "Мова"
   },
   "detailedServices": {
     "movingAndTransport": {
@@ -334,5 +351,16 @@
       "title": "Закупівля матеріалів",
       "description": "Закупівля та доставка необхідних матеріалів для прибирання або переїзду, щоб ви ні про що не турбувалися."
     }
+  },
+  "servicesGrid": {
+    "priceFrom": "Від",
+    "learnMore": "Дізнатися більше",
+    "professionalServices": "Професійні послуги",
+    "insuranceGuarantee": "✓ Страхування ✓ Гарантія"
+  },
+  "servicesPage": {
+    "service": "Послуга",
+    "unit": "Одиниця",
+    "price": "Ціна"
   }
 }

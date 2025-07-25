@@ -65,9 +65,9 @@ export const LanguageSwitcher: React.FC = () => {
         <Button
           variant="outline"
           size="sm"
-          className="h-10 w-10 p-0 bg-white border-gray-200 hover:bg-gray-50 hover:border-brand-primary focus:ring-2 focus:ring-brand-primary focus:border-brand-primary transition-all duration-200"
+          className="h-9 w-9 md:h-10 md:w-10 p-0 bg-white border-gray-200 hover:bg-gray-50 hover:border-brand-primary focus:ring-2 focus:ring-brand-primary focus:border-brand-primary transition-all duration-200"
         >
-          <Globe className="w-4 h-4 text-brand-primary" />
+          <Globe className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-primary" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent

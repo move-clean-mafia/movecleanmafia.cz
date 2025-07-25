@@ -8,7 +8,6 @@ import { Phone, Menu, X } from 'lucide-react';
 import { LanguageSwitcher } from './language-switcher';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import Logo from './logo';
-import LogoIcon from './logo-icon';
 
 export const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -136,8 +135,12 @@ export const Header: React.FC = () => {
                 </div>
               </div>
 
-              {/* Mobile menu button */}
-              <div className="flex lg:hidden ml-auto">
+              {/* Mobile controls */}
+              <div className="flex lg:hidden ml-auto items-center space-x-2">
+                {/* Language switcher */}
+                <LanguageSwitcher />
+
+                {/* Mobile menu button */}
                 <button
                   onClick={toggleMobileMenu}
                   className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-brand-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary"
@@ -177,12 +180,9 @@ export const Header: React.FC = () => {
           <div className="fixed top-0 right-0 w-full max-w-sm min-w-[280px] h-full bg-white shadow-lg z-[70] transform transition-transform duration-300 ease-in-out">
             <div className="p-4 sm:p-6 h-full overflow-y-auto">
               {/* Mobile header */}
-              <div className="flex justify-between items-center mb-4">
+              <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center space-x-3">
-                  <LogoIcon width={32} height={32} />
-                  <h2 className="text-lg font-semibold text-gray-900">
-                    {t('navigation.home')}
-                  </h2>
+                  <Logo width={120} height={36} />
                 </div>
                 <button
                   onClick={toggleMobileMenu}
@@ -194,7 +194,7 @@ export const Header: React.FC = () => {
               </div>
 
               {/* Mobile navigation */}
-              <nav className="space-y-1">
+              <nav className="space-y-1 mb-6">
                 {navigationItems.map((item) => (
                   <Link
                     key={item.key}
@@ -208,7 +208,7 @@ export const Header: React.FC = () => {
               </nav>
 
               {/* Mobile contact info */}
-              <div className="mt-3 pt-3 border-t border-gray-200">
+              <div className="pt-3 border-t border-gray-200">
                 <div className="flex space-x-0.5">
                   <a
                     href={`tel:${t('header.phone1')}`}

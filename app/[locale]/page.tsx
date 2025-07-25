@@ -17,6 +17,7 @@ import {
 } from '../../components/ui/tabs';
 import { Badge } from '../../components/ui/badge';
 import BenefitsGrid from '../../components/benefits-grid';
+import ImageSlider from '../../components/image-slider';
 
 import {
   Truck,
@@ -171,34 +172,83 @@ const HomePage = async ({ params }: HomePageProps) => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Modern Background with Parallax Effect */}
         <div className="absolute inset-0 flex">
-          {/* Left Side - Moving */}
-          <div className="relative w-1/2 h-full overflow-hidden group">
-            <Image
-              src="/images/moving_hp.jpg"
-              alt={t('homepage.heroImages.moving')}
-              fill
-              className="object-cover transition-all duration-1000 group-hover:scale-110 group-hover:rotate-1"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/30 z-10"></div>
-            {/* Floating Elements */}
-            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse z-20"></div>
-            <div className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-brand-light/20 rounded-full blur-lg animate-pulse delay-1000 z-20"></div>
+          {/* Desktop: Split Layout */}
+          <div className="hidden md:flex w-full">
+            {/* Left Side - Moving */}
+            <div className="relative w-1/2 h-full overflow-hidden group">
+              <Image
+                src="/images/moving_hp.jpg"
+                alt={t('homepage.heroImages.moving')}
+                fill
+                className="object-cover transition-all duration-1000 group-hover:scale-110 group-hover:rotate-1"
+                priority
+              />
+              <div className="absolute inset-0 bg-black/30 z-10"></div>
+              {/* Floating Elements */}
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse z-20"></div>
+              <div className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-brand-light/20 rounded-full blur-lg animate-pulse delay-1000 z-20"></div>
+            </div>
+
+            {/* Right Side - Cleaning */}
+            <div className="relative w-1/2 h-full overflow-hidden group">
+              <Image
+                src="/images/cleaning_hp.jpg"
+                alt={t('homepage.heroImages.cleaning')}
+                fill
+                className="object-cover transition-all duration-1000 group-hover:scale-110 group-hover:-rotate-1"
+                priority
+              />
+              <div className="absolute inset-0 bg-black/30 z-10"></div>
+              {/* Floating Elements */}
+              <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-white/10 rounded-full blur-xl animate-pulse delay-500 z-20"></div>
+              <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-brand-light/20 rounded-full blur-lg animate-pulse delay-1500 z-20"></div>
+            </div>
           </div>
 
-          {/* Right Side - Cleaning */}
-          <div className="relative w-1/2 h-full overflow-hidden group">
-            <Image
-              src="/images/cleaning_hp.jpg"
-              alt={t('homepage.heroImages.cleaning')}
-              fill
-              className="object-cover transition-all duration-1000 group-hover:scale-110 group-hover:-rotate-1"
-              priority
+          {/* Mobile: Image Slider */}
+          <div className="md:hidden w-full h-full">
+            <ImageSlider
+              images={[
+                {
+                  src: '/images/moving_hp.jpg',
+                  alt: t('homepage.heroImages.moving'),
+                  title: t('services.moving'),
+                  description: t('services.movingDescription'),
+                },
+                {
+                  src: '/images/cleaning_hp.jpg',
+                  alt: t('homepage.heroImages.cleaning'),
+                  title: t('services.cleaning'),
+                  description: t('services.cleaningDescription'),
+                },
+                {
+                  src: '/images/moving.jpg',
+                  alt: t('homepage.heroImages.moving'),
+                  title: t('services.moving'),
+                  description: t('services.movingDescription'),
+                },
+                {
+                  src: '/images/cleaning.jpg',
+                  alt: t('homepage.heroImages.cleaning'),
+                  title: t('services.cleaning'),
+                  description: t('services.cleaningDescription'),
+                },
+                {
+                  src: '/images/packing.jpg',
+                  alt: t('services.packing'),
+                  title: t('services.packing'),
+                  description: t('services.packingDescription'),
+                },
+                {
+                  src: '/images/storage.jpg',
+                  alt: t('services.storage'),
+                  title: t('services.storage'),
+                  description: t('services.storageDescription'),
+                },
+              ]}
+              interval={4000}
+              className="w-full h-full"
             />
-            <div className="absolute inset-0 bg-black/30 z-10"></div>
-            {/* Floating Elements */}
-            <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-white/10 rounded-full blur-xl animate-pulse delay-500 z-20"></div>
-            <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-brand-light/20 rounded-full blur-lg animate-pulse delay-1500 z-20"></div>
           </div>
         </div>
 
@@ -251,6 +301,7 @@ const HomePage = async ({ params }: HomePageProps) => {
             locale={locale}
             showPrices={false}
             className="animate-fade-in-up"
+            t={t}
           />
         </div>
       </section>
@@ -260,10 +311,10 @@ const HomePage = async ({ params }: HomePageProps) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-heading">
-              Cenové nabídky
+              {t('homepage.pricingSection.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Transparentní ceny pro všechny naše služby
+              {t('homepage.pricingSection.subtitle')}
             </p>
           </div>
 
@@ -299,7 +350,7 @@ const HomePage = async ({ params }: HomePageProps) => {
                   href={`/${locale}/services#detailed-services`}
                   className="group/link inline-flex items-center mt-6 text-brand-primary hover:text-brand-secondary font-medium transition-colors duration-300"
                 >
-                  Zobrazit všechny ceny
+                  {t('homepage.pricingSection.showAllPrices')}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
                 </a>
               </CardContent>
@@ -342,8 +393,8 @@ const HomePage = async ({ params }: HomePageProps) => {
                         {cleaningPackages.s_size.description}
                       </p>
                       <div className="text-xs text-gray-500">
-                        {cleaningPackages.s_size.included.length} služeb
-                        zahrnuto
+                        {cleaningPackages.s_size.included.length}{' '}
+                        {t('homepage.pricingSection.servicesIncluded')}
                       </div>
                     </div>
                   </TabsContent>
@@ -354,8 +405,8 @@ const HomePage = async ({ params }: HomePageProps) => {
                         {cleaningPackages.m_size.description}
                       </p>
                       <div className="text-xs text-gray-500">
-                        {cleaningPackages.m_size.included.length} služeb
-                        zahrnuto
+                        {cleaningPackages.m_size.included.length}{' '}
+                        {t('homepage.pricingSection.servicesIncluded')}
                       </div>
                     </div>
                   </TabsContent>
@@ -366,8 +417,8 @@ const HomePage = async ({ params }: HomePageProps) => {
                         {cleaningPackages.xl_size.description}
                       </p>
                       <div className="text-xs text-gray-500">
-                        {cleaningPackages.xl_size.included.length} služeb
-                        zahrnuto
+                        {cleaningPackages.xl_size.included.length}{' '}
+                        {t('homepage.pricingSection.servicesIncluded')}
                       </div>
                     </div>
                   </TabsContent>
@@ -376,7 +427,7 @@ const HomePage = async ({ params }: HomePageProps) => {
                   href={`/${locale}/services#detailed-services`}
                   className="group/link inline-flex items-center mt-4 text-brand-primary hover:text-brand-secondary font-medium transition-colors duration-300"
                 >
-                  Zobrazit detaily
+                  {t('homepage.pricingSection.showDetails')}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
                 </a>
               </CardContent>
@@ -413,7 +464,7 @@ const HomePage = async ({ params }: HomePageProps) => {
                   href={`/${locale}/services#detailed-services`}
                   className="group/link inline-flex items-center mt-4 text-brand-primary hover:text-brand-secondary font-medium transition-colors duration-300"
                 >
-                  Zobrazit všechny ceny
+                  {t('homepage.pricingSection.showAllPrices')}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
                 </a>
               </CardContent>
@@ -444,10 +495,10 @@ const HomePage = async ({ params }: HomePageProps) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-heading">
-              Kontaktní informace
+              {t('homepage.contactSection.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Jsme tu pro vás každý den. Neváhejte nás kontaktovat.
+              {t('homepage.contactSection.subtitle')}
             </p>
           </div>
 
@@ -457,7 +508,7 @@ const HomePage = async ({ params }: HomePageProps) => {
                 <Phone className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                Telefon
+                {t('homepage.contactSection.phone')}
               </h3>
               <p className="text-gray-600 mb-2">{t('header.phone1')}</p>
               <p className="text-gray-600">{t('header.phone2')}</p>
@@ -468,9 +519,11 @@ const HomePage = async ({ params }: HomePageProps) => {
                 <Mail className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                Email
+                {t('homepage.contactSection.email')}
               </h3>
-              <p className="text-gray-600">info@movecleanmafia.cz</p>
+              <p className="text-gray-600">
+                {t('homepage.contactSection.emailValue')}
+              </p>
             </div>
 
             <div className="group text-center p-8 rounded-3xl bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-white/20">
@@ -478,9 +531,11 @@ const HomePage = async ({ params }: HomePageProps) => {
                 <MapPin className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 font-heading">
-                Adresa
+                {t('homepage.contactSection.address')}
               </h3>
-              <p className="text-gray-600">Praha, Česká republika</p>
+              <p className="text-gray-600">
+                {t('homepage.contactSection.addressValue')}
+              </p>
             </div>
           </div>
         </div>

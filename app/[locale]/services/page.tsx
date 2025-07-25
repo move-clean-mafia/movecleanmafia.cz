@@ -181,11 +181,10 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-oswald font-light text-gray-900 mb-6">
-              Přehled našich služeb
+              {t('homepage.servicesSection.title')}
             </h2>
             <p className="text-xl font-source-sans font-light text-gray-600 max-w-3xl mx-auto">
-              Kompletní řešení pro váš domov a kancelář s profesionálním
-              přístupem
+              {t('homepage.servicesSection.subtitle')}
             </p>
           </div>
 
@@ -195,6 +194,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
             locale={locale}
             showPrices={false}
             className="animate-fade-in-up"
+            t={t}
           />
         </div>
       </section>
@@ -214,13 +214,13 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                     <thead>
                       <tr className="border-b border-gray-200">
                         <th className="text-left py-4 px-4 font-oswald font-medium text-gray-900">
-                          Služba
+                          {t('servicesPage.service')}
                         </th>
                         <th className="text-left py-4 px-4 font-oswald font-medium text-gray-900">
-                          Jednotka
+                          {t('servicesPage.unit')}
                         </th>
                         <th className="text-right py-4 px-4 font-oswald font-medium text-gray-900">
-                          Cena
+                          {t('servicesPage.price')}
                         </th>
                       </tr>
                     </thead>
@@ -378,13 +378,13 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                     <thead>
                       <tr className="border-b border-gray-200">
                         <th className="text-left py-4 px-4 font-oswald font-medium text-gray-900">
-                          Služba
+                          {t('servicesPage.service')}
                         </th>
                         <th className="text-left py-4 px-4 font-oswald font-medium text-gray-900">
-                          Jednotka
+                          {t('servicesPage.unit')}
                         </th>
                         <th className="text-right py-4 px-4 font-oswald font-medium text-gray-900">
-                          Cena
+                          {t('servicesPage.price')}
                         </th>
                       </tr>
                     </thead>
