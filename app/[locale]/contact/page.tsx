@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
@@ -148,7 +148,15 @@ const ContactPage = async ({ params }: ContactPageProps) => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <ReservationForm locale={locale} />
+                  <Suspense
+                    fallback={
+                      <div className="p-4 text-center text-gray-500">
+                        Loading form...
+                      </div>
+                    }
+                  >
+                    <ReservationForm locale={locale} />
+                  </Suspense>
                 </CardContent>
               </Card>
             </div>

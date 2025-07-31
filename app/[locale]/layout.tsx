@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { Oswald, Source_Sans_3 } from 'next/font/google';
 import { notFound } from 'next/navigation';
@@ -120,8 +120,12 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
                 <Header />
                 <main className="flex-1">{children}</main>
                 <Footer />
-                <FloatingReservationButton />
-                <CookieConsent />
+                <Suspense fallback={null}>
+                  <FloatingReservationButton />
+                </Suspense>
+                <Suspense fallback={null}>
+                  <CookieConsent />
+                </Suspense>
                 <Toaster />
               </div>
               <Analytics />
