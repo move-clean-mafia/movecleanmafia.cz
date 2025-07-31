@@ -75,11 +75,11 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
 
     return (
       <div className="space-y-4">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center">
-            <Icon className="w-5 h-5 text-brand-primary" />
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
+            <Icon className="w-6 h-6 text-brand-primary" />
           </div>
-          <h4 className="text-lg font-baloo-bhai font-medium text-gray-900">
+          <h4 className="text-xl font-baloo-bhai font-medium text-gray-900">
             {area.title}
           </h4>
         </div>
@@ -87,12 +87,12 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
           {area.items.map((item: string, index: number) => (
             <div
               key={index}
-              className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg border border-gray-200 hover:bg-gray-100 transition-colors duration-200"
+              className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-all duration-200 group"
             >
-              <div className="w-5 h-5 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Check className="w-3 h-3 text-white" />
+              <div className="w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
+                <Check className="w-3.5 h-3.5 text-white" />
               </div>
-              <span className="font-inter font-light text-gray-700 leading-relaxed">
+              <span className="font-inter font-light text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors">
                 {item}
               </span>
             </div>
@@ -132,40 +132,44 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
           </div>
 
           {/* Services Tabs */}
-          <Tabs defaultValue="room" className="w-full">
-            <TabsList className="flex w-full mb-6 bg-gray-100 p-1 rounded-xl h-auto">
-              <TabsTrigger
-                value="room"
-                className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
-              >
-                {packageData.areas.room.title}
-              </TabsTrigger>
-              <TabsTrigger
-                value="kitchen"
-                className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
-              >
-                {packageData.areas.kitchen.title}
-              </TabsTrigger>
-              <TabsTrigger
-                value="bathroom"
-                className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
-              >
-                {packageData.areas.bathroom.title}
-              </TabsTrigger>
-            </TabsList>
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+            <Tabs defaultValue="room" className="w-full">
+              <TabsList className="flex w-full bg-gray-50 p-2 rounded-t-2xl h-auto border-b border-gray-200">
+                <TabsTrigger
+                  value="room"
+                  className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=active]:text-brand-primary transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-gray-600 hover:text-gray-900"
+                >
+                  {packageData.areas.room.title}
+                </TabsTrigger>
+                <TabsTrigger
+                  value="kitchen"
+                  className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=active]:text-brand-primary transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-gray-600 hover:text-gray-900"
+                >
+                  {packageData.areas.kitchen.title}
+                </TabsTrigger>
+                <TabsTrigger
+                  value="bathroom"
+                  className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=active]:text-brand-primary transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-gray-600 hover:text-gray-900"
+                >
+                  {packageData.areas.bathroom.title}
+                </TabsTrigger>
+              </TabsList>
 
-            <TabsContent value="room" className="space-y-4">
-              {renderAreaSection('room', packageData.areas.room)}
-            </TabsContent>
+              <div className="p-6">
+                <TabsContent value="room" className="space-y-4 mt-0">
+                  {renderAreaSection('room', packageData.areas.room)}
+                </TabsContent>
 
-            <TabsContent value="kitchen" className="space-y-4">
-              {renderAreaSection('kitchen', packageData.areas.kitchen)}
-            </TabsContent>
+                <TabsContent value="kitchen" className="space-y-4 mt-0">
+                  {renderAreaSection('kitchen', packageData.areas.kitchen)}
+                </TabsContent>
 
-            <TabsContent value="bathroom" className="space-y-4">
-              {renderAreaSection('bathroom', packageData.areas.bathroom)}
-            </TabsContent>
-          </Tabs>
+                <TabsContent value="bathroom" className="space-y-4 mt-0">
+                  {renderAreaSection('bathroom', packageData.areas.bathroom)}
+                </TabsContent>
+              </div>
+            </Tabs>
+          </div>
         </div>
       </div>
     </div>
