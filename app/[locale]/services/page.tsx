@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
 
-import { Badge } from '../../../components/ui/badge';
 import ServicesGrid from '../../../components/services-grid';
 import { CTASection } from '../../../components/cta-section';
 import CleaningPackages from '../../../components/cleaning-packages';
@@ -226,7 +225,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                           <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-light text-gray-600">
                             {service.unit}
                           </td>
-                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-bold text-brand-primary text-right text-lg">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-bold text-brand-primary text-right text-sm sm:text-lg">
                             <div className="break-words">{service.price}</div>
                           </td>
                         </tr>
@@ -269,25 +268,34 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
 
             <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
               <div className="p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {dryCleaningServices.map((service, index) => (
-                    <div
-                      key={index}
-                      className="flex justify-between items-center p-6 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors duration-200 group"
-                    >
-                      <span className="font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors flex-1 pr-4">
-                        {service.name}
-                      </span>
-                      <Badge
-                        variant="secondary"
-                        className="font-source-sans font-bold bg-brand-primary text-white border-0 px-4 py-2 flex-shrink-0 text-xs"
-                      >
-                        <div className="break-words text-center">
-                          {service.price}
-                        </div>
-                      </Badge>
-                    </div>
-                  ))}
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-gray-200">
+                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
+                          {t('servicesPage.service')}
+                        </th>
+                        <th className="text-right py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
+                          {t('servicesPage.price')}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {dryCleaningServices.map((service, index) => (
+                        <tr
+                          key={index}
+                          className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 group"
+                        >
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors">
+                            {service.name}
+                          </td>
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-bold text-brand-primary text-right text-sm sm:text-lg">
+                            <div className="break-words">{service.price}</div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
 
                 {/* Reservation Button */}
@@ -348,7 +356,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                           <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-light text-gray-600">
                             {service.unit}
                           </td>
-                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-bold text-brand-primary text-right text-lg">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-bold text-brand-primary text-right text-sm sm:text-lg">
                             <div className="break-words">{service.price}</div>
                           </td>
                         </tr>

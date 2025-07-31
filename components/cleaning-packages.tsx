@@ -119,36 +119,36 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <div className="text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200">
+              <div className="text-xs sm:text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
                 {t('servicesPage.areaRanges.upTo35') as string}
               </div>
-              <div className="text-xl font-bold text-brand-primary">
+              <div className="text-sm sm:text-lg lg:text-xl font-bold text-brand-primary">
                 {packageData.prices.upTo35}
               </div>
             </div>
-            <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <div className="text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
+            <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200">
+              <div className="text-xs sm:text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
                 {t('servicesPage.areaRanges.upTo50') as string}
               </div>
-              <div className="text-xl font-bold text-brand-primary">
+              <div className="text-sm sm:text-lg lg:text-xl font-bold text-brand-primary">
                 {packageData.prices.upTo50}
               </div>
             </div>
-            <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <div className="text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
+            <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200">
+              <div className="text-xs sm:text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
                 {t('servicesPage.areaRanges.upTo70') as string}
               </div>
-              <div className="text-xl font-bold text-brand-primary">
+              <div className="text-sm sm:text-lg lg:text-xl font-bold text-brand-primary">
                 {packageData.prices.upTo70}
               </div>
             </div>
-            <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <div className="text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
+            <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200">
+              <div className="text-xs sm:text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
                 {t('servicesPage.areaRanges.over70') as string}
               </div>
-              <div className="text-xl font-bold text-brand-primary">
+              <div className="text-sm sm:text-lg lg:text-xl font-bold text-brand-primary">
                 {packageData.prices.over70}
               </div>
             </div>
@@ -161,7 +161,7 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
         <h3 className="text-2xl font-oswald font-medium text-gray-900 text-center">
           {t('servicesPage.whatIncluded') as string}
         </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {renderAreaSection('room', packageData.areas.room)}
           {renderAreaSection('kitchen', packageData.areas.kitchen)}
           {renderAreaSection('bathroom', packageData.areas.bathroom)}
@@ -191,22 +191,22 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
         <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden mb-12">
           <div className="p-6">
             <Tabs defaultValue="maintenance" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-6 bg-gray-100 p-1 rounded-xl">
+              <TabsList className="flex flex-col sm:flex-row w-full mb-6 bg-gray-100 p-1 rounded-xl h-auto sm:h-10">
                 <TabsTrigger
                   value="maintenance"
-                  className="font-oswald rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200"
+                  className="font-oswald rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
                 >
                   {packages.maintenance.title}
                 </TabsTrigger>
                 <TabsTrigger
                   value="general"
-                  className="font-oswald rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200"
+                  className="font-oswald rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
                 >
                   {packages.general.title}
                 </TabsTrigger>
                 <TabsTrigger
                   value="postRenovation"
-                  className="font-oswald rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200"
+                  className="font-oswald rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
                 >
                   {packages.postRenovation.title}
                 </TabsTrigger>
@@ -286,18 +286,18 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {additionalServices.map((service, index) => (
                 <div
                   key={index}
-                  className="flex justify-between items-center p-4 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors duration-200 group"
+                  className="flex justify-between items-center p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors duration-200 group"
                 >
-                  <span className="font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors flex-1 pr-4">
+                  <span className="font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors flex-1 pr-2 sm:pr-4 text-sm sm:text-base">
                     {service.name}
                   </span>
                   <Badge
                     variant="secondary"
-                    className="font-source-sans font-bold bg-brand-primary text-white border-0 px-3 py-1 flex-shrink-0 text-xs"
+                    className="font-source-sans font-bold bg-brand-primary text-white border-0 px-2 sm:px-3 py-1 flex-shrink-0 text-xs"
                   >
                     <div className="break-words text-center">
                       {service.price}

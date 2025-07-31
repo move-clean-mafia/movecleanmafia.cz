@@ -198,14 +198,14 @@ const HomePage = async ({ params }: HomePageProps) => {
 
         {/* Content Container */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex flex-col lg:flex-row items-center min-h-screen">
+          <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen">
             {/* Left Side - Text Content */}
-            <div className="lg:w-1/2 text-white space-y-6 sm:space-y-8 py-32 sm:py-40 lg:py-0">
+            <div className="lg:w-1/2 text-white space-y-6 sm:space-y-8 text-center lg:text-left">
               <div className="animate-fade-in-up">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight drop-shadow-2xl">
                   {t('hero.title')}
                 </h1>
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 sm:mt-6 text-white/95 drop-shadow-lg font-light max-w-2xl">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 sm:mt-6 text-white/95 drop-shadow-lg font-light max-w-2xl mx-auto lg:mx-0">
                   {t('hero.subtitle')}
                 </p>
 
