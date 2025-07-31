@@ -1,428 +1,150 @@
 {
-  "navigation": {
-    "home": "Home",
-    "services": "Services",
-    "about": "About",
-    "prices": "Prices",
-    "contact": "Contact",
-    "gallery": "Gallery",
-    "admin": "Administration"
-  },
-  "hero": {
-    "title": "Professional Moving & Cleaning",
-    "subtitle": "Reliable services for your home and office",
-    "cta": "Order Services",
-    "imageAlt": "Professional moving and cleaning"
-  },
-  "services": {
-    "moving": "Moving",
-    "cleaning": "Cleaning",
-    "packing": "Packing",
-    "storage": "Storage",
-    "title": "Our Services",
-    "subtitle": "Complete moving and cleaning services for your home and office",
-    "movingDescription": "Professional moving of apartments, houses and offices with complete service",
-    "cleaningDescription": "Thorough cleaning of households and commercial spaces with professional products",
-    "packingDescription": "Safe packing and packaging of all your belongings with professional materials",
-    "storageDescription": "Safe storage of your belongings in our climate-controlled warehouses",
-    "movingFeatures": [
-      "Furniture disassembly",
-      "Safe transportation",
-      "Assembly at new location",
-      "Cargo insurance"
-    ],
-    "cleaningFeatures": [
-      "General cleaning",
-      "Post-move cleaning",
-      "Office spaces",
-      "Eco-friendly products"
-    ],
-    "packingFeatures": [
-      "Professional packing",
-      "Quality materials",
-      "Box labeling",
-      "Inventory"
-    ],
-    "storageFeatures": [
-      "Climate-controlled warehouses",
-      "24/7 security",
-      "Insurance",
-      "Flexible terms"
-    ],
-    "whyChooseUs": "Why Choose Us?",
-    "whyChooseUsSubtitle": "Reliable services with years of experience and highest quality",
-    "speed": "Speed",
-    "speedDescription": "Efficient and fast execution of all work",
-    "safety": "Safety",
-    "safetyDescription": "Your belongings are safe with our insurance",
-    "quality": "Quality",
-    "qualityDescription": "Highest quality services and care for your belongings",
-    "ctaTitle": "Let's Start Working Together",
-    "ctaSubtitle": "Contact us and get a free consultation and price quote",
-    "contactUs": "Contact Us"
-  },
-  "homepage": {
-    "heroImages": {
-      "moving": "Professional Moving",
-      "cleaning": "Professional Cleaning"
-    },
-    "servicesSection": {
-      "title": "Our Main Services",
-      "subtitle": "Complete solutions for your home and office"
-    },
-    "pricingSection": {
-      "title": "Price offers",
-      "subtitle": "Transparent prices for all our services",
-      "showAllPrices": "Show all prices",
-      "showDetails": "Show details",
-      "servicesIncluded": "services included"
-    },
-    "contactSection": {
-      "title": "Contact information",
-      "subtitle": "We are here for you every day. Do not hesitate to contact us.",
-      "phone": "Phone",
-      "email": "Email",
-      "address": "Address",
-      "addressValue": "Prague, Czech Republic",
-      "emailValue": "info@movecleanmafia.cz"
-    }
-  },
   "about": {
-    "title": "About Us",
-    "subtitle": "Meet our team of professionals with years of experience",
+    "cta": {
+      "contact": "Contact Us",
+      "services": "Our Services",
+      "subtitle": "Trust our experience and let us take care of your moving and cleaning",
+      "title": "Work With Us"
+    },
     "stats": {
+      "availability": "Availability",
       "clients": "Happy Clients",
       "experience": "Years of Experience",
-      "moves": "Successful Moves",
-      "availability": "Availability"
+      "moves": "Successful Moves"
     },
     "story": {
-      "title": "Our Story",
       "paragraph1": "MoveCleanMafia was born from the need to provide reliable and quality moving and cleaning services. We started as a small team of enthusiasts with a vision to change the way people think about moving and cleaning.",
-      "paragraph2": "Today we are proud to offer comprehensive services that include not only moving and cleaning, but also packing, storage and much more. Our goal is always to exceed our clients' expectations."
+      "paragraph2": "Today we are proud to offer comprehensive services that include not only moving and cleaning, but also packing, storage and much more. Our goal is always to exceed our clients' expectations.",
+      "title": "Our Story"
     },
-    "values": {
-      "title": "Our Values",
-      "mission": {
-        "title": "Our Mission",
-        "description": "To provide the highest quality moving and cleaning services with emphasis on customer satisfaction"
-      },
-      "values": {
-        "title": "Our Values",
-        "description": "Reliability, quality, transparency and individual approach to each client"
-      },
-      "commitments": {
-        "title": "Our Commitments",
-        "description": "We guarantee the safety of your belongings, meeting deadlines and professional approach"
-      }
-    },
+    "subtitle": "Meet our team of professionals with years of experience",
     "team": {
-      "title": "Our Team",
-      "subtitle": "Meet the experts who stand behind the success of our company",
       "members": {
-        "director": {
-          "name": "John Smith",
-          "position": "Company Director",
-          "experience": "15 years experience",
-          "description": "Specialist in logistics and moving project management"
-        },
         "cleaning": {
-          "name": "Mary Johnson",
-          "position": "Cleaning Services Manager",
+          "description": "Expert in professional cleaning and space sanitization",
           "experience": "12 years experience",
-          "description": "Expert in professional cleaning and space sanitization"
+          "name": "Mary Johnson",
+          "position": "Cleaning Services Manager"
+        },
+        "director": {
+          "description": "Specialist in logistics and moving project management",
+          "experience": "15 years experience",
+          "name": "John Smith",
+          "position": "Company Director"
         },
         "transport": {
-          "name": "Peter Brown",
-          "position": "Transport Manager",
+          "description": "Specialist in safe transportation and cargo handling",
           "experience": "10 years experience",
-          "description": "Specialist in safe transportation and cargo handling"
+          "name": "Peter Brown",
+          "position": "Transport Manager"
         }
-      }
+      },
+      "subtitle": "Meet the experts who stand behind the success of our company",
+      "title": "Our Team"
     },
-    "cta": {
-      "title": "Work With Us",
-      "subtitle": "Trust our experience and let us take care of your moving and cleaning",
-      "contact": "Contact Us",
-      "services": "Our Services"
+    "title": "About Us",
+    "values": {
+      "commitments": {
+        "description": "We guarantee the safety of your belongings, meeting deadlines and professional approach",
+        "title": "Our Commitments"
+      },
+      "mission": {
+        "description": "To provide the highest quality moving and cleaning services with emphasis on customer satisfaction",
+        "title": "Our Mission"
+      },
+      "title": "Our Values",
+      "values": {
+        "description": "Reliability, quality, transparency and individual approach to each client",
+        "title": "Our Values"
+      }
+    }
+  },
+  "admin": {
+    "status": {
+      "cancelled": "",
+      "completed": "",
+      "confirmed": "",
+      "pending": ""
     }
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Contact us for a free consultation and price quote",
     "address": "Address",
+    "faq": {
+      "insurance": {
+        "answer": "Yes, all transported belongings are fully insured against damage.",
+        "question": "Are belongings insured?"
+      },
+      "movingTime": {
+        "answer": "Moving time depends on apartment size and amount of belongings. Usually 4-8 hours.",
+        "question": "How long does moving take?"
+      },
+      "pricing": {
+        "answer": "Price is set individually according to the scope of work. We offer free price quotes.",
+        "question": "What is the price of services?"
+      },
+      "title": "Frequently Asked Questions",
+      "weekends": {
+        "answer": "Yes, we provide services on weekends and holidays. Contact us for booking.",
+        "question": "Do you work on weekends?"
+      }
+    },
     "form": {
-      "title": "Write to Us",
-      "subtitle": "Fill out the form and we will contact you within 24 hours",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
       "firstName": "First Name",
       "firstNamePlaceholder": "Your first name",
       "lastName": "Last Name",
       "lastNamePlaceholder": "Your last name",
-      "email": "Email",
-      "emailPlaceholder": "your@email.com",
       "phone": "Phone",
-      "phonePlaceholder": "+1 (234) 567-890",
-      "service": "Service Interest",
-      "servicePlaceholder": "Select service",
-      "message": "Message",
-      "messagePlaceholder": "Describe your requirements and we will prepare an individual offer for you...",
-      "send": "Send Message"
+      "phonePlaceholder": "+1 (234) 567-890"
     },
     "info": {
-      "title": "Contact Information",
-      "subtitle": "We are here for you every day. Do not hesitate to contact us in any way.",
-      "phone": "Phone",
-      "email": "Email",
       "address": "Address",
-      "hours": "Working Hours",
+      "email": "Email",
       "emergency": {
-        "title": "Emergency Contact",
-        "subtitle": "For urgent requests call 24/7"
-      }
+        "subtitle": "For urgent requests call 24/7",
+        "title": "Emergency Contact"
+      },
+      "hours": "Working Hours",
+      "phone": "Phone",
+      "subtitle": "We are here for you every day. Do not hesitate to contact us in any way.",
+      "title": "Contact Information"
     },
     "map": {
-      "title": "Where to Find Us",
+      "placeholder": "Map will be available soon",
       "subtitle": "Our office is located in the city center with good transport connections",
-      "placeholder": "Map will be available soon"
+      "title": "Where to Find Us"
     },
-    "faq": {
-      "title": "Frequently Asked Questions",
-      "movingTime": {
-        "question": "How long does moving take?",
-        "answer": "Moving time depends on apartment size and amount of belongings. Usually 4-8 hours."
-      },
-      "insurance": {
-        "question": "Are belongings insured?",
-        "answer": "Yes, all transported belongings are fully insured against damage."
-      },
-      "pricing": {
-        "question": "What is the price of services?",
-        "answer": "Price is set individually according to the scope of work. We offer free price quotes."
-      },
-      "weekends": {
-        "question": "Do you work on weekends?",
-        "answer": "Yes, we provide services on weekends and holidays. Contact us for booking."
-      }
-    }
+    "subtitle": "Contact us for a free consultation and price quote",
+    "title": "Contact"
   },
-  "features": {
-    "reliability": "Reliability",
-    "quality": "Quality",
-    "speed": "Speed"
-  },
-  "header": {
-    "contactUs": "Contact Us",
-    "phone1": "+1 (234) 567-890",
-    "phone2": "+1 (987) 654-321",
-    "openMainMenu": "Open main menu",
-    "closeMainMenu": "Close main menu",
-    "language": "Language"
+  "cookieConsent": {
+    "acceptNecessary": "Accept Necessary Only",
+    "analytics": "Analytics cookies",
+    "analyticsDescription": "Help us understand how visitors use our website.",
+    "banner": {
+      "accept": "Accept All",
+      "decline": "Decline",
+      "description": "We use cookies to improve your experience. By continuing, you agree to their use.",
+      "settings": "Settings",
+      "title": "We use cookies"
+    },
+    "cookiePolicy": "Cookie Policy",
+    "customize": "Customize Cookies",
+    "description": "We use cookies to improve your experience on our website. You can choose which types of cookies to allow.",
+    "learnMore": "Learn More",
+    "marketing": "Marketing cookies",
+    "marketingDescription": "Used to display relevant ads and content.",
+    "necessary": "Necessary cookies",
+    "necessaryDescription": "These cookies are essential for the website to function properly and cannot be disabled.",
+    "preferences": "Preference cookies",
+    "preferencesDescription": "Store your preferences and settings.",
+    "savePreferences": "Save Preferences",
+    "title": "Cookie Settings"
   },
   "detailedServices": {
-    "movingAndTransport": {
-      "title": "Moving and Additional Services",
-      "items": [
-        {
-          "name": "Mover-packer",
-          "unit": "per hour/person",
-          "price": "350-450 CZK"
-        },
-        {
-          "name": "Driver + vehicle delivery",
-          "unit": "per hour",
-          "price": "350 CZK"
-        },
-        {
-          "name": "Car with driver",
-          "unit": "per hour",
-          "price": "700-900 CZK"
-        },
-        {
-          "name": "Car + 1 mover",
-          "unit": "per hour",
-          "price": "1200 CZK"
-        },
-        {
-          "name": "Car + 2 movers",
-          "unit": "per hour",
-          "price": "1600 CZK"
-        },
-        {
-          "name": "Surcharge for heavy items",
-          "unit": "per item/floor",
-          "price": "from 250 CZK"
-        },
-        {
-          "name": "Furniture disassembly/assembly",
-          "unit": "per hour/person",
-          "price": "450 CZK"
-        }
-      ]
-    },
     "cleaningPackages": {
-      "title": "Cleaning Packages",
-      "subtitle": "Professional cleaning services for your home",
-      "packages": {
-        "maintenance": {
-          "title": "Maintenance Cleaning",
-          "description": "For regular maintenance of cleanliness and order.",
-          "duration": "1.5-2 hours",
-          "prices": {
-            "upTo35": "900 CZK",
-            "upTo50": "1080 CZK",
-            "upTo70": "1200 CZK",
-            "over70": "1300 CZK"
-          },
-          "areas": {
-            "room": {
-              "title": "Room",
-              "items": [
-                "Polish mirrors",
-                "Dust accessible surfaces",
-                "Remove dust from home appliances",
-                "Vacuum carpet",
-                "Wash floor and baseboards"
-              ]
-            },
-            "kitchen": {
-              "title": "Kitchen",
-              "items": [
-                "Dust appliances",
-                "Wipe countertop and backsplash",
-                "Wash sink and faucet",
-                "Wash stove",
-                "Wash dining table",
-                "Dust accessible areas",
-                "Take out trash and change bag",
-                "Wash floor"
-              ]
-            },
-            "bathroom": {
-              "title": "Bathroom and toilet",
-              "items": [
-                "Wash sink",
-                "Wash toilet",
-                "Polish all faucets",
-                "Wash floor"
-              ]
-            }
-          }
-        },
-        "general": {
-          "title": "General Cleaning",
-          "description": "Deep and thorough cleaning of all areas. Suitable for light stains, without deep contamination.",
-          "duration": "2-4 hours and longer",
-          "prices": {
-            "upTo35": "1600 CZK",
-            "upTo50": "1900 CZK",
-            "upTo70": "2300 CZK",
-            "over70": "negotiable"
-          },
-          "areas": {
-            "room": {
-              "title": "Room",
-              "items": [
-                "Wash mirrors and glass surfaces",
-                "Dust all accessible surfaces",
-                "Vacuum carpet",
-                "Wash floor and baseboards",
-                "Wipe switches and door handles",
-                "Change and make bed (if clean linen is on bed)",
-                "Spray bed and furniture with soft surfaces, fabric freshener \"Lenor\"",
-                "Wipe switches",
-                "Wipe radiators (top)"
-              ]
-            },
-            "kitchen": {
-              "title": "Kitchen",
-              "items": [
-                "Wipe kitchen line from outside (cabinets, backsplash, countertop)",
-                "Wipe all accessible surfaces",
-                "Dust appliances",
-                "Wash stove",
-                "Wash outside (oven, hood, microwave)",
-                "Wash dishes up to 10 minutes",
-                "Wash sink and faucet",
-                "Wipe switches and door handles",
-                "Wash floor and baseboards",
-                "Take out trash, replace bag (wash bucket)"
-              ]
-            },
-            "bathroom": {
-              "title": "Bathroom and toilet",
-              "items": [
-                "Wash bathtub or shower",
-                "Wash sink, faucet",
-                "Wipe all surfaces",
-                "Wipe switches and door handles",
-                "Wash toilet and disinfect",
-                "Wash floor"
-              ]
-            }
-          }
-        },
-        "postRenovation": {
-          "title": "Post-Renovation General Cleaning",
-          "description": "Comprehensive cleaning for removal of construction dust and contamination.",
-          "duration": "4+ hours",
-          "prices": {
-            "upTo35": "3300 CZK",
-            "upTo50": "3600 CZK",
-            "upTo70": "4000 CZK",
-            "over70": "4400 CZK"
-          },
-          "areas": {
-            "room": {
-              "title": "Room",
-              "items": [
-                "Wash mirrors and glass surfaces",
-                "Dust all surfaces, accessible and hard-to-reach",
-                "Wash radiators",
-                "Wash doors (entrance and interior)",
-                "Remove cobwebs from walls",
-                "Wash switches, sockets",
-                "Change and make bed (if clean linen is on bed)",
-                "Spray bed and furniture with soft surfaces, fabric freshener \"Lenor\"",
-                "Vacuum carpet",
-                "Wash floor and baseboards"
-              ]
-            },
-            "kitchen": {
-              "title": "Kitchen",
-              "items": [
-                "Wipe kitchen line from outside (cabinets, backsplash, countertop)",
-                "Wipe all surfaces",
-                "Wash stove",
-                "Dust appliances",
-                "Wash outside and inside (oven, hood, microwave)",
-                "Wash refrigerator",
-                "Wash sockets and switches",
-                "Wash dishes up to 10 minutes",
-                "Remove cobwebs from walls",
-                "Wash sink, faucet",
-                "Wash floor and baseboards",
-                "Take out trash, replace bag (wash bucket)"
-              ]
-            },
-            "bathroom": {
-              "title": "Bathroom and toilet",
-              "items": [
-                "Wash bathtub or shower",
-                "Wash sink, faucet",
-                "Wipe all surfaces",
-                "Wash toilet and disinfect",
-                "Wash mirror",
-                "Wash walls",
-                "Wipe switches and sockets",
-                "Wash floor"
-              ]
-            }
-          }
-        }
-      },
       "additionalServices": {
-        "title": "Additional Services",
-        "subtitle": "Expand your package with additional services",
         "services": [
           {
             "name": "Wash kitchen cabinets inside",
@@ -472,13 +194,174 @@
             "name": "Wash windows",
             "price": "1 m² = 120 CZK"
           }
-        ]
+        ],
+        "subtitle": "Expand your package with additional services",
+        "title": "Additional Services"
       },
+      "from": "from",
       "onRequest": "on request",
-      "from": "from"
+      "packages": {
+        "general": {
+          "areas": {
+            "bathroom": {
+              "items": [
+                "Wash bathtub or shower",
+                "Wash sink, faucet",
+                "Wipe all surfaces",
+                "Wipe switches and door handles",
+                "Wash toilet and disinfect",
+                "Wash floor"
+              ],
+              "title": "Bathroom and toilet"
+            },
+            "kitchen": {
+              "items": [
+                "Wipe kitchen line from outside (cabinets, backsplash, countertop)",
+                "Wipe all accessible surfaces",
+                "Dust appliances",
+                "Wash stove",
+                "Wash outside (oven, hood, microwave)",
+                "Wash dishes up to 10 minutes",
+                "Wash sink and faucet",
+                "Wipe switches and door handles",
+                "Wash floor and baseboards",
+                "Take out trash, replace bag (wash bucket)"
+              ],
+              "title": "Kitchen"
+            },
+            "room": {
+              "items": [
+                "Wash mirrors and glass surfaces",
+                "Dust all accessible surfaces",
+                "Vacuum carpet",
+                "Wash floor and baseboards",
+                "Wipe switches and door handles",
+                "Change and make bed (if clean linen is on bed)",
+                "Spray bed and furniture with soft surfaces, fabric freshener \"Lenor\"",
+                "Wipe switches",
+                "Wipe radiators (top)"
+              ],
+              "title": "Room"
+            }
+          },
+          "description": "Deep and thorough cleaning of all areas. Suitable for light stains, without deep contamination.",
+          "duration": "2-4 hours and longer",
+          "prices": {
+            "over70": "negotiable",
+            "upTo35": "1600 CZK",
+            "upTo50": "1900 CZK",
+            "upTo70": "2300 CZK"
+          },
+          "title": "General Cleaning"
+        },
+        "maintenance": {
+          "areas": {
+            "bathroom": {
+              "items": [
+                "Wash sink",
+                "Wash toilet",
+                "Polish all faucets",
+                "Wash floor"
+              ],
+              "title": "Bathroom and toilet"
+            },
+            "kitchen": {
+              "items": [
+                "Dust appliances",
+                "Wipe countertop and backsplash",
+                "Wash sink and faucet",
+                "Wash stove",
+                "Wash dining table",
+                "Dust accessible areas",
+                "Take out trash and change bag",
+                "Wash floor"
+              ],
+              "title": "Kitchen"
+            },
+            "room": {
+              "items": [
+                "Polish mirrors",
+                "Dust accessible surfaces",
+                "Remove dust from home appliances",
+                "Vacuum carpet",
+                "Wash floor and baseboards"
+              ],
+              "title": "Room"
+            }
+          },
+          "description": "For regular maintenance of cleanliness and order.",
+          "duration": "1.5-2 hours",
+          "prices": {
+            "over70": "1300 CZK",
+            "upTo35": "900 CZK",
+            "upTo50": "1080 CZK",
+            "upTo70": "1200 CZK"
+          },
+          "title": "Maintenance Cleaning"
+        },
+        "postRenovation": {
+          "areas": {
+            "bathroom": {
+              "items": [
+                "Wash bathtub or shower",
+                "Wash sink, faucet",
+                "Wipe all surfaces",
+                "Wash toilet and disinfect",
+                "Wash mirror",
+                "Wash walls",
+                "Wipe switches and sockets",
+                "Wash floor"
+              ],
+              "title": "Bathroom and toilet"
+            },
+            "kitchen": {
+              "items": [
+                "Wipe kitchen line from outside (cabinets, backsplash, countertop)",
+                "Wipe all surfaces",
+                "Wash stove",
+                "Dust appliances",
+                "Wash outside and inside (oven, hood, microwave)",
+                "Wash refrigerator",
+                "Wash sockets and switches",
+                "Wash dishes up to 10 minutes",
+                "Remove cobwebs from walls",
+                "Wash sink, faucet",
+                "Wash floor and baseboards",
+                "Take out trash, replace bag (wash bucket)"
+              ],
+              "title": "Kitchen"
+            },
+            "room": {
+              "items": [
+                "Wash mirrors and glass surfaces",
+                "Dust all surfaces, accessible and hard-to-reach",
+                "Wash radiators",
+                "Wash doors (entrance and interior)",
+                "Remove cobwebs from walls",
+                "Wash switches, sockets",
+                "Change and make bed (if clean linen is on bed)",
+                "Spray bed and furniture with soft surfaces, fabric freshener \"Lenor\"",
+                "Vacuum carpet",
+                "Wash floor and baseboards"
+              ],
+              "title": "Room"
+            }
+          },
+          "description": "Comprehensive cleaning for removal of construction dust and contamination.",
+          "duration": "4+ hours",
+          "prices": {
+            "over70": "4400 CZK",
+            "upTo35": "3300 CZK",
+            "upTo50": "3600 CZK",
+            "upTo70": "4000 CZK"
+          },
+          "title": "Post-Renovation General Cleaning"
+        }
+      },
+      "subtitle": "Professional cleaning services for your home",
+      "title": "Cleaning Packages"
     },
     "dryCleaning": {
-      "title": "Dry Cleaning",
       "items": [
         {
           "name": "Carpet",
@@ -508,144 +391,242 @@
           "name": "Chair with backrest",
           "price": "from 150 CZK"
         }
-      ]
+      ],
+      "title": "Dry Cleaning"
+    },
+    "movingAndTransport": {
+      "items": [
+        {
+          "name": "Mover-packer",
+          "price": "350-450 CZK",
+          "unit": "per hour/person"
+        },
+        {
+          "name": "Driver + vehicle delivery",
+          "price": "350 CZK",
+          "unit": "per hour"
+        },
+        {
+          "name": "Car with driver",
+          "price": "700-900 CZK",
+          "unit": "per hour"
+        },
+        {
+          "name": "Car + 1 mover",
+          "price": "1200 CZK",
+          "unit": "per hour"
+        },
+        {
+          "name": "Car + 2 movers",
+          "price": "1600 CZK",
+          "unit": "per hour"
+        },
+        {
+          "name": "Surcharge for heavy items",
+          "price": "from 250 CZK",
+          "unit": "per item/floor"
+        },
+        {
+          "name": "Furniture disassembly/assembly",
+          "price": "450 CZK",
+          "unit": "per hour/person"
+        }
+      ],
+      "title": "Moving and Additional Services"
     },
     "packingServices": {
-      "title": "Packing Services",
       "items": [
         {
           "name": "Packer",
-          "unit": "per hour/person",
-          "price": "350-450 CZK"
+          "price": "350-450 CZK",
+          "unit": "per hour/person"
         }
-      ]
-    },
-    "materialPurchase": {
-      "title": "Material Purchase",
-      "description": "Procurement and delivery of necessary materials for cleaning or moving, so you don't have to worry about a thing."
-    }
-  },
-  "servicesGrid": {
-    "priceFrom": "From",
-    "learnMore": "Learn More",
-    "professionalServices": "Professional Services",
-    "insuranceGuarantee": "✓ Insurance ✓ Guarantee"
-  },
-  "servicesPage": {
-    "service": "Service",
-    "unit": "Unit",
-    "price": "Price",
-    "pricing": "Pricing",
-    "approximatePrices": "Approximate prices",
-    "whatIncluded": "What's included",
-    "areaRanges": {
-      "upTo35": "up to 35 m²",
-      "upTo50": "up to 50 m²",
-      "upTo70": "up to 70 m²",
-      "over70": "over 70 m²"
-    }
-  },
-  "homepage": {
-    "pricingSection": {
-      "title": "Pricing",
-      "subtitle": "Transparent prices for all our services",
-      "showAllPrices": "View all prices"
-    },
-    "contactSection": {
-      "title": "Contact Information",
-      "subtitle": "We are here for you every day. Don't hesitate to contact us.",
-      "phone": "Phone",
-      "email": "Email",
-      "address": "Address",
-      "emailValue": "info@movecleanmafia.com",
-      "addressValue": "New York, USA"
-    }
-  },
-  "reservation": {
-    "title": "Online Reservation",
-    "subtitle": "Book our services quickly and easily online",
-    "formTitle": "Booking Form",
-    "formSubtitle": "Fill out the form and we will contact you within 24 hours",
-    "personalInfo": "Personal Information",
-    "serviceDetails": "Service Details",
-    "additionalInfo": "Additional Information",
-    "service": "Service",
-    "servicePlaceholder": "Select service",
-    "cleaningPackage": "Cleaning Package",
-    "cleaningPackagePlaceholder": "Select cleaning package",
-    "preferredDate": "Preferred Date",
-    "preferredTime": "Preferred Time",
-    "selectTime": "Select time",
-    "pickupAddress": "Pickup Address",
-    "deliveryAddress": "Delivery Address",
-    "address": "Address",
-    "pickupAddressPlaceholder": "Enter the address from where to move...",
-    "deliveryAddressPlaceholder": "Enter the address where to move...",
-    "addressPlaceholder": "Enter the address where the service will be provided...",
-    "apartmentSize": "Apartment/Office Size (m²)",
-    "apartmentSizePlaceholder": "e.g. 65",
-    "message": "Message",
-    "messagePlaceholder": "Describe your requirements, special requests, notes...",
-    "submitReservation": "Submit Reservation",
-    "timeSlots": {
-      "morning": "Morning (8:00-12:00)",
-      "afternoon": "Afternoon (12:00-16:00)",
-      "evening": "Evening (16:00-20:00)"
-    },
-    "cleaningPackages": {
-      "maintenance": "Maintenance Cleaning",
-      "general": "General Cleaning",
-      "postRenovation": "Post-Renovation Cleaning"
-    },
-    "services": {
-      "moving": "Moving",
-      "cleaning": "Cleaning",
-      "packing": "Packing",
-      "storage": "Storage",
-      "other": "Other"
-    },
-    "success": {
-      "title": "Reservation Submitted Successfully!",
-      "description": "Thank you for your reservation. We will contact you within 24 hours to confirm the details."
-    },
-    "error": {
-      "title": "Reservation Submission Failed",
-      "description": "There was an error submitting your reservation. Please try again or contact us directly."
+      ],
+      "title": "Packing Services"
     }
   },
   "footer": {
-    "quickLinks": "Quick Links",
     "contactInfo": "Contact Information",
-    "phone": "Phone",
+    "cookiePolicy": "Cookie Policy",
     "email": "Email",
     "legal": "Legal",
+    "phone": "Phone",
     "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service",
-    "cookiePolicy": "Cookie Policy",
-    "tagline": "Professional moving and cleaning - your reliability is our priority"
+    "quickLinks": "Quick Links",
+    "tagline": "Professional moving and cleaning - your reliability is our priority",
+    "termsOfService": "Terms of Service"
   },
-  "cookieConsent": {
-    "title": "Cookie Settings",
-    "description": "We use cookies to improve your experience on our website. You can choose which types of cookies to allow.",
-    "banner": {
-      "title": "We use cookies",
-      "description": "We use cookies to improve your experience. By continuing, you agree to their use.",
-      "accept": "Accept All",
-      "decline": "Decline",
-      "settings": "Settings"
+  "header": {
+    "closeMainMenu": "Close main menu",
+    "openMainMenu": "Open main menu",
+    "phone1": "+1 (234) 567-890",
+    "phone2": "+1 (987) 654-321"
+  },
+  "hero": {
+    "cta": "Order Services",
+    "imageAlt": "Professional moving and cleaning",
+    "subtitle": "Reliable services for your home and office",
+    "title": "Professional Moving & Cleaning"
+  },
+  "homepage": {
+    "contactSection": {
+      "address": "Address",
+      "addressValue": "New York, USA",
+      "email": "Email",
+      "emailValue": "info@movecleanmafia.com",
+      "phone": "Phone",
+      "subtitle": "We are here for you every day. Don't hesitate to contact us.",
+      "title": "Contact Information"
     },
-    "necessary": "Necessary cookies",
-    "necessaryDescription": "These cookies are essential for the website to function properly and cannot be disabled.",
-    "analytics": "Analytics cookies",
-    "analyticsDescription": "Help us understand how visitors use our website.",
-    "marketing": "Marketing cookies",
-    "marketingDescription": "Used to display relevant ads and content.",
-    "preferences": "Preference cookies",
-    "preferencesDescription": "Store your preferences and settings.",
-    "acceptNecessary": "Accept Necessary Only",
-    "savePreferences": "Save Preferences",
+    "heroImages": {
+      "cleaning": "",
+      "moving": ""
+    },
+    "pricingSection": {
+      "showAllPrices": "View all prices",
+      "subtitle": "Transparent prices for all our services",
+      "title": "Pricing"
+    },
+    "servicesSection": {
+      "subtitle": "",
+      "title": ""
+    }
+  },
+  "navigation": {
+    "about": "About",
+    "contact": "Contact",
+    "home": "Home",
+    "services": "Services"
+  },
+  "reservation": {
+    "additionalInfo": "Additional Information",
+    "address": "Address",
+    "addressPlaceholder": "Enter the address where the service will be provided...",
+    "apartmentSize": "Apartment/Office Size (m²)",
+    "apartmentSizePlaceholder": "e.g. 65",
+    "cleaningPackage": "Cleaning Package",
+    "cleaningPackagePlaceholder": "Select cleaning package",
+    "cleaningPackages": {
+      "general": "General Cleaning",
+      "maintenance": "Maintenance Cleaning",
+      "postRenovation": "Post-Renovation Cleaning"
+    },
+    "clinics": {
+      "branch": "",
+      "main": ""
+    },
+    "deliveryAddress": "Delivery Address",
+    "deliveryAddressPlaceholder": "Enter the address where to move...",
+    "error": {
+      "description": "There was an error submitting your reservation. Please try again or contact us directly.",
+      "title": "Reservation Submission Failed"
+    },
+    "message": "Message",
+    "messagePlaceholder": "Describe your requirements, special requests, notes...",
+    "personalInfo": "Personal Information",
+    "pickupAddress": "Pickup Address",
+    "pickupAddressPlaceholder": "Enter the address from where to move...",
+    "preferredDate": "Preferred Date",
+    "preferredTime": "Preferred Time",
+    "selectTime": "Select time",
+    "service": "Service",
+    "serviceDetails": "Service Details",
+    "servicePlaceholder": "Select service",
+    "services": {
+      "allergyTesting": "",
+      "bronchoscopy": "",
+      "cleaning": "Cleaning",
+      "consultation": "",
+      "examination": "",
+      "followUp": "",
+      "moving": "Moving",
+      "other": "Other",
+      "packing": "Packing",
+      "spirometry": "",
+      "storage": "Storage",
+      "urgent": ""
+    },
+    "submitReservation": "Submit Reservation",
+    "subtitle": "Book our services quickly and easily online",
+    "success": {
+      "description": "Thank you for your reservation. We will contact you within 24 hours to confirm the details.",
+      "title": "Reservation Submitted Successfully!"
+    },
+    "timeOptions": {
+      "afternoon": "",
+      "evening": "",
+      "morning": "",
+      "noPreference": ""
+    },
+    "timeSlots": {
+      "afternoon": "Afternoon (12:00-16:00)",
+      "evening": "Evening (16:00-20:00)",
+      "morning": "Morning (8:00-12:00)"
+    },
+    "title": "Online Reservation"
+  },
+  "services": {
+    "cleaning": "Cleaning",
+    "cleaningDescription": "Thorough cleaning of households and commercial spaces with professional products",
+    "cleaningFeatures": [
+      "General cleaning",
+      "Post-move cleaning",
+      "Office spaces",
+      "Eco-friendly products"
+    ],
+    "ctaSubtitle": "Contact us and get a free consultation and price quote",
+    "ctaTitle": "Let's Start Working Together",
+    "moving": "Moving",
+    "movingDescription": "Professional moving of apartments, houses and offices with complete service",
+    "movingFeatures": [
+      "Furniture disassembly",
+      "Safe transportation",
+      "Assembly at new location",
+      "Cargo insurance"
+    ],
+    "packing": "Packing",
+    "packingDescription": "Safe packing and packaging of all your belongings with professional materials",
+    "packingFeatures": [
+      "Professional packing",
+      "Quality materials",
+      "Box labeling",
+      "Inventory"
+    ],
+    "quality": "Quality",
+    "qualityDescription": "Highest quality services and care for your belongings",
+    "safety": "Safety",
+    "safetyDescription": "Your belongings are safe with our insurance",
+    "speed": "Speed",
+    "speedDescription": "Efficient and fast execution of all work",
+    "storage": "Storage",
+    "storageDescription": "Safe storage of your belongings in our climate-controlled warehouses",
+    "storageFeatures": [
+      "Climate-controlled warehouses",
+      "24/7 security",
+      "Insurance",
+      "Flexible terms"
+    ],
+    "subtitle": "Complete moving and cleaning services for your home and office",
+    "title": "Our Services",
+    "whyChooseUs": "Why Choose Us?",
+    "whyChooseUsSubtitle": "Reliable services with years of experience and highest quality"
+  },
+  "servicesGrid": {
     "learnMore": "Learn More",
-    "cookiePolicy": "Cookie Policy",
-    "customize": "Customize Cookies"
+    "priceFrom": "From"
+  },
+  "servicesPage": {
+    "approximatePrices": "Approximate prices",
+    "areaRanges": {
+      "over70": "over 70 m²",
+      "upTo35": "up to 35 m²",
+      "upTo50": "up to 50 m²",
+      "upTo70": "up to 70 m²"
+    },
+    "price": "Price",
+    "pricing": "Pricing",
+    "service": "Service",
+    "unit": "Unit",
+    "whatIncluded": "What's included"
   }
 }

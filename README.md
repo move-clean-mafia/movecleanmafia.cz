@@ -143,9 +143,36 @@ curl -X POST http://localhost:3000/api/test-telegram \
 │   └── ...                # Custom components
 ├── lib/                   # Utility functions
 ├── locales/               # i18n translation files
+├── scripts/               # Custom scripts (i18n management)
+├── docs/                  # Documentation
 ├── public/                # Static assets
 └── firebase.ts           # Firebase configuration
 ```
+
+## i18n Translation Management
+
+This project includes comprehensive tools for managing translations:
+
+### Available Commands
+
+```bash
+# Scan for unused translations
+pnpm i18n:scan
+
+# Remove unused translations
+pnpm i18n:clean
+
+# Show translation statistics
+pnpm i18n:stats
+
+# Find missing translations
+pnpm i18n:missing
+
+# Run comprehensive analysis
+pnpm i18n:check
+```
+
+See [i18n management documentation](docs/i18n-management.md) for detailed usage and best practices.
 
 ## Technologies Used
 
