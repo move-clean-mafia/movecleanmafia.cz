@@ -8,6 +8,7 @@ import { supportedLanguages, type SupportedLanguage } from '../../lib/i18n';
 import { getServerTranslations } from '../../lib/i18n-server';
 import { I18nProvider } from '../../components/i18n-provider';
 import { QueryProvider } from '../../components/query-provider';
+import { AuthProvider } from '../../components/auth-provider';
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
 import { FloatingReservationButton } from '../../components/floating-reservation-button';
@@ -113,15 +114,17 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
           translations={translations}
         >
           <QueryProvider>
-            <div className="min-h-screen bg-brand-light flex flex-col">
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-              <FloatingReservationButton />
-              <Toaster />
-            </div>
-            <Analytics />
-            <SpeedInsights />
+            <AuthProvider>
+              <div className="min-h-screen bg-brand-light flex flex-col">
+                <Header />
+                <main className="flex-1">{children}</main>
+                <Footer />
+                <FloatingReservationButton />
+                <Toaster />
+              </div>
+              <Analytics />
+              <SpeedInsights />
+            </AuthProvider>
           </QueryProvider>
         </I18nProvider>
       </body>

@@ -39,6 +39,28 @@ const getLocale = (request: NextRequest): string => {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
+  // Add security headers for admin routes
+  if (pathname.includes('/admin/') || pathname.includes('/api/admin/')) {
+    const response = NextResponse.next();
+
+    // Prevent indexing
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+    response.headers.set('X-Content-Type-Options', 'nosniff');
+    response.headers.set('X-Frame-Options', 'DENY');
+    response.headers.set('X-XSS-Protection', '1; mode=block');
+    response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+
+    // Cache control for admin routes
+    response.headers.set(
+      'Cache-Control',
+      'no-store, no-cache, must-revalidate, proxy-revalidate',
+    );
+    response.headers.set('Pragma', 'no-cache');
+    response.headers.set('Expires', '0');
+
+    return response;
+  }
+
   // Check if pathname already includes locale
   const pathLocale = pathname.split('/')[1];
   const hasLocale = supportedLanguages.includes(
