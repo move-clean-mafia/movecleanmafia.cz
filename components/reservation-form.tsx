@@ -305,7 +305,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Personal Information */}
       <div className="space-y-4">
-        <h3 className="text-lg font-oswald font-light text-gray-900 flex items-center">
+        <h3 className="text-lg font-baloo-bhai font-light text-gray-900 flex items-center">
           <User className="w-5 h-5 mr-2 text-brand-primary" />
           {t('reservation.personalInfo')}
         </h3>
@@ -313,7 +313,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="firstName"
-              className="text-sm font-source-sans font-medium text-gray-700"
+              className="text-sm font-inter font-medium text-gray-700"
             >
               {t('contact.form.firstName')}
             </Label>
@@ -322,7 +322,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               type="text"
               value={formData.firstName}
               onChange={(e) => handleInputChange('firstName', e.target.value)}
-              className={`mt-1 font-source-sans font-light ${
+              className={`mt-1 font-inter font-light ${
                 hasFieldError('firstName')
                   ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                   : ''
@@ -340,7 +340,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="lastName"
-              className="text-sm font-source-sans font-medium text-gray-700"
+              className="text-sm font-inter font-medium text-gray-700"
             >
               {t('contact.form.lastName')}
             </Label>
@@ -349,7 +349,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               type="text"
               value={formData.lastName}
               onChange={(e) => handleInputChange('lastName', e.target.value)}
-              className={`mt-1 font-source-sans font-light ${
+              className={`mt-1 font-inter font-light ${
                 hasFieldError('lastName')
                   ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                   : ''
@@ -369,7 +369,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="email"
-              className="text-sm font-source-sans font-medium text-gray-700"
+              className="text-sm font-inter font-medium text-gray-700"
             >
               {t('contact.form.email')}
             </Label>
@@ -378,7 +378,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               type="email"
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
-              className={`mt-1 font-source-sans font-light ${
+              className={`mt-1 font-inter font-light ${
                 hasFieldError('email')
                   ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                   : ''
@@ -396,7 +396,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="phone"
-              className="text-sm font-source-sans font-medium text-gray-700 flex items-center"
+              className="text-sm font-inter font-medium text-gray-700 flex items-center"
             >
               <Phone className="w-4 h-4 mr-2 text-brand-primary" />
               {t('contact.form.phone')}
@@ -406,7 +406,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                 value={selectedCountryCode}
                 onValueChange={handleCountryCodeChange}
               >
-                <SelectTrigger className="w-28 font-source-sans font-light rounded-r-none border-r-0">
+                <SelectTrigger className="w-28 font-inter font-light rounded-r-none border-r-0">
                   <SelectValue>
                     {(() => {
                       const selectedCountry = countryCodes.find(
@@ -446,7 +446,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
-                className={`flex-1 font-source-sans font-light rounded-l-none ${
+                className={`flex-1 font-inter font-light rounded-l-none ${
                   hasFieldError('phone')
                     ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                     : ''
@@ -467,7 +467,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
 
       {/* Service Details */}
       <div className="space-y-4">
-        <h3 className="text-lg font-oswald font-light text-gray-900 flex items-center">
+        <h3 className="text-lg font-baloo-bhai font-light text-gray-900 flex items-center">
           <MapPin className="w-5 h-5 mr-2 text-brand-primary" />
           {t('reservation.serviceDetails')}
         </h3>
@@ -476,7 +476,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
         <div>
           <Label
             htmlFor="service"
-            className="text-sm font-source-sans font-medium text-gray-700"
+            className="text-sm font-inter font-medium text-gray-700"
           >
             {t('reservation.service')}
           </Label>
@@ -486,7 +486,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
             required
           >
             <SelectTrigger
-              className={`mt-1 font-source-sans font-light ${
+              className={`mt-1 font-inter font-light ${
                 hasFieldError('service')
                   ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                   : ''
@@ -515,7 +515,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="package"
-              className="text-sm font-source-sans font-medium text-gray-700"
+              className="text-sm font-inter font-medium text-gray-700"
             >
               {t('reservation.cleaningPackage')}
             </Label>
@@ -527,7 +527,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               }}
               required
             >
-              <SelectTrigger className="mt-1 font-source-sans font-light">
+              <SelectTrigger className="mt-1 font-inter font-light">
                 <SelectValue
                   placeholder={t('reservation.cleaningPackagePlaceholder')}
                 />
@@ -548,7 +548,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="date"
-              className="text-sm font-source-sans font-medium text-gray-700"
+              className="text-sm font-inter font-medium text-gray-700"
             >
               {t('reservation.preferredDate')}
             </Label>
@@ -558,7 +558,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               value={formData.date}
               onChange={(e) => handleInputChange('date', e.target.value)}
               min={today}
-              className={`mt-1 font-source-sans font-light ${
+              className={`mt-1 font-inter font-light ${
                 hasFieldError('date')
                   ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                   : ''
@@ -575,7 +575,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="time"
-              className="text-sm font-source-sans font-medium text-gray-700"
+              className="text-sm font-inter font-medium text-gray-700"
             >
               {t('reservation.preferredTime')}
             </Label>
@@ -585,7 +585,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               required
             >
               <SelectTrigger
-                className={`mt-1 font-source-sans font-light ${
+                className={`mt-1 font-inter font-light ${
                   hasFieldError('time')
                     ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                     : ''
@@ -617,7 +617,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
             <div>
               <Label
                 htmlFor="pickupAddress"
-                className="text-sm font-source-sans font-medium text-gray-700 flex items-center"
+                className="text-sm font-inter font-medium text-gray-700 flex items-center"
               >
                 <Truck className="w-4 h-4 mr-2 text-brand-primary" />
                 {t('reservation.pickupAddress')}
@@ -628,7 +628,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                 onChange={(e) =>
                   handleInputChange('pickupAddress', e.target.value)
                 }
-                className={`mt-1 font-source-sans font-light ${
+                className={`mt-1 font-inter font-light ${
                   hasFieldError('pickupAddress')
                     ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                     : ''
@@ -647,7 +647,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
             <div>
               <Label
                 htmlFor="deliveryAddress"
-                className="text-sm font-source-sans font-medium text-gray-700 flex items-center"
+                className="text-sm font-inter font-medium text-gray-700 flex items-center"
               >
                 <Home className="w-4 h-4 mr-2 text-brand-primary" />
                 {t('reservation.deliveryAddress')}
@@ -658,7 +658,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                 onChange={(e) =>
                   handleInputChange('deliveryAddress', e.target.value)
                 }
-                className={`mt-1 font-source-sans font-light ${
+                className={`mt-1 font-inter font-light ${
                   hasFieldError('deliveryAddress')
                     ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                     : ''
@@ -680,7 +680,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="address"
-              className="text-sm font-source-sans font-medium text-gray-700"
+              className="text-sm font-inter font-medium text-gray-700"
             >
               {t('reservation.address')}
             </Label>
@@ -688,7 +688,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               id="address"
               value={formData.address}
               onChange={(e) => handleInputChange('address', e.target.value)}
-              className={`mt-1 font-source-sans font-light ${
+              className={`mt-1 font-inter font-light ${
                 hasFieldError('address')
                   ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                   : ''
@@ -711,7 +711,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="apartmentSize"
-              className="text-sm font-source-sans font-medium text-gray-700"
+              className="text-sm font-inter font-medium text-gray-700"
             >
               {t('reservation.apartmentSize')}
             </Label>
@@ -722,7 +722,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               onChange={(e) =>
                 handleInputChange('apartmentSize', e.target.value)
               }
-              className="mt-1 font-source-sans font-light"
+              className="mt-1 font-inter font-light"
               placeholder={t('reservation.apartmentSizePlaceholder')}
             />
           </div>
@@ -731,14 +731,14 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
 
       {/* Additional Information */}
       <div className="space-y-4">
-        <h3 className="text-lg font-oswald font-light text-gray-900 flex items-center">
+        <h3 className="text-lg font-baloo-bhai font-light text-gray-900 flex items-center">
           <Clock className="w-5 h-5 mr-2 text-brand-primary" />
           {t('reservation.additionalInfo')}
         </h3>
         <div>
           <Label
             htmlFor="message"
-            className="text-sm font-source-sans font-medium text-gray-700"
+            className="text-sm font-inter font-medium text-gray-700"
           >
             {t('reservation.message')}
           </Label>
@@ -746,7 +746,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
             id="message"
             value={formData.message}
             onChange={(e) => handleInputChange('message', e.target.value)}
-            className="mt-1 font-source-sans font-light"
+            className="mt-1 font-inter font-light"
             rows={4}
             placeholder={t('reservation.messagePlaceholder')}
           />
@@ -756,7 +756,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
       <Button
         type="submit"
         disabled={submitMutation.isPending}
-        className="w-full bg-brand-primary hover:bg-brand-secondary font-source-sans font-medium disabled:opacity-50"
+        className="w-full bg-brand-primary hover:bg-brand-secondary font-inter font-medium disabled:opacity-50"
       >
         {submitMutation.isPending
           ? 'Submitting...'

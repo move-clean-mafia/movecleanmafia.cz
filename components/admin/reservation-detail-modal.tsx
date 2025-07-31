@@ -137,7 +137,7 @@ export const ReservationDetailModal = ({
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-oswald font-light">
+          <DialogTitle className="text-2xl font-baloo-bhai font-light">
             Reservation Details
           </DialogTitle>
           <DialogDescription>

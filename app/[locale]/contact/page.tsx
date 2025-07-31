@@ -117,10 +117,10 @@ const ContactPage = async ({ params }: ContactPageProps) => {
       <section className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-oswald font-light mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-baloo-bhai font-light mb-6">
               {t('contact.title')}
             </h1>
-            <p className="text-xl sm:text-2xl font-source-sans font-light opacity-90 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-2xl font-inter font-light opacity-90 max-w-3xl mx-auto">
               {t('contact.subtitle')}
             </p>
           </div>
@@ -139,11 +139,11 @@ const ContactPage = async ({ params }: ContactPageProps) => {
                     <div className="p-2 bg-brand-primary rounded-lg">
                       <MessageSquare className="w-6 h-6 text-white" />
                     </div>
-                    <CardTitle className="text-2xl font-oswald font-light text-gray-900">
+                    <CardTitle className="text-2xl font-baloo-bhai font-light text-gray-900">
                       {t('reservation.title')}
                     </CardTitle>
                   </div>
-                  <CardDescription className="text-gray-600 font-source-sans font-light text-base">
+                  <CardDescription className="text-gray-600 font-inter font-light text-base">
                     {t('reservation.subtitle')}
                   </CardDescription>
                 </CardHeader>
@@ -164,10 +164,10 @@ const ContactPage = async ({ params }: ContactPageProps) => {
             {/* Contact Information */}
             <div className="space-y-6">
               <div>
-                <h2 className="text-2xl font-oswald font-light text-gray-900 mb-6">
+                <h2 className="text-2xl font-baloo-bhai font-light text-gray-900 mb-6">
                   {t('contact.info.title')}
                 </h2>
-                <p className="text-gray-600 font-source-sans font-light mb-8">
+                <p className="text-gray-600 font-inter font-light mb-8">
                   {t('contact.info.subtitle')}
                 </p>
               </div>
@@ -184,7 +184,7 @@ const ContactPage = async ({ params }: ContactPageProps) => {
                           <info.icon className="w-5 h-5 text-brand-primary" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="font-oswald font-light text-gray-900 mb-2">
+                          <h3 className="font-baloo-bhai font-light text-gray-900 mb-2">
                             {info.title}
                           </h3>
                           <div className="space-y-1">
@@ -193,12 +193,12 @@ const ContactPage = async ({ params }: ContactPageProps) => {
                                 {info.action ? (
                                   <a
                                     href={`${info.action}:${detail}`}
-                                    className="text-gray-600 font-source-sans font-light hover:text-brand-primary transition-colors duration-200"
+                                    className="text-gray-600 font-inter font-light hover:text-brand-primary transition-colors duration-200"
                                   >
                                     {detail}
                                   </a>
                                 ) : (
-                                  <p className="text-gray-600 font-source-sans font-light">
+                                  <p className="text-gray-600 font-inter font-light">
                                     {detail}
                                   </p>
                                 )}
@@ -220,15 +220,15 @@ const ContactPage = async ({ params }: ContactPageProps) => {
                       <Phone className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-oswald font-light text-gray-900 mb-2">
+                      <h3 className="font-baloo-bhai font-light text-gray-900 mb-2">
                         {t('contact.info.emergency.title')}
                       </h3>
-                      <p className="text-gray-600 font-source-sans font-light mb-2">
+                      <p className="text-gray-600 font-inter font-light mb-2">
                         {t('contact.info.emergency.subtitle')}
                       </p>
                       <a
                         href={`tel:${t('header.phone1')}`}
-                        className="text-red-600 font-source-sans font-medium hover:text-red-700 transition-colors duration-200"
+                        className="text-red-600 font-inter font-medium hover:text-red-700 transition-colors duration-200"
                       >
                         {t('header.phone1')}
                       </a>
@@ -245,7 +245,7 @@ const ContactPage = async ({ params }: ContactPageProps) => {
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-oswald font-light text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-baloo-bhai font-light text-gray-900 mb-4">
               {t('contact.faq.title')}
             </h2>
           </div>
@@ -253,12 +253,12 @@ const ContactPage = async ({ params }: ContactPageProps) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card className="border-0 shadow-lg">
               <CardHeader>
-                <CardTitle className="text-lg font-oswald font-light text-gray-900">
+                <CardTitle className="text-lg font-baloo-bhai font-light text-gray-900">
                   {t('contact.faq.movingTime.question')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600 font-source-sans font-light">
+                <CardDescription className="text-gray-600 font-inter font-light">
                   {t('contact.faq.movingTime.answer')}
                 </CardDescription>
               </CardContent>
@@ -266,12 +266,12 @@ const ContactPage = async ({ params }: ContactPageProps) => {
 
             <Card className="border-0 shadow-lg">
               <CardHeader>
-                <CardTitle className="text-lg font-oswald font-light text-gray-900">
+                <CardTitle className="text-lg font-baloo-bhai font-light text-gray-900">
                   {t('contact.faq.insurance.question')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600 font-source-sans font-light">
+                <CardDescription className="text-gray-600 font-inter font-light">
                   {t('contact.faq.insurance.answer')}
                 </CardDescription>
               </CardContent>
@@ -279,12 +279,12 @@ const ContactPage = async ({ params }: ContactPageProps) => {
 
             <Card className="border-0 shadow-lg">
               <CardHeader>
-                <CardTitle className="text-lg font-oswald font-light text-gray-900">
+                <CardTitle className="text-lg font-baloo-bhai font-light text-gray-900">
                   {t('contact.faq.pricing.question')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600 font-source-sans font-light">
+                <CardDescription className="text-gray-600 font-inter font-light">
                   {t('contact.faq.pricing.answer')}
                 </CardDescription>
               </CardContent>
@@ -292,12 +292,12 @@ const ContactPage = async ({ params }: ContactPageProps) => {
 
             <Card className="border-0 shadow-lg">
               <CardHeader>
-                <CardTitle className="text-lg font-oswald font-light text-gray-900">
+                <CardTitle className="text-lg font-baloo-bhai font-light text-gray-900">
                   {t('contact.faq.weekends.question')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600 font-source-sans font-light">
+                <CardDescription className="text-gray-600 font-inter font-light">
                   {t('contact.faq.weekends.answer')}
                 </CardDescription>
               </CardContent>

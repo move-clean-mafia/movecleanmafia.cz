@@ -119,10 +119,10 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
             <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-white/10 backdrop-blur-sm rounded-2xl mb-6 sm:mb-8 border border-white/20">
               <Award className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-oswald font-light mb-6 sm:mb-8 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-baloo-bhai font-light mb-6 sm:mb-8 leading-tight">
               {t('services.title')}
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl font-source-sans font-light opacity-90 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl lg:text-2xl font-inter font-light opacity-90 max-w-4xl mx-auto leading-relaxed">
               {t('services.subtitle')}
             </p>
 
@@ -162,10 +162,10 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
             <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-brand-primary rounded-2xl mb-4 sm:mb-6">
               <Award className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-oswald font-light text-gray-900 mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-baloo-bhai font-light text-gray-900 mb-4 sm:mb-6">
               {t('homepage.servicesSection.title')}
             </h2>
-            <p className="text-lg sm:text-xl font-source-sans font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl font-inter font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
               {t('homepage.servicesSection.subtitle')}
             </p>
           </div>
@@ -190,7 +190,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-6">
                 <Truck className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-4xl sm:text-5xl font-oswald font-light text-gray-900 mb-4">
+              <h2 className="text-4xl sm:text-5xl font-baloo-bhai font-light text-gray-900 mb-4">
                 {t('detailedServices.movingAndTransport.title')}
               </h2>
               <div className="w-24 h-1 bg-brand-primary mx-auto rounded-full"></div>
@@ -202,13 +202,13 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-gray-200">
-                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
                           {t('servicesPage.service')}
                         </th>
-                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
                           {t('servicesPage.unit')}
                         </th>
-                        <th className="text-right py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-right py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
                           {t('servicesPage.price')}
                         </th>
                       </tr>
@@ -219,13 +219,13 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                           key={index}
                           className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 group"
                         >
-                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-light text-gray-700 group-hover:text-gray-900 transition-colors">
                             {service.name}
                           </td>
-                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-light text-gray-600">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-light text-gray-600">
                             {service.unit}
                           </td>
-                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-bold text-brand-primary text-right text-sm sm:text-lg">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-bold text-brand-primary text-right text-sm sm:text-lg">
                             <div className="break-words">{service.price}</div>
                           </td>
                         </tr>
@@ -260,7 +260,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-6">
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-4xl sm:text-5xl font-oswald font-light text-gray-900 mb-4">
+              <h2 className="text-4xl sm:text-5xl font-baloo-bhai font-light text-gray-900 mb-4">
                 {t('detailedServices.dryCleaning.title')}
               </h2>
               <div className="w-24 h-1 bg-brand-primary mx-auto rounded-full"></div>
@@ -272,10 +272,10 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-gray-200">
-                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
                           {t('servicesPage.service')}
                         </th>
-                        <th className="text-right py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-right py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
                           {t('servicesPage.price')}
                         </th>
                       </tr>
@@ -286,10 +286,10 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                           key={index}
                           className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 group"
                         >
-                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-light text-gray-700 group-hover:text-gray-900 transition-colors">
                             {service.name}
                           </td>
-                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-bold text-brand-primary text-right text-sm sm:text-lg">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-bold text-brand-primary text-right text-sm sm:text-lg">
                             <div className="break-words">{service.price}</div>
                           </td>
                         </tr>
@@ -321,7 +321,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-6">
                 <Package className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-4xl sm:text-5xl font-oswald font-light text-gray-900 mb-4">
+              <h2 className="text-4xl sm:text-5xl font-baloo-bhai font-light text-gray-900 mb-4">
                 {t('detailedServices.packingServices.title')}
               </h2>
               <div className="w-24 h-1 bg-brand-primary mx-auto rounded-full"></div>
@@ -333,13 +333,13 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-gray-200">
-                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
                           {t('servicesPage.service')}
                         </th>
-                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
                           {t('servicesPage.unit')}
                         </th>
-                        <th className="text-right py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-right py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
                           {t('servicesPage.price')}
                         </th>
                       </tr>
@@ -350,13 +350,13 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                           key={index}
                           className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 group"
                         >
-                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-light text-gray-700 group-hover:text-gray-900 transition-colors">
                             {service.name}
                           </td>
-                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-light text-gray-600">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-light text-gray-600">
                             {service.unit}
                           </td>
-                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-bold text-brand-primary text-right text-sm sm:text-lg">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-bold text-brand-primary text-right text-sm sm:text-lg">
                             <div className="break-words">{service.price}</div>
                           </td>
                         </tr>

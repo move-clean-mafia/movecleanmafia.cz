@@ -182,7 +182,7 @@ export const BookingsPanel = () => {
     return (
       <Card>
         <CardHeader>
-          <CardTitle className="text-xl font-oswald font-light">
+          <CardTitle className="text-xl font-baloo-bhai font-light">
             Recent Bookings
           </CardTitle>
           <CardDescription>Loading bookings...</CardDescription>
@@ -202,7 +202,7 @@ export const BookingsPanel = () => {
         <CardHeader>
           <div className="flex justify-between items-center">
             <div>
-              <CardTitle className="text-xl font-oswald font-light">
+              <CardTitle className="text-xl font-baloo-bhai font-light">
                 Recent Bookings
               </CardTitle>
               <CardDescription>

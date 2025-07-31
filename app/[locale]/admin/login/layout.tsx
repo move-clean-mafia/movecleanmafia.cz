@@ -1,20 +1,19 @@
 import React from 'react';
 
 import { Metadata } from 'next';
-import { Oswald, Source_Sans_3 } from 'next/font/google';
+import { Baloo_Bhai_2, Inter } from 'next/font/google';
 import '../../../globals.css';
 
-const oswald = Oswald({
-  variable: '--font-oswald',
+const balooBhai = Baloo_Bhai_2({
+  variable: '--font-baloo-bhai',
   subsets: ['latin', 'latin-ext'],
-  weight: ['200', '300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
 });
 
-const sourceSans = Source_Sans_3({
-  variable: '--font-source-sans',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin', 'latin-ext'],
-  weight: ['200', '300', '400', '600', '700'],
-  style: ['normal', 'italic'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
@@ -50,7 +49,7 @@ const AdminLoginLayout = ({ children }: AdminLoginLayoutProps) => {
         <meta name="googlebot" content="noindex, nofollow" />
         <meta name="google" content="notranslate" />
       </head>
-      <body className={`${oswald.variable} ${sourceSans.variable} antialiased`}>
+      <body className={`${balooBhai.variable} ${inter.variable} antialiased`}>
         {children}
       </body>
     </html>

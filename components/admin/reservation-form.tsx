@@ -227,7 +227,7 @@ export const ReservationForm = ({
         <div className="p-6">
           <div className="flex justify-between items-center mb-6">
             <div>
-              <h2 className="text-2xl font-oswald font-light">
+              <h2 className="text-2xl font-baloo-bhai font-light">
                 {isEditing ? 'Edit Reservation' : 'Create New Reservation'}
               </h2>
               <p className="text-gray-600">

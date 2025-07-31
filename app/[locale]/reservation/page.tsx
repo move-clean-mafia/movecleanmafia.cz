@@ -51,14 +51,14 @@ const ReservationPage = async ({ params }: ReservationPageProps) => {
       <section className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-oswald font-light mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-baloo-bhai font-light mb-6">
               {locale === 'cs'
                 ? 'Online Rezervace'
                 : locale === 'ua'
                   ? 'Онлайн Резервація'
                   : 'Online Reservation'}
             </h1>
-            <p className="text-xl sm:text-2xl font-source-sans font-light opacity-90 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-2xl font-inter font-light opacity-90 max-w-3xl mx-auto">
               {locale === 'cs'
                 ? 'Rezervujte si naše služby rychle a jednoduše online'
                 : locale === 'ua'
@@ -79,7 +79,7 @@ const ReservationPage = async ({ params }: ReservationPageProps) => {
                   <div className="p-2 bg-brand-primary rounded-lg">
                     <Calendar className="w-6 h-6 text-white" />
                   </div>
-                  <CardTitle className="text-2xl font-oswald font-light text-gray-900">
+                  <CardTitle className="text-2xl font-baloo-bhai font-light text-gray-900">
                     {locale === 'cs'
                       ? 'Rezervační formulář'
                       : locale === 'ua'
@@ -87,7 +87,7 @@ const ReservationPage = async ({ params }: ReservationPageProps) => {
                         : 'Booking Form'}
                   </CardTitle>
                 </div>
-                <CardDescription className="text-gray-600 font-source-sans font-light text-base">
+                <CardDescription className="text-gray-600 font-inter font-light text-base">
                   {locale === 'cs'
                     ? 'Vyplňte formulář a my vás budeme kontaktovat do 24 hodin'
                     : locale === 'ua'

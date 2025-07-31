@@ -72,7 +72,7 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
           <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center">
             <Icon className="w-5 h-5 text-brand-primary" />
           </div>
-          <h4 className="text-lg font-oswald font-medium text-gray-900">
+          <h4 className="text-lg font-baloo-bhai font-medium text-gray-900">
             {area.title}
           </h4>
         </div>
@@ -85,7 +85,7 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
               <div className="w-5 h-5 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                 <Check className="w-3 h-3 text-white" />
               </div>
-              <span className="font-source-sans font-light text-gray-700 leading-relaxed">
+              <span className="font-inter font-light text-gray-700 leading-relaxed">
                 {item}
               </span>
             </div>
@@ -99,21 +99,19 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
     <div className="space-y-6">
       {/* Package Header */}
       <div className="text-center space-y-3">
-        <p className="text-gray-600 font-source-sans font-light text-lg leading-relaxed max-w-3xl mx-auto">
+        <p className="text-gray-600 font-inter font-light text-lg leading-relaxed max-w-3xl mx-auto">
           {packageData.description}
         </p>
         <div className="flex items-center justify-center gap-2 text-brand-primary">
           <Clock className="w-5 h-5" />
-          <span className="font-source-sans font-medium">
-            {packageData.duration}
-          </span>
+          <span className="font-inter font-medium">{packageData.duration}</span>
         </div>
       </div>
 
       {/* Pricing Section */}
       <Card className="border-brand-primary/20 bg-gradient-to-br from-brand-primary/5 to-brand-secondary/5">
         <CardHeader>
-          <CardTitle className="text-center text-gray-900 font-oswald">
+          <CardTitle className="text-center text-gray-900 font-baloo-bhai">
             {t('servicesPage.pricing') as string} (*
             {t('servicesPage.approximatePrices') as string})
           </CardTitle>
@@ -158,7 +156,7 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
 
       {/* Services Included */}
       <div className="space-y-6">
-        <h3 className="text-2xl font-oswald font-medium text-gray-900 text-center">
+        <h3 className="text-2xl font-baloo-bhai font-medium text-gray-900 text-center">
           {t('servicesPage.whatIncluded') as string}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -178,10 +176,10 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-4">
             <Home className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-4xl sm:text-5xl font-oswald font-light text-gray-900 mb-3">
+          <h2 className="text-4xl sm:text-5xl font-baloo-bhai font-light text-gray-900 mb-3">
             {t('detailedServices.cleaningPackages.title') as string}
           </h2>
-          <p className="text-xl font-source-sans font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl font-inter font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t('detailedServices.cleaningPackages.subtitle') as string}
           </p>
           <div className="w-24 h-1 bg-brand-primary mx-auto rounded-full mt-4"></div>
@@ -194,19 +192,19 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
               <TabsList className="flex flex-col sm:flex-row w-full mb-6 bg-gray-100 p-1 rounded-xl h-auto sm:h-10">
                 <TabsTrigger
                   value="maintenance"
-                  className="font-oswald rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
+                  className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
                 >
                   {packages.maintenance.title}
                 </TabsTrigger>
                 <TabsTrigger
                   value="general"
-                  className="font-oswald rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
+                  className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
                 >
                   {packages.general.title}
                 </TabsTrigger>
                 <TabsTrigger
                   value="postRenovation"
-                  className="font-oswald rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
+                  className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
                 >
                   {packages.postRenovation.title}
                 </TabsTrigger>
@@ -270,14 +268,14 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
         <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
           <div className="p-6">
             <div className="text-center mb-8">
-              <h3 className="text-3xl font-oswald font-light text-gray-900 mb-4">
+              <h3 className="text-3xl font-baloo-bhai font-light text-gray-900 mb-4">
                 {
                   t(
                     'detailedServices.cleaningPackages.additionalServices.title',
                   ) as string
                 }
               </h3>
-              <p className="text-lg font-source-sans font-light text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg font-inter font-light text-gray-600 max-w-2xl mx-auto">
                 {
                   t(
                     'detailedServices.cleaningPackages.additionalServices.subtitle',
@@ -292,12 +290,12 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
                   key={index}
                   className="flex justify-between items-center p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors duration-200 group"
                 >
-                  <span className="font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors flex-1 pr-2 sm:pr-4 text-sm sm:text-base">
+                  <span className="font-inter font-light text-gray-700 group-hover:text-gray-900 transition-colors flex-1 pr-2 sm:pr-4 text-sm sm:text-base">
                     {service.name}
                   </span>
                   <Badge
                     variant="secondary"
-                    className="font-source-sans font-bold bg-brand-primary text-white border-0 px-2 sm:px-3 py-1 flex-shrink-0 text-xs"
+                    className="font-inter font-bold bg-brand-primary text-white border-0 px-2 sm:px-3 py-1 flex-shrink-0 text-xs"
                   >
                     <div className="break-words text-center">
                       {service.price}

@@ -75,7 +75,7 @@ export const Header: React.FC = () => {
                     <Link
                       key={item.key}
                       href={item.href}
-                      className="px-4 xl:px-6 py-3 font-source-sans font-bold text-gray-700 hover:text-brand-primary hover:bg-brand-light rounded-lg transition-all duration-200 uppercase text-sm xl:text-base leading-6 tracking-wider border-2 border-transparent hover:border-brand-primary/20 shadow-sm hover:shadow-md"
+                      className="px-4 xl:px-6 py-3 font-inter font-bold text-gray-700 hover:text-brand-primary hover:bg-brand-light rounded-lg transition-all duration-200 uppercase text-sm xl:text-base leading-6 tracking-wider border-2 border-transparent hover:border-brand-primary/20 shadow-sm hover:shadow-md"
                     >
                       {t(`navigation.${item.key}`).toUpperCase()}
                     </Link>
@@ -157,7 +157,7 @@ export const Header: React.FC = () => {
                     key={item.key}
                     href={item.href}
                     onClick={toggleMobileMenu}
-                    className="block px-4 py-3 font-source-sans font-bold text-gray-700 hover:text-brand-primary hover:bg-brand-light rounded-lg transition-colors duration-200 uppercase text-sm sm:text-base leading-6 tracking-wider border-2 border-transparent hover:border-brand-primary/20 shadow-sm"
+                    className="block px-4 py-3 font-inter font-bold text-gray-700 hover:text-brand-primary hover:bg-brand-light rounded-lg transition-colors duration-200 uppercase text-sm sm:text-base leading-6 tracking-wider border-2 border-transparent hover:border-brand-primary/20 shadow-sm"
                   >
                     {t(`navigation.${item.key}`).toUpperCase()}
                   </Link>
@@ -175,7 +175,7 @@ export const Header: React.FC = () => {
                     className="flex items-center justify-center space-x-3 hover:bg-brand-light rounded-lg p-3 transition-colors duration-200 w-full max-w-xs border border-transparent hover:border-gray-200 shadow-sm"
                   >
                     <Phone className="w-4 h-4 text-brand-primary" />
-                    <span className="font-source-sans font-semibold text-sm leading-4 tracking-wide text-gray-700">
+                    <span className="font-inter font-semibold text-sm leading-4 tracking-wide text-gray-700">
                       {t('header.phone1')}
                     </span>
                   </a>

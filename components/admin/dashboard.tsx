@@ -111,7 +111,7 @@ export const Dashboard = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-oswald font-light text-gray-900">
+              <h1 className="text-2xl font-baloo-bhai font-light text-gray-900">
                 Admin Dashboard
               </h1>
             </div>
@@ -176,7 +176,7 @@ export const Dashboard = () => {
         <div className="mt-8">
           <Card>
             <CardHeader>
-              <CardTitle className="text-xl font-oswald font-light">
+              <CardTitle className="text-xl font-baloo-bhai font-light">
                 Recent Activity
               </CardTitle>
               <CardDescription>Latest reservations and updates</CardDescription>

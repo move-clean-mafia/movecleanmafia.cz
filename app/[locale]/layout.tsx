@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
-import { Oswald, Source_Sans_3 } from 'next/font/google';
+import { Baloo_Bhai_2, Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -16,17 +16,16 @@ import { CookieConsent } from '../../components/cookie-consent';
 import { Toaster } from '../../components/ui/toaster';
 import '../globals.css';
 
-const oswald = Oswald({
-  variable: '--font-oswald',
+const balooBhai = Baloo_Bhai_2({
+  variable: '--font-baloo-bhai',
   subsets: ['latin', 'latin-ext'],
-  weight: ['200', '300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
 });
 
-const sourceSans = Source_Sans_3({
-  variable: '--font-source-sans',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin', 'latin-ext'],
-  weight: ['200', '300', '400', '600', '700'],
-  style: ['normal', 'italic'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
 interface LocaleLayoutProps {
@@ -48,7 +47,7 @@ export const generateMetadata = async ({
   const getTitle = (locale: string): string => {
     switch (locale) {
       case 'cs':
-        return 'MoveCleanMafia.cz - Profesionální přeprava a úklid';
+        return 'MoveCleanMafia.cz - Profesionální stěhování a úklid';
       case 'ua':
         return 'MoveCleanMafia.ua - Професійні перевезення та прибирання';
       default:
@@ -109,7 +108,7 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
         />
       </head>
-      <body className={`${oswald.variable} ${sourceSans.variable} antialiased`}>
+      <body className={`${balooBhai.variable} ${inter.variable} antialiased`}>
         <I18nProvider
           locale={locale as SupportedLanguage}
           translations={translations}

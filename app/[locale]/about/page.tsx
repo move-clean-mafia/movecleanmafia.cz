@@ -128,10 +128,10 @@ const AboutPage = async ({ params }: AboutPageProps) => {
       <section className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-oswald font-light mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-baloo-bhai font-light mb-6">
               {t('about.title')}
             </h1>
-            <p className="text-xl sm:text-2xl font-source-sans font-light opacity-90 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-2xl font-inter font-light opacity-90 max-w-3xl mx-auto">
               {t('about.subtitle')}
             </p>
           </div>
@@ -147,10 +147,10 @@ const AboutPage = async ({ params }: AboutPageProps) => {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-light rounded-full mb-4">
                   <stat.icon className="w-8 h-8 text-brand-primary" />
                 </div>
-                <div className="text-3xl font-oswald font-light text-gray-900 mb-2">
+                <div className="text-3xl font-baloo-bhai font-light text-gray-900 mb-2">
                   {stat.number}
                 </div>
-                <p className="text-sm font-source-sans font-light text-gray-600">
+                <p className="text-sm font-inter font-light text-gray-600">
                   {stat.label}
                 </p>
               </div>
@@ -164,12 +164,12 @@ const AboutPage = async ({ params }: AboutPageProps) => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-oswald font-light text-gray-900 mb-4">
+              <h2 className="text-3xl sm:text-4xl font-baloo-bhai font-light text-gray-900 mb-4">
                 {t('about.story.title')}
               </h2>
             </div>
 
-            <div className="prose prose-lg max-w-none text-gray-600 font-source-sans font-light">
+            <div className="prose prose-lg max-w-none text-gray-600 font-inter font-light">
               <p className="text-lg leading-relaxed mb-6">
                 {t('about.story.paragraph1')}
               </p>
@@ -185,7 +185,7 @@ const AboutPage = async ({ params }: AboutPageProps) => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-oswald font-light text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-baloo-bhai font-light text-gray-900 mb-4">
               {t('about.values.title')}
             </h2>
           </div>
@@ -201,13 +201,13 @@ const AboutPage = async ({ params }: AboutPageProps) => {
                     <div className="p-2 bg-brand-primary rounded-lg">
                       <value.icon className="w-6 h-6 text-white" />
                     </div>
-                    <CardTitle className="text-xl font-oswald font-light text-gray-900">
+                    <CardTitle className="text-xl font-baloo-bhai font-light text-gray-900">
                       {value.title}
                     </CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <CardDescription className="text-gray-600 font-source-sans font-light text-base">
+                  <CardDescription className="text-gray-600 font-inter font-light text-base">
                     {value.description}
                   </CardDescription>
                 </CardContent>
@@ -221,10 +221,10 @@ const AboutPage = async ({ params }: AboutPageProps) => {
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-oswald font-light text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-baloo-bhai font-light text-gray-900 mb-4">
               {t('about.team.title')}
             </h2>
-            <p className="text-lg font-source-sans font-light text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg font-inter font-light text-gray-600 max-w-2xl mx-auto">
               {t('about.team.subtitle')}
             </p>
           </div>
@@ -240,10 +240,10 @@ const AboutPage = async ({ params }: AboutPageProps) => {
                     <div className="w-20 h-20 bg-brand-primary rounded-full mx-auto mb-4 flex items-center justify-center">
                       <Users className="w-10 h-10 text-white" />
                     </div>
-                    <CardTitle className="text-xl font-oswald font-light text-gray-900">
+                    <CardTitle className="text-xl font-baloo-bhai font-light text-gray-900">
                       {member.name}
                     </CardTitle>
-                    <p className="text-sm font-source-sans font-medium text-brand-primary">
+                    <p className="text-sm font-inter font-medium text-brand-primary">
                       {member.position}
                     </p>
                   </div>
@@ -252,7 +252,7 @@ const AboutPage = async ({ params }: AboutPageProps) => {
                   <Badge variant="secondary" className="mb-3">
                     {member.experience}
                   </Badge>
-                  <CardDescription className="text-gray-600 font-source-sans font-light text-base">
+                  <CardDescription className="text-gray-600 font-inter font-light text-base">
                     {member.description}
                   </CardDescription>
                 </CardContent>

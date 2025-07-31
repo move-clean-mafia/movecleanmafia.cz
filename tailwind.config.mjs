@@ -12,10 +12,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        oswald: ['var(--font-oswald)', 'sans-serif'],
-        'source-sans': ['var(--font-source-sans)', 'sans-serif'],
-        heading: ['var(--font-oswald)', 'sans-serif'],
-        body: ['var(--font-source-sans)', 'sans-serif'],
+        'baloo-bhai': ['var(--font-baloo-bhai)', 'sans-serif'],
+        inter: ['var(--font-inter)', 'sans-serif'],
+        heading: ['var(--font-baloo-bhai)', 'sans-serif'],
+        body: ['var(--font-inter)', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
