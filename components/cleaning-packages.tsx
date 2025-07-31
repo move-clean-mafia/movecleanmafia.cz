@@ -1,11 +1,11 @@
 'use server';
 
 import React from 'react';
+import Image from 'next/image';
 import { type SupportedLanguage } from '../lib/i18n';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Badge } from './ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Check, Clock, Home, ChefHat, Bath } from 'lucide-react';
+import { Check, Home, ChefHat, Bath } from 'lucide-react';
 
 interface CleaningPackagesProps {
   locale: SupportedLanguage;
@@ -60,6 +60,13 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
     bathroom: Bath,
   };
 
+  // Service images mapping
+  const serviceImages = {
+    maintenance: '/images/services/service_s.png',
+    general: '/images/services/service_m.png',
+    postRenovation: '/images/services/service_l.png',
+  };
+
   const renderAreaSection = (
     areaKey: keyof typeof areaIcons,
     area: { title: string; items: string[] },
@@ -95,74 +102,70 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
     );
   };
 
-  const renderPackageContent = (packageData: PackageData) => (
-    <div className="space-y-6">
-      {/* Package Header */}
-      <div className="text-center space-y-3">
-        <p className="text-gray-600 font-inter font-light text-lg leading-relaxed max-w-3xl mx-auto">
-          {packageData.description}
-        </p>
-        <div className="flex items-center justify-center gap-2 text-brand-primary">
-          <Clock className="w-5 h-5" />
-          <span className="font-inter font-medium">{packageData.duration}</span>
-        </div>
-      </div>
-
-      {/* Pricing Section */}
-      <Card className="border-brand-primary/20 bg-gradient-to-br from-brand-primary/5 to-brand-secondary/5">
-        <CardHeader>
-          <CardTitle className="text-center text-gray-900 font-baloo-bhai">
-            {t('servicesPage.pricing') as string} (*
-            {t('servicesPage.approximatePrices') as string})
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-            <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <div className="text-xs sm:text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
-                {t('servicesPage.areaRanges.upTo35') as string}
-              </div>
-              <div className="text-sm sm:text-lg lg:text-xl font-bold text-brand-primary">
-                {packageData.prices.upTo35}
-              </div>
-            </div>
-            <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <div className="text-xs sm:text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
-                {t('servicesPage.areaRanges.upTo50') as string}
-              </div>
-              <div className="text-sm sm:text-lg lg:text-xl font-bold text-brand-primary">
-                {packageData.prices.upTo50}
-              </div>
-            </div>
-            <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <div className="text-xs sm:text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
-                {t('servicesPage.areaRanges.upTo70') as string}
-              </div>
-              <div className="text-sm sm:text-lg lg:text-xl font-bold text-brand-primary">
-                {packageData.prices.upTo70}
-              </div>
-            </div>
-            <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <div className="text-xs sm:text-sm text-gray-600 mb-1 min-h-[1.25rem] flex items-center justify-center">
-                {t('servicesPage.areaRanges.over70') as string}
-              </div>
-              <div className="text-sm sm:text-lg lg:text-xl font-bold text-brand-primary">
-                {packageData.prices.over70}
-              </div>
-            </div>
+  const renderPackageContent = (
+    packageData: PackageData,
+    packageKey: keyof typeof serviceImages,
+  ) => (
+    <div className="space-y-8">
+      {/* Package Header with Image and Services */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        {/* Service Image - Left Side */}
+        <div className="text-center lg:text-left">
+          <div className="relative w-full max-w-lg mx-auto lg:mx-0">
+            <Image
+              src={serviceImages[packageKey]}
+              alt={packageData.title}
+              width={500}
+              height={400}
+              className="w-full h-auto rounded-2xl shadow-xl"
+              priority={packageKey === 'maintenance'}
+            />
           </div>
-        </CardContent>
-      </Card>
+        </div>
 
-      {/* Services Included */}
-      <div className="space-y-6">
-        <h3 className="text-2xl font-baloo-bhai font-medium text-gray-900 text-center">
-          {t('servicesPage.whatIncluded') as string}
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {renderAreaSection('room', packageData.areas.room)}
-          {renderAreaSection('kitchen', packageData.areas.kitchen)}
-          {renderAreaSection('bathroom', packageData.areas.bathroom)}
+        {/* Services Included - Right Side */}
+        <div className="space-y-6">
+          <div className="text-center lg:text-left">
+            <h3 className="text-3xl font-baloo-bhai font-medium text-gray-900 mb-6">
+              {t('servicesPage.whatIncluded') as string}
+            </h3>
+          </div>
+
+          {/* Services Tabs */}
+          <Tabs defaultValue="room" className="w-full">
+            <TabsList className="flex w-full mb-6 bg-gray-100 p-1 rounded-xl h-auto">
+              <TabsTrigger
+                value="room"
+                className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
+              >
+                {packageData.areas.room.title}
+              </TabsTrigger>
+              <TabsTrigger
+                value="kitchen"
+                className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
+              >
+                {packageData.areas.kitchen.title}
+              </TabsTrigger>
+              <TabsTrigger
+                value="bathroom"
+                className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
+              >
+                {packageData.areas.bathroom.title}
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="room" className="space-y-4">
+              {renderAreaSection('room', packageData.areas.room)}
+            </TabsContent>
+
+            <TabsContent value="kitchen" className="space-y-4">
+              {renderAreaSection('kitchen', packageData.areas.kitchen)}
+            </TabsContent>
+
+            <TabsContent value="bathroom" className="space-y-4">
+              {renderAreaSection('bathroom', packageData.areas.bathroom)}
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </div>
@@ -211,7 +214,7 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
               </TabsList>
 
               <TabsContent value="maintenance" className="space-y-4">
-                {renderPackageContent(packages.maintenance)}
+                {renderPackageContent(packages.maintenance, 'maintenance')}
                 {/* Reservation Button */}
                 <div className="flex justify-end pt-6">
                   <a
@@ -228,7 +231,7 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
               </TabsContent>
 
               <TabsContent value="general" className="space-y-4">
-                {renderPackageContent(packages.general)}
+                {renderPackageContent(packages.general, 'general')}
                 {/* Reservation Button */}
                 <div className="flex justify-end pt-6">
                   <a
@@ -245,7 +248,10 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
               </TabsContent>
 
               <TabsContent value="postRenovation" className="space-y-4">
-                {renderPackageContent(packages.postRenovation)}
+                {renderPackageContent(
+                  packages.postRenovation,
+                  'postRenovation',
+                )}
                 {/* Reservation Button */}
                 <div className="flex justify-end pt-6">
                   <a

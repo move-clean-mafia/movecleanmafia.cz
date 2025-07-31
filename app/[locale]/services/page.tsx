@@ -7,7 +7,7 @@ import ServicesGrid from '../../../components/services-grid';
 import { CTASection } from '../../../components/cta-section';
 import CleaningPackages from '../../../components/cleaning-packages';
 
-import { Truck, Sparkles, Package, Warehouse, Award } from 'lucide-react';
+import { Truck, Sparkles, Package, Award } from 'lucide-react';
 
 interface ServicesPageProps {
   params: Promise<{ locale: string }>;
@@ -24,17 +24,17 @@ export async function generateMetadata({
     case 'cs':
       title = 'Služby - MoveCleanMafia.cz';
       description =
-        'Kompletní služby přepravy a úklidu - stěhování, úklid, balení a skladování';
+        'Kompletní služby stěhování a úklidu - stěhování, úklid a balení';
       break;
     case 'ua':
       title = 'Послуги - MoveCleanMafia.ua';
       description =
-        'Повний спектр послуг перевезення та прибирання - перевезення, прибирання, пакування та зберігання';
+        'Повний спектр послуг перевезення та прибирання - перевезення, прибирання та пакування';
       break;
     default:
       title = 'Services - MoveCleanMafia.com';
       description =
-        'Complete moving and cleaning services - moving, cleaning, packing and storage';
+        'Complete moving and cleaning services - moving, cleaning and packing';
       break;
   }
 
@@ -72,14 +72,6 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       features: t('services.packingFeatures') as unknown as string[],
       image: '/images/packing.jpg',
       imageAlt: 'Profesionální balení',
-    },
-    {
-      icon: Warehouse,
-      title: t('services.storage'),
-      description: t('services.storageDescription'),
-      features: t('services.storageFeatures') as unknown as string[],
-      image: '/images/storage.jpg',
-      imageAlt: 'Bezpečné skladování',
     },
   ];
 

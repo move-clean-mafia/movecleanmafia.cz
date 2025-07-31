@@ -213,9 +213,7 @@ export const Dashboard = () => {
                     <p className="text-sm font-medium text-gray-900">
                       Customer inquiry
                     </p>
-                    <p className="text-sm text-gray-600">
-                      Storage service question from customer
-                    </p>
+                    <p className="text-sm text-gray-600"></p>
                   </div>
                   <span className="text-sm text-gray-500">6 hours ago</span>
                 </div>

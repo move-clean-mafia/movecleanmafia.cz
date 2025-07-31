@@ -14,7 +14,7 @@
     },
     "story": {
       "paragraph1": "MoveCleanMafia was born from the need to provide reliable and quality moving and cleaning services. We started as a small team of enthusiasts with a vision to change the way people think about moving and cleaning.",
-      "paragraph2": "Today we are proud to offer comprehensive services that include not only moving and cleaning, but also packing, storage and much more. Our goal is always to exceed our clients' expectations.",
+      "paragraph2": "Today we are proud to offer comprehensive services that include not only moving and cleaning, but also packing and much more. Our goal is always to exceed our clients' expectations.",
       "title": "Our Story"
     },
     "subtitle": "Meet our team of professionals with years of experience",
@@ -544,7 +544,7 @@
       "other": "Other",
       "packing": "Packing",
       "spirometry": "",
-      "storage": "Storage",
+
       "urgent": ""
     },
     "submitReservation": "Submit Reservation",
@@ -599,14 +599,7 @@
     "safetyDescription": "Your belongings are safe with our insurance",
     "speed": "Speed",
     "speedDescription": "Efficient and fast execution of all work",
-    "storage": "Storage",
-    "storageDescription": "Safe storage of your belongings in our climate-controlled warehouses",
-    "storageFeatures": [
-      "Climate-controlled warehouses",
-      "24/7 security",
-      "Insurance",
-      "Flexible terms"
-    ],
+
     "subtitle": "Complete moving and cleaning services for your home and office",
     "title": "Our Services",
     "whyChooseUs": "Why Choose Us?",
@@ -795,7 +788,7 @@
       },
       "description": {
         "title": "2. Description of Service",
-        "content": "MoveCleanMafia provides cleaning, moving, packing, and storage services. We reserve the right to modify, suspend, or discontinue any part of our service at any time."
+        "content": "MoveCleanMafia provides cleaning, moving, and packing services. We reserve the right to modify, suspend, or discontinue any part of our service at any time."
       },
       "userResponsibilities": {
         "title": "3. User Responsibilities",

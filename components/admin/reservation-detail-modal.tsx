@@ -58,7 +58,7 @@ const serviceLabels = {
   moving: 'Moving',
   cleaning: 'Cleaning',
   packing: 'Packing',
-  storage: 'Storage',
+
   other: 'Other',
 };
 

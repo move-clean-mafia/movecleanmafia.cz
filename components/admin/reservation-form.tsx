@@ -42,7 +42,7 @@ const serviceOptions = [
   { value: 'moving', label: 'Moving' },
   { value: 'cleaning', label: 'Cleaning' },
   { value: 'packing', label: 'Packing' },
-  { value: 'storage', label: 'Storage' },
+
   { value: 'other', label: 'Other' },
 ];
 

@@ -185,7 +185,7 @@ export interface ReservationData {
   phone: string;
 
   // Service Details
-  service: 'moving' | 'cleaning' | 'packing' | 'storage' | 'other';
+  service: 'moving' | 'cleaning' | 'packing' | 'other';
   package?: 'maintenance' | 'general' | 'postRenovation';
 
   // Scheduling

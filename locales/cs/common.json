@@ -14,7 +14,7 @@
     },
     "story": {
       "paragraph1": "MoveCleanMafia vznikla z potřeby poskytovat spolehlivé a kvalitní služby přepravy a úklidu. Začali jsme jako malý tým nadšenců s vizí změnit způsob, jakým lidé přemýšlejí o stěhování a úklidu.",
-      "paragraph2": "Dnes jsme hrdí na to, že můžeme nabídnout komplexní služby, které zahrnují nejen přepravu a úklid, ale také balení, skladování a mnoho dalšího. Naším cílem je vždy překonat očekávání našich klientů.",
+      "paragraph2": "Dnes jsme hrdí na to, že můžeme nabídnout komplexní služby, které zahrnují nejen přepravu a úklid, ale také balení a mnoho dalšího. Naším cílem je vždy překonat očekávání našich klientů.",
       "title": "Náš příběh"
     },
     "subtitle": "Poznejte náš tým profesionálů s mnohaletými zkušenostmi",
@@ -544,7 +544,7 @@
       "other": "Jiné",
       "packing": "Balení",
       "spirometry": "",
-      "storage": "Skladování",
+
       "urgent": ""
     },
     "submitReservation": "Odeslat rezervaci",
@@ -599,14 +599,7 @@
     "safetyDescription": "Vaše věci jsou v bezpečí s naším pojištěním",
     "speed": "Rychlost",
     "speedDescription": "Efektivní a rychlé provedení všech prací",
-    "storage": "Skladování",
-    "storageDescription": "Bezpečné skladování vašich věcí v našich klimatizovaných skladech",
-    "storageFeatures": [
-      "Klimatizované sklady",
-      "24/7 zabezpečení",
-      "Pojištění",
-      "Flexibilní podmínky"
-    ],
+
     "subtitle": "Kompletní služby přepravy a úklidu pro váš domov a kancelář",
     "title": "Naše služby",
     "whyChooseUs": "Proč si vybrat nás?",
@@ -795,7 +788,7 @@
       },
       "description": {
         "title": "2. Popis služby",
-        "content": "MoveCleanMafia poskytuje služby úklidu, stěhování, balení a skladování. Vyhrazujeme si právo upravit, pozastavit nebo ukončit jakoukoli část naší služby kdykoli."
+        "content": "MoveCleanMafia poskytuje služby úklidu, stěhování a balení. Vyhrazujeme si právo upravit, pozastavit nebo ukončit jakoukoli část naší služby kdykoli."
       },
       "userResponsibilities": {
         "title": "3. Povinnosti uživatele",

@@ -17,7 +17,6 @@ import {
   Truck,
   Sparkles,
   Package,
-  Warehouse,
   Clock,
   Shield,
   Star,
@@ -149,15 +148,6 @@ const HomePage = async ({ params }: HomePageProps) => {
       highlightPrice: '350-450 Kč',
       image: '/images/packing.jpg',
       imageAlt: 'Profesionální balení',
-    },
-    {
-      icon: Warehouse,
-      title: t('services.storage'),
-      description: t('services.storageDescription'),
-      features: t('services.storageFeatures') as unknown as string[],
-      highlightPrice: 'Flexibilní',
-      image: '/images/storage.jpg',
-      imageAlt: 'Bezpečné skladování',
     },
   ];
 

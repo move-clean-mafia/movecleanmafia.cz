@@ -9,7 +9,7 @@ const reservationSchema = z.object({
   lastName: z.string().min(2, 'Last name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
   phone: z.string().min(9, 'Phone number must be at least 9 characters'),
-  service: z.enum(['moving', 'cleaning', 'packing', 'storage', 'other']),
+  service: z.enum(['moving', 'cleaning', 'packing', 'other']),
   package: z.string().optional(),
   date: z.string().min(1, 'Date is required'),
   time: z.enum(['morning', 'afternoon', 'evening']),

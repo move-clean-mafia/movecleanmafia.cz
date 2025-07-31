@@ -18,7 +18,7 @@ interface Reservation {
   phone: string;
 
   // Service Details
-  service: 'moving' | 'cleaning' | 'packing' | 'storage' | 'other';
+  service: 'moving' | 'cleaning' | 'packing' | 'other';
   package?: 'maintenance' | 'general' | 'postRenovation'; // Only for cleaning service
 
   // Scheduling

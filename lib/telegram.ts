@@ -117,7 +117,7 @@ export const formatReservationForTelegram = (
       moving: '🚚',
       cleaning: '🧹',
       packing: '📦',
-      storage: '🏪',
+
       other: '❓',
     };
     return emojiMap[service] || '❓';

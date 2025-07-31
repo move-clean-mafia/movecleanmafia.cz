@@ -130,7 +130,7 @@ const ServicesGrid = ({
               </a>
 
               <a
-                href={`/${locale}/reservation?service=${service.title === t('services.moving') ? 'moving' : service.title === t('services.cleaning') ? 'cleaning' : service.title === t('services.packing') ? 'packing' : 'storage'}`}
+                href={`/${locale}/reservation?service=${service.title === t('services.moving') ? 'moving' : service.title === t('services.cleaning') ? 'cleaning' : service.title === t('services.packing') ? 'packing' : 'other'}`}
                 className="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg group/book min-w-[120px] sm:min-w-[140px] h-10 sm:h-12 text-sm sm:text-base"
               >
                 {locale === 'cs'
