@@ -629,5 +629,405 @@
     "service": "Služba",
     "unit": "Jednotka",
     "whatIncluded": "Co je zahrnuto v ceně"
+  },
+  "privacyPolicy": {
+    "title": "Ochrana osobních údajů",
+    "lastUpdated": "Naposledy aktualizováno",
+    "sections": {
+      "introduction": {
+        "title": "1. Úvod",
+        "content": "MoveCleanMafia (\"my,\" \"naše,\" nebo \"nás\") se zavazuje chránit vaše soukromí. Tato Politika ochrany osobních údajů vysvětluje, jak shromažďujeme, používáme, zveřejňujeme a chráníme vaše informace při návštěvě našich webových stránek nebo používání našich služeb."
+      },
+      "informationWeCollect": {
+        "title": "2. Informace, které shromažďujeme",
+        "personalInformation": {
+          "title": "Osobní údaje",
+          "content": "Můžeme shromažďovat následující osobní údaje:",
+          "items": [
+            "Jméno a kontaktní informace (email, telefonní číslo)",
+            "Adresa a informace o poloze",
+            "Preference služeb a požadavky",
+            "Platební informace (zpracovávány bezpečně přes poskytovatele třetích stran)",
+            "Historie komunikace a korespondence"
+          ]
+        },
+        "automaticallyCollected": {
+          "title": "Automaticky shromažďované informace",
+          "content": "Při návštěvě našich webových stránek automaticky shromažďujeme:",
+          "items": [
+            "IP adresu a informace o zařízení",
+            "Typ a verzi prohlížeče",
+            "Navštívené stránky a čas strávený na nich",
+            "Odkazující webovou stránku",
+            "Cookies a podobné technologie"
+          ]
+        }
+      },
+      "howWeUse": {
+        "title": "3. Jak používáme vaše informace",
+        "content": "Shromážděné informace používáme pro následující účely:",
+        "items": [
+          "Poskytování a správa našich služeb",
+          "Zpracování rezervací a plateb",
+          "Komunikace s vámi o službách",
+          "Zlepšování našich webových stránek a služeb",
+          "Dodržování právních povinností",
+          "Odesílání marketingových sdělení (s vaším souhlasem)"
+        ]
+      },
+      "informationSharing": {
+        "title": "4. Sdílení informací",
+        "content": "Neprodáváme, nevyměňujeme ani jinak nepředáváme vaše osobní údaje třetím stranám, kromě následujících okolností:",
+        "items": [
+          {
+            "title": "Poskytovatelé služeb:",
+            "content": "Můžeme sdílet informace s důvěryhodnými poskytovateli služeb třetích stran, kteří nám pomáhají při provozu našich webových stránek a poskytování služeb"
+          },
+          {
+            "title": "Právní požadavky:",
+            "content": "Můžeme zveřejnit informace, když to vyžaduje zákon nebo pro ochranu našich práv a bezpečnosti"
+          },
+          {
+            "title": "Obchodní převody:",
+            "content": "V případě fúze nebo převzetí mohou být vaše informace převedeny"
+          },
+          {
+            "title": "Souhlas:",
+            "content": "Můžeme sdílet informace s vaším výslovným souhlasem"
+          }
+        ]
+      },
+      "dataSecurity": {
+        "title": "5. Zabezpečení dat",
+        "content": "Implementujeme vhodná technická a organizační opatření k ochraně vašich osobních údajů před neoprávněným přístupem, změnou, zveřejněním nebo zničením. Tato opatření zahrnují:",
+        "items": [
+          "Šifrování dat při přenosu a v klidu",
+          "Pravidelné bezpečnostní hodnocení",
+          "Kontrola přístupu a autentizace",
+          "Bezpečné postupy ukládání dat",
+          "Školení zaměstnanců o ochraně dat"
+        ]
+      },
+      "dataRetention": {
+        "title": "6. Uchovávání dat",
+        "content": "Vaše osobní údaje uchováváme pouze tak dlouho, jak je nutné k plnění účelů uvedených v této Politice ochrany osobních údajů, pokud není vyžadována nebo povolena delší doba uchovávání zákonem. Doba uchovávání závisí na:",
+        "items": [
+          "Druhu shromážděných informací",
+          "Účelu, pro který byly shromážděny",
+          "Právních a regulačních požadavcích",
+          "Vašem souhlasu a preferencích"
+        ]
+      },
+      "yourRights": {
+        "title": "7. Vaše práva",
+        "content": "V závislosti na vaší lokalitě můžete mít následující práva týkající se vašich osobních údajů:",
+        "items": [
+          {
+            "title": "Přístup:",
+            "content": "Požádat o kopii vašich osobních údajů"
+          },
+          {
+            "title": "Oprava:",
+            "content": "Požádat o opravu nepřesných informací"
+          },
+          {
+            "title": "Smazání:",
+            "content": "Požádat o smazání vašich osobních údajů"
+          },
+          {
+            "title": "Přenositelnost:",
+            "content": "Požádat o převod vašich dat do jiné služby"
+          },
+          {
+            "title": "Námitka:",
+            "content": "Namítat proti zpracování vašich osobních údajů"
+          },
+          {
+            "title": "Odvolání:",
+            "content": "Odvolat souhlas se zpracováním dat"
+          }
+        ]
+      },
+      "cookies": {
+        "title": "8. Cookies a sledovací technologie",
+        "content": "Používáme cookies a podobné technologie ke zlepšení vašeho zážitku na našich webových stránkách. Pro podrobné informace o našem používání cookies viz naše"
+      },
+      "internationalTransfers": {
+        "title": "9. Mezinárodní převody dat",
+        "content": "Vaše osobní údaje mohou být převedeny a zpracovány v zemích jiných než vaše vlastní. Zajišťujeme, že takové převody splňují platné zákony o ochraně dat a implementujeme vhodné záruky k ochraně vašich informací."
+      },
+      "childrensPrivacy": {
+        "title": "10. Ochrana soukromí dětí",
+        "content": "Naše služby nejsou určeny dětem mladším 16 let. Neúmyslně neshromažďujeme osobní údaje od dětí mladších 16 let. Pokud se domníváte, že jsme shromáždili informace od dítěte mladšího 16 let, okamžitě nás kontaktujte."
+      },
+      "changesToPolicy": {
+        "title": "11. Změny této politiky",
+        "content": "Tuto Politiku ochrany osobních údajů můžeme čas od času aktualizovat, abychom odráželi změny v našich postupech nebo z jiných provozních, právních nebo regulačních důvodů. O jakýchkoli významných změnách vás budeme informovat zveřejněním nové politiky na našich webových stránkách a aktualizací data \"Naposledy aktualizováno\"."
+      },
+      "contactInformation": {
+        "title": "12. Kontaktní informace",
+        "content": "Pokud máte jakékoli otázky týkající se této Politiky ochrany osobních údajů nebo našich postupů při práci s daty, kontaktujte nás:",
+        "details": {
+          "email": "Email: info@movecleanmafia.cz",
+          "phone": "Telefon: +420 725 555 095",
+          "address": "Adresa: [Vaše obchodní adresa]",
+          "dpo": "Pověřenec pro ochranu osobních údajů: [Kontaktní informace, pokud je to možné]"
+        }
+      },
+      "complaints": {
+        "title": "13. Stížnosti",
+        "content": "Pokud se domníváte, že jsme nepostupovali s vašimi osobními údaji v souladu s touto Politikou ochrany osobních údajů, máte právo podat stížnost u příslušného orgánu pro ochranu osobních údajů ve vaší jurisdikci."
+      }
+    },
+    "relatedPolicies": {
+      "title": "Související politiky",
+      "termsOfService": "Podmínky použití",
+      "cookiePolicy": "Zásady cookies"
+    }
+  },
+  "termsOfService": {
+    "title": "Podmínky použití",
+    "lastUpdated": "Naposledy aktualizováno",
+    "sections": {
+      "acceptance": {
+        "title": "1. Přijetí podmínek",
+        "content": "Přístupem a používáním webových stránek a služeb MoveCleanMafia přijímáte a souhlasíte s tím, že budete vázáni podmínkami a ustanoveními této dohody. Pokud nesouhlasíte s dodržováním výše uvedeného, prosím nepoužívejte tuto službu."
+      },
+      "description": {
+        "title": "2. Popis služby",
+        "content": "MoveCleanMafia poskytuje služby úklidu, stěhování, balení a skladování. Vyhrazujeme si právo upravit, pozastavit nebo ukončit jakoukoli část naší služby kdykoli."
+      },
+      "userResponsibilities": {
+        "title": "3. Povinnosti uživatele",
+        "items": [
+          "Poskytovat přesné a úplné informace při rezervaci služeb",
+          "Zajistit přístup k nemovitosti pro plánované služby",
+          "Zabezpečit cenné předměty před poskytnutím služby",
+          "Oznámit nám jakékoli zvláštní požadavky nebo obavy",
+          "Platit za služby podle dohody"
+        ]
+      },
+      "bookingAndCancellation": {
+        "title": "4. Rezervace a zrušení služby",
+        "booking": {
+          "title": "Rezervace:",
+          "content": "Služby musí být rezervovány předem přes naše webové stránky nebo telefonicky. Potvrzení bude poskytnuto e-mailem nebo SMS."
+        },
+        "cancellation": {
+          "title": "Zrušení:",
+          "content": "Zrušení musí být provedeno nejméně 24 hodin před plánovanou službou. Pozdní zrušení může být zpoplatněno."
+        },
+        "rescheduling": {
+          "title": "Přeplánování:",
+          "content": "Změny termínů lze provést až 24 hodin před plánovaným časem, s ohledem na dostupnost."
+        }
+      },
+      "pricingAndPayment": {
+        "title": "5. Ceny a platby",
+        "pricing": {
+          "title": "Ceny:",
+          "content": "Všechny ceny jsou uváděny v českých korunách (CZK) a zahrnují DPH, pokud není uvedeno jinak."
+        },
+        "payment": {
+          "title": "Platba:",
+          "content": "Platba je splatná po dokončení služeb, pokud není dohodnuto jinak. Přijímáme hotovost, bankovní převod a platby kartou."
+        },
+        "estimates": {
+          "title": "Odhad:",
+          "content": "Odhad služeb je založen na poskytnutých informacích a může být upraven podle skutečných podmínek."
+        }
+      },
+      "liabilityAndInsurance": {
+        "title": "6. Odpovědnost a pojištění",
+        "ourLiability": {
+          "title": "Naše odpovědnost:",
+          "content": "MoveCleanMafia je pojištěna pro obecnou odpovědnost. Jsme odpovědní za škody způsobené naší nedbalostí při poskytování služeb."
+        },
+        "customerResponsibility": {
+          "title": "Odpovědnost zákazníka:",
+          "content": "Zákazníci jsou odpovědní za zabezpečení cenných předmětů a zajištění bezpečného přístupu k nemovitosti."
+        },
+        "limitation": {
+          "title": "Omezení:",
+          "content": "Naše odpovědnost je omezena na náklady poskytnuté služby nebo skutečnou hodnotu poškozených předmětů, podle toho, co je nižší."
+        }
+      },
+      "privacyAndDataProtection": {
+        "title": "7. Ochrana soukromí a dat",
+        "content": "Zavazujeme se chránit vaše soukromí. Naše postupy při shromažďování a zpracování dat jsou popsány v naší Politice ochrany osobních údajů, která je součástí těchto podmínek."
+      },
+      "intellectualProperty": {
+        "title": "8. Duševní vlastnictví",
+        "content": "Veškerý obsah na těchto webových stránkách, včetně textu, grafiky, log a softwaru, je majetkem MoveCleanMafia a je chráněn autorskými právy."
+      },
+      "disputeResolution": {
+        "title": "9. Řešení sporů",
+        "content": "Jakékoli spory vyplývající z těchto podmínek nebo našich služeb budou řešeny vyjednáváním, mediací nebo právními řízeními v České republice."
+      },
+      "changesToTerms": {
+        "title": "10. Změny podmínek",
+        "content": "Vyhrazujeme si právo kdykoli upravit tyto podmínky. Změny budou účinné okamžitě po zveřejnění na našich webových stránkách. Pokračující používání našich služeb představuje přijetí upravených podmínek."
+      },
+      "contactInformation": {
+        "title": "11. Kontaktní informace",
+        "company": "MoveCleanMafia",
+        "email": "Email: info@movecleanmafia.cz",
+        "phone": "Telefon: +420 725 555 095",
+        "address": "Adresa: [Vaše obchodní adresa]"
+      },
+      "governingLaw": {
+        "title": "12. Rozhodné právo",
+        "content": "Tyto podmínky se řídí zákony České republiky. Jakákoli právní řízení budou vedena v českých soudech."
+      }
+    },
+    "legalNote": "Poznámka: Toto je šablona Podmínek použití. Doporučujeme konzultaci s právním odborníkem, abyste zajistili soulad s místními zákony a předpisy specifickými pro vaše podnikání a jurisdikci."
+  },
+  "cookiePolicy": {
+    "title": "Zásady cookies",
+    "lastUpdated": "Naposledy aktualizováno",
+    "sections": {
+      "whatAreCookies": {
+        "title": "Co jsou cookies?",
+        "content": "Cookies jsou malé textové soubory, které jsou umístěny na vašem zařízení při návštěvě našich webových stránek. Pomáhají nám poskytovat vám lepší zážitek zapamatováním si vaše preference a analýzou toho, jak používáte náš web."
+      },
+      "howWeUseCookies": {
+        "title": "Jak používáme cookies",
+        "content": "Používáme cookies pro několik účelů:",
+        "items": [
+          {
+            "title": "Nezbytné cookies:",
+            "content": "Tyto jsou nutné pro správné fungování webových stránek"
+          },
+          {
+            "title": "Analytické cookies:",
+            "content": "Tyto nám pomáhají pochopit, jak návštěvníci používají naše webové stránky"
+          },
+          {
+            "title": "Preferenční cookies:",
+            "content": "Tyto si pamatují vaše volby a nastavení"
+          },
+          {
+            "title": "Marketingové cookies:",
+            "content": "Tyto nám pomáhají zobrazovat relevantní reklamy"
+          }
+        ]
+      },
+      "typesOfCookies": {
+        "title": "Typy cookies, které používáme",
+        "necessary": {
+          "title": "Nezbytné cookies",
+          "content": "Tyto cookies jsou nezbytné pro správné fungování webových stránek. Umožňují základní funkce jako navigace po stránkách a přístup k zabezpečeným oblastem webových stránek.",
+          "items": [
+            "Autentizace a zabezpečení",
+            "Správa relací",
+            "Odesílání formulářů",
+            "Jazykové preference"
+          ]
+        },
+        "analytics": {
+          "title": "Analytické cookies",
+          "content": "Tyto cookies nám pomáhají pochopit, jak návštěvníci interagují s našimi webovými stránkami shromažďováním a reportováním informací anonymně.",
+          "items": [
+            "Zobrazení stránek a navigační vzory",
+            "Čas strávený na stránkách",
+            "Sledování chyb",
+            "Monitorování výkonu"
+          ]
+        },
+        "marketing": {
+          "title": "Marketingové cookies",
+          "content": "Tyto cookies se používají ke sledování návštěvníků napříč webovými stránkami za účelem zobrazování relevantních reklam.",
+          "items": [
+            "Cílení a retargeting reklam",
+            "Integrace sociálních médií",
+            "Sledování konverzí"
+          ]
+        },
+        "preferences": {
+          "title": "Preferenční cookies",
+          "content": "Tyto cookies umožňují webovým stránkám zapamatovat si volby, které děláte, a poskytovat vylepšené, osobnější funkce.",
+          "items": [
+            "Jazykové a regionální nastavení",
+            "Preference témat",
+            "Volby souhlasu s cookies",
+            "Preference uživatelského rozhraní"
+          ]
+        }
+      },
+      "thirdPartyCookies": {
+        "title": "Cookies třetích stran",
+        "content": "Můžeme používat služby třetích stran, které umisťují cookies na vaše zařízení:",
+        "items": [
+          {
+            "title": "Google Analytics:",
+            "content": "Pro analytiku webových stránek a monitorování výkonu"
+          },
+          {
+            "title": "Google Maps:",
+            "content": "Pro služby lokalizace a zobrazení map"
+          },
+          {
+            "title": "Sociální média:",
+            "content": "Pro integraci sociálních médií a sdílení"
+          },
+          {
+            "title": "Platební procesory:",
+            "content": "Pro bezpečné zpracování plateb"
+          }
+        ]
+      },
+      "managingPreferences": {
+        "title": "Správa vašich preferencí cookies",
+        "browserSettings": {
+          "title": "Nastavení prohlížeče:",
+          "content": "Cookies můžete ovládat přes nastavení vašeho prohlížeče. Většina prohlížečů umožňuje blokovat nebo mazat cookies."
+        },
+        "cookieConsent": {
+          "title": "Souhlas s cookies:",
+          "content": "Při první návštěvě našich webových stránek si můžete vybrat, které typy cookies přijmout."
+        },
+        "updatingPreferences": {
+          "title": "Aktualizace preferencí:",
+          "content": "Své preference cookies můžete kdykoli změnit kliknutím na tlačítko \"Přizpůsobit\" v našem patičce."
+        }
+      },
+      "cookieDuration": {
+        "title": "Doba trvání cookies",
+        "sessionCookies": {
+          "title": "Relaní cookies:",
+          "content": "Tyto jsou dočasné cookies, které se smažou, když zavřete prohlížeč."
+        },
+        "persistentCookies": {
+          "title": "Trvalé cookies:",
+          "content": "Tyto zůstávají na vašem zařízení po stanovenou dobu nebo dokud je nesmažete."
+        },
+        "thirdPartyCookies": {
+          "title": "Cookies třetích stran:",
+          "content": "Doba trvání cookies třetích stran je určena příslušnými poskytovateli služeb."
+        }
+      },
+      "dataProtection": {
+        "title": "Ochrana dat",
+        "content": "Zavazujeme se chránit vaše soukromí. Informace shromážděné prostřednictvím cookies se používají v souladu s naší Politikou ochrany osobních údajů a platnými zákony o ochraně dat."
+      },
+      "updatesToPolicy": {
+        "title": "Aktualizace této politiky",
+        "content": "Tuto Politiku cookies můžeme čas od času aktualizovat, abychom odráželi změny v našich postupech nebo z jiných provozních, právních nebo regulačních důvodů. O jakýchkoli významných změnách vás budeme informovat zveřejněním nové politiky na našich webových stránkách."
+      },
+      "contactUs": {
+        "title": "Kontaktujte nás",
+        "content": "Pokud máte jakékoli otázky týkající se našeho používání cookies, kontaktujte nás:",
+        "details": {
+          "email": "Email: info@movecleanmafia.cz",
+          "phone": "Telefon: +420 725 555 095",
+          "address": "Adresa: [Vaše obchodní adresa]"
+        }
+      }
+    },
+    "cookieConsentManagement": {
+      "title": "Správa souhlasu s cookies",
+      "content": "Své preference cookies můžete kdykoli spravovat kliknutím na tlačítko \"Přizpůsobit\" v patičce našich webových stránek.",
+      "button": "Spravovat preference cookies"
+    }
   }
 }

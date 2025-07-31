@@ -12,6 +12,7 @@ import { AuthProvider } from '../../components/auth-provider';
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
 import { FloatingReservationButton } from '../../components/floating-reservation-button';
+import { CookieConsent } from '../../components/cookie-consent';
 import { Toaster } from '../../components/ui/toaster';
 import '../globals.css';
 
@@ -120,6 +121,7 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
                 <main className="flex-1">{children}</main>
                 <Footer />
                 <FloatingReservationButton />
+                <CookieConsent />
                 <Toaster />
               </div>
               <Analytics />

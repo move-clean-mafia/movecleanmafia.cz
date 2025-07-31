@@ -629,5 +629,405 @@
     "service": "Service",
     "unit": "Unit",
     "whatIncluded": "What's included"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "sections": {
+      "introduction": {
+        "title": "1. Introduction",
+        "content": "MoveCleanMafia (\"we,\" \"our,\" or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services."
+      },
+      "informationWeCollect": {
+        "title": "2. Information We Collect",
+        "personalInformation": {
+          "title": "Personal Information",
+          "content": "We may collect the following personal information:",
+          "items": [
+            "Name and contact information (email, phone number)",
+            "Address and location information",
+            "Service preferences and requirements",
+            "Payment information (processed securely through third-party providers)",
+            "Communication history and correspondence"
+          ]
+        },
+        "automaticallyCollected": {
+          "title": "Automatically Collected Information",
+          "content": "When you visit our website, we automatically collect:",
+          "items": [
+            "IP address and device information",
+            "Browser type and version",
+            "Pages visited and time spent",
+            "Referring website",
+            "Cookies and similar technologies"
+          ]
+        }
+      },
+      "howWeUse": {
+        "title": "3. How We Use Your Information",
+        "content": "We use the collected information for the following purposes:",
+        "items": [
+          "Provide and manage our services",
+          "Process bookings and payments",
+          "Communicate with you about services",
+          "Improve our website and services",
+          "Comply with legal obligations",
+          "Send marketing communications (with your consent)"
+        ]
+      },
+      "informationSharing": {
+        "title": "4. Information Sharing",
+        "content": "We do not sell, trade, or otherwise transfer your personal information to third parties except in the following circumstances:",
+        "items": [
+          {
+            "title": "Service Providers:",
+            "content": "We may share information with trusted third-party service providers who assist us in operating our website and providing services"
+          },
+          {
+            "title": "Legal Requirements:",
+            "content": "We may disclose information when required by law or to protect our rights and safety"
+          },
+          {
+            "title": "Business Transfers:",
+            "content": "In the event of a merger or acquisition, your information may be transferred"
+          },
+          {
+            "title": "Consent:",
+            "content": "We may share information with your explicit consent"
+          }
+        ]
+      },
+      "dataSecurity": {
+        "title": "5. Data Security",
+        "content": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:",
+        "items": [
+          "Encryption of data in transit and at rest",
+          "Regular security assessments",
+          "Access controls and authentication",
+          "Secure data storage practices",
+          "Employee training on data protection"
+        ]
+      },
+      "dataRetention": {
+        "title": "6. Data Retention",
+        "content": "We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. The retention period depends on:",
+        "items": [
+          "The type of information collected",
+          "The purpose for which it was collected",
+          "Legal and regulatory requirements",
+          "Your consent and preferences"
+        ]
+      },
+      "yourRights": {
+        "title": "7. Your Rights",
+        "content": "Depending on your location, you may have the following rights regarding your personal information:",
+        "items": [
+          {
+            "title": "Access:",
+            "content": "Request a copy of your personal information"
+          },
+          {
+            "title": "Correction:",
+            "content": "Request correction of inaccurate information"
+          },
+          {
+            "title": "Deletion:",
+            "content": "Request deletion of your personal information"
+          },
+          {
+            "title": "Portability:",
+            "content": "Request transfer of your data to another service"
+          },
+          {
+            "title": "Objection:",
+            "content": "Object to processing of your personal information"
+          },
+          {
+            "title": "Withdrawal:",
+            "content": "Withdraw consent for data processing"
+          }
+        ]
+      },
+      "cookies": {
+        "title": "8. Cookies and Tracking Technologies",
+        "content": "We use cookies and similar technologies to enhance your experience on our website. For detailed information about our use of cookies, please see our"
+      },
+      "internationalTransfers": {
+        "title": "9. International Data Transfers",
+        "content": "Your personal information may be transferred to and processed in countries other than your own. We ensure that such transfers comply with applicable data protection laws and implement appropriate safeguards to protect your information."
+      },
+      "childrensPrivacy": {
+        "title": "10. Children's Privacy",
+        "content": "Our services are not intended for children under the age of 16. We do not knowingly collect personal information from children under 16. If you believe we have collected information from a child under 16, please contact us immediately."
+      },
+      "changesToPolicy": {
+        "title": "11. Changes to This Policy",
+        "content": "We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new policy on our website and updating the \"Last updated\" date."
+      },
+      "contactInformation": {
+        "title": "12. Contact Information",
+        "content": "If you have any questions about this Privacy Policy or our data practices, please contact us:",
+        "details": {
+          "email": "Email: info@movecleanmafia.com",
+          "phone": "Phone: +1 (234) 567-890",
+          "address": "Address: [Your Business Address]",
+          "dpo": "Data Protection Officer: [Contact information if applicable]"
+        }
+      },
+      "complaints": {
+        "title": "13. Complaints",
+        "content": "If you believe we have not handled your personal information in accordance with this Privacy Policy, you have the right to lodge a complaint with the relevant data protection authority in your jurisdiction."
+      }
+    },
+    "relatedPolicies": {
+      "title": "Related Policies",
+      "termsOfService": "Terms of Service",
+      "cookiePolicy": "Cookie Policy"
+    }
+  },
+  "termsOfService": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated",
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing and using the MoveCleanMafia website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service."
+      },
+      "description": {
+        "title": "2. Description of Service",
+        "content": "MoveCleanMafia provides cleaning, moving, packing, and storage services. We reserve the right to modify, suspend, or discontinue any part of our service at any time."
+      },
+      "userResponsibilities": {
+        "title": "3. User Responsibilities",
+        "items": [
+          "Provide accurate and complete information when booking services",
+          "Ensure access to the property for scheduled services",
+          "Secure valuable items before service provision",
+          "Notify us of any special requirements or concerns",
+          "Pay for services as agreed upon"
+        ]
+      },
+      "bookingAndCancellation": {
+        "title": "4. Service Booking and Cancellation",
+        "booking": {
+          "title": "Booking:",
+          "content": "Services must be booked in advance through our website or by phone. Confirmation will be provided via email or SMS."
+        },
+        "cancellation": {
+          "title": "Cancellation:",
+          "content": "Cancellations must be made at least 24 hours before the scheduled service. Late cancellations may incur a fee."
+        },
+        "rescheduling": {
+          "title": "Rescheduling:",
+          "content": "Changes to appointments can be made up to 24 hours before the scheduled time, subject to availability."
+        }
+      },
+      "pricingAndPayment": {
+        "title": "5. Pricing and Payment",
+        "pricing": {
+          "title": "Pricing:",
+          "content": "All prices are quoted in US Dollars (USD) and include taxes unless otherwise stated."
+        },
+        "payment": {
+          "title": "Payment:",
+          "content": "Payment is due upon completion of services unless otherwise agreed. We accept cash, bank transfer, and card payments."
+        },
+        "estimates": {
+          "title": "Estimates:",
+          "content": "Service estimates are based on information provided and may be adjusted based on actual conditions."
+        }
+      },
+      "liabilityAndInsurance": {
+        "title": "6. Liability and Insurance",
+        "ourLiability": {
+          "title": "Our Liability:",
+          "content": "MoveCleanMafia is insured for general liability. We are responsible for damage caused by our negligence during service provision."
+        },
+        "customerResponsibility": {
+          "title": "Customer Responsibility:",
+          "content": "Customers are responsible for securing valuable items and ensuring safe access to the property."
+        },
+        "limitation": {
+          "title": "Limitation:",
+          "content": "Our liability is limited to the cost of the service provided or the actual value of damaged items, whichever is less."
+        }
+      },
+      "privacyAndDataProtection": {
+        "title": "7. Privacy and Data Protection",
+        "content": "We are committed to protecting your privacy. Our data collection and processing practices are outlined in our Privacy Policy, which forms part of these terms."
+      },
+      "intellectualProperty": {
+        "title": "8. Intellectual Property",
+        "content": "All content on this website, including text, graphics, logos, and software, is the property of MoveCleanMafia and is protected by copyright laws."
+      },
+      "disputeResolution": {
+        "title": "9. Dispute Resolution",
+        "content": "Any disputes arising from these terms or our services will be resolved through negotiation, mediation, or legal proceedings in the United States."
+      },
+      "changesToTerms": {
+        "title": "10. Changes to Terms",
+        "content": "We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting on our website. Continued use of our services constitutes acceptance of modified terms."
+      },
+      "contactInformation": {
+        "title": "11. Contact Information",
+        "company": "MoveCleanMafia",
+        "email": "Email: info@movecleanmafia.com",
+        "phone": "Phone: +1 (234) 567-890",
+        "address": "Address: [Your Business Address]"
+      },
+      "governingLaw": {
+        "title": "12. Governing Law",
+        "content": "These terms are governed by the laws of the United States. Any legal proceedings will be conducted in US courts."
+      }
+    },
+    "legalNote": "Note: This is a template Terms of Service. We recommend consulting with a legal professional to ensure compliance with local laws and regulations specific to your business and jurisdiction."
+  },
+  "cookiePolicy": {
+    "title": "Cookie Policy",
+    "lastUpdated": "Last updated",
+    "sections": {
+      "whatAreCookies": {
+        "title": "What Are Cookies?",
+        "content": "Cookies are small text files that are placed on your device when you visit our website. They help us provide you with a better experience by remembering your preferences and analyzing how you use our site."
+      },
+      "howWeUseCookies": {
+        "title": "How We Use Cookies",
+        "content": "We use cookies for several purposes:",
+        "items": [
+          {
+            "title": "Essential cookies:",
+            "content": "These are necessary for the website to function properly"
+          },
+          {
+            "title": "Analytics cookies:",
+            "content": "These help us understand how visitors use our website"
+          },
+          {
+            "title": "Preference cookies:",
+            "content": "These remember your choices and settings"
+          },
+          {
+            "title": "Marketing cookies:",
+            "content": "These help us deliver relevant advertisements"
+          }
+        ]
+      },
+      "typesOfCookies": {
+        "title": "Types of Cookies We Use",
+        "necessary": {
+          "title": "Necessary Cookies",
+          "content": "These cookies are essential for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website.",
+          "items": [
+            "Authentication and security",
+            "Session management",
+            "Form submission",
+            "Language preferences"
+          ]
+        },
+        "analytics": {
+          "title": "Analytics Cookies",
+          "content": "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.",
+          "items": [
+            "Page views and navigation patterns",
+            "Time spent on pages",
+            "Error tracking",
+            "Performance monitoring"
+          ]
+        },
+        "marketing": {
+          "title": "Marketing Cookies",
+          "content": "These cookies are used to track visitors across websites to display relevant advertisements.",
+          "items": [
+            "Ad targeting and retargeting",
+            "Social media integration",
+            "Conversion tracking"
+          ]
+        },
+        "preferences": {
+          "title": "Preference Cookies",
+          "content": "These cookies allow the website to remember choices you make and provide enhanced, more personal features.",
+          "items": [
+            "Language and region settings",
+            "Theme preferences",
+            "Cookie consent choices",
+            "User interface preferences"
+          ]
+        }
+      },
+      "thirdPartyCookies": {
+        "title": "Third-Party Cookies",
+        "content": "We may use third-party services that place cookies on your device:",
+        "items": [
+          {
+            "title": "Google Analytics:",
+            "content": "For website analytics and performance monitoring"
+          },
+          {
+            "title": "Google Maps:",
+            "content": "For location services and map display"
+          },
+          {
+            "title": "Social Media:",
+            "content": "For social media integration and sharing"
+          },
+          {
+            "title": "Payment Processors:",
+            "content": "For secure payment processing"
+          }
+        ]
+      },
+      "managingPreferences": {
+        "title": "Managing Your Cookie Preferences",
+        "browserSettings": {
+          "title": "Browser Settings:",
+          "content": "You can control cookies through your browser settings. Most browsers allow you to block or delete cookies."
+        },
+        "cookieConsent": {
+          "title": "Cookie Consent:",
+          "content": "When you first visit our website, you can choose which types of cookies to accept."
+        },
+        "updatingPreferences": {
+          "title": "Updating Preferences:",
+          "content": "You can change your cookie preferences at any time by clicking the \"Customize\" button in our footer."
+        }
+      },
+      "cookieDuration": {
+        "title": "Cookie Duration",
+        "sessionCookies": {
+          "title": "Session Cookies:",
+          "content": "These are temporary cookies that are deleted when you close your browser."
+        },
+        "persistentCookies": {
+          "title": "Persistent Cookies:",
+          "content": "These remain on your device for a set period or until you delete them."
+        },
+        "thirdPartyCookies": {
+          "title": "Third-Party Cookies:",
+          "content": "The duration of third-party cookies is determined by the respective service providers."
+        }
+      },
+      "dataProtection": {
+        "title": "Data Protection",
+        "content": "We are committed to protecting your privacy. The information collected through cookies is used in accordance with our Privacy Policy and applicable data protection laws."
+      },
+      "updatesToPolicy": {
+        "title": "Updates to This Policy",
+        "content": "We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new policy on our website."
+      },
+      "contactUs": {
+        "title": "Contact Us",
+        "content": "If you have any questions about our use of cookies, please contact us:",
+        "details": {
+          "email": "Email: info@movecleanmafia.com",
+          "phone": "Phone: +1 (234) 567-890",
+          "address": "Address: [Your Business Address]"
+        }
+      }
+    },
+    "cookieConsentManagement": {
+      "title": "Cookie Consent Management",
+      "content": "You can manage your cookie preferences at any time by clicking the \"Customize\" button in our website footer.",
+      "button": "Manage Cookie Preferences"
+    }
   }
 }

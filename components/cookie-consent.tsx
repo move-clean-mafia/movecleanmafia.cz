@@ -118,56 +118,54 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({
     }));
   };
 
-  if (!showBanner) {
-    return null;
-  }
-
   return (
     <>
-      {/* Cookie Consent Banner */}
-      <div
-        className="fixed z-50
-          bottom-0 left-0 right-0 w-full max-w-full rounded-none px-2 py-3
-          sm:bottom-6 sm:left-6 sm:right-auto sm:w-full sm:max-w-sm sm:rounded-2xl sm:px-4 sm:py-4
-          bg-white border border-gray-200 shadow-xl flex flex-col gap-4"
-      >
-        <div>
-          <h3 className="text-sm font-semibold text-gray-900 mb-1">
-            {t('cookieConsent.banner.title')}
-          </h3>
-          <p className="text-sm text-gray-600">
-            {t('cookieConsent.banner.description')}
-          </p>
+      {/* Cookie Consent Banner - Only show if user hasn't made a choice */}
+      {showBanner && (
+        <div
+          className="fixed z-50
+            bottom-0 left-0 right-0 w-full max-w-full rounded-none px-2 py-3
+            sm:bottom-6 sm:left-6 sm:right-auto sm:w-full sm:max-w-sm sm:rounded-2xl sm:px-4 sm:py-4
+            bg-white border border-gray-200 shadow-xl flex flex-col gap-4"
+        >
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 mb-1">
+              {t('cookieConsent.banner.title')}
+            </h3>
+            <p className="text-sm text-gray-600">
+              {t('cookieConsent.banner.description')}
+            </p>
+          </div>
+          <div className="flex flex-col gap-2 w-full sm:flex-row sm:gap-2 sm:w-full">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setShowSettings(true)}
+              className="w-full sm:w-auto"
+            >
+              <Settings className="w-4 h-4 mr-2" />
+              {t('cookieConsent.banner.settings')}
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleDecline}
+              className="w-full sm:w-auto"
+            >
+              {t('cookieConsent.banner.decline')}
+            </Button>
+            <Button
+              size="sm"
+              onClick={handleAcceptAll}
+              className="w-full sm:w-auto bg-brand-primary hover:bg-brand-secondary text-white"
+            >
+              {t('cookieConsent.banner.accept')}
+            </Button>
+          </div>
         </div>
-        <div className="flex flex-col gap-2 w-full sm:flex-row sm:gap-2 sm:w-full">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setShowSettings(true)}
-            className="w-full sm:w-auto"
-          >
-            <Settings className="w-4 h-4 mr-2" />
-            {t('cookieConsent.banner.settings')}
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleDecline}
-            className="w-full sm:w-auto"
-          >
-            {t('cookieConsent.banner.decline')}
-          </Button>
-          <Button
-            size="sm"
-            onClick={handleAcceptAll}
-            className="w-full sm:w-auto bg-brand-primary hover:bg-brand-secondary text-white"
-          >
-            {t('cookieConsent.banner.accept')}
-          </Button>
-        </div>
-      </div>
+      )}
 
-      {/* Cookie Settings Dialog */}
+      {/* Cookie Settings Dialog - Always render this for button functionality */}
       <Dialog open={showSettings} onOpenChange={setShowSettings}>
         <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
