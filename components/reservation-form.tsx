@@ -16,12 +16,51 @@ import {
   SelectTrigger,
   SelectValue,
 } from './ui/select';
-import { Clock, MapPin, User, Truck, Home, AlertCircle } from 'lucide-react';
+import {
+  Clock,
+  MapPin,
+  User,
+  Truck,
+  Home,
+  AlertCircle,
+  Phone,
+} from 'lucide-react';
 import { useToast } from './ui/use-toast';
 
 interface ReservationFormProps {
   locale: string;
 }
+
+// Country codes data
+const countryCodes = [
+  { code: '+420', country: 'CZ', name: 'Czech Republic', flag: '🇨🇿' },
+  { code: '+421', country: 'SK', name: 'Slovakia', flag: '🇸🇰' },
+  { code: '+48', country: 'PL', name: 'Poland', flag: '🇵🇱' },
+  { code: '+43', country: 'AT', name: 'Austria', flag: '🇦🇹' },
+  { code: '+49', country: 'DE', name: 'Germany', flag: '🇩🇪' },
+  { code: '+33', country: 'FR', name: 'France', flag: '🇫🇷' },
+  { code: '+44', country: 'GB', name: 'United Kingdom', flag: '🇬🇧' },
+  { code: '+1', country: 'US', name: 'United States', flag: '🇺🇸' },
+  { code: '+380', country: 'UA', name: 'Ukraine', flag: '🇺🇦' },
+  { code: '+36', country: 'HU', name: 'Hungary', flag: '🇭🇺' },
+  { code: '+40', country: 'RO', name: 'Romania', flag: '🇷🇴' },
+  { code: '+39', country: 'IT', name: 'Italy', flag: '🇮🇹' },
+  { code: '+34', country: 'ES', name: 'Spain', flag: '🇪🇸' },
+  { code: '+31', country: 'NL', name: 'Netherlands', flag: '🇳🇱' },
+  { code: '+32', country: 'BE', name: 'Belgium', flag: '🇧🇪' },
+  { code: '+46', country: 'SE', name: 'Sweden', flag: '🇸🇪' },
+  { code: '+47', country: 'NO', name: 'Norway', flag: '🇳🇴' },
+  { code: '+45', country: 'DK', name: 'Denmark', flag: '🇩🇰' },
+  { code: '+358', country: 'FI', name: 'Finland', flag: '🇫🇮' },
+  { code: '+41', country: 'CH', name: 'Switzerland', flag: '🇨🇭' },
+  { code: '+352', country: 'LU', name: 'Luxembourg', flag: '🇱🇺' },
+  { code: '+371', country: 'LV', name: 'Latvia', flag: '🇱🇻' },
+  { code: '+372', country: 'EE', name: 'Estonia', flag: '🇪🇪' },
+  { code: '+370', country: 'LT', name: 'Lithuania', flag: '🇱🇹' },
+  { code: '+359', country: 'BG', name: 'Bulgaria', flag: '🇧🇬' },
+  { code: '+385', country: 'HR', name: 'Croatia', flag: '🇭🇷' },
+  { code: '+386', country: 'SI', name: 'Slovenia', flag: '🇸🇮' },
+];
 
 // Zod validation schema
 const reservationSchema = z.object({
@@ -31,7 +70,15 @@ const reservationSchema = z.object({
   phone: z.string().min(9, 'Phone number must be at least 9 characters'),
   service: z.enum(['moving', 'cleaning', 'packing', 'storage', 'other']),
   package: z.string().optional(),
-  date: z.string().min(1, 'Date is required'),
+  date: z
+    .string()
+    .min(1, 'Date is required')
+    .refine((date) => {
+      const selectedDate = new Date(date);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      return selectedDate >= today;
+    }, 'Date cannot be in the past'),
   time: z.enum(['morning', 'afternoon', 'evening']),
   pickupAddress: z.string().optional(),
   deliveryAddress: z.string().optional(),
@@ -75,6 +122,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
   // Form state
   const [selectedService, setSelectedService] = useState(serviceParam || '');
   const [selectedPackage, setSelectedPackage] = useState(packageParam || '');
+  const [selectedCountryCode, setSelectedCountryCode] = useState('+420'); // Default to Czech Republic
   const [validationErrors, setValidationErrors] = useState<
     Record<string, string>
   >({});
@@ -93,6 +141,9 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
     apartmentSize: '',
     message: '',
   });
+
+  // Get today's date in YYYY-MM-DD format for min attribute
+  const today = new Date().toISOString().split('T')[0];
 
   // React Query mutation for form submission
   const submitMutation = useMutation({
@@ -126,6 +177,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
       });
       setSelectedService('');
       setSelectedPackage('');
+      setSelectedCountryCode('+420');
     },
     onError: (error: Error) => {
       // Handle error (show error message)
@@ -201,6 +253,10 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
     setFormData((prev) => ({ ...prev, service: value as any, package: '' }));
   };
 
+  const handleCountryCodeChange = (value: string) => {
+    setSelectedCountryCode(value);
+  };
+
   // Helper function to get error for a specific field
   const getFieldError = (fieldName: string): string | undefined => {
     return validationErrors[fieldName];
@@ -218,8 +274,14 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
       // Clear previous validation errors
       setValidationErrors({});
 
+      // Combine country code with phone number for submission
+      const submissionData = {
+        ...formData,
+        phone: `${selectedCountryCode}${formData.phone}`,
+      };
+
       // Validate form data
-      const validatedData = reservationSchema.parse(formData);
+      const validatedData = reservationSchema.parse(submissionData);
 
       // Submit using React Query mutation
       submitMutation.mutate(validatedData);
@@ -334,23 +396,65 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="phone"
-              className="text-sm font-source-sans font-medium text-gray-700"
+              className="text-sm font-source-sans font-medium text-gray-700 flex items-center"
             >
+              <Phone className="w-4 h-4 mr-2 text-brand-primary" />
               {t('contact.form.phone')}
             </Label>
-            <Input
-              id="phone"
-              type="tel"
-              value={formData.phone}
-              onChange={(e) => handleInputChange('phone', e.target.value)}
-              className={`mt-1 font-source-sans font-light ${
-                hasFieldError('phone')
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-                  : ''
-              }`}
-              placeholder={t('contact.form.phonePlaceholder')}
-              required
-            />
+            <div className="mt-1 flex">
+              <Select
+                value={selectedCountryCode}
+                onValueChange={handleCountryCodeChange}
+              >
+                <SelectTrigger className="w-28 font-source-sans font-light rounded-r-none border-r-0">
+                  <SelectValue>
+                    {(() => {
+                      const selectedCountry = countryCodes.find(
+                        (country) => country.code === selectedCountryCode,
+                      );
+                      return (
+                        <div className="flex items-center space-x-2">
+                          <span className="text-lg">
+                            {selectedCountry?.flag}
+                          </span>
+                          <span className="text-sm">{selectedCountryCode}</span>
+                        </div>
+                      );
+                    })()}
+                  </SelectValue>
+                </SelectTrigger>
+                <SelectContent className="max-h-60">
+                  {countryCodes.map((country) => (
+                    <SelectItem key={country.code} value={country.code}>
+                      <div className="flex items-center space-x-3">
+                        <span className="text-lg">{country.flag}</span>
+                        <div className="flex flex-col">
+                          <span className="text-sm font-medium">
+                            {country.name}
+                          </span>
+                          <span className="text-xs text-gray-500">
+                            {country.code}
+                          </span>
+                        </div>
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Input
+                id="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={(e) => handleInputChange('phone', e.target.value)}
+                className={`flex-1 font-source-sans font-light rounded-l-none ${
+                  hasFieldError('phone')
+                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
+                    : ''
+                }`}
+                placeholder="123 456 789"
+                required
+              />
+            </div>
             {hasFieldError('phone') && (
               <div className="mt-1 flex items-center text-sm text-red-600">
                 <AlertCircle className="w-4 h-4 mr-1" />
@@ -453,6 +557,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               type="date"
               value={formData.date}
               onChange={(e) => handleInputChange('date', e.target.value)}
+              min={today}
               className={`mt-1 font-source-sans font-light ${
                 hasFieldError('date')
                   ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
