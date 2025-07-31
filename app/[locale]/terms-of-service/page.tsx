@@ -1,11 +1,6 @@
-import { Metadata } from 'next';
-import { useTranslation } from 'react-i18next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Terms of Service - MoveCleanMafia',
-  description:
-    'Terms of Service and legal conditions for using MoveCleanMafia services',
-};
+import { useTranslation } from 'react-i18next';
 
 export default function TermsOfServicePage() {
   const { t } = useTranslation('common');

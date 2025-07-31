@@ -1,11 +1,6 @@
-import { Metadata } from 'next';
-import { useTranslation } from 'react-i18next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy - MoveCleanMafia',
-  description:
-    'Learn about how MoveCleanMafia collects, uses, and protects your personal information',
-};
+import { useTranslation } from 'react-i18next';
 
 export default function PrivacyPolicyPage() {
   const { t } = useTranslation('common');
