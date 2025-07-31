@@ -9,18 +9,8 @@ import {
   CardHeader,
   CardTitle,
 } from '../../../components/ui/card';
-import { Button } from '../../../components/ui/button';
-import { Input } from '../../../components/ui/input';
-import { Label } from '../../../components/ui/label';
-import { Textarea } from '../../../components/ui/textarea';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '../../../components/ui/select';
-import { Phone, Mail, MapPin, Clock, MessageSquare, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
+import ReservationForm from '../../../components/reservation-form';
 
 interface ContactPageProps {
   params: Promise<{ locale: string }>;
@@ -121,17 +111,6 @@ const ContactPage = async ({ params }: ContactPageProps) => {
     },
   ];
 
-  const services = [
-    { value: 'moving', label: t('services.moving') },
-    { value: 'cleaning', label: t('services.cleaning') },
-    { value: 'packing', label: t('services.packing') },
-    { value: 'storage', label: t('services.storage') },
-    {
-      value: 'other',
-      label: locale === 'cs' ? 'Jiné' : locale === 'ua' ? 'Інше' : 'Other',
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -148,11 +127,11 @@ const ContactPage = async ({ params }: ContactPageProps) => {
         </div>
       </section>
 
-      {/* Contact Form and Info Section */}
+      {/* Reservation Form and Info Section */}
       <section id="contact" className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
+            {/* Reservation Form */}
             <div>
               <Card className="border-0 shadow-lg">
                 <CardHeader className="bg-gradient-to-r from-brand-light to-brand-primary/20 border-b border-brand-primary/30">
@@ -161,126 +140,15 @@ const ContactPage = async ({ params }: ContactPageProps) => {
                       <MessageSquare className="w-6 h-6 text-white" />
                     </div>
                     <CardTitle className="text-2xl font-oswald font-light text-gray-900">
-                      {t('contact.form.title')}
+                      {t('reservation.title')}
                     </CardTitle>
                   </div>
                   <CardDescription className="text-gray-600 font-source-sans font-light text-base">
-                    {t('contact.form.subtitle')}
+                    {t('reservation.subtitle')}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <form className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <Label
-                          htmlFor="firstName"
-                          className="text-sm font-source-sans font-medium text-gray-700"
-                        >
-                          {t('contact.form.firstName')}
-                        </Label>
-                        <Input
-                          id="firstName"
-                          type="text"
-                          className="mt-1 font-source-sans font-light"
-                          placeholder={t('contact.form.firstNamePlaceholder')}
-                        />
-                      </div>
-                      <div>
-                        <Label
-                          htmlFor="lastName"
-                          className="text-sm font-source-sans font-medium text-gray-700"
-                        >
-                          {t('contact.form.lastName')}
-                        </Label>
-                        <Input
-                          id="lastName"
-                          type="text"
-                          className="mt-1 font-source-sans font-light"
-                          placeholder={t('contact.form.lastNamePlaceholder')}
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <Label
-                          htmlFor="email"
-                          className="text-sm font-source-sans font-medium text-gray-700"
-                        >
-                          {t('contact.form.email')}
-                        </Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          className="mt-1 font-source-sans font-light"
-                          placeholder={t('contact.form.emailPlaceholder')}
-                        />
-                      </div>
-                      <div>
-                        <Label
-                          htmlFor="phone"
-                          className="text-sm font-source-sans font-medium text-gray-700"
-                        >
-                          {t('contact.form.phone')}
-                        </Label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          className="mt-1 font-source-sans font-light"
-                          placeholder={t('contact.form.phonePlaceholder')}
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <Label
-                        htmlFor="service"
-                        className="text-sm font-source-sans font-medium text-gray-700"
-                      >
-                        {t('contact.form.service')}
-                      </Label>
-                      <Select>
-                        <SelectTrigger className="mt-1 font-source-sans font-light">
-                          <SelectValue
-                            placeholder={t('contact.form.servicePlaceholder')}
-                          />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {services.map((service) => (
-                            <SelectItem
-                              key={service.value}
-                              value={service.value}
-                            >
-                              {service.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <div>
-                      <Label
-                        htmlFor="message"
-                        className="text-sm font-source-sans font-medium text-gray-700"
-                      >
-                        {t('contact.form.message')}
-                      </Label>
-                      <Textarea
-                        id="message"
-                        className="mt-1 font-source-sans font-light"
-                        rows={4}
-                        placeholder={t('contact.form.messagePlaceholder')}
-                      />
-                    </div>
-
-                    <Button
-                      type="submit"
-                      className="w-full bg-brand-primary hover:bg-brand-secondary font-source-sans font-medium"
-                    >
-                      <Send className="w-4 h-4 mr-2" />
-                      {t('contact.form.send')}
-                    </Button>
-                  </form>
+                  <ReservationForm locale={locale} />
                 </CardContent>
               </Card>
             </div>

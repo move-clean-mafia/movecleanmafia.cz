@@ -545,6 +545,22 @@
       "over70": "понад 70 м²"
     }
   },
+  "homepage": {
+    "pricingSection": {
+      "title": "Ціни",
+      "subtitle": "Прозорі ціни для всіх наших послуг",
+      "showAllPrices": "Переглянути всі ціни"
+    },
+    "contactSection": {
+      "title": "Контактна інформація",
+      "subtitle": "Ми тут для вас кожен день. Не соромтеся зв'язуватися з нами.",
+      "phone": "Телефон",
+      "email": "Email",
+      "address": "Адреса",
+      "emailValue": "info@movecleanmafia.ua",
+      "addressValue": "Київ, Україна"
+    }
+  },
   "reservation": {
     "title": "Онлайн Резервація",
     "subtitle": "Забронюйте наші послуги швидко та просто онлайн",

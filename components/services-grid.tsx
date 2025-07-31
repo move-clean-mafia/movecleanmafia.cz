@@ -34,7 +34,9 @@ const ServicesGrid = ({
   useSpecificLinks = false,
 }: ServicesGridProps) => {
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${className}`}>
+    <div
+      className={`grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 ${className}`}
+    >
       {services.map((service, index) => (
         <div
           key={index}
@@ -42,7 +44,7 @@ const ServicesGrid = ({
           style={{ animationDelay: `${index * 0.2}s` }}
         >
           {/* Large Background Image */}
-          <div className="relative h-72 lg:h-80 overflow-hidden">
+          <div className="relative h-56 sm:h-64 lg:h-72 xl:h-80 overflow-hidden">
             <Image
               src={service.image}
               alt={service.imageAlt}
@@ -54,18 +56,18 @@ const ServicesGrid = ({
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
             {/* Icon Badge on Image */}
-            <div className="absolute top-6 left-6">
-              <div className="w-16 h-16 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <service.icon className="w-8 h-8 text-brand-primary" />
+            <div className="absolute top-4 sm:top-6 left-4 sm:left-6">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-brand-primary" />
               </div>
             </div>
 
             {/* Price Badge (if enabled) */}
             {showPrices && service.highlightPrice && (
-              <div className="absolute top-6 right-6">
+              <div className="absolute top-4 sm:top-6 right-4 sm:right-6">
                 <Badge
                   variant="secondary"
-                  className="bg-white/95 backdrop-blur-sm text-brand-primary font-bold text-lg px-4 py-2 shadow-lg"
+                  className="bg-white/95 backdrop-blur-sm text-brand-primary font-bold text-sm sm:text-lg px-3 sm:px-4 py-1 sm:py-2 shadow-lg"
                 >
                   {t('servicesGrid.priceFrom')} {service.highlightPrice}
                 </Badge>
@@ -73,30 +75,30 @@ const ServicesGrid = ({
             )}
 
             {/* Service Title on Image */}
-            <div className="absolute bottom-6 left-6 right-6">
-              <h3 className="text-3xl font-bold text-white font-heading mb-2 drop-shadow-lg">
+            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white font-heading mb-2 drop-shadow-lg">
                 {service.title}
               </h3>
             </div>
           </div>
 
           {/* Content Card */}
-          <div className="p-8 bg-white flex flex-col min-h-[300px]">
+          <div className="p-6 sm:p-8 bg-white flex flex-col min-h-[280px] sm:min-h-[300px]">
             {/* Description */}
-            <p className="text-gray-600 leading-relaxed mb-6 text-lg font-light">
+            <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-base sm:text-lg font-light">
               {service.description}
             </p>
 
             {/* Features List */}
             {showFeatures && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-6 sm:mb-8">
                 {service.features.slice(0, 4).map((feature, featureIndex) => (
                   <div
                     key={featureIndex}
-                    className="flex items-center space-x-3 group/feature"
+                    className="flex items-center space-x-2 sm:space-x-3 group/feature"
                   >
-                    <div className="w-2 h-2 bg-brand-primary rounded-full flex-shrink-0 group-hover/feature:scale-125 transition-transform duration-300"></div>
-                    <span className="text-gray-700 font-light text-sm">
+                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-primary rounded-full flex-shrink-0 group-hover/feature:scale-125 transition-transform duration-300"></div>
+                    <span className="text-gray-700 font-light text-xs sm:text-sm">
                       {feature}
                     </span>
                   </div>
@@ -108,7 +110,7 @@ const ServicesGrid = ({
             <div className="flex-1"></div>
 
             {/* CTA Buttons */}
-            <div className="flex justify-between items-center pt-6">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center pt-4 sm:pt-6 space-y-3 sm:space-y-0">
               <a
                 href={
                   useSpecificLinks
@@ -121,15 +123,15 @@ const ServicesGrid = ({
                           : `/${locale}/services#detailed-services`
                     : `/${locale}/services#detailed-services`
                 }
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-brand-primary text-brand-primary font-semibold rounded-xl hover:bg-brand-primary hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg group/link min-w-[140px] h-12"
+                className="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-brand-primary text-brand-primary font-semibold rounded-xl hover:bg-brand-primary hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg group/link min-w-[120px] sm:min-w-[140px] h-10 sm:h-12 text-sm sm:text-base"
               >
                 {t('servicesGrid.learnMore')}
-                <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-200" />
+                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-200" />
               </a>
 
               <a
                 href={`/${locale}/reservation?service=${service.title === t('services.moving') ? 'moving' : service.title === t('services.cleaning') ? 'cleaning' : service.title === t('services.packing') ? 'packing' : 'storage'}`}
-                className="inline-flex items-center justify-center px-6 py-3 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg group/book min-w-[140px] h-12"
+                className="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg group/book min-w-[120px] sm:min-w-[140px] h-10 sm:h-12 text-sm sm:text-base"
               >
                 {locale === 'cs'
                   ? 'Rezervovat'

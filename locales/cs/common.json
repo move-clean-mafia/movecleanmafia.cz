@@ -545,6 +545,22 @@
       "over70": "nad 70 m²"
     }
   },
+  "homepage": {
+    "pricingSection": {
+      "title": "Cenové nabídky",
+      "subtitle": "Transparentní ceny pro všechny naše služby",
+      "showAllPrices": "Zobrazit všechny ceny"
+    },
+    "contactSection": {
+      "title": "Kontaktní informace",
+      "subtitle": "Jsme tu pro vás každý den. Neváhejte nás kontaktovat.",
+      "phone": "Telefon",
+      "email": "Email",
+      "address": "Adresa",
+      "emailValue": "info@movecleanmafia.cz",
+      "addressValue": "Praha, Česká republika"
+    }
+  },
   "reservation": {
     "title": "Online Rezervace",
     "subtitle": "Rezervujte si naše služby rychle a jednoduše online",

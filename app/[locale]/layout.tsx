@@ -101,6 +101,12 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
 
   return (
     <html lang={locale} dir="ltr">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+        />
+      </head>
       <body className={`${oswald.variable} ${sourceSans.variable} antialiased`}>
         <I18nProvider
           locale={locale as SupportedLanguage}

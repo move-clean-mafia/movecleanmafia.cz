@@ -545,6 +545,22 @@
       "over70": "over 70 m²"
     }
   },
+  "homepage": {
+    "pricingSection": {
+      "title": "Pricing",
+      "subtitle": "Transparent prices for all our services",
+      "showAllPrices": "View all prices"
+    },
+    "contactSection": {
+      "title": "Contact Information",
+      "subtitle": "We are here for you every day. Don't hesitate to contact us.",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "emailValue": "info@movecleanmafia.com",
+      "addressValue": "New York, USA"
+    }
+  },
   "reservation": {
     "title": "Online Reservation",
     "subtitle": "Book our services quickly and easily online",

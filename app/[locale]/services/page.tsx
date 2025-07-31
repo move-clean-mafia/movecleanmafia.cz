@@ -5,20 +5,10 @@ import { type SupportedLanguage } from '../../../lib/i18n';
 
 import { Badge } from '../../../components/ui/badge';
 import ServicesGrid from '../../../components/services-grid';
-import BenefitsGrid from '../../../components/benefits-grid';
 import { CTASection } from '../../../components/cta-section';
 import CleaningPackages from '../../../components/cleaning-packages';
 
-import {
-  Truck,
-  Sparkles,
-  Package,
-  Warehouse,
-  Clock,
-  Shield,
-  Star,
-  Award,
-} from 'lucide-react';
+import { Truck, Sparkles, Package, Warehouse, Award } from 'lucide-react';
 
 interface ServicesPageProps {
   params: Promise<{ locale: string }>;
@@ -94,24 +84,6 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
     },
   ];
 
-  const benefits = [
-    {
-      icon: Clock,
-      title: t('services.speed'),
-      description: t('services.speedDescription'),
-    },
-    {
-      icon: Shield,
-      title: t('services.safety'),
-      description: t('services.safetyDescription'),
-    },
-    {
-      icon: Star,
-      title: t('services.quality'),
-      description: t('services.qualityDescription'),
-    },
-  ];
-
   // Get detailed services data
   const movingServices = t(
     'detailedServices.movingAndTransport.items',
@@ -139,41 +111,45 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section - Professional Design */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-secondary via-brand-secondary to-brand-primary text-white py-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-secondary via-brand-secondary to-brand-primary text-white py-12 sm:py-16 lg:py-20">
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl mb-8 border border-white/20">
-              <Award className="w-8 h-8 text-white" />
+            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-white/10 backdrop-blur-sm rounded-2xl mb-6 sm:mb-8 border border-white/20">
+              <Award className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-oswald font-light mb-8 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-oswald font-light mb-6 sm:mb-8 leading-tight">
               {t('services.title')}
             </h1>
-            <p className="text-xl sm:text-2xl font-source-sans font-light opacity-90 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl lg:text-2xl font-source-sans font-light opacity-90 max-w-4xl mx-auto leading-relaxed">
               {t('services.subtitle')}
             </p>
 
             {/* Professional Stats */}
-            <div className="flex flex-wrap justify-center gap-8 mt-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 border border-white/20">
-                <div className="text-3xl font-bold text-brand-primary">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-12">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-white/20">
+                <div className="text-2xl sm:text-3xl font-bold text-brand-primary">
                   500+
                 </div>
-                <div className="text-sm opacity-80">Spokojených klientů</div>
+                <div className="text-xs sm:text-sm opacity-80">
+                  Spokojených klientů
+                </div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 border border-white/20">
-                <div className="text-3xl font-bold text-brand-primary">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-white/20">
+                <div className="text-2xl sm:text-3xl font-bold text-brand-primary">
                   24/7
                 </div>
-                <div className="text-sm opacity-80">Dostupnost</div>
+                <div className="text-xs sm:text-sm opacity-80">Dostupnost</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 border border-white/20">
-                <div className="text-3xl font-bold text-brand-primary">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-white/20">
+                <div className="text-2xl sm:text-3xl font-bold text-brand-primary">
                   100%
                 </div>
-                <div className="text-sm opacity-80">Záruka kvality</div>
+                <div className="text-xs sm:text-sm opacity-80">
+                  Záruka kvality
+                </div>
               </div>
             </div>
           </div>
@@ -181,16 +157,16 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       </section>
 
       {/* Services Overview - Clean Professional Layout */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-6">
-              <Award className="w-8 h-8 text-white" />
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-brand-primary rounded-2xl mb-4 sm:mb-6">
+              <Award className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </div>
-            <h2 className="text-4xl sm:text-5xl font-oswald font-light text-gray-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-oswald font-light text-gray-900 mb-4 sm:mb-6">
               {t('homepage.servicesSection.title')}
             </h2>
-            <p className="text-xl font-source-sans font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl font-source-sans font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
               {t('homepage.servicesSection.subtitle')}
             </p>
           </div>
@@ -227,13 +203,13 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-gray-200">
-                        <th className="text-left py-6 px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
                           {t('servicesPage.service')}
                         </th>
-                        <th className="text-left py-6 px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
                           {t('servicesPage.unit')}
                         </th>
-                        <th className="text-right py-6 px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-right py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
                           {t('servicesPage.price')}
                         </th>
                       </tr>
@@ -244,13 +220,13 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                           key={index}
                           className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 group"
                         >
-                          <td className="py-6 px-6 font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors">
                             {service.name}
                           </td>
-                          <td className="py-6 px-6 font-source-sans font-light text-gray-600">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-light text-gray-600">
                             {service.unit}
                           </td>
-                          <td className="py-6 px-6 font-source-sans font-bold text-brand-primary text-right text-lg">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-bold text-brand-primary text-right text-lg">
                             <div className="break-words">{service.price}</div>
                           </td>
                         </tr>
@@ -349,13 +325,13 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-gray-200">
-                        <th className="text-left py-6 px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
                           {t('servicesPage.service')}
                         </th>
-                        <th className="text-left py-6 px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
                           {t('servicesPage.unit')}
                         </th>
-                        <th className="text-right py-6 px-6 font-oswald font-medium text-gray-900 text-lg">
+                        <th className="text-right py-1 px-1 sm:py-6 sm:px-6 font-oswald font-medium text-gray-900 text-lg">
                           {t('servicesPage.price')}
                         </th>
                       </tr>
@@ -366,13 +342,13 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                           key={index}
                           className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 group"
                         >
-                          <td className="py-6 px-6 font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-light text-gray-700 group-hover:text-gray-900 transition-colors">
                             {service.name}
                           </td>
-                          <td className="py-6 px-6 font-source-sans font-light text-gray-600">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-light text-gray-600">
                             {service.unit}
                           </td>
-                          <td className="py-6 px-6 font-source-sans font-bold text-brand-primary text-right text-lg">
+                          <td className="py-1 px-1 sm:py-6 sm:px-6 font-source-sans font-bold text-brand-primary text-right text-lg">
                             <div className="break-words">{service.price}</div>
                           </td>
                         </tr>
@@ -397,49 +373,6 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
               </div>
             </div>
           </div>
-
-          {/* Additional Services */}
-          <div className="mb-16">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-6">
-                <Package className="w-8 h-8 text-white" />
-              </div>
-              <h2 className="text-4xl sm:text-5xl font-oswald font-light text-gray-900 mb-4">
-                {t('detailedServices.materialPurchase.title')}
-              </h2>
-              <div className="w-24 h-1 bg-brand-primary mx-auto rounded-full"></div>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-              <div className="p-12 text-center">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-brand-primary rounded-3xl mb-6">
-                  <Package className="w-10 h-10 text-white" />
-                </div>
-                <p className="text-gray-600 font-source-sans font-light text-xl max-w-3xl mx-auto leading-relaxed">
-                  {t('detailedServices.materialPurchase.description')}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section - Professional Design */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-6">
-              <Star className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-4xl sm:text-5xl font-oswald font-light text-gray-900 mb-6">
-              {t('services.whyChooseUs')}
-            </h2>
-            <p className="text-xl font-source-sans font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              {t('services.whyChooseUsSubtitle')}
-            </p>
-          </div>
-
-          <BenefitsGrid benefits={benefits} />
         </div>
       </section>
 

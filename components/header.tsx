@@ -42,26 +42,29 @@ export const Header: React.FC = () => {
       <header className="sticky top-0 z-50 bg-white border-b-2 border-gray-300 backdrop-blur-sm bg-white/95 shadow-lg">
         {/* Main navigation */}
         <div className="bg-white w-full">
-          <div className="w-full px-2 sm:px-4 lg:px-6 xl:px-8">
-            <div className="flex items-center h-24">
+          <div className="w-full px-3 sm:px-4 lg:px-6 xl:px-8">
+            <div className="flex items-center h-16 sm:h-20 lg:h-24">
               {/* Logo */}
-              <Link href={`/${locale}`} className="flex-shrink-0 mr-8">
+              <Link
+                href={`/${locale}`}
+                className="flex-shrink-0 mr-4 sm:mr-6 lg:mr-8"
+              >
                 <Logo
-                  width={160}
-                  height={48}
-                  className="hover:opacity-80 transition-opacity duration-200"
+                  width={120}
+                  height={36}
+                  className="sm:w-[140px] sm:h-[42px] lg:w-[160px] lg:h-[48px] hover:opacity-80 transition-opacity duration-200"
                 />
               </Link>
 
               {/* Contact Info */}
-              <div className="flex items-center space-x-4 lg:space-x-5">
+              <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-5">
                 {/* Phone Button - Direct Call */}
                 <a
                   href={`tel:${t('header.phone1')}`}
-                  className="p-3 rounded-lg bg-brand-light hover:bg-brand-primary/20 transition-colors duration-200 border border-gray-200 shadow-sm"
+                  className="p-2 sm:p-3 rounded-lg bg-brand-light hover:bg-brand-primary/20 transition-colors duration-200 border border-gray-200 shadow-sm"
                   aria-label={t('header.phone1')}
                 >
-                  <Phone className="w-5 h-5 text-brand-primary" />
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brand-primary" />
                 </a>
               </div>
 
@@ -86,14 +89,14 @@ export const Header: React.FC = () => {
               </div>
 
               {/* Mobile controls */}
-              <div className="flex lg:hidden ml-auto items-center space-x-3">
+              <div className="flex lg:hidden ml-auto items-center space-x-2 sm:space-x-3">
                 {/* Language switcher */}
                 <LanguageSwitcher />
 
                 {/* Mobile menu button */}
                 <button
                   onClick={toggleMobileMenu}
-                  className="inline-flex items-center justify-center p-3 rounded-lg text-gray-600 hover:text-brand-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary border border-gray-200 shadow-sm"
+                  className="inline-flex items-center justify-center p-2 sm:p-3 rounded-lg text-gray-600 hover:text-brand-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary border border-gray-200 shadow-sm"
                   aria-expanded={isMobileMenuOpen}
                 >
                   <span className="sr-only">
@@ -102,9 +105,9 @@ export const Header: React.FC = () => {
                       : t('header.openMainMenu')}
                   </span>
                   {isMobileMenuOpen ? (
-                    <X className="h-6 w-6" />
+                    <X className="h-5 w-5 sm:h-6 sm:w-6" />
                   ) : (
-                    <Menu className="h-6 w-6" />
+                    <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
                   )}
                 </button>
               </div>
@@ -130,21 +133,25 @@ export const Header: React.FC = () => {
           <div className="fixed top-0 right-0 w-full max-w-sm min-w-[280px] h-full bg-white shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out border-l-2 border-gray-300">
             <div className="p-4 sm:p-6 h-full overflow-y-auto flex flex-col">
               {/* Mobile header */}
-              <div className="flex justify-between items-center mb-8">
+              <div className="flex justify-between items-center mb-6 sm:mb-8">
                 <div className="flex items-center space-x-3">
-                  <Logo width={120} height={36} />
+                  <Logo
+                    width={100}
+                    height={30}
+                    className="sm:w-[120px] sm:h-[36px]"
+                  />
                 </div>
                 <button
                   onClick={toggleMobileMenu}
-                  className="p-3 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 border border-gray-200 shadow-sm"
+                  className="p-2 sm:p-3 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 border border-gray-200 shadow-sm"
                   aria-label={t('header.closeMainMenu')}
                 >
-                  <X className="h-6 w-6" />
+                  <X className="h-5 w-5 sm:h-6 sm:w-6" />
                 </button>
               </div>
 
               {/* Mobile navigation */}
-              <nav className="space-y-2 mb-8">
+              <nav className="space-y-2 mb-6 sm:mb-8">
                 {navigationItems.map((item) => (
                   <Link
                     key={item.key}
