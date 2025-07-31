@@ -1,5 +1,6 @@
 'use client';
 
+import { Link } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function PrivacyPolicyPage() {
@@ -180,12 +181,12 @@ export default function PrivacyPolicyPage() {
               </h2>
               <p className="text-gray-700 mb-4">
                 {t('privacyPolicy.sections.cookies.content')}{' '}
-                <a
+                <Link
                   href="/cookie-policy"
                   className="text-brand-primary hover:text-brand-secondary underline"
                 >
                   {t('privacyPolicy.relatedPolicies.cookiePolicy')}
-                </a>
+                </Link>
                 .
               </p>
             </section>
@@ -268,21 +269,21 @@ export default function PrivacyPolicyPage() {
               <div className="space-y-2 text-sm text-gray-600">
                 <p>
                   •{' '}
-                  <a
+                  <Link
                     href="/terms-of-service"
                     className="text-brand-primary hover:text-brand-secondary underline"
                   >
                     {t('privacyPolicy.relatedPolicies.termsOfService')}
-                  </a>
+                  </Link>
                 </p>
                 <p>
                   •{' '}
-                  <a
+                  <Link
                     href="/cookie-policy"
                     className="text-brand-primary hover:text-brand-secondary underline"
                   >
                     {t('privacyPolicy.relatedPolicies.cookiePolicy')}
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>

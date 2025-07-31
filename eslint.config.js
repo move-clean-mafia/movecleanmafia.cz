@@ -6,6 +6,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import prettier from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 import globals from 'globals';
+import nextPlugin from '@next/eslint-plugin-next';
 
 /**
  * @typedef {import('eslint').Linter.Config} ESLintConfig
@@ -47,6 +48,7 @@ export default defineConfig([
       react,
       'react-hooks': reactHooks,
       prettier,
+      '@next/next': nextPlugin,
     },
     rules: {
       'no-console': ['warn', { allow: ['warn', 'error'] }],
@@ -64,6 +66,20 @@ export default defineConfig([
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       'prettier/prettier': 'error',
+      // Next.js specific rules - verified working rules
+      '@next/next/no-html-link-for-pages': 'error',
+      '@next/next/no-img-element': 'error',
+      '@next/next/no-sync-scripts': 'error',
+      '@next/next/no-unwanted-polyfillio': 'error',
+      '@next/next/no-page-custom-font': 'error',
+      '@next/next/no-css-tags': 'error',
+      '@next/next/no-head-element': 'error',
+      '@next/next/no-title-in-document-head': 'error',
+      '@next/next/no-typos': 'error',
+      '@next/next/no-duplicate-head': 'error',
+      '@next/next/no-before-interactive-script-outside-document': 'error',
+      '@next/next/no-script-component-in-head': 'error',
+      '@next/next/no-styled-jsx-in-document': 'error',
     },
   },
   prettierConfig,
