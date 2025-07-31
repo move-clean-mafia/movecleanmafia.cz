@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../auth-provider';
 import { signOutUser } from '../../lib/auth';
@@ -13,20 +13,45 @@ import {
   CardTitle,
 } from '../ui/card';
 import {
-  Users,
-  Calendar,
-  Settings,
   LogOut,
   Home,
   BarChart3,
   FileText,
   MessageSquare,
+  Loader2,
 } from 'lucide-react';
+import { BookingsPanel } from './bookings-panel';
+import { getReservationStats } from '../../lib/admin-client';
 
 export const Dashboard = () => {
   const { user } = useAuth();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [stats, setStats] = useState({
+    total: 0,
+    pending: 0,
+    confirmed: 0,
+    inProgress: 0,
+    completed: 0,
+    cancelled: 0,
+  });
+  const [statsLoading, setStatsLoading] = useState(true);
+
+  useEffect(() => {
+    loadStats();
+  }, []);
+
+  const loadStats = async () => {
+    try {
+      setStatsLoading(true);
+      const statsData = await getReservationStats();
+      setStats(statsData);
+    } catch (error) {
+      console.error('Error loading stats:', error);
+    } finally {
+      setStatsLoading(false);
+    }
+  };
 
   const handleLogout = async () => {
     setLoading(true);
@@ -44,18 +69,18 @@ export const Dashboard = () => {
     router.push('/');
   };
 
-  const stats = [
+  const statsCards = [
     {
       title: 'Total Reservations',
-      value: '24',
+      value: stats.total.toString(),
       change: '+12%',
-      icon: Calendar,
+      icon: FileText,
       color: 'text-blue-600',
       bgColor: 'bg-blue-50',
     },
     {
       title: 'Pending Requests',
-      value: '8',
+      value: stats.pending.toString(),
       change: '+5%',
       icon: FileText,
       color: 'text-yellow-600',
@@ -63,46 +88,19 @@ export const Dashboard = () => {
     },
     {
       title: 'Completed Jobs',
-      value: '16',
+      value: stats.completed.toString(),
       change: '+8%',
       icon: BarChart3,
       color: 'text-green-600',
       bgColor: 'bg-green-50',
     },
     {
-      title: 'Customer Messages',
-      value: '12',
+      title: 'In Progress',
+      value: stats.inProgress.toString(),
       change: '+3%',
       icon: MessageSquare,
       color: 'text-purple-600',
       bgColor: 'bg-purple-50',
-    },
-  ];
-
-  const quickActions = [
-    {
-      title: 'View Reservations',
-      description: 'Manage all reservations',
-      icon: Calendar,
-      href: '/admin/reservations',
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50',
-    },
-    {
-      title: 'Customer Management',
-      description: 'View and manage customers',
-      icon: Users,
-      href: '/admin/customers',
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
-    },
-    {
-      title: 'Settings',
-      description: 'Configure admin settings',
-      icon: Settings,
-      href: '/admin/settings',
-      color: 'text-gray-600',
-      bgColor: 'bg-gray-50',
     },
   ];
 
@@ -143,7 +141,7 @@ export const Dashboard = () => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {stats.map((stat, index) => (
+          {statsCards.map((stat, index) => (
             <Card key={index}>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
@@ -152,7 +150,11 @@ export const Dashboard = () => {
                       {stat.title}
                     </p>
                     <p className="text-2xl font-bold text-gray-900">
-                      {stat.value}
+                      {statsLoading ? (
+                        <Loader2 className="w-6 h-6 animate-spin text-brand-primary" />
+                      ) : (
+                        stat.value
+                      )}
                     </p>
                     <p className="text-sm text-green-600">{stat.change}</p>
                   </div>
@@ -165,28 +167,9 @@ export const Dashboard = () => {
           ))}
         </div>
 
-        {/* Quick Actions */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {quickActions.map((action, index) => (
-            <Card
-              key={index}
-              className="hover:shadow-lg transition-shadow cursor-pointer"
-            >
-              <CardHeader>
-                <div className="flex items-center space-x-3">
-                  <div className={`p-3 rounded-full ${action.bgColor}`}>
-                    <action.icon className={`w-6 h-6 ${action.color}`} />
-                  </div>
-                  <div>
-                    <CardTitle className="text-lg font-oswald font-light">
-                      {action.title}
-                    </CardTitle>
-                    <CardDescription>{action.description}</CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-            </Card>
-          ))}
+        {/* Bookings Panel */}
+        <div className="mb-8">
+          <BookingsPanel />
         </div>
 
         {/* Recent Activity */}
