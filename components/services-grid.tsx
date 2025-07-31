@@ -33,10 +33,21 @@ const ServicesGrid = ({
   t,
   useSpecificLinks = false,
 }: ServicesGridProps) => {
+  // Определяем оптимальный grid layout в зависимости от количества сервисов
+  const getGridClasses = () => {
+    if (services.length === 1) {
+      return 'grid-cols-1 max-w-2xl mx-auto';
+    } else if (services.length === 2) {
+      return 'grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto';
+    } else if (services.length === 3) {
+      return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto';
+    } else {
+      return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4';
+    }
+  };
+
   return (
-    <div
-      className={`grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 ${className}`}
-    >
+    <div className={`grid ${getGridClasses()} gap-6 sm:gap-8 ${className}`}>
       {services.map((service, index) => (
         <div
           key={index}
@@ -83,7 +94,7 @@ const ServicesGrid = ({
           </div>
 
           {/* Content Card */}
-          <div className="p-6 sm:p-8 bg-white flex flex-col min-h-[280px] sm:min-h-[300px]">
+          <div className="p-6 sm:p-8 bg-white flex flex-col">
             {/* Description */}
             <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-base sm:text-lg font-light">
               {service.description}
@@ -106,11 +117,8 @@ const ServicesGrid = ({
               </div>
             )}
 
-            {/* Spacer to push buttons to bottom */}
-            <div className="flex-1"></div>
-
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center pt-4 sm:pt-6 space-y-3 sm:space-y-0">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center pt-4 sm:pt-6 space-y-3 sm:space-y-0 sm:space-x-4">
               <a
                 href={
                   useSpecificLinks
@@ -123,7 +131,7 @@ const ServicesGrid = ({
                           : `/${locale}/services#detailed-services`
                     : `/${locale}/services#detailed-services`
                 }
-                className="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-brand-primary text-brand-primary font-semibold rounded-xl hover:bg-brand-primary hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg group/link min-w-[120px] sm:min-w-[140px] h-10 sm:h-12 text-sm sm:text-base"
+                className="inline-flex items-center justify-center px-3 sm:px-4 py-2 sm:py-2.5 border-2 border-brand-primary text-brand-primary font-semibold rounded-lg hover:bg-brand-primary hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg group/link min-w-[100px] sm:min-w-[120px] h-9 sm:h-10 text-xs sm:text-sm"
               >
                 {t('servicesGrid.learnMore')}
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-200" />
@@ -131,7 +139,7 @@ const ServicesGrid = ({
 
               <a
                 href={`/${locale}/reservation?service=${service.title === t('services.moving') ? 'moving' : service.title === t('services.cleaning') ? 'cleaning' : service.title === t('services.packing') ? 'packing' : 'other'}`}
-                className="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg group/book min-w-[120px] sm:min-w-[140px] h-10 sm:h-12 text-sm sm:text-base"
+                className="inline-flex items-center justify-center px-3 sm:px-4 py-2 sm:py-2.5 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg group/book min-w-[100px] sm:min-w-[120px] h-9 sm:h-10 text-xs sm:text-sm"
               >
                 {locale === 'cs'
                   ? 'Rezervovat'
