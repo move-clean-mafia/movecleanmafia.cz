@@ -4,32 +4,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://movecleanmafia.cz';
   const currentDate = new Date();
 
-  // Define all routes for all languages
-  const routes = [
+  // Define all routes for all languages with detailed metadata
+  const routes: Array<{
+    route: string;
+    priority: number;
+    changeFrequency: 'weekly' | 'monthly' | 'yearly';
+  }> = [
     // Czech routes
-    { route: '/cs', priority: 1.0 },
-    { route: '/cs/about', priority: 0.8 },
-    { route: '/cs/services', priority: 0.9 },
-    { route: '/cs/contact', priority: 0.8 },
+    { route: '/cs', priority: 1.0, changeFrequency: 'weekly' },
+    { route: '/cs/about', priority: 0.8, changeFrequency: 'monthly' },
+    { route: '/cs/services', priority: 0.9, changeFrequency: 'weekly' },
+    { route: '/cs/contact', priority: 0.8, changeFrequency: 'monthly' },
+    { route: '/cs/reservation', priority: 0.9, changeFrequency: 'weekly' },
+    { route: '/cs/privacy', priority: 0.3, changeFrequency: 'yearly' },
+    { route: '/cs/terms-of-service', priority: 0.3, changeFrequency: 'yearly' },
+    { route: '/cs/cookie-policy', priority: 0.3, changeFrequency: 'yearly' },
 
     // English routes
-    { route: '/en', priority: 1.0 },
-    { route: '/en/about', priority: 0.8 },
-    { route: '/en/services', priority: 0.9 },
-    { route: '/en/contact', priority: 0.8 },
+    { route: '/en', priority: 1.0, changeFrequency: 'weekly' },
+    { route: '/en/about', priority: 0.8, changeFrequency: 'monthly' },
+    { route: '/en/services', priority: 0.9, changeFrequency: 'weekly' },
+    { route: '/en/contact', priority: 0.8, changeFrequency: 'monthly' },
+    { route: '/en/reservation', priority: 0.9, changeFrequency: 'weekly' },
+    { route: '/en/privacy', priority: 0.3, changeFrequency: 'yearly' },
+    { route: '/en/terms-of-service', priority: 0.3, changeFrequency: 'yearly' },
+    { route: '/en/cookie-policy', priority: 0.3, changeFrequency: 'yearly' },
 
     // Ukrainian routes
-    { route: '/ua', priority: 1.0 },
-    { route: '/ua/about', priority: 0.8 },
-    { route: '/ua/services', priority: 0.9 },
-    { route: '/ua/contact', priority: 0.8 },
+    { route: '/ua', priority: 1.0, changeFrequency: 'weekly' },
+    { route: '/ua/about', priority: 0.8, changeFrequency: 'monthly' },
+    { route: '/ua/services', priority: 0.9, changeFrequency: 'weekly' },
+    { route: '/ua/contact', priority: 0.8, changeFrequency: 'monthly' },
+    { route: '/ua/reservation', priority: 0.9, changeFrequency: 'weekly' },
+    { route: '/ua/privacy', priority: 0.3, changeFrequency: 'yearly' },
+    { route: '/ua/terms-of-service', priority: 0.3, changeFrequency: 'yearly' },
+    { route: '/ua/cookie-policy', priority: 0.3, changeFrequency: 'yearly' },
   ];
 
-  // Generate sitemap entries
-  const sitemapEntries = routes.map(({ route, priority }) => ({
+  // Generate sitemap entries with enhanced metadata
+  const sitemapEntries = routes.map(({ route, priority, changeFrequency }) => ({
     url: `${baseUrl}${route}`,
     lastModified: currentDate,
-    changeFrequency: 'weekly' as const,
+    changeFrequency,
     priority,
   }));
 

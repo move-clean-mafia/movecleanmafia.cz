@@ -38,28 +38,101 @@ export async function generateMetadata({
   const { locale } = await params;
   let title: string;
   let description: string;
+  let keywords: string[];
 
   switch (locale) {
     case 'cs':
-      title = 'MoveCleanMafia.cz - Profesionální stěhování a úklid';
+      title = 'MoveCleanMafia.cz - Profesionální stěhování a úklid v Praze';
       description =
-        'Spolehlivé služby přepravy a úklidu pro domácnosti a firmy';
+        'Spolehlivé služby přepravy a úklidu pro domácnosti a firmy v Praze. Profesionální stěhování, úklid a balení s garancí kvality. Voláme 24/7.';
+      keywords = [
+        'stěhování Praha',
+        'úklid Praha',
+        'profesionální stěhování',
+        'profesionální úklid',
+        'stěhovací služby Praha',
+        'úklidové služby Praha',
+        'balení nábytku',
+        'stěhování bytu Praha',
+        'úklid bytu Praha',
+        'úklid kanceláří Praha',
+        'moving services Prague',
+        'cleaning services Prague',
+      ];
       break;
     case 'ua':
       title = 'MoveCleanMafia.ua - Професійні перевезення та прибирання';
       description =
-        'Надійні послуги перевезення та прибирання для домогосподарств та компаній';
+        'Надійні послуги перевезення та прибирання для домогосподарств та компаній. Професійні перевезення, прибирання та пакування з гарантією якості. Дзвонимо 24/7.';
+      keywords = [
+        'перевезення Прага',
+        'прибирання Прага',
+        'професійні перевезення',
+        'професійне прибирання',
+        'перевізні послуги Прага',
+        'прибиральні послуги Прага',
+        'пакування меблів',
+        'перевезення квартири Прага',
+        'прибирання квартири Прага',
+        'прибирання офісів Прага',
+        'moving services Prague',
+        'cleaning services Prague',
+      ];
       break;
     default:
-      title = 'MoveCleanMafia.com - Professional Moving & Cleaning';
+      title = 'MoveCleanMafia.com - Professional Moving & Cleaning Services';
       description =
-        'Reliable moving and cleaning services for households and businesses';
+        'Reliable moving and cleaning services for households and businesses in Prague. Professional moving, cleaning and packing with quality guarantee. Call us 24/7.';
+      keywords = [
+        'moving services Prague',
+        'cleaning services Prague',
+        'professional moving',
+        'professional cleaning',
+        'house moving Prague',
+        'office cleaning Prague',
+        'furniture packing',
+        'apartment moving Prague',
+        'apartment cleaning Prague',
+        'office cleaning Prague',
+        'moving company Prague',
+        'cleaning company Prague',
+      ];
       break;
   }
 
   return {
     title,
     description,
+    keywords,
+    openGraph: {
+      title,
+      description,
+      url: `https://movecleanmafia.cz/${locale}`,
+      siteName: 'MoveCleanMafia',
+      images: [
+        {
+          url: '/images/hero.jpg',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      locale: locale === 'cs' ? 'cs_CZ' : locale === 'ua' ? 'uk_UA' : 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/images/hero.jpg'],
+    },
+    alternates: {
+      canonical: `https://movecleanmafia.cz/${locale}`,
+      languages: {
+        cs: 'https://movecleanmafia.cz/cs',
+        en: 'https://movecleanmafia.cz/en',
+        uk: 'https://movecleanmafia.cz/ua',
+      },
+    },
   };
 }
 

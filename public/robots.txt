@@ -1,7 +1,17 @@
 User-agent: *
-Disallow: /
+Allow: /
 
-# Sitemap location (uncomment when ready to allow indexing)
-# Sitemap: https://movecleanmafia.cz/sitemap.xml
+# Allow indexing of all pages
+Allow: /cs/
+Allow: /en/
+Allow: /ua/
 
-# Crawl-delay: 1 
+# Disallow admin and API routes
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://movecleanmafia.cz/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1 

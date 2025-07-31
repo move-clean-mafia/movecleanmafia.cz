@@ -14,6 +14,7 @@ import { Footer } from '../../components/footer';
 import { FloatingReservationButton } from '../../components/floating-reservation-button';
 import { CookieConsent } from '../../components/cookie-consent';
 import { Toaster } from '../../components/ui/toaster';
+import SEOProvider from '../../components/seo-provider';
 import '../globals.css';
 
 const balooBhai = Baloo_Bhai_2({
@@ -47,22 +48,22 @@ export const generateMetadata = async ({
   const getTitle = (locale: string): string => {
     switch (locale) {
       case 'cs':
-        return 'MoveCleanMafia.cz - Profesionální stěhování a úklid';
+        return 'MoveCleanMafia.cz - Profesionální stěhování a úklid v Praze';
       case 'ua':
         return 'MoveCleanMafia.ua - Професійні перевезення та прибирання';
       default:
-        return 'MoveCleanMafia.com - Professional Moving & Cleaning';
+        return 'MoveCleanMafia.com - Professional Moving & Cleaning Services';
     }
   };
 
   const getDescription = (locale: string): string => {
     switch (locale) {
       case 'cs':
-        return 'Spolehlivé služby přepravy a úklidu pro domácnosti a firmy';
+        return 'Spolehlivé služby přepravy a úklidu pro domácnosti a firmy v Praze. Profesionální stěhování, úklid a balení s garancí kvality.';
       case 'ua':
-        return 'Надійні послуги перевезення та прибирання для домогосподарств та компаній';
+        return 'Надійні послуги перевезення та прибирання для домогосподарств та компаній. Професійні перевезення, прибирання та пакування з гарантією якості.';
       default:
-        return 'Reliable moving and cleaning services for households and businesses';
+        return 'Reliable moving and cleaning services for households and businesses in Prague. Professional moving, cleaning and packing with quality guarantee.';
     }
   };
 
@@ -77,15 +78,98 @@ export const generateMetadata = async ({
     }
   };
 
+  const getKeywords = (locale: string): string[] => {
+    const baseKeywords = [
+      'moving services',
+      'cleaning services',
+      'professional cleaning',
+      'house moving',
+      'office cleaning',
+      'Czech Republic',
+      'Prague moving',
+      'Prague cleaning',
+    ];
+
+    if (locale === 'cs') {
+      return [
+        ...baseKeywords,
+        'stěhování Praha',
+        'úklid Praha',
+        'profesionální stěhování',
+        'profesionální úklid',
+        'stěhovací služby',
+        'úklidové služby',
+        'balení nábytku',
+        'stěhování bytu',
+        'úklid bytu',
+        'úklid kanceláří',
+      ];
+    } else if (locale === 'ua') {
+      return [
+        ...baseKeywords,
+        'перевезення Прага',
+        'прибирання Прага',
+        'професійні перевезення',
+        'професійне прибирання',
+        'перевізні послуги',
+        'прибиральні послуги',
+        'пакування меблів',
+        'перевезення квартири',
+        'прибирання квартири',
+        'прибирання офісів',
+      ];
+    }
+
+    return baseKeywords;
+  };
+
   return {
     title: {
       template: getTitleTemplate(locale),
       default: getTitle(locale),
     },
     description: getDescription(locale),
+    keywords: getKeywords(locale),
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    openGraph: {
+      type: 'website',
+      locale: locale === 'cs' ? 'cs_CZ' : locale === 'ua' ? 'uk_UA' : 'en_US',
+      url: `https://movecleanmafia.cz/${locale}`,
+      title: getTitle(locale),
+      description: getDescription(locale),
+      siteName: 'MoveCleanMafia',
+      images: [
+        {
+          url: '/images/hero.jpg',
+          width: 1200,
+          height: 630,
+          alt: getTitle(locale),
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: getTitle(locale),
+      description: getDescription(locale),
+      images: ['/images/hero.jpg'],
+    },
+    alternates: {
+      canonical: `https://movecleanmafia.cz/${locale}`,
+      languages: {
+        cs: 'https://movecleanmafia.cz/cs',
+        en: 'https://movecleanmafia.cz/en',
+        uk: 'https://movecleanmafia.cz/ua',
+      },
     },
   };
 };
@@ -109,29 +193,31 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
         />
       </head>
       <body className={`${balooBhai.variable} ${inter.variable} antialiased`}>
-        <I18nProvider
-          locale={locale as SupportedLanguage}
-          translations={translations}
-        >
-          <QueryProvider>
-            <AuthProvider>
-              <div className="min-h-screen bg-brand-light flex flex-col">
-                <Header />
-                <main className="flex-1">{children}</main>
-                <Footer />
-                <Suspense fallback={null}>
-                  <FloatingReservationButton />
-                </Suspense>
-                <Suspense fallback={null}>
-                  <CookieConsent />
-                </Suspense>
-                <Toaster />
-              </div>
-              <Analytics />
-              <SpeedInsights />
-            </AuthProvider>
-          </QueryProvider>
-        </I18nProvider>
+        <SEOProvider locale={locale as SupportedLanguage}>
+          <I18nProvider
+            locale={locale as SupportedLanguage}
+            translations={translations}
+          >
+            <QueryProvider>
+              <AuthProvider>
+                <div className="min-h-screen bg-brand-light flex flex-col">
+                  <Header />
+                  <main className="flex-1">{children}</main>
+                  <Footer />
+                  <Suspense fallback={null}>
+                    <FloatingReservationButton />
+                  </Suspense>
+                  <Suspense fallback={null}>
+                    <CookieConsent />
+                  </Suspense>
+                  <Toaster />
+                </div>
+                <Analytics />
+                <SpeedInsights />
+              </AuthProvider>
+            </QueryProvider>
+          </I18nProvider>
+        </SEOProvider>
       </body>
     </html>
   );

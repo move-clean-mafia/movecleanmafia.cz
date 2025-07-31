@@ -19,28 +19,110 @@ export async function generateMetadata({
   const { locale } = await params;
   let title: string;
   let description: string;
+  let keywords: string[];
 
   switch (locale) {
     case 'cs':
-      title = 'Služby - MoveCleanMafia.cz';
+      title =
+        'Služby - MoveCleanMafia.cz | Profesionální stěhování a úklid v Praze';
       description =
-        'Kompletní služby stěhování a úklidu - stěhování, úklid a balení';
+        'Kompletní služby stěhování a úklidu v Praze - stěhování, úklid a balení. Profesionální stěhovací služby, úklidové služby a balící služby s garancí kvality.';
+      keywords = [
+        'stěhování Praha',
+        'úklid Praha',
+        'balení nábytku Praha',
+        'profesionální stěhování',
+        'profesionální úklid',
+        'stěhovací služby Praha',
+        'úklidové služby Praha',
+        'balící služby Praha',
+        'stěhování bytu Praha',
+        'úklid bytu Praha',
+        'úklid kanceláří Praha',
+        'moving services Prague',
+        'cleaning services Prague',
+        'packing services Prague',
+      ];
       break;
     case 'ua':
-      title = 'Послуги - MoveCleanMafia.ua';
+      title =
+        'Послуги - MoveCleanMafia.ua | Професійні перевезення та прибирання';
       description =
-        'Повний спектр послуг перевезення та прибирання - перевезення, прибирання та пакування';
+        'Повний спектр послуг перевезення та прибирання - перевезення, прибирання та пакування. Професійні перевізні послуги, прибиральні послуги та пакувальні послуги з гарантією якості.';
+      keywords = [
+        'перевезення Прага',
+        'прибирання Прага',
+        'пакування меблів Прага',
+        'професійні перевезення',
+        'професійне прибирання',
+        'перевізні послуги Прага',
+        'прибиральні послуги Прага',
+        'пакувальні послуги Прага',
+        'перевезення квартири Прага',
+        'прибирання квартири Прага',
+        'прибирання офісів Прага',
+        'moving services Prague',
+        'cleaning services Prague',
+        'packing services Prague',
+      ];
       break;
     default:
-      title = 'Services - MoveCleanMafia.com';
+      title =
+        'Services - MoveCleanMafia.com | Professional Moving & Cleaning Services';
       description =
-        'Complete moving and cleaning services - moving, cleaning and packing';
+        'Complete moving and cleaning services in Prague - moving, cleaning and packing. Professional moving services, cleaning services and packing services with quality guarantee.';
+      keywords = [
+        'moving services Prague',
+        'cleaning services Prague',
+        'packing services Prague',
+        'professional moving',
+        'professional cleaning',
+        'professional packing',
+        'house moving Prague',
+        'office cleaning Prague',
+        'furniture packing Prague',
+        'apartment moving Prague',
+        'apartment cleaning Prague',
+        'office cleaning Prague',
+        'moving company Prague',
+        'cleaning company Prague',
+      ];
       break;
   }
 
   return {
     title,
     description,
+    keywords,
+    openGraph: {
+      title,
+      description,
+      url: `https://movecleanmafia.cz/${locale}/services`,
+      siteName: 'MoveCleanMafia',
+      images: [
+        {
+          url: '/images/hero.jpg',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      locale: locale === 'cs' ? 'cs_CZ' : locale === 'ua' ? 'uk_UA' : 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/images/hero.jpg'],
+    },
+    alternates: {
+      canonical: `https://movecleanmafia.cz/${locale}/services`,
+      languages: {
+        cs: 'https://movecleanmafia.cz/cs/services',
+        en: 'https://movecleanmafia.cz/en/services',
+        uk: 'https://movecleanmafia.cz/ua/services',
+      },
+    },
   };
 }
 

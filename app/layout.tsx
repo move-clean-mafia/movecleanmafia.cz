@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     default: 'MoveCleanMafia.cz - Professional Moving & Cleaning Services',
   },
   description:
-    'Professional moving and cleaning services for households and businesses in Czech Republic',
+    'Professional moving and cleaning services for households and businesses in Czech Republic. Reliable, affordable, and professional moving and cleaning solutions.',
   keywords: [
     'moving services',
     'cleaning services',
@@ -15,17 +15,63 @@ export const metadata: Metadata = {
     'house moving',
     'office cleaning',
     'Czech Republic',
+    'Prague moving',
+    'Prague cleaning',
+    'stěhování Praha',
+    'úklid Praha',
+    'profesionální stěhování',
+    'profesionální úklid',
+    'moving company Prague',
+    'cleaning company Prague',
   ],
   authors: [{ name: 'MoveCleanMafia.cz' }],
   creator: 'MoveCleanMafia.cz',
   publisher: 'MoveCleanMafia.cz',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
+  },
+  verification: {
+    google: 'tAjavF9M2DplYyPZUChDkwHhQKU7ewlYPJdAGG62nUY',
+  },
+  alternates: {
+    canonical: 'https://movecleanmafia.cz',
+    languages: {
+      cs: 'https://movecleanmafia.cz/cs',
+      en: 'https://movecleanmafia.cz/en',
+      uk: 'https://movecleanmafia.cz/ua',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'cs_CZ',
+    url: 'https://movecleanmafia.cz',
+    title: 'MoveCleanMafia.cz - Professional Moving & Cleaning Services',
+    description:
+      'Professional moving and cleaning services for households and businesses in Czech Republic. Reliable, affordable, and professional solutions.',
+    siteName: 'MoveCleanMafia.cz',
+    images: [
+      {
+        url: '/images/hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'MoveCleanMafia - Professional Moving and Cleaning Services',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MoveCleanMafia.cz - Professional Moving & Cleaning Services',
+    description:
+      'Professional moving and cleaning services for households and businesses in Czech Republic.',
+    images: ['/images/hero.jpg'],
   },
   icons: {
     icon: [
@@ -48,31 +94,13 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/favicon/site.webmanifest',
-  openGraph: {
-    type: 'website',
-    locale: 'cs_CZ',
-    url: 'https://movecleanmafia.cz',
-    title: 'MoveCleanMafia.cz - Professional Moving & Cleaning Services',
-    description:
-      'Professional moving and cleaning services for households and businesses',
-    siteName: 'MoveCleanMafia.cz',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'MoveCleanMafia.cz - Professional Moving & Cleaning Services',
-    description:
-      'Professional moving and cleaning services for households and businesses',
-  },
-  verification: {
-    google: 'tAjavF9M2DplYyPZUChDkwHhQKU7ewlYPJdAGG62nUY',
-  },
-  alternates: {
-    canonical: 'https://movecleanmafia.cz',
-    languages: {
-      cs: 'https://movecleanmafia.cz/cs',
-      en: 'https://movecleanmafia.cz/en',
-      uk: 'https://movecleanmafia.ua/ua',
-    },
+  category: 'business',
+  classification: 'Business',
+  other: {
+    'geo.region': 'CZ',
+    'geo.placename': 'Prague',
+    'geo.position': '50.0755;14.4378',
+    ICBM: '50.0755, 14.4378',
   },
 };
 
@@ -112,6 +140,37 @@ export default function RootLayout({
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#6B4F2C" />
         <meta name="theme-color" content="#D6B977" />
+
+        {/* Additional SEO meta tags */}
+        <meta name="author" content="MoveCleanMafia" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://movecleanmafia.cz" />
+
+        {/* Alternate language versions */}
+        <link
+          rel="alternate"
+          hrefLang="cs"
+          href="https://movecleanmafia.cz/cs"
+        />
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href="https://movecleanmafia.cz/en"
+        />
+        <link
+          rel="alternate"
+          hrefLang="ua"
+          href="https://movecleanmafia.cz/ua"
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href="https://movecleanmafia.cz/cs"
+        />
       </head>
       <body suppressHydrationWarning>{children}</body>
     </html>
