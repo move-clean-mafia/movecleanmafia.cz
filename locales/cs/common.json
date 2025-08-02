@@ -380,6 +380,7 @@
       "title": "Úklidové balíčky"
     },
     "dryCleaning": {
+      "description": "Profesionální chemické čištění koberců, čalounění a textilu",
       "items": [
         {
           "name": "Koberec",
@@ -453,6 +454,7 @@
       "title": "Stěhování a doplňkové služby"
     },
     "packingServices": {
+      "description": "Profesionální balení a zabalení vašich věcí pro bezpečnou přepravu",
       "items": [
         {
           "name": "Balič",

@@ -6,7 +6,6 @@ import { type SupportedLanguage } from '../../../lib/i18n';
 import ServicesGrid from '../../../components/services-grid';
 import { CTASection } from '../../../components/cta-section';
 import CleaningPackages from '../../../components/cleaning-packages';
-import { GroupedAdditionalServices } from '../../../components/grouped-additional-services';
 
 import { Truck, Sparkles, Package } from 'lucide-react';
 
@@ -321,40 +320,11 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
         </div>
 
         {/* Cleaning Packages */}
-        <CleaningPackages locale={locale as SupportedLanguage} t={t} />
-
-        {/* Additional Services with Dry Cleaning and Packing */}
-        <GroupedAdditionalServices
-          serviceGroups={[
-            {
-              title: t('detailedServices.dryCleaning.title'),
-              description: t('detailedServices.dryCleaning.description'),
-              type: 'table',
-              iconName: 'Sparkles',
-              services: dryCleaningServices.map((service) => ({
-                name: service.name,
-                price: service.price,
-              })),
-            },
-            {
-              title: t('detailedServices.packingServices.title'),
-              description: t('detailedServices.packingServices.description'),
-              type: 'table',
-              iconName: 'Package',
-              services: packingServices.map((service) => ({
-                name: service.name,
-                price: service.price,
-                unit: service.unit,
-              })),
-            },
-          ]}
-          locale={locale}
-          showReservationButton={true}
-          translations={{
-            service: t('servicesPage.service'),
-            unit: t('servicesPage.unit'),
-            price: t('servicesPage.price'),
-          }}
+        <CleaningPackages
+          locale={locale as SupportedLanguage}
+          t={t}
+          dryCleaningServices={dryCleaningServices}
+          packingServices={packingServices}
         />
       </section>
 

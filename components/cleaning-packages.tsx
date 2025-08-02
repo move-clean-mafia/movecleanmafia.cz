@@ -8,6 +8,8 @@ import { GroupedAdditionalServices } from './grouped-additional-services';
 interface CleaningPackagesProps {
   locale: SupportedLanguage;
   t: (key: string) => string | string[] | Record<string, unknown>;
+  dryCleaningServices?: Array<{ name: string; price: string }>;
+  packingServices?: Array<{ name: string; unit: string; price: string }>;
 }
 
 interface PackageData {
@@ -45,9 +47,15 @@ interface ServiceGroup {
   title: string;
   description: string;
   services: AdditionalService[];
+  iconName?: string;
 }
 
-const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
+const CleaningPackages: React.FC<CleaningPackagesProps> = ({
+  locale,
+  t,
+  dryCleaningServices,
+  packingServices,
+}) => {
   const packages = t('detailedServices.cleaningPackages.packages') as {
     maintenance: PackageData;
     general: PackageData;
@@ -295,14 +303,47 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
           </div>
 
           <GroupedAdditionalServices
-            serviceGroups={additionalServiceGroups}
+            serviceGroups={[
+              ...additionalServiceGroups.map((group, index) => ({
+                ...group,
+                iconName: ['ChefHat', 'Sofa', 'Star'][index] || 'Star',
+              })),
+              ...(dryCleaningServices
+                ? [
+                    {
+                      title: t('detailedServices.dryCleaning.title') as string,
+                      description: t(
+                        'detailedServices.dryCleaning.description',
+                      ) as string,
+                      iconName: 'Sparkles',
+                      services: dryCleaningServices.map((service) => ({
+                        name: service.name,
+                        price: service.price,
+                      })),
+                    },
+                  ]
+                : []),
+              ...(packingServices
+                ? [
+                    {
+                      title: t(
+                        'detailedServices.packingServices.title',
+                      ) as string,
+                      description: t(
+                        'detailedServices.packingServices.description',
+                      ) as string,
+                      iconName: 'Package',
+                      services: packingServices.map((service) => ({
+                        name: service.name,
+                        price: service.price,
+                        unit: service.unit,
+                      })),
+                    },
+                  ]
+                : []),
+            ]}
             locale={locale}
             showReservationButton={true}
-            translations={{
-              service: t('servicesPage.service') as string,
-              unit: t('servicesPage.unit') as string,
-              price: t('servicesPage.price') as string,
-            }}
           />
         </div>
       </div>

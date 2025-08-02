@@ -25,7 +25,6 @@ interface ServiceGroup {
   title: string;
   description: string;
   services: AdditionalService[];
-  type?: 'grid' | 'table';
   iconName?: string;
 }
 
@@ -33,21 +32,11 @@ interface GroupedAdditionalServicesProps {
   serviceGroups: ServiceGroup[];
   locale?: string;
   showReservationButton?: boolean;
-  translations?: {
-    service: string;
-    unit: string;
-    price: string;
-  };
 }
 
 export const GroupedAdditionalServices: React.FC<
   GroupedAdditionalServicesProps
-> = ({
-  serviceGroups,
-  locale,
-  showReservationButton = false,
-  translations,
-}) => {
+> = ({ serviceGroups, locale, showReservationButton = false }) => {
   // Icon mapping
   const iconMap = {
     ChefHat,
@@ -91,63 +80,21 @@ export const GroupedAdditionalServices: React.FC<
               </CollapsibleTrigger>
 
               <CollapsibleContent className="px-2 sm:px-4 lg:px-6 pb-2 sm:pb-4 lg:pb-6">
-                {group.type === 'table' ? (
-                  <div className="overflow-x-auto pt-4">
-                    <table className="w-full">
-                      <thead>
-                        <tr className="border-b border-gray-200">
-                          <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
-                            {translations?.service || 'Service'}
-                          </th>
-                          {group.services.some((service) => service.unit) && (
-                            <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
-                              {translations?.unit || 'Unit'}
-                            </th>
-                          )}
-                          <th className="text-right py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
-                            {translations?.price || 'Price'}
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {group.services.map((service, serviceIndex) => (
-                          <tr
-                            key={serviceIndex}
-                            className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 group"
-                          >
-                            <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-light text-gray-700 group-hover:text-gray-900 transition-colors">
-                              {service.name}
-                            </td>
-                            {service.unit && (
-                              <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-light text-gray-600">
-                                {service.unit}
-                              </td>
-                            )}
-                            <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-bold text-brand-primary text-right text-sm sm:text-lg">
-                              <div className="break-words">{service.price}</div>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 pt-4">
-                    {group.services.map((service, serviceIndex) => (
-                      <div
-                        key={serviceIndex}
-                        className="flex justify-between items-center p-1 sm:p-3 lg:p-4 rounded-xl hover:bg-brand-light/50 transition-colors duration-200 group"
-                      >
-                        <span className="font-inter font-light text-gray-700 group-hover:text-gray-900 transition-colors flex-1 pr-2 sm:pr-4 text-sm sm:text-base">
-                          {service.name}
-                        </span>
-                        <span className="font-inter font-semibold text-brand-primary flex-shrink-0 text-sm sm:text-base">
-                          {service.price}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 pt-4">
+                  {group.services.map((service, serviceIndex) => (
+                    <div
+                      key={serviceIndex}
+                      className="flex justify-between items-center p-1 sm:p-3 lg:p-4 rounded-xl hover:bg-brand-light/50 transition-colors duration-200 group"
+                    >
+                      <span className="font-inter font-light text-gray-700 group-hover:text-gray-900 transition-colors flex-1 pr-2 sm:pr-4 text-sm sm:text-base">
+                        {service.name}
+                      </span>
+                      <span className="font-inter font-semibold text-brand-primary flex-shrink-0 text-sm sm:text-base">
+                        {service.price}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </CollapsibleContent>
             </div>
           </Collapsible>

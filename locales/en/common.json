@@ -380,6 +380,7 @@
       "title": "Cleaning Packages"
     },
     "dryCleaning": {
+      "description": "Professional dry cleaning of carpets, upholstery and textiles",
       "items": [
         {
           "name": "Carpet",
@@ -453,6 +454,7 @@
       "title": "Moving and Additional Services"
     },
     "packingServices": {
+      "description": "Professional packing and packaging of your items for safe transport",
       "items": [
         {
           "name": "Packer",
