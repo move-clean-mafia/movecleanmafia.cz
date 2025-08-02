@@ -144,11 +144,11 @@ const ServicesGrid = ({
                     href={
                       useSpecificLinks
                         ? service.title === t('services.moving')
-                          ? `/${locale}/services#moving-services`
+                          ? `/${locale}/service/moving`
                           : service.title === t('services.cleaning')
-                            ? `/${locale}/services#cleaning-packages`
+                            ? `/${locale}/service/cleaning`
                             : service.title === t('services.packing')
-                              ? `/${locale}/services#packing-services`
+                              ? `/${locale}/service/packing`
                               : `/${locale}/services#detailed-services`
                         : `/${locale}/services#detailed-services`
                     }

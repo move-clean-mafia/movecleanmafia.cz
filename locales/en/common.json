@@ -589,6 +589,7 @@
   "services": {
     "cleaning": "Cleaning",
     "cleaningDescription": "Thorough cleaning of households and commercial spaces with professional products",
+    "cleaningLongDescription": "Our professional cleaning service delivers exceptional results for both residential and commercial spaces. We use eco-friendly products and advanced cleaning techniques to ensure every surface is thoroughly cleaned and sanitized. From regular maintenance cleaning to deep post-move cleaning, we provide comprehensive solutions tailored to your specific needs.",
     "cleaningFeatures": [
       "General cleaning",
       "Post-move cleaning",
@@ -599,6 +600,7 @@
     "ctaTitle": "Let's Start Working Together",
     "moving": "Moving",
     "movingDescription": "Professional moving of apartments, houses and offices with complete service",
+    "movingLongDescription": "Our professional moving service provides comprehensive relocation solutions for apartments, houses, and offices. We handle everything from careful furniture disassembly to safe transportation and precise reassembly at your new location. Our experienced team ensures your belongings are protected with full cargo insurance throughout the entire process.",
     "movingFeatures": [
       "Furniture disassembly",
       "Safe transportation",
@@ -607,6 +609,7 @@
     ],
     "packing": "Packing",
     "packingDescription": "Safe packing and packaging of all your belongings with professional materials",
+    "packingLongDescription": "Our professional packing service ensures your belongings are safely and efficiently prepared for transport. We use high-quality materials and follow industry best practices to protect fragile items and organize your possessions systematically. Our detailed inventory system and careful labeling make unpacking at your new location smooth and stress-free.",
     "packingFeatures": [
       "Professional packing",
       "Quality materials",
@@ -1041,6 +1044,37 @@
       "title": "Cookie Consent Management",
       "content": "You can manage your cookie preferences at any time by clicking the \"Customize\" button in our website footer.",
       "button": "Manage Cookie Preferences"
+    }
+  },
+  "serviceDetail": {
+    "backToServices": "Back to Services",
+    "aboutService": "About Our Service",
+    "keyFeatures": "Key Features",
+    "benefits": "Benefits",
+    "availability": "Availability",
+    "quality": "Quality",
+    "clients": "Happy Clients",
+    "readyToBook": "Ready to Book Our Service?",
+    "ctaDescription": "Get a free consultation and price quote. Our team is ready to help you with your needs.",
+    "bookNow": "Book Now",
+    "contactUs": "Contact Us",
+    "moving": {
+      "benefit1": "Professional furniture disassembly and assembly",
+      "benefit2": "Safe transportation with cargo insurance",
+      "benefit3": "Experienced team with years of experience",
+      "benefit4": "Flexible scheduling and 24/7 support"
+    },
+    "cleaning": {
+      "benefit1": "Professional cleaning with eco-friendly products",
+      "benefit2": "Thorough cleaning of all surfaces and areas",
+      "benefit3": "Post-move cleaning and deep cleaning services",
+      "benefit4": "Flexible scheduling and regular maintenance"
+    },
+    "packing": {
+      "benefit1": "Professional packing with quality materials",
+      "benefit2": "Careful handling of fragile items",
+      "benefit3": "Organized labeling and inventory system",
+      "benefit4": "Safe storage and transportation options"
     }
   }
 }

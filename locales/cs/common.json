@@ -589,6 +589,7 @@
   "services": {
     "cleaning": "Úklid",
     "cleaningDescription": "Důkladný úklid domácností a komerčních prostor s profesionálními prostředky",
+    "cleaningLongDescription": "Naše profesionální úklidová služba poskytuje výjimečné výsledky pro rezidenční i komerční prostory. Používáme ekologické produkty a pokročilé čisticí techniky, abychom zajistili důkladné vyčištění a dezinfekci každého povrchu. Od pravidelného údržbového úklidu až po hluboký úklid po stěhování poskytujeme komplexní řešení přizpůsobená vašim specifickým potřebám.",
     "cleaningFeatures": [
       "Generální úklid",
       "Úklid po stěhování",
@@ -599,6 +600,7 @@
     "ctaTitle": "Začněme spolupracovat",
     "moving": "Stěhování",
     "movingDescription": "Profesionální stěhování bytů, domů a kanceláří s kompletním servisem",
+    "movingLongDescription": "Naše profesionální stěhovací služba poskytuje komplexní řešení přestěhování pro byty, domy a kanceláře. Zajistíme vše od opatrné demontáže nábytku až po bezpečnou přepravu a přesnou montáž na vašem novém místě. Náš zkušený tým zajišťuje ochranu vašich věcí s plným pojištěním nákladu po celý proces.",
     "movingFeatures": [
       "Demontáž nábytku",
       "Bezpečné stěhování",
@@ -607,6 +609,7 @@
     ],
     "packing": "Balení",
     "packingDescription": "Bezpečné balení a zabalení všech vašich věcí s profesionálním materiálem",
+    "packingLongDescription": "Naše profesionální balící služba zajišťuje bezpečné a efektivní připravení vašich věcí k přepravě. Používáme vysoce kvalitní materiály a dodržujeme nejlepší postupy v oboru, abychom ochránili křehké předměty a systematicky organizovali vaše věci. Náš detailní inventární systém a pečlivé označování usnadňují rozbalování na vašem novém místě.",
     "packingFeatures": [
       "Odborné balení",
       "Kvalitní materiály",
@@ -1041,6 +1044,37 @@
       "title": "Správa souhlasu s cookies",
       "content": "Své preference cookies můžete kdykoli spravovat kliknutím na tlačítko \"Přizpůsobit\" v patičce našich webových stránek.",
       "button": "Spravovat preference cookies"
+    }
+  },
+  "serviceDetail": {
+    "backToServices": "Zpět na služby",
+    "aboutService": "O naší službě",
+    "keyFeatures": "Klíčové funkce",
+    "benefits": "Výhody",
+    "availability": "Dostupnost",
+    "quality": "Kvalita",
+    "clients": "Spokojení klienti",
+    "readyToBook": "Připraveni objednat naši službu?",
+    "ctaDescription": "Získejte bezplatnou konzultaci a cenovou nabídku. Náš tým je připraven pomoci vám s vašimi potřebami.",
+    "bookNow": "Objednat nyní",
+    "contactUs": "Kontaktujte nás",
+    "moving": {
+      "benefit1": "Profesionální demontáž a montáž nábytku",
+      "benefit2": "Bezpečná přeprava s pojištěním nákladu",
+      "benefit3": "Zkušený tým s roky praxe",
+      "benefit4": "Flexibilní plánování a podpora 24/7"
+    },
+    "cleaning": {
+      "benefit1": "Profesionální úklid s ekologickými produkty",
+      "benefit2": "Důkladné čištění všech povrchů a oblastí",
+      "benefit3": "Úklid po stěhování a hluboké čištění",
+      "benefit4": "Flexibilní plánování a pravidelná údržba"
+    },
+    "packing": {
+      "benefit1": "Profesionální balení s kvalitními materiály",
+      "benefit2": "Opatrné zacházení s křehkými předměty",
+      "benefit3": "Organizované označování a inventární systém",
+      "benefit4": "Bezpečné skladování a přepravní možnosti"
     }
   }
 }

@@ -246,6 +246,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
           showPrices={false}
           className="animate-fade-in-up"
           t={t}
+          useSpecificLinks={true}
         />
       </section>
 
