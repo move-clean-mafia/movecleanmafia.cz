@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import {
   Collapsible,
@@ -32,11 +30,12 @@ interface GroupedAdditionalServicesProps {
   serviceGroups: ServiceGroup[];
   locale?: string;
   showReservationButton?: boolean;
+  t?: (key: string) => string | string[] | Record<string, unknown>;
 }
 
 export const GroupedAdditionalServices: React.FC<
   GroupedAdditionalServicesProps
-> = ({ serviceGroups, locale, showReservationButton = false }) => {
+> = ({ serviceGroups, locale, showReservationButton = false, t }) => {
   // Icon mapping
   const iconMap = {
     ChefHat,
@@ -102,17 +101,13 @@ export const GroupedAdditionalServices: React.FC<
       })}
 
       {/* Reservation Button */}
-      {showReservationButton && locale && (
+      {showReservationButton && locale && t && (
         <div className="flex justify-end mt-8">
           <a
             href={`/${locale}/reservation?service=cleaning`}
             className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
-            {locale === 'cs'
-              ? 'Rezervovat'
-              : locale === 'ua'
-                ? 'Забронювати'
-                : 'Book Now'}
+            {t('reservation.submitReservation') as string}
           </a>
         </div>
       )}

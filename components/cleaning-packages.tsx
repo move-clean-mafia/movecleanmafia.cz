@@ -236,11 +236,7 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({
                   href={`/${locale}/reservation?service=cleaning&package=maintenance`}
                   className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
-                  {locale === 'cs'
-                    ? 'Rezervovat'
-                    : locale === 'ua'
-                      ? 'Забронювати'
-                      : 'Book Now'}
+                  {t('reservation.submitReservation') as string}
                 </a>
               </div>
             </TabsContent>
@@ -253,11 +249,7 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({
                   href={`/${locale}/reservation?service=cleaning&package=general`}
                   className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
-                  {locale === 'cs'
-                    ? 'Rezervovat'
-                    : locale === 'ua'
-                      ? 'Забронювати'
-                      : 'Book Now'}
+                  {t('reservation.submitReservation') as string}
                 </a>
               </div>
             </TabsContent>
@@ -270,11 +262,7 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({
                   href={`/${locale}/reservation?service=cleaning&package=postRenovation`}
                   className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
-                  {locale === 'cs'
-                    ? 'Rezervovat'
-                    : locale === 'ua'
-                      ? 'Забронювати'
-                      : 'Book Now'}
+                  {t('reservation.submitReservation') as string}
                 </a>
               </div>
             </TabsContent>
@@ -344,6 +332,7 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({
             ]}
             locale={locale}
             showReservationButton={true}
+            t={t}
           />
         </div>
       </div>

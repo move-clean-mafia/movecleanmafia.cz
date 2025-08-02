@@ -137,7 +137,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       description: t('services.movingDescription'),
       features: t('services.movingFeatures') as unknown as string[],
       image: '/images/moving.jpg',
-      imageAlt: 'Profesionální stěhování',
+      imageAlt: t('services.moving'),
     },
     {
       icon: Sparkles,
@@ -145,7 +145,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       description: t('services.cleaningDescription'),
       features: t('services.cleaningFeatures') as unknown as string[],
       image: '/images/cleaning.jpg',
-      imageAlt: 'Profesionální úklid',
+      imageAlt: t('services.cleaning'),
     },
     {
       icon: Package,
@@ -153,7 +153,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       description: t('services.packingDescription'),
       features: t('services.packingFeatures') as unknown as string[],
       image: '/images/packing.jpg',
-      imageAlt: 'Profesionální balení',
+      imageAlt: t('services.packing'),
     },
   ];
 
@@ -204,21 +204,23 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                   500+
                 </div>
                 <div className="text-xs sm:text-sm opacity-80">
-                  Spokojených klientů
+                  {t('about.stats.clients')}
                 </div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-white/20">
                 <div className="text-2xl sm:text-3xl font-bold text-brand-primary">
                   24/7
                 </div>
-                <div className="text-xs sm:text-sm opacity-80">Dostupnost</div>
+                <div className="text-xs sm:text-sm opacity-80">
+                  {t('about.stats.availability')}
+                </div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-white/20">
                 <div className="text-2xl sm:text-3xl font-bold text-brand-primary">
                   100%
                 </div>
                 <div className="text-xs sm:text-sm opacity-80">
-                  Záruka kvality
+                  {t('services.quality')}
                 </div>
               </div>
             </div>
@@ -308,11 +310,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
                   href={`/${locale}/reservation?service=moving`}
                   className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
-                  {locale === 'cs'
-                    ? 'Rezervovat'
-                    : locale === 'ua'
-                      ? 'Забронювати'
-                      : 'Book Now'}
+                  {t('reservation.submitReservation')}
                 </a>
               </div>
             </div>
