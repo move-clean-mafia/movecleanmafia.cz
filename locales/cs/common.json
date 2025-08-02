@@ -145,54 +145,72 @@
   "detailedServices": {
     "cleaningPackages": {
       "additionalServices": {
-        "services": [
+        "groups": [
           {
-            "name": "Umýt kuchyňské skříňky zevnitř",
-            "price": "od 320 Kč"
+            "title": "Kuchyňské spotřebiče",
+            "description": "Hluboké čištění kuchyňských spotřebičů a zařízení",
+            "services": [
+              {
+                "name": "Umýt kuchyňské skříňky zevnitř",
+                "price": "od 320 Kč"
+              },
+              {
+                "name": "Umýt myčku nádobí",
+                "price": "od 290 Kč"
+              },
+              {
+                "name": "Umýt troubu",
+                "price": "400 Kč"
+              },
+              {
+                "name": "Umýt digestoř",
+                "price": "400 Kč"
+              },
+              {
+                "name": "Umýt mikrovlnku",
+                "price": "od 210 Kč"
+              },
+              {
+                "name": "Umýt lednici kompletně",
+                "price": "od 350 Kč"
+              }
+            ]
           },
           {
-            "name": "Umýt pokojové skříňky zevnitř",
-            "price": "od 390 Kč"
+            "title": "Nábytek a povrchy",
+            "description": "Čištění nábytku, skříní a různých povrchů",
+            "services": [
+              {
+                "name": "Umýt pokojové skříňky zevnitř",
+                "price": "od 390 Kč"
+              },
+              {
+                "name": "Umýt lustr",
+                "price": "od 250 Kč"
+              },
+              {
+                "name": "Umýt okna",
+                "price": "1 m² = 120 Kč"
+              }
+            ]
           },
           {
-            "name": "Umýt lustr",
-            "price": "od 250 Kč"
-          },
-          {
-            "name": "Umýt myčku nádobí",
-            "price": "od 290 Kč"
-          },
-          {
-            "name": "Umýt troubu",
-            "price": "400 Kč"
-          },
-          {
-            "name": "Umýt digestoř",
-            "price": "400 Kč"
-          },
-          {
-            "name": "Umýt mikrovlnku",
-            "price": "od 210 Kč"
-          },
-          {
-            "name": "Umýt lednici kompletně",
-            "price": "od 350 Kč"
-          },
-          {
-            "name": "Vyčistit toaletu domácího mazlíčka",
-            "price": "310 Kč"
-          },
-          {
-            "name": "Uklidit/umýt balkon",
-            "price": "od 450 Kč"
-          },
-          {
-            "name": "Dovoz/odvoz klíčů",
-            "price": "350 Kč"
-          },
-          {
-            "name": "Umýt okna",
-            "price": "1 m² = 120 Kč"
+            "title": "Speciální služby",
+            "description": "Další specializované čisticí a doručovací služby",
+            "services": [
+              {
+                "name": "Vyčistit toaletu domácího mazlíčka",
+                "price": "310 Kč"
+              },
+              {
+                "name": "Uklidit/umýt balkon",
+                "price": "od 450 Kč"
+              },
+              {
+                "name": "Dovoz/odvoz klíčů",
+                "price": "350 Kč"
+              }
+            ]
           }
         ],
         "subtitle": "Rozšiřte svůj balíček o další služby",

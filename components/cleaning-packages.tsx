@@ -1,11 +1,9 @@
-'use server';
-
 import React from 'react';
 import Image from 'next/image';
 import { type SupportedLanguage } from '../lib/i18n';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { Badge } from './ui/badge';
 import { Check, Home, ChefHat, Bath } from 'lucide-react';
+import { GroupedAdditionalServices } from './grouped-additional-services';
 
 interface CleaningPackagesProps {
   locale: SupportedLanguage;
@@ -43,6 +41,12 @@ interface AdditionalService {
   price: string;
 }
 
+interface ServiceGroup {
+  title: string;
+  description: string;
+  services: AdditionalService[];
+}
+
 const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
   const packages = t('detailedServices.cleaningPackages.packages') as {
     maintenance: PackageData;
@@ -50,9 +54,9 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
     postRenovation: PackageData;
   };
 
-  const additionalServices = t(
-    'detailedServices.cleaningPackages.additionalServices.services',
-  ) as unknown as AdditionalService[];
+  const additionalServiceGroups = t(
+    'detailedServices.cleaningPackages.additionalServices.groups',
+  ) as unknown as ServiceGroup[];
 
   const areaIcons = {
     room: Home,
@@ -177,158 +181,129 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({ locale, t }) => {
 
   return (
     <section id="cleaning-packages" className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-4">
-            <Home className="w-8 h-8 text-white" />
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-baloo-bhai font-light text-gray-900 mb-3">
-            {t('detailedServices.cleaningPackages.title') as string}
-          </h2>
-          <p className="text-xl font-inter font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {t('detailedServices.cleaningPackages.subtitle') as string}
-          </p>
-          <div className="w-24 h-1 bg-brand-primary mx-auto rounded-full mt-4"></div>
+      {/* Section Header */}
+      <div className="text-center mb-12">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-4">
+          <Home className="w-8 h-8 text-white" />
         </div>
+        <h2 className="text-4xl sm:text-5xl font-baloo-bhai font-light text-gray-900 mb-3">
+          {t('detailedServices.cleaningPackages.title') as string}
+        </h2>
+        <p className="text-xl font-inter font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          {t('detailedServices.cleaningPackages.subtitle') as string}
+        </p>
+        <div className="w-24 h-1 bg-brand-primary mx-auto rounded-full mt-4"></div>
+      </div>
 
-        {/* Main Packages Tabs */}
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden mb-12">
-          <div className="p-6">
-            <Tabs defaultValue="maintenance" className="w-full">
-              <TabsList className="flex flex-col sm:flex-row w-full mb-6 bg-gray-100 p-1 rounded-xl h-auto sm:h-10">
-                <TabsTrigger
-                  value="maintenance"
-                  className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
-                >
-                  {packages.maintenance.title}
-                </TabsTrigger>
-                <TabsTrigger
-                  value="general"
-                  className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
-                >
-                  {packages.general.title}
-                </TabsTrigger>
-                <TabsTrigger
-                  value="postRenovation"
-                  className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
-                >
-                  {packages.postRenovation.title}
-                </TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="maintenance" className="space-y-4">
-                {renderPackageContent(packages.maintenance, 'maintenance')}
-                {/* Reservation Button */}
-                <div className="flex justify-end pt-6">
-                  <a
-                    href={`/${locale}/reservation?service=cleaning&package=maintenance`}
-                    className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
-                  >
-                    {locale === 'cs'
-                      ? 'Rezervovat'
-                      : locale === 'ua'
-                        ? 'Забронювати'
-                        : 'Book Now'}
-                  </a>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="general" className="space-y-4">
-                {renderPackageContent(packages.general, 'general')}
-                {/* Reservation Button */}
-                <div className="flex justify-end pt-6">
-                  <a
-                    href={`/${locale}/reservation?service=cleaning&package=general`}
-                    className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
-                  >
-                    {locale === 'cs'
-                      ? 'Rezervovat'
-                      : locale === 'ua'
-                        ? 'Забронювати'
-                        : 'Book Now'}
-                  </a>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="postRenovation" className="space-y-4">
-                {renderPackageContent(
-                  packages.postRenovation,
-                  'postRenovation',
-                )}
-                {/* Reservation Button */}
-                <div className="flex justify-end pt-6">
-                  <a
-                    href={`/${locale}/reservation?service=cleaning&package=postRenovation`}
-                    className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
-                  >
-                    {locale === 'cs'
-                      ? 'Rezervovat'
-                      : locale === 'ua'
-                        ? 'Забронювати'
-                        : 'Book Now'}
-                  </a>
-                </div>
-              </TabsContent>
-            </Tabs>
-          </div>
-        </div>
-
-        {/* Additional Services */}
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-          <div className="p-6">
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-baloo-bhai font-light text-gray-900 mb-4">
-                {
-                  t(
-                    'detailedServices.cleaningPackages.additionalServices.title',
-                  ) as string
-                }
-              </h3>
-              <p className="text-lg font-inter font-light text-gray-600 max-w-2xl mx-auto">
-                {
-                  t(
-                    'detailedServices.cleaningPackages.additionalServices.subtitle',
-                  ) as string
-                }
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-              {additionalServices.map((service, index) => (
-                <div
-                  key={index}
-                  className="flex justify-between items-center p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors duration-200 group"
-                >
-                  <span className="font-inter font-light text-gray-700 group-hover:text-gray-900 transition-colors flex-1 pr-2 sm:pr-4 text-sm sm:text-base">
-                    {service.name}
-                  </span>
-                  <Badge
-                    variant="secondary"
-                    className="font-inter font-bold bg-brand-primary text-white border-0 px-2 sm:px-3 py-1 flex-shrink-0 text-xs"
-                  >
-                    <div className="break-words text-center">
-                      {service.price}
-                    </div>
-                  </Badge>
-                </div>
-              ))}
-            </div>
-
-            {/* Reservation Button for Additional Services */}
-            <div className="flex justify-end mt-8">
-              <a
-                href={`/${locale}/reservation?service=cleaning`}
-                className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+      {/* Main Packages Tabs */}
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden mb-12">
+        <div className="p-6">
+          <Tabs defaultValue="maintenance" className="w-full">
+            <TabsList className="flex flex-col sm:flex-row w-full mb-6 bg-gray-100 p-1 rounded-xl h-auto sm:h-10">
+              <TabsTrigger
+                value="maintenance"
+                className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
               >
-                {locale === 'cs'
-                  ? 'Rezervovat'
-                  : locale === 'ua'
-                    ? 'Забронювати'
-                    : 'Book Now'}
-              </a>
-            </div>
+                {packages.maintenance.title}
+              </TabsTrigger>
+              <TabsTrigger
+                value="general"
+                className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
+              >
+                {packages.general.title}
+              </TabsTrigger>
+              <TabsTrigger
+                value="postRenovation"
+                className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
+              >
+                {packages.postRenovation.title}
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="maintenance" className="space-y-4">
+              {renderPackageContent(packages.maintenance, 'maintenance')}
+              {/* Reservation Button */}
+              <div className="flex justify-end pt-6">
+                <a
+                  href={`/${locale}/reservation?service=cleaning&package=maintenance`}
+                  className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  {locale === 'cs'
+                    ? 'Rezervovat'
+                    : locale === 'ua'
+                      ? 'Забронювати'
+                      : 'Book Now'}
+                </a>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="general" className="space-y-4">
+              {renderPackageContent(packages.general, 'general')}
+              {/* Reservation Button */}
+              <div className="flex justify-end pt-6">
+                <a
+                  href={`/${locale}/reservation?service=cleaning&package=general`}
+                  className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  {locale === 'cs'
+                    ? 'Rezervovat'
+                    : locale === 'ua'
+                      ? 'Забронювати'
+                      : 'Book Now'}
+                </a>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="postRenovation" className="space-y-4">
+              {renderPackageContent(packages.postRenovation, 'postRenovation')}
+              {/* Reservation Button */}
+              <div className="flex justify-end pt-6">
+                <a
+                  href={`/${locale}/reservation?service=cleaning&package=postRenovation`}
+                  className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  {locale === 'cs'
+                    ? 'Rezervovat'
+                    : locale === 'ua'
+                      ? 'Забронювати'
+                      : 'Book Now'}
+                </a>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </div>
+
+      {/* Additional Services */}
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+        <div className="p-8">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-baloo-bhai font-light text-gray-900 mb-4">
+              {
+                t(
+                  'detailedServices.cleaningPackages.additionalServices.title',
+                ) as string
+              }
+            </h3>
+            <p className="text-lg font-inter font-light text-gray-600 max-w-2xl mx-auto">
+              {
+                t(
+                  'detailedServices.cleaningPackages.additionalServices.subtitle',
+                ) as string
+              }
+            </p>
           </div>
+
+          <GroupedAdditionalServices
+            serviceGroups={additionalServiceGroups}
+            locale={locale}
+            showReservationButton={true}
+            translations={{
+              service: t('servicesPage.service') as string,
+              unit: t('servicesPage.unit') as string,
+              price: t('servicesPage.price') as string,
+            }}
+          />
         </div>
       </div>
     </section>

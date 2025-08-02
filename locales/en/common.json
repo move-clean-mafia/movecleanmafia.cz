@@ -145,54 +145,72 @@
   "detailedServices": {
     "cleaningPackages": {
       "additionalServices": {
-        "services": [
+        "groups": [
           {
-            "name": "Wash kitchen cabinets inside",
-            "price": "from 320 CZK"
+            "title": "Kitchen Appliances",
+            "description": "Deep cleaning of kitchen appliances and equipment",
+            "services": [
+              {
+                "name": "Wash kitchen cabinets inside",
+                "price": "from 320 CZK"
+              },
+              {
+                "name": "Wash dishwasher",
+                "price": "from 290 CZK"
+              },
+              {
+                "name": "Wash oven",
+                "price": "400 CZK"
+              },
+              {
+                "name": "Wash hood",
+                "price": "400 CZK"
+              },
+              {
+                "name": "Wash microwave",
+                "price": "from 210 CZK"
+              },
+              {
+                "name": "Wash refrigerator completely",
+                "price": "from 350 CZK"
+              }
+            ]
           },
           {
-            "name": "Wash room cabinets inside",
-            "price": "from 390 CZK"
+            "title": "Furniture & Surfaces",
+            "description": "Cleaning of furniture, cabinets, and various surfaces",
+            "services": [
+              {
+                "name": "Wash room cabinets inside",
+                "price": "from 390 CZK"
+              },
+              {
+                "name": "Wash chandelier",
+                "price": "from 250 CZK"
+              },
+              {
+                "name": "Wash windows",
+                "price": "1 m² = 120 CZK"
+              }
+            ]
           },
           {
-            "name": "Wash chandelier",
-            "price": "from 250 CZK"
-          },
-          {
-            "name": "Wash dishwasher",
-            "price": "from 290 CZK"
-          },
-          {
-            "name": "Wash oven",
-            "price": "400 CZK"
-          },
-          {
-            "name": "Wash hood",
-            "price": "400 CZK"
-          },
-          {
-            "name": "Wash microwave",
-            "price": "from 210 CZK"
-          },
-          {
-            "name": "Wash refrigerator completely",
-            "price": "from 350 CZK"
-          },
-          {
-            "name": "Clean pet toilet",
-            "price": "310 CZK"
-          },
-          {
-            "name": "Clean/wash balcony",
-            "price": "from 450 CZK"
-          },
-          {
-            "name": "Key delivery/pickup",
-            "price": "350 CZK"
-          },
-          {
-            "name": "Wash windows",
-            "price": "1 m² = 120 CZK"
+            "title": "Special Services",
+            "description": "Additional specialized cleaning and delivery services",
+            "services": [
+              {
+                "name": "Clean pet toilet",
+                "price": "310 CZK"
+              },
+              {
+                "name": "Clean/wash balcony",
+                "price": "from 450 CZK"
+              },
+              {
+                "name": "Key delivery/pickup",
+                "price": "350 CZK"
+              }
+            ]
           }
         ],
         "subtitle": "Expand your package with additional services",
