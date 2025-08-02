@@ -15,8 +15,8 @@ import {
 } from 'lucide-react';
 import { getTranslation } from '../../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../../lib/i18n';
-import { Card, CardContent } from '../../../../components/ui/card';
 import { CTASection } from '@/components/cta-section';
+import ServicePricing from '../../../../components/service-pricing';
 
 interface ServiceDetailPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -359,60 +359,13 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
             </div>
 
             {/* Pricing Section */}
-            {service.pricing && (
-              <div className="mb-16">
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl sm:text-4xl font-baloo-bhai font-light text-gray-900 mb-4">
-                    {service.pricing.title}
-                  </h3>
-                  <div className="w-24 h-1 bg-brand-primary mx-auto rounded-full"></div>
-                </div>
-
-                <Card className="shadow-xl border-0">
-                  <CardContent className="p-8">
-                    <div className="overflow-x-auto">
-                      <table className="w-full">
-                        <thead>
-                          <tr className="border-b border-gray-200">
-                            <th className="text-left py-6 px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
-                              {t('servicesPage.service')}
-                            </th>
-                            {service.pricing.items[0]?.unit && (
-                              <th className="text-left py-6 px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
-                                {t('servicesPage.unit')}
-                              </th>
-                            )}
-                            <th className="text-right py-6 px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
-                              {t('servicesPage.price')}
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {service.pricing.items.map((item, index) => (
-                            <tr
-                              key={index}
-                              className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200"
-                            >
-                              <td className="py-6 px-6 font-inter font-light text-gray-700">
-                                {item.name}
-                              </td>
-                              {item.unit && (
-                                <td className="py-6 px-6 font-inter font-light text-gray-600">
-                                  {item.unit}
-                                </td>
-                              )}
-                              <td className="py-6 px-6 font-inter font-bold text-brand-primary text-right">
-                                {item.price}
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            )}
+            <ServicePricing
+              locale={locale as SupportedLanguage}
+              t={t}
+              serviceType={service.slug as 'cleaning' | 'moving' | 'packing'}
+              showReservationButton={true}
+              className="mb-16"
+            />
           </div>
         </div>
       </section>

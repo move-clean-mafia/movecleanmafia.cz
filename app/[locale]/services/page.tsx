@@ -5,7 +5,7 @@ import { type SupportedLanguage } from '../../../lib/i18n';
 
 import ServicesGrid from '../../../components/services-grid';
 import { CTASection } from '../../../components/cta-section';
-import CleaningPackages from '../../../components/cleaning-packages';
+import ServicePricing from '../../../components/service-pricing';
 
 import { Truck, Sparkles, Package } from 'lucide-react';
 
@@ -157,30 +157,6 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
     },
   ];
 
-  // Get detailed services data
-  const movingServices = t(
-    'detailedServices.movingAndTransport.items',
-  ) as unknown as Array<{
-    name: string;
-    unit: string;
-    price: string;
-  }>;
-
-  const dryCleaningServices = t(
-    'detailedServices.dryCleaning.items',
-  ) as unknown as Array<{
-    name: string;
-    price: string;
-  }>;
-
-  const packingServices = t(
-    'detailedServices.packingServices.items',
-  ) as unknown as Array<{
-    name: string;
-    unit: string;
-    price: string;
-  }>;
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section - Professional Design */}
@@ -255,75 +231,22 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
         id="detailed-services"
         className="py-20 bg-gray-50 mx-4 sm:mx-6 lg:mx-8"
       >
-        {/* Moving and Transportation Services */}
+        {/* Moving Services Pricing */}
         <div id="moving-services" className="mb-16">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-6">
-              <Truck className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-4xl sm:text-5xl font-baloo-bhai font-light text-gray-900 mb-4">
-              {t('detailedServices.movingAndTransport.title')}
-            </h2>
-            <div className="w-24 h-1 bg-brand-primary mx-auto rounded-full"></div>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-            <div className="p-8">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
-                        {t('servicesPage.service')}
-                      </th>
-                      <th className="text-left py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
-                        {t('servicesPage.unit')}
-                      </th>
-                      <th className="text-right py-1 px-1 sm:py-6 sm:px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
-                        {t('servicesPage.price')}
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {movingServices.map((service, index) => (
-                      <tr
-                        key={index}
-                        className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 group"
-                      >
-                        <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-light text-gray-700 group-hover:text-gray-900 transition-colors">
-                          {service.name}
-                        </td>
-                        <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-light text-gray-600">
-                          {service.unit}
-                        </td>
-                        <td className="py-1 px-1 sm:py-6 sm:px-6 font-inter font-bold text-brand-primary text-right text-sm sm:text-lg">
-                          <div className="break-words">{service.price}</div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {/* Reservation Button */}
-              <div className="mt-8 flex justify-end">
-                <a
-                  href={`/${locale}/reservation?service=moving`}
-                  className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  {t('reservation.submitReservation')}
-                </a>
-              </div>
-            </div>
-          </div>
+          <ServicePricing
+            locale={locale as SupportedLanguage}
+            t={t}
+            serviceType="moving"
+            showReservationButton={true}
+          />
         </div>
 
-        {/* Cleaning Packages */}
-        <CleaningPackages
+        {/* Service Pricing */}
+        <ServicePricing
           locale={locale as SupportedLanguage}
           t={t}
-          dryCleaningServices={dryCleaningServices}
-          packingServices={packingServices}
+          serviceType="cleaning"
+          showReservationButton={true}
         />
       </section>
 
