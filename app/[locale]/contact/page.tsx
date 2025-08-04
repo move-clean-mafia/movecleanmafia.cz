@@ -3,14 +3,14 @@ import { Metadata } from 'next';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
 import {
-  Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from '../../../components/ui/card';
-import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageSquare, Crown } from 'lucide-react';
 import ReservationForm from '../../../components/reservation-form';
+import { CTASection } from '../../../components/cta-section';
 
 interface ContactPageProps {
   params: Promise<{ locale: string }>;
@@ -112,45 +112,130 @@ const ContactPage = async ({ params }: ContactPageProps) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-baloo-bhai font-light mb-6">
+    <div className="min-h-screen bg-black">
+      {/* Hero Section - Mafia Style */}
+      <section className="relative py-20 bg-black overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-[#d6b977]/10 rounded-full blur-3xl z-0"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-[#d6b977]/5 rounded-full blur-2xl z-0"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            {/* Premium Badge */}
+            <div className="inline-flex items-center px-4 py-2 bg-[#d6b977] text-black font-bold rounded-full mb-6 animate-gold-shimmer">
+              <Crown className="w-4 h-4 mr-2" />
+              THE MOVE & CLEAN MAFIA
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
               {t('contact.title')}
             </h1>
-            <p className="text-xl sm:text-2xl font-inter font-light opacity-90 max-w-3xl mx-auto">
+
+            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
+
+            {/* Subtitle */}
+            <p className="text-xl sm:text-2xl md:text-3xl text-white/90 max-w-4xl mx-auto font-body">
               {t('contact.subtitle')}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Reservation Form and Info Section */}
-      <section id="contact" className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Contact Information and Form Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
+                  {t('contact.info.title')}
+                </h2>
+                <p className="text-lg text-white/80 font-body mb-8">
+                  {t('contact.info.subtitle')}
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                {contactInfo.map((info, index) => (
+                  <div key={index} className="mafia-card group hover-lift">
+                    <div className="flex items-start space-x-4">
+                      <div className="inline-flex items-center justify-center w-12 h-12 bg-[#d6b977] text-black rounded-full group-hover:scale-110 transition-transform duration-300">
+                        <info.icon className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-[#d6b977] mb-3 font-heading">
+                          {info.title}
+                        </h3>
+                        <div className="space-y-2">
+                          {info.details.map((detail, detailIndex) => (
+                            <div key={detailIndex}>
+                              {info.action ? (
+                                <a
+                                  href={`${info.action}:${detail}`}
+                                  className="text-white/80 hover:text-[#d6b977] transition-colors duration-300 font-body"
+                                >
+                                  {detail}
+                                </a>
+                              ) : (
+                                <p className="text-white/80 font-body">
+                                  {detail}
+                                </p>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+                {/* Emergency Contact */}
+                <div className="mafia-card border-red-500/50 group hover-lift">
+                  <div className="flex items-start space-x-4">
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-red-500 text-white rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <Phone className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-red-400 mb-3 font-heading">
+                        {t('contact.info.emergency.title')}
+                      </h3>
+                      <p className="text-white/80 font-body mb-3">
+                        {t('contact.info.emergency.subtitle')}
+                      </p>
+                      <a
+                        href={`tel:${t('header.phone1')}`}
+                        className="text-red-400 hover:text-red-300 font-bold transition-colors duration-300 font-body"
+                      >
+                        {t('header.phone1')}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Reservation Form */}
             <div>
-              <Card className="border-0 shadow-lg">
-                <CardHeader className="bg-gradient-to-r from-brand-light to-brand-primary/20 border-b border-brand-primary/30">
+              <div className="mafia-card">
+                <CardHeader className="bg-[#d6b977] text-black rounded-t-lg">
                   <div className="flex items-center space-x-3">
-                    <div className="p-2 bg-brand-primary rounded-lg">
-                      <MessageSquare className="w-6 h-6 text-white" />
+                    <div className="p-2 bg-black rounded-lg">
+                      <MessageSquare className="w-6 h-6 text-[#d6b977]" />
                     </div>
-                    <CardTitle className="text-2xl font-baloo-bhai font-light text-gray-900">
+                    <CardTitle className="text-2xl font-heading font-bold">
                       {t('reservation.title')}
                     </CardTitle>
                   </div>
-                  <CardDescription className="text-gray-600 font-inter font-light text-base">
+                  <CardDescription className="text-black/80 font-body text-base">
                     {t('reservation.subtitle')}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-6">
                   <Suspense
                     fallback={
-                      <div className="p-4 text-center text-gray-500">
+                      <div className="p-4 text-center text-white/60">
                         Loading form...
                       </div>
                     }
@@ -158,153 +243,83 @@ const ContactPage = async ({ params }: ContactPageProps) => {
                     <ReservationForm locale={locale} />
                   </Suspense>
                 </CardContent>
-              </Card>
-            </div>
-
-            {/* Contact Information */}
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-2xl font-baloo-bhai font-light text-gray-900 mb-6">
-                  {t('contact.info.title')}
-                </h2>
-                <p className="text-gray-600 font-inter font-light mb-8">
-                  {t('contact.info.subtitle')}
-                </p>
               </div>
-
-              <div className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <Card
-                    key={index}
-                    className="border-0 shadow-md hover:shadow-lg transition-shadow duration-200"
-                  >
-                    <CardContent className="p-4">
-                      <div className="flex items-start space-x-4">
-                        <div className="p-2 bg-brand-light rounded-lg">
-                          <info.icon className="w-5 h-5 text-brand-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-baloo-bhai font-light text-gray-900 mb-2">
-                            {info.title}
-                          </h3>
-                          <div className="space-y-1">
-                            {info.details.map((detail, detailIndex) => (
-                              <div key={detailIndex}>
-                                {info.action ? (
-                                  <a
-                                    href={`${info.action}:${detail}`}
-                                    className="text-gray-600 font-inter font-light hover:text-brand-primary transition-colors duration-200"
-                                  >
-                                    {detail}
-                                  </a>
-                                ) : (
-                                  <p className="text-gray-600 font-inter font-light">
-                                    {detail}
-                                  </p>
-                                )}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-
-              {/* Emergency Contact */}
-              <Card className="border-0 shadow-lg bg-gradient-to-r from-red-50 to-red-100 border-l-4 border-red-500">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-2 bg-red-500 rounded-lg">
-                      <Phone className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-baloo-bhai font-light text-gray-900 mb-2">
-                        {t('contact.info.emergency.title')}
-                      </h3>
-                      <p className="text-gray-600 font-inter font-light mb-2">
-                        {t('contact.info.emergency.subtitle')}
-                      </p>
-                      <a
-                        href={`tel:${t('header.phone1')}`}
-                        className="text-red-600 font-inter font-medium hover:text-red-700 transition-colors duration-200"
-                      >
-                        {t('header.phone1')}
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-baloo-bhai font-light text-gray-900 mb-4">
+      {/* FAQ Section - Mafia Style */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
               {t('contact.faq.title')}
             </h2>
+            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto font-body">
+              Everything you need to know about our services
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-lg font-baloo-bhai font-light text-gray-900">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="mafia-card group hover-lift">
+              <CardHeader className="bg-[#d6b977] text-black rounded-t-lg">
+                <CardTitle className="text-lg font-heading font-bold">
                   {t('contact.faq.movingTime.question')}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 font-inter font-light">
+              <CardContent className="p-6">
+                <CardDescription className="text-white/80 font-body">
                   {t('contact.faq.movingTime.answer')}
                 </CardDescription>
               </CardContent>
-            </Card>
+            </div>
 
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-lg font-baloo-bhai font-light text-gray-900">
+            <div className="mafia-card group hover-lift">
+              <CardHeader className="bg-[#d6b977] text-black rounded-t-lg">
+                <CardTitle className="text-lg font-heading font-bold">
                   {t('contact.faq.insurance.question')}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 font-inter font-light">
+              <CardContent className="p-6">
+                <CardDescription className="text-white/80 font-body">
                   {t('contact.faq.insurance.answer')}
                 </CardDescription>
               </CardContent>
-            </Card>
+            </div>
 
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-lg font-baloo-bhai font-light text-gray-900">
+            <div className="mafia-card group hover-lift">
+              <CardHeader className="bg-[#d6b977] text-black rounded-t-lg">
+                <CardTitle className="text-lg font-heading font-bold">
                   {t('contact.faq.pricing.question')}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 font-inter font-light">
+              <CardContent className="p-6">
+                <CardDescription className="text-white/80 font-body">
                   {t('contact.faq.pricing.answer')}
                 </CardDescription>
               </CardContent>
-            </Card>
+            </div>
 
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-lg font-baloo-bhai font-light text-gray-900">
+            <div className="mafia-card group hover-lift">
+              <CardHeader className="bg-[#d6b977] text-black rounded-t-lg">
+                <CardTitle className="text-lg font-heading font-bold">
                   {t('contact.faq.weekends.question')}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 font-inter font-light">
+              <CardContent className="p-6">
+                <CardDescription className="text-white/80 font-body">
                   {t('contact.faq.weekends.answer')}
                 </CardDescription>
               </CardContent>
-            </Card>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Call to Action Section */}
+      <CTASection locale={locale as SupportedLanguage} t={t} />
     </div>
   );
 };

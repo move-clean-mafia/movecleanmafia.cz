@@ -501,33 +501,65 @@
     "phone2": "+1 (987) 654-321"
   },
   "hero": {
-    "cta": "Order Services",
+    "title": "AN OFFER YOU CAN'T REFUSE",
+    "subtitle": "YOUR PROBLEMS, OUR BUSINESS",
+    "cta": "MAKE US AN OFFER",
     "imageAlt": "Professional moving and cleaning",
-    "subtitle": "Reliable services for your home and office",
-    "title": "Professional Moving & Cleaning"
+    "badge": "THE MOVE & CLEAN MAFIA",
+    "description": "Professional moving and cleaning services with the precision and reliability you'd expect from the best in the business."
   },
   "homepage": {
+    "servicesSection": {
+      "title": "OUR SPECIALTIES",
+      "subtitle": "Three distinct services, one unbeatable team. We handle everything with the precision and care that sets us apart."
+    },
+    "unifyingText": {
+      "title": "COMPLETE SOLUTIONS FOR EVERY NEED",
+      "subtitle": "From moving your entire home to keeping it spotless, we handle every aspect with the precision and care that only the best can provide. Choose your service and let us postarat se o zbytek."
+    },
+    "ourCode": {
+      "title": "OUR CODE",
+      "subtitle": "The principles that guide every job, every client, every detail.",
+      "principles": {
+        "precision": {
+          "title": "PRECISION",
+          "description": "Every detail matters. We execute with surgical precision, leaving nothing to chance."
+        },
+        "efficiency": {
+          "title": "EFFICIENCY",
+          "description": "Time is money. We work fast, clean, and get the job done right the first time."
+        },
+        "excellence": {
+          "title": "EXCELLENCE",
+          "description": "We don't just meet expectations—we exceed them. Every time, without exception."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "READY TO MAKE A DEAL?",
+      "subtitle": "Don't wait. Contact us now and experience the difference that only the best can provide."
+    },
     "contactSection": {
+      "title": "Contact Information",
+      "subtitle": "We are here for you every day. Don't hesitate to contact us.",
+      "phone": "Phone",
+      "email": "Email",
       "address": "Address",
       "addressValue": "New York, USA",
-      "email": "Email",
-      "emailValue": "info@movecleanmafia.com",
-      "phone": "Phone",
-      "subtitle": "We are here for you every day. Don't hesitate to contact us.",
-      "title": "Contact Information"
-    },
-    "heroImages": {
-      "cleaning": "",
-      "moving": ""
+      "emailValue": "info@movecleanmafia.com"
     },
     "pricingSection": {
-      "showAllPrices": "View all prices",
+      "title": "Pricing",
       "subtitle": "Transparent prices for all our services",
-      "title": "Pricing"
+      "showAllPrices": "View all prices"
     },
-    "servicesSection": {
-      "subtitle": "",
-      "title": ""
+    "compactServicesSection": {
+      "title": "ALL OUR SERVICES",
+      "subtitle": "Choose from our comprehensive range of professional services. Each one designed to meet your specific needs with the precision and care you expect from the best."
+    },
+    "heroImages": {
+      "cleaning": "Professional cleaning services",
+      "moving": "Professional moving services"
     }
   },
   "navigation": {
@@ -538,72 +570,66 @@
     "services": "Services"
   },
   "reservation": {
-    "additionalInfo": "Additional Information",
-    "address": "Address",
-    "addressPlaceholder": "Enter the address where the service will be provided...",
-    "apartmentSize": "Apartment/Office Size (m²)",
-    "apartmentSizePlaceholder": "e.g. 65",
-    "cleaningPackage": "Cleaning Package",
-    "cleaningPackagePlaceholder": "Select cleaning package",
-    "cleaningPackages": {
-      "general": "General Cleaning",
-      "maintenance": "Maintenance Cleaning",
-      "postRenovation": "Post-Renovation Cleaning"
-    },
-    "clinics": {
-      "branch": "",
-      "main": ""
-    },
-    "deliveryAddress": "Delivery Address",
-    "deliveryAddressPlaceholder": "Enter the address where to move...",
-    "error": {
-      "description": "There was an error submitting your reservation. Please try again or contact us directly.",
-      "title": "Reservation Submission Failed"
-    },
-    "message": "Message",
-    "messagePlaceholder": "Describe your requirements, special requests, notes...",
+    "title": "Online Reservation",
+    "subtitle": "Book our services quickly and easily online",
+    "formTitle": "Booking Form",
+    "formDescription": "Fill out the form and we will contact you within 24 hours",
     "personalInfo": "Personal Information",
-    "pickupAddress": "Pickup Address",
-    "pickupAddressPlaceholder": "Enter the address from where to move...",
+    "serviceDetails": "Service Details",
+    "additionalInfo": "Additional Information",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "service": "Service",
+    "address": "Address",
+    "message": "Message",
     "preferredDate": "Preferred Date",
     "preferredTime": "Preferred Time",
-    "selectTime": "Select time",
-    "service": "Service",
-    "serviceDetails": "Service Details",
-    "servicePlaceholder": "Select service",
+    "apartmentSize": "Apartment/Office Size (m²)",
+    "submitReservation": "Submit Reservation",
     "services": {
-      "allergyTesting": "",
-      "bronchoscopy": "",
+      "moving": "Moving",
       "cleaning": "Cleaning",
-      "consultation": "",
-      "examination": "",
-      "followUp": "",
       "furnitureCleaning": "Furniture Cleaning",
       "handyman": "Handyman",
-      "moving": "Moving",
-      "other": "Other",
       "packages": "Service Packages",
-      "spirometry": "",
-      "urgent": ""
-    },
-    "submitReservation": "Submit Reservation",
-    "subtitle": "Book our services quickly and easily online",
-    "success": {
-      "description": "Thank you for your reservation. We will contact you within 24 hours to confirm the details.",
-      "title": "Reservation Submitted Successfully!"
-    },
-    "timeOptions": {
-      "afternoon": "",
-      "evening": "",
-      "morning": "",
-      "noPreference": ""
+      "other": "Other"
     },
     "timeSlots": {
+      "morning": "Morning (8:00-12:00)",
       "afternoon": "Afternoon (12:00-16:00)",
-      "evening": "Evening (16:00-20:00)",
-      "morning": "Morning (8:00-12:00)"
+      "evening": "Evening (16:00-20:00)"
     },
-    "title": "Online Reservation"
+    "benefits": {
+      "title": "Why Book Online?",
+      "subtitle": "Experience the convenience and efficiency of our online booking system",
+      "fast": {
+        "title": "FAST",
+        "description": "Quick and easy booking process that takes just a few minutes"
+      },
+      "simple": {
+        "title": "SIMPLE",
+        "description": "Straightforward form with clear instructions and instant confirmation"
+      },
+      "quality": {
+        "title": "QUALITY",
+        "description": "Same premium service quality, now with enhanced convenience"
+      }
+    },
+    "success": {
+      "title": "Reservation Submitted Successfully!",
+      "description": "Thank you for your reservation. We will contact you within 24 hours to confirm the details."
+    },
+    "error": {
+      "title": "Reservation Submission Failed",
+      "description": "There was an error submitting your reservation. Please try again or contact us directly."
+    },
+    "servicePlaceholder": "Select service",
+    "addressPlaceholder": "Enter the address where the service will be provided...",
+    "messagePlaceholder": "Describe your requirements, special requests, notes...",
+    "apartmentSizePlaceholder": "e.g. 65",
+    "submitting": "Submitting..."
   },
   "services": {
     "cleaning": "Cleaning",

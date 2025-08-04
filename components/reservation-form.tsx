@@ -305,37 +305,39 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
     }
   };
 
+  const isSubmitting = submitMutation.isPending;
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Personal Information */}
       <div className="space-y-4">
-        <h3 className="text-lg font-baloo-bhai font-light text-gray-900 flex items-center">
-          <User className="w-5 h-5 mr-2 text-brand-primary" />
+        <h3 className="text-lg font-heading font-bold text-[#d6b977] flex items-center">
+          <User className="w-5 h-5 mr-2 text-[#d6b977]" />
           {t('reservation.personalInfo')}
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <Label
               htmlFor="firstName"
-              className="text-sm font-inter font-medium text-gray-700"
+              className="text-sm font-body font-medium text-white/90"
             >
-              {t('contact.form.firstName')}
+              {t('reservation.firstName')}
             </Label>
             <Input
               id="firstName"
               type="text"
               value={formData.firstName}
               onChange={(e) => handleInputChange('firstName', e.target.value)}
-              className={`mt-1 font-inter font-light ${
+              className={`mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20 ${
                 hasFieldError('firstName')
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
                   : ''
               }`}
               placeholder={t('contact.form.firstNamePlaceholder')}
               required
             />
             {hasFieldError('firstName') && (
-              <div className="mt-1 flex items-center text-sm text-red-600">
+              <div className="mt-1 flex items-center text-sm text-red-400">
                 <AlertCircle className="w-4 h-4 mr-1" />
                 {getFieldError('firstName')}
               </div>
@@ -344,25 +346,25 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="lastName"
-              className="text-sm font-inter font-medium text-gray-700"
+              className="text-sm font-body font-medium text-white/90"
             >
-              {t('contact.form.lastName')}
+              {t('reservation.lastName')}
             </Label>
             <Input
               id="lastName"
               type="text"
               value={formData.lastName}
               onChange={(e) => handleInputChange('lastName', e.target.value)}
-              className={`mt-1 font-inter font-light ${
+              className={`mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20 ${
                 hasFieldError('lastName')
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
                   : ''
               }`}
               placeholder={t('contact.form.lastNamePlaceholder')}
               required
             />
             {hasFieldError('lastName') && (
-              <div className="mt-1 flex items-center text-sm text-red-600">
+              <div className="mt-1 flex items-center text-sm text-red-400">
                 <AlertCircle className="w-4 h-4 mr-1" />
                 {getFieldError('lastName')}
               </div>
@@ -373,25 +375,25 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="email"
-              className="text-sm font-inter font-medium text-gray-700"
+              className="text-sm font-body font-medium text-white/90"
             >
-              {t('contact.form.email')}
+              {t('reservation.email')}
             </Label>
             <Input
               id="email"
               type="email"
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
-              className={`mt-1 font-inter font-light ${
+              className={`mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20 ${
                 hasFieldError('email')
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
                   : ''
               }`}
               placeholder={t('contact.form.emailPlaceholder')}
               required
             />
             {hasFieldError('email') && (
-              <div className="mt-1 flex items-center text-sm text-red-600">
+              <div className="mt-1 flex items-center text-sm text-red-400">
                 <AlertCircle className="w-4 h-4 mr-1" />
                 {getFieldError('email')}
               </div>
@@ -400,17 +402,17 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="phone"
-              className="text-sm font-inter font-medium text-gray-700 flex items-center"
+              className="text-sm font-body font-medium text-white/90 flex items-center"
             >
-              <Phone className="w-4 h-4 mr-2 text-brand-primary" />
-              {t('contact.form.phone')}
+              <Phone className="w-4 h-4 mr-2 text-[#d6b977]" />
+              {t('reservation.phone')}
             </Label>
             <div className="mt-1 flex">
               <Select
                 value={selectedCountryCode}
                 onValueChange={handleCountryCodeChange}
               >
-                <SelectTrigger className="w-28 font-inter font-light rounded-r-none border-r-0">
+                <SelectTrigger className="w-28 font-body bg-black border-[#d6b977]/30 text-white rounded-r-none border-r-0 focus:border-[#d6b977] focus:ring-[#d6b977]/20">
                   <SelectValue>
                     {(() => {
                       const selectedCountry = countryCodes.find(
@@ -427,16 +429,20 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                     })()}
                   </SelectValue>
                 </SelectTrigger>
-                <SelectContent className="max-h-60">
+                <SelectContent className="max-h-60 bg-black border-[#d6b977]/30">
                   {countryCodes.map((country) => (
-                    <SelectItem key={country.code} value={country.code}>
+                    <SelectItem
+                      key={country.code}
+                      value={country.code}
+                      className="text-white hover:bg-[#d6b977]/10"
+                    >
                       <div className="flex items-center space-x-3">
                         <span className="text-lg">{country.flag}</span>
                         <div className="flex flex-col">
-                          <span className="text-sm font-medium">
+                          <span className="text-sm font-medium text-white">
                             {country.name}
                           </span>
-                          <span className="text-xs text-gray-500">
+                          <span className="text-xs text-white/60">
                             {country.code}
                           </span>
                         </div>
@@ -450,9 +456,9 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
-                className={`flex-1 font-inter font-light rounded-l-none ${
+                className={`flex-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 rounded-l-none focus:border-[#d6b977] focus:ring-[#d6b977]/20 ${
                   hasFieldError('phone')
-                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
+                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
                     : ''
                 }`}
                 placeholder="123 456 789"
@@ -460,7 +466,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               />
             </div>
             {hasFieldError('phone') && (
-              <div className="mt-1 flex items-center text-sm text-red-600">
+              <div className="mt-1 flex items-center text-sm text-red-400">
                 <AlertCircle className="w-4 h-4 mr-1" />
                 {getFieldError('phone')}
               </div>
@@ -471,8 +477,8 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
 
       {/* Service Details */}
       <div className="space-y-4">
-        <h3 className="text-lg font-baloo-bhai font-light text-gray-900 flex items-center">
-          <MapPin className="w-5 h-5 mr-2 text-brand-primary" />
+        <h3 className="text-lg font-heading font-bold text-[#d6b977] flex items-center">
+          <MapPin className="w-5 h-5 mr-2 text-[#d6b977]" />
           {t('reservation.serviceDetails')}
         </h3>
 
@@ -480,7 +486,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
         <div>
           <Label
             htmlFor="service"
-            className="text-sm font-inter font-medium text-gray-700"
+            className="text-sm font-body font-medium text-white/90"
           >
             {t('reservation.service')}
           </Label>
@@ -490,24 +496,28 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
             required
           >
             <SelectTrigger
-              className={`mt-1 font-inter font-light ${
+              className={`mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20 ${
                 hasFieldError('service')
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
                   : ''
               }`}
             >
               <SelectValue placeholder={t('reservation.servicePlaceholder')} />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-black border-[#d6b977]/30">
               {services.map((service) => (
-                <SelectItem key={service.value} value={service.value}>
+                <SelectItem
+                  key={service.value}
+                  value={service.value}
+                  className="text-white hover:bg-[#d6b977]/10"
+                >
                   {service.label}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
           {hasFieldError('service') && (
-            <div className="mt-1 flex items-center text-sm text-red-600">
+            <div className="mt-1 flex items-center text-sm text-red-400">
               <AlertCircle className="w-4 h-4 mr-1" />
               {getFieldError('service')}
             </div>
@@ -552,7 +562,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="date"
-              className="text-sm font-inter font-medium text-gray-700"
+              className="text-sm font-body font-medium text-white/90"
             >
               {t('reservation.preferredDate')}
             </Label>
@@ -562,15 +572,15 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               value={formData.date}
               onChange={(e) => handleInputChange('date', e.target.value)}
               min={today}
-              className={`mt-1 font-inter font-light ${
+              className={`mt-1 font-body bg-black border-[#d6b977]/30 text-white focus:border-[#d6b977] focus:ring-[#d6b977]/20 ${
                 hasFieldError('date')
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
+                  ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
                   : ''
               }`}
               required
             />
             {hasFieldError('date') && (
-              <div className="mt-1 flex items-center text-sm text-red-600">
+              <div className="mt-1 flex items-center text-sm text-red-400">
                 <AlertCircle className="w-4 h-4 mr-1" />
                 {getFieldError('date')}
               </div>
@@ -579,7 +589,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="time"
-              className="text-sm font-inter font-medium text-gray-700"
+              className="text-sm font-body font-medium text-white/90"
             >
               {t('reservation.preferredTime')}
             </Label>
@@ -589,24 +599,28 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               required
             >
               <SelectTrigger
-                className={`mt-1 font-inter font-light ${
+                className={`mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20 ${
                   hasFieldError('time')
-                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
+                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
                     : ''
                 }`}
               >
                 <SelectValue placeholder={t('reservation.selectTime')} />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-black border-[#d6b977]/30">
                 {timeSlots.map((slot) => (
-                  <SelectItem key={slot.value} value={slot.value}>
+                  <SelectItem
+                    key={slot.value}
+                    value={slot.value}
+                    className="text-white hover:bg-[#d6b977]/10"
+                  >
                     {slot.label}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
             {hasFieldError('time') && (
-              <div className="mt-1 flex items-center text-sm text-red-600">
+              <div className="mt-1 flex items-center text-sm text-red-400">
                 <AlertCircle className="w-4 h-4 mr-1" />
                 {getFieldError('time')}
               </div>
@@ -614,158 +628,81 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           </div>
         </div>
 
-        {/* Address Fields */}
-        {selectedService === 'moving' ? (
-          // Moving service - pickup and delivery addresses
-          <div className="space-y-4">
-            <div>
-              <Label
-                htmlFor="pickupAddress"
-                className="text-sm font-inter font-medium text-gray-700 flex items-center"
-              >
-                <Truck className="w-4 h-4 mr-2 text-brand-primary" />
-                {t('reservation.pickupAddress')}
-              </Label>
-              <Textarea
-                id="pickupAddress"
-                value={formData.pickupAddress}
-                onChange={(e) =>
-                  handleInputChange('pickupAddress', e.target.value)
-                }
-                className={`mt-1 font-inter font-light ${
-                  hasFieldError('pickupAddress')
-                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-                    : ''
-                }`}
-                rows={3}
-                placeholder={t('reservation.pickupAddressPlaceholder')}
-                required
-              />
-              {hasFieldError('pickupAddress') && (
-                <div className="mt-1 flex items-center text-sm text-red-600">
-                  <AlertCircle className="w-4 h-4 mr-1" />
-                  {getFieldError('pickupAddress')}
-                </div>
-              )}
-            </div>
-            <div>
-              <Label
-                htmlFor="deliveryAddress"
-                className="text-sm font-inter font-medium text-gray-700 flex items-center"
-              >
-                <Home className="w-4 h-4 mr-2 text-brand-primary" />
-                {t('reservation.deliveryAddress')}
-              </Label>
-              <Textarea
-                id="deliveryAddress"
-                value={formData.deliveryAddress}
-                onChange={(e) =>
-                  handleInputChange('deliveryAddress', e.target.value)
-                }
-                className={`mt-1 font-inter font-light ${
-                  hasFieldError('deliveryAddress')
-                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-                    : ''
-                }`}
-                rows={3}
-                placeholder={t('reservation.deliveryAddressPlaceholder')}
-                required
-              />
-              {hasFieldError('deliveryAddress') && (
-                <div className="mt-1 flex items-center text-sm text-red-600">
-                  <AlertCircle className="w-4 h-4 mr-1" />
-                  {getFieldError('deliveryAddress')}
-                </div>
-              )}
-            </div>
-          </div>
-        ) : (
-          // Other services - single address
-          <div>
-            <Label
-              htmlFor="address"
-              className="text-sm font-inter font-medium text-gray-700"
-            >
-              {t('reservation.address')}
-            </Label>
-            <Textarea
-              id="address"
-              value={formData.address}
-              onChange={(e) => handleInputChange('address', e.target.value)}
-              className={`mt-1 font-inter font-light ${
-                hasFieldError('address')
-                  ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-                  : ''
-              }`}
-              rows={3}
-              placeholder={t('reservation.addressPlaceholder')}
-              required
-            />
-            {hasFieldError('address') && (
-              <div className="mt-1 flex items-center text-sm text-red-600">
-                <AlertCircle className="w-4 h-4 mr-1" />
-                {getFieldError('address')}
-              </div>
-            )}
-          </div>
-        )}
+        {/* Address */}
+        <div>
+          <Label
+            htmlFor="address"
+            className="text-sm font-body font-medium text-white/90"
+          >
+            {t('reservation.address')}
+          </Label>
+          <Textarea
+            id="address"
+            value={formData.address || ''}
+            onChange={(e) => handleInputChange('address', e.target.value)}
+            className="mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20"
+            placeholder={t('reservation.addressPlaceholder')}
+            rows={3}
+          />
+        </div>
 
-        {/* Apartment Size (for cleaning and moving) */}
-        {(selectedService === 'cleaning' || selectedService === 'moving') && (
-          <div>
-            <Label
-              htmlFor="apartmentSize"
-              className="text-sm font-inter font-medium text-gray-700"
-            >
-              {t('reservation.apartmentSize')}
-            </Label>
-            <Input
-              id="apartmentSize"
-              type="number"
-              value={formData.apartmentSize}
-              onChange={(e) =>
-                handleInputChange('apartmentSize', e.target.value)
-              }
-              className="mt-1 font-inter font-light"
-              placeholder={t('reservation.apartmentSizePlaceholder')}
-            />
-          </div>
-        )}
+        {/* Apartment Size */}
+        <div>
+          <Label
+            htmlFor="apartmentSize"
+            className="text-sm font-body font-medium text-white/90"
+          >
+            {t('reservation.apartmentSize')}
+          </Label>
+          <Input
+            id="apartmentSize"
+            type="text"
+            value={formData.apartmentSize || ''}
+            onChange={(e) => handleInputChange('apartmentSize', e.target.value)}
+            className="mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20"
+            placeholder={t('reservation.apartmentSizePlaceholder')}
+          />
+        </div>
       </div>
 
       {/* Additional Information */}
       <div className="space-y-4">
-        <h3 className="text-lg font-baloo-bhai font-light text-gray-900 flex items-center">
-          <Clock className="w-5 h-5 mr-2 text-brand-primary" />
+        <h3 className="text-lg font-heading font-bold text-[#d6b977] flex items-center">
+          <Clock className="w-5 h-5 mr-2 text-[#d6b977]" />
           {t('reservation.additionalInfo')}
         </h3>
+
+        {/* Message */}
         <div>
           <Label
             htmlFor="message"
-            className="text-sm font-inter font-medium text-gray-700"
+            className="text-sm font-body font-medium text-white/90"
           >
             {t('reservation.message')}
           </Label>
           <Textarea
             id="message"
-            value={formData.message}
+            value={formData.message || ''}
             onChange={(e) => handleInputChange('message', e.target.value)}
-            className="mt-1 font-inter font-light"
-            rows={4}
+            className="mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20"
             placeholder={t('reservation.messagePlaceholder')}
+            rows={4}
           />
         </div>
       </div>
 
-      <Button
-        type="submit"
-        disabled={submitMutation.isPending}
-        className="w-full bg-brand-primary hover:bg-brand-secondary font-inter font-medium disabled:opacity-50"
-      >
-        {submitMutation.isPending
-          ? 'Submitting...'
-          : t('reservation.submitReservation')}
-      </Button>
+      {/* Submit Button */}
+      <div className="pt-6">
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full bg-[#d6b977] text-black hover:bg-[#d6b977]/90 font-heading font-bold text-lg py-3 transition-all duration-300"
+        >
+          {isSubmitting
+            ? t('reservation.submitting')
+            : t('reservation.submitReservation')}
+        </Button>
+      </div>
     </form>
   );
 };

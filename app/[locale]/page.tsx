@@ -6,6 +6,7 @@ import { type SupportedLanguage } from '../../lib/i18n';
 import { CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
 import BenefitsGrid from '../../components/benefits-grid';
+import CompactServicesGrid from '../../components/compact-services-grid';
 
 import {
   Truck,
@@ -22,6 +23,10 @@ import {
   Zap,
   Target,
   Award,
+  Sparkles,
+  Droplets,
+  Wrench,
+  Package2,
 } from 'lucide-react';
 import { CTASection } from '@/components/cta-section';
 
@@ -208,6 +213,53 @@ const HomePage = async ({ params }: HomePageProps) => {
     },
   ];
 
+  const compactServices = [
+    {
+      icon: Truck,
+      title: t('services.moving'),
+      description: t('services.movingDescription'),
+      features: t('services.movingFeatures') as unknown as string[],
+      image: '/images/moving.jpg',
+      imageAlt: t('homepage.heroImages.moving'),
+    },
+    {
+      icon: Sparkles,
+      title: t('services.cleaning'),
+      description: t('services.cleaningDescription'),
+      features: t('services.cleaningFeatures') as unknown as string[],
+      image: '/images/cleaning.jpg',
+      imageAlt: t('homepage.heroImages.cleaning'),
+    },
+    {
+      icon: Droplets,
+      title: t('services.furnitureCleaning'),
+      description: t('services.furnitureCleaningDescription'),
+      features: [
+        'Chemické čistění nábytku',
+        'Čistění koberců',
+        'Profesionální přístroje',
+      ],
+      image: '/images/cleaning.jpg',
+      imageAlt: 'Chemické čistění',
+    },
+    {
+      icon: Wrench,
+      title: t('services.handyman'),
+      description: t('services.handymanDescription'),
+      features: ['Drobné opravy', 'Montáž nábytku', 'Instalace'],
+      image: '/images/moving.jpg',
+      imageAlt: 'Hodinový manžel',
+    },
+    {
+      icon: Package2,
+      title: t('services.packages'),
+      description: t('services.packagesDescription'),
+      features: ['Kombinované služby', 'Výhodné ceny', 'Komplexní řešení'],
+      image: '/images/packing.jpg',
+      imageAlt: 'Komplexní balíčky',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section - Mafia Style */}
@@ -234,23 +286,22 @@ const HomePage = async ({ params }: HomePageProps) => {
                 {/* Premium Badge */}
                 <div className="inline-flex items-center px-4 py-2 bg-[#d6b977] text-black font-bold rounded-full mb-6 animate-gold-shimmer">
                   <Crown className="w-4 h-4 mr-2" />
-                  THE MOVE & CLEAN MAFIA
+                  {t('hero.badge')}
                 </div>
 
                 {/* Main Headline */}
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-[#d6b977] animate-text-glow">
-                  AN OFFER YOU CAN'T REFUSE
+                  {t('hero.title')}
                 </h1>
 
                 {/* Subtitle */}
                 <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-6 text-white/90 font-light max-w-2xl mx-auto lg:mx-0">
-                  YOUR PROBLEMS, OUR BUSINESS
+                  {t('hero.subtitle')}
                 </p>
 
                 {/* Description */}
                 <p className="text-lg sm:text-xl mt-8 text-white/80 max-w-3xl mx-auto lg:mx-0 font-body">
-                  Professional moving and cleaning services with the precision
-                  and reliability you'd expect from the best in the business.
+                  {t('hero.description')}
                 </p>
 
                 {/* CTA Button */}
@@ -259,7 +310,7 @@ const HomePage = async ({ params }: HomePageProps) => {
                     href={`/${locale}/reservation?service=moving`}
                     className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
                   >
-                    MAKE US AN OFFER
+                    {t('hero.cta')}
                     <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
                   </a>
                 </div>
@@ -276,17 +327,38 @@ const HomePage = async ({ params }: HomePageProps) => {
         <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-[#d6b977]/10 rounded-full blur-xl z-20 animate-pulse"></div>
       </section>
 
+      {/* Compact Services Section - Mafia Style */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
+              {t('homepage.compactServicesSection.title')}
+            </h2>
+            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto font-body">
+              {t('homepage.compactServicesSection.subtitle')}
+            </p>
+          </div>
+
+          <CompactServicesGrid
+            services={compactServices}
+            locale={locale as SupportedLanguage}
+            t={t}
+            useSpecificLinks={true}
+          />
+        </div>
+      </section>
+
       {/* Services Section - Mafia Style */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
-              OUR SPECIALTIES
+              {t('homepage.servicesSection.title')}
             </h2>
             <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
             <p className="text-xl text-white/80 max-w-3xl mx-auto font-body">
-              Three distinct services, one unbeatable team. We handle everything
-              with the precision and care that sets us apart.
+              {t('homepage.servicesSection.subtitle')}
             </p>
           </div>
 
@@ -444,11 +516,11 @@ const HomePage = async ({ params }: HomePageProps) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
-              OUR CODE
+              {t('homepage.ourCode.title')}
             </h2>
             <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
             <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed font-body">
-              The principles that guide every job, every client, every detail.
+              {t('homepage.ourCode.subtitle')}
             </p>
           </div>
 
@@ -458,11 +530,10 @@ const HomePage = async ({ params }: HomePageProps) => {
                 <Target className="w-10 h-10" />
               </div>
               <h3 className="text-2xl font-bold text-[#d6b977] mb-4 font-heading">
-                PRECISION
+                {t('homepage.ourCode.principles.precision.title')}
               </h3>
               <p className="text-white/80 font-body">
-                Every detail matters. We execute with surgical precision,
-                leaving nothing to chance.
+                {t('homepage.ourCode.principles.precision.description')}
               </p>
             </div>
 
@@ -471,11 +542,10 @@ const HomePage = async ({ params }: HomePageProps) => {
                 <Zap className="w-10 h-10" />
               </div>
               <h3 className="text-2xl font-bold text-[#d6b977] mb-4 font-heading">
-                EFFICIENCY
+                {t('homepage.ourCode.principles.efficiency.title')}
               </h3>
               <p className="text-white/80 font-body">
-                Time is money. We work fast, clean, and get the job done right
-                the first time.
+                {t('homepage.ourCode.principles.efficiency.description')}
               </p>
             </div>
 
@@ -484,11 +554,10 @@ const HomePage = async ({ params }: HomePageProps) => {
                 <Award className="w-10 h-10" />
               </div>
               <h3 className="text-2xl font-bold text-[#d6b977] mb-4 font-heading">
-                EXCELLENCE
+                {t('homepage.ourCode.principles.excellence.title')}
               </h3>
               <p className="text-white/80 font-body">
-                We don't just meet expectations—we exceed them. Every time,
-                without exception.
+                {t('homepage.ourCode.principles.excellence.description')}
               </p>
             </div>
           </div>

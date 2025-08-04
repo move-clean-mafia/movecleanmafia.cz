@@ -501,33 +501,65 @@
     "phone2": "+420 987 654 321"
   },
   "hero": {
-    "cta": "Objednat služby",
+    "title": "NABÍDKA, KTEROU NEMŮŽETE ODMÍTNOUT",
+    "subtitle": "VAŠE PROBLÉMY, NÁŠ BYZNYS",
+    "cta": "UDĚLEJTE NÁM NABÍDKU",
     "imageAlt": "Profesionální stěhování a úklid",
-    "subtitle": "Spolehlivé služby pro váš domov a kancelář",
-    "title": "Profesionální stěhování a úklid"
+    "badge": "THE MOVE & CLEAN MAFIA",
+    "description": "Profesionální stěhovací a úklidové služby s precizností a spolehlivostí, kterou očekáváte od nejlepších v oboru."
   },
   "homepage": {
+    "servicesSection": {
+      "title": "NAŠE SPECIALITY",
+      "subtitle": "Tři odlišné služby, jeden nepřekonatelný tým. Řešíme vše s precizností a péčí, která nás odlišuje."
+    },
+    "unifyingText": {
+      "title": "KOMPLETNÍ ŘEŠENÍ PRO KAŽDOU POTŘEBU",
+      "subtitle": "Od stěhování celého bytu až po udržení čistoty - řešíme každý aspekt s precizností a péčí, kterou poskytují pouze ti nejlepší. Vyberte si službu a nechte nás postarat se o zbytek."
+    },
+    "ourCode": {
+      "title": "NAŠE PRAVIDLA",
+      "subtitle": "Principy, které vedou každou práci, každého klienta, každý detail.",
+      "principles": {
+        "precision": {
+          "title": "PRECIZNOST",
+          "description": "Každý detail je důležitý. Provádíme práci s chirurgickou precizností, nic nenecháváme náhodě."
+        },
+        "efficiency": {
+          "title": "EFEKTIVITA",
+          "description": "Čas jsou peníze. Pracujeme rychle, čistě a práci uděláme správně hned napoprvé."
+        },
+        "excellence": {
+          "title": "EXCELENCE",
+          "description": "Nesplňujeme jen očekávání - překračujeme je. Pokaždé, bez výjimky."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "PŘIPRAVENI UZAVŘÍT DOHODU?",
+      "subtitle": "Nečekejte. Kontaktujte nás nyní a zažijte rozdíl, který poskytují pouze ti nejlepší."
+    },
     "contactSection": {
+      "title": "Kontaktní informace",
+      "subtitle": "Jsme tu pro vás každý den. Neváhejte nás kontaktovat.",
+      "phone": "Telefon",
+      "email": "Email",
       "address": "Adresa",
       "addressValue": "Praha, Česká republika",
-      "email": "Email",
-      "emailValue": "info@movecleanmafia.cz",
-      "phone": "Telefon",
-      "subtitle": "Jsme tu pro vás každý den. Neváhejte nás kontaktovat.",
-      "title": "Kontaktní informace"
-    },
-    "heroImages": {
-      "cleaning": "",
-      "moving": ""
+      "emailValue": "info@movecleanmafia.cz"
     },
     "pricingSection": {
-      "showAllPrices": "Zobrazit všechny ceny",
+      "title": "Ceny",
       "subtitle": "Transparentní ceny pro všechny naše služby",
-      "title": "Cenové nabídky"
+      "showAllPrices": "Zobrazit všechny ceny"
     },
-    "servicesSection": {
-      "subtitle": "",
-      "title": ""
+    "compactServicesSection": {
+      "title": "VŠECHNY NAŠE SLUŽBY",
+      "subtitle": "Vyberte si z našeho komplexního spektra profesionálních služeb. Každá je navržena tak, aby splňovala vaše specifické potřeby s precizností a péčí, kterou očekáváte od nejlepších."
+    },
+    "heroImages": {
+      "cleaning": "Profesionální úklidové služby",
+      "moving": "Profesionální stěhovací služby"
     }
   },
   "navigation": {
@@ -538,72 +570,66 @@
     "services": "Služby"
   },
   "reservation": {
-    "additionalInfo": "Další informace",
-    "address": "Adresa",
-    "addressPlaceholder": "Zadejte adresu, kde se bude služba provádět...",
-    "apartmentSize": "Velikost bytu/kanceláře (m²)",
-    "apartmentSizePlaceholder": "např. 65",
-    "cleaningPackage": "Typ úklidu",
-    "cleaningPackagePlaceholder": "Vyberte typ úklidu",
-    "cleaningPackages": {
-      "general": "Generální úklid",
-      "maintenance": "Údržbový úklid",
-      "postRenovation": "Úklid po rekonstrukci"
-    },
-    "clinics": {
-      "branch": "",
-      "main": ""
-    },
-    "deliveryAddress": "Adresa vyložení",
-    "deliveryAddressPlaceholder": "Zadejte adresu, kam se bude stěhovat...",
-    "error": {
-      "description": "Při odesílání rezervace došlo k chybě. Zkuste to prosím znovu nebo nás kontaktujte přímo.",
-      "title": "Odeslání rezervace se nezdařilo"
-    },
-    "message": "Zpráva",
-    "messagePlaceholder": "Popište vaše požadavky, speciální požadavky, poznámky...",
+    "title": "Online rezervace",
+    "subtitle": "Rezervujte naše služby rychle a snadno online",
+    "formTitle": "Rezervační formulář",
+    "formDescription": "Vyplňte formulář a my vás budeme kontaktovat do 24 hodin",
     "personalInfo": "Osobní údaje",
-    "pickupAddress": "Adresa vykládky",
-    "pickupAddressPlaceholder": "Zadejte adresu, odkud se bude stěhovat...",
-    "preferredDate": "Preferovaný datum",
-    "preferredTime": "Preferovaný čas",
-    "selectTime": "Vyberte čas",
-    "service": "Služba",
     "serviceDetails": "Detaily služby",
-    "servicePlaceholder": "Vyberte službu",
-    "services": {
-      "allergyTesting": "",
-      "bronchoscopy": "",
-      "cleaning": "Úklid",
-      "consultation": "",
-      "examination": "",
-      "followUp": "",
-      "furnitureCleaning": "Chemické čistění",
-      "handyman": "Hodinový manžel",
-      "moving": "Stěhování",
-      "other": "Jiné",
-      "packages": "Komplexní balíčky",
-      "spirometry": "",
-      "urgent": ""
-    },
+    "additionalInfo": "Dodatečné informace",
+    "firstName": "Jméno",
+    "lastName": "Příjmení",
+    "email": "Email",
+    "phone": "Telefon",
+    "service": "Služba",
+    "address": "Adresa",
+    "message": "Zpráva",
+    "preferredDate": "Preferované datum",
+    "preferredTime": "Preferovaný čas",
+    "apartmentSize": "Velikost bytu/kanceláře (m²)",
     "submitReservation": "Odeslat rezervaci",
-    "subtitle": "Rezervujte si naše služby rychle a jednoduše online",
-    "success": {
-      "description": "Děkujeme za vaši rezervaci. Budeme vás kontaktovat do 24 hodin pro potvrzení detailů.",
-      "title": "Rezervace byla úspěšně odeslána!"
-    },
-    "timeOptions": {
-      "afternoon": "",
-      "evening": "",
-      "morning": "",
-      "noPreference": ""
+    "services": {
+      "moving": "Stěhování",
+      "cleaning": "Úklid",
+      "furnitureCleaning": "Čištění nábytku",
+      "handyman": "Hodinový manžel",
+      "packages": "Balíčky služeb",
+      "other": "Jiné"
     },
     "timeSlots": {
+      "morning": "Ráno (8:00-12:00)",
       "afternoon": "Odpoledne (12:00-16:00)",
-      "evening": "Večer (16:00-20:00)",
-      "morning": "Ráno (8:00-12:00)"
+      "evening": "Večer (16:00-20:00)"
     },
-    "title": "Online Rezervace"
+    "benefits": {
+      "title": "Proč rezervovat online?",
+      "subtitle": "Zažijte pohodlí a efektivitu našeho online rezervačního systému",
+      "fast": {
+        "title": "RYCHLÉ",
+        "description": "Rychlý a jednoduchý rezervační proces, který trvá jen několik minut"
+      },
+      "simple": {
+        "title": "JEDNODUCHÉ",
+        "description": "Přehledný formulář s jasnými instrukcemi a okamžitým potvrzením"
+      },
+      "quality": {
+        "title": "KVALITA",
+        "description": "Stejná prémiová kvalita služeb, nyní s vylepšeným pohodlím"
+      }
+    },
+    "success": {
+      "title": "Rezervace úspěšně odeslána!",
+      "description": "Děkujeme za vaši rezervaci. Kontaktujeme vás do 24 hodin pro potvrzení detailů."
+    },
+    "error": {
+      "title": "Odeslání rezervace selhalo",
+      "description": "Při odesílání rezervace došlo k chybě. Zkuste to znovu nebo nás kontaktujte přímo."
+    },
+    "servicePlaceholder": "Vyberte službu",
+    "addressPlaceholder": "Zadejte adresu, kde se bude služba provádět...",
+    "messagePlaceholder": "Popište vaše požadavky, speciální požadavky, poznámky...",
+    "apartmentSizePlaceholder": "např. 65",
+    "submitting": "Odesílání..."
   },
   "services": {
     "cleaning": "Úklid",
