@@ -416,41 +416,59 @@
     "movingAndTransport": {
       "items": [
         {
-          "name": "Mover-packer",
-          "price": "350-450 CZK",
-          "unit": "per hour/person"
-        },
-        {
-          "name": "Driver + vehicle delivery",
-          "price": "350 CZK",
-          "unit": "per hour"
-        },
-        {
-          "name": "Car with driver",
-          "price": "700-900 CZK",
-          "unit": "per hour"
+          "name": "Car + driver",
+          "price": "700 CZK/hour"
         },
         {
           "name": "Car + 1 mover",
-          "price": "1200 CZK",
-          "unit": "per hour"
+          "price": "800 CZK/hour"
         },
         {
           "name": "Car + 2 movers",
-          "price": "1600 CZK",
-          "unit": "per hour"
-        },
-        {
-          "name": "Surcharge for heavy items",
-          "price": "from 250 CZK",
-          "unit": "per item/floor"
-        },
-        {
-          "name": "Furniture disassembly/assembly",
-          "price": "450 CZK",
-          "unit": "per hour/person"
+          "price": "1100 CZK/hour"
         }
       ],
+      "additionalServices": {
+        "title": "Additional services",
+        "items": [
+          {
+            "name": "Fuel outside Prague",
+            "price": "30 CZK/km"
+          },
+          {
+            "name": "Packing items",
+            "price": "450 CZK/hour"
+          },
+          {
+            "name": "Furnishing & Arrangement",
+            "price": "450 CZK/hour"
+          },
+          {
+            "name": "Boxes",
+            "price": "90 CZK"
+          }
+        ]
+      },
+      "description": "You relax, we move. Complete service from professionals: from packing to furnishing. Moving with us is simple and comfortable.",
+      "includedInPrice": {
+        "title": "Included in the price:",
+        "items": [
+          "We don't charge kilometers not driven in Prague",
+          "No floor surcharges",
+          "We don't charge for connecting and disconnecting washing machine or dishwasher",
+          "We don't charge surcharges for night hours, weekends or holidays"
+        ]
+      },
+      "additionalServicesList": {
+        "title": "Additional services we offer:",
+        "items": [
+          "Furniture transport – we safely and carefully transport individual pieces of furniture and complete furnishings.",
+          "Old furniture removal – we rid you of unnecessary equipment from home, office or warehouse.",
+          "Clearing apartments, houses and offices – complete clearing services including waste disposal.",
+          "Transport from shops – we ensure fast and reliable delivery of purchases right to your home."
+        ]
+      },
+      "minOrder": "Minimum order is 1.5 hours.",
       "title": "Moving and Additional Services"
     },
     "packingServices": {
@@ -560,11 +578,12 @@
       "consultation": "",
       "examination": "",
       "followUp": "",
+      "furnitureCleaning": "Furniture Cleaning",
+      "handyman": "Handyman",
       "moving": "Moving",
       "other": "Other",
-      "packing": "Packing",
+      "packages": "Service Packages",
       "spirometry": "",
-
       "urgent": ""
     },
     "submitReservation": "Submit Reservation",
@@ -607,15 +626,13 @@
       "Assembly at new location",
       "Cargo insurance"
     ],
-    "packing": "Packing",
-    "packingDescription": "Safe packing and packaging of all your belongings with professional materials",
-    "packingLongDescription": "Our professional packing service ensures your belongings are safely and efficiently prepared for transport. We use high-quality materials and follow industry best practices to protect fragile items and organize your possessions systematically. Our detailed inventory system and careful labeling make unpacking at your new location smooth and stress-free.",
-    "packingFeatures": [
-      "Professional packing",
-      "Quality materials",
-      "Box labeling",
-      "Inventory"
-    ],
+
+    "furnitureCleaning": "Furniture Cleaning",
+    "furnitureCleaningDescription": "Professional furniture and carpet cleaning",
+    "handyman": "Handyman",
+    "handymanDescription": "Minor repairs and household maintenance",
+    "packages": "Service Packages",
+    "packagesDescription": "Combined services at competitive prices",
     "quality": "Quality",
     "qualityDescription": "Highest quality services and care for your belongings",
     "safety": "Safety",
@@ -1054,6 +1071,7 @@
     "availability": "Availability",
     "quality": "Quality",
     "clients": "Happy Clients",
+    "whyChooseUs": "Why Choose Us?",
     "readyToBook": "Ready to Book Our Service?",
     "ctaDescription": "Get a free consultation and price quote. Our team is ready to help you with your needs.",
     "bookNow": "Book Now",

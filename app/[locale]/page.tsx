@@ -25,8 +25,11 @@ import {
   MapPin,
   ArrowRight,
   Home,
+  Droplets,
+  Wrench,
+  Package2,
 } from 'lucide-react';
-import ServicesGrid from '@/components/services-grid';
+import CompactServicesGrid from '@/components/compact-services-grid';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -145,7 +148,6 @@ const HomePage = async ({ params }: HomePageProps) => {
     'detailedServices.movingAndTransport.items',
   ) as unknown as Array<{
     name: string;
-    unit: string;
     price: string;
   }>;
 
@@ -214,13 +216,35 @@ const HomePage = async ({ params }: HomePageProps) => {
       imageAlt: t('homepage.heroImages.cleaning'),
     },
     {
-      icon: Package,
-      title: t('services.packing'),
-      description: t('services.packingDescription'),
-      features: t('services.packingFeatures') as unknown as string[],
-      highlightPrice: '350-450 Kč',
+      icon: Droplets,
+      title: t('services.furnitureCleaning'),
+      description: t('services.furnitureCleaningDescription'),
+      features: [
+        'Chemické čistění nábytku',
+        'Čistění koberců',
+        'Profesionální přístroje',
+      ],
+      highlightPrice: 'od 150 Kč/m²',
+      image: '/images/cleaning.jpg',
+      imageAlt: 'Chemické čistění',
+    },
+    {
+      icon: Wrench,
+      title: t('services.handyman'),
+      description: t('services.handymanDescription'),
+      features: ['Drobné opravy', 'Montáž nábytku', 'Instalace'],
+      highlightPrice: 'od 300 Kč/hod',
+      image: '/images/moving.jpg',
+      imageAlt: 'Hodinový manžel',
+    },
+    {
+      icon: Package2,
+      title: t('services.packages'),
+      description: t('services.packagesDescription'),
+      features: ['Kombinované služby', 'Výhodné ceny', 'Komplexní řešení'],
+      highlightPrice: 'od 500 Kč',
       image: '/images/packing.jpg',
-      imageAlt: 'Profesionální balení',
+      imageAlt: 'Komplexní balíčky',
     },
   ];
 
@@ -308,10 +332,9 @@ const HomePage = async ({ params }: HomePageProps) => {
           </div>
 
           {/* Hero Services Grid */}
-          <ServicesGrid
+          <CompactServicesGrid
             services={services}
             locale={locale}
-            showPrices={false}
             className="animate-fade-in-up"
             t={t}
             useSpecificLinks={true}

@@ -416,41 +416,59 @@
     "movingAndTransport": {
       "items": [
         {
-          "name": "Stěhovák-balič",
-          "price": "350-450 Kč",
-          "unit": "za hodinu/osobu"
-        },
-        {
-          "name": "Řidič + přistavení vozu",
-          "price": "350 Kč",
-          "unit": "za hodinu"
-        },
-        {
-          "name": "Auto s řidičem",
-          "price": "700-900 Kč",
-          "unit": "za hodinu"
+          "name": "Auto + řidič",
+          "price": "700 Kč/hod"
         },
         {
           "name": "Auto + 1 stěhovák",
-          "price": "1200 Kč",
-          "unit": "za hodinu"
+          "price": "800 Kč/hod"
         },
         {
           "name": "Auto + 2 stěhováci",
-          "price": "1600 Kč",
-          "unit": "za hodinu"
-        },
-        {
-          "name": "Příplatek za těžké břemeno",
-          "price": "od 250 Kč",
-          "unit": "za kus/patro"
-        },
-        {
-          "name": "Demontáž/montáž nábytku",
-          "price": "450 Kč",
-          "unit": "za hodinu/osobu"
+          "price": "1100 Kč/hod"
         }
       ],
+      "additionalServices": {
+        "title": "Doplňkové služby",
+        "items": [
+          {
+            "name": "Palivo mimo Prahu",
+            "price": "30 Kč/km"
+          },
+          {
+            "name": "Balení věci",
+            "price": "450 Kč/hod"
+          },
+          {
+            "name": "Vybavení & Uspořádání",
+            "price": "450 Kč/hod"
+          },
+          {
+            "name": "Krabice",
+            "price": "90 Kč"
+          }
+        ]
+      },
+      "description": "Vy relaxujete, my stěhujeme. Kompletní servis od profesionálů: od zabalení až po vybavení. Stěhování s námi je jednoduché a pohodlné.",
+      "includedInPrice": {
+        "title": "V ceně je zahrnuto:",
+        "items": [
+          "Kilometry nejeté v Praze neúčtujeme",
+          "Žádné příplatky za patra",
+          "Připojení a odpojení pračky či myčky neúčtujeme",
+          "Neúčtujeme příplatky za noční hodiny, víkendy ani svátky"
+        ]
+      },
+      "additionalServicesList": {
+        "title": "Další služby, které vám nabízíme:",
+        "items": [
+          "Převoz nábytku – bezpečně a šetrně převezeme jednotlivé kusy nábytku i celé vybavení.",
+          "Vyklízení starého nábytku – zbavíme vás nepotřebného zařízení z domácnosti, kanceláře či skladu.",
+          "Vyklízení bytů, domů a kanceláří – kompletní vyklízecí služby včetně likvidace odpadu.",
+          "Doprava z obchodů – zajistíme rychlé a spolehlivé doručení nákupů až k vám domů."
+        ]
+      },
+      "minOrder": "Minimální objednávka je 1,5 hodiny.",
       "title": "Stěhování a doplňkové služby"
     },
     "packingServices": {
@@ -560,11 +578,12 @@
       "consultation": "",
       "examination": "",
       "followUp": "",
+      "furnitureCleaning": "Chemické čistění",
+      "handyman": "Hodinový manžel",
       "moving": "Stěhování",
       "other": "Jiné",
-      "packing": "Balení",
+      "packages": "Komplexní balíčky",
       "spirometry": "",
-
       "urgent": ""
     },
     "submitReservation": "Odeslat rezervaci",
@@ -607,15 +626,13 @@
       "Montáž na novém místě",
       "Pojištění zásilky"
     ],
-    "packing": "Balení",
-    "packingDescription": "Bezpečné balení a zabalení všech vašich věcí s profesionálním materiálem",
-    "packingLongDescription": "Naše profesionální balící služba zajišťuje bezpečné a efektivní připravení vašich věcí k přepravě. Používáme vysoce kvalitní materiály a dodržujeme nejlepší postupy v oboru, abychom ochránili křehké předměty a systematicky organizovali vaše věci. Náš detailní inventární systém a pečlivé označování usnadňují rozbalování na vašem novém místě.",
-    "packingFeatures": [
-      "Odborné balení",
-      "Kvalitní materiály",
-      "Označení krabic",
-      "Inventář"
-    ],
+
+    "furnitureCleaning": "Chemické čistění",
+    "furnitureCleaningDescription": "Profesionální chemické čistění nábytku a koberců",
+    "handyman": "Hodinový manžel",
+    "handymanDescription": "Drobné opravy a údržba domácnosti",
+    "packages": "Komplexní balíčky služeb",
+    "packagesDescription": "Kombinované služby za výhodné ceny",
     "quality": "Kvalita",
     "qualityDescription": "Nejvyšší kvalita služeb a péče o vaše věci",
     "safety": "Bezpečnost",
@@ -1054,6 +1071,7 @@
     "availability": "Dostupnost",
     "quality": "Kvalita",
     "clients": "Spokojení klienti",
+    "whyChooseUs": "Proč si vybrat nás?",
     "readyToBook": "Připraveni objednat naši službu?",
     "ctaDescription": "Získejte bezplatnou konzultaci a cenovou nabídku. Náš tým je připraven pomoci vám s vašimi potřebami.",
     "bookNow": "Objednat nyní",

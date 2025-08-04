@@ -1,17 +1,16 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowLeft,
-  CheckCircle,
-  Star,
   Clock,
   Shield,
   Truck,
   Sparkles,
-  Package,
+  Droplets,
+  Wrench,
+  Package2,
 } from 'lucide-react';
 import { getTranslation } from '../../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../../lib/i18n';
@@ -101,30 +100,130 @@ const getServiceData = (
         }>,
       },
     },
-    packing: {
-      slug: 'packing',
-      icon: Package,
-      title: t('services.packing'),
-      description: t('services.packingDescription'),
-      longDescription:
-        t('services.packingLongDescription') ||
-        t('services.packingDescription'),
-      features: t('services.packingFeatures') as unknown as string[],
+    'furniture-cleaning': {
+      slug: 'furniture-cleaning',
+      icon: Droplets,
+      title: t('services.furnitureCleaning'),
+      description: t('services.furnitureCleaningDescription'),
+      longDescription: t('services.furnitureCleaningDescription'),
+      features: [
+        'Chemické čistění nábytku',
+        'Čistění koberců',
+        'Profesionální přístroje',
+        'Eco-friendly prostředky',
+      ],
       benefits: [
-        t('serviceDetail.packing.benefit1'),
-        t('serviceDetail.packing.benefit2'),
-        t('serviceDetail.packing.benefit3'),
-        t('serviceDetail.packing.benefit4'),
+        'Profesionální vybavení',
+        'Bezpečné chemické prostředky',
+        'Dlouhodobé výsledky',
+        'Ochrana materiálů',
+      ],
+      image: '/images/cleaning.jpg',
+      imageAlt: 'Chemické čistění',
+      pricing: {
+        title: 'Chemické čistění - ceny',
+        items: [
+          {
+            name: 'Křeslo',
+            price: 'od 450 Kč',
+          },
+          {
+            name: 'Sofa (sedací část)',
+            price: 'od 600 Kč',
+          },
+          {
+            name: 'Koberec (m²)',
+            price: 'od 150 Kč',
+          },
+          {
+            name: 'Matrace',
+            price: 'od 500 Kč',
+          },
+        ],
+      },
+    },
+    handyman: {
+      slug: 'handyman',
+      icon: Wrench,
+      title: t('services.handyman'),
+      description: t('services.handymanDescription'),
+      longDescription: t('services.handymanDescription'),
+      features: [
+        'Drobné opravy',
+        'Montáž nábytku',
+        'Instalace',
+        'Údržba domácnosti',
+      ],
+      benefits: [
+        'Rychlý zásah',
+        'Zkušení řemeslníci',
+        'Flexibilní ceny',
+        'Záruka práce',
+      ],
+      image: '/images/moving.jpg',
+      imageAlt: 'Hodinový manžel',
+      pricing: {
+        title: 'Hodinový manžel - ceny',
+        items: [
+          {
+            name: 'Základní hodina',
+            price: 'od 300 Kč',
+          },
+          {
+            name: 'Montáž nábytku',
+            price: 'od 400 Kč',
+          },
+          {
+            name: 'Drobné opravy',
+            price: 'od 250 Kč',
+          },
+          {
+            name: 'Instalace',
+            price: 'od 350 Kč',
+          },
+        ],
+      },
+    },
+    packages: {
+      slug: 'packages',
+      icon: Package2,
+      title: t('services.packages'),
+      description: t('services.packagesDescription'),
+      longDescription: t('services.packagesDescription'),
+      features: [
+        'Kombinované služby',
+        'Výhodné ceny',
+        'Komplexní řešení',
+        'Individuální přístup',
+      ],
+      benefits: [
+        'Ušetříte čas i peníze',
+        'Komplexní služby',
+        'Flexibilní balíčky',
+        'Záruka kvality',
       ],
       image: '/images/packing.jpg',
-      imageAlt: t('services.packing'),
+      imageAlt: 'Komplexní balíčky',
       pricing: {
-        title: t('detailedServices.packingServices.title'),
-        items: t('detailedServices.packingServices.items') as unknown as Array<{
-          name: string;
-          unit: string;
-          price: string;
-        }>,
+        title: 'Komplexní balíčky - ceny',
+        items: [
+          {
+            name: 'Stěhování + Úklid',
+            price: 'od 1500 Kč',
+          },
+          {
+            name: 'Úklid + Chemické čistění',
+            price: 'od 800 Kč',
+          },
+          {
+            name: 'Kompletní balíček',
+            price: 'od 2000 Kč',
+          },
+          {
+            name: 'Individuální nabídka',
+            price: 'dle požadavků',
+          },
+        ],
       },
     },
   };
@@ -210,13 +309,19 @@ export async function generateStaticParams() {
   return [
     { locale: 'en', slug: 'moving' },
     { locale: 'en', slug: 'cleaning' },
-    { locale: 'en', slug: 'packing' },
+    { locale: 'en', slug: 'furniture-cleaning' },
+    { locale: 'en', slug: 'handyman' },
+    { locale: 'en', slug: 'packages' },
     { locale: 'cs', slug: 'moving' },
     { locale: 'cs', slug: 'cleaning' },
-    { locale: 'cs', slug: 'packing' },
+    { locale: 'cs', slug: 'furniture-cleaning' },
+    { locale: 'cs', slug: 'handyman' },
+    { locale: 'cs', slug: 'packages' },
     { locale: 'ua', slug: 'moving' },
     { locale: 'ua', slug: 'cleaning' },
-    { locale: 'ua', slug: 'packing' },
+    { locale: 'ua', slug: 'furniture-cleaning' },
+    { locale: 'ua', slug: 'handyman' },
+    { locale: 'ua', slug: 'packages' },
   ];
 }
 
@@ -230,91 +335,26 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
     notFound();
   }
 
-  const ServiceIcon = service.icon;
-
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-secondary via-brand-secondary to-brand-primary text-white">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src={service.image}
-            alt={service.imageAlt}
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-secondary/90 via-brand-secondary/80 to-brand-primary/90"></div>
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-          <div className="max-w-4xl mx-auto">
-            {/* Breadcrumb */}
-            <nav className="mb-8">
-              <Link
-                href={`/${locale}/services`}
-                className="inline-flex items-center text-white/80 hover:text-white transition-colors duration-200"
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                {t('serviceDetail.backToServices')}
-              </Link>
-            </nav>
-
-            {/* Service Header */}
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-3xl mb-6">
-                <ServiceIcon className="w-10 h-10 text-white" />
-              </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-baloo-bhai font-light mb-6 leading-tight">
-                {service.title}
-              </h1>
-              <p className="text-xl sm:text-2xl font-inter font-light opacity-90 max-w-3xl mx-auto leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-
-            {/* Service Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
-                <Clock className="w-8 h-8 text-brand-primary mx-auto mb-3" />
-                <div className="text-2xl font-bold text-brand-primary">
-                  24/7
-                </div>
-                <div className="text-sm opacity-80">
-                  {t('serviceDetail.availability')}
-                </div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
-                <Shield className="w-8 h-8 text-brand-primary mx-auto mb-3" />
-                <div className="text-2xl font-bold text-brand-primary">
-                  100%
-                </div>
-                <div className="text-sm opacity-80">
-                  {t('serviceDetail.quality')}
-                </div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
-                <Star className="w-8 h-8 text-brand-primary mx-auto mb-3" />
-                <div className="text-2xl font-bold text-brand-primary">
-                  500+
-                </div>
-                <div className="text-sm opacity-80">
-                  {t('serviceDetail.clients')}
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* Back to Services - Top of page */}
+      <section className="py-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <Link
+            href={`/${locale}/services`}
+            className="inline-flex items-center text-brand-primary hover:text-brand-secondary font-semibold text-lg transition-colors duration-200"
+          >
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            {t('serviceDetail.backToServices')}
+          </Link>
         </div>
       </section>
 
-      {/* Service Details */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white mx-4 sm:mx-6 lg:mx-8">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            {/* Long Description */}
-            <div className="text-center mb-12 sm:mb-16">
+      {/* Service Information - Above pricing */}
+      <section className="py-8 bg-gray-50 mx-4 sm:mx-6 lg:mx-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
+            <div className="text-center mb-8">
               <h2 className="text-3xl sm:text-4xl font-baloo-bhai font-light text-gray-900 mb-6">
                 {t('serviceDetail.aboutService')}
               </h2>
@@ -324,7 +364,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
             </div>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
                 <h3 className="text-2xl sm:text-3xl font-baloo-bhai font-light text-gray-900 mb-6">
                   {t('serviceDetail.keyFeatures')}
@@ -332,8 +372,8 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
                 <div className="space-y-4">
                   {service.features.map((feature, index) => (
                     <div key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-6 h-6 text-brand-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 font-light">
+                      <div className="w-2 h-2 bg-brand-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <span className="text-gray-700 font-light leading-relaxed">
                         {feature}
                       </span>
                     </div>
@@ -348,8 +388,8 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
                 <div className="space-y-4">
                   {service.benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-6 h-6 text-brand-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 font-light">
+                      <div className="w-2 h-2 bg-brand-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <span className="text-gray-700 font-light leading-relaxed">
                         {benefit}
                       </span>
                     </div>
@@ -358,32 +398,55 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
               </div>
             </div>
 
-            {/* Pricing Section */}
-            <ServicePricing
-              locale={locale as SupportedLanguage}
-              t={t}
-              serviceType={service.slug as 'cleaning' | 'moving' | 'packing'}
-              showReservationButton={true}
-              className="mb-16"
-            />
+            {/* Availability, Quality Icons and Reservation Button */}
+            <div className="flex justify-between items-center">
+              <div className="flex gap-8">
+                <div className="flex items-center space-x-3">
+                  <Clock className="w-6 h-6 text-brand-primary" />
+                  <div className="text-center">
+                    <div className="text-xl font-bold text-brand-primary">
+                      24/7
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      {t('serviceDetail.availability')}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Shield className="w-6 h-6 text-brand-primary" />
+                  <div className="text-center">
+                    <div className="text-xl font-bold text-brand-primary">
+                      100%
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      {t('serviceDetail.quality')}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a
+                href={`/${locale}/reservation?service=${service.slug}`}
+                className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                {t('reservation.submitReservation') as string}
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Back to Services */}
-      <section className="py-12 bg-gray-50 mx-4 sm:mx-6 lg:mx-8">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Link
-              href={`/${locale}/services`}
-              className="inline-flex items-center text-brand-primary hover:text-brand-secondary font-semibold text-lg transition-colors duration-200"
-            >
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              {t('serviceDetail.backToServices')}
-            </Link>
-          </div>
+      {/* Pricing Section - Below service information */}
+      <section className="py-8">
+        <div className="max-w-6xl mx-auto">
+          <ServicePricing
+            locale={locale as SupportedLanguage}
+            t={t}
+            serviceType={service.slug as 'cleaning' | 'moving' | 'packing'}
+            showReservationButton={true}
+          />
         </div>
       </section>
+
       <CTASection locale={locale as SupportedLanguage} t={t} />
     </div>
   );

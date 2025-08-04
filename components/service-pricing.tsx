@@ -96,9 +96,30 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
             'detailedServices.movingAndTransport.items',
           ) as unknown as Array<{
             name: string;
-            unit: string;
             price: string;
           }>,
+          additionalServices: t(
+            'detailedServices.movingAndTransport.additionalServices',
+          ) as unknown as {
+            title: string;
+            items: Array<{ name: string; price: string }>;
+          },
+          description: t(
+            'detailedServices.movingAndTransport.description',
+          ) as string,
+          includedInPrice: t(
+            'detailedServices.movingAndTransport.includedInPrice',
+          ) as unknown as {
+            title: string;
+            items: string[];
+          },
+          additionalServicesList: t(
+            'detailedServices.movingAndTransport.additionalServicesList',
+          ) as unknown as {
+            title: string;
+            items: string[];
+          },
+          minOrder: t('detailedServices.movingAndTransport.minOrder') as string,
           title: t('detailedServices.movingAndTransport.title') as string,
           subtitle: t('services.movingDescription') as string,
           icon: Truck,
@@ -257,11 +278,6 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                 <th className="text-left py-6 px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
                   {t('servicesPage.service') as string}
                 </th>
-                {services[0]?.unit && (
-                  <th className="text-left py-6 px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
-                    {t('servicesPage.unit') as string}
-                  </th>
-                )}
                 <th className="text-right py-6 px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
                   {t('servicesPage.price') as string}
                 </th>
@@ -276,11 +292,6 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                   <td className="py-6 px-6 font-inter font-light text-gray-700">
                     {service.name}
                   </td>
-                  {service.unit && (
-                    <td className="py-6 px-6 font-inter font-light text-gray-600">
-                      {service.unit}
-                    </td>
-                  )}
                   <td className="py-6 px-6 font-inter font-bold text-brand-primary text-right">
                     {service.price}
                   </td>
@@ -292,6 +303,111 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
       </CardContent>
     </Card>
   );
+
+  const renderMovingServices = () => {
+    const movingData = serviceData as {
+      movingServices: Array<{ name: string; price: string }>;
+      additionalServices?: {
+        title: string;
+        items: Array<{ name: string; price: string }>;
+      };
+      description?: string;
+      includedInPrice?: {
+        title: string;
+        items: string[];
+      };
+      additionalServicesList?: {
+        title: string;
+        items: string[];
+      };
+      minOrder?: string;
+    };
+
+    return (
+      <div className="space-y-8">
+        {/* Description */}
+        {movingData.description && (
+          <div className="text-center mb-8">
+            <p className="text-lg font-inter font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              {movingData.description}
+            </p>
+          </div>
+        )}
+
+        {/* Main Services Table */}
+        <div className="mb-8">
+          {renderSimplePricingTable(movingData.movingServices)}
+        </div>
+
+        {/* Minimum Order Notice */}
+        {movingData.minOrder && (
+          <div className="text-center mb-8">
+            <p className="text-sm font-inter font-medium text-brand-primary bg-brand-primary/10 px-4 py-2 rounded-lg inline-block">
+              {movingData.minOrder}
+            </p>
+          </div>
+        )}
+
+        {/* What's Included */}
+        {movingData.includedInPrice && (
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 mb-8">
+            <h3 className="text-2xl font-baloo-bhai font-light text-gray-900 mb-6 text-center">
+              {movingData.includedInPrice.title}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {movingData.includedInPrice.items.map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <Check className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700 font-light">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Additional Services */}
+        {movingData.additionalServices && (
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 mb-8">
+            <h3 className="text-2xl font-baloo-bhai font-light text-gray-900 mb-6 text-center">
+              {movingData.additionalServices.title}
+            </h3>
+            {renderSimplePricingTable(movingData.additionalServices.items)}
+          </div>
+        )}
+
+        {/* Additional Services List */}
+        {movingData.additionalServicesList && (
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 mb-8">
+            <h3 className="text-2xl font-baloo-bhai font-light text-gray-900 mb-6 text-center">
+              {movingData.additionalServicesList.title}
+            </h3>
+            <div className="space-y-4">
+              {movingData.additionalServicesList.items.map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-brand-primary rounded-full flex-shrink-0 mt-2"></div>
+                  <span className="text-gray-700 font-light leading-relaxed">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Reservation Button */}
+        {showReservationButton && (
+          <div className="flex justify-end">
+            <a
+              href={`/${locale}/reservation?service=moving`}
+              className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              {t('reservation.submitReservation') as string}
+            </a>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   const ServiceIcon = serviceData.icon;
 
@@ -476,8 +592,10 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         'movingServices' in serviceData &&
         serviceData.movingServices && (
           <div className="mb-8">
-            {renderSimplePricingTable(serviceData.movingServices)}
-            {showReservationButton && (
+            {serviceType === 'moving'
+              ? renderMovingServices()
+              : renderSimplePricingTable(serviceData.movingServices)}
+            {serviceType === 'packing' && showReservationButton && (
               <div className="flex justify-end mt-6">
                 <a
                   href={`/${locale}/reservation?service=${serviceType}`}

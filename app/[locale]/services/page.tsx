@@ -3,11 +3,11 @@ import { Metadata } from 'next';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
 
-import ServicesGrid from '../../../components/services-grid';
+import CompactServicesGrid from '../../../components/compact-services-grid';
 import { CTASection } from '../../../components/cta-section';
 import ServicePricing from '../../../components/service-pricing';
 
-import { Truck, Sparkles, Package } from 'lucide-react';
+import { Truck, Sparkles, Droplets, Wrench, Package2 } from 'lucide-react';
 
 interface ServicesPageProps {
   params: Promise<{ locale: string }>;
@@ -148,12 +148,32 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       imageAlt: t('services.cleaning'),
     },
     {
-      icon: Package,
-      title: t('services.packing'),
-      description: t('services.packingDescription'),
-      features: t('services.packingFeatures') as unknown as string[],
+      icon: Droplets,
+      title: t('services.furnitureCleaning'),
+      description: t('services.furnitureCleaningDescription'),
+      features: [
+        'Chemické čistění nábytku',
+        'Čistění koberců',
+        'Profesionální přístroje',
+      ],
+      image: '/images/cleaning.jpg',
+      imageAlt: 'Chemické čistění',
+    },
+    {
+      icon: Wrench,
+      title: t('services.handyman'),
+      description: t('services.handymanDescription'),
+      features: ['Drobné opravy', 'Montáž nábytku', 'Instalace'],
+      image: '/images/moving.jpg',
+      imageAlt: 'Hodinový manžel',
+    },
+    {
+      icon: Package2,
+      title: t('services.packages'),
+      description: t('services.packagesDescription'),
+      features: ['Kombinované služby', 'Výhodné ceny', 'Komplexní řešení'],
       image: '/images/packing.jpg',
-      imageAlt: t('services.packing'),
+      imageAlt: 'Komplexní balíčky',
     },
   ];
 
@@ -205,8 +225,8 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       </section>
 
       {/* Services Overview - Clean Professional Layout */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white mx-4 sm:mx-6 lg:mx-8">
-        <div className="text-center mb-12 sm:mb-16">
+      <section className="py-8 mx-4 sm:mx-4 lg:mx-8">
+        <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-baloo-bhai font-light text-gray-900 mb-4 sm:mb-6">
             {t('homepage.servicesSection.title')}
           </h2>
@@ -216,10 +236,9 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
         </div>
 
         {/* Professional Services Grid */}
-        <ServicesGrid
+        <CompactServicesGrid
           services={services}
           locale={locale}
-          showPrices={false}
           className="animate-fade-in-up"
           t={t}
           useSpecificLinks={true}
@@ -229,10 +248,10 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       {/* Detailed Services Sections - Corporate Design */}
       <section
         id="detailed-services"
-        className="py-20 bg-gray-50 mx-4 sm:mx-6 lg:mx-8"
+        className="py-8 bg-gray-50 mx-4 sm:mx-6 lg:mx-8"
       >
         {/* Moving Services Pricing */}
-        <div id="moving-services" className="mb-16">
+        <div id="moving-services" className="mb-8">
           <ServicePricing
             locale={locale as SupportedLanguage}
             t={t}

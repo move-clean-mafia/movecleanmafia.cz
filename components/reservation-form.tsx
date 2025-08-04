@@ -205,7 +205,12 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
   const services = [
     { value: 'moving', label: t('reservation.services.moving') },
     { value: 'cleaning', label: t('reservation.services.cleaning') },
-    { value: 'packing', label: t('reservation.services.packing') },
+    {
+      value: 'furniture-cleaning',
+      label: t('reservation.services.furnitureCleaning'),
+    },
+    { value: 'handyman', label: t('reservation.services.handyman') },
+    { value: 'packages', label: t('reservation.services.packages') },
     { value: 'other', label: t('reservation.services.other') },
   ];
 
