@@ -7,16 +7,7 @@ import CompactServicesGrid from '../../../components/compact-services-grid';
 import { CTASection } from '../../../components/cta-section';
 import ServicePricing from '../../../components/service-pricing';
 
-import {
-  Truck,
-  Sparkles,
-  Droplets,
-  Wrench,
-  Package2,
-  Crown,
-  Award,
-  Shield,
-} from 'lucide-react';
+import { Truck, Sparkles, Droplets, Wrench, Package2 } from 'lucide-react';
 
 interface ServicesPageProps {
   params: Promise<{ locale: string }>;
@@ -260,17 +251,6 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       {/* Detailed Services Sections - Mafia Style */}
       <section id="detailed-services" className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
-              DETAILED PRICING
-            </h2>
-            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed font-body">
-              Transparent pricing for all our premium services. No hidden costs,
-              no surprises.
-            </p>
-          </div>
-
           {/* Moving Services Pricing */}
           <div id="moving-services" className="mb-16">
             <ServicePricing

@@ -58,23 +58,23 @@ export const GroupedAdditionalServices: React.FC<
             className="w-full"
             defaultOpen={groupIndex === 0}
           >
-            <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
-              <CollapsibleTrigger className="w-full p-2 sm:p-4 lg:p-6 hover:bg-brand-light/30 transition-colors duration-200 flex items-center justify-between text-left">
+            <div className="mafia-card border border-[#d6b977]/20 overflow-hidden shadow-xl">
+              <CollapsibleTrigger className="w-full p-2 sm:p-4 lg:p-6 hover:bg-[#d6b977]/10 transition-colors duration-300 flex items-center justify-between text-left">
                 <div className="flex items-center gap-4 flex-1">
-                  <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-5 h-5 text-brand-primary" />
+                  <div className="w-10 h-10 bg-[#d6b977] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-5 h-5 text-black" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-lg sm:text-xl font-baloo-bhai font-medium text-gray-900 mb-1">
+                    <h4 className="text-lg sm:text-xl font-heading font-bold text-[#d6b977] mb-1">
                       {group.title}
                     </h4>
-                    <p className="text-sm sm:text-base font-inter font-light text-gray-600">
+                    <p className="text-sm sm:text-base font-body font-light text-white/80">
                       {group.description}
                     </p>
                   </div>
                 </div>
                 <div className="ml-4 flex-shrink-0">
-                  <ChevronDown className="w-5 h-5 text-brand-primary transition-transform duration-200 data-[state=open]:rotate-180" />
+                  <ChevronDown className="w-5 h-5 text-[#d6b977] transition-transform duration-300 data-[state=open]:rotate-180" />
                 </div>
               </CollapsibleTrigger>
 
@@ -83,12 +83,12 @@ export const GroupedAdditionalServices: React.FC<
                   {group.services.map((service, serviceIndex) => (
                     <div
                       key={serviceIndex}
-                      className="flex justify-between items-center p-1 sm:p-3 lg:p-4 rounded-xl hover:bg-brand-light/50 transition-colors duration-200 group"
+                      className="flex justify-between items-center p-1 sm:p-3 lg:p-4 rounded-xl hover:bg-[#d6b977]/10 transition-all duration-300 group border border-[#d6b977]/10"
                     >
-                      <span className="font-inter font-light text-gray-700 group-hover:text-gray-900 transition-colors flex-1 pr-2 sm:pr-4 text-sm sm:text-base">
+                      <span className="font-body font-medium text-white/90 group-hover:text-white transition-colors flex-1 pr-2 sm:pr-4 text-sm sm:text-base">
                         {service.name}
                       </span>
-                      <span className="font-inter font-semibold text-brand-primary flex-shrink-0 text-sm sm:text-base">
+                      <span className="font-body font-bold text-[#d6b977] flex-shrink-0 text-sm sm:text-base group-hover:text-[#d6b977]/90 transition-colors">
                         {service.price}
                       </span>
                     </div>

@@ -16,15 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from './ui/select';
-import {
-  Clock,
-  MapPin,
-  User,
-  Truck,
-  Home,
-  AlertCircle,
-  Phone,
-} from 'lucide-react';
+import { Clock, MapPin, User, AlertCircle, Phone } from 'lucide-react';
 import { useToast } from './ui/use-toast';
 
 interface ReservationFormProps {

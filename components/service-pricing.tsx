@@ -216,37 +216,31 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
 
         {/* Services Included - Right Side */}
         <div className="space-y-6">
-          <div className="text-center lg:text-left">
-            <h3 className="text-3xl font-heading font-medium text-[#d6b977] mb-6">
-              {t('servicesPage.whatIncluded') as string}
-            </h3>
-          </div>
-
           {/* Services Tabs */}
-          <div className="mafia-card overflow-hidden">
+          <div className="mafia-card overflow-hidden border border-[#d6b977]/20">
             <Tabs defaultValue="room" className="w-full">
-              <TabsList className="flex w-full bg-black p-2 rounded-t-lg h-auto border-b border-[#d6b977]/30">
+              <TabsList className="flex w-full bg-black p-2 rounded-t-lg h-auto border-b-2 border-[#d6b977]">
                 <TabsTrigger
                   value="room"
-                  className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-md transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white"
+                  className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-lg data-[state=active]:font-bold transition-all duration-300 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white hover:bg-[#d6b977]/10"
                 >
                   {packageData.areas.room.title}
                 </TabsTrigger>
                 <TabsTrigger
                   value="kitchen"
-                  className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-md transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white"
+                  className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-lg data-[state=active]:font-bold transition-all duration-300 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white hover:bg-[#d6b977]/10"
                 >
                   {packageData.areas.kitchen.title}
                 </TabsTrigger>
                 <TabsTrigger
                   value="bathroom"
-                  className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-md transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white"
+                  className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-lg data-[state=active]:font-bold transition-all duration-300 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white hover:bg-[#d6b977]/10"
                 >
                   {packageData.areas.bathroom.title}
                 </TabsTrigger>
               </TabsList>
 
-              <div className="p-6">
+              <div className="p-6 bg-black">
                 <TabsContent value="room" className="space-y-4 mt-0">
                   {renderAreaSection('room', packageData.areas.room)}
                 </TabsContent>
@@ -269,16 +263,16 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
   const renderSimplePricingTable = (
     services: Array<{ name: string; unit?: string; price: string }>,
   ) => (
-    <Card className="mafia-card shadow-xl">
+    <Card className="mafia-card shadow-xl border border-[#d6b977]/20">
       <CardContent className="p-8">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-[#d6b977]/30">
-                <th className="text-left py-1 px-1 font-heading font-medium text-[#d6b977] text-lg">
+              <tr className="border-b-2 border-[#d6b977]">
+                <th className="text-left py-4 px-4 font-heading font-bold text-[#d6b977] text-xl">
                   {t('servicesPage.service') as string}
                 </th>
-                <th className="text-right py-1 px-1 font-heading font-medium text-[#d6b977] text-lg">
+                <th className="text-right py-4 px-4 font-heading font-bold text-[#d6b977] text-xl">
                   {t('servicesPage.price') as string}
                 </th>
               </tr>
@@ -287,12 +281,12 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
               {services.map((service, index) => (
                 <tr
                   key={index}
-                  className="border-b border-[#d6b977]/10 hover:bg-[#d6b977]/10 transition-colors duration-200"
+                  className="border-b border-[#d6b977]/20 hover:bg-[#d6b977]/10 transition-all duration-300 group"
                 >
-                  <td className="py-1 px-1 font-body font-light text-white/80">
+                  <td className="py-4 px-4 font-body font-medium text-white/90 group-hover:text-white transition-colors duration-300">
                     {service.name}
                   </td>
-                  <td className="py-1 px-1 font-body font-bold text-[#d6b977] text-right">
+                  <td className="py-4 px-4 font-body font-bold text-[#d6b977] text-right group-hover:text-[#d6b977]/90 transition-colors duration-300">
                     {service.price}
                   </td>
                 </tr>
@@ -435,25 +429,25 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         serviceData.packages && (
           <>
             {/* Main Packages Tabs */}
-            <div className="mafia-card overflow-hidden mb-12">
+            <div className="mafia-card overflow-hidden mb-12 border border-[#d6b977]/20">
               <div className="p-6">
                 <Tabs defaultValue="maintenance" className="w-full">
-                  <TabsList className="flex flex-col sm:flex-row w-full mb-6 bg-black p-1 rounded-xl h-auto sm:h-10 border border-[#d6b977]/30">
+                  <TabsList className="flex flex-col sm:flex-row w-full mb-6 bg-black p-1 rounded-xl h-auto sm:h-10 border-2 border-[#d6b977]">
                     <TabsTrigger
                       value="maintenance"
-                      className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white"
+                      className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-lg data-[state=active]:font-bold transition-all duration-300 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white hover:bg-[#d6b977]/10"
                     >
                       {serviceData.packages.maintenance.title}
                     </TabsTrigger>
                     <TabsTrigger
                       value="general"
-                      className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white"
+                      className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-lg data-[state=active]:font-bold transition-all duration-300 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white hover:bg-[#d6b977]/10"
                     >
                       {serviceData.packages.general.title}
                     </TabsTrigger>
                     <TabsTrigger
                       value="postRenovation"
-                      className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white"
+                      className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-lg data-[state=active]:font-bold transition-all duration-300 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white hover:bg-[#d6b977]/10"
                     >
                       {serviceData.packages.postRenovation.title}
                     </TabsTrigger>

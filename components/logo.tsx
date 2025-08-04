@@ -33,8 +33,8 @@ const Logo: React.FC<LogoProps> = ({
       case 'premium':
         return (
           <div className={`relative group ${className}`}>
-            {/* Logo container with premium styling */}
-            <div className="relative bg-white rounded-xl p-2 shadow-lg border border-amber-200 group-hover:shadow-xl group-hover:border-amber-300 transition-all duration-300">
+            {/* Logo container with premium mafia styling */}
+            <div className="relative bg-[#d6b977] group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
               <Image
                 src="/images/logo.png"
                 alt="MoveClean Mafia Logo"
@@ -51,7 +51,7 @@ const Logo: React.FC<LogoProps> = ({
         return (
           <div className={`relative group ${className}`}>
             {/* Logo container with clean styling */}
-            <div className="relative bg-black rounded-lg p-1.5 shadow-md group-hover:shadow-lg group-hover:border-gray-300 transition-all duration-200">
+            <div className="relative bg-black shadow-md group-hover:shadow-lg group-hover:border-gray-300 transition-all duration-200">
               <Image
                 src="/images/logo.png"
                 alt="MoveClean Mafia Logo"

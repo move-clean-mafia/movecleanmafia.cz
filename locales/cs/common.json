@@ -67,6 +67,12 @@
       "pending": ""
     }
   },
+  "cta": {
+    "title": "PŘIPRAVENI UDĚLAT DOHODU?",
+    "subtitle": "Nečekejte. Kontaktujte nás nyní a zažijte rozdíl, který může poskytnout pouze to nejlepší.",
+    "primaryButton": "ZÍSKAT NABÍDKU",
+    "secondaryButton": "KONTAKTUJTE NÁS"
+  },
   "contact": {
     "address": "Adresa",
     "faq": {
@@ -1091,11 +1097,11 @@
   },
   "serviceDetail": {
     "backToServices": "Zpět na služby",
-    "aboutService": "O naší službě",
-    "keyFeatures": "Klíčové funkce",
+    "aboutService": "O této službě",
+    "keyFeatures": "Klíčové vlastnosti",
     "benefits": "Výhody",
     "availability": "Dostupnost",
-    "quality": "Kvalita",
+    "quality": "Záruka kvality",
     "clients": "Spokojení klienti",
     "whyChooseUs": "Proč si vybrat nás?",
     "readyToBook": "Připraveni objednat naši službu?",
@@ -1103,22 +1109,16 @@
     "bookNow": "Objednat nyní",
     "contactUs": "Kontaktujte nás",
     "moving": {
-      "benefit1": "Profesionální demontáž a montáž nábytku",
-      "benefit2": "Bezpečná přeprava s pojištěním nákladu",
-      "benefit3": "Zkušený tým s roky praxe",
-      "benefit4": "Flexibilní plánování a podpora 24/7"
+      "benefit1": "Profesionální stěhovací tým",
+      "benefit2": "Bezpečná a spolehlivá doprava",
+      "benefit3": "Plné pojištění",
+      "benefit4": "Flexibilní plánování"
     },
     "cleaning": {
-      "benefit1": "Profesionální úklid s ekologickými produkty",
-      "benefit2": "Důkladné čištění všech povrchů a oblastí",
-      "benefit3": "Úklid po stěhování a hluboké čištění",
-      "benefit4": "Flexibilní plánování a pravidelná údržba"
-    },
-    "packing": {
-      "benefit1": "Profesionální balení s kvalitními materiály",
-      "benefit2": "Opatrné zacházení s křehkými předměty",
-      "benefit3": "Organizované označování a inventární systém",
-      "benefit4": "Bezpečné skladování a přepravní možnosti"
+      "benefit1": "Profesionální úklidové vybavení",
+      "benefit2": "Eco-friendly produkty",
+      "benefit3": "Důkladná pozornost k detailům",
+      "benefit4": "Záruka spokojenosti"
     }
   }
 }

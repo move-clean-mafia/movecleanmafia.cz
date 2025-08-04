@@ -65,32 +65,32 @@ export const LanguageSwitcher: React.FC = () => {
         <Button
           variant="outline"
           size="sm"
-          className="h-9 w-9 md:h-10 md:w-10 p-0 bg-white border-gray-200 hover:bg-gray-50 hover:border-brand-primary focus:ring-2 focus:ring-brand-primary focus:border-brand-primary transition-all duration-200"
+          className="h-9 w-9 md:h-10 md:w-10 p-0 bg-black border-2 border-[#d6b977] hover:bg-[#d6b977]/10 hover:border-[#d6b977]/80 focus:ring-2 focus:ring-[#d6b977] focus:border-[#d6b977] transition-all duration-300 shadow-lg hover:shadow-xl"
         >
-          <Globe className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-primary" />
+          <Globe className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#d6b977]" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className="w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-1"
+        className="w-48 bg-black border-2 border-[#d6b977] shadow-2xl rounded-xl p-1"
       >
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}
             onClick={() => switchToLanguage(language.code)}
-            className="flex items-center justify-between px-3 py-2 text-sm cursor-pointer hover:bg-brand-light hover:text-brand-secondary rounded-md transition-all duration-150 focus:bg-brand-light focus:text-brand-secondary"
+            className="flex items-center justify-between px-3 py-2 text-sm cursor-pointer hover:bg-[#d6b977]/10 hover:text-[#d6b977] rounded-lg transition-all duration-300 focus:bg-[#d6b977]/10 focus:text-[#d6b977]"
           >
             <div className="flex items-center">
               <span className="text-lg mr-3">{language.flag}</span>
               <div className="flex flex-col">
-                <span className="font-medium text-gray-900">
+                <span className="font-medium text-white">
                   {language.nativeName}
                 </span>
-                <span className="text-xs text-gray-500">{language.name}</span>
+                <span className="text-xs text-white/60">{language.name}</span>
               </div>
             </div>
             {currentLocale === language.code && (
-              <Check className="w-4 h-4 text-brand-primary" />
+              <Check className="w-4 h-4 text-[#d6b977]" />
             )}
           </DropdownMenuItem>
         ))}

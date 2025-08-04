@@ -335,109 +335,144 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
     notFound();
   }
 
+  const ServiceIcon = service.icon;
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-black">
       {/* Back to Services - Top of page */}
-      <section className="py-4 bg-gray-50">
+      <section className="py-6 bg-black">
         <div className="max-w-6xl mx-auto px-4">
           <Link
             href={`/${locale}/services`}
-            className="inline-flex items-center text-brand-primary hover:text-brand-secondary font-semibold text-lg transition-colors duration-200"
+            className="inline-flex items-center text-[#d6b977] hover:text-[#d6b977]/80 font-heading font-bold text-lg transition-colors duration-300 group"
           >
-            <ArrowLeft className="w-5 h-5 mr-2" />
+            <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
             {t('serviceDetail.backToServices')}
           </Link>
         </div>
       </section>
 
-      {/* Service Information - Above pricing */}
-      <section className="py-8 bg-gray-50 mx-4 sm:mx-6 lg:mx-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl sm:text-4xl font-baloo-bhai font-light text-gray-900 mb-6">
-                {t('serviceDetail.aboutService')}
-              </h2>
-              <p className="text-lg sm:text-xl font-inter font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                {service.longDescription}
-              </p>
+      {/* Hero Section - Mafia Style */}
+      <section className="relative py-20 bg-black overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-[#d6b977]/10 rounded-full blur-3xl z-0"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-[#d6b977]/5 rounded-full blur-2xl z-0"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            {/* Service Icon */}
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-[#d6b977] rounded-2xl mb-6">
+              <ServiceIcon className="w-10 h-10 text-black" />
             </div>
 
-            {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 className="text-2xl sm:text-3xl font-baloo-bhai font-light text-gray-900 mb-6">
-                  {t('serviceDetail.keyFeatures')}
-                </h3>
-                <div className="space-y-4">
-                  {service.features.map((feature, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-brand-primary rounded-full flex-shrink-0 mt-2"></div>
-                      <span className="text-gray-700 font-light leading-relaxed">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
+            {/* Service Title */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
+              {service.title}
+            </h1>
+
+            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
+
+            {/* Service Description */}
+            <p className="text-xl sm:text-2xl md:text-3xl text-white/90 max-w-4xl mx-auto font-body leading-relaxed">
+              {service.longDescription}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Information - Mafia Style */}
+      <section className="py-20 bg-black">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mafia-card border border-[#d6b977]/20">
+            <div className="p-8">
+              {/* Features and Benefits Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+                {/* Key Features */}
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-heading font-bold text-[#d6b977] mb-8">
+                    {t('serviceDetail.keyFeatures')}
+                  </h3>
+                  <div className="space-y-4">
+                    {service.features.map((feature, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start space-x-4 group"
+                      >
+                        <div className="w-3 h-3 bg-[#d6b977] rounded-full flex-shrink-0 mt-2 group-hover:scale-125 transition-transform duration-300"></div>
+                        <span className="text-white/90 font-body font-medium leading-relaxed group-hover:text-white transition-colors duration-300">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Benefits */}
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-heading font-bold text-[#d6b977] mb-8">
+                    {t('serviceDetail.benefits')}
+                  </h3>
+                  <div className="space-y-4">
+                    {service.benefits.map((benefit, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start space-x-4 group"
+                      >
+                        <div className="w-3 h-3 bg-[#d6b977] rounded-full flex-shrink-0 mt-2 group-hover:scale-125 transition-transform duration-300"></div>
+                        <span className="text-white/90 font-body font-medium leading-relaxed group-hover:text-white transition-colors duration-300">
+                          {benefit}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <div>
-                <h3 className="text-2xl sm:text-3xl font-baloo-bhai font-light text-gray-900 mb-6">
-                  {t('serviceDetail.benefits')}
-                </h3>
-                <div className="space-y-4">
-                  {service.benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-brand-primary rounded-full flex-shrink-0 mt-2"></div>
-                      <span className="text-gray-700 font-light leading-relaxed">
-                        {benefit}
-                      </span>
+              {/* Stats and CTA */}
+              <div className="flex flex-col lg:flex-row justify-between items-center gap-8 pt-8 border-t border-[#d6b977]/20">
+                {/* Stats */}
+                <div className="flex gap-8">
+                  <div className="text-center group">
+                    <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Clock className="w-8 h-8 text-black" />
                     </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Availability, Quality Icons and Reservation Button */}
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
-              <div className="flex gap-4 sm:gap-8">
-                <div className="flex items-center space-x-2 sm:space-x-3">
-                  <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-brand-primary" />
-                  <div className="text-center">
-                    <div className="text-lg sm:text-xl font-bold text-brand-primary">
+                    <div className="text-2xl font-bold text-[#d6b977] mb-1">
                       24/7
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-600">
+                    <div className="text-sm text-white/80 font-body">
                       {t('serviceDetail.availability')}
                     </div>
                   </div>
-                </div>
-                <div className="flex items-center space-x-2 sm:space-x-3">
-                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-brand-primary" />
-                  <div className="text-center">
-                    <div className="text-lg sm:text-xl font-bold text-brand-primary">
+
+                  <div className="text-center group">
+                    <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Shield className="w-8 h-8 text-black" />
+                    </div>
+                    <div className="text-2xl font-bold text-[#d6b977] mb-1">
                       100%
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-600">
+                    <div className="text-sm text-white/80 font-body">
                       {t('serviceDetail.quality')}
                     </div>
                   </div>
                 </div>
+
+                {/* CTA Button */}
+                <a
+                  href={`/${locale}/reservation?service=${service.slug}`}
+                  className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
+                >
+                  {t('reservation.submitReservation') as string}
+                </a>
               </div>
-              <a
-                href={`/${locale}/reservation?service=${service.slug}`}
-                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
-              >
-                {t('reservation.submitReservation') as string}
-              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Section - Below service information */}
-      <section className="py-8">
-        <div className="max-w-6xl mx-auto">
+      {/* Pricing Section - Mafia Style */}
+      <section className="py-20 bg-black">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <ServicePricing
             locale={locale as SupportedLanguage}
             t={t}
@@ -447,6 +482,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
         </div>
       </section>
 
+      {/* Professional CTA Section */}
       <CTASection locale={locale as SupportedLanguage} t={t} />
     </div>
   );

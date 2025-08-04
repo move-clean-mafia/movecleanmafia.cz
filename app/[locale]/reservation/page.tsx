@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
 import {
-  Card,
   CardContent,
   CardDescription,
   CardHeader,

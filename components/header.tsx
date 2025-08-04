@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { Phone, Menu, X } from 'lucide-react';
+import { Phone, Menu, X, Crown, Shield } from 'lucide-react';
 import { LanguageSwitcher } from './language-switcher';
 import Logo from './logo';
 
@@ -39,40 +39,57 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-black border-b-2 border-[#d6b977] backdrop-blur-sm bg-black/95 shadow-lg">
+      <header className="sticky top-0 z-50 bg-black border-b-2 border-[#d6b977] backdrop-blur-sm bg-black/95 shadow-2xl">
+        {/* Premium Badge */}
+        <div className="bg-[#d6b977] text-black py-1">
+          <div className="max-w-7xl mx-auto px-4 flex justify-center items-center">
+            <div className="flex items-center space-x-2 text-xs font-bold tracking-wider">
+              <Crown className="w-3 h-3" />
+              <span>THE MOVE & CLEAN MAFIA</span>
+              <Shield className="w-3 h-3" />
+            </div>
+          </div>
+        </div>
+
         {/* Main navigation */}
         <div className="bg-black w-full">
           <div className="w-full px-0">
-            <div className="flex items-center h-16 sm:h-20 lg:h-24">
-              {/* Logo */}
-              <Link href={`/${locale}`} className="flex-shrink-0">
-                <Logo
-                  width={140}
-                  height={70}
-                  className="w-[100px] h-[50px] sm:w-[120px] sm:h-[60px] lg:w-[140px] lg:h-[70px]"
-                />
+            <div className="flex items-center h-20 sm:h-24 lg:h-28">
+              {/* Logo - Smaller and Higher */}
+              <Link
+                href={`/${locale}`}
+                className="flex-shrink-0 ml-4 sm:ml-6 lg:ml-8 flex items-center"
+              >
+                <div className="transform -translate-y-3">
+                  <Logo
+                    width={80}
+                    height={32}
+                    className="w-[60px] h-[25px] sm:w-[70px] sm:h-[28px] lg:w-[80px] lg:h-[32px]"
+                    variant="premium"
+                  />
+                </div>
               </Link>
 
-              {/* Contact Info */}
-              <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-5 ml-4 sm:ml-6 lg:ml-8">
-                {/* Phone Button - Direct Call */}
+              {/* Contact Info - Enhanced */}
+              <div className="flex items-center space-x-3 sm:space-x-4 lg:space-x-6 ml-6 sm:ml-8 lg:ml-10">
+                {/* Phone Button - Premium Style */}
                 <a
                   href={`tel:${t('header.phone1')}`}
-                  className="p-2 sm:p-3 rounded-lg bg-[#d6b977] hover:bg-[#d6b977]/80 transition-colors duration-200 border border-[#d6b977] shadow-sm group"
+                  className="p-2 sm:p-3 rounded-xl bg-[#d6b977] hover:bg-[#d6b977]/90 transition-all duration-300 border-2 border-[#d6b977] shadow-lg hover:shadow-xl group transform hover:scale-105"
                   aria-label={t('header.phone1')}
                 >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-black group-hover:scale-110 transition-transform duration-200" />
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-black group-hover:scale-110 transition-transform duration-300" />
                 </a>
               </div>
 
               {/* Desktop Navigation and Language Switcher */}
-              <div className="hidden lg:flex items-center ml-auto space-x-6 xl:space-x-8 pr-4 sm:pr-6 lg:pr-8 xl:pr-8">
-                <nav className="flex items-center space-x-2 xl:space-x-3">
+              <div className="hidden lg:flex items-center ml-auto space-x-8 xl:space-x-10 pr-6 sm:pr-8 lg:pr-10 xl:pr-12">
+                <nav className="flex items-center space-x-4 xl:space-x-6">
                   {navigationItems.map((item) => (
                     <Link
                       key={item.key}
                       href={item.href}
-                      className="px-4 xl:px-6 py-3 font-heading font-bold text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 rounded-lg transition-all duration-200 uppercase text-sm xl:text-base leading-6 tracking-wider border-2 border-transparent hover:border-[#d6b977]/50 shadow-sm hover:shadow-md"
+                      className="px-6 xl:px-8 py-4 font-heading font-bold text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 rounded-xl transition-all duration-300 uppercase text-sm xl:text-base leading-6 tracking-wider border-2 border-transparent hover:border-[#d6b977]/50 shadow-lg hover:shadow-xl transform hover:scale-105"
                     >
                       {t(`navigation.${item.key}`).toUpperCase()}
                     </Link>
@@ -86,14 +103,14 @@ export const Header: React.FC = () => {
               </div>
 
               {/* Mobile controls */}
-              <div className="flex lg:hidden ml-auto items-center space-x-2 sm:space-x-3 pr-4 sm:pr-6">
+              <div className="flex lg:hidden ml-auto items-center space-x-3 sm:space-x-4 pr-4 sm:pr-6">
                 {/* Language switcher */}
                 <LanguageSwitcher />
 
                 {/* Mobile menu button */}
                 <button
                   onClick={toggleMobileMenu}
-                  className="inline-flex items-center justify-center p-2 sm:p-3 rounded-lg text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#d6b977] border border-[#d6b977]/30 shadow-sm"
+                  className="inline-flex items-center justify-center p-3 sm:p-4 rounded-xl text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#d6b977] border-2 border-[#d6b977]/30 shadow-lg hover:shadow-xl transition-all duration-300"
                   aria-expanded={isMobileMenuOpen}
                 >
                   <span className="sr-only">
@@ -102,9 +119,9 @@ export const Header: React.FC = () => {
                       : t('header.openMainMenu')}
                   </span>
                   {isMobileMenuOpen ? (
-                    <X className="h-5 w-5 sm:h-6 sm:w-6" />
+                    <X className="h-6 w-6 sm:h-7 sm:w-7" />
                   ) : (
-                    <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
+                    <Menu className="h-6 w-6 sm:h-7 sm:w-7" />
                   )}
                 </button>
               </div>
@@ -113,11 +130,11 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Mobile menu - moved outside header for proper overlay */}
+      {/* Mobile menu - Enhanced */}
       {isMobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 z-[60] bg-black bg-opacity-80"
+            className="fixed inset-0 z-[60] bg-black bg-opacity-90"
             onClick={toggleMobileMenu}
             aria-label={t('header.closeMainMenu')}
             tabIndex={0}
@@ -127,34 +144,35 @@ export const Header: React.FC = () => {
                 toggleMobileMenu();
             }}
           ></div>
-          <div className="fixed top-0 right-0 w-full max-w-sm min-w-[280px] h-full bg-black shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out border-l-2 border-[#d6b977]">
-            <div className="p-4 sm:p-6 h-full overflow-y-auto flex flex-col">
+          <div className="fixed top-0 right-0 w-full max-w-sm min-w-[300px] h-full bg-black shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out border-l-2 border-[#d6b977]">
+            <div className="p-6 sm:p-8 h-full overflow-y-auto flex flex-col">
               {/* Mobile header */}
-              <div className="flex justify-between items-center mb-6 sm:mb-8">
-                <div className="flex items-center space-x-3">
+              <div className="flex justify-between items-center mb-8 sm:mb-10">
+                <div className="flex items-center space-x-4">
                   <Logo
-                    width={100}
-                    height={50}
-                    className="w-[80px] h-[40px] sm:w-[100px] sm:h-[50px]"
+                    width={60}
+                    height={24}
+                    className="w-[50px] h-[20px] sm:w-[60px] sm:h-[24px]"
+                    variant="premium"
                   />
                 </div>
                 <button
                   onClick={toggleMobileMenu}
-                  className="p-2 sm:p-3 rounded-lg text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 border border-[#d6b977]/30 shadow-sm"
+                  className="p-3 sm:p-4 rounded-xl text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 border-2 border-[#d6b977]/30 shadow-lg hover:shadow-xl transition-all duration-300"
                   aria-label={t('header.closeMainMenu')}
                 >
-                  <X className="h-5 w-5 sm:h-6 sm:w-6" />
+                  <X className="h-6 w-6 sm:h-7 sm:w-7" />
                 </button>
               </div>
 
               {/* Mobile navigation */}
-              <nav className="space-y-2 mb-6 sm:mb-8">
+              <nav className="space-y-3 mb-8 sm:mb-10">
                 {navigationItems.map((item) => (
                   <Link
                     key={item.key}
                     href={item.href}
                     onClick={toggleMobileMenu}
-                    className="block px-4 py-3 font-heading font-bold text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 rounded-lg transition-colors duration-200 uppercase text-sm sm:text-base leading-6 tracking-wider border-2 border-transparent hover:border-[#d6b977]/50 shadow-sm"
+                    className="block px-6 py-4 font-heading font-bold text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 rounded-xl transition-all duration-300 uppercase text-base sm:text-lg leading-6 tracking-wider border-2 border-transparent hover:border-[#d6b977]/50 shadow-lg hover:shadow-xl"
                   >
                     {t(`navigation.${item.key}`).toUpperCase()}
                   </Link>
@@ -165,14 +183,14 @@ export const Header: React.FC = () => {
               <div className="flex-1"></div>
 
               {/* Mobile contact info */}
-              <div className="pt-4 border-t-2 border-[#d6b977]/30">
-                <div className="flex flex-col space-y-3 items-center">
+              <div className="pt-6 border-t-2 border-[#d6b977]/30">
+                <div className="flex flex-col space-y-4 items-center">
                   <a
                     href={`tel:${t('header.phone1')}`}
-                    className="flex items-center justify-center space-x-3 hover:bg-[#d6b977]/10 rounded-lg p-3 transition-colors duration-200 w-full max-w-xs border border-transparent hover:border-[#d6b977]/50 shadow-sm"
+                    className="flex items-center justify-center space-x-4 hover:bg-[#d6b977]/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-[#d6b977]/50 shadow-lg hover:shadow-xl"
                   >
                     <Phone className="w-4 h-4 text-[#d6b977]" />
-                    <span className="font-heading font-semibold text-sm leading-4 tracking-wide text-white">
+                    <span className="font-heading font-semibold text-base leading-4 tracking-wide text-white">
                       {t('header.phone1')}
                     </span>
                   </a>

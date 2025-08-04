@@ -67,6 +67,12 @@
       "pending": ""
     }
   },
+  "cta": {
+    "title": "READY TO MAKE A DEAL?",
+    "subtitle": "Don't wait. Contact us now and experience the difference that only the best can provide.",
+    "primaryButton": "GET A QUOTE",
+    "secondaryButton": "CONTACT US"
+  },
   "contact": {
     "address": "Address",
     "faq": {
@@ -1091,11 +1097,11 @@
   },
   "serviceDetail": {
     "backToServices": "Back to Services",
-    "aboutService": "About Our Service",
+    "aboutService": "About This Service",
     "keyFeatures": "Key Features",
     "benefits": "Benefits",
     "availability": "Availability",
-    "quality": "Quality",
+    "quality": "Quality Guarantee",
     "clients": "Happy Clients",
     "whyChooseUs": "Why Choose Us?",
     "readyToBook": "Ready to Book Our Service?",
@@ -1103,16 +1109,16 @@
     "bookNow": "Book Now",
     "contactUs": "Contact Us",
     "moving": {
-      "benefit1": "Professional furniture disassembly and assembly",
-      "benefit2": "Safe transportation with cargo insurance",
-      "benefit3": "Experienced team with years of experience",
-      "benefit4": "Flexible scheduling and 24/7 support"
+      "benefit1": "Professional moving team",
+      "benefit2": "Safe and secure transport",
+      "benefit3": "Full insurance coverage",
+      "benefit4": "Flexible scheduling"
     },
     "cleaning": {
-      "benefit1": "Professional cleaning with eco-friendly products",
-      "benefit2": "Thorough cleaning of all surfaces and areas",
-      "benefit3": "Post-move cleaning and deep cleaning services",
-      "benefit4": "Flexible scheduling and regular maintenance"
+      "benefit1": "Professional cleaning equipment",
+      "benefit2": "Eco-friendly products",
+      "benefit3": "Thorough attention to detail",
+      "benefit4": "Satisfaction guaranteed"
     },
     "packing": {
       "benefit1": "Professional packing with quality materials",
