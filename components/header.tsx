@@ -42,22 +42,19 @@ export const Header: React.FC = () => {
       <header className="sticky top-0 z-50 bg-white border-b-2 border-gray-300 backdrop-blur-sm bg-white/95 shadow-lg">
         {/* Main navigation */}
         <div className="bg-white w-full">
-          <div className="w-full px-3 sm:px-4 lg:px-6 xl:px-8">
+          <div className="w-full px-0">
             <div className="flex items-center h-16 sm:h-20 lg:h-24">
               {/* Logo */}
-              <Link
-                href={`/${locale}`}
-                className="flex-shrink-0 mr-4 sm:mr-6 lg:mr-8"
-              >
+              <Link href={`/${locale}`} className="flex-shrink-0">
                 <Logo
-                  width={120}
-                  height={36}
-                  className="sm:w-[140px] sm:h-[42px] lg:w-[160px] lg:h-[48px] hover:opacity-80 transition-opacity duration-200"
+                  width={140}
+                  height={70}
+                  className="w-[100px] h-[50px] sm:w-[120px] sm:h-[60px] lg:w-[140px] lg:h-[70px]"
                 />
               </Link>
 
               {/* Contact Info */}
-              <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-5">
+              <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-5 ml-4 sm:ml-6 lg:ml-8">
                 {/* Phone Button - Direct Call */}
                 <a
                   href={`tel:${t('header.phone1')}`}
@@ -69,7 +66,7 @@ export const Header: React.FC = () => {
               </div>
 
               {/* Desktop Navigation and Language Switcher */}
-              <div className="hidden lg:flex items-center ml-auto space-x-6 xl:space-x-8">
+              <div className="hidden lg:flex items-center ml-auto space-x-6 xl:space-x-8 pr-4 sm:pr-6 lg:pr-8 xl:pr-8">
                 <nav className="flex items-center space-x-2 xl:space-x-3">
                   {navigationItems.map((item) => (
                     <Link
@@ -89,7 +86,7 @@ export const Header: React.FC = () => {
               </div>
 
               {/* Mobile controls */}
-              <div className="flex lg:hidden ml-auto items-center space-x-2 sm:space-x-3">
+              <div className="flex lg:hidden ml-auto items-center space-x-2 sm:space-x-3 pr-4 sm:pr-6">
                 {/* Language switcher */}
                 <LanguageSwitcher />
 
@@ -137,8 +134,8 @@ export const Header: React.FC = () => {
                 <div className="flex items-center space-x-3">
                   <Logo
                     width={100}
-                    height={30}
-                    className="sm:w-[120px] sm:h-[36px]"
+                    height={50}
+                    className="w-[80px] h-[40px] sm:w-[100px] sm:h-[50px]"
                   />
                 </div>
                 <button
