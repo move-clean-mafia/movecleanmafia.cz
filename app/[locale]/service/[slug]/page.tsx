@@ -399,26 +399,26 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
             </div>
 
             {/* Availability, Quality Icons and Reservation Button */}
-            <div className="flex justify-between items-center">
-              <div className="flex gap-8">
-                <div className="flex items-center space-x-3">
-                  <Clock className="w-6 h-6 text-brand-primary" />
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+              <div className="flex gap-4 sm:gap-8">
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-brand-primary" />
                   <div className="text-center">
-                    <div className="text-xl font-bold text-brand-primary">
+                    <div className="text-lg sm:text-xl font-bold text-brand-primary">
                       24/7
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-xs sm:text-sm text-gray-600">
                       {t('serviceDetail.availability')}
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Shield className="w-6 h-6 text-brand-primary" />
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-brand-primary" />
                   <div className="text-center">
-                    <div className="text-xl font-bold text-brand-primary">
+                    <div className="text-lg sm:text-xl font-bold text-brand-primary">
                       100%
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-xs sm:text-sm text-gray-600">
                       {t('serviceDetail.quality')}
                     </div>
                   </div>
@@ -426,7 +426,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
               </div>
               <a
                 href={`/${locale}/reservation?service=${service.slug}`}
-                className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
               >
                 {t('reservation.submitReservation') as string}
               </a>
