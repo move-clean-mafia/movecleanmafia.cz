@@ -167,10 +167,10 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
     return (
       <div className="space-y-4">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
-            <Icon className="w-6 h-6 text-brand-primary" />
+          <div className="w-12 h-12 bg-[#d6b977] rounded-xl flex items-center justify-center">
+            <Icon className="w-6 h-6 text-black" />
           </div>
-          <h4 className="text-xl font-baloo-bhai font-medium text-gray-900">
+          <h4 className="text-xl font-heading font-medium text-[#d6b977]">
             {area.title}
           </h4>
         </div>
@@ -178,12 +178,12 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
           {area.items.map((item: string, index: number) => (
             <div
               key={index}
-              className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-all duration-200 group"
+              className="flex items-start gap-4 p-4 mafia-card hover:bg-[#d6b977]/10 transition-all duration-200 group"
             >
-              <div className="w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                <Check className="w-3.5 h-3.5 text-white" />
+              <div className="w-6 h-6 bg-[#d6b977] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
+                <Check className="w-3.5 h-3.5 text-black" />
               </div>
-              <span className="font-inter font-light text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors">
+              <span className="font-body font-light text-white/80 leading-relaxed group-hover:text-white transition-colors">
                 {item}
               </span>
             </div>
@@ -217,30 +217,30 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         {/* Services Included - Right Side */}
         <div className="space-y-6">
           <div className="text-center lg:text-left">
-            <h3 className="text-3xl font-baloo-bhai font-medium text-gray-900 mb-6">
+            <h3 className="text-3xl font-heading font-medium text-[#d6b977] mb-6">
               {t('servicesPage.whatIncluded') as string}
             </h3>
           </div>
 
           {/* Services Tabs */}
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+          <div className="mafia-card overflow-hidden">
             <Tabs defaultValue="room" className="w-full">
-              <TabsList className="flex w-full bg-gray-50 p-2 rounded-t-2xl h-auto border-b border-gray-200">
+              <TabsList className="flex w-full bg-black p-2 rounded-t-lg h-auto border-b border-[#d6b977]/30">
                 <TabsTrigger
                   value="room"
-                  className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=active]:text-brand-primary transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-gray-600 hover:text-gray-900"
+                  className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-md transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white"
                 >
                   {packageData.areas.room.title}
                 </TabsTrigger>
                 <TabsTrigger
                   value="kitchen"
-                  className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=active]:text-brand-primary transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-gray-600 hover:text-gray-900"
+                  className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-md transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white"
                 >
                   {packageData.areas.kitchen.title}
                 </TabsTrigger>
                 <TabsTrigger
                   value="bathroom"
-                  className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md data-[state=active]:text-brand-primary transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-gray-600 hover:text-gray-900"
+                  className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-md transition-all duration-200 flex-1 text-sm px-4 py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white"
                 >
                   {packageData.areas.bathroom.title}
                 </TabsTrigger>
@@ -269,16 +269,16 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
   const renderSimplePricingTable = (
     services: Array<{ name: string; unit?: string; price: string }>,
   ) => (
-    <Card className="shadow-xl border-0">
+    <Card className="mafia-card shadow-xl">
       <CardContent className="p-8">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-gray-200">
-                <th className="text-left py-1 px-1 font-baloo-bhai font-medium text-gray-900 text-lg">
+              <tr className="border-b border-[#d6b977]/30">
+                <th className="text-left py-1 px-1 font-heading font-medium text-[#d6b977] text-lg">
                   {t('servicesPage.service') as string}
                 </th>
-                <th className="text-right py-1 px-1 font-baloo-bhai font-medium text-gray-900 text-lg">
+                <th className="text-right py-1 px-1 font-heading font-medium text-[#d6b977] text-lg">
                   {t('servicesPage.price') as string}
                 </th>
               </tr>
@@ -287,12 +287,12 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
               {services.map((service, index) => (
                 <tr
                   key={index}
-                  className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200"
+                  className="border-b border-[#d6b977]/10 hover:bg-[#d6b977]/10 transition-colors duration-200"
                 >
-                  <td className="py-1 px-1 font-inter font-light text-gray-700">
+                  <td className="py-1 px-1 font-body font-light text-white/80">
                     {service.name}
                   </td>
-                  <td className="py-1 px-1 font-inter font-bold text-brand-primary text-right">
+                  <td className="py-1 px-1 font-body font-bold text-[#d6b977] text-right">
                     {service.price}
                   </td>
                 </tr>
@@ -328,7 +328,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         {/* Description */}
         {movingData.description && (
           <div className="text-center mb-8">
-            <p className="text-lg font-inter font-light text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg font-body font-light text-white/80 max-w-4xl mx-auto leading-relaxed">
               {movingData.description}
             </p>
           </div>
@@ -342,7 +342,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         {/* Minimum Order Notice */}
         {movingData.minOrder && (
           <div className="text-center mb-8">
-            <p className="text-sm font-inter font-medium text-brand-primary bg-brand-primary/10 px-4 py-2 rounded-lg inline-block">
+            <p className="text-sm font-body font-medium text-[#d6b977] bg-[#d6b977]/10 px-4 py-2 rounded-lg inline-block border border-[#d6b977]/30">
               {movingData.minOrder}
             </p>
           </div>
@@ -350,15 +350,17 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
 
         {/* What's Included */}
         {movingData.includedInPrice && (
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 mb-8">
-            <h3 className="text-2xl font-baloo-bhai font-light text-gray-900 mb-6 text-center">
+          <div className="mafia-card p-8 mb-8">
+            <h3 className="text-2xl font-heading font-light text-[#d6b977] mb-6 text-center">
               {movingData.includedInPrice.title}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {movingData.includedInPrice.items.map((item, index) => (
                 <div key={index} className="flex items-start space-x-3">
-                  <Check className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700 font-light">{item}</span>
+                  <Check className="w-5 h-5 text-[#d6b977] flex-shrink-0 mt-0.5" />
+                  <span className="text-white/80 font-light font-body">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
@@ -367,8 +369,8 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
 
         {/* Additional Services */}
         {movingData.additionalServices && (
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 mb-8">
-            <h3 className="text-2xl font-baloo-bhai font-light text-gray-900 mb-6 pt-8 text-center">
+          <div className="mafia-card mb-8">
+            <h3 className="text-2xl font-heading font-light text-[#d6b977] mb-6 pt-8 text-center">
               {movingData.additionalServices.title}
             </h3>
             {renderSimplePricingTable(movingData.additionalServices.items)}
@@ -377,15 +379,15 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
 
         {/* Additional Services List */}
         {movingData.additionalServicesList && (
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 mb-8">
-            <h3 className="text-2xl font-baloo-bhai font-light text-gray-900 mb-6 text-center">
+          <div className="mafia-card p-8 mb-8">
+            <h3 className="text-2xl font-heading font-light text-[#d6b977] mb-6 text-center">
               {movingData.additionalServicesList.title}
             </h3>
             <div className="space-y-4">
               {movingData.additionalServicesList.items.map((item, index) => (
                 <div key={index} className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-brand-primary rounded-full flex-shrink-0 mt-2"></div>
-                  <span className="text-gray-700 font-light leading-relaxed">
+                  <div className="w-2 h-2 bg-[#d6b977] rounded-full flex-shrink-0 mt-2"></div>
+                  <span className="text-white/80 font-light leading-relaxed font-body">
                     {item}
                   </span>
                 </div>
@@ -399,7 +401,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
           <div className="flex justify-end">
             <a
               href={`/${locale}/reservation?service=moving`}
-              className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
             >
               {t('reservation.submitReservation') as string}
             </a>
@@ -412,19 +414,19 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
   const ServiceIcon = serviceData.icon;
 
   return (
-    <section className={`py-16 bg-gray-50 ${className}`}>
+    <section className={`py-16 bg-black ${className}`}>
       {/* Section Header */}
       <div className="text-center mb-12">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-primary rounded-2xl mb-4">
-          <ServiceIcon className="w-8 h-8 text-white" />
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-[#d6b977] rounded-2xl mb-4">
+          <ServiceIcon className="w-8 h-8 text-black" />
         </div>
-        <h2 className="text-4xl sm:text-5xl font-baloo-bhai font-light text-gray-900 mb-3">
+        <h2 className="text-4xl sm:text-5xl font-heading font-bold text-[#d6b977] mb-3 animate-text-glow">
           {serviceData.title}
         </h2>
-        <p className="text-xl font-inter font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl font-body font-light text-white/80 max-w-3xl mx-auto leading-relaxed">
           {serviceData.subtitle}
         </p>
-        <div className="w-24 h-1 bg-brand-primary mx-auto rounded-full mt-4"></div>
+        <div className="mafia-divider w-24 h-1 mx-auto mt-4"></div>
       </div>
 
       {/* Service-specific content */}
@@ -433,25 +435,25 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         serviceData.packages && (
           <>
             {/* Main Packages Tabs */}
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden mb-12">
+            <div className="mafia-card overflow-hidden mb-12">
               <div className="p-6">
                 <Tabs defaultValue="maintenance" className="w-full">
-                  <TabsList className="flex flex-col sm:flex-row w-full mb-6 bg-gray-100 p-1 rounded-xl h-auto sm:h-10">
+                  <TabsList className="flex flex-col sm:flex-row w-full mb-6 bg-black p-1 rounded-xl h-auto sm:h-10 border border-[#d6b977]/30">
                     <TabsTrigger
                       value="maintenance"
-                      className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
+                      className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white"
                     >
                       {serviceData.packages.maintenance.title}
                     </TabsTrigger>
                     <TabsTrigger
                       value="general"
-                      className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
+                      className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white"
                     >
                       {serviceData.packages.general.title}
                     </TabsTrigger>
                     <TabsTrigger
                       value="postRenovation"
-                      className="font-baloo-bhai rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent"
+                      className="font-heading rounded-lg data-[state=active]:bg-[#d6b977] data-[state=active]:text-black data-[state=active]:shadow-md transition-all duration-200 flex-1 text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 whitespace-normal text-center data-[state=inactive]:bg-transparent data-[state=inactive]:text-white/80 hover:text-white"
                     >
                       {serviceData.packages.postRenovation.title}
                     </TabsTrigger>
@@ -466,7 +468,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                       <div className="flex justify-end pt-6">
                         <a
                           href={`/${locale}/reservation?service=cleaning&package=maintenance`}
-                          className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                          className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
                         >
                           {t('reservation.submitReservation') as string}
                         </a>
@@ -483,7 +485,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                       <div className="flex justify-end pt-6">
                         <a
                           href={`/${locale}/reservation?service=cleaning&package=general`}
-                          className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                          className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
                         >
                           {t('reservation.submitReservation') as string}
                         </a>
@@ -500,7 +502,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                       <div className="flex justify-end pt-6">
                         <a
                           href={`/${locale}/reservation?service=cleaning&package=postRenovation`}
-                          className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                          className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
                         >
                           {t('reservation.submitReservation') as string}
                         </a>
@@ -512,17 +514,17 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
             </div>
 
             {/* Additional Services */}
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+            <div className="mafia-card overflow-hidden">
               <div className="p-8">
                 <div className="text-center mb-8">
-                  <h3 className="text-3xl font-baloo-bhai font-light text-gray-900 mb-4">
+                  <h3 className="text-3xl font-heading font-light text-[#d6b977] mb-4">
                     {
                       t(
                         'detailedServices.cleaningPackages.additionalServices.title',
                       ) as string
                     }
                   </h3>
-                  <p className="text-lg font-inter font-light text-gray-600 max-w-2xl mx-auto">
+                  <p className="text-lg font-body font-light text-white/80 max-w-2xl mx-auto">
                     {
                       t(
                         'detailedServices.cleaningPackages.additionalServices.subtitle',
@@ -599,7 +601,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
               <div className="flex justify-end mt-6">
                 <a
                   href={`/${locale}/reservation?service=${serviceType}`}
-                  className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
                 >
                   {t('reservation.submitReservation') as string}
                 </a>
@@ -617,7 +619,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
               <div className="flex justify-end mt-6">
                 <a
                   href={`/${locale}/reservation?service=${serviceType}`}
-                  className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
                 >
                   {t('reservation.submitReservation') as string}
                 </a>

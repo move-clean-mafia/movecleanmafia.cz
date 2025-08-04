@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Phone, Users } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 import { type SupportedLanguage } from '../lib/i18n';
 
 interface CTASectionProps {
@@ -24,44 +24,29 @@ export const CTASection: React.FC<CTASectionProps> = ({
   subtitle,
 }) => {
   return (
-    <section
-      className={`py-20 bg-gradient-to-br from-brand-secondary to-brand-primary relative ${className}`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-sm rounded-3xl mb-8 border border-white/20">
-          <Users className="w-10 h-10 text-white" />
-        </div>
-        <h2 className="text-4xl sm:text-5xl font-baloo-bhai font-light text-white mb-6">
-          {title || t('services.ctaTitle')}
+    <section className="py-20 bg-black">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-8 font-heading animate-text-glow">
+          READY TO MAKE A DEAL?
         </h2>
-        <p className="text-xl font-inter font-light text-brand-light mb-12 max-w-3xl mx-auto leading-relaxed">
-          {subtitle || t('services.ctaSubtitle')}
+        <p className="text-xl text-white/80 mb-10 font-body">
+          Don't wait. Contact us now and experience the difference that only the
+          best can provide.
         </p>
-
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href={`/${locale}/reservation?service=moving`}
-            className="group inline-flex items-center justify-center px-10 py-4 bg-white text-brand-secondary font-inter font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            href={`/${locale}/reservation`}
+            className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
           >
-            {primaryButtonText ||
-              (locale === 'cs'
-                ? 'Rezervovat'
-                : locale === 'ua'
-                  ? 'Забронювати'
-                  : 'Book Now')}
-            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+            GET A QUOTE
+            <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
           </a>
           <a
-            href={secondaryButtonLink || `tel:${t('header.phone1')}`}
-            className="group inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white font-inter font-semibold rounded-xl hover:bg-white hover:text-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
+            href={`/${locale}/contact`}
+            className="bg-transparent border-2 border-[#d6b977] text-[#d6b977] px-8 py-4 rounded-lg font-bold hover:bg-[#d6b977] hover:text-black transition-all duration-300 text-lg inline-flex items-center group"
           >
-            {!secondaryButtonLink && (
-              <Phone className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-200" />
-            )}
-            {secondaryButtonText || t('header.phone1')}
-            {secondaryButtonLink && (
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-            )}
+            CONTACT US
+            <Phone className="w-5 h-5 ml-3 group-hover:scale-110 transition-transform duration-300" />
           </a>
         </div>
       </div>

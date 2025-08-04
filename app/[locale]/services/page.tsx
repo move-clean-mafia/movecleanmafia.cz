@@ -7,7 +7,16 @@ import CompactServicesGrid from '../../../components/compact-services-grid';
 import { CTASection } from '../../../components/cta-section';
 import ServicePricing from '../../../components/service-pricing';
 
-import { Truck, Sparkles, Droplets, Wrench, Package2 } from 'lucide-react';
+import {
+  Truck,
+  Sparkles,
+  Droplets,
+  Wrench,
+  Package2,
+  Crown,
+  Award,
+  Shield,
+} from 'lucide-react';
 
 interface ServicesPageProps {
   params: Promise<{ locale: string }>;
@@ -178,44 +187,44 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section - Professional Design */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-secondary via-brand-secondary to-brand-primary text-white py-12 sm:py-16 lg:py-20">
+    <div className="min-h-screen bg-black">
+      {/* Hero Section - Mafia Style */}
+      <section className="relative overflow-hidden bg-black text-white py-20">
         {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23d6b977%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-baloo-bhai font-light mb-6 sm:mb-8 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-[#d6b977] mb-6 sm:mb-8 leading-tight animate-text-glow">
               {t('services.title')}
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl font-inter font-light opacity-90 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl lg:text-3xl font-body font-light text-white/90 max-w-4xl mx-auto leading-relaxed">
               {t('services.subtitle')}
             </p>
 
             {/* Professional Stats */}
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-white/20">
-                <div className="text-2xl sm:text-3xl font-bold text-brand-primary">
+            <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10 mt-12 sm:mt-16">
+              <div className="mafia-card px-6 py-4 border border-[#d6b977]">
+                <div className="text-3xl sm:text-4xl font-bold text-[#d6b977]">
                   500+
                 </div>
-                <div className="text-xs sm:text-sm opacity-80">
+                <div className="text-sm text-white/80 font-body">
                   {t('about.stats.clients')}
                 </div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-white/20">
-                <div className="text-2xl sm:text-3xl font-bold text-brand-primary">
+              <div className="mafia-card px-6 py-4 border border-[#d6b977]">
+                <div className="text-3xl sm:text-4xl font-bold text-[#d6b977]">
                   24/7
                 </div>
-                <div className="text-xs sm:text-sm opacity-80">
+                <div className="text-sm text-white/80 font-body">
                   {t('about.stats.availability')}
                 </div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-white/20">
-                <div className="text-2xl sm:text-3xl font-bold text-brand-primary">
+              <div className="mafia-card px-6 py-4 border border-[#d6b977]">
+                <div className="text-3xl sm:text-4xl font-bold text-[#d6b977]">
                   100%
                 </div>
-                <div className="text-xs sm:text-sm opacity-80">
+                <div className="text-sm text-white/80 font-body">
                   {t('services.quality')}
                 </div>
               </div>
@@ -224,49 +233,62 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
         </div>
       </section>
 
-      {/* Services Overview - Clean Professional Layout */}
-      <section className="py-8 mx-4 sm:mx-4 lg:mx-8">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-baloo-bhai font-light text-gray-900 mb-4 sm:mb-6">
-            {t('homepage.servicesSection.title')}
-          </h2>
-          <p className="text-lg sm:text-xl font-inter font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {t('homepage.servicesSection.subtitle')}
-          </p>
-        </div>
+      {/* Services Overview - Mafia Style */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
+              {t('homepage.servicesSection.title')}
+            </h2>
+            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed font-body">
+              {t('homepage.servicesSection.subtitle')}
+            </p>
+          </div>
 
-        {/* Professional Services Grid */}
-        <CompactServicesGrid
-          services={services}
-          locale={locale}
-          className="animate-fade-in-up"
-          t={t}
-          useSpecificLinks={true}
-        />
+          {/* Professional Services Grid */}
+          <CompactServicesGrid
+            services={services}
+            locale={locale}
+            className="animate-fade-in-up"
+            t={t}
+            useSpecificLinks={true}
+          />
+        </div>
       </section>
 
-      {/* Detailed Services Sections - Corporate Design */}
-      <section
-        id="detailed-services"
-        className="py-8 bg-gray-50 mx-4 sm:mx-6 lg:mx-8"
-      >
-        {/* Moving Services Pricing */}
-        <div id="moving-services" className="mb-8">
+      {/* Detailed Services Sections - Mafia Style */}
+      <section id="detailed-services" className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
+              DETAILED PRICING
+            </h2>
+            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed font-body">
+              Transparent pricing for all our premium services. No hidden costs,
+              no surprises.
+            </p>
+          </div>
+
+          {/* Moving Services Pricing */}
+          <div id="moving-services" className="mb-16">
+            <ServicePricing
+              locale={locale as SupportedLanguage}
+              t={t}
+              serviceType="moving"
+              showReservationButton={true}
+            />
+          </div>
+
+          {/* Service Pricing */}
           <ServicePricing
             locale={locale as SupportedLanguage}
             t={t}
-            serviceType="moving"
+            serviceType="cleaning"
             showReservationButton={true}
           />
         </div>
-
-        {/* Service Pricing */}
-        <ServicePricing
-          locale={locale as SupportedLanguage}
-          t={t}
-          serviceType="cleaning"
-          showReservationButton={true}
-        />
       </section>
 
       {/* Professional CTA Section */}

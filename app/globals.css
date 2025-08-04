@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -30,31 +32,32 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+  
   .dark {
-    --background: 0 0% 3.9%; /* Deep Black */
-    --foreground: 0 0% 98%; /* White */
-    --card: 0 0% 3.9%; /* Deep Black */
-    --card-foreground: 0 0% 98%; /* White */
-    --popover: 0 0% 3.9%; /* Deep Black */
-    --popover-foreground: 0 0% 98%; /* White */
-    --primary: 43 58% 65%; /* Vintage Gold */
-    --primary-foreground: 0 0% 3.9%; /* Deep Black */
-    --secondary: 30 35% 30%; /* Rich Brown */
-    --secondary-foreground: 0 0% 98%; /* White */
-    --muted: 0 0% 14.9%;
+    --background: 0 0% 0%; /* Pure Black */
+    --foreground: 0 0% 100%; /* Pure White */
+    --card: 0 0% 5%; /* Very Dark Charcoal */
+    --card-foreground: 0 0% 100%; /* Pure White */
+    --popover: 0 0% 5%; /* Very Dark Charcoal */
+    --popover-foreground: 0 0% 100%; /* Pure White */
+    --primary: 43 58% 65%; /* Premium Gold #d6b977 */
+    --primary-foreground: 0 0% 0%; /* Pure Black */
+    --secondary: 0 0% 10%; /* Dark Gray */
+    --secondary-foreground: 0 0% 100%; /* Pure White */
+    --muted: 0 0% 15%;
     --muted-foreground: 0 0% 80%; /* Light Grey */
-    --accent: 43 58% 65%; /* Vintage Gold */
-    --accent-foreground: 0 0% 3.9%; /* Deep Black */
+    --accent: 43 58% 65%; /* Premium Gold #d6b977 */
+    --accent-foreground: 0 0% 0%; /* Pure Black */
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 43 58% 65%; /* Vintage Gold */
-    --chart-1: 43 58% 65%; /* Vintage Gold */
-    --chart-2: 30 35% 30%; /* Rich Brown */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 43 58% 65%; /* Premium Gold #d6b977 */
+    --chart-1: 43 58% 65%; /* Premium Gold #d6b977 */
+    --chart-2: 0 0% 100%; /* Pure White */
     --chart-3: 0 0% 80%; /* Light Grey */
-    --chart-4: 0 0% 98%; /* White */
-    --chart-5: 43 58% 65%; /* Vintage Gold */
+    --chart-4: 0 0% 100%; /* Pure White */
+    --chart-5: 43 58% 65%; /* Premium Gold #d6b977 */
   }
 }
 
@@ -147,7 +150,7 @@
 
   .hover-lift:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(214, 185, 119, 0.2);
   }
 
   /* Image zoom effect */
@@ -161,6 +164,19 @@
 
   .image-zoom:hover img {
     transform: scale(1.1);
+  }
+
+  /* Mafia-themed animations */
+  .animate-gold-shimmer {
+    animation: goldShimmer 2s ease-in-out infinite;
+  }
+
+  .animate-border-glow {
+    animation: borderGlow 3s ease-in-out infinite;
+  }
+
+  .animate-text-glow {
+    animation: textGlow 2s ease-in-out infinite;
   }
 }
 
@@ -263,6 +279,34 @@
   }
 }
 
+/* Mafia-themed animations */
+@keyframes goldShimmer {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(214, 185, 119, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(214, 185, 119, 0.8);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(214, 185, 119, 0.5);
+  }
+  50% {
+    border-color: rgba(214, 185, 119, 1);
+  }
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(214, 185, 119, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(214, 185, 119, 0.8);
+  }
+}
+
 /* Line clamp utilities */
 @layer utilities {
   .line-clamp-2 {
@@ -342,5 +386,40 @@
 
   .prose-custom pre code {
     @apply bg-transparent p-0;
+  }
+}
+
+/* Mafia-themed component styles */
+@layer components {
+  .mafia-card {
+    @apply bg-black border border-[#d6b977] rounded-lg p-6 hover:shadow-lg transition-all duration-300;
+  }
+
+  .mafia-button {
+    @apply bg-black border-2 border-[#d6b977] text-[#d6b977] px-6 py-3 rounded-lg font-bold hover:bg-[#d6b977] hover:text-black transition-all duration-300;
+  }
+
+  .mafia-heading {
+    @apply font-heading text-[#d6b977] font-bold;
+  }
+
+  .mafia-text {
+    @apply font-body text-white;
+  }
+
+  .mafia-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-[#d6b977] to-transparent;
+  }
+
+  .mafia-glow {
+    @apply animate-gold-shimmer;
+  }
+
+  .mafia-border-glow {
+    @apply animate-border-glow;
+  }
+
+  .mafia-text-glow {
+    @apply animate-text-glow;
   }
 }

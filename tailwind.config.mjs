@@ -14,8 +14,8 @@ export default {
       fontFamily: {
         'baloo-bhai': ['var(--font-baloo-bhai)', 'sans-serif'],
         inter: ['var(--font-inter)', 'sans-serif'],
-        heading: ['var(--font-baloo-bhai)', 'sans-serif'],
-        body: ['var(--font-inter)', 'sans-serif'],
+        heading: ['Oswald', 'sans-serif'],
+        body: ['Lora', 'serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -57,12 +57,13 @@ export default {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         brand: {
-          primary: '#D6B977', // Vintage Gold
-          secondary: '#6B4F2C', // Rich Brown
-          light: '#FDF6E3', // Warm Neutral
-          text: '#CCCCCC', // Light Grey
-          dark: '#0A0A0A', // Deep Black
-          white: '#FFFFFF', // White
+          primary: '#d6b977', // Premium Gold
+          secondary: '#000000', // Pure Black
+          light: '#FFFFFF', // Pure White
+          text: '#FFFFFF', // Pure White
+          dark: '#000000', // Pure Black
+          white: '#FFFFFF', // Pure White
+          gold: '#d6b977', // Premium Gold
         },
         chart: {
           1: 'hsl(var(--chart-1))',

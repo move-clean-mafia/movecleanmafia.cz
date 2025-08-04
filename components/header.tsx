@@ -39,9 +39,9 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white border-b-2 border-gray-300 backdrop-blur-sm bg-white/95 shadow-lg">
+      <header className="sticky top-0 z-50 bg-black border-b-2 border-[#d6b977] backdrop-blur-sm bg-black/95 shadow-lg">
         {/* Main navigation */}
-        <div className="bg-white w-full">
+        <div className="bg-black w-full">
           <div className="w-full px-0">
             <div className="flex items-center h-16 sm:h-20 lg:h-24">
               {/* Logo */}
@@ -58,10 +58,10 @@ export const Header: React.FC = () => {
                 {/* Phone Button - Direct Call */}
                 <a
                   href={`tel:${t('header.phone1')}`}
-                  className="p-2 sm:p-3 rounded-lg bg-brand-light hover:bg-brand-primary/20 transition-colors duration-200 border border-gray-200 shadow-sm"
+                  className="p-2 sm:p-3 rounded-lg bg-[#d6b977] hover:bg-[#d6b977]/80 transition-colors duration-200 border border-[#d6b977] shadow-sm group"
                   aria-label={t('header.phone1')}
                 >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brand-primary" />
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-black group-hover:scale-110 transition-transform duration-200" />
                 </a>
               </div>
 
@@ -72,7 +72,7 @@ export const Header: React.FC = () => {
                     <Link
                       key={item.key}
                       href={item.href}
-                      className="px-4 xl:px-6 py-3 font-inter font-bold text-gray-700 hover:text-brand-primary hover:bg-brand-light rounded-lg transition-all duration-200 uppercase text-sm xl:text-base leading-6 tracking-wider border-2 border-transparent hover:border-brand-primary/20 shadow-sm hover:shadow-md"
+                      className="px-4 xl:px-6 py-3 font-heading font-bold text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 rounded-lg transition-all duration-200 uppercase text-sm xl:text-base leading-6 tracking-wider border-2 border-transparent hover:border-[#d6b977]/50 shadow-sm hover:shadow-md"
                     >
                       {t(`navigation.${item.key}`).toUpperCase()}
                     </Link>
@@ -93,7 +93,7 @@ export const Header: React.FC = () => {
                 {/* Mobile menu button */}
                 <button
                   onClick={toggleMobileMenu}
-                  className="inline-flex items-center justify-center p-2 sm:p-3 rounded-lg text-gray-600 hover:text-brand-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary border border-gray-200 shadow-sm"
+                  className="inline-flex items-center justify-center p-2 sm:p-3 rounded-lg text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#d6b977] border border-[#d6b977]/30 shadow-sm"
                   aria-expanded={isMobileMenuOpen}
                 >
                   <span className="sr-only">
@@ -117,7 +117,7 @@ export const Header: React.FC = () => {
       {isMobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 z-[60] bg-gray-800 bg-opacity-60"
+            className="fixed inset-0 z-[60] bg-black bg-opacity-80"
             onClick={toggleMobileMenu}
             aria-label={t('header.closeMainMenu')}
             tabIndex={0}
@@ -127,7 +127,7 @@ export const Header: React.FC = () => {
                 toggleMobileMenu();
             }}
           ></div>
-          <div className="fixed top-0 right-0 w-full max-w-sm min-w-[280px] h-full bg-white shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out border-l-2 border-gray-300">
+          <div className="fixed top-0 right-0 w-full max-w-sm min-w-[280px] h-full bg-black shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out border-l-2 border-[#d6b977]">
             <div className="p-4 sm:p-6 h-full overflow-y-auto flex flex-col">
               {/* Mobile header */}
               <div className="flex justify-between items-center mb-6 sm:mb-8">
@@ -140,7 +140,7 @@ export const Header: React.FC = () => {
                 </div>
                 <button
                   onClick={toggleMobileMenu}
-                  className="p-2 sm:p-3 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 border border-gray-200 shadow-sm"
+                  className="p-2 sm:p-3 rounded-lg text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 border border-[#d6b977]/30 shadow-sm"
                   aria-label={t('header.closeMainMenu')}
                 >
                   <X className="h-5 w-5 sm:h-6 sm:w-6" />
@@ -154,7 +154,7 @@ export const Header: React.FC = () => {
                     key={item.key}
                     href={item.href}
                     onClick={toggleMobileMenu}
-                    className="block px-4 py-3 font-inter font-bold text-gray-700 hover:text-brand-primary hover:bg-brand-light rounded-lg transition-colors duration-200 uppercase text-sm sm:text-base leading-6 tracking-wider border-2 border-transparent hover:border-brand-primary/20 shadow-sm"
+                    className="block px-4 py-3 font-heading font-bold text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 rounded-lg transition-colors duration-200 uppercase text-sm sm:text-base leading-6 tracking-wider border-2 border-transparent hover:border-[#d6b977]/50 shadow-sm"
                   >
                     {t(`navigation.${item.key}`).toUpperCase()}
                   </Link>
@@ -165,14 +165,14 @@ export const Header: React.FC = () => {
               <div className="flex-1"></div>
 
               {/* Mobile contact info */}
-              <div className="pt-4 border-t-2 border-gray-200">
+              <div className="pt-4 border-t-2 border-[#d6b977]/30">
                 <div className="flex flex-col space-y-3 items-center">
                   <a
                     href={`tel:${t('header.phone1')}`}
-                    className="flex items-center justify-center space-x-3 hover:bg-brand-light rounded-lg p-3 transition-colors duration-200 w-full max-w-xs border border-transparent hover:border-gray-200 shadow-sm"
+                    className="flex items-center justify-center space-x-3 hover:bg-[#d6b977]/10 rounded-lg p-3 transition-colors duration-200 w-full max-w-xs border border-transparent hover:border-[#d6b977]/50 shadow-sm"
                   >
-                    <Phone className="w-4 h-4 text-brand-primary" />
-                    <span className="font-inter font-semibold text-sm leading-4 tracking-wide text-gray-700">
+                    <Phone className="w-4 h-4 text-[#d6b977]" />
+                    <span className="font-heading font-semibold text-sm leading-4 tracking-wide text-white">
                       {t('header.phone1')}
                     </span>
                   </a>

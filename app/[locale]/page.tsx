@@ -3,19 +3,12 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { getTranslation } from '../../lib/i18n-server';
 import { type SupportedLanguage } from '../../lib/i18n';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '../../components/ui/card';
+import { CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
 import BenefitsGrid from '../../components/benefits-grid';
-import { CTASection } from '../../components/cta-section';
 
 import {
   Truck,
-  Sparkles,
   Package,
   Clock,
   Shield,
@@ -25,11 +18,12 @@ import {
   MapPin,
   ArrowRight,
   Home,
-  Droplets,
-  Wrench,
-  Package2,
+  Crown,
+  Zap,
+  Target,
+  Award,
 } from 'lucide-react';
-import CompactServicesGrid from '@/components/compact-services-grid';
+import { CTASection } from '@/components/cta-section';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -196,58 +190,6 @@ const HomePage = async ({ params }: HomePageProps) => {
     };
   };
 
-  const services = [
-    {
-      icon: Truck,
-      title: t('services.moving'),
-      description: t('services.movingDescription'),
-      features: t('services.movingFeatures') as unknown as string[],
-      highlightPrice: movingServices[0]?.price || '350-450 Kč',
-      image: '/images/moving.jpg',
-      imageAlt: t('homepage.heroImages.moving'),
-    },
-    {
-      icon: Sparkles,
-      title: t('services.cleaning'),
-      description: t('services.cleaningDescription'),
-      features: t('services.cleaningFeatures') as unknown as string[],
-      highlightPrice: 'od 250 Kč/m²',
-      image: '/images/cleaning.jpg',
-      imageAlt: t('homepage.heroImages.cleaning'),
-    },
-    {
-      icon: Droplets,
-      title: t('services.furnitureCleaning'),
-      description: t('services.furnitureCleaningDescription'),
-      features: [
-        'Chemické čistění nábytku',
-        'Čistění koberců',
-        'Profesionální přístroje',
-      ],
-      highlightPrice: 'od 150 Kč/m²',
-      image: '/images/cleaning.jpg',
-      imageAlt: 'Chemické čistění',
-    },
-    {
-      icon: Wrench,
-      title: t('services.handyman'),
-      description: t('services.handymanDescription'),
-      features: ['Drobné opravy', 'Montáž nábytku', 'Instalace'],
-      highlightPrice: 'od 300 Kč/hod',
-      image: '/images/moving.jpg',
-      imageAlt: 'Hodinový manžel',
-    },
-    {
-      icon: Package2,
-      title: t('services.packages'),
-      description: t('services.packagesDescription'),
-      features: ['Kombinované služby', 'Výhodné ceny', 'Komplexní řešení'],
-      highlightPrice: 'od 500 Kč',
-      image: '/images/packing.jpg',
-      imageAlt: 'Komplexní balíčky',
-    },
-  ];
-
   const benefits = [
     {
       icon: Clock,
@@ -267,10 +209,10 @@ const HomePage = async ({ params }: HomePageProps) => {
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section with New Design */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background Image with Blur Effect */}
+    <div className="min-h-screen bg-black">
+      {/* Hero Section - Mafia Style */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+        {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0">
           <Image
             src="/images/hero.jpg"
@@ -279,31 +221,46 @@ const HomePage = async ({ params }: HomePageProps) => {
             className="object-cover"
             priority
           />
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/40"></div>
+          {/* Dark overlay for premium feel */}
+          <div className="absolute inset-0 bg-black/80"></div>
         </div>
 
         {/* Content Container */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen">
             {/* Left Side - Text Content */}
-            <div className="lg:w-1/2 text-white space-y-6 sm:space-y-8 text-center lg:text-left">
+            <div className="lg:w-1/2 text-white space-y-8 text-center lg:text-left">
               <div className="animate-fade-in-up">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight drop-shadow-2xl">
-                  {t('hero.title')}
+                {/* Premium Badge */}
+                <div className="inline-flex items-center px-4 py-2 bg-[#d6b977] text-black font-bold rounded-full mb-6 animate-gold-shimmer">
+                  <Crown className="w-4 h-4 mr-2" />
+                  THE MOVE & CLEAN MAFIA
+                </div>
+
+                {/* Main Headline */}
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-[#d6b977] animate-text-glow">
+                  AN OFFER YOU CAN'T REFUSE
                 </h1>
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 sm:mt-6 text-white/95 drop-shadow-lg font-light max-w-2xl mx-auto lg:mx-0">
-                  {t('hero.subtitle')}
+
+                {/* Subtitle */}
+                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-6 text-white/90 font-light max-w-2xl mx-auto lg:mx-0">
+                  YOUR PROBLEMS, OUR BUSINESS
+                </p>
+
+                {/* Description */}
+                <p className="text-lg sm:text-xl mt-8 text-white/80 max-w-3xl mx-auto lg:mx-0 font-body">
+                  Professional moving and cleaning services with the precision
+                  and reliability you'd expect from the best in the business.
                 </p>
 
                 {/* CTA Button */}
-                <div className="mt-6 sm:mt-8 lg:mt-10">
+                <div className="mt-10">
                   <a
                     href={`/${locale}/reservation?service=moving`}
-                    className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl bg-[length:200%_100%] hover:bg-[length:200%_100%] animate-gradient-x text-sm sm:text-base"
+                    className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
                   >
-                    {t('hero.cta')}
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                    MAKE US AN OFFER
+                    <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
                   </a>
                 </div>
               </div>
@@ -315,68 +272,45 @@ const HomePage = async ({ params }: HomePageProps) => {
         </div>
 
         {/* Floating decorative elements */}
-        <div className="absolute top-1/4 left-1/4 w-16 h-16 sm:w-32 sm:h-32 bg-white/10 rounded-full blur-xl z-20"></div>
-        <div className="absolute top-1/2 right-1/3 w-12 h-12 sm:w-20 sm:h-20 bg-white/5 rounded-full blur-xl z-20"></div>
+        <div className="absolute top-1/4 left-1/4 w-20 h-20 bg-[#d6b977]/20 rounded-full blur-xl z-20 animate-pulse"></div>
+        <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-[#d6b977]/10 rounded-full blur-xl z-20 animate-pulse"></div>
       </section>
 
-      {/* Services Overview Section with Modern Grid Layout */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      {/* Services Section - Mafia Style */}
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-heading">
-              {t('homepage.servicesSection.title')}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
+              OUR SPECIALTIES
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              {t('homepage.servicesSection.subtitle')}
+            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto font-body">
+              Three distinct services, one unbeatable team. We handle everything
+              with the precision and care that sets us apart.
             </p>
           </div>
 
-          {/* Hero Services Grid */}
-          <CompactServicesGrid
-            services={services}
-            locale={locale}
-            className="animate-fade-in-up"
-            t={t}
-            useSpecificLinks={true}
-          />
-        </div>
-      </section>
-
-      {/* Pricing Highlights Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-heading">
-              {t('homepage.pricingSection.title')}
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('homepage.pricingSection.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Moving Services Highlight */}
-            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 bg-white/80 backdrop-blur-sm">
-              <CardHeader className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white rounded-t-lg">
+            <div className="mafia-card group hover-lift">
+              <CardHeader className="bg-[#d6b977] text-black rounded-t-lg">
                 <CardTitle className="text-xl font-heading flex items-center">
                   <Truck className="w-6 h-6 mr-3" />
                   {t('detailedServices.movingAndTransport.title')}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-4 sm:p-6">
-                <div className="space-y-3 sm:space-y-4">
+              <CardContent className="p-6">
+                <div className="space-y-4">
                   {movingServices.slice(0, 4).map((service, index) => (
                     <div
                       key={index}
-                      className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 sm:p-3 rounded-lg hover:bg-gray-50 transition-colors space-y-1 sm:space-y-0"
+                      className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 rounded-lg hover:bg-[#d6b977]/10 transition-colors space-y-1 sm:space-y-0"
                     >
-                      <span className="text-xs sm:text-sm font-light text-gray-700">
+                      <span className="text-sm font-light text-white/80">
                         {service.name}
                       </span>
-                      <Badge
-                        variant="outline"
-                        className="font-medium bg-brand-primary/10 border-brand-primary/20 text-brand-primary text-xs sm:text-sm w-fit"
-                      >
+                      <Badge className="font-medium bg-[#d6b977] text-black text-sm w-fit">
                         {service.price}
                       </Badge>
                     </div>
@@ -384,36 +318,33 @@ const HomePage = async ({ params }: HomePageProps) => {
                 </div>
                 <a
                   href={`/${locale}/services#moving-services`}
-                  className="group/link inline-flex items-center mt-4 sm:mt-6 text-brand-primary hover:text-brand-secondary font-medium transition-colors duration-300 text-sm sm:text-base"
+                  className="group/link inline-flex items-center mt-6 text-[#d6b977] hover:text-[#d6b977]/80 font-medium transition-colors duration-300 text-sm"
                 >
                   {t('homepage.pricingSection.showAllPrices')}
-                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
                 </a>
               </CardContent>
-            </Card>
+            </div>
 
             {/* Dry Cleaning Highlight */}
-            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 bg-white/80 backdrop-blur-sm">
-              <CardHeader className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white rounded-t-lg">
+            <div className="mafia-card group hover-lift">
+              <CardHeader className="bg-[#d6b977] text-black rounded-t-lg">
                 <CardTitle className="text-xl font-heading flex items-center">
                   <Package className="w-6 h-6 mr-3" />
                   {t('detailedServices.dryCleaning.title')}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-4 sm:p-6">
-                <div className="space-y-3 sm:space-y-4">
+              <CardContent className="p-6">
+                <div className="space-y-4">
                   {dryCleaningServices.slice(0, 4).map((service, index) => (
                     <div
                       key={index}
-                      className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 sm:p-3 rounded-lg hover:bg-gray-50 transition-colors space-y-1 sm:space-y-0"
+                      className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 rounded-lg hover:bg-[#d6b977]/10 transition-colors space-y-1 sm:space-y-0"
                     >
-                      <span className="text-xs sm:text-sm font-light text-gray-700">
+                      <span className="text-sm font-light text-white/80">
                         {service.name}
                       </span>
-                      <Badge
-                        variant="outline"
-                        className="font-medium bg-brand-primary/10 border-brand-primary/20 text-brand-primary text-xs sm:text-sm w-fit"
-                      >
+                      <Badge className="font-medium bg-[#d6b977] text-black text-sm w-fit">
                         {service.price}
                       </Badge>
                     </div>
@@ -421,95 +352,84 @@ const HomePage = async ({ params }: HomePageProps) => {
                 </div>
                 <a
                   href={`/${locale}/services#dry-cleaning`}
-                  className="group/link inline-flex items-center mt-4 text-brand-primary hover:text-brand-secondary font-medium transition-colors duration-300 text-sm sm:text-base"
+                  className="group/link inline-flex items-center mt-6 text-[#d6b977] hover:text-[#d6b977]/80 font-medium transition-colors duration-300 text-sm"
                 >
                   {t('homepage.pricingSection.showAllPrices')}
-                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
                 </a>
               </CardContent>
-            </Card>
+            </div>
 
             {/* Cleaning Packages Highlight */}
-            <Card className="group border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 bg-white/80 backdrop-blur-sm">
-              <CardHeader className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white rounded-t-lg">
+            <div className="mafia-card group hover-lift">
+              <CardHeader className="bg-[#d6b977] text-black rounded-t-lg">
                 <CardTitle className="text-xl font-heading flex items-center">
                   <Home className="w-6 h-6 mr-3" />
                   {t('detailedServices.cleaningPackages.title')}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-4 sm:p-6">
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 sm:p-3 rounded-lg hover:bg-gray-50 transition-colors space-y-1 sm:space-y-0">
-                    <span className="text-xs sm:text-sm font-light text-gray-700">
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 rounded-lg hover:bg-[#d6b977]/10 transition-colors space-y-1 sm:space-y-0">
+                    <span className="text-sm font-light text-white/80">
                       {cleaningPackages.maintenance.title}
                     </span>
-                    <Badge
-                      variant="outline"
-                      className="font-medium bg-brand-primary/10 border-brand-primary/20 text-brand-primary text-xs sm:text-sm w-fit"
-                    >
+                    <Badge className="font-medium bg-[#d6b977] text-black text-sm w-fit">
                       {t('detailedServices.cleaningPackages.from')}{' '}
                       {cleaningPackages.maintenance.prices.upTo35}
                     </Badge>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 sm:p-3 rounded-lg hover:bg-gray-50 transition-colors space-y-1 sm:space-y-0">
-                    <span className="text-xs sm:text-sm font-light text-gray-700">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 rounded-lg hover:bg-[#d6b977]/10 transition-colors space-y-1 sm:space-y-0">
+                    <span className="text-sm font-light text-white/80">
                       {cleaningPackages.general.title}
                     </span>
-                    <Badge
-                      variant="outline"
-                      className="font-medium bg-brand-primary/10 border-brand-primary/20 text-brand-primary text-xs sm:text-sm w-fit"
-                    >
+                    <Badge className="font-medium bg-[#d6b977] text-black text-sm w-fit">
                       {t('detailedServices.cleaningPackages.from')}{' '}
                       {cleaningPackages.general.prices.upTo35}
                     </Badge>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 sm:p-3 rounded-lg hover:bg-gray-50 transition-colors space-y-1 sm:space-y-0">
-                    <span className="text-xs sm:text-sm font-light text-gray-700">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 rounded-lg hover:bg-[#d6b977]/10 transition-colors space-y-1 sm:space-y-0">
+                    <span className="text-sm font-light text-white/80">
                       {cleaningPackages.postRenovation.title}
                     </span>
-                    <Badge
-                      variant="outline"
-                      className="font-medium bg-brand-primary/10 border-brand-primary/20 text-brand-primary text-xs sm:text-sm w-fit"
-                    >
+                    <Badge className="font-medium bg-[#d6b977] text-black text-sm w-fit">
                       {t('detailedServices.cleaningPackages.from')}{' '}
                       {cleaningPackages.postRenovation.prices.upTo35}
                     </Badge>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 sm:p-3 rounded-lg hover:bg-gray-50 transition-colors space-y-1 sm:space-y-0">
-                    <span className="text-xs sm:text-sm font-light text-gray-700">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 rounded-lg hover:bg-[#d6b977]/10 transition-colors space-y-1 sm:space-y-0">
+                    <span className="text-sm font-light text-white/80">
                       {t(
                         'detailedServices.cleaningPackages.additionalServices.title',
                       )}
                     </span>
-                    <Badge
-                      variant="outline"
-                      className="font-medium bg-brand-primary/10 border-brand-primary/20 text-brand-primary text-xs sm:text-sm w-fit"
-                    >
+                    <Badge className="font-medium bg-[#d6b977] text-black text-sm w-fit">
                       {t('detailedServices.cleaningPackages.onRequest')}
                     </Badge>
                   </div>
                 </div>
                 <a
                   href={`/${locale}/services#cleaning-packages`}
-                  className="group/link inline-flex items-center mt-4 text-brand-primary hover:text-brand-secondary font-medium transition-colors duration-300 text-sm sm:text-base"
+                  className="group/link inline-flex items-center mt-6 text-[#d6b977] hover:text-[#d6b977]/80 font-medium transition-colors duration-300 text-sm"
                 >
                   {t('homepage.pricingSection.showAllPrices')}
-                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
                 </a>
               </CardContent>
-            </Card>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      {/* Features Section - Mafia Style */}
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-heading">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
               {t('services.whyChooseUs')}
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto font-body">
               {t('services.whyChooseUsSubtitle')}
             </p>
           </div>
@@ -519,57 +439,109 @@ const HomePage = async ({ params }: HomePageProps) => {
         </div>
       </section>
 
-      {/* Contact Information Section */}
-      <section
-        id="contact"
-        className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-gray-100"
-      >
+      {/* Our Code Section - Mafia Principles */}
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 font-heading">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
+              OUR CODE
+            </h2>
+            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed font-body">
+              The principles that guide every job, every client, every detail.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="mafia-card text-center group">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-[#d6b977] text-black rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Target className="w-10 h-10" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#d6b977] mb-4 font-heading">
+                PRECISION
+              </h3>
+              <p className="text-white/80 font-body">
+                Every detail matters. We execute with surgical precision,
+                leaving nothing to chance.
+              </p>
+            </div>
+
+            <div className="mafia-card text-center group">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-[#d6b977] text-black rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Zap className="w-10 h-10" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#d6b977] mb-4 font-heading">
+                EFFICIENCY
+              </h3>
+              <p className="text-white/80 font-body">
+                Time is money. We work fast, clean, and get the job done right
+                the first time.
+              </p>
+            </div>
+
+            <div className="mafia-card text-center group">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-[#d6b977] text-black rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Award className="w-10 h-10" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#d6b977] mb-4 font-heading">
+                EXCELLENCE
+              </h3>
+              <p className="text-white/80 font-body">
+                We don't just meet expectations—we exceed them. Every time,
+                without exception.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information Section - Mafia Style */}
+      <section id="contact" className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
               {t('homepage.contactSection.title')}
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto font-body">
               {t('homepage.contactSection.subtitle')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="group text-center p-6 sm:p-8 rounded-3xl bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-white/20">
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-full mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Phone className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="mafia-card text-center group">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#d6b977] text-black rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Phone className="w-8 h-8" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 font-heading">
+              <h3 className="text-xl font-bold text-[#d6b977] mb-4 font-heading">
                 {t('homepage.contactSection.phone')}
               </h3>
-              <p className="text-sm sm:text-base text-gray-600 mb-1 sm:mb-2">
+              <p className="text-white/80 mb-2 font-body">
                 {t('header.phone1')}
               </p>
-              <p className="text-sm sm:text-base text-gray-600">
-                {t('header.phone2')}
-              </p>
+              <p className="text-white/80 font-body">{t('header.phone2')}</p>
             </div>
 
-            <div className="group text-center p-6 sm:p-8 rounded-3xl bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-white/20">
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-brand-secondary to-brand-primary rounded-full mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+            <div className="mafia-card text-center group">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#d6b977] text-black rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Mail className="w-8 h-8" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 font-heading">
+              <h3 className="text-xl font-bold text-[#d6b977] mb-4 font-heading">
                 {t('homepage.contactSection.email')}
               </h3>
-              <p className="text-sm sm:text-base text-gray-600">
+              <p className="text-white/80 font-body">
                 {t('homepage.contactSection.emailValue')}
               </p>
             </div>
 
-            <div className="group text-center p-6 sm:p-8 rounded-3xl bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-white/20">
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-full mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+            <div className="mafia-card text-center group">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#d6b977] text-black rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+                <MapPin className="w-8 h-8" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 font-heading">
+              <h3 className="text-xl font-bold text-[#d6b977] mb-4 font-heading">
                 {t('homepage.contactSection.address')}
               </h3>
-              <p className="text-sm sm:text-base text-gray-600">
+              <p className="text-white/80 font-body">
                 {t('homepage.contactSection.addressValue')}
               </p>
             </div>

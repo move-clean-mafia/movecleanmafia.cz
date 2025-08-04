@@ -51,7 +51,7 @@ const Logo: React.FC<LogoProps> = ({
         return (
           <div className={`relative group ${className}`}>
             {/* Logo container with clean styling */}
-            <div className="relative bg-white rounded-lg p-1.5 shadow-md border border-gray-200 group-hover:shadow-lg group-hover:border-gray-300 transition-all duration-200">
+            <div className="relative bg-black rounded-lg p-1.5 shadow-md group-hover:shadow-lg group-hover:border-gray-300 transition-all duration-200">
               <Image
                 src="/images/logo.png"
                 alt="MoveClean Mafia Logo"
