@@ -275,10 +275,10 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
           <table className="w-full">
             <thead>
               <tr className="border-b border-gray-200">
-                <th className="text-left py-6 px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
+                <th className="text-left py-1 px-1 font-baloo-bhai font-medium text-gray-900 text-lg">
                   {t('servicesPage.service') as string}
                 </th>
-                <th className="text-right py-6 px-6 font-baloo-bhai font-medium text-gray-900 text-lg">
+                <th className="text-right py-1 px-1 font-baloo-bhai font-medium text-gray-900 text-lg">
                   {t('servicesPage.price') as string}
                 </th>
               </tr>
@@ -289,10 +289,10 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                   key={index}
                   className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200"
                 >
-                  <td className="py-6 px-6 font-inter font-light text-gray-700">
+                  <td className="py-1 px-1 font-inter font-light text-gray-700">
                     {service.name}
                   </td>
-                  <td className="py-6 px-6 font-inter font-bold text-brand-primary text-right">
+                  <td className="py-1 px-1 font-inter font-bold text-brand-primary text-right">
                     {service.price}
                   </td>
                 </tr>
@@ -367,8 +367,8 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
 
         {/* Additional Services */}
         {movingData.additionalServices && (
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 mb-8">
-            <h3 className="text-2xl font-baloo-bhai font-light text-gray-900 mb-6 text-center">
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 mb-8">
+            <h3 className="text-2xl font-baloo-bhai font-light text-gray-900 mb-6 pt-8 text-center">
               {movingData.additionalServices.title}
             </h3>
             {renderSimplePricingTable(movingData.additionalServices.items)}
