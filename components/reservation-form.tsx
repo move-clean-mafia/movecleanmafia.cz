@@ -57,21 +57,22 @@ const countryCodes = [
 // Zod validation schema
 const reservationSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
-  lastName: z.string().min(2, 'Last name must be at least 2 characters'),
-  email: z.string().email('Invalid email address'),
+  lastName: z.string().optional(),
+  email: z.string().email('Invalid email address').optional().or(z.literal('')),
   phone: z.string().min(9, 'Phone number must be at least 9 characters'),
-  service: z.enum(['moving', 'cleaning', 'packing', 'other']),
+  service: z
+    .enum([
+      'moving',
+      'cleaning',
+      'furniture-cleaning',
+      'handyman',
+      'packages',
+      'other',
+    ])
+    .optional(),
   package: z.string().optional(),
-  date: z
-    .string()
-    .min(1, 'Date is required')
-    .refine((date) => {
-      const selectedDate = new Date(date);
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      return selectedDate >= today;
-    }, 'Date cannot be in the past'),
-  time: z.enum(['morning', 'afternoon', 'evening']),
+  date: z.string().optional(),
+  time: z.enum(['morning', 'afternoon', 'evening', 'night']).optional(),
   pickupAddress: z.string().optional(),
   deliveryAddress: z.string().optional(),
   address: z.string().optional(),
@@ -234,6 +235,10 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
       value: 'evening',
       label: t('reservation.timeSlots.evening'),
     },
+    {
+      value: 'night',
+      label: t('reservation.timeSlots.night'),
+    },
   ];
 
   const handleInputChange = (
@@ -274,6 +279,15 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
       const submissionData = {
         ...formData,
         phone: `${selectedCountryCode}${formData.phone}`,
+        // Filter out empty optional fields
+        lastName: formData.lastName || undefined,
+        email: formData.email || undefined,
+        service: formData.service || undefined,
+        date: formData.date || undefined,
+        time: formData.time || undefined,
+        address: formData.address || undefined,
+        apartmentSize: formData.apartmentSize || undefined,
+        message: formData.message || undefined,
       };
 
       // Validate form data
@@ -353,7 +367,6 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                   : ''
               }`}
               placeholder={t('contact.form.lastNamePlaceholder')}
-              required
             />
             {hasFieldError('lastName') && (
               <div className="mt-1 flex items-center text-sm text-red-400">
@@ -382,7 +395,6 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                   : ''
               }`}
               placeholder={t('contact.form.emailPlaceholder')}
-              required
             />
             {hasFieldError('email') && (
               <div className="mt-1 flex items-center text-sm text-red-400">
@@ -482,11 +494,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           >
             {t('reservation.service')}
           </Label>
-          <Select
-            value={selectedService}
-            onValueChange={handleServiceChange}
-            required
-          >
+          <Select value={selectedService} onValueChange={handleServiceChange}>
             <SelectTrigger
               className={`mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20 ${
                 hasFieldError('service')
@@ -531,7 +539,6 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                 setSelectedPackage(value);
                 handleInputChange('package', value);
               }}
-              required
             >
               <SelectTrigger className="mt-1 font-inter font-light">
                 <SelectValue
@@ -569,7 +576,6 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                   ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
                   : ''
               }`}
-              required
             />
             {hasFieldError('date') && (
               <div className="mt-1 flex items-center text-sm text-red-400">
@@ -588,7 +594,6 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
             <Select
               value={formData.time}
               onValueChange={(value) => handleInputChange('time', value)}
-              required
             >
               <SelectTrigger
                 className={`mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20 ${

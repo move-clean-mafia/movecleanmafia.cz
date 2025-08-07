@@ -880,14 +880,14 @@
     "title": "Online rezervace",
     "subtitle": "Rezervujte naše služby rychle a snadno online",
     "formTitle": "Rezervační formulář",
-    "formDescription": "Vyplňte formulář a my vás budeme kontaktovat do 24 hodin",
+    "formDescription": "Vyplňte formulář a my vás budeme kontaktovat co nejdříve",
     "personalInfo": "Osobní údaje",
     "serviceDetails": "Detaily služby",
     "additionalInfo": "Dodatečné informace",
-    "firstName": "Jméno",
+    "firstName": "Jméno *",
     "lastName": "Příjmení",
     "email": "Email",
-    "phone": "Telefon",
+    "phone": "Telefon *",
     "service": "Služba",
     "address": "Adresa",
     "message": "Zpráva",
@@ -906,7 +906,8 @@
     "timeSlots": {
       "morning": "Ráno (8:00-12:00)",
       "afternoon": "Odpoledne (12:00-16:00)",
-      "evening": "Večer (16:00-20:00)"
+      "evening": "Večer (16:00-20:00)",
+      "night": "Noční čas (20:00-8:00)"
     },
     "benefits": {
       "title": "Proč rezervovat online?",
@@ -926,7 +927,7 @@
     },
     "success": {
       "title": "Rezervace úspěšně odeslána!",
-      "description": "Děkujeme za vaši rezervaci. Kontaktujeme vás do 24 hodin pro potvrzení detailů."
+      "description": "Děkujeme za vaši rezervaci. Kontaktujeme vás co nejdříve pro potvrzení detailů."
     },
     "error": {
       "title": "Odeslání rezervace selhalo",
@@ -936,7 +937,14 @@
     "addressPlaceholder": "Zadejte adresu, kde se bude služba provádět...",
     "messagePlaceholder": "Popište vaše požadavky, speciální požadavky, poznámky...",
     "apartmentSizePlaceholder": "např. 65",
-    "submitting": "Odesílání..."
+    "submitting": "Odesílání...",
+    "cleaningPackage": "Úklidový balíček",
+    "cleaningPackagePlaceholder": "Vyberte úklidový balíček",
+    "cleaningPackages": {
+      "maintenance": "Základní úklid",
+      "general": "Běžný úklid",
+      "postRenovation": "Generální úklid"
+    }
   },
   "services": {
     "cleaning": "Úklid",

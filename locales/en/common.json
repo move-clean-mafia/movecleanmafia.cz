@@ -880,14 +880,14 @@
     "title": "Online Reservation",
     "subtitle": "Book our services quickly and easily online",
     "formTitle": "Booking Form",
-    "formDescription": "Fill out the form and we will contact you within 24 hours",
+    "formDescription": "Fill out the form and we will contact you as soon as possible",
     "personalInfo": "Personal Information",
     "serviceDetails": "Service Details",
     "additionalInfo": "Additional Information",
-    "firstName": "First Name",
+    "firstName": "First Name *",
     "lastName": "Last Name",
     "email": "Email",
-    "phone": "Phone",
+    "phone": "Phone *",
     "service": "Service",
     "address": "Address",
     "message": "Message",
@@ -906,7 +906,8 @@
     "timeSlots": {
       "morning": "Morning (8:00-12:00)",
       "afternoon": "Afternoon (12:00-16:00)",
-      "evening": "Evening (16:00-20:00)"
+      "evening": "Evening (16:00-20:00)",
+      "night": "Night time (20:00-8:00)"
     },
     "benefits": {
       "title": "Why Book Online?",
@@ -926,7 +927,7 @@
     },
     "success": {
       "title": "Reservation Submitted Successfully!",
-      "description": "Thank you for your reservation. We will contact you within 24 hours to confirm the details."
+      "description": "Thank you for your reservation. We will contact you as soon as possible to confirm the details."
     },
     "error": {
       "title": "Reservation Submission Failed",
@@ -936,7 +937,14 @@
     "addressPlaceholder": "Enter the address where the service will be provided...",
     "messagePlaceholder": "Describe your requirements, special requests, notes...",
     "apartmentSizePlaceholder": "e.g. 65",
-    "submitting": "Submitting..."
+    "submitting": "Submitting...",
+    "cleaningPackage": "Cleaning Package",
+    "cleaningPackagePlaceholder": "Select cleaning package",
+    "cleaningPackages": {
+      "maintenance": "Basic Cleaning",
+      "general": "Regular Cleaning",
+      "postRenovation": "General Cleaning"
+    }
   },
   "services": {
     "cleaning": "Cleaning",
