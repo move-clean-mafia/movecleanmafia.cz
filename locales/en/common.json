@@ -961,7 +961,7 @@
       "cleaning": "Cleaning",
       "furnitureCleaning": "Furniture Cleaning",
       "handyman": "Handyman",
-      "packages": "Service Packages",
+      "packages": "Advantageous Service Packages",
       "other": "Other"
     },
     "timeSlots": {
@@ -1042,7 +1042,7 @@
     "furnitureCleaningDescription": "Professional furniture and carpet cleaning",
     "handyman": "Handyman",
     "handymanDescription": "Minor repairs and household maintenance",
-    "packages": "Service Packages",
+    "packages": "Advantageous Service Packages",
     "packagesDescription": "Combined services at competitive prices",
     "quality": "Quality",
     "qualityDescription": "Highest quality services and care for your belongings",

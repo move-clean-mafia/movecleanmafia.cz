@@ -961,7 +961,7 @@
       "cleaning": "Прибирання",
       "furnitureCleaning": "Чищення меблів",
       "handyman": "Сантехнік",
-      "packages": "Пакети послуг",
+      "packages": "Вигідні пакети послуг",
       "other": "Інше"
     },
     "timeSlots": {
@@ -1042,7 +1042,7 @@
     "furnitureCleaningDescription": "Професійна хімчистка меблів та килимів",
     "handyman": "Майстер на годину",
     "handymanDescription": "Дрібні ремонти та обслуговування домогосподарства",
-    "packages": "Комплексні пакети послуг",
+    "packages": "Вигідні пакети послуг",
     "packagesDescription": "Комбіновані послуги за вигідними цінами",
     "quality": "Якість",
     "qualityDescription": "Найвища якість послуг та догляд за вашими речами",
