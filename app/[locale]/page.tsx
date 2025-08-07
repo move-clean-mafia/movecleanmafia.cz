@@ -150,12 +150,31 @@ const HomePage = async ({ params }: HomePageProps) => {
     price: string;
   }>;
 
-  const dryCleaningServices = t(
-    'detailedServices.dryCleaning.items',
-  ) as unknown as Array<{
-    name: string;
-    price: string;
-  }>;
+  const dryCleaningData = t('detailedServices.dryCleaning') as unknown as {
+    title: string;
+    description: string;
+    categories: {
+      furniture: {
+        title: string;
+        items: Array<{ name: string; price: string }>;
+      };
+      sofas: { title: string; items: Array<{ name: string; price: string }> };
+      beds: { title: string; items: Array<{ name: string; price: string }> };
+      mattresses: {
+        title: string;
+        items: Array<{ name: string; price: string }>;
+      };
+      other: { title: string; items: Array<{ name: string; price: string }> };
+    };
+  };
+
+  const dryCleaningServices = [
+    ...dryCleaningData.categories.furniture.items,
+    ...dryCleaningData.categories.sofas.items,
+    ...dryCleaningData.categories.beds.items,
+    ...dryCleaningData.categories.mattresses.items,
+    ...dryCleaningData.categories.other.items,
+  ];
 
   const cleaningPackages = t(
     'detailedServices.cleaningPackages.packages',

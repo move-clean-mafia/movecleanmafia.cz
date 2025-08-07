@@ -530,37 +530,94 @@
     },
     "dryCleaning": {
       "description": "Profesionální chemické čištění koberců, čalounění a textilu",
-      "items": [
-        {
-          "name": "Koberec",
-          "price": "od 250 Kč/m²"
+      "title": "Čištění čalouněného nábytku, koberců a matrací",
+      "categories": {
+        "furniture": {
+          "title": "Nábytek",
+          "items": [
+            {
+              "name": "Taburet",
+              "price": "200 Kč"
+            },
+            {
+              "name": "Židle s čalouněním",
+              "price": "250 Kč"
+            },
+            {
+              "name": "Křeslo",
+              "price": "od 550 Kč"
+            },
+            {
+              "name": "Kancelářská počítačová židle",
+              "price": "od 350 Kč"
+            }
+          ]
         },
-        {
-          "name": "Pohovka 2-místná",
-          "price": "od 1000 Kč"
+        "sofas": {
+          "title": "Pohovky",
+          "items": [
+            {
+              "name": "Dvoumístná",
+              "price": "od 850 Kč"
+            },
+            {
+              "name": "Třímístná",
+              "price": "od 1000 Kč"
+            },
+            {
+              "name": "Čtyřmístná",
+              "price": "od 1300 Kč"
+            },
+            {
+              "name": "Pěti a více místná",
+              "price": "od 1500 Kč"
+            },
+            {
+              "name": "Kuchyňský rohový gauč",
+              "price": "700 Kč"
+            }
+          ]
         },
-        {
-          "name": "Pohovka 3-místná",
-          "price": "od 1200 Kč"
+        "beds": {
+          "title": "Postele",
+          "items": [
+            {
+              "name": "Postel bez matrace",
+              "price": "od 600 Kč"
+            }
+          ]
         },
-        {
-          "name": "Rohová pohovka",
-          "price": "od 1500 Kč"
+        "mattresses": {
+          "title": "Matrace",
+          "items": [
+            {
+              "name": "Jednolůžková (jedna strana)",
+              "price": "400–600 Kč"
+            },
+            {
+              "name": "Dvoulůžková (jedna strana)",
+              "price": "800–1000 Kč"
+            }
+          ]
         },
-        {
-          "name": "Křeslo",
-          "price": "od 450 Kč"
-        },
-        {
-          "name": "Matrace - jedna strana",
-          "price": "od 500 Kč"
-        },
-        {
-          "name": "Židle s opěradlem",
-          "price": "od 150 Kč"
+        "other": {
+          "title": "Ostatní",
+          "items": [
+            {
+              "name": "Pelech pro zvířata",
+              "price": "od 250 Kč"
+            },
+            {
+              "name": "Dětská autosedačka",
+              "price": "550 Kč"
+            },
+            {
+              "name": "Koberec",
+              "price": "1 m² = 120 Kč"
+            }
+          ]
         }
-      ],
-      "title": "Chemické čištění"
+      }
     },
     "movingAndTransport": {
       "items": [

@@ -8,7 +8,23 @@ import { GroupedAdditionalServices } from './grouped-additional-services';
 interface CleaningPackagesProps {
   locale: SupportedLanguage;
   t: (key: string) => string | string[] | Record<string, unknown>;
-  dryCleaningServices?: Array<{ name: string; price: string }>;
+  dryCleaningServices?: {
+    title: string;
+    description: string;
+    categories: {
+      furniture: {
+        title: string;
+        items: Array<{ name: string; price: string }>;
+      };
+      sofas: { title: string; items: Array<{ name: string; price: string }> };
+      beds: { title: string; items: Array<{ name: string; price: string }> };
+      mattresses: {
+        title: string;
+        items: Array<{ name: string; price: string }>;
+      };
+      other: { title: string; items: Array<{ name: string; price: string }> };
+    };
+  };
   packingServices?: Array<{ name: string; unit: string; price: string }>;
 }
 
@@ -299,15 +315,16 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({
               ...(dryCleaningServices
                 ? [
                     {
-                      title: t('detailedServices.dryCleaning.title') as string,
-                      description: t(
-                        'detailedServices.dryCleaning.description',
-                      ) as string,
+                      title: dryCleaningServices.title,
+                      description: dryCleaningServices.description,
                       iconName: 'Sparkles',
-                      services: dryCleaningServices.map((service) => ({
-                        name: service.name,
-                        price: service.price,
-                      })),
+                      services: [
+                        ...dryCleaningServices.categories.furniture.items,
+                        ...dryCleaningServices.categories.sofas.items,
+                        ...dryCleaningServices.categories.beds.items,
+                        ...dryCleaningServices.categories.mattresses.items,
+                        ...dryCleaningServices.categories.other.items,
+                      ],
                     },
                   ]
                 : []),

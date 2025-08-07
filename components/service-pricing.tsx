@@ -73,12 +73,32 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
           additionalServiceGroups: t(
             'detailedServices.cleaningPackages.additionalServices.groups',
           ) as unknown as ServiceGroup[],
-          dryCleaningServices: t(
-            'detailedServices.dryCleaning.items',
-          ) as unknown as Array<{
-            name: string;
-            price: string;
-          }>,
+          dryCleaningServices: t('detailedServices.dryCleaning') as unknown as {
+            title: string;
+            description: string;
+            categories: {
+              furniture: {
+                title: string;
+                items: Array<{ name: string; price: string }>;
+              };
+              sofas: {
+                title: string;
+                items: Array<{ name: string; price: string }>;
+              };
+              beds: {
+                title: string;
+                items: Array<{ name: string; price: string }>;
+              };
+              mattresses: {
+                title: string;
+                items: Array<{ name: string; price: string }>;
+              };
+              other: {
+                title: string;
+                items: Array<{ name: string; price: string }>;
+              };
+            };
+          },
           packingServices: t(
             'detailedServices.packingServices.items',
           ) as unknown as Array<{
@@ -542,19 +562,22 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                     ...(serviceData.dryCleaningServices
                       ? [
                           {
-                            title: t(
-                              'detailedServices.dryCleaning.title',
-                            ) as string,
-                            description: t(
-                              'detailedServices.dryCleaning.description',
-                            ) as string,
+                            title: serviceData.dryCleaningServices.title,
+                            description:
+                              serviceData.dryCleaningServices.description,
                             iconName: 'Sparkles',
-                            services: serviceData.dryCleaningServices.map(
-                              (service) => ({
-                                name: service.name,
-                                price: service.price,
-                              }),
-                            ),
+                            services: [
+                              ...serviceData.dryCleaningServices.categories
+                                .furniture.items,
+                              ...serviceData.dryCleaningServices.categories
+                                .sofas.items,
+                              ...serviceData.dryCleaningServices.categories.beds
+                                .items,
+                              ...serviceData.dryCleaningServices.categories
+                                .mattresses.items,
+                              ...serviceData.dryCleaningServices.categories
+                                .other.items,
+                            ],
                           },
                         ]
                       : []),

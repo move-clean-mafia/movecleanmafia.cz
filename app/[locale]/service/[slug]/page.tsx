@@ -14,6 +14,7 @@ import { getTranslation } from '../../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../../lib/i18n';
 import { CTASection } from '@/components/cta-section';
 import ServicePricing from '../../../../components/service-pricing';
+import DryCleaningServices from '../../../../components/dry-cleaning-services';
 
 interface ServiceDetailPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -361,92 +362,76 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
       </section>
 
       {/* Service Information - Mafia Style */}
-      <section className="py-20 bg-black">
+      <section className="bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mafia-card border border-[#d6b977]/20">
-            <div className="p-8">
-              {/* Cleaning Sizes Section - Only for cleaning service */}
-              {service.slug === 'cleaning' && service.cleaningSizes && (
-                <div className="mb-12">
-                  <h3 className="text-3xl font-heading font-bold text-[#d6b977] mb-8 text-center">
-                    {t('services.cleaning')} -{' '}
-                    {t('services.cleaningLongDescription')}
-                  </h3>
+          <div className="p-8">
+            {/* Cleaning Sizes Section - Only for cleaning service */}
+            {service.slug === 'cleaning' && service.cleaningSizes && (
+              <div className="mb-12">
+                <h3 className="text-3xl font-heading font-bold text-[#d6b977] mb-8 text-center">
+                  {t('services.cleaning')} -{' '}
+                  {t('services.cleaningLongDescription')}
+                </h3>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* S Size */}
-                    <div className="mafia-card border border-[#d6b977]/30 p-6 hover:border-[#d6b977]/50 transition-colors duration-300">
-                      <div className="text-center mb-4">
-                        <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl font-bold text-black">
-                            S
-                          </span>
-                        </div>
-                        <h4 className="text-xl font-heading font-bold text-[#d6b977] mb-2">
-                          {service.cleaningSizes.s.title}
-                        </h4>
-                        <p className="text-sm text-[#d6b977]/80 font-body mb-3">
-                          {service.cleaningSizes.s.subtitle}
-                        </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {/* S Size */}
+                  <div className="mafia-card border border-[#d6b977]/30 p-6 hover:border-[#d6b977]/50 transition-colors duration-300">
+                    <div className="text-center mb-4">
+                      <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span className="text-2xl font-bold text-black">S</span>
                       </div>
-                      <p className="text-white/90 font-body text-sm leading-relaxed">
-                        {service.cleaningSizes.s.description}
+                      <h4 className="text-xl font-heading font-bold text-[#d6b977] mb-2">
+                        {service.cleaningSizes.s.title}
+                      </h4>
+                      <p className="text-sm text-[#d6b977]/80 font-body mb-3">
+                        {service.cleaningSizes.s.subtitle}
                       </p>
                     </div>
+                    <p className="text-white/90 font-body text-sm leading-relaxed">
+                      {service.cleaningSizes.s.description}
+                    </p>
+                  </div>
 
-                    {/* M Size */}
-                    <div className="mafia-card border border-[#d6b977]/30 p-6 hover:border-[#d6b977]/50 transition-colors duration-300">
-                      <div className="text-center mb-4">
-                        <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl font-bold text-black">
-                            M
-                          </span>
-                        </div>
-                        <h4 className="text-xl font-heading font-bold text-[#d6b977] mb-2">
-                          {service.cleaningSizes.m.title}
-                        </h4>
-                        <p className="text-sm text-[#d6b977]/80 font-body mb-3">
-                          {service.cleaningSizes.m.subtitle}
-                        </p>
+                  {/* M Size */}
+                  <div className="mafia-card border border-[#d6b977]/30 p-6 hover:border-[#d6b977]/50 transition-colors duration-300">
+                    <div className="text-center mb-4">
+                      <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span className="text-2xl font-bold text-black">M</span>
                       </div>
-                      <p className="text-white/90 font-body text-sm leading-relaxed">
-                        {service.cleaningSizes.m.description}
+                      <h4 className="text-xl font-heading font-bold text-[#d6b977] mb-2">
+                        {service.cleaningSizes.m.title}
+                      </h4>
+                      <p className="text-sm text-[#d6b977]/80 font-body mb-3">
+                        {service.cleaningSizes.m.subtitle}
                       </p>
                     </div>
+                    <p className="text-white/90 font-body text-sm leading-relaxed">
+                      {service.cleaningSizes.m.description}
+                    </p>
+                  </div>
 
-                    {/* XL Size */}
-                    <div className="mafia-card border border-[#d6b977]/30 p-6 hover:border-[#d6b977]/50 transition-colors duration-300">
-                      <div className="text-center mb-4">
-                        <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl font-bold text-black">
-                            XL
-                          </span>
-                        </div>
-                        <h4 className="text-xl font-heading font-bold text-[#d6b977] mb-2">
-                          {service.cleaningSizes.xl.title}
-                        </h4>
-                        <p className="text-sm text-[#d6b977]/80 font-body mb-3">
-                          {service.cleaningSizes.xl.subtitle}
-                        </p>
+                  {/* XL Size */}
+                  <div className="mafia-card border border-[#d6b977]/30 p-6 hover:border-[#d6b977]/50 transition-colors duration-300">
+                    <div className="text-center mb-4">
+                      <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span className="text-2xl font-bold text-black">
+                          XL
+                        </span>
                       </div>
-                      <p className="text-white/90 font-body text-sm leading-relaxed">
-                        {service.cleaningSizes.xl.description}
+                      <h4 className="text-xl font-heading font-bold text-[#d6b977] mb-2">
+                        {service.cleaningSizes.xl.title}
+                      </h4>
+                      <p className="text-sm text-[#d6b977]/80 font-body mb-3">
+                        {service.cleaningSizes.xl.subtitle}
                       </p>
                     </div>
+                    <p className="text-white/90 font-body text-sm leading-relaxed">
+                      {service.cleaningSizes.xl.description}
+                    </p>
                   </div>
                 </div>
-              )}
-
-              {/* CTA Button */}
-              <div className="flex justify-center pt-8">
-                <a
-                  href={`/${locale}/reservation?service=${service.slug}`}
-                  className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
-                >
-                  {t('reservation.submitReservation') as string}
-                </a>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
@@ -454,12 +439,16 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
       {/* Pricing Section - Mafia Style */}
       <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ServicePricing
-            locale={locale as SupportedLanguage}
-            t={t}
-            serviceType={service.slug as 'cleaning' | 'moving' | 'packing'}
-            showReservationButton={true}
-          />
+          {service.slug === 'furniture-cleaning' ? (
+            <DryCleaningServices locale={locale as SupportedLanguage} t={t} />
+          ) : (
+            <ServicePricing
+              locale={locale as SupportedLanguage}
+              t={t}
+              serviceType={service.slug as 'cleaning' | 'moving' | 'packing'}
+              showReservationButton={true}
+            />
+          )}
         </div>
       </section>
 

@@ -530,37 +530,94 @@
     },
     "dryCleaning": {
       "description": "Professional dry cleaning of carpets, upholstery and textiles",
-      "items": [
-        {
-          "name": "Carpet",
-          "price": "from 250 CZK/m²"
+      "title": "Furniture, carpet and mattress cleaning",
+      "categories": {
+        "furniture": {
+          "title": "Furniture",
+          "items": [
+            {
+              "name": "Ottoman",
+              "price": "200 CZK"
+            },
+            {
+              "name": "Chair with upholstery",
+              "price": "250 CZK"
+            },
+            {
+              "name": "Armchair",
+              "price": "from 550 CZK"
+            },
+            {
+              "name": "Office computer chair",
+              "price": "from 350 CZK"
+            }
+          ]
         },
-        {
-          "name": "2-seater sofa",
-          "price": "from 1000 CZK"
+        "sofas": {
+          "title": "Sofas",
+          "items": [
+            {
+              "name": "2-seater",
+              "price": "from 850 CZK"
+            },
+            {
+              "name": "3-seater",
+              "price": "from 1000 CZK"
+            },
+            {
+              "name": "4-seater",
+              "price": "from 1300 CZK"
+            },
+            {
+              "name": "5-seater and more",
+              "price": "from 1500 CZK"
+            },
+            {
+              "name": "Kitchen corner sofa",
+              "price": "700 CZK"
+            }
+          ]
         },
-        {
-          "name": "3-seater sofa",
-          "price": "from 1200 CZK"
+        "beds": {
+          "title": "Beds",
+          "items": [
+            {
+              "name": "Bed without mattress",
+              "price": "from 600 CZK"
+            }
+          ]
         },
-        {
-          "name": "Corner sofa",
-          "price": "from 1500 CZK"
+        "mattresses": {
+          "title": "Mattresses",
+          "items": [
+            {
+              "name": "Single bed (one side)",
+              "price": "400–600 CZK"
+            },
+            {
+              "name": "Double bed (one side)",
+              "price": "800–1000 CZK"
+            }
+          ]
         },
-        {
-          "name": "Armchair",
-          "price": "from 450 CZK"
-        },
-        {
-          "name": "Mattress - one side",
-          "price": "from 500 CZK"
-        },
-        {
-          "name": "Chair with backrest",
-          "price": "from 150 CZK"
+        "other": {
+          "title": "Other",
+          "items": [
+            {
+              "name": "Pet bed",
+              "price": "from 250 CZK"
+            },
+            {
+              "name": "Child car seat",
+              "price": "550 CZK"
+            },
+            {
+              "name": "Carpet",
+              "price": "1 m² = 120 CZK"
+            }
+          ]
         }
-      ],
-      "title": "Dry Cleaning"
+      }
     },
     "movingAndTransport": {
       "items": [
