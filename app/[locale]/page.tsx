@@ -3,14 +3,12 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { getTranslation } from '../../lib/i18n-server';
 import { type SupportedLanguage } from '../../lib/i18n';
-import { CardContent, CardHeader, CardTitle } from '../../components/ui/card';
-import { Badge } from '../../components/ui/badge';
+
 import BenefitsGrid from '../../components/benefits-grid';
 import CompactServicesGrid from '../../components/compact-services-grid';
 
 import {
   Truck,
-  Package,
   Clock,
   Shield,
   Star,
@@ -18,7 +16,6 @@ import {
   Mail,
   MapPin,
   ArrowRight,
-  Home,
   Crown,
   Zap,
   Target,
@@ -141,78 +138,6 @@ export async function generateMetadata({
 const HomePage = async ({ params }: HomePageProps) => {
   const { locale } = await params;
   const { t } = await getTranslation(locale as SupportedLanguage);
-
-  // Get detailed services data
-  const movingServices = t(
-    'detailedServices.movingAndTransport.items',
-  ) as unknown as Array<{
-    name: string;
-    price: string;
-  }>;
-
-  const dryCleaningData = t('detailedServices.dryCleaning') as unknown as {
-    title: string;
-    description: string;
-    categories: {
-      furniture: {
-        title: string;
-        items: Array<{ name: string; price: string }>;
-      };
-      sofas: { title: string; items: Array<{ name: string; price: string }> };
-      beds: { title: string; items: Array<{ name: string; price: string }> };
-      mattresses: {
-        title: string;
-        items: Array<{ name: string; price: string }>;
-      };
-      other: { title: string; items: Array<{ name: string; price: string }> };
-    };
-  };
-
-  const dryCleaningServices = [
-    ...dryCleaningData.categories.furniture.items,
-    ...dryCleaningData.categories.sofas.items,
-    ...dryCleaningData.categories.beds.items,
-    ...dryCleaningData.categories.mattresses.items,
-    ...dryCleaningData.categories.other.items,
-  ];
-
-  const cleaningPackages = t(
-    'detailedServices.cleaningPackages.packages',
-  ) as unknown as {
-    maintenance: {
-      title: string;
-      description: string;
-      duration: string;
-      prices: {
-        upTo35: string;
-        upTo50: string;
-        upTo70: string;
-        over70: string;
-      };
-    };
-    general: {
-      title: string;
-      description: string;
-      duration: string;
-      prices: {
-        upTo35: string;
-        upTo50: string;
-        upTo70: string;
-        over70: string;
-      };
-    };
-    postRenovation: {
-      title: string;
-      description: string;
-      duration: string;
-      prices: {
-        upTo35: string;
-        upTo50: string;
-        upTo70: string;
-        over70: string;
-      };
-    };
-  };
 
   const benefits = [
     {
@@ -396,150 +321,6 @@ const HomePage = async ({ params }: HomePageProps) => {
                 </h3>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section - Mafia Style */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
-              {t('homepage.servicesSection.title')}
-            </h2>
-            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto font-body">
-              {t('homepage.servicesSection.subtitle')}
-            </p>
-          </div>
-
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Moving Services Highlight */}
-            <div className="mafia-card group hover-lift">
-              <CardHeader className="bg-[#d6b977] text-black rounded-t-lg">
-                <CardTitle className="text-xl font-heading flex items-center">
-                  <Truck className="w-6 h-6 mr-3" />
-                  {t('detailedServices.movingAndTransport.title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  {movingServices.slice(0, 4).map((service, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 rounded-lg hover:bg-[#d6b977]/10 transition-colors space-y-1 sm:space-y-0"
-                    >
-                      <span className="text-sm font-light text-white/80">
-                        {service.name}
-                      </span>
-                      <Badge className="font-medium bg-[#d6b977] text-black text-sm w-fit">
-                        {service.price}
-                      </Badge>
-                    </div>
-                  ))}
-                </div>
-                <a
-                  href={`/${locale}/services#moving-services`}
-                  className="group/link inline-flex items-center mt-6 text-[#d6b977] hover:text-[#d6b977]/80 font-medium transition-colors duration-300 text-sm"
-                >
-                  {t('homepage.pricingSection.showAllPrices')}
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
-                </a>
-              </CardContent>
-            </div>
-
-            {/* Dry Cleaning Highlight */}
-            <div className="mafia-card group hover-lift">
-              <CardHeader className="bg-[#d6b977] text-black rounded-t-lg">
-                <CardTitle className="text-xl font-heading flex items-center">
-                  <Package className="w-6 h-6 mr-3" />
-                  {t('detailedServices.dryCleaning.title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  {dryCleaningServices.slice(0, 4).map((service, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 rounded-lg hover:bg-[#d6b977]/10 transition-colors space-y-1 sm:space-y-0"
-                    >
-                      <span className="text-sm font-light text-white/80">
-                        {service.name}
-                      </span>
-                      <Badge className="font-medium bg-[#d6b977] text-black text-sm w-fit">
-                        {service.price}
-                      </Badge>
-                    </div>
-                  ))}
-                </div>
-                <a
-                  href={`/${locale}/services#dry-cleaning`}
-                  className="group/link inline-flex items-center mt-6 text-[#d6b977] hover:text-[#d6b977]/80 font-medium transition-colors duration-300 text-sm"
-                >
-                  {t('homepage.pricingSection.showAllPrices')}
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
-                </a>
-              </CardContent>
-            </div>
-
-            {/* Cleaning Packages Highlight */}
-            <div className="mafia-card group hover-lift">
-              <CardHeader className="bg-[#d6b977] text-black rounded-t-lg">
-                <CardTitle className="text-xl font-heading flex items-center">
-                  <Home className="w-6 h-6 mr-3" />
-                  {t('detailedServices.cleaningPackages.title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 rounded-lg hover:bg-[#d6b977]/10 transition-colors space-y-1 sm:space-y-0">
-                    <span className="text-sm font-light text-white/80">
-                      {cleaningPackages.maintenance.title}
-                    </span>
-                    <Badge className="font-medium bg-[#d6b977] text-black text-sm w-fit">
-                      {t('detailedServices.cleaningPackages.from')}{' '}
-                      {cleaningPackages.maintenance.prices.upTo35}
-                    </Badge>
-                  </div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 rounded-lg hover:bg-[#d6b977]/10 transition-colors space-y-1 sm:space-y-0">
-                    <span className="text-sm font-light text-white/80">
-                      {cleaningPackages.general.title}
-                    </span>
-                    <Badge className="font-medium bg-[#d6b977] text-black text-sm w-fit">
-                      {t('detailedServices.cleaningPackages.from')}{' '}
-                      {cleaningPackages.general.prices.upTo35}
-                    </Badge>
-                  </div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 rounded-lg hover:bg-[#d6b977]/10 transition-colors space-y-1 sm:space-y-0">
-                    <span className="text-sm font-light text-white/80">
-                      {cleaningPackages.postRenovation.title}
-                    </span>
-                    <Badge className="font-medium bg-[#d6b977] text-black text-sm w-fit">
-                      {t('detailedServices.cleaningPackages.from')}{' '}
-                      {cleaningPackages.postRenovation.prices.upTo35}
-                    </Badge>
-                  </div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 rounded-lg hover:bg-[#d6b977]/10 transition-colors space-y-1 sm:space-y-0">
-                    <span className="text-sm font-light text-white/80">
-                      {t(
-                        'detailedServices.cleaningPackages.additionalServices.title',
-                      )}
-                    </span>
-                    <Badge className="font-medium bg-[#d6b977] text-black text-sm w-fit">
-                      {t('detailedServices.cleaningPackages.onRequest')}
-                    </Badge>
-                  </div>
-                </div>
-                <a
-                  href={`/${locale}/services#cleaning-packages`}
-                  className="group/link inline-flex items-center mt-6 text-[#d6b977] hover:text-[#d6b977]/80 font-medium transition-colors duration-300 text-sm"
-                >
-                  {t('homepage.pricingSection.showAllPrices')}
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
-                </a>
-              </CardContent>
-            </div>
           </div>
         </div>
       </section>
