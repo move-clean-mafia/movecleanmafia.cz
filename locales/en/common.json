@@ -687,6 +687,86 @@
         }
       ],
       "title": "Packing Services"
+    },
+    "handyman": {
+      "title": "Handyman Services",
+      "description": "Professional services for your home",
+      "minOrder": "Minimum order is 2 hours",
+      "categories": {
+        "plumbing": {
+          "title": "Plumbing Work",
+          "items": [
+            {
+              "name": "Installation of washing machines, dishwashers, dryers and other household appliances"
+            },
+            {
+              "name": "Replacement of faucets, siphons"
+            },
+            {
+              "name": "Replacement of flush tanks, seals and valves"
+            },
+            {
+              "name": "Cleaning clogged drains"
+            }
+          ]
+        },
+        "painting": {
+          "title": "Painting Work",
+          "items": [
+            {
+              "name": "Painting in apartments, houses, garages and offices:"
+            },
+            {
+              "name": "Painting walls and ceilings"
+            },
+            {
+              "name": "Painting doors, windows, radiators"
+            }
+          ]
+        },
+        "furnitureDisassembly": {
+          "title": "Furniture Disassembly",
+          "items": [
+            {
+              "name": "Wardrobes, chests of drawers, sofas, beds and other furniture"
+            },
+            {
+              "name": "Preparing furniture for moving or disposal"
+            }
+          ]
+        },
+        "furnitureAssembly": {
+          "title": "Furniture Assembly",
+          "items": [
+            {
+              "name": "Wardrobes, chests of drawers, beds, sofas, tables, etc."
+            },
+            {
+              "name": "Assembly of furniture from stores: IKEA, JYSK, Sconto, Möbelix and others"
+            }
+          ]
+        },
+        "other": {
+          "title": "Other Household Work",
+          "items": [
+            {
+              "name": "Hanging shelves, pictures, mirrors, TV"
+            },
+            {
+              "name": "Moving furniture"
+            },
+            {
+              "name": "Minor repairs of doors, handles, locks"
+            },
+            {
+              "name": "Help with installation of household appliances"
+            },
+            {
+              "name": "Other work on request"
+            }
+          ]
+        }
+      }
     }
   },
   "footer": {

@@ -687,6 +687,86 @@
         }
       ],
       "title": "Balicí služby"
+    },
+    "handyman": {
+      "title": "Hodinový manžel",
+      "description": "Profesionální služby pro váš domov",
+      "minOrder": "Minimální objednávka práce je 2 hodiny",
+      "categories": {
+        "plumbing": {
+          "title": "Instalatérské práce",
+          "items": [
+            {
+              "name": "Instalace praček, myček nádobí, sušiček a další domácí techniky"
+            },
+            {
+              "name": "Výmena baterií, sifonů"
+            },
+            {
+              "name": "Výmena splachovacích nádob, těsnění a ventilů"
+            },
+            {
+              "name": "Čištění ucpané kanalizace"
+            }
+          ]
+        },
+        "painting": {
+          "title": "Malířské práce",
+          "items": [
+            {
+              "name": "Malování v bytě, domě, garáži a kanceláři:"
+            },
+            {
+              "name": "Malování stěn a stropů"
+            },
+            {
+              "name": "Malování dveří, oken, radiátorů"
+            }
+          ]
+        },
+        "furnitureDisassembly": {
+          "title": "Demontáž nábytku",
+          "items": [
+            {
+              "name": "Skříně, komody, pohovky, postele a další nábytek"
+            },
+            {
+              "name": "Příprava nábytku na stěhování nebo likvidaci"
+            }
+          ]
+        },
+        "furnitureAssembly": {
+          "title": "Montáž nábytku",
+          "items": [
+            {
+              "name": "Skříně, komody, postele, pohovky, stoly atd."
+            },
+            {
+              "name": "Montáž nábytku z obchodů: IKEA, JYSK, Sconto, Möbelix a dalších"
+            }
+          ]
+        },
+        "other": {
+          "title": "Ostatní práce v domácnosti",
+          "items": [
+            {
+              "name": "Zavěšení police, obrazu, zrcadla, televize"
+            },
+            {
+              "name": "Přestěhování nábytku"
+            },
+            {
+              "name": "Drobná oprava dveří, klik, zámků"
+            },
+            {
+              "name": "Pomoc s instalací domácích spotřebičů"
+            },
+            {
+              "name": "Jiné práce na požádání"
+            }
+          ]
+        }
+      }
     }
   },
   "footer": {

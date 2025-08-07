@@ -15,6 +15,7 @@ import { type SupportedLanguage } from '../../../../lib/i18n';
 import { CTASection } from '@/components/cta-section';
 import ServicePricing from '../../../../components/service-pricing';
 import DryCleaningServices from '../../../../components/dry-cleaning-services';
+import HandymanServices from '../../../../components/handyman-services';
 
 interface ServiceDetailPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -441,6 +442,8 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {service.slug === 'furniture-cleaning' ? (
             <DryCleaningServices locale={locale as SupportedLanguage} t={t} />
+          ) : service.slug === 'handyman' ? (
+            <HandymanServices locale={locale as SupportedLanguage} t={t} />
           ) : (
             <ServicePricing
               locale={locale as SupportedLanguage}
