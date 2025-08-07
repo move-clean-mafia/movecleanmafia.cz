@@ -859,11 +859,10 @@
   },
   "hero": {
     "title": "AN OFFER YOU CAN'T REFUSE",
-    "subtitle": "YOUR PROBLEMS, OUR BUSINESS",
     "cta": "MAKE US AN OFFER",
     "imageAlt": "Professional moving and cleaning",
     "badge": "THE MOVE & CLEAN MAFIA",
-    "description": "Professional moving and cleaning services with the precision and reliability you'd expect from the best in the business."
+    "description": "Our prices are competitive and transparent - quality at a fair price."
   },
   "homepage": {
     "servicesSection": {
@@ -913,6 +912,18 @@
     "compactServicesSection": {
       "title": "ALL OUR SERVICES",
       "subtitle": "Choose from our comprehensive range of professional services. Each one designed to meet your specific needs with the precision and care you expect from the best."
+    },
+    "pricingAdvantage": {
+      "title": "COMPETITIVE PRICING",
+      "subtitle": "Quality at a fair price - that's our promise",
+      "description": "We offer transparent and competitive prices with no hidden fees. Our services are affordable but never compromise on quality.",
+      "benefits": [
+        "Free price quotes",
+        "No hidden fees",
+        "Transparent pricing",
+        "Discounts for regular clients",
+        "Flexible payment terms"
+      ]
     },
     "heroImages": {
       "cleaning": "Professional cleaning services",

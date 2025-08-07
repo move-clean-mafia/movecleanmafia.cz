@@ -313,11 +313,6 @@ const HomePage = async ({ params }: HomePageProps) => {
                   {t('hero.title')}
                 </h1>
 
-                {/* Subtitle */}
-                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-6 text-white/90 font-light max-w-2xl mx-auto lg:mx-0">
-                  {t('hero.subtitle')}
-                </p>
-
                 {/* Description */}
                 <p className="text-lg sm:text-xl mt-8 text-white/80 max-w-3xl mx-auto lg:mx-0 font-body">
                   {t('hero.description')}
@@ -365,6 +360,43 @@ const HomePage = async ({ params }: HomePageProps) => {
             t={t}
             useSpecificLinks={true}
           />
+        </div>
+      </section>
+
+      {/* Pricing Advantage Section - Mafia Style */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
+              {t('homepage.pricingAdvantage.title')}
+            </h2>
+            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto font-body mb-8">
+              {t('homepage.pricingAdvantage.subtitle')}
+            </p>
+            <p className="text-lg text-white/70 max-w-4xl mx-auto font-body">
+              {t('homepage.pricingAdvantage.description')}
+            </p>
+          </div>
+
+          {/* Benefits Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {(
+              t('homepage.pricingAdvantage.benefits') as unknown as string[]
+            ).map((benefit, index) => (
+              <div
+                key={index}
+                className="mafia-card text-center group hover-lift"
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#d6b977] text-black rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Star className="w-8 h-8" />
+                </div>
+                <h3 className="text-lg font-bold text-[#d6b977] mb-4 font-heading">
+                  {benefit}
+                </h3>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

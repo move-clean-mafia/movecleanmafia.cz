@@ -859,11 +859,10 @@
   },
   "hero": {
     "title": "NABÍDKA, KTEROU NEMŮŽETE ODMÍTNOUT",
-    "subtitle": "VAŠE PROBLÉMY, NÁŠ BYZNYS",
     "cta": "UDĚLEJTE NÁM NABÍDKU",
     "imageAlt": "Profesionální stěhování a úklid",
     "badge": "THE MOVE & CLEAN MAFIA",
-    "description": "Profesionální stěhovací a úklidové služby s precizností a spolehlivostí, kterou očekáváte od nejlepších v oboru."
+    "description": "Naše ceny jsou konkurenceschopné a transparentní - kvalita za férovou cenu."
   },
   "homepage": {
     "servicesSection": {
@@ -913,6 +912,18 @@
     "compactServicesSection": {
       "title": "VŠECHNY NAŠE SLUŽBY",
       "subtitle": "Vyberte si z našeho komplexního spektra profesionálních služeb. Každá je navržena tak, aby splňovala vaše specifické potřeby s precizností a péčí, kterou očekáváte od nejlepších."
+    },
+    "pricingAdvantage": {
+      "title": "KONKURENCESCHOPNÉ CENY",
+      "subtitle": "Kvalita za férovou cenu - to je náš slib",
+      "description": "Nabízíme transparentní a konkurenceschopné ceny bez skrytých poplatků. Naše služby jsou cenově dostupné, ale nikdy nekompromisní v kvalitě.",
+      "benefits": [
+        "Bezplatné cenové nabídky",
+        "Žádné skryté poplatky",
+        "Transparentní kalkulace",
+        "Slevy pro pravidelné klienty",
+        "Flexibilní platební podmínky"
+      ]
     },
     "heroImages": {
       "cleaning": "Profesionální úklidové služby",
