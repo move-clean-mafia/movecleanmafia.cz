@@ -276,7 +276,7 @@
             "upTo50": "1900 CZK",
             "upTo70": "2300 CZK"
           },
-          "title": "General Cleaning"
+          "title": "Regular Cleaning"
         },
         "maintenance": {
           "areas": {
@@ -321,7 +321,7 @@
             "upTo50": "1080 CZK",
             "upTo70": "1200 CZK"
           },
-          "title": "Maintenance Cleaning"
+          "title": "Basic Cleaning"
         },
         "postRenovation": {
           "areas": {
@@ -379,7 +379,7 @@
             "upTo50": "3600 CZK",
             "upTo70": "4000 CZK"
           },
-          "title": "Post-Renovation General Cleaning"
+          "title": "General Cleaning"
         }
       },
       "subtitle": "Professional cleaning services for your home",
