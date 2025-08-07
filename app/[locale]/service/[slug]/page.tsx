@@ -16,6 +16,7 @@ import { CTASection } from '@/components/cta-section';
 import ServicePricing from '../../../../components/service-pricing';
 import DryCleaningServices from '../../../../components/dry-cleaning-services';
 import HandymanServices from '../../../../components/handyman-services';
+import PackagesServices from '../../../../components/packages-services';
 
 interface ServiceDetailPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -444,6 +445,8 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
             <DryCleaningServices locale={locale as SupportedLanguage} t={t} />
           ) : service.slug === 'handyman' ? (
             <HandymanServices locale={locale as SupportedLanguage} t={t} />
+          ) : service.slug === 'packages' ? (
+            <PackagesServices locale={locale as SupportedLanguage} t={t} />
           ) : (
             <ServicePricing
               locale={locale as SupportedLanguage}

@@ -767,6 +767,77 @@
           ]
         }
       }
+    },
+    "packages": {
+      "title": "Komplexní balíčky",
+      "subtitle": "Přestěhujeme. Uklidíme. Opravíme.",
+      "description": "Kompletní řešení pro vaše stěhování",
+      "note": "Služby lze upravit nebo doplnit podle vašich potřeb, cena bude kalkulována individuálně",
+      "packages": {
+        "small": {
+          "name": "1+kk/1+1",
+          "price": "Od 5500 Kč",
+          "description": "Ideální pro malé byty",
+          "features": [
+            "Stěhování (auto +1 stěhovák, do 2 hodin)",
+            "Montáž/demontáž nábytku",
+            "Úklid bytu do 35 m²",
+            "Odvoz odpadu"
+          ]
+        },
+        "medium": {
+          "name": "2+kk/2+1",
+          "price": "Od 7500 Kč",
+          "description": "Pro střední byty",
+          "features": [
+            "Stěhování (auto + 2 stěhováci, do 3 hodin)",
+            "Montáž/demontáž nábytku",
+            "Úklid bytu do 55 m²",
+            "Odvoz odpadu"
+          ]
+        },
+        "large": {
+          "name": "3+kk/3+1",
+          "price": "Od 9800 Kč",
+          "description": "Pro velké byty",
+          "features": [
+            "Stěhování (auto + 2 stěhováci, do 4 hodin)",
+            "Montáž/demontáž nábytku",
+            "Úklid bytu do 75 m²",
+            "Odvoz odpadu"
+          ]
+        }
+      },
+      "additionalServices": {
+        "title": "Doplňkové služby",
+        "description": "Rozšiřte svůj balíček o další služby",
+        "services": [
+          {
+            "name": "Chemické čištění nábytku",
+            "price": "od 200 Kč"
+          },
+          {
+            "name": "Čištění koberců",
+            "price": "od 120 Kč/m²"
+          },
+          {
+            "name": "Čištění matrací",
+            "price": "od 400 Kč"
+          },
+          {
+            "name": "Montáž nábytku z obchodů",
+            "price": "od 400 Kč/hod"
+          },
+          {
+            "name": "Malířské práce",
+            "price": "od 300 Kč/hod"
+          },
+          {
+            "name": "Instalatérské práce",
+            "price": "od 350 Kč/hod"
+          }
+        ]
+      }
     }
   },
   "footer": {

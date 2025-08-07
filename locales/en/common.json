@@ -767,6 +767,77 @@
           ]
         }
       }
+    },
+    "packages": {
+      "title": "Comprehensive Packages",
+      "subtitle": "We move. We clean. We fix.",
+      "description": "Complete solution for your moving",
+      "note": "Services can be modified or supplemented according to your needs, price will be calculated individually",
+      "packages": {
+        "small": {
+          "name": "1+kk/1+1",
+          "price": "From 5500 CZK",
+          "description": "Perfect for small apartments",
+          "features": [
+            "Moving (car +1 mover, up to 2 hours)",
+            "Assembly/disassembly of furniture",
+            "Apartment cleaning up to 35 m²",
+            "Waste removal"
+          ]
+        },
+        "medium": {
+          "name": "2+kk/2+1",
+          "price": "From 7500 CZK",
+          "description": "For medium apartments",
+          "features": [
+            "Moving (car + 2 movers, up to 3 hours)",
+            "Assembly/disassembly of furniture",
+            "Apartment cleaning up to 55 m²",
+            "Waste removal"
+          ]
+        },
+        "large": {
+          "name": "3+kk/3+1",
+          "price": "From 9800 CZK",
+          "description": "For large apartments",
+          "features": [
+            "Moving (car + 2 movers, up to 4 hours)",
+            "Assembly/disassembly of furniture",
+            "Apartment cleaning up to 75 m²",
+            "Waste removal"
+          ]
+        }
+      },
+      "additionalServices": {
+        "title": "Additional Services",
+        "description": "Extend your package with additional services",
+        "services": [
+          {
+            "name": "Furniture dry cleaning",
+            "price": "from 200 CZK"
+          },
+          {
+            "name": "Carpet cleaning",
+            "price": "from 120 CZK/m²"
+          },
+          {
+            "name": "Mattress cleaning",
+            "price": "from 400 CZK"
+          },
+          {
+            "name": "Furniture assembly from stores",
+            "price": "from 400 CZK/hour"
+          },
+          {
+            "name": "Painting work",
+            "price": "from 300 CZK/hour"
+          },
+          {
+            "name": "Plumbing work",
+            "price": "from 350 CZK/hour"
+          }
+        ]
+      }
     }
   },
   "footer": {
