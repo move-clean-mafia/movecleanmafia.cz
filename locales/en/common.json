@@ -639,8 +639,25 @@
   },
   "services": {
     "cleaning": "Cleaning",
-    "cleaningDescription": "Thorough cleaning of households and commercial spaces with professional products",
-    "cleaningLongDescription": "Our professional cleaning service delivers exceptional results for both residential and commercial spaces. We use eco-friendly products and advanced cleaning techniques to ensure every surface is thoroughly cleaned and sanitized. From regular maintenance cleaning to deep post-move cleaning, we provide comprehensive solutions tailored to your specific needs.",
+    "cleaningDescription": "Professional cleaning services in different sizes",
+    "cleaningLongDescription": "Our cleaning services are divided into three sizes according to your needs",
+    "cleaningSizes": {
+      "s": {
+        "title": "S size – Basic cleaning",
+        "subtitle": "For quick home refreshment",
+        "description": "This type of cleaning is designed for those who need to clean quickly before a visit or want to relax after a busy day without dealing with mess."
+      },
+      "m": {
+        "title": "M size – Regular cleaning",
+        "subtitle": "For regular maintenance of cleanliness and order",
+        "description": "This cleaning option is ideal for those who have already done a general cleaning and want to keep their home clean without unnecessary effort."
+      },
+      "xl": {
+        "title": "XL size – General cleaning",
+        "subtitle": "Thorough cleaning of the entire apartment from floor to ceiling",
+        "description": "Suitable for those who want to have every corner perfectly clean, including hard-to-reach and commonly hidden places."
+      }
+    },
     "cleaningFeatures": [
       "General cleaning",
       "Post-move cleaning",
@@ -1098,8 +1115,6 @@
   "serviceDetail": {
     "backToServices": "Back to Services",
     "aboutService": "About This Service",
-    "keyFeatures": "Key Features",
-    "benefits": "Benefits",
     "availability": "Availability",
     "quality": "Quality Guarantee",
     "clients": "Happy Clients",

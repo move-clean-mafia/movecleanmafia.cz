@@ -639,8 +639,25 @@
   },
   "services": {
     "cleaning": "Úklid",
-    "cleaningDescription": "Důkladný úklid domácností a komerčních prostor s profesionálními prostředky",
-    "cleaningLongDescription": "Naše profesionální úklidová služba poskytuje výjimečné výsledky pro rezidenční i komerční prostory. Používáme ekologické produkty a pokročilé čisticí techniky, abychom zajistili důkladné vyčištění a dezinfekci každého povrchu. Od pravidelného údržbového úklidu až po hluboký úklid po stěhování poskytujeme komplexní řešení přizpůsobená vašim specifickým potřebám.",
+    "cleaningDescription": "Profesionální úklidové služby v různých velikostech",
+    "cleaningLongDescription": "Naše úklidové služby jsou rozděleny do tří velikostí podle vašich potřeb",
+    "cleaningSizes": {
+      "s": {
+        "title": "S size – Základní úklid",
+        "subtitle": "Pro rychlé osvěžení domácnosti",
+        "description": "Tento typ úklidu je určen pro ty, kteří potřebují rychle uklidit před návštěvou nebo si chtějí odpočinout po náročném dni, aniž by řešili nepořádek."
+      },
+      "m": {
+        "title": "M size – Běžný úklid",
+        "subtitle": "Pro pravidelné udržení čistoty a pořádku",
+        "description": "Tato varianta úklidu je ideální pro ty, kteří již mají za sebou generální úklid a chtějí udržovat domácnost čistou bez zbytečného úsilí."
+      },
+      "xl": {
+        "title": "XL size – Generální úklid",
+        "subtitle": "Důkladný úklid celého bytu od podlahy až po strop",
+        "description": "Vhodné pro ty, kteří chtějí mít dokonale uklizený každý kout, včetně těžko přístupných a běžně skrytých míst."
+      }
+    },
     "cleaningFeatures": [
       "Generální úklid",
       "Úklid po stěhování",
@@ -1098,8 +1115,6 @@
   "serviceDetail": {
     "backToServices": "Zpět na služby",
     "aboutService": "O této službě",
-    "keyFeatures": "Klíčové vlastnosti",
-    "benefits": "Výhody",
     "availability": "Dostupnost",
     "quality": "Záruka kvality",
     "clients": "Spokojení klienti",

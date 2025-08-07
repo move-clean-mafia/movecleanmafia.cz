@@ -4,8 +4,6 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import {
   ArrowLeft,
-  Clock,
-  Shield,
   Truck,
   Sparkles,
   Droplets,
@@ -28,10 +26,25 @@ interface ServiceData {
   title: string;
   description: string;
   longDescription: string;
-  features: string[];
-  benefits: string[];
   image: string;
   imageAlt: string;
+  cleaningSizes?: {
+    s: {
+      title: string;
+      subtitle: string;
+      description: string;
+    };
+    m: {
+      title: string;
+      subtitle: string;
+      description: string;
+    };
+    xl: {
+      title: string;
+      subtitle: string;
+      description: string;
+    };
+  };
   pricing?: {
     title: string;
     items: Array<{
@@ -55,13 +68,6 @@ const getServiceData = (
       description: t('services.movingDescription'),
       longDescription:
         t('services.movingLongDescription') || t('services.movingDescription'),
-      features: t('services.movingFeatures') as unknown as string[],
-      benefits: [
-        t('serviceDetail.moving.benefit1'),
-        t('serviceDetail.moving.benefit2'),
-        t('serviceDetail.moving.benefit3'),
-        t('serviceDetail.moving.benefit4'),
-      ],
       image: '/images/moving_hp.jpg',
       imageAlt: t('services.moving'),
       pricing: {
@@ -83,15 +89,25 @@ const getServiceData = (
       longDescription:
         t('services.cleaningLongDescription') ||
         t('services.cleaningDescription'),
-      features: t('services.cleaningFeatures') as unknown as string[],
-      benefits: [
-        t('serviceDetail.cleaning.benefit1'),
-        t('serviceDetail.cleaning.benefit2'),
-        t('serviceDetail.cleaning.benefit3'),
-        t('serviceDetail.cleaning.benefit4'),
-      ],
       image: '/images/cleaning_hp.jpg',
       imageAlt: t('services.cleaning'),
+      cleaningSizes: {
+        s: {
+          title: t('services.cleaningSizes.s.title'),
+          subtitle: t('services.cleaningSizes.s.subtitle'),
+          description: t('services.cleaningSizes.s.description'),
+        },
+        m: {
+          title: t('services.cleaningSizes.m.title'),
+          subtitle: t('services.cleaningSizes.m.subtitle'),
+          description: t('services.cleaningSizes.m.description'),
+        },
+        xl: {
+          title: t('services.cleaningSizes.xl.title'),
+          subtitle: t('services.cleaningSizes.xl.subtitle'),
+          description: t('services.cleaningSizes.xl.description'),
+        },
+      },
       pricing: {
         title: t('detailedServices.dryCleaning.title'),
         items: t('detailedServices.dryCleaning.items') as unknown as Array<{
@@ -106,18 +122,6 @@ const getServiceData = (
       title: t('services.furnitureCleaning'),
       description: t('services.furnitureCleaningDescription'),
       longDescription: t('services.furnitureCleaningDescription'),
-      features: [
-        'Chemické čistění nábytku',
-        'Čistění koberců',
-        'Profesionální přístroje',
-        'Eco-friendly prostředky',
-      ],
-      benefits: [
-        'Profesionální vybavení',
-        'Bezpečné chemické prostředky',
-        'Dlouhodobé výsledky',
-        'Ochrana materiálů',
-      ],
       image: '/images/cleaning.jpg',
       imageAlt: 'Chemické čistění',
       pricing: {
@@ -148,18 +152,6 @@ const getServiceData = (
       title: t('services.handyman'),
       description: t('services.handymanDescription'),
       longDescription: t('services.handymanDescription'),
-      features: [
-        'Drobné opravy',
-        'Montáž nábytku',
-        'Instalace',
-        'Údržba domácnosti',
-      ],
-      benefits: [
-        'Rychlý zásah',
-        'Zkušení řemeslníci',
-        'Flexibilní ceny',
-        'Záruka práce',
-      ],
       image: '/images/moving.jpg',
       imageAlt: 'Hodinový manžel',
       pricing: {
@@ -190,18 +182,6 @@ const getServiceData = (
       title: t('services.packages'),
       description: t('services.packagesDescription'),
       longDescription: t('services.packagesDescription'),
-      features: [
-        'Kombinované služby',
-        'Výhodné ceny',
-        'Komplexní řešení',
-        'Individuální přístup',
-      ],
-      benefits: [
-        'Ušetříte čas i peníze',
-        'Komplexní služby',
-        'Flexibilní balíčky',
-        'Záruka kvality',
-      ],
       image: '/images/packing.jpg',
       imageAlt: 'Komplexní balíčky',
       pricing: {
@@ -385,79 +365,80 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mafia-card border border-[#d6b977]/20">
             <div className="p-8">
-              {/* Features and Benefits Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-                {/* Key Features */}
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-heading font-bold text-[#d6b977] mb-8">
-                    {t('serviceDetail.keyFeatures')}
+              {/* Cleaning Sizes Section - Only for cleaning service */}
+              {service.slug === 'cleaning' && service.cleaningSizes && (
+                <div className="mb-12">
+                  <h3 className="text-3xl font-heading font-bold text-[#d6b977] mb-8 text-center">
+                    {t('services.cleaning')} -{' '}
+                    {t('services.cleaningLongDescription')}
                   </h3>
-                  <div className="space-y-4">
-                    {service.features.map((feature, index) => (
-                      <div
-                        key={index}
-                        className="flex items-start space-x-4 group"
-                      >
-                        <div className="w-3 h-3 bg-[#d6b977] rounded-full flex-shrink-0 mt-2 group-hover:scale-125 transition-transform duration-300"></div>
-                        <span className="text-white/90 font-body font-medium leading-relaxed group-hover:text-white transition-colors duration-300">
-                          {feature}
-                        </span>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* S Size */}
+                    <div className="mafia-card border border-[#d6b977]/30 p-6 hover:border-[#d6b977]/50 transition-colors duration-300">
+                      <div className="text-center mb-4">
+                        <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-black">
+                            S
+                          </span>
+                        </div>
+                        <h4 className="text-xl font-heading font-bold text-[#d6b977] mb-2">
+                          {service.cleaningSizes.s.title}
+                        </h4>
+                        <p className="text-sm text-[#d6b977]/80 font-body mb-3">
+                          {service.cleaningSizes.s.subtitle}
+                        </p>
                       </div>
-                    ))}
-                  </div>
-                </div>
+                      <p className="text-white/90 font-body text-sm leading-relaxed">
+                        {service.cleaningSizes.s.description}
+                      </p>
+                    </div>
 
-                {/* Benefits */}
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-heading font-bold text-[#d6b977] mb-8">
-                    {t('serviceDetail.benefits')}
-                  </h3>
-                  <div className="space-y-4">
-                    {service.benefits.map((benefit, index) => (
-                      <div
-                        key={index}
-                        className="flex items-start space-x-4 group"
-                      >
-                        <div className="w-3 h-3 bg-[#d6b977] rounded-full flex-shrink-0 mt-2 group-hover:scale-125 transition-transform duration-300"></div>
-                        <span className="text-white/90 font-body font-medium leading-relaxed group-hover:text-white transition-colors duration-300">
-                          {benefit}
-                        </span>
+                    {/* M Size */}
+                    <div className="mafia-card border border-[#d6b977]/30 p-6 hover:border-[#d6b977]/50 transition-colors duration-300">
+                      <div className="text-center mb-4">
+                        <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-black">
+                            M
+                          </span>
+                        </div>
+                        <h4 className="text-xl font-heading font-bold text-[#d6b977] mb-2">
+                          {service.cleaningSizes.m.title}
+                        </h4>
+                        <p className="text-sm text-[#d6b977]/80 font-body mb-3">
+                          {service.cleaningSizes.m.subtitle}
+                        </p>
                       </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+                      <p className="text-white/90 font-body text-sm leading-relaxed">
+                        {service.cleaningSizes.m.description}
+                      </p>
+                    </div>
 
-              {/* Stats and CTA */}
-              <div className="flex flex-col lg:flex-row justify-between items-center gap-8 pt-8 border-t border-[#d6b977]/20">
-                {/* Stats */}
-                <div className="flex gap-8">
-                  <div className="text-center group">
-                    <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Clock className="w-8 h-8 text-black" />
-                    </div>
-                    <div className="text-2xl font-bold text-[#d6b977] mb-1">
-                      24/7
-                    </div>
-                    <div className="text-sm text-white/80 font-body">
-                      {t('serviceDetail.availability')}
-                    </div>
-                  </div>
-
-                  <div className="text-center group">
-                    <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Shield className="w-8 h-8 text-black" />
-                    </div>
-                    <div className="text-2xl font-bold text-[#d6b977] mb-1">
-                      100%
-                    </div>
-                    <div className="text-sm text-white/80 font-body">
-                      {t('serviceDetail.quality')}
+                    {/* XL Size */}
+                    <div className="mafia-card border border-[#d6b977]/30 p-6 hover:border-[#d6b977]/50 transition-colors duration-300">
+                      <div className="text-center mb-4">
+                        <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-black">
+                            XL
+                          </span>
+                        </div>
+                        <h4 className="text-xl font-heading font-bold text-[#d6b977] mb-2">
+                          {service.cleaningSizes.xl.title}
+                        </h4>
+                        <p className="text-sm text-[#d6b977]/80 font-body mb-3">
+                          {service.cleaningSizes.xl.subtitle}
+                        </p>
+                      </div>
+                      <p className="text-white/90 font-body text-sm leading-relaxed">
+                        {service.cleaningSizes.xl.description}
+                      </p>
                     </div>
                   </div>
                 </div>
+              )}
 
-                {/* CTA Button */}
+              {/* CTA Button */}
+              <div className="flex justify-center pt-8">
                 <a
                   href={`/${locale}/reservation?service=${service.slug}`}
                   className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
