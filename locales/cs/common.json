@@ -153,32 +153,40 @@
       "additionalServices": {
         "groups": [
           {
-            "title": "Kuchyňské spotřebiče",
+            "title": "Kuchyně",
             "description": "Hluboké čištění kuchyňských spotřebičů a zařízení",
             "services": [
               {
-                "name": "Umýt kuchyňské skříňky zevnitř",
+                "name": "Čištění kuchyňských skříněk",
                 "price": "od 320 Kč"
               },
               {
-                "name": "Umýt myčku nádobí",
-                "price": "od 290 Kč"
+                "name": "Čištění digestoře",
+                "price": "od 400 Kč"
               },
               {
-                "name": "Umýt troubu",
-                "price": "400 Kč"
+                "name": "Čištění myčky nádobí",
+                "price": "od 400 Kč"
               },
               {
-                "name": "Umýt digestoř",
-                "price": "400 Kč"
+                "name": "Čištění mikrovlnné trouby",
+                "price": "250 Kč"
               },
               {
-                "name": "Umýt mikrovlnku",
-                "price": "od 210 Kč"
+                "name": "Čištění trouby",
+                "price": "od 400 Kč"
               },
               {
-                "name": "Umýt lednici kompletně",
-                "price": "od 350 Kč"
+                "name": "Čištění lednice (s mrazákem)",
+                "price": "od 400 Kč"
+              },
+              {
+                "name": "Čištění konvice",
+                "price": "od 100 Kč"
+              },
+              {
+                "name": "Mytí nádobí",
+                "price": "250 Kč/hod"
               }
             ]
           },
@@ -187,15 +195,11 @@
             "description": "Čištění nábytku, skříní a různých povrchů",
             "services": [
               {
-                "name": "Umýt pokojové skříňky zevnitř",
-                "price": "od 390 Kč"
+                "name": "Umytí vnitřku pokojových skříněk (včetně vyndání věcí a uložení zpět)",
+                "price": "od 360 Kč"
               },
               {
-                "name": "Umýt lustr",
-                "price": "od 250 Kč"
-              },
-              {
-                "name": "Umýt okna",
+                "name": "Mytí oken",
                 "price": "1 m² = 120 Kč"
               }
             ]
@@ -205,22 +209,150 @@
             "description": "Další specializované čisticí a doručovací služby",
             "services": [
               {
-                "name": "Vyčistit toaletu domácího mazlíčka",
-                "price": "310 Kč"
+                "name": "Skládání věcí",
+                "price": "300 Kč/hod"
               },
               {
-                "name": "Uklidit/umýt balkon",
+                "name": "Čištění kočičího záchodu",
+                "price": "od 310 Kč"
+              },
+              {
+                "name": "Úklid a mytí balkonu",
                 "price": "od 450 Kč"
               },
               {
-                "name": "Dovoz/odvoz klíčů",
-                "price": "350 Kč"
+                "name": "Doručení klíčů (jednosměrné)",
+                "price": "300 Kč"
+              }
+            ]
+          },
+          {
+            "title": "Chemické čistění",
+            "description": "Čištění čalouněného nábytku, koberců a matrací",
+            "services": [
+              {
+                "name": "Taburet",
+                "price": "200 Kč"
+              },
+              {
+                "name": "Židle s čalouněním",
+                "price": "250 Kč"
+              },
+              {
+                "name": "Křeslo",
+                "price": "od 550 Kč"
+              },
+              {
+                "name": "Kancelářská počítačová židle",
+                "price": "od 350 Kč"
+              },
+              {
+                "name": "Pohovka dvoumístná",
+                "price": "od 850 Kč"
+              },
+              {
+                "name": "Pohovka třímístná",
+                "price": "od 1000 Kč"
+              },
+              {
+                "name": "Pohovka čtyřmístná",
+                "price": "od 1300 Kč"
+              },
+              {
+                "name": "Pohovka pěti a více místná",
+                "price": "od 1500 Kč"
+              },
+              {
+                "name": "Kuchyňský rohový gauč",
+                "price": "700 Kč"
+              },
+              {
+                "name": "Postel bez matrace",
+                "price": "od 600 Kč"
+              },
+              {
+                "name": "Matrace jednolůžková (jedna strana)",
+                "price": "400–600 Kč"
+              },
+              {
+                "name": "Matrace dvoulůžková (jedna strana)",
+                "price": "800–1000 Kč"
+              },
+              {
+                "name": "Pelech pro zvířata",
+                "price": "od 250 Kč"
+              },
+              {
+                "name": "Dětská autosedačka",
+                "price": "550 Kč"
+              },
+              {
+                "name": "Koberec",
+                "price": "1 m² = 85 Kč"
+              }
+            ]
+          },
+          {
+            "title": "Balicí služby",
+            "description": "Profesionální balení a zabalení vašich věcí pro bezpečnou přepravu",
+            "services": [
+              {
+                "name": "Balení věcí",
+                "price": "450 Kč/hod"
+              },
+              {
+                "name": "Vybavení & Uspořádání",
+                "price": "450 Kč/hod"
+              },
+              {
+                "name": "Krabice",
+                "price": "90 Kč"
+              }
+            ]
+          },
+          {
+            "title": "Stěhování",
+            "description": "Profesionální stěhovací služby s kompletním servisem",
+            "services": [
+              {
+                "name": "Auto + řidič",
+                "price": "700 Kč/hod"
+              },
+              {
+                "name": "Auto + 1 stěhovák",
+                "price": "800 Kč/hod"
+              },
+              {
+                "name": "Auto + 2 stěhováci",
+                "price": "1100 Kč/hod"
+              }
+            ]
+          },
+          {
+            "title": "Hodinový manžel",
+            "description": "Drobné opravy a údržba domácnosti",
+            "services": [
+              {
+                "name": "Instalatérské práce",
+                "price": "na dotaz"
+              },
+              {
+                "name": "Malířské práce",
+                "price": "na dotaz"
+              },
+              {
+                "name": "Montáže nábytku",
+                "price": "na dotaz"
+              },
+              {
+                "name": "Ostatní práce v domácnosti",
+                "price": "na dotaz"
               }
             ]
           }
         ],
         "subtitle": "Rozšiřte svůj balíček o další služby",
-        "title": "Dodatečné služby"
+        "title": "Doplňkové služby"
       },
       "from": "od",
       "onRequest": "na požádání",
@@ -383,7 +515,18 @@
         }
       },
       "subtitle": "Profesionální úklidové služby pro váš domov",
-      "title": "Úklidové balíčky"
+      "title": "Úklidové balíčky",
+      "priceFactors": {
+        "title": "Co ovlivňuje cenu úklidu",
+        "items": [
+          "Obecná úroveň silného znečištění (prach, skvrny, mastnota, plíseň)",
+          "Vodní kámen a rez",
+          "Silné znečištění digestoře a trouby (mastnota, saze, staré usazeniny)",
+          "Rozhozený odpad",
+          "Zvířecí srst",
+          "Velké množství osobních věcí, které je potřeba před úklidem přesunout nebo uklidit"
+        ]
+      }
     },
     "dryCleaning": {
       "description": "Profesionální chemické čištění koberců, čalounění a textilu",

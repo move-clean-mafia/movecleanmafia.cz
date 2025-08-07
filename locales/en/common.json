@@ -153,32 +153,40 @@
       "additionalServices": {
         "groups": [
           {
-            "title": "Kitchen Appliances",
+            "title": "Kitchen",
             "description": "Deep cleaning of kitchen appliances and equipment",
             "services": [
               {
-                "name": "Wash kitchen cabinets inside",
+                "name": "Cleaning kitchen cabinets",
                 "price": "from 320 CZK"
               },
               {
-                "name": "Wash dishwasher",
-                "price": "from 290 CZK"
+                "name": "Cleaning hood",
+                "price": "from 400 CZK"
               },
               {
-                "name": "Wash oven",
-                "price": "400 CZK"
+                "name": "Cleaning dishwasher",
+                "price": "from 400 CZK"
               },
               {
-                "name": "Wash hood",
-                "price": "400 CZK"
+                "name": "Cleaning microwave",
+                "price": "250 CZK"
               },
               {
-                "name": "Wash microwave",
-                "price": "from 210 CZK"
+                "name": "Cleaning oven",
+                "price": "from 400 CZK"
               },
               {
-                "name": "Wash refrigerator completely",
-                "price": "from 350 CZK"
+                "name": "Cleaning refrigerator (with freezer)",
+                "price": "from 400 CZK"
+              },
+              {
+                "name": "Cleaning kettle",
+                "price": "from 100 CZK"
+              },
+              {
+                "name": "Washing dishes",
+                "price": "250 CZK/hour"
               }
             ]
           },
@@ -187,12 +195,8 @@
             "description": "Cleaning of furniture, cabinets, and various surfaces",
             "services": [
               {
-                "name": "Wash room cabinets inside",
-                "price": "from 390 CZK"
-              },
-              {
-                "name": "Wash chandelier",
-                "price": "from 250 CZK"
+                "name": "Wash inside of room cabinets (including removing items and putting back)",
+                "price": "from 360 CZK"
               },
               {
                 "name": "Wash windows",
@@ -205,16 +209,144 @@
             "description": "Additional specialized cleaning and delivery services",
             "services": [
               {
-                "name": "Clean pet toilet",
-                "price": "310 CZK"
+                "name": "Folding clothes",
+                "price": "300 CZK/hour"
               },
               {
-                "name": "Clean/wash balcony",
+                "name": "Cleaning cat toilet",
+                "price": "from 310 CZK"
+              },
+              {
+                "name": "Cleaning and washing balcony",
                 "price": "from 450 CZK"
               },
               {
-                "name": "Key delivery/pickup",
-                "price": "350 CZK"
+                "name": "Key delivery (one-way)",
+                "price": "300 CZK"
+              }
+            ]
+          },
+          {
+            "title": "Dry Cleaning",
+            "description": "Cleaning upholstered furniture, carpets and mattresses",
+            "services": [
+              {
+                "name": "Stool",
+                "price": "200 CZK"
+              },
+              {
+                "name": "Chair with upholstery",
+                "price": "250 CZK"
+              },
+              {
+                "name": "Armchair",
+                "price": "from 550 CZK"
+              },
+              {
+                "name": "Office computer chair",
+                "price": "from 350 CZK"
+              },
+              {
+                "name": "2-seater sofa",
+                "price": "from 850 CZK"
+              },
+              {
+                "name": "3-seater sofa",
+                "price": "from 1000 CZK"
+              },
+              {
+                "name": "4-seater sofa",
+                "price": "from 1300 CZK"
+              },
+              {
+                "name": "5+ seater sofa",
+                "price": "from 1500 CZK"
+              },
+              {
+                "name": "Kitchen corner sofa",
+                "price": "700 CZK"
+              },
+              {
+                "name": "Bed without mattress",
+                "price": "from 600 CZK"
+              },
+              {
+                "name": "Single mattress (one side)",
+                "price": "400–600 CZK"
+              },
+              {
+                "name": "Double mattress (one side)",
+                "price": "800–1000 CZK"
+              },
+              {
+                "name": "Pet bed",
+                "price": "from 250 CZK"
+              },
+              {
+                "name": "Child car seat",
+                "price": "550 CZK"
+              },
+              {
+                "name": "Carpet",
+                "price": "1 m² = 85 CZK"
+              }
+            ]
+          },
+          {
+            "title": "Packing Services",
+            "description": "Professional packing and packaging of your items for safe transport",
+            "services": [
+              {
+                "name": "Packing items",
+                "price": "450 CZK/hour"
+              },
+              {
+                "name": "Furnishing & Arrangement",
+                "price": "450 CZK/hour"
+              },
+              {
+                "name": "Boxes",
+                "price": "90 CZK"
+              }
+            ]
+          },
+          {
+            "title": "Moving",
+            "description": "Professional moving services with complete service",
+            "services": [
+              {
+                "name": "Car + driver",
+                "price": "700 CZK/hour"
+              },
+              {
+                "name": "Car + 1 mover",
+                "price": "800 CZK/hour"
+              },
+              {
+                "name": "Car + 2 movers",
+                "price": "1100 CZK/hour"
+              }
+            ]
+          },
+          {
+            "title": "Handyman",
+            "description": "Minor repairs and household maintenance",
+            "services": [
+              {
+                "name": "Plumbing work",
+                "price": "on request"
+              },
+              {
+                "name": "Painting work",
+                "price": "on request"
+              },
+              {
+                "name": "Furniture assembly",
+                "price": "on request"
+              },
+              {
+                "name": "Other household work",
+                "price": "on request"
               }
             ]
           }
@@ -230,26 +362,26 @@
             "bathroom": {
               "items": [
                 "Wash bathtub or shower",
-                "Wash sink, faucet",
-                "Wipe all surfaces",
-                "Wipe switches and door handles",
+                "Wash sink and faucet",
+                "Dust accessible areas",
+                "Wipe switches and handles",
                 "Wash toilet and disinfect",
                 "Wash floor"
               ],
-              "title": "Bathroom and toilet"
+              "title": "Bathroom and WC"
             },
             "kitchen": {
               "items": [
                 "Wipe kitchen line from outside (cabinets, backsplash, countertop)",
-                "Wipe all accessible surfaces",
-                "Dust appliances",
+                "Dust accessible areas",
+                "Dust electronics",
                 "Wash stove",
-                "Wash outside (oven, hood, microwave)",
+                "Wash from outside (oven, hood, microwave)",
                 "Wash dishes up to 10 minutes",
                 "Wash sink and faucet",
-                "Wipe switches and door handles",
+                "Wipe switches and handles",
                 "Wash floor and baseboards",
-                "Take out trash, replace bag (wash bucket)"
+                "Take out trash, replace bag (wash trash bin too)"
               ],
               "title": "Kitchen"
             },
@@ -259,13 +391,12 @@
                 "Dust all accessible surfaces",
                 "Vacuum carpet",
                 "Wash floor and baseboards",
-                "Wipe switches and door handles",
-                "Change and make bed (if clean linen is on bed)",
-                "Spray bed and furniture with soft surfaces, fabric freshener \"Lenor\"",
-                "Wipe switches",
-                "Wipe radiators (top)"
+                "Wipe switches and handles",
+                "Change bed linen and make bed (if prepared on bed)",
+                "Refresh bed and upholstered furniture with textile freshener \"Lenor\"",
+                "Dust radiators (top)"
               ],
-              "title": "Room"
+              "title": "Rooms"
             }
           },
           "description": "Deep and thorough cleaning of all areas. Suitable for light stains, without deep contamination.",
@@ -287,12 +418,12 @@
                 "Polish all faucets",
                 "Wash floor"
               ],
-              "title": "Bathroom and toilet"
+              "title": "Bathroom and WC"
             },
             "kitchen": {
               "items": [
-                "Dust appliances",
-                "Wipe countertop and backsplash",
+                "Dust accessible surfaces",
+                "Wash countertop and kitchen backsplash",
                 "Wash sink and faucet",
                 "Wash stove",
                 "Wash dining table",
@@ -306,11 +437,11 @@
               "items": [
                 "Polish mirrors",
                 "Dust accessible surfaces",
-                "Remove dust from home appliances",
+                "Dust electronics",
                 "Vacuum carpet",
                 "Wash floor and baseboards"
               ],
-              "title": "Room"
+              "title": "Rooms"
             }
           },
           "description": "For regular maintenance of cleanliness and order.",
@@ -328,47 +459,48 @@
             "bathroom": {
               "items": [
                 "Wash bathtub or shower",
-                "Wash sink, faucet",
+                "Wash sink and faucet",
                 "Wipe all surfaces",
+                "Remove rust and scale",
                 "Wash toilet and disinfect",
                 "Wash mirror",
                 "Wash walls",
                 "Wipe switches and sockets",
                 "Wash floor"
               ],
-              "title": "Bathroom and toilet"
+              "title": "Bathroom and WC"
             },
             "kitchen": {
               "items": [
                 "Wipe kitchen line from outside (cabinets, backsplash, countertop)",
                 "Wipe all surfaces",
                 "Wash stove",
-                "Dust appliances",
+                "Dust kitchen appliances",
                 "Wash outside and inside (oven, hood, microwave)",
-                "Wash refrigerator",
-                "Wash sockets and switches",
+                "Wash refrigerator (without freezer)",
+                "Wipe sockets and switches",
                 "Wash dishes up to 10 minutes",
-                "Remove cobwebs from walls",
-                "Wash sink, faucet",
+                "Remove cobwebs",
+                "Wash sink and faucet",
                 "Wash floor and baseboards",
-                "Take out trash, replace bag (wash bucket)"
+                "Take out trash, replace bag (wash trash bin too)"
               ],
               "title": "Kitchen"
             },
             "room": {
               "items": [
                 "Wash mirrors and glass surfaces",
-                "Dust all surfaces, accessible and hard-to-reach",
+                "Dust all accessible and hard-to-reach surfaces",
                 "Wash radiators",
                 "Wash doors (entrance and interior)",
-                "Remove cobwebs from walls",
-                "Wash switches, sockets",
-                "Change and make bed (if clean linen is on bed)",
-                "Spray bed and furniture with soft surfaces, fabric freshener \"Lenor\"",
+                "Remove cobwebs",
+                "Wash switches and sockets",
+                "Change bed linen and make bed (if prepared on bed)",
+                "Refresh bed and upholstered furniture with textile freshener \"Lenor\"",
                 "Vacuum carpet",
                 "Wash floor and baseboards"
               ],
-              "title": "Room"
+              "title": "Rooms"
             }
           },
           "description": "Comprehensive cleaning for removal of construction dust and contamination.",
@@ -383,7 +515,18 @@
         }
       },
       "subtitle": "Professional cleaning services for your home",
-      "title": "Cleaning Packages"
+      "title": "Cleaning Packages",
+      "priceFactors": {
+        "title": "What affects the cleaning price",
+        "items": [
+          "General level of heavy contamination (dust, stains, grease, mold)",
+          "Limescale and rust",
+          "Heavy contamination of hood and oven (grease, soot, old deposits)",
+          "Scattered trash",
+          "Pet hair",
+          "Large amount of personal items that need to be moved or cleaned before cleaning"
+        ]
+      }
     },
     "dryCleaning": {
       "description": "Professional dry cleaning of carpets, upholstery and textiles",

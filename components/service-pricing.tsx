@@ -86,6 +86,10 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
             unit: string;
             price: string;
           }>,
+          priceFactors: t('detailedServices.cleaningPackages.priceFactors') as {
+            title: string;
+            items: string[];
+          },
           title: t('detailedServices.cleaningPackages.title') as string,
           subtitle: t('detailedServices.cleaningPackages.subtitle') as string,
           icon: Home,
@@ -579,6 +583,32 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                   showReservationButton={showReservationButton}
                   t={t}
                 />
+
+                {/* Price Factors Section */}
+                {serviceType === 'cleaning' && serviceData.priceFactors && (
+                  <div className="mafia-card mt-8">
+                    <div className="p-8">
+                      <div className="text-center mb-8">
+                        <h3 className="text-3xl font-heading font-light text-[#d6b977] mb-4">
+                          {serviceData.priceFactors.title}
+                        </h3>
+                      </div>
+                      <div className="grid gap-4">
+                        {serviceData.priceFactors.items.map((item, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start space-x-3"
+                          >
+                            <div className="w-2 h-2 bg-[#d6b977] rounded-full flex-shrink-0 mt-2"></div>
+                            <span className="text-white/80 font-light leading-relaxed font-body">
+                              {item}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </>
