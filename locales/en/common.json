@@ -1,64 +1,4 @@
 {
-  "about": {
-    "cta": {
-      "contact": "Contact Us",
-      "services": "Our Services",
-      "subtitle": "Trust our experience and let us take care of your moving and cleaning",
-      "title": "Work With Us"
-    },
-    "stats": {
-      "availability": "Availability",
-      "clients": "Happy Clients",
-      "experience": "Years of Experience",
-      "moves": "Successful Moves"
-    },
-    "story": {
-      "paragraph1": "MoveCleanMafia was born from the need to provide reliable and quality moving and cleaning services. We started as a small team of enthusiasts with a vision to change the way people think about moving and cleaning.",
-      "paragraph2": "Today we are proud to offer comprehensive services that include not only moving and cleaning, but also packing and much more. Our goal is always to exceed our clients' expectations.",
-      "title": "Our Story"
-    },
-    "subtitle": "Meet our team of professionals with years of experience",
-    "team": {
-      "members": {
-        "cleaning": {
-          "description": "Expert in professional cleaning and space sanitization",
-          "experience": "12 years experience",
-          "name": "Mary Johnson",
-          "position": "Cleaning Services Manager"
-        },
-        "director": {
-          "description": "Specialist in logistics and moving project management",
-          "experience": "15 years experience",
-          "name": "John Smith",
-          "position": "Company Director"
-        },
-        "transport": {
-          "description": "Specialist in safe transportation and cargo handling",
-          "experience": "10 years experience",
-          "name": "Peter Brown",
-          "position": "Transport Manager"
-        }
-      },
-      "subtitle": "Meet the experts who stand behind the success of our company",
-      "title": "Our Team"
-    },
-    "title": "About Us",
-    "values": {
-      "commitments": {
-        "description": "We guarantee the safety of your belongings, meeting deadlines and professional approach",
-        "title": "Our Commitments"
-      },
-      "mission": {
-        "description": "To provide the highest quality moving and cleaning services with emphasis on customer satisfaction",
-        "title": "Our Mission"
-      },
-      "title": "Our Values",
-      "values": {
-        "description": "Reliability, quality, transparency and individual approach to each client",
-        "title": "Our Values"
-      }
-    }
-  },
   "admin": {
     "status": {
       "cancelled": "",
@@ -931,7 +871,6 @@
     }
   },
   "navigation": {
-    "about": "About",
     "contact": "Contact",
     "prices": "Prices",
     "home": "Home",

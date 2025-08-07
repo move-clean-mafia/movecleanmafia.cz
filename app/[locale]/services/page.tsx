@@ -171,7 +171,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       icon: Package2,
       title: t('services.packages'),
       description: t('services.packagesDescription'),
-      features: ['Kombinované služby', 'Výhodné ceny', 'Komplexní řešení'],
+      features: ['Kombinované služby', 'Výhodnější ceny', 'Komplexní řešení'],
       image: '/images/packing.jpg',
       imageAlt: 'Komplexní balíčky',
     },
@@ -192,34 +192,6 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
             <p className="text-xl sm:text-2xl lg:text-3xl font-body font-light text-white/90 max-w-4xl mx-auto leading-relaxed">
               {t('services.subtitle')}
             </p>
-
-            {/* Professional Stats */}
-            <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10 mt-12 sm:mt-16">
-              <div className="mafia-card px-6 py-4 border border-[#d6b977]">
-                <div className="text-3xl sm:text-4xl font-bold text-[#d6b977]">
-                  500+
-                </div>
-                <div className="text-sm text-white/80 font-body">
-                  {t('about.stats.clients')}
-                </div>
-              </div>
-              <div className="mafia-card px-6 py-4 border border-[#d6b977]">
-                <div className="text-3xl sm:text-4xl font-bold text-[#d6b977]">
-                  24/7
-                </div>
-                <div className="text-sm text-white/80 font-body">
-                  {t('about.stats.availability')}
-                </div>
-              </div>
-              <div className="mafia-card px-6 py-4 border border-[#d6b977]">
-                <div className="text-3xl sm:text-4xl font-bold text-[#d6b977]">
-                  100%
-                </div>
-                <div className="text-sm text-white/80 font-body">
-                  {t('services.quality')}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

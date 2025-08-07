@@ -5,7 +5,7 @@ import { type SupportedLanguage } from '../lib/i18n';
 interface SEOProviderProps {
   children: React.ReactNode;
   locale: SupportedLanguage;
-  pageType?: 'home' | 'services' | 'about' | 'contact' | 'reservation';
+  pageType?: 'home' | 'services' | 'contact' | 'reservation';
   pageTitle?: string;
   pageDescription?: string;
   pageUrl?: string;
@@ -214,25 +214,19 @@ const SEOProvider: React.FC<SEOProviderProps> = ({
             : locale === 'ua'
               ? 'Послуги'
               : 'Services'
-          : pageType === 'about'
+          : pageType === 'contact'
             ? locale === 'cs'
-              ? 'O nás'
+              ? 'Kontakt'
               : locale === 'ua'
-                ? 'Про нас'
-                : 'About'
-            : pageType === 'contact'
+                ? 'Контакти'
+                : 'Contact'
+            : pageType === 'reservation'
               ? locale === 'cs'
-                ? 'Kontakt'
+                ? 'Rezervace'
                 : locale === 'ua'
-                  ? 'Контакти'
-                  : 'Contact'
-              : pageType === 'reservation'
-                ? locale === 'cs'
-                  ? 'Rezervace'
-                  : locale === 'ua'
-                    ? 'Бронювання'
-                    : 'Reservation'
-                : 'Page');
+                  ? 'Бронювання'
+                  : 'Reservation'
+              : 'Page');
 
       breadcrumbs.push({
         '@type': 'ListItem',

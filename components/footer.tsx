@@ -40,14 +40,6 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <a
-                    href={`/${locale}/about`}
-                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
-                  >
-                    {t('navigation.about')}
-                  </a>
-                </li>
-                <li>
-                  <a
                     href={`/${locale}/contact`}
                     className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
                   >

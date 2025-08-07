@@ -1,64 +1,4 @@
 {
-  "about": {
-    "cta": {
-      "contact": "Kontaktovat",
-      "services": "Naše služby",
-      "subtitle": "Důvěřujte našim zkušenostem a nechte nás postarat se o vaše stěhování a úklid",
-      "title": "Spolupracujte s námi"
-    },
-    "stats": {
-      "availability": "Dostupnost",
-      "clients": "Spokojených klientů",
-      "experience": "Let zkušeností",
-      "moves": "Úspěšných stěhování"
-    },
-    "story": {
-      "paragraph1": "MoveCleanMafia vznikla z potřeby poskytovat spolehlivé a kvalitní služby přepravy a úklidu. Začali jsme jako malý tým nadšenců s vizí změnit způsob, jakým lidé přemýšlejí o stěhování a úklidu.",
-      "paragraph2": "Dnes jsme hrdí na to, že můžeme nabídnout komplexní služby, které zahrnují nejen přepravu a úklid, ale také balení a mnoho dalšího. Naším cílem je vždy překonat očekávání našich klientů.",
-      "title": "Náš příběh"
-    },
-    "subtitle": "Poznejte náš tým profesionálů s mnohaletými zkušenostmi",
-    "team": {
-      "members": {
-        "cleaning": {
-          "description": "Expert na profesionální úklid a sanitaci prostor",
-          "experience": "12 let zkušeností",
-          "name": "Marie Svobodová",
-          "position": "Vedoucí úklidových služeb"
-        },
-        "director": {
-          "description": "Specialista na logistiku a řízení stěhovacích projektů",
-          "experience": "15 let zkušeností",
-          "name": "Jan Novák",
-          "position": "Ředitel společnosti"
-        },
-        "transport": {
-          "description": "Specialista na bezpečnou přepravu a manipulaci s nákladem",
-          "experience": "10 let zkušeností",
-          "name": "Petr Černý",
-          "position": "Vedoucí přepravy"
-        }
-      },
-      "subtitle": "Poznejte experty, kteří stojí za úspěchem naší společnosti",
-      "title": "Náš tým"
-    },
-    "title": "O nás",
-    "values": {
-      "commitments": {
-        "description": "Zaručujeme bezpečnost vašich věcí, dodržení termínů a profesionální přístup",
-        "title": "Naše závazky"
-      },
-      "mission": {
-        "description": "Poskytovat nejvyšší kvalitu služeb přepravy a úklidu s důrazem na spokojenost zákazníků",
-        "title": "Naše poslání"
-      },
-      "title": "Naše hodnoty",
-      "values": {
-        "description": "Spolehlivost, kvalita, transparentnost a individuální přístup ke každému klientovi",
-        "title": "Naše hodnoty"
-      }
-    }
-  },
   "admin": {
     "status": {
       "cancelled": "",
@@ -931,7 +871,6 @@
     }
   },
   "navigation": {
-    "about": "O nás",
     "contact": "Kontakt",
     "prices": "Ceny",
     "home": "Domů",
