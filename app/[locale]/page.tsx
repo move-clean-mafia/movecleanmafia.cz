@@ -198,7 +198,7 @@ const HomePage = async ({ params }: HomePageProps) => {
       icon: Package2,
       title: t('services.packages'),
       description: t('services.packagesDescription'),
-      features: ['Kombinované služby', 'Výhodné ceny', 'Komplexní řešení'],
+      features: ['Kombinované služby', 'Výhodnější ceny', 'Komplexní řešení'],
       image: '/images/packing.jpg',
       imageAlt: 'Komplexní balíčky',
     },
