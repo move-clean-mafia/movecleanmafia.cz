@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { Phone, Menu, X, Crown, Shield } from 'lucide-react';
+import { Phone, Menu, X, Crown, Shield, MessageCircle } from 'lucide-react';
 import { LanguageSwitcher } from './language-switcher';
 import Logo from './logo';
 
@@ -78,6 +78,17 @@ export const Header: React.FC = () => {
                   aria-label={t('header.phone1')}
                 >
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-black group-hover:scale-110 transition-transform duration-300" />
+                </a>
+
+                {/* WhatsApp Button - Premium Style */}
+                <a
+                  href="https://wa.me/420725555095"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 sm:p-3 rounded-xl bg-green-500 hover:bg-green-600 transition-all duration-300 border-2 border-green-500 shadow-lg hover:shadow-xl group transform hover:scale-105"
+                  aria-label={t('header.whatsappAriaLabel')}
+                >
+                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:scale-110 transition-transform duration-300" />
                 </a>
               </div>
 
@@ -191,6 +202,18 @@ export const Header: React.FC = () => {
                     <Phone className="w-4 h-4 text-[#d6b977]" />
                     <span className="font-heading font-semibold text-base leading-4 tracking-wide text-white">
                       {t('header.phone1')}
+                    </span>
+                  </a>
+
+                  <a
+                    href="https://wa.me/420725555095"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center space-x-4 hover:bg-green-500/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-green-500/50 shadow-lg hover:shadow-xl"
+                  >
+                    <MessageCircle className="w-4 h-4 text-green-500" />
+                    <span className="font-heading font-semibold text-base leading-4 tracking-wide text-white">
+                      {t('header.whatsapp')}
                     </span>
                   </a>
                 </div>

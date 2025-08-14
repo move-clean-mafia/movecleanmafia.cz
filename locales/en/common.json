@@ -789,13 +789,17 @@
     "privacyPolicy": "Privacy Policy",
     "quickLinks": "Quick Links",
     "tagline": "Professional moving and cleaning - your reliability is our priority",
-    "termsOfService": "Terms of Service"
+    "termsOfService": "Terms of Service",
+    "followUs": "Follow Us",
+    "instagram": "Instagram"
   },
   "header": {
     "closeMainMenu": "Close main menu",
     "openMainMenu": "Open main menu",
     "phone1": "+1 (234) 567-890",
-    "phone2": "+1 (987) 654-321"
+    "phone2": "+1 (987) 654-321",
+    "whatsapp": "WhatsApp",
+    "whatsappAriaLabel": "Open WhatsApp chat"
   },
   "hero": {
     "title": "AN OFFER YOU CAN'T REFUSE",

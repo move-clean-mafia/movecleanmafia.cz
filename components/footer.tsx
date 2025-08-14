@@ -140,6 +140,25 @@ export const Footer: React.FC = () => {
                 </li>
               </ul>
             </div>
+
+            {/* Social Media */}
+            <div>
+              <h4 className="text-sm font-semibold text-[#d6b977] mb-4 font-heading">
+                {t('footer.followUs')}
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="https://www.instagram.com/stehomafia?igsh=MWtxYjZ5OXJzcGt1dw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
+                  >
+                    {t('footer.instagram')}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Bottom Copyright */}

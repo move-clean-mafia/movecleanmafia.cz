@@ -789,13 +789,17 @@
     "privacyPolicy": "Ochrana osobních údajů",
     "quickLinks": "Užitečné odkazy",
     "tagline": "Profesionální stěhování a úklid - vaše spolehlivost je naší prioritou",
-    "termsOfService": "Podmínky použití"
+    "termsOfService": "Podmínky použití",
+    "followUs": "Sledujte nás",
+    "instagram": "Instagram"
   },
   "header": {
     "closeMainMenu": "Zavřít hlavní menu",
     "openMainMenu": "Otevřít hlavní menu",
     "phone1": "+420 123 456 789",
-    "phone2": "+420 987 654 321"
+    "phone2": "+420 987 654 321",
+    "whatsapp": "WhatsApp",
+    "whatsappAriaLabel": "Otevřít WhatsApp chat"
   },
   "hero": {
     "title": "NABÍDKA, KTEROU NEMŮŽETE ODMÍTNOUT",

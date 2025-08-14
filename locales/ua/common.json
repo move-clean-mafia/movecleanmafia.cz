@@ -789,13 +789,17 @@
     "privacyPolicy": "Політика конфіденційності",
     "quickLinks": "Корисні посилання",
     "tagline": "Професійні перевезення та прибирання - ваша надійність є нашим пріоритетом",
-    "termsOfService": "Умови використання"
+    "termsOfService": "Умови використання",
+    "followUs": "Слідкуйте за нами",
+    "instagram": "Instagram"
   },
   "header": {
     "closeMainMenu": "Закрити головне меню",
     "openMainMenu": "Відкрити головне меню",
     "phone1": "+380 12 345 67 89",
-    "phone2": "+380 98 765 43 21"
+    "phone2": "+380 98 765 43 21",
+    "whatsapp": "WhatsApp",
+    "whatsappAriaLabel": "Відкрити WhatsApp чат"
   },
   "hero": {
     "title": "ПРОПОЗИЦІЯ, ВІД КОТРОЇ НЕ МОЖНА ВІДМОВИТИСЯ",
