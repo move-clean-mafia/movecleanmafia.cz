@@ -264,7 +264,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                 </TabsTrigger>
               </TabsList>
 
-              <div className="p-6 bg-black">
+              <div className="pt-6 bg-black">
                 <TabsContent value="room" className="space-y-4 mt-0">
                   {renderAreaSection('room', packageData.areas.room)}
                 </TabsContent>
@@ -288,7 +288,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
     services: Array<{ name: string; unit?: string; price: string }>,
   ) => (
     <Card className="mafia-card shadow-xl border border-[#d6b977]/20">
-      <CardContent className="p-8">
+      <CardContent className="p-2">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
@@ -454,7 +454,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
           <>
             {/* Main Packages Tabs */}
             <div className="mafia-card overflow-hidden mb-12 border border-[#d6b977]/20">
-              <div className="p-6">
+              <div className="p-2">
                 <Tabs defaultValue="maintenance" className="w-full">
                   <TabsList className="flex flex-col sm:flex-row w-full mb-6 bg-black p-1 rounded-xl h-auto sm:h-10 border-2 border-[#d6b977]">
                     <TabsTrigger
@@ -533,7 +533,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
 
             {/* Additional Services */}
             <div className="mafia-card overflow-hidden">
-              <div className="p-8">
+              <div className="p-2">
                 <div className="text-center mb-8">
                   <h3 className="text-3xl font-heading font-light text-[#d6b977] mb-4">
                     {
@@ -590,7 +590,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                 {/* Price Factors Section */}
                 {serviceType === 'cleaning' && serviceData.priceFactors && (
                   <div className="mafia-card mt-8">
-                    <div className="p-8">
+                    <div className="p-2">
                       <div className="text-center mb-8">
                         <h3 className="text-3xl font-heading font-light text-[#d6b977] mb-4">
                           {serviceData.priceFactors.title}
