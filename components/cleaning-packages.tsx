@@ -25,7 +25,6 @@ interface CleaningPackagesProps {
       other: { title: string; items: Array<{ name: string; price: string }> };
     };
   };
-  packingServices?: Array<{ name: string; unit: string; price: string }>;
 }
 
 interface PackageData {
@@ -70,7 +69,6 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({
   locale,
   t,
   dryCleaningServices,
-  packingServices,
 }) => {
   const packages = t('detailedServices.cleaningPackages.packages') as {
     maintenance: PackageData;
@@ -325,24 +323,6 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({
                         ...dryCleaningServices.categories.mattresses.items,
                         ...dryCleaningServices.categories.other.items,
                       ],
-                    },
-                  ]
-                : []),
-              ...(packingServices
-                ? [
-                    {
-                      title: t(
-                        'detailedServices.packingServices.title',
-                      ) as string,
-                      description: t(
-                        'detailedServices.packingServices.description',
-                      ) as string,
-                      iconName: 'Package',
-                      services: packingServices.map((service) => ({
-                        name: service.name,
-                        price: service.price,
-                        unit: service.unit,
-                      })),
                     },
                   ]
                 : []),

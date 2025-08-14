@@ -15,6 +15,13 @@
   },
   "contact": {
     "address": "Address",
+    "socialMedia": {
+      "title": "Social Media",
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "whatsappDescription": "Quick contact via WhatsApp",
+      "instagramDescription": "Follow us on Instagram"
+    },
     "faq": {
       "insurance": {
         "answer": "Yes, all transported belongings are fully insured against damage.",
@@ -617,17 +624,7 @@
       "minOrder": "Minimum order is 1.5 hours.",
       "title": "Moving and Additional Services"
     },
-    "packingServices": {
-      "description": "Professional packing and packaging of your items for safe transport",
-      "items": [
-        {
-          "name": "Packer",
-          "price": "350-450 CZK",
-          "unit": "per hour/person"
-        }
-      ],
-      "title": "Packing Services"
-    },
+
     "handyman": {
       "title": "Handyman Services",
       "description": "Professional services for your home",
@@ -811,7 +808,7 @@
   "homepage": {
     "servicesSection": {
       "title": "OUR SPECIALTIES",
-      "subtitle": "Three distinct services, one unbeatable team. We handle everything with the precision and care that sets us apart."
+      "subtitle": "Five distinct services, one unbeatable team. We handle everything with the precision and care that sets us apart."
     },
     "unifyingText": {
       "title": "COMPLETE SOLUTIONS FOR EVERY NEED",

@@ -74,10 +74,10 @@ export const Header: React.FC = () => {
                 {/* Phone Button - Premium Style */}
                 <a
                   href={`tel:${t('header.phone1')}`}
-                  className="p-2 sm:p-3 rounded-xl bg-[#d6b977] hover:bg-[#d6b977]/90 transition-all duration-300 border-2 border-[#d6b977] shadow-lg hover:shadow-xl group transform hover:scale-105"
+                  className="group p-3 sm:p-4 rounded-xl bg-gradient-to-br from-[#d6b977] to-[#d6b977]/90 hover:from-[#d6b977]/90 hover:to-[#d6b977] transition-all duration-300 border-2 border-[#d6b977] shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
                   aria-label={t('header.phone1')}
                 >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-black group-hover:scale-110 transition-transform duration-300" />
+                  <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-black group-hover:scale-110 transition-transform duration-300" />
                 </a>
 
                 {/* WhatsApp Button - Premium Style */}
@@ -85,10 +85,10 @@ export const Header: React.FC = () => {
                   href="https://wa.me/420725555095"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 sm:p-3 rounded-xl bg-green-500 hover:bg-green-600 transition-all duration-300 border-2 border-green-500 shadow-lg hover:shadow-xl group transform hover:scale-105"
+                  className="group p-3 sm:p-4 rounded-xl bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition-all duration-300 border-2 border-green-400 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
                   aria-label={t('header.whatsappAriaLabel')}
                 >
-                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:scale-110 transition-transform duration-300" />
+                  <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:scale-110 transition-transform duration-300" />
                 </a>
               </div>
 
@@ -197,9 +197,11 @@ export const Header: React.FC = () => {
                 <div className="flex flex-col space-y-4 items-center">
                   <a
                     href={`tel:${t('header.phone1')}`}
-                    className="flex items-center justify-center space-x-4 hover:bg-[#d6b977]/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-[#d6b977]/50 shadow-lg hover:shadow-xl"
+                    className="group flex items-center justify-center space-x-4 hover:bg-[#d6b977]/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-[#d6b977]/50 shadow-lg hover:shadow-xl transform hover:scale-105"
                   >
-                    <Phone className="w-4 h-4 text-[#d6b977]" />
+                    <div className="w-10 h-10 bg-[#d6b977]/20 rounded-full flex items-center justify-center group-hover:bg-[#d6b977]/30 transition-all duration-300">
+                      <Phone className="w-5 h-5 text-[#d6b977]" />
+                    </div>
                     <span className="font-heading font-semibold text-base leading-4 tracking-wide text-white">
                       {t('header.phone1')}
                     </span>
@@ -209,9 +211,11 @@ export const Header: React.FC = () => {
                     href="https://wa.me/420725555095"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center space-x-4 hover:bg-green-500/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-green-500/50 shadow-lg hover:shadow-xl"
+                    className="group flex items-center justify-center space-x-4 hover:bg-green-500/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-green-500/50 shadow-lg hover:shadow-xl transform hover:scale-105"
                   >
-                    <MessageCircle className="w-4 h-4 text-green-500" />
+                    <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center group-hover:bg-green-500/30 transition-all duration-300">
+                      <MessageCircle className="w-5 h-5 text-green-500" />
+                    </div>
                     <span className="font-heading font-semibold text-base leading-4 tracking-wide text-white">
                       {t('header.whatsapp')}
                     </span>

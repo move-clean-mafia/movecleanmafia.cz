@@ -581,26 +581,6 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                           },
                         ]
                       : []),
-                    ...(serviceData.packingServices
-                      ? [
-                          {
-                            title: t(
-                              'detailedServices.packingServices.title',
-                            ) as string,
-                            description: t(
-                              'detailedServices.packingServices.description',
-                            ) as string,
-                            iconName: 'Package',
-                            services: serviceData.packingServices.map(
-                              (service) => ({
-                                name: service.name,
-                                price: service.price,
-                                unit: service.unit,
-                              }),
-                            ),
-                          },
-                        ]
-                      : []),
                   ]}
                   locale={locale}
                   showReservationButton={showReservationButton}

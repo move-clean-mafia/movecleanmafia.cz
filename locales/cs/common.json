@@ -15,6 +15,13 @@
   },
   "contact": {
     "address": "Adresa",
+    "socialMedia": {
+      "title": "Sociální sítě",
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "whatsappDescription": "Rychlý kontakt přes WhatsApp",
+      "instagramDescription": "Sledujte nás na Instagramu"
+    },
     "faq": {
       "insurance": {
         "answer": "Ano, všechny přepravované věci jsou plně pojištěné proti poškození.",
@@ -617,17 +624,7 @@
       "minOrder": "Minimální objednávka je 1,5 hodiny.",
       "title": "Stěhování a doplňkové služby"
     },
-    "packingServices": {
-      "description": "Profesionální balení a zabalení vašich věcí pro bezpečnou přepravu",
-      "items": [
-        {
-          "name": "Balič",
-          "price": "350-450 Kč",
-          "unit": "za hodinu/osobu"
-        }
-      ],
-      "title": "Balicí služby"
-    },
+
     "handyman": {
       "title": "Hodinový manžel",
       "description": "Profesionální služby pro váš domov",
@@ -811,7 +808,7 @@
   "homepage": {
     "servicesSection": {
       "title": "NAŠE SPECIALITY",
-      "subtitle": "Tři odlišné služby, jeden nepřekonatelný tým. Řešíme vše s precizností a péčí, která nás odlišuje."
+      "subtitle": "Pět odlišných služeb, jeden nepřekonatelný tým. Řešíme vše s precizností a péčí, která nás odlišuje."
     },
     "unifyingText": {
       "title": "KOMPLETNÍ ŘEŠENÍ PRO KAŽDOU POTŘEBU",
@@ -858,7 +855,7 @@
       "subtitle": "Vyberte si z našeho komplexního spektra profesionálních služeb. Každá je navržena tak, aby splňovala vaše specifické potřeby s precizností a péčí, kterou očekáváte od nejlepších."
     },
     "pricingAdvantage": {
-      "title": "KONKURENCESCHOPNÉ CENY",
+      "title": "Nejlepší ceny",
       "subtitle": "Kvalita za férovou cenu - to je náš slib",
       "description": "Nabízíme transparentní a konkurenceschopné ceny bez skrytých poplatků. Naše služby jsou cenově dostupné, ale nikdy nekompromisní v kvalitě.",
       "benefits": [
