@@ -559,28 +559,6 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                         iconName: ['ChefHat', 'Sofa', 'Star'][index] || 'Star',
                       }),
                     ),
-                    ...(serviceData.dryCleaningServices
-                      ? [
-                          {
-                            title: serviceData.dryCleaningServices.title,
-                            description:
-                              serviceData.dryCleaningServices.description,
-                            iconName: 'Sparkles',
-                            services: [
-                              ...serviceData.dryCleaningServices.categories
-                                .furniture.items,
-                              ...serviceData.dryCleaningServices.categories
-                                .sofas.items,
-                              ...serviceData.dryCleaningServices.categories.beds
-                                .items,
-                              ...serviceData.dryCleaningServices.categories
-                                .mattresses.items,
-                              ...serviceData.dryCleaningServices.categories
-                                .other.items,
-                            ],
-                          },
-                        ]
-                      : []),
                   ]}
                   locale={locale}
                   showReservationButton={showReservationButton}
