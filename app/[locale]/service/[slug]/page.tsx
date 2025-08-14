@@ -69,8 +69,7 @@ const getServiceData = (
       icon: Truck,
       title: t('services.moving'),
       description: t('services.movingDescription'),
-      longDescription:
-        t('services.movingLongDescription') || t('services.movingDescription'),
+      longDescription: t('services.movingDescription'),
       image: '/images/moving_hp.jpg',
       imageAlt: t('services.moving'),
       pricing: {

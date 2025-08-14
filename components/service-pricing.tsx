@@ -343,15 +343,6 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
 
     return (
       <div className="space-y-8">
-        {/* Description */}
-        {movingData.description && (
-          <div className="text-center mb-8">
-            <p className="text-lg font-body font-light text-white/80 max-w-4xl mx-auto leading-relaxed">
-              {movingData.description}
-            </p>
-          </div>
-        )}
-
         {/* Main Services Table */}
         <div className="mb-8">
           {renderSimplePricingTable(movingData.movingServices)}
@@ -429,24 +420,8 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
     );
   };
 
-  const ServiceIcon = serviceData.icon;
-
   return (
-    <section className={`py-16 bg-black ${className}`}>
-      {/* Section Header */}
-      <div className="text-center mb-12">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-[#d6b977] rounded-2xl mb-4">
-          <ServiceIcon className="w-8 h-8 text-black" />
-        </div>
-        <h2 className="text-4xl sm:text-5xl font-heading font-bold text-[#d6b977] mb-3 animate-text-glow">
-          {serviceData.title}
-        </h2>
-        <p className="text-xl font-body font-light text-white/80 max-w-3xl mx-auto leading-relaxed">
-          {serviceData.subtitle}
-        </p>
-        <div className="mafia-divider w-24 h-1 mx-auto mt-4"></div>
-      </div>
-
+    <section className={`bg-black ${className}`}>
       {/* Service-specific content */}
       {serviceType === 'cleaning' &&
         'packages' in serviceData &&
