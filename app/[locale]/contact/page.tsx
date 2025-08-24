@@ -11,7 +11,6 @@ import {
 import {
   Phone,
   Mail,
-  MapPin,
   Clock,
   MessageSquare,
   Crown,
@@ -83,23 +82,6 @@ const ContactPage = async ({ params }: ContactPageProps) => {
             : 'support@movecleanmafia.com',
       ],
       action: 'mailto',
-    },
-    {
-      icon: MapPin,
-      title: t('contact.info.address'),
-      details: [
-        locale === 'cs'
-          ? 'Václavské náměstí 1'
-          : locale === 'ua'
-            ? 'Хрещатик 1'
-            : 'Main Street 1',
-        locale === 'cs'
-          ? '110 00 Praha 1'
-          : locale === 'ua'
-            ? '01001 Київ'
-            : '10001 New York',
-      ],
-      action: null,
     },
     {
       icon: Clock,

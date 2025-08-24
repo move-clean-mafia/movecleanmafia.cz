@@ -7,21 +7,8 @@
       "pending": ""
     }
   },
-  "cta": {
-    "title": "PŘIPRAVENI UDĚLAT DOHODU?",
-    "subtitle": "Nečekejte. Kontaktujte nás nyní a zažijte rozdíl, který může poskytnout pouze to nejlepší.",
-    "primaryButton": "ZÍSKAT NABÍDKU",
-    "secondaryButton": "KONTAKTUJTE NÁS"
-  },
   "contact": {
     "address": "Adresa",
-    "socialMedia": {
-      "title": "Sociální sítě",
-      "whatsapp": "WhatsApp",
-      "instagram": "Instagram",
-      "whatsappDescription": "Rychlý kontakt přes WhatsApp",
-      "instagramDescription": "Sledujte nás na Instagramu"
-    },
     "faq": {
       "insurance": {
         "answer": "Ano, všechny přepravované věci jsou plně pojištěné proti poškození.",
@@ -42,14 +29,9 @@
       }
     },
     "form": {
-      "email": "Email",
       "emailPlaceholder": "vas@email.cz",
-      "firstName": "Jméno",
       "firstNamePlaceholder": "Vaše jméno",
-      "lastName": "Příjmení",
-      "lastNamePlaceholder": "Vaše příjmení",
-      "phone": "Telefon",
-      "phonePlaceholder": "+420 123 456 789"
+      "lastNamePlaceholder": "Vaše příjmení"
     },
     "info": {
       "address": "Adresa",
@@ -63,10 +45,12 @@
       "subtitle": "Jsme tu pro vás každý den. Neváhejte nás kontaktovat jakýmkoliv způsobem.",
       "title": "Kontaktní informace"
     },
-    "map": {
-      "placeholder": "Mapa bude brzy dostupná",
-      "subtitle": "Naše kancelář se nachází v centru města s dobrým dopravním spojením",
-      "title": "Kde nás najdete"
+    "socialMedia": {
+      "instagram": "Instagram",
+      "instagramDescription": "Sledujte nás na Instagramu",
+      "title": "Sociální sítě",
+      "whatsapp": "WhatsApp",
+      "whatsappDescription": "Rychlý kontakt přes WhatsApp"
     },
     "subtitle": "Kontaktujte nás pro bezplatnou konzultaci a cenovou nabídku",
     "title": "Kontakt"
@@ -95,12 +79,165 @@
     "savePreferences": "Uložit nastavení",
     "title": "Nastavení cookies"
   },
+  "cookiePolicy": {
+    "cookieConsentManagement": {
+      "button": "Spravovat preference cookies",
+      "content": "Své preference cookies můžete kdykoli spravovat kliknutím na tlačítko \"Přizpůsobit\" v patičce našich webových stránek.",
+      "title": "Správa souhlasu s cookies"
+    },
+    "lastUpdated": "Naposledy aktualizováno",
+    "sections": {
+      "contactUs": {
+        "content": "Pokud máte jakékoli otázky týkající se našeho používání cookies, kontaktujte nás:",
+        "details": {
+          "address": "Adresa: [Vaše obchodní adresa]",
+          "email": "Email: info@movecleanmafia.cz",
+          "phone": "Telefon: +420 774 635 981"
+        },
+        "title": "Kontaktujte nás"
+      },
+      "cookieDuration": {
+        "persistentCookies": {
+          "content": "Tyto zůstávají na vašem zařízení po stanovenou dobu nebo dokud je nesmažete.",
+          "title": "Trvalé cookies:"
+        },
+        "sessionCookies": {
+          "content": "Tyto jsou dočasné cookies, které se smažou, když zavřete prohlížeč.",
+          "title": "Relaní cookies:"
+        },
+        "thirdPartyCookies": {
+          "content": "Doba trvání cookies třetích stran je určena příslušnými poskytovateli služeb.",
+          "title": "Cookies třetích stran:"
+        },
+        "title": "Doba trvání cookies"
+      },
+      "dataProtection": {
+        "content": "Zavazujeme se chránit vaše soukromí. Informace shromážděné prostřednictvím cookies se používají v souladu s naší Politikou ochrany osobních údajů a platnými zákony o ochraně dat.",
+        "title": "Ochrana dat"
+      },
+      "howWeUseCookies": {
+        "content": "Používáme cookies pro několik účelů:",
+        "items": [
+          {
+            "content": "Tyto jsou nutné pro správné fungování webových stránek",
+            "title": "Nezbytné cookies:"
+          },
+          {
+            "content": "Tyto nám pomáhají pochopit, jak návštěvníci používají naše webové stránky",
+            "title": "Analytické cookies:"
+          },
+          {
+            "content": "Tyto si pamatují vaše volby a nastavení",
+            "title": "Preferenční cookies:"
+          },
+          {
+            "content": "Tyto nám pomáhají zobrazovat relevantní reklamy",
+            "title": "Marketingové cookies:"
+          }
+        ],
+        "title": "Jak používáme cookies"
+      },
+      "managingPreferences": {
+        "browserSettings": {
+          "content": "Cookies můžete ovládat přes nastavení vašeho prohlížeče. Většina prohlížečů umožňuje blokovat nebo mazat cookies.",
+          "title": "Nastavení prohlížeče:"
+        },
+        "cookieConsent": {
+          "content": "Při první návštěvě našich webových stránek si můžete vybrat, které typy cookies přijmout.",
+          "title": "Souhlas s cookies:"
+        },
+        "title": "Správa vašich preferencí cookies",
+        "updatingPreferences": {
+          "content": "Své preference cookies můžete kdykoli změnit kliknutím na tlačítko \"Přizpůsobit\" v našem patičce.",
+          "title": "Aktualizace preferencí:"
+        }
+      },
+      "thirdPartyCookies": {
+        "content": "Můžeme používat služby třetích stran, které umisťují cookies na vaše zařízení:",
+        "items": [
+          {
+            "content": "Pro analytiku webových stránek a monitorování výkonu",
+            "title": "Google Analytics:"
+          },
+          {
+            "content": "Pro služby lokalizace a zobrazení map",
+            "title": "Google Maps:"
+          },
+          {
+            "content": "Pro integraci sociálních médií a sdílení",
+            "title": "Sociální média:"
+          },
+          {
+            "content": "Pro bezpečné zpracování plateb",
+            "title": "Platební procesory:"
+          }
+        ],
+        "title": "Cookies třetích stran"
+      },
+      "typesOfCookies": {
+        "analytics": {
+          "content": "Tyto cookies nám pomáhají pochopit, jak návštěvníci interagují s našimi webovými stránkami shromažďováním a reportováním informací anonymně.",
+          "items": [
+            "Zobrazení stránek a navigační vzory",
+            "Čas strávený na stránkách",
+            "Sledování chyb",
+            "Monitorování výkonu"
+          ],
+          "title": "Analytické cookies"
+        },
+        "marketing": {
+          "content": "Tyto cookies se používají ke sledování návštěvníků napříč webovými stránkami za účelem zobrazování relevantních reklam.",
+          "items": [
+            "Cílení a retargeting reklam",
+            "Integrace sociálních médií",
+            "Sledování konverzí"
+          ],
+          "title": "Marketingové cookies"
+        },
+        "necessary": {
+          "content": "Tyto cookies jsou nezbytné pro správné fungování webových stránek. Umožňují základní funkce jako navigace po stránkách a přístup k zabezpečeným oblastem webových stránek.",
+          "items": [
+            "Autentizace a zabezpečení",
+            "Správa relací",
+            "Odesílání formulářů",
+            "Jazykové preference"
+          ],
+          "title": "Nezbytné cookies"
+        },
+        "preferences": {
+          "content": "Tyto cookies umožňují webovým stránkám zapamatovat si volby, které děláte, a poskytovat vylepšené, osobnější funkce.",
+          "items": [
+            "Jazykové a regionální nastavení",
+            "Preference témat",
+            "Volby souhlasu s cookies",
+            "Preference uživatelského rozhraní"
+          ],
+          "title": "Preferenční cookies"
+        },
+        "title": "Typy cookies, které používáme"
+      },
+      "updatesToPolicy": {
+        "content": "Tuto Politiku cookies můžeme čas od času aktualizovat, abychom odráželi změny v našich postupech nebo z jiných provozních, právních nebo regulačních důvodů. O jakýchkoli významných změnách vás budeme informovat zveřejněním nové politiky na našich webových stránkách.",
+        "title": "Aktualizace této politiky"
+      },
+      "whatAreCookies": {
+        "content": "Cookies jsou malé textové soubory, které jsou umístěny na vašem zařízení při návštěvě našich webových stránek. Pomáhají nám poskytovat vám lepší zážitek zapamatováním si vaše preference a analýzou toho, jak používáte náš web.",
+        "title": "Co jsou cookies?"
+      }
+    },
+    "title": "Zásady cookies"
+  },
+  "cta": {
+    "primaryButton": "ZÍSKAT NABÍDKU",
+    "secondaryButton": "KONTAKTUJTE NÁS",
+    "subtitle": "Nečekejte. Kontaktujte nás nyní a zažijte rozdíl, který může poskytnout pouze to nejlepší.",
+    "title": "PŘIPRAVENI UDĚLAT DOHODU?"
+  },
   "detailedServices": {
     "cleaningPackages": {
       "additionalServices": {
         "groups": [
           {
-            "title": "Kuchyně",
             "description": "Hluboké čištění kuchyňských spotřebičů a zařízení",
             "services": [
               {
@@ -135,10 +272,10 @@
                 "name": "Mytí nádobí",
                 "price": "250 Kč/hod"
               }
-            ]
+            ],
+            "title": "Kuchyně"
           },
           {
-            "title": "Nábytek a povrchy",
             "description": "Čištění nábytku, skříní a různých povrchů",
             "services": [
               {
@@ -149,10 +286,10 @@
                 "name": "Mytí oken",
                 "price": "1 m² = 120 Kč"
               }
-            ]
+            ],
+            "title": "Nábytek a povrchy"
           },
           {
-            "title": "Speciální služby",
             "description": "Další specializované čisticí a doručovací služby",
             "services": [
               {
@@ -171,10 +308,10 @@
                 "name": "Doručení klíčů (jednosměrné)",
                 "price": "300 Kč"
               }
-            ]
+            ],
+            "title": "Speciální služby"
           },
           {
-            "title": "Chemické čistění",
             "description": "Čištění čalouněného nábytku, koberců a matrací",
             "services": [
               {
@@ -237,10 +374,10 @@
                 "name": "Koberec",
                 "price": "1 m² = 85 Kč"
               }
-            ]
+            ],
+            "title": "Chemické čistění"
           },
           {
-            "title": "Balicí služby",
             "description": "Profesionální balení a zabalení vašich věcí pro bezpečnou přepravu",
             "services": [
               {
@@ -255,10 +392,10 @@
                 "name": "Krabice",
                 "price": "90 Kč"
               }
-            ]
+            ],
+            "title": "Balicí služby"
           },
           {
-            "title": "Stěhování",
             "description": "Profesionální stěhovací služby s kompletním servisem",
             "services": [
               {
@@ -273,10 +410,10 @@
                 "name": "Auto + 2 stěhováci",
                 "price": "1100 Kč/hod"
               }
-            ]
+            ],
+            "title": "Stěhování"
           },
           {
-            "title": "Hodinový manžel",
             "description": "Drobné opravy a údržba domácnosti",
             "services": [
               {
@@ -295,14 +432,13 @@
                 "name": "Ostatní práce v domácnosti",
                 "price": "na dotaz"
               }
-            ]
+            ],
+            "title": "Hodinový manžel"
           }
         ],
         "subtitle": "Rozšiřte svůj balíček o další služby",
         "title": "Doplňkové služby"
       },
-      "from": "od",
-      "onRequest": "na požádání",
       "packages": {
         "general": {
           "areas": {
@@ -461,10 +597,7 @@
           "title": "Generální úklid"
         }
       },
-      "subtitle": "Profesionální úklidové služby pro váš domov",
-      "title": "Úklidové balíčky",
       "priceFactors": {
-        "title": "Co ovlivňuje cenu úklidu",
         "items": [
           "Obecná úroveň silného znečištění (prach, skvrny, mastnota, plíseň)",
           "Vodní kámen a rez",
@@ -472,15 +605,24 @@
           "Rozhozený odpad",
           "Zvířecí srst",
           "Velké množství osobních věcí, které je potřeba před úklidem přesunout nebo uklidit"
-        ]
-      }
+        ],
+        "title": "Co ovlivňuje cenu úklidu"
+      },
+      "subtitle": "Profesionální úklidové služby pro váš domov",
+      "title": "Úklidové balíčky"
     },
     "dryCleaning": {
-      "description": "Profesionální chemické čištění koberců, čalounění a textilu",
-      "title": "Čištění čalouněného nábytku, koberců a matrací",
       "categories": {
+        "beds": {
+          "items": [
+            {
+              "name": "Postel bez matrace",
+              "price": "od 600 Kč"
+            }
+          ],
+          "title": "Postele"
+        },
         "furniture": {
-          "title": "Nábytek",
           "items": [
             {
               "name": "Taburet",
@@ -498,10 +640,40 @@
               "name": "Kancelářská počítačová židle",
               "price": "od 350 Kč"
             }
-          ]
+          ],
+          "title": "Nábytek"
+        },
+        "mattresses": {
+          "items": [
+            {
+              "name": "Jednolůžková (jedna strana)",
+              "price": "400–600 Kč"
+            },
+            {
+              "name": "Dvoulůžková (jedna strana)",
+              "price": "800–1000 Kč"
+            }
+          ],
+          "title": "Matrace"
+        },
+        "other": {
+          "items": [
+            {
+              "name": "Pelech pro zvířata",
+              "price": "od 250 Kč"
+            },
+            {
+              "name": "Dětská autosedačka",
+              "price": "550 Kč"
+            },
+            {
+              "name": "Koberec",
+              "price": "1 m² = 120 Kč"
+            }
+          ],
+          "title": "Ostatní"
         },
         "sofas": {
-          "title": "Pohovky",
           "items": [
             {
               "name": "Dvoumístná",
@@ -523,66 +695,96 @@
               "name": "Kuchyňský rohový gauč",
               "price": "700 Kč"
             }
-          ]
-        },
-        "beds": {
-          "title": "Postele",
+          ],
+          "title": "Pohovky"
+        }
+      },
+      "description": "Profesionální chemické čištění koberců, čalounění a textilu",
+      "items": "",
+      "title": "Čištění čalouněného nábytku, koberců a matrací"
+    },
+    "handyman": {
+      "categories": {
+        "furnitureAssembly": {
           "items": [
             {
-              "name": "Postel bez matrace",
-              "price": "od 600 Kč"
-            }
-          ]
-        },
-        "mattresses": {
-          "title": "Matrace",
-          "items": [
-            {
-              "name": "Jednolůžková (jedna strana)",
-              "price": "400–600 Kč"
+              "name": "Skříně, komody, postele, pohovky, stoly atd."
             },
             {
-              "name": "Dvoulůžková (jedna strana)",
-              "price": "800–1000 Kč"
+              "name": "Montáž nábytku z obchodů: IKEA, JYSK, Sconto, Möbelix a dalších"
             }
-          ]
+          ],
+          "title": "Montáž nábytku"
+        },
+        "furnitureDisassembly": {
+          "items": [
+            {
+              "name": "Skříně, komody, pohovky, postele a další nábytek"
+            },
+            {
+              "name": "Příprava nábytku na stěhování nebo likvidaci"
+            }
+          ],
+          "title": "Demontáž nábytku"
         },
         "other": {
-          "title": "Ostatní",
           "items": [
             {
-              "name": "Pelech pro zvířata",
-              "price": "od 250 Kč"
+              "name": "Zavěšení police, obrazu, zrcadla, televize"
             },
             {
-              "name": "Dětská autosedačka",
-              "price": "550 Kč"
+              "name": "Přestěhování nábytku"
             },
             {
-              "name": "Koberec",
-              "price": "1 m² = 120 Kč"
+              "name": "Drobná oprava dveří, klik, zámků"
+            },
+            {
+              "name": "Pomoc s instalací domácích spotřebičů"
+            },
+            {
+              "name": "Jiné práce na požádání"
             }
-          ]
+          ],
+          "title": "Ostatní práce v domácnosti"
+        },
+        "painting": {
+          "items": [
+            {
+              "name": "Malování v bytě, domě, garáži a kanceláři:"
+            },
+            {
+              "name": "Malování stěn a stropů"
+            },
+            {
+              "name": "Malování dveří, oken, radiátorů"
+            }
+          ],
+          "title": "Malířské práce"
+        },
+        "plumbing": {
+          "items": [
+            {
+              "name": "Instalace praček, myček nádobí, sušiček a další domácí techniky"
+            },
+            {
+              "name": "Výmena baterií, sifonů"
+            },
+            {
+              "name": "Výmena splachovacích nádob, těsnění a ventilů"
+            },
+            {
+              "name": "Čištění ucpané kanalizace"
+            }
+          ],
+          "title": "Instalatérské práce"
         }
-      }
+      },
+      "description": "Profesionální služby pro váš domov",
+      "minOrder": "Minimální objednávka práce je 2 hodiny",
+      "title": "Hodinový manžel"
     },
     "movingAndTransport": {
-      "items": [
-        {
-          "name": "Auto + řidič",
-          "price": "700 Kč/hod"
-        },
-        {
-          "name": "Auto + 1 stěhovák",
-          "price": "800 Kč/hod"
-        },
-        {
-          "name": "Auto + 2 stěhováci",
-          "price": "1100 Kč/hod"
-        }
-      ],
       "additionalServices": {
-        "title": "Doplňkové služby",
         "items": [
           {
             "name": "Palivo mimo Prahu",
@@ -600,153 +802,47 @@
             "name": "Krabice",
             "price": "90 Kč"
           }
-        ]
-      },
-      "description": "Vy relaxujete, my stěhujeme. Kompletní servis od profesionálů: od zabalení až po vybavení. Stěhování s námi je jednoduché a pohodlné.",
-      "includedInPrice": {
-        "title": "V ceně je zahrnuto:",
-        "items": [
-          "Kilometry nejeté v Praze neúčtujeme",
-          "Žádné příplatky za patra",
-          "Připojení a odpojení pračky či myčky neúčtujeme",
-          "Neúčtujeme příplatky za noční hodiny, víkendy ani svátky"
-        ]
+        ],
+        "title": "Doplňkové služby"
       },
       "additionalServicesList": {
-        "title": "Další služby, které vám nabízíme:",
         "items": [
           "Převoz nábytku – bezpečně a šetrně převezeme jednotlivé kusy nábytku i celé vybavení.",
           "Vyklízení starého nábytku – zbavíme vás nepotřebného zařízení z domácnosti, kanceláře či skladu.",
           "Vyklízení bytů, domů a kanceláří – kompletní vyklízecí služby včetně likvidace odpadu.",
           "Doprava z obchodů – zajistíme rychlé a spolehlivé doručení nákupů až k vám domů."
-        ]
+        ],
+        "title": "Další služby, které vám nabízíme:"
       },
+      "description": "Vy relaxujete, my stěhujeme. Kompletní servis od profesionálů: od zabalení až po vybavení. Stěhování s námi je jednoduché a pohodlné.",
+      "includedInPrice": {
+        "items": [
+          "Kilometry nejeté v Praze neúčtujeme",
+          "Žádné příplatky za patra",
+          "Připojení a odpojení pračky či myčky neúčtujeme",
+          "Neúčtujeme příplatky za noční hodiny, víkendy ani svátky"
+        ],
+        "title": "V ceně je zahrnuto:"
+      },
+      "items": [
+        {
+          "name": "Auto + řidič",
+          "price": "700 Kč/hod"
+        },
+        {
+          "name": "Auto + 1 stěhovák",
+          "price": "800 Kč/hod"
+        },
+        {
+          "name": "Auto + 2 stěhováci",
+          "price": "1100 Kč/hod"
+        }
+      ],
       "minOrder": "Minimální objednávka je 1,5 hodiny.",
       "title": "Stěhování a doplňkové služby"
     },
-
-    "handyman": {
-      "title": "Hodinový manžel",
-      "description": "Profesionální služby pro váš domov",
-      "minOrder": "Minimální objednávka práce je 2 hodiny",
-      "categories": {
-        "plumbing": {
-          "title": "Instalatérské práce",
-          "items": [
-            {
-              "name": "Instalace praček, myček nádobí, sušiček a další domácí techniky"
-            },
-            {
-              "name": "Výmena baterií, sifonů"
-            },
-            {
-              "name": "Výmena splachovacích nádob, těsnění a ventilů"
-            },
-            {
-              "name": "Čištění ucpané kanalizace"
-            }
-          ]
-        },
-        "painting": {
-          "title": "Malířské práce",
-          "items": [
-            {
-              "name": "Malování v bytě, domě, garáži a kanceláři:"
-            },
-            {
-              "name": "Malování stěn a stropů"
-            },
-            {
-              "name": "Malování dveří, oken, radiátorů"
-            }
-          ]
-        },
-        "furnitureDisassembly": {
-          "title": "Demontáž nábytku",
-          "items": [
-            {
-              "name": "Skříně, komody, pohovky, postele a další nábytek"
-            },
-            {
-              "name": "Příprava nábytku na stěhování nebo likvidaci"
-            }
-          ]
-        },
-        "furnitureAssembly": {
-          "title": "Montáž nábytku",
-          "items": [
-            {
-              "name": "Skříně, komody, postele, pohovky, stoly atd."
-            },
-            {
-              "name": "Montáž nábytku z obchodů: IKEA, JYSK, Sconto, Möbelix a dalších"
-            }
-          ]
-        },
-        "other": {
-          "title": "Ostatní práce v domácnosti",
-          "items": [
-            {
-              "name": "Zavěšení police, obrazu, zrcadla, televize"
-            },
-            {
-              "name": "Přestěhování nábytku"
-            },
-            {
-              "name": "Drobná oprava dveří, klik, zámků"
-            },
-            {
-              "name": "Pomoc s instalací domácích spotřebičů"
-            },
-            {
-              "name": "Jiné práce na požádání"
-            }
-          ]
-        }
-      }
-    },
     "packages": {
-      "title": "Komplexní balíčky",
-      "subtitle": "Přestěhujeme. Uklidíme. Opravíme.",
-      "description": "Kompletní řešení pro vaše stěhování",
-      "note": "Služby lze upravit nebo doplnit podle vašich potřeb, cena bude kalkulována individuálně",
-      "packages": {
-        "small": {
-          "name": "1+kk/1+1",
-          "price": "Od 5500 Kč",
-          "description": "Ideální pro malé byty",
-          "features": [
-            "Stěhování (auto +1 stěhovák, do 2 hodin)",
-            "Montáž/demontáž nábytku",
-            "Úklid bytu do 35 m²",
-            "Odvoz odpadu"
-          ]
-        },
-        "medium": {
-          "name": "2+kk/2+1",
-          "price": "Od 7500 Kč",
-          "description": "Pro střední byty",
-          "features": [
-            "Stěhování (auto + 2 stěhováci, do 3 hodin)",
-            "Montáž/demontáž nábytku",
-            "Úklid bytu do 55 m²",
-            "Odvoz odpadu"
-          ]
-        },
-        "large": {
-          "name": "3+kk/3+1",
-          "price": "Od 9800 Kč",
-          "description": "Pro velké byty",
-          "features": [
-            "Stěhování (auto + 2 stěhováci, do 4 hodin)",
-            "Montáž/demontáž nábytku",
-            "Úklid bytu do 75 m²",
-            "Odvoz odpadu"
-          ]
-        }
-      },
       "additionalServices": {
-        "title": "Doplňkové služby",
         "description": "Rozšiřte svůj balíček o další služby",
         "services": [
           {
@@ -773,102 +869,134 @@
             "name": "Instalatérské práce",
             "price": "od 350 Kč/hod"
           }
-        ]
-      }
+        ],
+        "title": "Doplňkové služby"
+      },
+      "description": "Kompletní řešení pro vaše stěhování",
+      "note": "Služby lze upravit nebo doplnit podle vašich potřeb, cena bude kalkulována individuálně",
+      "packages": {
+        "large": {
+          "description": "Pro velké byty",
+          "features": [
+            "Stěhování (auto + 2 stěhováci, do 4 hodin)",
+            "Montáž/demontáž nábytku",
+            "Úklid bytu do 75 m²",
+            "Odvoz odpadu"
+          ],
+          "name": "3+kk/3+1",
+          "price": "Od 9800 Kč"
+        },
+        "medium": {
+          "description": "Pro střední byty",
+          "features": [
+            "Stěhování (auto + 2 stěhováci, do 3 hodin)",
+            "Montáž/demontáž nábytku",
+            "Úklid bytu do 55 m²",
+            "Odvoz odpadu"
+          ],
+          "name": "2+kk/2+1",
+          "price": "Od 7500 Kč"
+        },
+        "small": {
+          "description": "Ideální pro malé byty",
+          "features": [
+            "Stěhování (auto +1 stěhovák, do 2 hodin)",
+            "Montáž/demontáž nábytku",
+            "Úklid bytu do 35 m²",
+            "Odvoz odpadu"
+          ],
+          "name": "1+kk/1+1",
+          "price": "Od 5500 Kč"
+        }
+      },
+      "subtitle": "Přestěhujeme. Uklidíme. Opravíme.",
+      "title": "Komplexní balíčky"
+    },
+    "packingServices": {
+      "description": "",
+      "items": "",
+      "title": ""
     }
   },
   "footer": {
     "contactInfo": "Kontaktní informace",
     "cookiePolicy": "Zásady cookies",
     "email": "Email",
+    "followUs": "Sledujte nás",
+    "instagram": "Instagram",
     "legal": "Právní informace",
     "phone": "Telefon",
     "privacyPolicy": "Ochrana osobních údajů",
     "quickLinks": "Užitečné odkazy",
     "tagline": "Profesionální stěhování a úklid - vaše spolehlivost je naší prioritou",
-    "termsOfService": "Podmínky použití",
-    "followUs": "Sledujte nás",
-    "instagram": "Instagram"
+    "termsOfService": "Podmínky použití"
   },
   "header": {
     "closeMainMenu": "Zavřít hlavní menu",
     "openMainMenu": "Otevřít hlavní menu",
-    "phone1": "+420 123 456 789",
-    "phone2": "+420 987 654 321",
+    "phone1": "+420 774 635 981",
+    "phone2": "+420 777 112 613",
     "whatsapp": "WhatsApp",
     "whatsappAriaLabel": "Otevřít WhatsApp chat"
   },
   "hero": {
-    "title": "NABÍDKA, KTEROU NEMŮŽETE ODMÍTNOUT",
-    "cta": "UDĚLEJTE NÁM NABÍDKU",
-    "imageAlt": "Profesionální stěhování a úklid",
     "badge": "THE MOVE & CLEAN MAFIA",
-    "description": "Naše ceny jsou konkurenceschopné a transparentní - kvalita za férovou cenu."
+    "cta": "UDĚLEJTE NÁM NABÍDKU",
+    "description": "Naše ceny jsou konkurenceschopné a transparentní - kvalita za férovou cenu.",
+    "imageAlt": "Profesionální stěhování a úklid",
+    "title": "NABÍDKA, KTEROU NEMŮŽETE ODMÍTNOUT"
   },
   "homepage": {
-    "servicesSection": {
-      "title": "NAŠE SPECIALITY",
-      "subtitle": "Pět odlišných služeb, jeden nepřekonatelný tým. Řešíme vše s precizností a péčí, která nás odlišuje."
-    },
-    "unifyingText": {
-      "title": "KOMPLETNÍ ŘEŠENÍ PRO KAŽDOU POTŘEBU",
-      "subtitle": "Od stěhování celého bytu až po udržení čistoty - řešíme každý aspekt s precizností a péčí, kterou poskytují pouze ti nejlepší. Vyberte si službu a nechte nás postarat se o zbytek."
-    },
-    "ourCode": {
-      "title": "NAŠE PRAVIDLA",
-      "subtitle": "Principy, které vedou každou práci, každého klienta, každý detail.",
-      "principles": {
-        "precision": {
-          "title": "PRECIZNOST",
-          "description": "Každý detail je důležitý. Provádíme práci s chirurgickou precizností, nic nenecháváme náhodě."
-        },
-        "efficiency": {
-          "title": "EFEKTIVITA",
-          "description": "Čas jsou peníze. Pracujeme rychle, čistě a práci uděláme správně hned napoprvé."
-        },
-        "excellence": {
-          "title": "EXCELENCE",
-          "description": "Nesplňujeme jen očekávání - překračujeme je. Pokaždé, bez výjimky."
-        }
-      }
-    },
-    "finalCta": {
-      "title": "PŘIPRAVENI UZAVŘÍT DOHODU?",
-      "subtitle": "Nečekejte. Kontaktujte nás nyní a zažijte rozdíl, který poskytují pouze ti nejlepší."
+    "compactServicesSection": {
+      "subtitle": "Vyberte si z našeho komplexního spektra profesionálních služeb. Každá je navržena tak, aby splňovala vaše specifické potřeby s precizností a péčí, kterou očekáváte od nejlepších.",
+      "title": "VŠECHNY NAŠE SLUŽBY"
     },
     "contactSection": {
-      "title": "Kontaktní informace",
-      "subtitle": "Jsme tu pro vás každý den. Neváhejte nás kontaktovat.",
-      "phone": "Telefon",
-      "email": "Email",
       "address": "Adresa",
       "addressValue": "Praha, Česká republika",
-      "emailValue": "info@movecleanmafia.cz"
+      "email": "Email",
+      "emailValue": "info@movecleanmafia.cz",
+      "phone": "Telefon",
+      "subtitle": "Jsme tu pro vás každý den. Neváhejte nás kontaktovat.",
+      "title": "Kontaktní informace"
     },
-    "pricingSection": {
-      "title": "Ceny",
-      "subtitle": "Transparentní ceny pro všechny naše služby",
-      "showAllPrices": "Zobrazit všechny ceny"
+    "heroImages": {
+      "cleaning": "Profesionální úklidové služby",
+      "moving": "Profesionální stěhovací služby"
     },
-    "compactServicesSection": {
-      "title": "VŠECHNY NAŠE SLUŽBY",
-      "subtitle": "Vyberte si z našeho komplexního spektra profesionálních služeb. Každá je navržena tak, aby splňovala vaše specifické potřeby s precizností a péčí, kterou očekáváte od nejlepších."
+    "ourCode": {
+      "principles": {
+        "efficiency": {
+          "description": "Čas jsou peníze. Pracujeme rychle, čistě a práci uděláme správně hned napoprvé.",
+          "title": "EFEKTIVITA"
+        },
+        "excellence": {
+          "description": "Nesplňujeme jen očekávání - překračujeme je. Pokaždé, bez výjimky.",
+          "title": "EXCELENCE"
+        },
+        "precision": {
+          "description": "Každý detail je důležitý. Provádíme práci s chirurgickou precizností, nic nenecháváme náhodě.",
+          "title": "PRECIZNOST"
+        }
+      },
+      "subtitle": "Principy, které vedou každou práci, každého klienta, každý detail.",
+      "title": "NAŠE PRAVIDLA"
     },
     "pricingAdvantage": {
-      "title": "Nejlepší ceny",
-      "subtitle": "Kvalita za férovou cenu - to je náš slib",
-      "description": "Nabízíme transparentní a konkurenceschopné ceny bez skrytých poplatků. Naše služby jsou cenově dostupné, ale nikdy nekompromisní v kvalitě.",
       "benefits": [
         "Bezplatné cenové nabídky",
         "Žádné skryté poplatky",
         "Transparentní kalkulace",
         "Slevy pro pravidelné klienty",
         "Flexibilní platební podmínky"
-      ]
+      ],
+      "description": "Nabízíme transparentní a konkurenceschopné ceny bez skrytých poplatků. Naše služby jsou cenově dostupné, ale nikdy nekompromisní v kvalitě.",
+      "subtitle": "Kvalita za férovou cenu - to je náš slib",
+      "title": "Nejlepší ceny"
     },
-    "heroImages": {
-      "cleaning": "Profesionální úklidové služby",
-      "moving": "Profesionální stěhovací služby"
+    "servicesSection": {
+      "subtitle": "Pět odlišných služeb, jeden nepřekonatelný tým. Řešíme vše s precizností a péčí, která nás odlišuje.",
+      "title": "NAŠE SPECIALITY"
     }
   },
   "navigation": {
@@ -877,185 +1005,62 @@
     "home": "Domů",
     "services": "Služby"
   },
-  "reservation": {
-    "title": "Online rezervace",
-    "subtitle": "Rezervujte naše služby rychle a snadno online",
-    "formTitle": "Rezervační formulář",
-    "formDescription": "Vyplňte formulář a my vás budeme kontaktovat co nejdříve",
-    "personalInfo": "Osobní údaje",
-    "serviceDetails": "Detaily služby",
-    "additionalInfo": "Dodatečné informace",
-    "firstName": "Jméno *",
-    "lastName": "Příjmení",
-    "email": "Email",
-    "phone": "Telefon *",
-    "service": "Služba",
-    "address": "Adresa",
-    "message": "Zpráva",
-    "preferredDate": "Preferované datum",
-    "preferredTime": "Preferovaný čas",
-    "apartmentSize": "Velikost bytu/kanceláře (m²)",
-    "submitReservation": "Odeslat rezervaci",
-    "services": {
-      "moving": "Stěhování",
-      "cleaning": "Úklid",
-      "furnitureCleaning": "Čištění nábytku",
-      "handyman": "Hodinový manžel",
-      "packages": "Balíčky služeb",
-      "other": "Jiné"
-    },
-    "timeSlots": {
-      "morning": "Ráno (8:00-12:00)",
-      "afternoon": "Odpoledne (12:00-16:00)",
-      "evening": "Večer (16:00-20:00)",
-      "night": "Noční čas (20:00-8:00)"
-    },
-    "benefits": {
-      "title": "Proč rezervovat online?",
-      "subtitle": "Zažijte pohodlí a efektivitu našeho online rezervačního systému",
-      "fast": {
-        "title": "RYCHLÉ",
-        "description": "Rychlý a jednoduchý rezervační proces, který trvá jen několik minut"
-      },
-      "simple": {
-        "title": "JEDNODUCHÉ",
-        "description": "Přehledný formulář s jasnými instrukcemi a okamžitým potvrzením"
-      },
-      "quality": {
-        "title": "KVALITA",
-        "description": "Stejná prémiová kvalita služeb, nyní s vylepšeným pohodlím"
-      }
-    },
-    "success": {
-      "title": "Rezervace úspěšně odeslána!",
-      "description": "Děkujeme za vaši rezervaci. Kontaktujeme vás co nejdříve pro potvrzení detailů."
-    },
-    "error": {
-      "title": "Odeslání rezervace selhalo",
-      "description": "Při odesílání rezervace došlo k chybě. Zkuste to znovu nebo nás kontaktujte přímo."
-    },
-    "servicePlaceholder": "Vyberte službu",
-    "addressPlaceholder": "Zadejte adresu, kde se bude služba provádět...",
-    "messagePlaceholder": "Popište vaše požadavky, speciální požadavky, poznámky...",
-    "apartmentSizePlaceholder": "např. 65",
-    "submitting": "Odesílání...",
-    "cleaningPackage": "Úklidový balíček",
-    "cleaningPackagePlaceholder": "Vyberte úklidový balíček",
-    "cleaningPackages": {
-      "maintenance": "Základní úklid",
-      "general": "Běžný úklid",
-      "postRenovation": "Generální úklid"
-    }
-  },
-  "services": {
-    "cleaning": "Úklid",
-    "cleaningDescription": "Profesionální úklidové služby v různých velikostech",
-    "cleaningLongDescription": "Naše úklidové služby jsou rozděleny do tří velikostí podle vašich potřeb",
-    "cleaningSizes": {
-      "s": {
-        "title": "S size – Základní úklid",
-        "subtitle": "Pro rychlé osvěžení domácnosti",
-        "description": "Tento typ úklidu je určen pro ty, kteří potřebují rychle uklidit před návštěvou nebo si chtějí odpočinout po náročném dni, aniž by řešili nepořádek."
-      },
-      "m": {
-        "title": "M size – Běžný úklid",
-        "subtitle": "Pro pravidelné udržení čistoty a pořádku",
-        "description": "Tato varianta úklidu je ideální pro ty, kteří již mají za sebou generální úklid a chtějí udržovat domácnost čistou bez zbytečného úsilí."
-      },
-      "xl": {
-        "title": "XL size – Generální úklid",
-        "subtitle": "Důkladný úklid celého bytu od podlahy až po strop",
-        "description": "Vhodné pro ty, kteří chtějí mít dokonale uklizený každý kout, včetně těžko přístupných a běžně skrytých míst."
-      }
-    },
-    "cleaningFeatures": [
-      "Generální úklid",
-      "Úklid po stěhování",
-      "Kancelářské prostory",
-      "Eco-friendly prostředky"
-    ],
-    "ctaSubtitle": "Kontaktujte nás a získejte bezplatnou konzultaci a cenovou nabídku",
-    "ctaTitle": "Začněme spolupracovat",
-    "moving": "Stěhování",
-    "movingDescription": "Profesionální stěhování bytů, domů a kanceláří s kompletním servisem",
-    "movingFeatures": [
-      "Demontáž nábytku",
-      "Bezpečné stěhování",
-      "Montáž na novém místě",
-      "Pojištění zásilky"
-    ],
-
-    "furnitureCleaning": "Chemické čistění",
-    "furnitureCleaningDescription": "Profesionální chemické čistění nábytku a koberců",
-    "handyman": "Hodinový manžel",
-    "handymanDescription": "Drobné opravy a údržba domácnosti",
-    "packages": "Výhodné balíčky služeb",
-    "packagesDescription": "Kombinované služby za výhodnější ceny",
-    "quality": "Kvalita",
-    "qualityDescription": "Nejvyšší kvalita služeb a péče o vaše věci",
-    "safety": "Bezpečnost",
-    "safetyDescription": "Vaše věci jsou v bezpečí s naším pojištěním",
-    "speed": "Rychlost",
-    "speedDescription": "Efektivní a rychlé provedení všech prací",
-
-    "subtitle": "Kompletní služby přepravy a úklidu pro váš domov a kancelář",
-    "title": "Naše služby",
-    "whyChooseUs": "Proč si vybrat nás?",
-    "whyChooseUsSubtitle": "Spolehlivé služby s mnohaletými zkušenostmi a nejvyšší kvalitou"
-  },
-  "servicesGrid": {
-    "learnMore": "Zjistit více",
-    "priceFrom": "Od"
-  },
-  "servicesPage": {
-    "approximatePrices": "Ceny orientační",
-    "areaRanges": {
-      "over70": "nad 70 m²",
-      "upTo35": "do 35 m²",
-      "upTo50": "do 50 m²",
-      "upTo70": "do 70 m²"
-    },
-    "price": "Cena",
-    "pricing": "Cenové nabídky",
-    "service": "Služba",
-    "unit": "Jednotka",
-    "whatIncluded": "Co je zahrnuto v ceně"
-  },
   "privacyPolicy": {
-    "title": "Ochrana osobních údajů",
     "lastUpdated": "Naposledy aktualizováno",
+    "relatedPolicies": {
+      "cookiePolicy": "Zásady cookies",
+      "termsOfService": "Podmínky použití",
+      "title": "Související politiky"
+    },
     "sections": {
-      "introduction": {
-        "title": "1. Úvod",
-        "content": "MoveCleanMafia (\"my,\" \"naše,\" nebo \"nás\") se zavazuje chránit vaše soukromí. Tato Politika ochrany osobních údajů vysvětluje, jak shromažďujeme, používáme, zveřejňujeme a chráníme vaše informace při návštěvě našich webových stránek nebo používání našich služeb."
+      "changesToPolicy": {
+        "content": "Tuto Politiku ochrany osobních údajů můžeme čas od času aktualizovat, abychom odráželi změny v našich postupech nebo z jiných provozních, právních nebo regulačních důvodů. O jakýchkoli významných změnách vás budeme informovat zveřejněním nové politiky na našich webových stránkách a aktualizací data \"Naposledy aktualizováno\".",
+        "title": "11. Změny této politiky"
       },
-      "informationWeCollect": {
-        "title": "2. Informace, které shromažďujeme",
-        "personalInformation": {
-          "title": "Osobní údaje",
-          "content": "Můžeme shromažďovat následující osobní údaje:",
-          "items": [
-            "Jméno a kontaktní informace (email, telefonní číslo)",
-            "Adresa a informace o poloze",
-            "Preference služeb a požadavky",
-            "Platební informace (zpracovávány bezpečně přes poskytovatele třetích stran)",
-            "Historie komunikace a korespondence"
-          ]
+      "childrensPrivacy": {
+        "content": "Naše služby nejsou určeny dětem mladším 16 let. Neúmyslně neshromažďujeme osobní údaje od dětí mladších 16 let. Pokud se domníváte, že jsme shromáždili informace od dítěte mladšího 16 let, okamžitě nás kontaktujte.",
+        "title": "10. Ochrana soukromí dětí"
+      },
+      "complaints": {
+        "content": "Pokud se domníváte, že jsme nepostupovali s vašimi osobními údaji v souladu s touto Politikou ochrany osobních údajů, máte právo podat stížnost u příslušného orgánu pro ochranu osobních údajů ve vaší jurisdikci.",
+        "title": "13. Stížnosti"
+      },
+      "contactInformation": {
+        "content": "Pokud máte jakékoli otázky týkající se této Politiky ochrany osobních údajů nebo našich postupů při práci s daty, kontaktujte nás:",
+        "details": {
+          "address": "Adresa: [Vaše obchodní adresa]",
+          "dpo": "Pověřenec pro ochranu osobních údajů: [Kontaktní informace, pokud je to možné]",
+          "email": "Email: info@movecleanmafia.cz",
+          "phone": "Telefon: +420 774 635 981"
         },
-        "automaticallyCollected": {
-          "title": "Automaticky shromažďované informace",
-          "content": "Při návštěvě našich webových stránek automaticky shromažďujeme:",
-          "items": [
-            "IP adresu a informace o zařízení",
-            "Typ a verzi prohlížeče",
-            "Navštívené stránky a čas strávený na nich",
-            "Odkazující webovou stránku",
-            "Cookies a podobné technologie"
-          ]
-        }
+        "title": "12. Kontaktní informace"
+      },
+      "cookies": {
+        "content": "Používáme cookies a podobné technologie ke zlepšení vašeho zážitku na našich webových stránkách. Pro podrobné informace o našem používání cookies viz naše",
+        "title": "8. Cookies a sledovací technologie"
+      },
+      "dataRetention": {
+        "content": "Vaše osobní údaje uchováváme pouze tak dlouho, jak je nutné k plnění účelů uvedených v této Politice ochrany osobních údajů, pokud není vyžadována nebo povolena delší doba uchovávání zákonem. Doba uchovávání závisí na:",
+        "items": [
+          "Druhu shromážděných informací",
+          "Účelu, pro který byly shromážděny",
+          "Právních a regulačních požadavcích",
+          "Vašem souhlasu a preferencích"
+        ],
+        "title": "6. Uchovávání dat"
+      },
+      "dataSecurity": {
+        "content": "Implementujeme vhodná technická a organizační opatření k ochraně vašich osobních údajů před neoprávněným přístupem, změnou, zveřejněním nebo zničením. Tato opatření zahrnují:",
+        "items": [
+          "Šifrování dat při přenosu a v klidu",
+          "Pravidelné bezpečnostní hodnocení",
+          "Kontrola přístupu a autentizace",
+          "Bezpečné postupy ukládání dat",
+          "Školení zaměstnanců o ochraně dat"
+        ],
+        "title": "5. Zabezpečení dat"
       },
       "howWeUse": {
-        "title": "3. Jak používáme vaše informace",
         "content": "Shromážděné informace používáme pro následující účely:",
         "items": [
           "Poskytování a správa našich služeb",
@@ -1064,385 +1069,345 @@
           "Zlepšování našich webových stránek a služeb",
           "Dodržování právních povinností",
           "Odesílání marketingových sdělení (s vaším souhlasem)"
-        ]
+        ],
+        "title": "3. Jak používáme vaše informace"
       },
       "informationSharing": {
-        "title": "4. Sdílení informací",
         "content": "Neprodáváme, nevyměňujeme ani jinak nepředáváme vaše osobní údaje třetím stranám, kromě následujících okolností:",
         "items": [
           {
-            "title": "Poskytovatelé služeb:",
-            "content": "Můžeme sdílet informace s důvěryhodnými poskytovateli služeb třetích stran, kteří nám pomáhají při provozu našich webových stránek a poskytování služeb"
+            "content": "Můžeme sdílet informace s důvěryhodnými poskytovateli služeb třetích stran, kteří nám pomáhají při provozu našich webových stránek a poskytování služeb",
+            "title": "Poskytovatelé služeb:"
           },
           {
-            "title": "Právní požadavky:",
-            "content": "Můžeme zveřejnit informace, když to vyžaduje zákon nebo pro ochranu našich práv a bezpečnosti"
+            "content": "Můžeme zveřejnit informace, když to vyžaduje zákon nebo pro ochranu našich práv a bezpečnosti",
+            "title": "Právní požadavky:"
           },
           {
-            "title": "Obchodní převody:",
-            "content": "V případě fúze nebo převzetí mohou být vaše informace převedeny"
+            "content": "V případě fúze nebo převzetí mohou být vaše informace převedeny",
+            "title": "Obchodní převody:"
           },
           {
-            "title": "Souhlas:",
-            "content": "Můžeme sdílet informace s vaším výslovným souhlasem"
+            "content": "Můžeme sdílet informace s vaším výslovným souhlasem",
+            "title": "Souhlas:"
           }
-        ]
+        ],
+        "title": "4. Sdílení informací"
       },
-      "dataSecurity": {
-        "title": "5. Zabezpečení dat",
-        "content": "Implementujeme vhodná technická a organizační opatření k ochraně vašich osobních údajů před neoprávněným přístupem, změnou, zveřejněním nebo zničením. Tato opatření zahrnují:",
-        "items": [
-          "Šifrování dat při přenosu a v klidu",
-          "Pravidelné bezpečnostní hodnocení",
-          "Kontrola přístupu a autentizace",
-          "Bezpečné postupy ukládání dat",
-          "Školení zaměstnanců o ochraně dat"
-        ]
+      "informationWeCollect": {
+        "automaticallyCollected": {
+          "content": "Při návštěvě našich webových stránek automaticky shromažďujeme:",
+          "items": [
+            "IP adresu a informace o zařízení",
+            "Typ a verzi prohlížeče",
+            "Navštívené stránky a čas strávený na nich",
+            "Odkazující webovou stránku",
+            "Cookies a podobné technologie"
+          ],
+          "title": "Automaticky shromažďované informace"
+        },
+        "personalInformation": {
+          "content": "Můžeme shromažďovat následující osobní údaje:",
+          "items": [
+            "Jméno a kontaktní informace (email, telefonní číslo)",
+            "Adresa a informace o poloze",
+            "Preference služeb a požadavky",
+            "Platební informace (zpracovávány bezpečně přes poskytovatele třetích stran)",
+            "Historie komunikace a korespondence"
+          ],
+          "title": "Osobní údaje"
+        },
+        "title": "2. Informace, které shromažďujeme"
       },
-      "dataRetention": {
-        "title": "6. Uchovávání dat",
-        "content": "Vaše osobní údaje uchováváme pouze tak dlouho, jak je nutné k plnění účelů uvedených v této Politice ochrany osobních údajů, pokud není vyžadována nebo povolena delší doba uchovávání zákonem. Doba uchovávání závisí na:",
-        "items": [
-          "Druhu shromážděných informací",
-          "Účelu, pro který byly shromážděny",
-          "Právních a regulačních požadavcích",
-          "Vašem souhlasu a preferencích"
-        ]
+      "internationalTransfers": {
+        "content": "Vaše osobní údaje mohou být převedeny a zpracovány v zemích jiných než vaše vlastní. Zajišťujeme, že takové převody splňují platné zákony o ochraně dat a implementujeme vhodné záruky k ochraně vašich informací.",
+        "title": "9. Mezinárodní převody dat"
+      },
+      "introduction": {
+        "content": "MoveCleanMafia (\"my,\" \"naše,\" nebo \"nás\") se zavazuje chránit vaše soukromí. Tato Politika ochrany osobních údajů vysvětluje, jak shromažďujeme, používáme, zveřejňujeme a chráníme vaše informace při návštěvě našich webových stránek nebo používání našich služeb.",
+        "title": "1. Úvod"
       },
       "yourRights": {
-        "title": "7. Vaše práva",
         "content": "V závislosti na vaší lokalitě můžete mít následující práva týkající se vašich osobních údajů:",
         "items": [
           {
-            "title": "Přístup:",
-            "content": "Požádat o kopii vašich osobních údajů"
+            "content": "Požádat o kopii vašich osobních údajů",
+            "title": "Přístup:"
           },
           {
-            "title": "Oprava:",
-            "content": "Požádat o opravu nepřesných informací"
+            "content": "Požádat o opravu nepřesných informací",
+            "title": "Oprava:"
           },
           {
-            "title": "Smazání:",
-            "content": "Požádat o smazání vašich osobních údajů"
+            "content": "Požádat o smazání vašich osobních údajů",
+            "title": "Smazání:"
           },
           {
-            "title": "Přenositelnost:",
-            "content": "Požádat o převod vašich dat do jiné služby"
+            "content": "Požádat o převod vašich dat do jiné služby",
+            "title": "Přenositelnost:"
           },
           {
-            "title": "Námitka:",
-            "content": "Namítat proti zpracování vašich osobních údajů"
+            "content": "Namítat proti zpracování vašich osobních údajů",
+            "title": "Námitka:"
           },
           {
-            "title": "Odvolání:",
-            "content": "Odvolat souhlas se zpracováním dat"
+            "content": "Odvolat souhlas se zpracováním dat",
+            "title": "Odvolání:"
           }
-        ]
-      },
-      "cookies": {
-        "title": "8. Cookies a sledovací technologie",
-        "content": "Používáme cookies a podobné technologie ke zlepšení vašeho zážitku na našich webových stránkách. Pro podrobné informace o našem používání cookies viz naše"
-      },
-      "internationalTransfers": {
-        "title": "9. Mezinárodní převody dat",
-        "content": "Vaše osobní údaje mohou být převedeny a zpracovány v zemích jiných než vaše vlastní. Zajišťujeme, že takové převody splňují platné zákony o ochraně dat a implementujeme vhodné záruky k ochraně vašich informací."
-      },
-      "childrensPrivacy": {
-        "title": "10. Ochrana soukromí dětí",
-        "content": "Naše služby nejsou určeny dětem mladším 16 let. Neúmyslně neshromažďujeme osobní údaje od dětí mladších 16 let. Pokud se domníváte, že jsme shromáždili informace od dítěte mladšího 16 let, okamžitě nás kontaktujte."
-      },
-      "changesToPolicy": {
-        "title": "11. Změny této politiky",
-        "content": "Tuto Politiku ochrany osobních údajů můžeme čas od času aktualizovat, abychom odráželi změny v našich postupech nebo z jiných provozních, právních nebo regulačních důvodů. O jakýchkoli významných změnách vás budeme informovat zveřejněním nové politiky na našich webových stránkách a aktualizací data \"Naposledy aktualizováno\"."
-      },
-      "contactInformation": {
-        "title": "12. Kontaktní informace",
-        "content": "Pokud máte jakékoli otázky týkající se této Politiky ochrany osobních údajů nebo našich postupů při práci s daty, kontaktujte nás:",
-        "details": {
-          "email": "Email: info@movecleanmafia.cz",
-          "phone": "Telefon: +420 725 555 095",
-          "address": "Adresa: [Vaše obchodní adresa]",
-          "dpo": "Pověřenec pro ochranu osobních údajů: [Kontaktní informace, pokud je to možné]"
-        }
-      },
-      "complaints": {
-        "title": "13. Stížnosti",
-        "content": "Pokud se domníváte, že jsme nepostupovali s vašimi osobními údaji v souladu s touto Politikou ochrany osobních údajů, máte právo podat stížnost u příslušného orgánu pro ochranu osobních údajů ve vaší jurisdikci."
+        ],
+        "title": "7. Vaše práva"
       }
     },
-    "relatedPolicies": {
-      "title": "Související politiky",
-      "termsOfService": "Podmínky použití",
-      "cookiePolicy": "Zásady cookies"
-    }
+    "title": "Ochrana osobních údajů"
+  },
+  "reservation": {
+    "additionalInfo": "Dodatečné informace",
+    "address": "Adresa",
+    "addressPlaceholder": "Zadejte adresu, kde se bude služba provádět...",
+    "apartmentSize": "Velikost bytu/kanceláře (m²)",
+    "apartmentSizePlaceholder": "např. 65",
+    "benefits": {
+      "fast": {
+        "description": "Rychlý a jednoduchý rezervační proces, který trvá jen několik minut",
+        "title": "RYCHLÉ"
+      },
+      "quality": {
+        "description": "Stejná prémiová kvalita služeb, nyní s vylepšeným pohodlím",
+        "title": "KVALITA"
+      },
+      "simple": {
+        "description": "Přehledný formulář s jasnými instrukcemi a okamžitým potvrzením",
+        "title": "JEDNODUCHÉ"
+      },
+      "subtitle": "Zažijte pohodlí a efektivitu našeho online rezervačního systému",
+      "title": "Proč rezervovat online?"
+    },
+    "cleaningPackage": "Úklidový balíček",
+    "cleaningPackagePlaceholder": "Vyberte úklidový balíček",
+    "cleaningPackages": {
+      "general": "Běžný úklid",
+      "maintenance": "Základní úklid",
+      "postRenovation": "Generální úklid"
+    },
+    "clinics": {
+      "branch": "",
+      "main": ""
+    },
+    "email": "Email",
+    "error": {
+      "description": "Při odesílání rezervace došlo k chybě. Zkuste to znovu nebo nás kontaktujte přímo.",
+      "title": "Odeslání rezervace selhalo"
+    },
+    "firstName": "Jméno *",
+    "formDescription": "Vyplňte formulář a my vás budeme kontaktovat co nejdříve",
+    "formTitle": "Rezervační formulář",
+    "lastName": "Příjmení",
+    "message": "Zpráva",
+    "messagePlaceholder": "Popište vaše požadavky, speciální požadavky, poznámky...",
+    "personalInfo": "Osobní údaje",
+    "phone": "Telefon *",
+    "preferredDate": "Preferované datum",
+    "preferredTime": "Preferovaný čas",
+    "selectTime": "",
+    "service": "Služba",
+    "serviceDetails": "Detaily služby",
+    "servicePlaceholder": "Vyberte službu",
+    "services": {
+      "allergyTesting": "",
+      "bronchoscopy": "",
+      "cleaning": "Úklid",
+      "consultation": "",
+      "examination": "",
+      "followUp": "",
+      "furnitureCleaning": "Čištění nábytku",
+      "handyman": "Hodinový manžel",
+      "moving": "Stěhování",
+      "other": "Jiné",
+      "packages": "Balíčky služeb",
+      "spirometry": "",
+      "urgent": ""
+    },
+    "submitReservation": "Odeslat rezervaci",
+    "submitting": "Odesílání...",
+    "subtitle": "Rezervujte naše služby rychle a snadno online",
+    "success": {
+      "description": "Děkujeme za vaši rezervaci. Kontaktujeme vás co nejdříve pro potvrzení detailů.",
+      "title": "Rezervace úspěšně odeslána!"
+    },
+    "timeOptions": {
+      "afternoon": "",
+      "evening": "",
+      "morning": "",
+      "noPreference": ""
+    },
+    "timeSlots": {
+      "afternoon": "Odpoledne (12:00-16:00)",
+      "evening": "Večer (16:00-20:00)",
+      "morning": "Ráno (8:00-12:00)",
+      "night": "Noční čas (20:00-8:00)"
+    },
+    "title": "Online rezervace"
+  },
+  "serviceDetail": {
+    "backToServices": "Zpět na služby"
+  },
+  "services": {
+    "cleaning": "Úklid",
+    "cleaningDescription": "Profesionální úklidové služby v různých velikostech",
+    "cleaningFeatures": [
+      "Generální úklid",
+      "Úklid po stěhování",
+      "Kancelářské prostory",
+      "Eco-friendly prostředky"
+    ],
+    "cleaningLongDescription": "Naše úklidové služby jsou rozděleny do tří velikostí podle vašich potřeb",
+    "cleaningSizes": {
+      "m": {
+        "description": "Tato varianta úklidu je ideální pro ty, kteří již mají za sebou generální úklid a chtějí udržovat domácnost čistou bez zbytečného úsilí.",
+        "subtitle": "Pro pravidelné udržení čistoty a pořádku",
+        "title": "M size – Běžný úklid"
+      },
+      "s": {
+        "description": "Tento typ úklidu je určen pro ty, kteří potřebují rychle uklidit před návštěvou nebo si chtějí odpočinout po náročném dni, aniž by řešili nepořádek.",
+        "subtitle": "Pro rychlé osvěžení domácnosti",
+        "title": "S size – Základní úklid"
+      },
+      "xl": {
+        "description": "Vhodné pro ty, kteří chtějí mít dokonale uklizený každý kout, včetně těžko přístupných a běžně skrytých míst.",
+        "subtitle": "Důkladný úklid celého bytu od podlahy až po strop",
+        "title": "XL size – Generální úklid"
+      }
+    },
+    "ctaTitle": "Začněme spolupracovat",
+    "furnitureCleaning": "Chemické čistění",
+    "furnitureCleaningDescription": "Profesionální chemické čistění nábytku a koberců",
+    "handyman": "Hodinový manžel",
+    "handymanDescription": "Drobné opravy a údržba domácnosti",
+    "moving": "Stěhování",
+    "movingDescription": "Profesionální stěhování bytů, domů a kanceláří s kompletním servisem",
+    "movingFeatures": [
+      "Demontáž nábytku",
+      "Bezpečné stěhování",
+      "Montáž na novém místě",
+      "Pojištění zásilky"
+    ],
+    "packages": "Výhodné balíčky služeb",
+    "packagesDescription": "Kombinované služby za výhodnější ceny",
+    "packing": "",
+    "quality": "Kvalita",
+    "qualityDescription": "Nejvyšší kvalita služeb a péče o vaše věci",
+    "safety": "Bezpečnost",
+    "safetyDescription": "Vaše věci jsou v bezpečí s naším pojištěním",
+    "speed": "Rychlost",
+    "speedDescription": "Efektivní a rychlé provedení všech prací",
+    "subtitle": "Kompletní služby přepravy a úklidu pro váš domov a kancelář",
+    "title": "Naše služby",
+    "whyChooseUs": "Proč si vybrat nás?",
+    "whyChooseUsSubtitle": "Spolehlivé služby s mnohaletými zkušenostmi a nejvyšší kvalitou"
+  },
+  "servicesGrid": {
+    "learnMore": "Zjistit více"
+  },
+  "servicesPage": {
+    "price": "Cena",
+    "service": "Služba",
+    "whatIncluded": "Co je zahrnuto v ceně"
   },
   "termsOfService": {
-    "title": "Podmínky použití",
     "lastUpdated": "Naposledy aktualizováno",
+    "legalNote": "Poznámka: Toto je šablona Podmínek použití. Doporučujeme konzultaci s právním odborníkem, abyste zajistili soulad s místními zákony a předpisy specifickými pro vaše podnikání a jurisdikci.",
     "sections": {
       "acceptance": {
-        "title": "1. Přijetí podmínek",
-        "content": "Přístupem a používáním webových stránek a služeb MoveCleanMafia přijímáte a souhlasíte s tím, že budete vázáni podmínkami a ustanoveními této dohody. Pokud nesouhlasíte s dodržováním výše uvedeného, prosím nepoužívejte tuto službu."
+        "content": "Přístupem a používáním webových stránek a služeb MoveCleanMafia přijímáte a souhlasíte s tím, že budete vázáni podmínkami a ustanoveními této dohody. Pokud nesouhlasíte s dodržováním výše uvedeného, prosím nepoužívejte tuto službu.",
+        "title": "1. Přijetí podmínek"
+      },
+      "bookingAndCancellation": {
+        "booking": {
+          "content": "Služby musí být rezervovány předem přes naše webové stránky nebo telefonicky. Potvrzení bude poskytnuto e-mailem nebo SMS.",
+          "title": "Rezervace:"
+        },
+        "cancellation": {
+          "content": "Zrušení musí být provedeno nejméně 24 hodin před plánovanou službou. Pozdní zrušení může být zpoplatněno.",
+          "title": "Zrušení:"
+        },
+        "rescheduling": {
+          "content": "Změny termínů lze provést až 24 hodin před plánovaným časem, s ohledem na dostupnost.",
+          "title": "Přeplánování:"
+        },
+        "title": "4. Rezervace a zrušení služby"
+      },
+      "changesToTerms": {
+        "content": "Vyhrazujeme si právo kdykoli upravit tyto podmínky. Změny budou účinné okamžitě po zveřejnění na našich webových stránkách. Pokračující používání našich služeb představuje přijetí upravených podmínek.",
+        "title": "10. Změny podmínek"
+      },
+      "contactInformation": {
+        "address": "Adresa: [Vaše obchodní adresa]",
+        "company": "MoveCleanMafia",
+        "email": "Email: info@movecleanmafia.cz",
+        "phone": "Telefon: +420 774 635 981",
+        "title": "11. Kontaktní informace"
       },
       "description": {
-        "title": "2. Popis služby",
-        "content": "MoveCleanMafia poskytuje služby úklidu, stěhování a balení. Vyhrazujeme si právo upravit, pozastavit nebo ukončit jakoukoli část naší služby kdykoli."
+        "content": "MoveCleanMafia poskytuje služby úklidu, stěhování a balení. Vyhrazujeme si právo upravit, pozastavit nebo ukončit jakoukoli část naší služby kdykoli.",
+        "title": "2. Popis služby"
+      },
+      "disputeResolution": {
+        "content": "Jakékoli spory vyplývající z těchto podmínek nebo našich služeb budou řešeny vyjednáváním, mediací nebo právními řízeními v České republice.",
+        "title": "9. Řešení sporů"
+      },
+      "governingLaw": {
+        "content": "Tyto podmínky se řídí zákony České republiky. Jakákoli právní řízení budou vedena v českých soudech.",
+        "title": "12. Rozhodné právo"
+      },
+      "intellectualProperty": {
+        "content": "Veškerý obsah na těchto webových stránkách, včetně textu, grafiky, log a softwaru, je majetkem MoveCleanMafia a je chráněn autorskými právy.",
+        "title": "8. Duševní vlastnictví"
+      },
+      "liabilityAndInsurance": {
+        "customerResponsibility": {
+          "content": "Zákazníci jsou odpovědní za zabezpečení cenných předmětů a zajištění bezpečného přístupu k nemovitosti.",
+          "title": "Odpovědnost zákazníka:"
+        },
+        "limitation": {
+          "content": "Naše odpovědnost je omezena na náklady poskytnuté služby nebo skutečnou hodnotu poškozených předmětů, podle toho, co je nižší.",
+          "title": "Omezení:"
+        },
+        "ourLiability": {
+          "content": "MoveCleanMafia je pojištěna pro obecnou odpovědnost. Jsme odpovědní za škody způsobené naší nedbalostí při poskytování služeb.",
+          "title": "Naše odpovědnost:"
+        },
+        "title": "6. Odpovědnost a pojištění"
+      },
+      "pricingAndPayment": {
+        "estimates": {
+          "content": "Odhad služeb je založen na poskytnutých informacích a může být upraven podle skutečných podmínek.",
+          "title": "Odhad:"
+        },
+        "payment": {
+          "content": "Platba je splatná po dokončení služeb, pokud není dohodnuto jinak. Přijímáme hotovost, bankovní převod a platby kartou.",
+          "title": "Platba:"
+        },
+        "pricing": {
+          "content": "Všechny ceny jsou uváděny v českých korunách (CZK) a zahrnují DPH, pokud není uvedeno jinak.",
+          "title": "Ceny:"
+        },
+        "title": "5. Ceny a platby"
+      },
+      "privacyAndDataProtection": {
+        "content": "Zavazujeme se chránit vaše soukromí. Naše postupy při shromažďování a zpracování dat jsou popsány v naší Politice ochrany osobních údajů, která je součástí těchto podmínek.",
+        "title": "7. Ochrana soukromí a dat"
       },
       "userResponsibilities": {
-        "title": "3. Povinnosti uživatele",
         "items": [
           "Poskytovat přesné a úplné informace při rezervaci služeb",
           "Zajistit přístup k nemovitosti pro plánované služby",
           "Zabezpečit cenné předměty před poskytnutím služby",
           "Oznámit nám jakékoli zvláštní požadavky nebo obavy",
           "Platit za služby podle dohody"
-        ]
-      },
-      "bookingAndCancellation": {
-        "title": "4. Rezervace a zrušení služby",
-        "booking": {
-          "title": "Rezervace:",
-          "content": "Služby musí být rezervovány předem přes naše webové stránky nebo telefonicky. Potvrzení bude poskytnuto e-mailem nebo SMS."
-        },
-        "cancellation": {
-          "title": "Zrušení:",
-          "content": "Zrušení musí být provedeno nejméně 24 hodin před plánovanou službou. Pozdní zrušení může být zpoplatněno."
-        },
-        "rescheduling": {
-          "title": "Přeplánování:",
-          "content": "Změny termínů lze provést až 24 hodin před plánovaným časem, s ohledem na dostupnost."
-        }
-      },
-      "pricingAndPayment": {
-        "title": "5. Ceny a platby",
-        "pricing": {
-          "title": "Ceny:",
-          "content": "Všechny ceny jsou uváděny v českých korunách (CZK) a zahrnují DPH, pokud není uvedeno jinak."
-        },
-        "payment": {
-          "title": "Platba:",
-          "content": "Platba je splatná po dokončení služeb, pokud není dohodnuto jinak. Přijímáme hotovost, bankovní převod a platby kartou."
-        },
-        "estimates": {
-          "title": "Odhad:",
-          "content": "Odhad služeb je založen na poskytnutých informacích a může být upraven podle skutečných podmínek."
-        }
-      },
-      "liabilityAndInsurance": {
-        "title": "6. Odpovědnost a pojištění",
-        "ourLiability": {
-          "title": "Naše odpovědnost:",
-          "content": "MoveCleanMafia je pojištěna pro obecnou odpovědnost. Jsme odpovědní za škody způsobené naší nedbalostí při poskytování služeb."
-        },
-        "customerResponsibility": {
-          "title": "Odpovědnost zákazníka:",
-          "content": "Zákazníci jsou odpovědní za zabezpečení cenných předmětů a zajištění bezpečného přístupu k nemovitosti."
-        },
-        "limitation": {
-          "title": "Omezení:",
-          "content": "Naše odpovědnost je omezena na náklady poskytnuté služby nebo skutečnou hodnotu poškozených předmětů, podle toho, co je nižší."
-        }
-      },
-      "privacyAndDataProtection": {
-        "title": "7. Ochrana soukromí a dat",
-        "content": "Zavazujeme se chránit vaše soukromí. Naše postupy při shromažďování a zpracování dat jsou popsány v naší Politice ochrany osobních údajů, která je součástí těchto podmínek."
-      },
-      "intellectualProperty": {
-        "title": "8. Duševní vlastnictví",
-        "content": "Veškerý obsah na těchto webových stránkách, včetně textu, grafiky, log a softwaru, je majetkem MoveCleanMafia a je chráněn autorskými právy."
-      },
-      "disputeResolution": {
-        "title": "9. Řešení sporů",
-        "content": "Jakékoli spory vyplývající z těchto podmínek nebo našich služeb budou řešeny vyjednáváním, mediací nebo právními řízeními v České republice."
-      },
-      "changesToTerms": {
-        "title": "10. Změny podmínek",
-        "content": "Vyhrazujeme si právo kdykoli upravit tyto podmínky. Změny budou účinné okamžitě po zveřejnění na našich webových stránkách. Pokračující používání našich služeb představuje přijetí upravených podmínek."
-      },
-      "contactInformation": {
-        "title": "11. Kontaktní informace",
-        "company": "MoveCleanMafia",
-        "email": "Email: info@movecleanmafia.cz",
-        "phone": "Telefon: +420 725 555 095",
-        "address": "Adresa: [Vaše obchodní adresa]"
-      },
-      "governingLaw": {
-        "title": "12. Rozhodné právo",
-        "content": "Tyto podmínky se řídí zákony České republiky. Jakákoli právní řízení budou vedena v českých soudech."
+        ],
+        "title": "3. Povinnosti uživatele"
       }
     },
-    "legalNote": "Poznámka: Toto je šablona Podmínek použití. Doporučujeme konzultaci s právním odborníkem, abyste zajistili soulad s místními zákony a předpisy specifickými pro vaše podnikání a jurisdikci."
-  },
-  "cookiePolicy": {
-    "title": "Zásady cookies",
-    "lastUpdated": "Naposledy aktualizováno",
-    "sections": {
-      "whatAreCookies": {
-        "title": "Co jsou cookies?",
-        "content": "Cookies jsou malé textové soubory, které jsou umístěny na vašem zařízení při návštěvě našich webových stránek. Pomáhají nám poskytovat vám lepší zážitek zapamatováním si vaše preference a analýzou toho, jak používáte náš web."
-      },
-      "howWeUseCookies": {
-        "title": "Jak používáme cookies",
-        "content": "Používáme cookies pro několik účelů:",
-        "items": [
-          {
-            "title": "Nezbytné cookies:",
-            "content": "Tyto jsou nutné pro správné fungování webových stránek"
-          },
-          {
-            "title": "Analytické cookies:",
-            "content": "Tyto nám pomáhají pochopit, jak návštěvníci používají naše webové stránky"
-          },
-          {
-            "title": "Preferenční cookies:",
-            "content": "Tyto si pamatují vaše volby a nastavení"
-          },
-          {
-            "title": "Marketingové cookies:",
-            "content": "Tyto nám pomáhají zobrazovat relevantní reklamy"
-          }
-        ]
-      },
-      "typesOfCookies": {
-        "title": "Typy cookies, které používáme",
-        "necessary": {
-          "title": "Nezbytné cookies",
-          "content": "Tyto cookies jsou nezbytné pro správné fungování webových stránek. Umožňují základní funkce jako navigace po stránkách a přístup k zabezpečeným oblastem webových stránek.",
-          "items": [
-            "Autentizace a zabezpečení",
-            "Správa relací",
-            "Odesílání formulářů",
-            "Jazykové preference"
-          ]
-        },
-        "analytics": {
-          "title": "Analytické cookies",
-          "content": "Tyto cookies nám pomáhají pochopit, jak návštěvníci interagují s našimi webovými stránkami shromažďováním a reportováním informací anonymně.",
-          "items": [
-            "Zobrazení stránek a navigační vzory",
-            "Čas strávený na stránkách",
-            "Sledování chyb",
-            "Monitorování výkonu"
-          ]
-        },
-        "marketing": {
-          "title": "Marketingové cookies",
-          "content": "Tyto cookies se používají ke sledování návštěvníků napříč webovými stránkami za účelem zobrazování relevantních reklam.",
-          "items": [
-            "Cílení a retargeting reklam",
-            "Integrace sociálních médií",
-            "Sledování konverzí"
-          ]
-        },
-        "preferences": {
-          "title": "Preferenční cookies",
-          "content": "Tyto cookies umožňují webovým stránkám zapamatovat si volby, které děláte, a poskytovat vylepšené, osobnější funkce.",
-          "items": [
-            "Jazykové a regionální nastavení",
-            "Preference témat",
-            "Volby souhlasu s cookies",
-            "Preference uživatelského rozhraní"
-          ]
-        }
-      },
-      "thirdPartyCookies": {
-        "title": "Cookies třetích stran",
-        "content": "Můžeme používat služby třetích stran, které umisťují cookies na vaše zařízení:",
-        "items": [
-          {
-            "title": "Google Analytics:",
-            "content": "Pro analytiku webových stránek a monitorování výkonu"
-          },
-          {
-            "title": "Google Maps:",
-            "content": "Pro služby lokalizace a zobrazení map"
-          },
-          {
-            "title": "Sociální média:",
-            "content": "Pro integraci sociálních médií a sdílení"
-          },
-          {
-            "title": "Platební procesory:",
-            "content": "Pro bezpečné zpracování plateb"
-          }
-        ]
-      },
-      "managingPreferences": {
-        "title": "Správa vašich preferencí cookies",
-        "browserSettings": {
-          "title": "Nastavení prohlížeče:",
-          "content": "Cookies můžete ovládat přes nastavení vašeho prohlížeče. Většina prohlížečů umožňuje blokovat nebo mazat cookies."
-        },
-        "cookieConsent": {
-          "title": "Souhlas s cookies:",
-          "content": "Při první návštěvě našich webových stránek si můžete vybrat, které typy cookies přijmout."
-        },
-        "updatingPreferences": {
-          "title": "Aktualizace preferencí:",
-          "content": "Své preference cookies můžete kdykoli změnit kliknutím na tlačítko \"Přizpůsobit\" v našem patičce."
-        }
-      },
-      "cookieDuration": {
-        "title": "Doba trvání cookies",
-        "sessionCookies": {
-          "title": "Relaní cookies:",
-          "content": "Tyto jsou dočasné cookies, které se smažou, když zavřete prohlížeč."
-        },
-        "persistentCookies": {
-          "title": "Trvalé cookies:",
-          "content": "Tyto zůstávají na vašem zařízení po stanovenou dobu nebo dokud je nesmažete."
-        },
-        "thirdPartyCookies": {
-          "title": "Cookies třetích stran:",
-          "content": "Doba trvání cookies třetích stran je určena příslušnými poskytovateli služeb."
-        }
-      },
-      "dataProtection": {
-        "title": "Ochrana dat",
-        "content": "Zavazujeme se chránit vaše soukromí. Informace shromážděné prostřednictvím cookies se používají v souladu s naší Politikou ochrany osobních údajů a platnými zákony o ochraně dat."
-      },
-      "updatesToPolicy": {
-        "title": "Aktualizace této politiky",
-        "content": "Tuto Politiku cookies můžeme čas od času aktualizovat, abychom odráželi změny v našich postupech nebo z jiných provozních, právních nebo regulačních důvodů. O jakýchkoli významných změnách vás budeme informovat zveřejněním nové politiky na našich webových stránkách."
-      },
-      "contactUs": {
-        "title": "Kontaktujte nás",
-        "content": "Pokud máte jakékoli otázky týkající se našeho používání cookies, kontaktujte nás:",
-        "details": {
-          "email": "Email: info@movecleanmafia.cz",
-          "phone": "Telefon: +420 725 555 095",
-          "address": "Adresa: [Vaše obchodní adresa]"
-        }
-      }
-    },
-    "cookieConsentManagement": {
-      "title": "Správa souhlasu s cookies",
-      "content": "Své preference cookies můžete kdykoli spravovat kliknutím na tlačítko \"Přizpůsobit\" v patičce našich webových stránek.",
-      "button": "Spravovat preference cookies"
-    }
-  },
-  "serviceDetail": {
-    "backToServices": "Zpět na služby",
-    "aboutService": "O této službě",
-    "availability": "Dostupnost",
-    "quality": "Záruka kvality",
-    "clients": "Spokojení klienti",
-    "whyChooseUs": "Proč si vybrat nás?",
-    "readyToBook": "Připraveni objednat naši službu?",
-    "ctaDescription": "Získejte bezplatnou konzultaci a cenovou nabídku. Náš tým je připraven pomoci vám s vašimi potřebami.",
-    "bookNow": "Objednat nyní",
-    "contactUs": "Kontaktujte nás",
-    "moving": {
-      "benefit1": "Profesionální stěhovací tým",
-      "benefit2": "Bezpečná a spolehlivá doprava",
-      "benefit3": "Plné pojištění",
-      "benefit4": "Flexibilní plánování"
-    },
-    "cleaning": {
-      "benefit1": "Profesionální úklidové vybavení",
-      "benefit2": "Eco-friendly produkty",
-      "benefit3": "Důkladná pozornost k detailům",
-      "benefit4": "Záruka spokojenosti"
-    }
+    "title": "Podmínky použití"
   }
 }

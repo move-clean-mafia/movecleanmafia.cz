@@ -61,7 +61,7 @@ interface Reservation {
   "firstName": "John",
   "lastName": "Doe",
   "email": "john.doe@example.com",
-  "phone": "+420123456789",
+          "phone": "+420774635981",
   "service": "moving",
   "preferredDate": "2024-02-15",
   "preferredTime": "morning",
@@ -279,7 +279,7 @@ interface AppSettings {
     id: 'contact_info',
     key: 'contact_info',
     value: {
-      phone: '+420123456789',
+      phone: '+420774635981',
       email: 'info@movecleanmafia.cz',
       address: 'Prague, Czech Republic',
     },

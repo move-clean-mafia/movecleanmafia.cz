@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
                         {t('footer.phone')}:
                       </span>{' '}
                       <a
-                        href="tel:+420725555095"
+                        href="tel:+420774635981"
                         className="hover:text-[#d6b977] transition-colors duration-200"
                       >
                         {t('header.phone1')}
@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
                     </p>
                     <p className="text-sm text-white/80 font-body">
                       <a
-                        href="tel:+420777717618"
+                        href="tel:+420777112613"
                         className="hover:text-[#d6b977] transition-colors duration-200"
                       >
                         {t('header.phone2')}

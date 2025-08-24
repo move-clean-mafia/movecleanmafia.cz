@@ -19,14 +19,6 @@ interface LocalBusinessSchema {
   url: string;
   telephone: string;
   email: string;
-  address: {
-    '@type': string;
-    streetAddress: string;
-    addressLocality: string;
-    addressRegion: string;
-    postalCode: string;
-    addressCountry: string;
-  };
   geo: {
     '@type': string;
     latitude: number;
@@ -97,16 +89,8 @@ const SEOProvider: React.FC<SEOProviderProps> = ({
           ? 'Професійні послуги перевезення та прибирання'
           : 'Professional moving and cleaning services in Czech Republic',
     url: baseUrl,
-    telephone: '+420 123 456 789',
+    telephone: '+420 774 635 981',
     email: 'info@movecleanmafia.cz',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Václavské náměstí 1',
-      addressLocality: 'Praha',
-      addressRegion: 'Praha',
-      postalCode: '110 00',
-      addressCountry: 'CZ',
-    },
     geo: {
       '@type': 'GeoCoordinates',
       latitude: 50.0755,

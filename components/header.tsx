@@ -82,7 +82,7 @@ export const Header: React.FC = () => {
 
                 {/* WhatsApp Button - Premium Style */}
                 <a
-                  href="https://wa.me/420725555095"
+                  href="https://wa.me/420774635981"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-3 sm:p-4 rounded-xl bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition-all duration-300 border-2 border-green-400 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
@@ -208,7 +208,7 @@ export const Header: React.FC = () => {
                   </a>
 
                   <a
-                    href="https://wa.me/420725555095"
+                    href="https://wa.me/420774635981"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center justify-center space-x-4 hover:bg-green-500/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-green-500/50 shadow-lg hover:shadow-xl transform hover:scale-105"

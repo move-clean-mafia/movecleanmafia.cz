@@ -7,21 +7,8 @@
       "pending": ""
     }
   },
-  "cta": {
-    "title": "READY TO MAKE A DEAL?",
-    "subtitle": "Don't wait. Contact us now and experience the difference that only the best can provide.",
-    "primaryButton": "GET A QUOTE",
-    "secondaryButton": "CONTACT US"
-  },
   "contact": {
     "address": "Address",
-    "socialMedia": {
-      "title": "Social Media",
-      "whatsapp": "WhatsApp",
-      "instagram": "Instagram",
-      "whatsappDescription": "Quick contact via WhatsApp",
-      "instagramDescription": "Follow us on Instagram"
-    },
     "faq": {
       "insurance": {
         "answer": "Yes, all transported belongings are fully insured against damage.",
@@ -42,14 +29,9 @@
       }
     },
     "form": {
-      "email": "Email",
       "emailPlaceholder": "your@email.com",
-      "firstName": "First Name",
       "firstNamePlaceholder": "Your first name",
-      "lastName": "Last Name",
-      "lastNamePlaceholder": "Your last name",
-      "phone": "Phone",
-      "phonePlaceholder": "+1 (234) 567-890"
+      "lastNamePlaceholder": "Your last name"
     },
     "info": {
       "address": "Address",
@@ -63,10 +45,12 @@
       "subtitle": "We are here for you every day. Do not hesitate to contact us in any way.",
       "title": "Contact Information"
     },
-    "map": {
-      "placeholder": "Map will be available soon",
-      "subtitle": "Our office is located in the city center with good transport connections",
-      "title": "Where to Find Us"
+    "socialMedia": {
+      "instagram": "Instagram",
+      "instagramDescription": "Follow us on Instagram",
+      "title": "Social Media",
+      "whatsapp": "WhatsApp",
+      "whatsappDescription": "Quick contact via WhatsApp"
     },
     "subtitle": "Contact us for a free consultation and price quote",
     "title": "Contact"
@@ -95,12 +79,165 @@
     "savePreferences": "Save Preferences",
     "title": "Cookie Settings"
   },
+  "cookiePolicy": {
+    "cookieConsentManagement": {
+      "button": "Manage Cookie Preferences",
+      "content": "You can manage your cookie preferences at any time by clicking the \"Customize\" button in our website footer.",
+      "title": "Cookie Consent Management"
+    },
+    "lastUpdated": "Last updated",
+    "sections": {
+      "contactUs": {
+        "content": "If you have any questions about our use of cookies, please contact us:",
+        "details": {
+          "address": "Address: [Your Business Address]",
+          "email": "Email: info@movecleanmafia.com",
+          "phone": "Phone: +420 774 635 981"
+        },
+        "title": "Contact Us"
+      },
+      "cookieDuration": {
+        "persistentCookies": {
+          "content": "These remain on your device for a set period or until you delete them.",
+          "title": "Persistent Cookies:"
+        },
+        "sessionCookies": {
+          "content": "These are temporary cookies that are deleted when you close your browser.",
+          "title": "Session Cookies:"
+        },
+        "thirdPartyCookies": {
+          "content": "The duration of third-party cookies is determined by the respective service providers.",
+          "title": "Third-Party Cookies:"
+        },
+        "title": "Cookie Duration"
+      },
+      "dataProtection": {
+        "content": "We are committed to protecting your privacy. The information collected through cookies is used in accordance with our Privacy Policy and applicable data protection laws.",
+        "title": "Data Protection"
+      },
+      "howWeUseCookies": {
+        "content": "We use cookies for several purposes:",
+        "items": [
+          {
+            "content": "These are necessary for the website to function properly",
+            "title": "Essential cookies:"
+          },
+          {
+            "content": "These help us understand how visitors use our website",
+            "title": "Analytics cookies:"
+          },
+          {
+            "content": "These remember your choices and settings",
+            "title": "Preference cookies:"
+          },
+          {
+            "content": "These help us deliver relevant advertisements",
+            "title": "Marketing cookies:"
+          }
+        ],
+        "title": "How We Use Cookies"
+      },
+      "managingPreferences": {
+        "browserSettings": {
+          "content": "You can control cookies through your browser settings. Most browsers allow you to block or delete cookies.",
+          "title": "Browser Settings:"
+        },
+        "cookieConsent": {
+          "content": "When you first visit our website, you can choose which types of cookies to accept.",
+          "title": "Cookie Consent:"
+        },
+        "title": "Managing Your Cookie Preferences",
+        "updatingPreferences": {
+          "content": "You can change your cookie preferences at any time by clicking the \"Customize\" button in our footer.",
+          "title": "Updating Preferences:"
+        }
+      },
+      "thirdPartyCookies": {
+        "content": "We may use third-party services that place cookies on your device:",
+        "items": [
+          {
+            "content": "For website analytics and performance monitoring",
+            "title": "Google Analytics:"
+          },
+          {
+            "content": "For location services and map display",
+            "title": "Google Maps:"
+          },
+          {
+            "content": "For social media integration and sharing",
+            "title": "Social Media:"
+          },
+          {
+            "content": "For secure payment processing",
+            "title": "Payment Processors:"
+          }
+        ],
+        "title": "Third-Party Cookies"
+      },
+      "typesOfCookies": {
+        "analytics": {
+          "content": "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.",
+          "items": [
+            "Page views and navigation patterns",
+            "Time spent on pages",
+            "Error tracking",
+            "Performance monitoring"
+          ],
+          "title": "Analytics Cookies"
+        },
+        "marketing": {
+          "content": "These cookies are used to track visitors across websites to display relevant advertisements.",
+          "items": [
+            "Ad targeting and retargeting",
+            "Social media integration",
+            "Conversion tracking"
+          ],
+          "title": "Marketing Cookies"
+        },
+        "necessary": {
+          "content": "These cookies are essential for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website.",
+          "items": [
+            "Authentication and security",
+            "Session management",
+            "Form submission",
+            "Language preferences"
+          ],
+          "title": "Necessary Cookies"
+        },
+        "preferences": {
+          "content": "These cookies allow the website to remember choices you make and provide enhanced, more personal features.",
+          "items": [
+            "Language and region settings",
+            "Theme preferences",
+            "Cookie consent choices",
+            "User interface preferences"
+          ],
+          "title": "Preference Cookies"
+        },
+        "title": "Types of Cookies We Use"
+      },
+      "updatesToPolicy": {
+        "content": "We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new policy on our website.",
+        "title": "Updates to This Policy"
+      },
+      "whatAreCookies": {
+        "content": "Cookies are small text files that are placed on your device when you visit our website. They help us provide you with a better experience by remembering your preferences and analyzing how you use our site.",
+        "title": "What Are Cookies?"
+      }
+    },
+    "title": "Cookie Policy"
+  },
+  "cta": {
+    "primaryButton": "GET A QUOTE",
+    "secondaryButton": "CONTACT US",
+    "subtitle": "Don't wait. Contact us now and experience the difference that only the best can provide.",
+    "title": "READY TO MAKE A DEAL?"
+  },
   "detailedServices": {
     "cleaningPackages": {
       "additionalServices": {
         "groups": [
           {
-            "title": "Kitchen",
             "description": "Deep cleaning of kitchen appliances and equipment",
             "services": [
               {
@@ -135,10 +272,10 @@
                 "name": "Washing dishes",
                 "price": "250 CZK/hour"
               }
-            ]
+            ],
+            "title": "Kitchen"
           },
           {
-            "title": "Furniture & Surfaces",
             "description": "Cleaning of furniture, cabinets, and various surfaces",
             "services": [
               {
@@ -149,10 +286,10 @@
                 "name": "Wash windows",
                 "price": "1 m² = 120 CZK"
               }
-            ]
+            ],
+            "title": "Furniture & Surfaces"
           },
           {
-            "title": "Special Services",
             "description": "Additional specialized cleaning and delivery services",
             "services": [
               {
@@ -171,10 +308,10 @@
                 "name": "Key delivery (one-way)",
                 "price": "300 CZK"
               }
-            ]
+            ],
+            "title": "Special Services"
           },
           {
-            "title": "Dry Cleaning",
             "description": "Cleaning upholstered furniture, carpets and mattresses",
             "services": [
               {
@@ -237,10 +374,10 @@
                 "name": "Carpet",
                 "price": "1 m² = 85 CZK"
               }
-            ]
+            ],
+            "title": "Dry Cleaning"
           },
           {
-            "title": "Packing Services",
             "description": "Professional packing and packaging of your items for safe transport",
             "services": [
               {
@@ -255,10 +392,10 @@
                 "name": "Boxes",
                 "price": "90 CZK"
               }
-            ]
+            ],
+            "title": "Packing Services"
           },
           {
-            "title": "Moving",
             "description": "Professional moving services with complete service",
             "services": [
               {
@@ -273,10 +410,10 @@
                 "name": "Car + 2 movers",
                 "price": "1100 CZK/hour"
               }
-            ]
+            ],
+            "title": "Moving"
           },
           {
-            "title": "Handyman",
             "description": "Minor repairs and household maintenance",
             "services": [
               {
@@ -295,14 +432,13 @@
                 "name": "Other household work",
                 "price": "on request"
               }
-            ]
+            ],
+            "title": "Handyman"
           }
         ],
         "subtitle": "Expand your package with additional services",
         "title": "Additional Services"
       },
-      "from": "from",
-      "onRequest": "on request",
       "packages": {
         "general": {
           "areas": {
@@ -461,10 +597,7 @@
           "title": "General Cleaning"
         }
       },
-      "subtitle": "Professional cleaning services for your home",
-      "title": "Cleaning Packages",
       "priceFactors": {
-        "title": "What affects the cleaning price",
         "items": [
           "General level of heavy contamination (dust, stains, grease, mold)",
           "Limescale and rust",
@@ -472,15 +605,24 @@
           "Scattered trash",
           "Pet hair",
           "Large amount of personal items that need to be moved or cleaned before cleaning"
-        ]
-      }
+        ],
+        "title": "What affects the cleaning price"
+      },
+      "subtitle": "Professional cleaning services for your home",
+      "title": "Cleaning Packages"
     },
     "dryCleaning": {
-      "description": "Professional dry cleaning of carpets, upholstery and textiles",
-      "title": "Furniture, carpet and mattress cleaning",
       "categories": {
+        "beds": {
+          "items": [
+            {
+              "name": "Bed without mattress",
+              "price": "from 600 CZK"
+            }
+          ],
+          "title": "Beds"
+        },
         "furniture": {
-          "title": "Furniture",
           "items": [
             {
               "name": "Ottoman",
@@ -498,10 +640,40 @@
               "name": "Office computer chair",
               "price": "from 350 CZK"
             }
-          ]
+          ],
+          "title": "Furniture"
+        },
+        "mattresses": {
+          "items": [
+            {
+              "name": "Single bed (one side)",
+              "price": "400–600 CZK"
+            },
+            {
+              "name": "Double bed (one side)",
+              "price": "800–1000 CZK"
+            }
+          ],
+          "title": "Mattresses"
+        },
+        "other": {
+          "items": [
+            {
+              "name": "Pet bed",
+              "price": "from 250 CZK"
+            },
+            {
+              "name": "Child car seat",
+              "price": "550 CZK"
+            },
+            {
+              "name": "Carpet",
+              "price": "1 m² = 120 CZK"
+            }
+          ],
+          "title": "Other"
         },
         "sofas": {
-          "title": "Sofas",
           "items": [
             {
               "name": "2-seater",
@@ -523,66 +695,96 @@
               "name": "Kitchen corner sofa",
               "price": "700 CZK"
             }
-          ]
-        },
-        "beds": {
-          "title": "Beds",
+          ],
+          "title": "Sofas"
+        }
+      },
+      "description": "Professional dry cleaning of carpets, upholstery and textiles",
+      "items": "",
+      "title": "Furniture, carpet and mattress cleaning"
+    },
+    "handyman": {
+      "categories": {
+        "furnitureAssembly": {
           "items": [
             {
-              "name": "Bed without mattress",
-              "price": "from 600 CZK"
-            }
-          ]
-        },
-        "mattresses": {
-          "title": "Mattresses",
-          "items": [
-            {
-              "name": "Single bed (one side)",
-              "price": "400–600 CZK"
+              "name": "Wardrobes, chests of drawers, beds, sofas, tables, etc."
             },
             {
-              "name": "Double bed (one side)",
-              "price": "800–1000 CZK"
+              "name": "Assembly of furniture from stores: IKEA, JYSK, Sconto, Möbelix and others"
             }
-          ]
+          ],
+          "title": "Furniture Assembly"
+        },
+        "furnitureDisassembly": {
+          "items": [
+            {
+              "name": "Wardrobes, chests of drawers, sofas, beds and other furniture"
+            },
+            {
+              "name": "Preparing furniture for moving or disposal"
+            }
+          ],
+          "title": "Furniture Disassembly"
         },
         "other": {
-          "title": "Other",
           "items": [
             {
-              "name": "Pet bed",
-              "price": "from 250 CZK"
+              "name": "Hanging shelves, pictures, mirrors, TV"
             },
             {
-              "name": "Child car seat",
-              "price": "550 CZK"
+              "name": "Moving furniture"
             },
             {
-              "name": "Carpet",
-              "price": "1 m² = 120 CZK"
+              "name": "Minor repairs of doors, handles, locks"
+            },
+            {
+              "name": "Help with installation of household appliances"
+            },
+            {
+              "name": "Other work on request"
             }
-          ]
+          ],
+          "title": "Other Household Work"
+        },
+        "painting": {
+          "items": [
+            {
+              "name": "Painting in apartments, houses, garages and offices:"
+            },
+            {
+              "name": "Painting walls and ceilings"
+            },
+            {
+              "name": "Painting doors, windows, radiators"
+            }
+          ],
+          "title": "Painting Work"
+        },
+        "plumbing": {
+          "items": [
+            {
+              "name": "Installation of washing machines, dishwashers, dryers and other household appliances"
+            },
+            {
+              "name": "Replacement of faucets, siphons"
+            },
+            {
+              "name": "Replacement of flush tanks, seals and valves"
+            },
+            {
+              "name": "Cleaning clogged drains"
+            }
+          ],
+          "title": "Plumbing Work"
         }
-      }
+      },
+      "description": "Professional services for your home",
+      "minOrder": "Minimum order is 2 hours",
+      "title": "Handyman Services"
     },
     "movingAndTransport": {
-      "items": [
-        {
-          "name": "Car + driver",
-          "price": "700 CZK/hour"
-        },
-        {
-          "name": "Car + 1 mover",
-          "price": "800 CZK/hour"
-        },
-        {
-          "name": "Car + 2 movers",
-          "price": "1100 CZK/hour"
-        }
-      ],
       "additionalServices": {
-        "title": "Additional services",
         "items": [
           {
             "name": "Fuel outside Prague",
@@ -600,153 +802,47 @@
             "name": "Boxes",
             "price": "90 CZK"
           }
-        ]
-      },
-      "description": "You relax, we move. Complete service from professionals: from packing to furnishing. Moving with us is simple and comfortable.",
-      "includedInPrice": {
-        "title": "Included in the price:",
-        "items": [
-          "We don't charge kilometers not driven in Prague",
-          "No floor surcharges",
-          "We don't charge for connecting and disconnecting washing machine or dishwasher",
-          "We don't charge surcharges for night hours, weekends or holidays"
-        ]
+        ],
+        "title": "Additional services"
       },
       "additionalServicesList": {
-        "title": "Additional services we offer:",
         "items": [
           "Furniture transport – we safely and carefully transport individual pieces of furniture and complete furnishings.",
           "Old furniture removal – we rid you of unnecessary equipment from home, office or warehouse.",
           "Clearing apartments, houses and offices – complete clearing services including waste disposal.",
           "Transport from shops – we ensure fast and reliable delivery of purchases right to your home."
-        ]
+        ],
+        "title": "Additional services we offer:"
       },
+      "description": "You relax, we move. Complete service from professionals: from packing to furnishing. Moving with us is simple and comfortable.",
+      "includedInPrice": {
+        "items": [
+          "We don't charge kilometers not driven in Prague",
+          "No floor surcharges",
+          "We don't charge for connecting and disconnecting washing machine or dishwasher",
+          "We don't charge surcharges for night hours, weekends or holidays"
+        ],
+        "title": "Included in the price:"
+      },
+      "items": [
+        {
+          "name": "Car + driver",
+          "price": "700 CZK/hour"
+        },
+        {
+          "name": "Car + 1 mover",
+          "price": "800 CZK/hour"
+        },
+        {
+          "name": "Car + 2 movers",
+          "price": "1100 CZK/hour"
+        }
+      ],
       "minOrder": "Minimum order is 1.5 hours.",
       "title": "Moving and Additional Services"
     },
-
-    "handyman": {
-      "title": "Handyman Services",
-      "description": "Professional services for your home",
-      "minOrder": "Minimum order is 2 hours",
-      "categories": {
-        "plumbing": {
-          "title": "Plumbing Work",
-          "items": [
-            {
-              "name": "Installation of washing machines, dishwashers, dryers and other household appliances"
-            },
-            {
-              "name": "Replacement of faucets, siphons"
-            },
-            {
-              "name": "Replacement of flush tanks, seals and valves"
-            },
-            {
-              "name": "Cleaning clogged drains"
-            }
-          ]
-        },
-        "painting": {
-          "title": "Painting Work",
-          "items": [
-            {
-              "name": "Painting in apartments, houses, garages and offices:"
-            },
-            {
-              "name": "Painting walls and ceilings"
-            },
-            {
-              "name": "Painting doors, windows, radiators"
-            }
-          ]
-        },
-        "furnitureDisassembly": {
-          "title": "Furniture Disassembly",
-          "items": [
-            {
-              "name": "Wardrobes, chests of drawers, sofas, beds and other furniture"
-            },
-            {
-              "name": "Preparing furniture for moving or disposal"
-            }
-          ]
-        },
-        "furnitureAssembly": {
-          "title": "Furniture Assembly",
-          "items": [
-            {
-              "name": "Wardrobes, chests of drawers, beds, sofas, tables, etc."
-            },
-            {
-              "name": "Assembly of furniture from stores: IKEA, JYSK, Sconto, Möbelix and others"
-            }
-          ]
-        },
-        "other": {
-          "title": "Other Household Work",
-          "items": [
-            {
-              "name": "Hanging shelves, pictures, mirrors, TV"
-            },
-            {
-              "name": "Moving furniture"
-            },
-            {
-              "name": "Minor repairs of doors, handles, locks"
-            },
-            {
-              "name": "Help with installation of household appliances"
-            },
-            {
-              "name": "Other work on request"
-            }
-          ]
-        }
-      }
-    },
     "packages": {
-      "title": "Comprehensive Packages",
-      "subtitle": "We move. We clean. We fix.",
-      "description": "Complete solution for your moving",
-      "note": "Services can be modified or supplemented according to your needs, price will be calculated individually",
-      "packages": {
-        "small": {
-          "name": "1+kk/1+1",
-          "price": "From 5500 CZK",
-          "description": "Perfect for small apartments",
-          "features": [
-            "Moving (car +1 mover, up to 2 hours)",
-            "Assembly/disassembly of furniture",
-            "Apartment cleaning up to 35 m²",
-            "Waste removal"
-          ]
-        },
-        "medium": {
-          "name": "2+kk/2+1",
-          "price": "From 7500 CZK",
-          "description": "For medium apartments",
-          "features": [
-            "Moving (car + 2 movers, up to 3 hours)",
-            "Assembly/disassembly of furniture",
-            "Apartment cleaning up to 55 m²",
-            "Waste removal"
-          ]
-        },
-        "large": {
-          "name": "3+kk/3+1",
-          "price": "From 9800 CZK",
-          "description": "For large apartments",
-          "features": [
-            "Moving (car + 2 movers, up to 4 hours)",
-            "Assembly/disassembly of furniture",
-            "Apartment cleaning up to 75 m²",
-            "Waste removal"
-          ]
-        }
-      },
       "additionalServices": {
-        "title": "Additional Services",
         "description": "Extend your package with additional services",
         "services": [
           {
@@ -773,102 +869,134 @@
             "name": "Plumbing work",
             "price": "from 350 CZK/hour"
           }
-        ]
-      }
+        ],
+        "title": "Additional Services"
+      },
+      "description": "Complete solution for your moving",
+      "note": "Services can be modified or supplemented according to your needs, price will be calculated individually",
+      "packages": {
+        "large": {
+          "description": "For large apartments",
+          "features": [
+            "Moving (car + 2 movers, up to 4 hours)",
+            "Assembly/disassembly of furniture",
+            "Apartment cleaning up to 75 m²",
+            "Waste removal"
+          ],
+          "name": "3+kk/3+1",
+          "price": "From 9800 CZK"
+        },
+        "medium": {
+          "description": "For medium apartments",
+          "features": [
+            "Moving (car + 2 movers, up to 3 hours)",
+            "Assembly/disassembly of furniture",
+            "Apartment cleaning up to 55 m²",
+            "Waste removal"
+          ],
+          "name": "2+kk/2+1",
+          "price": "From 7500 CZK"
+        },
+        "small": {
+          "description": "Perfect for small apartments",
+          "features": [
+            "Moving (car +1 mover, up to 2 hours)",
+            "Assembly/disassembly of furniture",
+            "Apartment cleaning up to 35 m²",
+            "Waste removal"
+          ],
+          "name": "1+kk/1+1",
+          "price": "From 5500 CZK"
+        }
+      },
+      "subtitle": "We move. We clean. We fix.",
+      "title": "Comprehensive Packages"
+    },
+    "packingServices": {
+      "description": "",
+      "items": "",
+      "title": ""
     }
   },
   "footer": {
     "contactInfo": "Contact Information",
     "cookiePolicy": "Cookie Policy",
     "email": "Email",
+    "followUs": "Follow Us",
+    "instagram": "Instagram",
     "legal": "Legal",
     "phone": "Phone",
     "privacyPolicy": "Privacy Policy",
     "quickLinks": "Quick Links",
     "tagline": "Professional moving and cleaning - your reliability is our priority",
-    "termsOfService": "Terms of Service",
-    "followUs": "Follow Us",
-    "instagram": "Instagram"
+    "termsOfService": "Terms of Service"
   },
   "header": {
     "closeMainMenu": "Close main menu",
     "openMainMenu": "Open main menu",
-    "phone1": "+1 (234) 567-890",
-    "phone2": "+1 (987) 654-321",
+    "phone1": "+420 774 635 981",
+    "phone2": "+420 777 112 613",
     "whatsapp": "WhatsApp",
     "whatsappAriaLabel": "Open WhatsApp chat"
   },
   "hero": {
-    "title": "AN OFFER YOU CAN'T REFUSE",
-    "cta": "MAKE US AN OFFER",
-    "imageAlt": "Professional moving and cleaning",
     "badge": "THE MOVE & CLEAN MAFIA",
-    "description": "Our prices are competitive and transparent - quality at a fair price."
+    "cta": "MAKE US AN OFFER",
+    "description": "Our prices are competitive and transparent - quality at a fair price.",
+    "imageAlt": "Professional moving and cleaning",
+    "title": "AN OFFER YOU CAN'T REFUSE"
   },
   "homepage": {
-    "servicesSection": {
-      "title": "OUR SPECIALTIES",
-      "subtitle": "Five distinct services, one unbeatable team. We handle everything with the precision and care that sets us apart."
-    },
-    "unifyingText": {
-      "title": "COMPLETE SOLUTIONS FOR EVERY NEED",
-      "subtitle": "From moving your entire home to keeping it spotless, we handle every aspect with the precision and care that only the best can provide. Choose your service and let us postarat se o zbytek."
-    },
-    "ourCode": {
-      "title": "OUR CODE",
-      "subtitle": "The principles that guide every job, every client, every detail.",
-      "principles": {
-        "precision": {
-          "title": "PRECISION",
-          "description": "Every detail matters. We execute with surgical precision, leaving nothing to chance."
-        },
-        "efficiency": {
-          "title": "EFFICIENCY",
-          "description": "Time is money. We work fast, clean, and get the job done right the first time."
-        },
-        "excellence": {
-          "title": "EXCELLENCE",
-          "description": "We don't just meet expectations—we exceed them. Every time, without exception."
-        }
-      }
-    },
-    "finalCta": {
-      "title": "READY TO MAKE A DEAL?",
-      "subtitle": "Don't wait. Contact us now and experience the difference that only the best can provide."
+    "compactServicesSection": {
+      "subtitle": "Choose from our comprehensive range of professional services. Each one designed to meet your specific needs with the precision and care you expect from the best.",
+      "title": "ALL OUR SERVICES"
     },
     "contactSection": {
-      "title": "Contact Information",
-      "subtitle": "We are here for you every day. Don't hesitate to contact us.",
-      "phone": "Phone",
-      "email": "Email",
       "address": "Address",
       "addressValue": "New York, USA",
-      "emailValue": "info@movecleanmafia.com"
+      "email": "Email",
+      "emailValue": "info@movecleanmafia.com",
+      "phone": "Phone",
+      "subtitle": "We are here for you every day. Don't hesitate to contact us.",
+      "title": "Contact Information"
     },
-    "pricingSection": {
-      "title": "Pricing",
-      "subtitle": "Transparent prices for all our services",
-      "showAllPrices": "View all prices"
+    "heroImages": {
+      "cleaning": "Professional cleaning services",
+      "moving": "Professional moving services"
     },
-    "compactServicesSection": {
-      "title": "ALL OUR SERVICES",
-      "subtitle": "Choose from our comprehensive range of professional services. Each one designed to meet your specific needs with the precision and care you expect from the best."
+    "ourCode": {
+      "principles": {
+        "efficiency": {
+          "description": "Time is money. We work fast, clean, and get the job done right the first time.",
+          "title": "EFFICIENCY"
+        },
+        "excellence": {
+          "description": "We don't just meet expectations—we exceed them. Every time, without exception.",
+          "title": "EXCELLENCE"
+        },
+        "precision": {
+          "description": "Every detail matters. We execute with surgical precision, leaving nothing to chance.",
+          "title": "PRECISION"
+        }
+      },
+      "subtitle": "The principles that guide every job, every client, every detail.",
+      "title": "OUR CODE"
     },
     "pricingAdvantage": {
-      "title": "COMPETITIVE PRICING",
-      "subtitle": "Quality at a fair price - that's our promise",
-      "description": "We offer transparent and competitive prices with no hidden fees. Our services are affordable but never compromise on quality.",
       "benefits": [
         "Free price quotes",
         "No hidden fees",
         "Transparent pricing",
         "Discounts for regular clients",
         "Flexible payment terms"
-      ]
+      ],
+      "description": "We offer transparent and competitive prices with no hidden fees. Our services are affordable but never compromise on quality.",
+      "subtitle": "Quality at a fair price - that's our promise",
+      "title": "COMPETITIVE PRICING"
     },
-    "heroImages": {
-      "cleaning": "Professional cleaning services",
-      "moving": "Professional moving services"
+    "servicesSection": {
+      "subtitle": "Five distinct services, one unbeatable team. We handle everything with the precision and care that sets us apart.",
+      "title": "OUR SPECIALTIES"
     }
   },
   "navigation": {
@@ -877,185 +1005,62 @@
     "home": "Home",
     "services": "Services"
   },
-  "reservation": {
-    "title": "Online Reservation",
-    "subtitle": "Book our services quickly and easily online",
-    "formTitle": "Booking Form",
-    "formDescription": "Fill out the form and we will contact you as soon as possible",
-    "personalInfo": "Personal Information",
-    "serviceDetails": "Service Details",
-    "additionalInfo": "Additional Information",
-    "firstName": "First Name *",
-    "lastName": "Last Name",
-    "email": "Email",
-    "phone": "Phone *",
-    "service": "Service",
-    "address": "Address",
-    "message": "Message",
-    "preferredDate": "Preferred Date",
-    "preferredTime": "Preferred Time",
-    "apartmentSize": "Apartment/Office Size (m²)",
-    "submitReservation": "Submit Reservation",
-    "services": {
-      "moving": "Moving",
-      "cleaning": "Cleaning",
-      "furnitureCleaning": "Furniture Cleaning",
-      "handyman": "Handyman",
-      "packages": "Advantageous Service Packages",
-      "other": "Other"
-    },
-    "timeSlots": {
-      "morning": "Morning (8:00-12:00)",
-      "afternoon": "Afternoon (12:00-16:00)",
-      "evening": "Evening (16:00-20:00)",
-      "night": "Night time (20:00-8:00)"
-    },
-    "benefits": {
-      "title": "Why Book Online?",
-      "subtitle": "Experience the convenience and efficiency of our online booking system",
-      "fast": {
-        "title": "FAST",
-        "description": "Quick and easy booking process that takes just a few minutes"
-      },
-      "simple": {
-        "title": "SIMPLE",
-        "description": "Straightforward form with clear instructions and instant confirmation"
-      },
-      "quality": {
-        "title": "QUALITY",
-        "description": "Same premium service quality, now with enhanced convenience"
-      }
-    },
-    "success": {
-      "title": "Reservation Submitted Successfully!",
-      "description": "Thank you for your reservation. We will contact you as soon as possible to confirm the details."
-    },
-    "error": {
-      "title": "Reservation Submission Failed",
-      "description": "There was an error submitting your reservation. Please try again or contact us directly."
-    },
-    "servicePlaceholder": "Select service",
-    "addressPlaceholder": "Enter the address where the service will be provided...",
-    "messagePlaceholder": "Describe your requirements, special requests, notes...",
-    "apartmentSizePlaceholder": "e.g. 65",
-    "submitting": "Submitting...",
-    "cleaningPackage": "Cleaning Package",
-    "cleaningPackagePlaceholder": "Select cleaning package",
-    "cleaningPackages": {
-      "maintenance": "Basic Cleaning",
-      "general": "Regular Cleaning",
-      "postRenovation": "General Cleaning"
-    }
-  },
-  "services": {
-    "cleaning": "Cleaning",
-    "cleaningDescription": "Professional cleaning services in different sizes",
-    "cleaningLongDescription": "Our cleaning services are divided into three sizes according to your needs",
-    "cleaningSizes": {
-      "s": {
-        "title": "S size – Basic cleaning",
-        "subtitle": "For quick home refreshment",
-        "description": "This type of cleaning is designed for those who need to clean quickly before a visit or want to relax after a busy day without dealing with mess."
-      },
-      "m": {
-        "title": "M size – Regular cleaning",
-        "subtitle": "For regular maintenance of cleanliness and order",
-        "description": "This cleaning option is ideal for those who have already done a general cleaning and want to keep their home clean without unnecessary effort."
-      },
-      "xl": {
-        "title": "XL size – General cleaning",
-        "subtitle": "Thorough cleaning of the entire apartment from floor to ceiling",
-        "description": "Suitable for those who want to have every corner perfectly clean, including hard-to-reach and commonly hidden places."
-      }
-    },
-    "cleaningFeatures": [
-      "General cleaning",
-      "Post-move cleaning",
-      "Office spaces",
-      "Eco-friendly products"
-    ],
-    "ctaSubtitle": "Contact us and get a free consultation and price quote",
-    "ctaTitle": "Let's Start Working Together",
-    "moving": "Moving",
-    "movingDescription": "Professional moving of apartments, houses and offices with complete service",
-    "movingFeatures": [
-      "Furniture disassembly",
-      "Safe transportation",
-      "Assembly at new location",
-      "Cargo insurance"
-    ],
-
-    "furnitureCleaning": "Furniture Cleaning",
-    "furnitureCleaningDescription": "Professional furniture and carpet cleaning",
-    "handyman": "Handyman",
-    "handymanDescription": "Minor repairs and household maintenance",
-    "packages": "Advantageous Service Packages",
-    "packagesDescription": "Combined services at competitive prices",
-    "quality": "Quality",
-    "qualityDescription": "Highest quality services and care for your belongings",
-    "safety": "Safety",
-    "safetyDescription": "Your belongings are safe with our insurance",
-    "speed": "Speed",
-    "speedDescription": "Efficient and fast execution of all work",
-
-    "subtitle": "Complete moving and cleaning services for your home and office",
-    "title": "Our Services",
-    "whyChooseUs": "Why Choose Us?",
-    "whyChooseUsSubtitle": "Reliable services with years of experience and highest quality"
-  },
-  "servicesGrid": {
-    "learnMore": "Learn More",
-    "priceFrom": "From"
-  },
-  "servicesPage": {
-    "approximatePrices": "Approximate prices",
-    "areaRanges": {
-      "over70": "over 70 m²",
-      "upTo35": "up to 35 m²",
-      "upTo50": "up to 50 m²",
-      "upTo70": "up to 70 m²"
-    },
-    "price": "Price",
-    "pricing": "Pricing",
-    "service": "Service",
-    "unit": "Unit",
-    "whatIncluded": "What's included"
-  },
   "privacyPolicy": {
-    "title": "Privacy Policy",
     "lastUpdated": "Last updated",
+    "relatedPolicies": {
+      "cookiePolicy": "Cookie Policy",
+      "termsOfService": "Terms of Service",
+      "title": "Related Policies"
+    },
     "sections": {
-      "introduction": {
-        "title": "1. Introduction",
-        "content": "MoveCleanMafia (\"we,\" \"our,\" or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services."
+      "changesToPolicy": {
+        "content": "We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new policy on our website and updating the \"Last updated\" date.",
+        "title": "11. Changes to This Policy"
       },
-      "informationWeCollect": {
-        "title": "2. Information We Collect",
-        "personalInformation": {
-          "title": "Personal Information",
-          "content": "We may collect the following personal information:",
-          "items": [
-            "Name and contact information (email, phone number)",
-            "Address and location information",
-            "Service preferences and requirements",
-            "Payment information (processed securely through third-party providers)",
-            "Communication history and correspondence"
-          ]
+      "childrensPrivacy": {
+        "content": "Our services are not intended for children under the age of 16. We do not knowingly collect personal information from children under 16. If you believe we have collected information from a child under 16, please contact us immediately.",
+        "title": "10. Children's Privacy"
+      },
+      "complaints": {
+        "content": "If you believe we have not handled your personal information in accordance with this Privacy Policy, you have the right to lodge a complaint with the relevant data protection authority in your jurisdiction.",
+        "title": "13. Complaints"
+      },
+      "contactInformation": {
+        "content": "If you have any questions about this Privacy Policy or our data practices, please contact us:",
+        "details": {
+          "address": "Address: [Your Business Address]",
+          "dpo": "Data Protection Officer: [Contact information if applicable]",
+          "email": "Email: info@movecleanmafia.com",
+          "phone": "Phone: +420 774 635 981"
         },
-        "automaticallyCollected": {
-          "title": "Automatically Collected Information",
-          "content": "When you visit our website, we automatically collect:",
-          "items": [
-            "IP address and device information",
-            "Browser type and version",
-            "Pages visited and time spent",
-            "Referring website",
-            "Cookies and similar technologies"
-          ]
-        }
+        "title": "12. Contact Information"
+      },
+      "cookies": {
+        "content": "We use cookies and similar technologies to enhance your experience on our website. For detailed information about our use of cookies, please see our",
+        "title": "8. Cookies and Tracking Technologies"
+      },
+      "dataRetention": {
+        "content": "We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. The retention period depends on:",
+        "items": [
+          "The type of information collected",
+          "The purpose for which it was collected",
+          "Legal and regulatory requirements",
+          "Your consent and preferences"
+        ],
+        "title": "6. Data Retention"
+      },
+      "dataSecurity": {
+        "content": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:",
+        "items": [
+          "Encryption of data in transit and at rest",
+          "Regular security assessments",
+          "Access controls and authentication",
+          "Secure data storage practices",
+          "Employee training on data protection"
+        ],
+        "title": "5. Data Security"
       },
       "howWeUse": {
-        "title": "3. How We Use Your Information",
         "content": "We use the collected information for the following purposes:",
         "items": [
           "Provide and manage our services",
@@ -1064,391 +1069,345 @@
           "Improve our website and services",
           "Comply with legal obligations",
           "Send marketing communications (with your consent)"
-        ]
+        ],
+        "title": "3. How We Use Your Information"
       },
       "informationSharing": {
-        "title": "4. Information Sharing",
         "content": "We do not sell, trade, or otherwise transfer your personal information to third parties except in the following circumstances:",
         "items": [
           {
-            "title": "Service Providers:",
-            "content": "We may share information with trusted third-party service providers who assist us in operating our website and providing services"
+            "content": "We may share information with trusted third-party service providers who assist us in operating our website and providing services",
+            "title": "Service Providers:"
           },
           {
-            "title": "Legal Requirements:",
-            "content": "We may disclose information when required by law or to protect our rights and safety"
+            "content": "We may disclose information when required by law or to protect our rights and safety",
+            "title": "Legal Requirements:"
           },
           {
-            "title": "Business Transfers:",
-            "content": "In the event of a merger or acquisition, your information may be transferred"
+            "content": "In the event of a merger or acquisition, your information may be transferred",
+            "title": "Business Transfers:"
           },
           {
-            "title": "Consent:",
-            "content": "We may share information with your explicit consent"
+            "content": "We may share information with your explicit consent",
+            "title": "Consent:"
           }
-        ]
+        ],
+        "title": "4. Information Sharing"
       },
-      "dataSecurity": {
-        "title": "5. Data Security",
-        "content": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:",
-        "items": [
-          "Encryption of data in transit and at rest",
-          "Regular security assessments",
-          "Access controls and authentication",
-          "Secure data storage practices",
-          "Employee training on data protection"
-        ]
+      "informationWeCollect": {
+        "automaticallyCollected": {
+          "content": "When you visit our website, we automatically collect:",
+          "items": [
+            "IP address and device information",
+            "Browser type and version",
+            "Pages visited and time spent",
+            "Referring website",
+            "Cookies and similar technologies"
+          ],
+          "title": "Automatically Collected Information"
+        },
+        "personalInformation": {
+          "content": "We may collect the following personal information:",
+          "items": [
+            "Name and contact information (email, phone number)",
+            "Address and location information",
+            "Service preferences and requirements",
+            "Payment information (processed securely through third-party providers)",
+            "Communication history and correspondence"
+          ],
+          "title": "Personal Information"
+        },
+        "title": "2. Information We Collect"
       },
-      "dataRetention": {
-        "title": "6. Data Retention",
-        "content": "We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. The retention period depends on:",
-        "items": [
-          "The type of information collected",
-          "The purpose for which it was collected",
-          "Legal and regulatory requirements",
-          "Your consent and preferences"
-        ]
+      "internationalTransfers": {
+        "content": "Your personal information may be transferred to and processed in countries other than your own. We ensure that such transfers comply with applicable data protection laws and implement appropriate safeguards to protect your information.",
+        "title": "9. International Data Transfers"
+      },
+      "introduction": {
+        "content": "MoveCleanMafia (\"we,\" \"our,\" or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.",
+        "title": "1. Introduction"
       },
       "yourRights": {
-        "title": "7. Your Rights",
         "content": "Depending on your location, you may have the following rights regarding your personal information:",
         "items": [
           {
-            "title": "Access:",
-            "content": "Request a copy of your personal information"
+            "content": "Request a copy of your personal information",
+            "title": "Access:"
           },
           {
-            "title": "Correction:",
-            "content": "Request correction of inaccurate information"
+            "content": "Request correction of inaccurate information",
+            "title": "Correction:"
           },
           {
-            "title": "Deletion:",
-            "content": "Request deletion of your personal information"
+            "content": "Request deletion of your personal information",
+            "title": "Deletion:"
           },
           {
-            "title": "Portability:",
-            "content": "Request transfer of your data to another service"
+            "content": "Request transfer of your data to another service",
+            "title": "Portability:"
           },
           {
-            "title": "Objection:",
-            "content": "Object to processing of your personal information"
+            "content": "Object to processing of your personal information",
+            "title": "Objection:"
           },
           {
-            "title": "Withdrawal:",
-            "content": "Withdraw consent for data processing"
+            "content": "Withdraw consent for data processing",
+            "title": "Withdrawal:"
           }
-        ]
-      },
-      "cookies": {
-        "title": "8. Cookies and Tracking Technologies",
-        "content": "We use cookies and similar technologies to enhance your experience on our website. For detailed information about our use of cookies, please see our"
-      },
-      "internationalTransfers": {
-        "title": "9. International Data Transfers",
-        "content": "Your personal information may be transferred to and processed in countries other than your own. We ensure that such transfers comply with applicable data protection laws and implement appropriate safeguards to protect your information."
-      },
-      "childrensPrivacy": {
-        "title": "10. Children's Privacy",
-        "content": "Our services are not intended for children under the age of 16. We do not knowingly collect personal information from children under 16. If you believe we have collected information from a child under 16, please contact us immediately."
-      },
-      "changesToPolicy": {
-        "title": "11. Changes to This Policy",
-        "content": "We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new policy on our website and updating the \"Last updated\" date."
-      },
-      "contactInformation": {
-        "title": "12. Contact Information",
-        "content": "If you have any questions about this Privacy Policy or our data practices, please contact us:",
-        "details": {
-          "email": "Email: info@movecleanmafia.com",
-          "phone": "Phone: +1 (234) 567-890",
-          "address": "Address: [Your Business Address]",
-          "dpo": "Data Protection Officer: [Contact information if applicable]"
-        }
-      },
-      "complaints": {
-        "title": "13. Complaints",
-        "content": "If you believe we have not handled your personal information in accordance with this Privacy Policy, you have the right to lodge a complaint with the relevant data protection authority in your jurisdiction."
+        ],
+        "title": "7. Your Rights"
       }
     },
-    "relatedPolicies": {
-      "title": "Related Policies",
-      "termsOfService": "Terms of Service",
-      "cookiePolicy": "Cookie Policy"
-    }
+    "title": "Privacy Policy"
+  },
+  "reservation": {
+    "additionalInfo": "Additional Information",
+    "address": "Address",
+    "addressPlaceholder": "Enter the address where the service will be provided...",
+    "apartmentSize": "Apartment/Office Size (m²)",
+    "apartmentSizePlaceholder": "e.g. 65",
+    "benefits": {
+      "fast": {
+        "description": "Quick and easy booking process that takes just a few minutes",
+        "title": "FAST"
+      },
+      "quality": {
+        "description": "Same premium service quality, now with enhanced convenience",
+        "title": "QUALITY"
+      },
+      "simple": {
+        "description": "Straightforward form with clear instructions and instant confirmation",
+        "title": "SIMPLE"
+      },
+      "subtitle": "Experience the convenience and efficiency of our online booking system",
+      "title": "Why Book Online?"
+    },
+    "cleaningPackage": "Cleaning Package",
+    "cleaningPackagePlaceholder": "Select cleaning package",
+    "cleaningPackages": {
+      "general": "Regular Cleaning",
+      "maintenance": "Basic Cleaning",
+      "postRenovation": "General Cleaning"
+    },
+    "clinics": {
+      "branch": "",
+      "main": ""
+    },
+    "email": "Email",
+    "error": {
+      "description": "There was an error submitting your reservation. Please try again or contact us directly.",
+      "title": "Reservation Submission Failed"
+    },
+    "firstName": "First Name *",
+    "formDescription": "Fill out the form and we will contact you as soon as possible",
+    "formTitle": "Booking Form",
+    "lastName": "Last Name",
+    "message": "Message",
+    "messagePlaceholder": "Describe your requirements, special requests, notes...",
+    "personalInfo": "Personal Information",
+    "phone": "Phone *",
+    "preferredDate": "Preferred Date",
+    "preferredTime": "Preferred Time",
+    "selectTime": "",
+    "service": "Service",
+    "serviceDetails": "Service Details",
+    "servicePlaceholder": "Select service",
+    "services": {
+      "allergyTesting": "",
+      "bronchoscopy": "",
+      "cleaning": "Cleaning",
+      "consultation": "",
+      "examination": "",
+      "followUp": "",
+      "furnitureCleaning": "Furniture Cleaning",
+      "handyman": "Handyman",
+      "moving": "Moving",
+      "other": "Other",
+      "packages": "Advantageous Service Packages",
+      "spirometry": "",
+      "urgent": ""
+    },
+    "submitReservation": "Submit Reservation",
+    "submitting": "Submitting...",
+    "subtitle": "Book our services quickly and easily online",
+    "success": {
+      "description": "Thank you for your reservation. We will contact you as soon as possible to confirm the details.",
+      "title": "Reservation Submitted Successfully!"
+    },
+    "timeOptions": {
+      "afternoon": "",
+      "evening": "",
+      "morning": "",
+      "noPreference": ""
+    },
+    "timeSlots": {
+      "afternoon": "Afternoon (12:00-16:00)",
+      "evening": "Evening (16:00-20:00)",
+      "morning": "Morning (8:00-12:00)",
+      "night": "Night time (20:00-8:00)"
+    },
+    "title": "Online Reservation"
+  },
+  "serviceDetail": {
+    "backToServices": "Back to Services"
+  },
+  "services": {
+    "cleaning": "Cleaning",
+    "cleaningDescription": "Professional cleaning services in different sizes",
+    "cleaningFeatures": [
+      "General cleaning",
+      "Post-move cleaning",
+      "Office spaces",
+      "Eco-friendly products"
+    ],
+    "cleaningLongDescription": "Our cleaning services are divided into three sizes according to your needs",
+    "cleaningSizes": {
+      "m": {
+        "description": "This cleaning option is ideal for those who have already done a general cleaning and want to keep their home clean without unnecessary effort.",
+        "subtitle": "For regular maintenance of cleanliness and order",
+        "title": "M size – Regular cleaning"
+      },
+      "s": {
+        "description": "This type of cleaning is designed for those who need to clean quickly before a visit or want to relax after a busy day without dealing with mess.",
+        "subtitle": "For quick home refreshment",
+        "title": "S size – Basic cleaning"
+      },
+      "xl": {
+        "description": "Suitable for those who want to have every corner perfectly clean, including hard-to-reach and commonly hidden places.",
+        "subtitle": "Thorough cleaning of the entire apartment from floor to ceiling",
+        "title": "XL size – General cleaning"
+      }
+    },
+    "ctaTitle": "Let's Start Working Together",
+    "furnitureCleaning": "Furniture Cleaning",
+    "furnitureCleaningDescription": "Professional furniture and carpet cleaning",
+    "handyman": "Handyman",
+    "handymanDescription": "Minor repairs and household maintenance",
+    "moving": "Moving",
+    "movingDescription": "Professional moving of apartments, houses and offices with complete service",
+    "movingFeatures": [
+      "Furniture disassembly",
+      "Safe transportation",
+      "Assembly at new location",
+      "Cargo insurance"
+    ],
+    "packages": "Advantageous Service Packages",
+    "packagesDescription": "Combined services at competitive prices",
+    "packing": "",
+    "quality": "Quality",
+    "qualityDescription": "Highest quality services and care for your belongings",
+    "safety": "Safety",
+    "safetyDescription": "Your belongings are safe with our insurance",
+    "speed": "Speed",
+    "speedDescription": "Efficient and fast execution of all work",
+    "subtitle": "Complete moving and cleaning services for your home and office",
+    "title": "Our Services",
+    "whyChooseUs": "Why Choose Us?",
+    "whyChooseUsSubtitle": "Reliable services with years of experience and highest quality"
+  },
+  "servicesGrid": {
+    "learnMore": "Learn More"
+  },
+  "servicesPage": {
+    "price": "Price",
+    "service": "Service",
+    "whatIncluded": "What's included"
   },
   "termsOfService": {
-    "title": "Terms of Service",
     "lastUpdated": "Last updated",
+    "legalNote": "Note: This is a template Terms of Service. We recommend consulting with a legal professional to ensure compliance with local laws and regulations specific to your business and jurisdiction.",
     "sections": {
       "acceptance": {
-        "title": "1. Acceptance of Terms",
-        "content": "By accessing and using the MoveCleanMafia website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service."
+        "content": "By accessing and using the MoveCleanMafia website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.",
+        "title": "1. Acceptance of Terms"
+      },
+      "bookingAndCancellation": {
+        "booking": {
+          "content": "Services must be booked in advance through our website or by phone. Confirmation will be provided via email or SMS.",
+          "title": "Booking:"
+        },
+        "cancellation": {
+          "content": "Cancellations must be made at least 24 hours before the scheduled service. Late cancellations may incur a fee.",
+          "title": "Cancellation:"
+        },
+        "rescheduling": {
+          "content": "Changes to appointments can be made up to 24 hours before the scheduled time, subject to availability.",
+          "title": "Rescheduling:"
+        },
+        "title": "4. Service Booking and Cancellation"
+      },
+      "changesToTerms": {
+        "content": "We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting on our website. Continued use of our services constitutes acceptance of modified terms.",
+        "title": "10. Changes to Terms"
+      },
+      "contactInformation": {
+        "address": "Address: [Your Business Address]",
+        "company": "MoveCleanMafia",
+        "email": "Email: info@movecleanmafia.com",
+        "phone": "Phone: +420 774 635 981",
+        "title": "11. Contact Information"
       },
       "description": {
-        "title": "2. Description of Service",
-        "content": "MoveCleanMafia provides cleaning, moving, and packing services. We reserve the right to modify, suspend, or discontinue any part of our service at any time."
+        "content": "MoveCleanMafia provides cleaning, moving, and packing services. We reserve the right to modify, suspend, or discontinue any part of our service at any time.",
+        "title": "2. Description of Service"
+      },
+      "disputeResolution": {
+        "content": "Any disputes arising from these terms or our services will be resolved through negotiation, mediation, or legal proceedings in the United States.",
+        "title": "9. Dispute Resolution"
+      },
+      "governingLaw": {
+        "content": "These terms are governed by the laws of the United States. Any legal proceedings will be conducted in US courts.",
+        "title": "12. Governing Law"
+      },
+      "intellectualProperty": {
+        "content": "All content on this website, including text, graphics, logos, and software, is the property of MoveCleanMafia and is protected by copyright laws.",
+        "title": "8. Intellectual Property"
+      },
+      "liabilityAndInsurance": {
+        "customerResponsibility": {
+          "content": "Customers are responsible for securing valuable items and ensuring safe access to the property.",
+          "title": "Customer Responsibility:"
+        },
+        "limitation": {
+          "content": "Our liability is limited to the cost of the service provided or the actual value of damaged items, whichever is less.",
+          "title": "Limitation:"
+        },
+        "ourLiability": {
+          "content": "MoveCleanMafia is insured for general liability. We are responsible for damage caused by our negligence during service provision.",
+          "title": "Our Liability:"
+        },
+        "title": "6. Liability and Insurance"
+      },
+      "pricingAndPayment": {
+        "estimates": {
+          "content": "Service estimates are based on information provided and may be adjusted based on actual conditions.",
+          "title": "Estimates:"
+        },
+        "payment": {
+          "content": "Payment is due upon completion of services unless otherwise agreed. We accept cash, bank transfer, and card payments.",
+          "title": "Payment:"
+        },
+        "pricing": {
+          "content": "All prices are quoted in US Dollars (USD) and include taxes unless otherwise stated.",
+          "title": "Pricing:"
+        },
+        "title": "5. Pricing and Payment"
+      },
+      "privacyAndDataProtection": {
+        "content": "We are committed to protecting your privacy. Our data collection and processing practices are outlined in our Privacy Policy, which forms part of these terms.",
+        "title": "7. Privacy and Data Protection"
       },
       "userResponsibilities": {
-        "title": "3. User Responsibilities",
         "items": [
           "Provide accurate and complete information when booking services",
           "Ensure access to the property for scheduled services",
           "Secure valuable items before service provision",
           "Notify us of any special requirements or concerns",
           "Pay for services as agreed upon"
-        ]
-      },
-      "bookingAndCancellation": {
-        "title": "4. Service Booking and Cancellation",
-        "booking": {
-          "title": "Booking:",
-          "content": "Services must be booked in advance through our website or by phone. Confirmation will be provided via email or SMS."
-        },
-        "cancellation": {
-          "title": "Cancellation:",
-          "content": "Cancellations must be made at least 24 hours before the scheduled service. Late cancellations may incur a fee."
-        },
-        "rescheduling": {
-          "title": "Rescheduling:",
-          "content": "Changes to appointments can be made up to 24 hours before the scheduled time, subject to availability."
-        }
-      },
-      "pricingAndPayment": {
-        "title": "5. Pricing and Payment",
-        "pricing": {
-          "title": "Pricing:",
-          "content": "All prices are quoted in US Dollars (USD) and include taxes unless otherwise stated."
-        },
-        "payment": {
-          "title": "Payment:",
-          "content": "Payment is due upon completion of services unless otherwise agreed. We accept cash, bank transfer, and card payments."
-        },
-        "estimates": {
-          "title": "Estimates:",
-          "content": "Service estimates are based on information provided and may be adjusted based on actual conditions."
-        }
-      },
-      "liabilityAndInsurance": {
-        "title": "6. Liability and Insurance",
-        "ourLiability": {
-          "title": "Our Liability:",
-          "content": "MoveCleanMafia is insured for general liability. We are responsible for damage caused by our negligence during service provision."
-        },
-        "customerResponsibility": {
-          "title": "Customer Responsibility:",
-          "content": "Customers are responsible for securing valuable items and ensuring safe access to the property."
-        },
-        "limitation": {
-          "title": "Limitation:",
-          "content": "Our liability is limited to the cost of the service provided or the actual value of damaged items, whichever is less."
-        }
-      },
-      "privacyAndDataProtection": {
-        "title": "7. Privacy and Data Protection",
-        "content": "We are committed to protecting your privacy. Our data collection and processing practices are outlined in our Privacy Policy, which forms part of these terms."
-      },
-      "intellectualProperty": {
-        "title": "8. Intellectual Property",
-        "content": "All content on this website, including text, graphics, logos, and software, is the property of MoveCleanMafia and is protected by copyright laws."
-      },
-      "disputeResolution": {
-        "title": "9. Dispute Resolution",
-        "content": "Any disputes arising from these terms or our services will be resolved through negotiation, mediation, or legal proceedings in the United States."
-      },
-      "changesToTerms": {
-        "title": "10. Changes to Terms",
-        "content": "We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting on our website. Continued use of our services constitutes acceptance of modified terms."
-      },
-      "contactInformation": {
-        "title": "11. Contact Information",
-        "company": "MoveCleanMafia",
-        "email": "Email: info@movecleanmafia.com",
-        "phone": "Phone: +1 (234) 567-890",
-        "address": "Address: [Your Business Address]"
-      },
-      "governingLaw": {
-        "title": "12. Governing Law",
-        "content": "These terms are governed by the laws of the United States. Any legal proceedings will be conducted in US courts."
+        ],
+        "title": "3. User Responsibilities"
       }
     },
-    "legalNote": "Note: This is a template Terms of Service. We recommend consulting with a legal professional to ensure compliance with local laws and regulations specific to your business and jurisdiction."
-  },
-  "cookiePolicy": {
-    "title": "Cookie Policy",
-    "lastUpdated": "Last updated",
-    "sections": {
-      "whatAreCookies": {
-        "title": "What Are Cookies?",
-        "content": "Cookies are small text files that are placed on your device when you visit our website. They help us provide you with a better experience by remembering your preferences and analyzing how you use our site."
-      },
-      "howWeUseCookies": {
-        "title": "How We Use Cookies",
-        "content": "We use cookies for several purposes:",
-        "items": [
-          {
-            "title": "Essential cookies:",
-            "content": "These are necessary for the website to function properly"
-          },
-          {
-            "title": "Analytics cookies:",
-            "content": "These help us understand how visitors use our website"
-          },
-          {
-            "title": "Preference cookies:",
-            "content": "These remember your choices and settings"
-          },
-          {
-            "title": "Marketing cookies:",
-            "content": "These help us deliver relevant advertisements"
-          }
-        ]
-      },
-      "typesOfCookies": {
-        "title": "Types of Cookies We Use",
-        "necessary": {
-          "title": "Necessary Cookies",
-          "content": "These cookies are essential for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website.",
-          "items": [
-            "Authentication and security",
-            "Session management",
-            "Form submission",
-            "Language preferences"
-          ]
-        },
-        "analytics": {
-          "title": "Analytics Cookies",
-          "content": "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.",
-          "items": [
-            "Page views and navigation patterns",
-            "Time spent on pages",
-            "Error tracking",
-            "Performance monitoring"
-          ]
-        },
-        "marketing": {
-          "title": "Marketing Cookies",
-          "content": "These cookies are used to track visitors across websites to display relevant advertisements.",
-          "items": [
-            "Ad targeting and retargeting",
-            "Social media integration",
-            "Conversion tracking"
-          ]
-        },
-        "preferences": {
-          "title": "Preference Cookies",
-          "content": "These cookies allow the website to remember choices you make and provide enhanced, more personal features.",
-          "items": [
-            "Language and region settings",
-            "Theme preferences",
-            "Cookie consent choices",
-            "User interface preferences"
-          ]
-        }
-      },
-      "thirdPartyCookies": {
-        "title": "Third-Party Cookies",
-        "content": "We may use third-party services that place cookies on your device:",
-        "items": [
-          {
-            "title": "Google Analytics:",
-            "content": "For website analytics and performance monitoring"
-          },
-          {
-            "title": "Google Maps:",
-            "content": "For location services and map display"
-          },
-          {
-            "title": "Social Media:",
-            "content": "For social media integration and sharing"
-          },
-          {
-            "title": "Payment Processors:",
-            "content": "For secure payment processing"
-          }
-        ]
-      },
-      "managingPreferences": {
-        "title": "Managing Your Cookie Preferences",
-        "browserSettings": {
-          "title": "Browser Settings:",
-          "content": "You can control cookies through your browser settings. Most browsers allow you to block or delete cookies."
-        },
-        "cookieConsent": {
-          "title": "Cookie Consent:",
-          "content": "When you first visit our website, you can choose which types of cookies to accept."
-        },
-        "updatingPreferences": {
-          "title": "Updating Preferences:",
-          "content": "You can change your cookie preferences at any time by clicking the \"Customize\" button in our footer."
-        }
-      },
-      "cookieDuration": {
-        "title": "Cookie Duration",
-        "sessionCookies": {
-          "title": "Session Cookies:",
-          "content": "These are temporary cookies that are deleted when you close your browser."
-        },
-        "persistentCookies": {
-          "title": "Persistent Cookies:",
-          "content": "These remain on your device for a set period or until you delete them."
-        },
-        "thirdPartyCookies": {
-          "title": "Third-Party Cookies:",
-          "content": "The duration of third-party cookies is determined by the respective service providers."
-        }
-      },
-      "dataProtection": {
-        "title": "Data Protection",
-        "content": "We are committed to protecting your privacy. The information collected through cookies is used in accordance with our Privacy Policy and applicable data protection laws."
-      },
-      "updatesToPolicy": {
-        "title": "Updates to This Policy",
-        "content": "We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new policy on our website."
-      },
-      "contactUs": {
-        "title": "Contact Us",
-        "content": "If you have any questions about our use of cookies, please contact us:",
-        "details": {
-          "email": "Email: info@movecleanmafia.com",
-          "phone": "Phone: +1 (234) 567-890",
-          "address": "Address: [Your Business Address]"
-        }
-      }
-    },
-    "cookieConsentManagement": {
-      "title": "Cookie Consent Management",
-      "content": "You can manage your cookie preferences at any time by clicking the \"Customize\" button in our website footer.",
-      "button": "Manage Cookie Preferences"
-    }
-  },
-  "serviceDetail": {
-    "backToServices": "Back to Services",
-    "aboutService": "About This Service",
-    "availability": "Availability",
-    "quality": "Quality Guarantee",
-    "clients": "Happy Clients",
-    "whyChooseUs": "Why Choose Us?",
-    "readyToBook": "Ready to Book Our Service?",
-    "ctaDescription": "Get a free consultation and price quote. Our team is ready to help you with your needs.",
-    "bookNow": "Book Now",
-    "contactUs": "Contact Us",
-    "moving": {
-      "benefit1": "Professional moving team",
-      "benefit2": "Safe and secure transport",
-      "benefit3": "Full insurance coverage",
-      "benefit4": "Flexible scheduling"
-    },
-    "cleaning": {
-      "benefit1": "Professional cleaning equipment",
-      "benefit2": "Eco-friendly products",
-      "benefit3": "Thorough attention to detail",
-      "benefit4": "Satisfaction guaranteed"
-    },
-    "packing": {
-      "benefit1": "Professional packing with quality materials",
-      "benefit2": "Careful handling of fragile items",
-      "benefit3": "Organized labeling and inventory system",
-      "benefit4": "Safe storage and transportation options"
-    }
+    "title": "Terms of Service"
   }
 }
