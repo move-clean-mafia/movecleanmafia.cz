@@ -4,6 +4,7 @@ import { type SupportedLanguage } from '../lib/i18n';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Check, Home, ChefHat, Bath } from 'lucide-react';
 import { GroupedAdditionalServices } from './grouped-additional-services';
+import ReservationButton from './ui/reservation-button';
 
 interface CleaningPackagesProps {
   locale: SupportedLanguage;
@@ -245,40 +246,40 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({
             <TabsContent value="maintenance" className="space-y-4">
               {renderPackageContent(packages.maintenance, 'maintenance')}
               {/* Reservation Button */}
-              <div className="flex justify-end pt-6">
-                <a
-                  href={`/${locale}/reservation?service=cleaning&package=maintenance`}
-                  className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  {t('reservation.submitReservation') as string}
-                </a>
-              </div>
+              <ReservationButton
+                locale={locale}
+                service="cleaning"
+                packageType="maintenance"
+                variant="right-aligned"
+              >
+                {t('reservation.submitReservation') as string}
+              </ReservationButton>
             </TabsContent>
 
             <TabsContent value="general" className="space-y-4">
               {renderPackageContent(packages.general, 'general')}
               {/* Reservation Button */}
-              <div className="flex justify-end pt-6">
-                <a
-                  href={`/${locale}/reservation?service=cleaning&package=general`}
-                  className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  {t('reservation.submitReservation') as string}
-                </a>
-              </div>
+              <ReservationButton
+                locale={locale}
+                service="cleaning"
+                packageType="general"
+                variant="right-aligned"
+              >
+                {t('reservation.submitReservation') as string}
+              </ReservationButton>
             </TabsContent>
 
             <TabsContent value="postRenovation" className="space-y-4">
               {renderPackageContent(packages.postRenovation, 'postRenovation')}
               {/* Reservation Button */}
-              <div className="flex justify-end pt-6">
-                <a
-                  href={`/${locale}/reservation?service=cleaning&package=postRenovation`}
-                  className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  {t('reservation.submitReservation') as string}
-                </a>
-              </div>
+              <ReservationButton
+                locale={locale}
+                service="cleaning"
+                packageType="postRenovation"
+                variant="right-aligned"
+              >
+                {t('reservation.submitReservation') as string}
+              </ReservationButton>
             </TabsContent>
           </Tabs>
         </div>

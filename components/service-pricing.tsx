@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Check, Home, ChefHat, Bath, Package, Truck } from 'lucide-react';
 import { GroupedAdditionalServices } from './grouped-additional-services';
 import { Card, CardContent } from './ui/card';
+import ReservationButton from './ui/reservation-button';
 
 interface ServicePricingProps {
   locale: SupportedLanguage;
@@ -407,14 +408,13 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
 
         {/* Reservation Button */}
         {showReservationButton && (
-          <div className="flex justify-end">
-            <a
-              href={`/${locale}/reservation?service=moving`}
-              className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
-            >
-              {t('reservation.submitReservation') as string}
-            </a>
-          </div>
+          <ReservationButton
+            locale={locale}
+            service="moving"
+            variant="right-aligned"
+          >
+            {t('reservation.submitReservation') as string}
+          </ReservationButton>
         )}
       </div>
     );
@@ -458,14 +458,14 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                       'maintenance',
                     )}
                     {showReservationButton && (
-                      <div className="flex justify-end pt-6">
-                        <a
-                          href={`/${locale}/reservation?service=cleaning&package=maintenance`}
-                          className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
-                        >
-                          {t('reservation.submitReservation') as string}
-                        </a>
-                      </div>
+                      <ReservationButton
+                        locale={locale}
+                        service="cleaning"
+                        packageType="maintenance"
+                        variant="right-aligned"
+                      >
+                        {t('reservation.submitReservation') as string}
+                      </ReservationButton>
                     )}
                   </TabsContent>
 
@@ -475,14 +475,14 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                       'general',
                     )}
                     {showReservationButton && (
-                      <div className="flex justify-end pt-6">
-                        <a
-                          href={`/${locale}/reservation?service=cleaning&package=general`}
-                          className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
-                        >
-                          {t('reservation.submitReservation') as string}
-                        </a>
-                      </div>
+                      <ReservationButton
+                        locale={locale}
+                        service="cleaning"
+                        packageType="general"
+                        variant="right-aligned"
+                      >
+                        {t('reservation.submitReservation') as string}
+                      </ReservationButton>
                     )}
                   </TabsContent>
 
@@ -492,14 +492,14 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                       'postRenovation',
                     )}
                     {showReservationButton && (
-                      <div className="flex justify-end pt-6">
-                        <a
-                          href={`/${locale}/reservation?service=cleaning&package=postRenovation`}
-                          className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
-                        >
-                          {t('reservation.submitReservation') as string}
-                        </a>
-                      </div>
+                      <ReservationButton
+                        locale={locale}
+                        service="cleaning"
+                        packageType="postRenovation"
+                        variant="right-aligned"
+                      >
+                        {t('reservation.submitReservation') as string}
+                      </ReservationButton>
                     )}
                   </TabsContent>
                 </Tabs>
@@ -578,14 +578,13 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
               ? renderMovingServices()
               : renderSimplePricingTable(serviceData.movingServices)}
             {serviceType === 'packing' && showReservationButton && (
-              <div className="flex justify-end mt-6">
-                <a
-                  href={`/${locale}/reservation?service=${serviceType}`}
-                  className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
-                >
-                  {t('reservation.submitReservation') as string}
-                </a>
-              </div>
+              <ReservationButton
+                locale={locale}
+                service={serviceType}
+                variant="right-aligned"
+              >
+                {t('reservation.submitReservation') as string}
+              </ReservationButton>
             )}
           </div>
         )}
@@ -596,14 +595,13 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
           <div className="mb-8">
             {renderSimplePricingTable(serviceData.packingServices)}
             {showReservationButton && (
-              <div className="flex justify-end mt-6">
-                <a
-                  href={`/${locale}/reservation?service=${serviceType}`}
-                  className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
-                >
-                  {t('reservation.submitReservation') as string}
-                </a>
-              </div>
+              <ReservationButton
+                locale={locale}
+                service={serviceType}
+                variant="right-aligned"
+              >
+                {t('reservation.submitReservation') as string}
+              </ReservationButton>
             )}
           </div>
         )}

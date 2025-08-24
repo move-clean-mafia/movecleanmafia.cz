@@ -2,6 +2,7 @@ import React from 'react';
 import { type SupportedLanguage } from '../lib/i18n';
 import { CardContent } from './ui/card';
 import { Wrench, Droplets, Paintbrush, Sofa, Home, Clock } from 'lucide-react';
+import ReservationButton from './ui/reservation-button';
 
 interface HandymanServicesProps {
   locale: SupportedLanguage;
@@ -139,14 +140,13 @@ const HandymanServices: React.FC<HandymanServicesProps> = ({
           </div>
 
           {/* Reservation Button */}
-          <div className="flex justify-center mt-12">
-            <a
-              href={`/${locale}/reservation?service=handyman`}
-              className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
-            >
-              {t('reservation.submitReservation') as string}
-            </a>
-          </div>
+          <ReservationButton
+            locale={locale}
+            service="handyman"
+            variant="centered"
+          >
+            {t('reservation.submitReservation') as string}
+          </ReservationButton>
         </CardContent>
       </div>
     </section>

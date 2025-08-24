@@ -2,6 +2,7 @@ import React from 'react';
 import { type SupportedLanguage } from '../lib/i18n';
 import { CardContent } from './ui/card';
 import { Package2, Check } from 'lucide-react';
+import ReservationButton from './ui/reservation-button';
 
 interface PackagesServicesProps {
   locale: SupportedLanguage;
@@ -147,14 +148,13 @@ const PackagesServices: React.FC<PackagesServicesProps> = ({
           {renderAdditionalServices()}
 
           {/* Reservation Button */}
-          <div className="flex justify-center mt-12">
-            <a
-              href={`/${locale}/reservation?service=packages`}
-              className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
-            >
-              {t('reservation.submitReservation') as string}
-            </a>
-          </div>
+          <ReservationButton
+            locale={locale}
+            service="packages"
+            variant="centered"
+          >
+            {t('reservation.submitReservation') as string}
+          </ReservationButton>
         </CardContent>
       </div>
     </section>

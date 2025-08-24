@@ -11,6 +11,7 @@ import {
   Sparkles,
   Square as Rug,
 } from 'lucide-react';
+import ReservationButton from './ui/reservation-button';
 
 interface DryCleaningServicesProps {
   locale: SupportedLanguage;
@@ -199,14 +200,13 @@ const DryCleaningServices: React.FC<DryCleaningServicesProps> = ({
           </div>
 
           {/* Reservation Button */}
-          <div className="flex justify-center mt-12">
-            <a
-              href={`/${locale}/reservation?service=dryCleaning`}
-              className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
-            >
-              {t('reservation.submitReservation') as string}
-            </a>
-          </div>
+          <ReservationButton
+            locale={locale}
+            service="dryCleaning"
+            variant="centered"
+          >
+            {t('reservation.submitReservation') as string}
+          </ReservationButton>
         </CardContent>
       </div>
     </section>

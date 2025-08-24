@@ -12,6 +12,7 @@ import {
   Sparkles,
   Package,
 } from 'lucide-react';
+import ReservationButton from './ui/reservation-button';
 
 interface AdditionalService {
   name: string;
@@ -102,14 +103,13 @@ export const GroupedAdditionalServices: React.FC<
 
       {/* Reservation Button */}
       {showReservationButton && locale && t && (
-        <div className="flex justify-end mt-8">
-          <a
-            href={`/${locale}/reservation?service=cleaning`}
-            className="inline-flex items-center px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-brand-secondary transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            {t('reservation.submitReservation') as string}
-          </a>
-        </div>
+        <ReservationButton
+          locale={locale}
+          service="cleaning"
+          variant="right-aligned"
+        >
+          {t('reservation.submitReservation') as string}
+        </ReservationButton>
       )}
     </div>
   );
