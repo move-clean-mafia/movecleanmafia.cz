@@ -91,7 +91,7 @@
         "content": "If you have any questions about our use of cookies, please contact us:",
         "details": {
           "address": "Address: [Your Business Address]",
-          "email": "Email: info@movecleanmafia.com",
+          "email": "Email: info@movecleanmafia.cz",
           "phone": "Phone: +420 774 635 981"
         },
         "title": "Contact Us"
@@ -242,35 +242,35 @@
             "services": [
               {
                 "name": "Cleaning kitchen cabinets",
-                "price": "from 320 CZK"
+                "price": "from 320 Kč"
               },
               {
                 "name": "Cleaning hood",
-                "price": "from 400 CZK"
+                "price": "from 400 Kč"
               },
               {
                 "name": "Cleaning dishwasher",
-                "price": "from 400 CZK"
+                "price": "from 400 Kč"
               },
               {
                 "name": "Cleaning microwave",
-                "price": "250 CZK"
+                "price": "250 Kč"
               },
               {
                 "name": "Cleaning oven",
-                "price": "from 400 CZK"
+                "price": "from 400 Kč"
               },
               {
                 "name": "Cleaning refrigerator (with freezer)",
-                "price": "from 400 CZK"
+                "price": "from 400 Kč"
               },
               {
                 "name": "Cleaning kettle",
-                "price": "from 100 CZK"
+                "price": "from 100 Kč"
               },
               {
                 "name": "Washing dishes",
-                "price": "250 CZK/hour"
+                "price": "250 Kč/hour"
               }
             ],
             "title": "Kitchen"
@@ -280,11 +280,11 @@
             "services": [
               {
                 "name": "Wash inside of room cabinets (including removing items and putting back)",
-                "price": "from 360 CZK"
+                "price": "from 360 Kč"
               },
               {
                 "name": "Wash windows",
-                "price": "1 m² = 120 CZK"
+                "price": "1 m² = 120 Kč"
               }
             ],
             "title": "Furniture & Surfaces"
@@ -294,19 +294,19 @@
             "services": [
               {
                 "name": "Folding clothes",
-                "price": "300 CZK/hour"
+                "price": "300 Kč/hour"
               },
               {
                 "name": "Cleaning cat toilet",
-                "price": "from 310 CZK"
+                "price": "from 310 Kč"
               },
               {
                 "name": "Cleaning and washing balcony",
-                "price": "from 450 CZK"
+                "price": "from 450 Kč"
               },
               {
                 "name": "Key delivery (one-way)",
-                "price": "300 CZK"
+                "price": "300 Kč"
               }
             ],
             "title": "Special Services"
@@ -316,63 +316,63 @@
             "services": [
               {
                 "name": "Stool",
-                "price": "200 CZK"
+                "price": "200 Kč"
               },
               {
                 "name": "Chair with upholstery",
-                "price": "250 CZK"
+                "price": "250 Kč"
               },
               {
                 "name": "Armchair",
-                "price": "from 550 CZK"
+                "price": "from 550 Kč"
               },
               {
                 "name": "Office computer chair",
-                "price": "from 350 CZK"
+                "price": "from 350 Kč"
               },
               {
                 "name": "2-seater sofa",
-                "price": "from 850 CZK"
+                "price": "from 850 Kč"
               },
               {
                 "name": "3-seater sofa",
-                "price": "from 1000 CZK"
+                "price": "from 1000 Kč"
               },
               {
                 "name": "4-seater sofa",
-                "price": "from 1300 CZK"
+                "price": "from 1300 Kč"
               },
               {
                 "name": "5+ seater sofa",
-                "price": "from 1500 CZK"
+                "price": "from 1500 Kč"
               },
               {
                 "name": "Kitchen corner sofa",
-                "price": "700 CZK"
+                "price": "700 Kč"
               },
               {
                 "name": "Bed without mattress",
-                "price": "from 600 CZK"
+                "price": "from 600 Kč"
               },
               {
                 "name": "Single mattress (one side)",
-                "price": "400–600 CZK"
+                "price": "400–600 Kč"
               },
               {
                 "name": "Double mattress (one side)",
-                "price": "800–1000 CZK"
+                "price": "800–1000 Kč"
               },
               {
                 "name": "Pet bed",
-                "price": "from 250 CZK"
+                "price": "from 250 Kč"
               },
               {
                 "name": "Child car seat",
-                "price": "550 CZK"
+                "price": "550 Kč"
               },
               {
                 "name": "Carpet",
-                "price": "1 m² = 85 CZK"
+                "price": "1 m² = 85 Kč"
               }
             ],
             "title": "Dry Cleaning"
@@ -382,15 +382,15 @@
             "services": [
               {
                 "name": "Packing items",
-                "price": "450 CZK/hour"
+                "price": "450 Kč/hour"
               },
               {
                 "name": "Furnishing & Arrangement",
-                "price": "450 CZK/hour"
+                "price": "450 Kč/hour"
               },
               {
                 "name": "Boxes",
-                "price": "90 CZK"
+                "price": "90 Kč"
               }
             ],
             "title": "Packing Services"
@@ -400,15 +400,15 @@
             "services": [
               {
                 "name": "Car + driver",
-                "price": "700 CZK/hour"
+                "price": "700 Kč/hour"
               },
               {
                 "name": "Car + 1 mover",
-                "price": "800 CZK/hour"
+                "price": "800 Kč/hour"
               },
               {
                 "name": "Car + 2 movers",
-                "price": "1100 CZK/hour"
+                "price": "1100 Kč/hour"
               }
             ],
             "title": "Moving"
@@ -486,9 +486,9 @@
           "duration": "2-4 hours and longer",
           "prices": {
             "over70": "negotiable",
-            "upTo35": "1600 CZK",
-            "upTo50": "1900 CZK",
-            "upTo70": "2300 CZK"
+            "upTo35": "1600 Kč",
+            "upTo50": "1900 Kč",
+            "upTo70": "2300 Kč"
           },
           "title": "Regular Cleaning"
         },
@@ -530,10 +530,10 @@
           "description": "For regular maintenance of cleanliness and order.",
           "duration": "1.5-2 hours",
           "prices": {
-            "over70": "1300 CZK",
-            "upTo35": "900 CZK",
-            "upTo50": "1080 CZK",
-            "upTo70": "1200 CZK"
+            "over70": "1300 Kč",
+            "upTo35": "900 Kč",
+            "upTo50": "1080 Kč",
+            "upTo70": "1200 Kč"
           },
           "title": "Basic Cleaning"
         },
@@ -589,10 +589,10 @@
           "description": "Comprehensive cleaning for removal of construction dust and contamination.",
           "duration": "4+ hours",
           "prices": {
-            "over70": "4400 CZK",
-            "upTo35": "3300 CZK",
-            "upTo50": "3600 CZK",
-            "upTo70": "4000 CZK"
+            "over70": "4400 Kč",
+            "upTo35": "3300 Kč",
+            "upTo50": "3600 Kč",
+            "upTo70": "4000 Kč"
           },
           "title": "General Cleaning"
         }
@@ -617,7 +617,7 @@
           "items": [
             {
               "name": "Bed without mattress",
-              "price": "from 600 CZK"
+              "price": "from 600 Kč"
             }
           ],
           "title": "Beds"
@@ -626,19 +626,19 @@
           "items": [
             {
               "name": "Ottoman",
-              "price": "200 CZK"
+              "price": "200 Kč"
             },
             {
               "name": "Chair with upholstery",
-              "price": "250 CZK"
+              "price": "250 Kč"
             },
             {
               "name": "Armchair",
-              "price": "from 550 CZK"
+              "price": "from 550 Kč"
             },
             {
               "name": "Office computer chair",
-              "price": "from 350 CZK"
+              "price": "from 350 Kč"
             }
           ],
           "title": "Furniture"
@@ -647,11 +647,11 @@
           "items": [
             {
               "name": "Single bed (one side)",
-              "price": "400–600 CZK"
+              "price": "400–600 Kč"
             },
             {
               "name": "Double bed (one side)",
-              "price": "800–1000 CZK"
+              "price": "800–1000 Kč"
             }
           ],
           "title": "Mattresses"
@@ -660,15 +660,15 @@
           "items": [
             {
               "name": "Pet bed",
-              "price": "from 250 CZK"
+              "price": "from 250 Kč"
             },
             {
               "name": "Child car seat",
-              "price": "550 CZK"
+              "price": "550 Kč"
             },
             {
               "name": "Carpet",
-              "price": "1 m² = 120 CZK"
+              "price": "1 m² = 120 Kč"
             }
           ],
           "title": "Other"
@@ -677,23 +677,23 @@
           "items": [
             {
               "name": "2-seater",
-              "price": "from 850 CZK"
+              "price": "from 850 Kč"
             },
             {
               "name": "3-seater",
-              "price": "from 1000 CZK"
+              "price": "from 1000 Kč"
             },
             {
               "name": "4-seater",
-              "price": "from 1300 CZK"
+              "price": "from 1300 Kč"
             },
             {
               "name": "5-seater and more",
-              "price": "from 1500 CZK"
+              "price": "from 1500 Kč"
             },
             {
               "name": "Kitchen corner sofa",
-              "price": "700 CZK"
+              "price": "700 Kč"
             }
           ],
           "title": "Sofas"
@@ -788,19 +788,19 @@
         "items": [
           {
             "name": "Fuel outside Prague",
-            "price": "30 CZK/km"
+            "price": "30 Kč/km"
           },
           {
             "name": "Packing items",
-            "price": "450 CZK/hour"
+            "price": "450 Kč/hour"
           },
           {
             "name": "Furnishing & Arrangement",
-            "price": "450 CZK/hour"
+            "price": "450 Kč/hour"
           },
           {
             "name": "Boxes",
-            "price": "90 CZK"
+            "price": "90 Kč"
           }
         ],
         "title": "Equipment & Arrangement"
@@ -827,15 +827,15 @@
       "items": [
         {
           "name": "Car + driver",
-          "price": "700 CZK/hour"
+          "price": "700 Kč/hour"
         },
         {
           "name": "Car + 1 mover",
-          "price": "800 CZK/hour"
+          "price": "800 Kč/hour"
         },
         {
           "name": "Car + 2 movers",
-          "price": "1100 CZK/hour"
+          "price": "1100 Kč/hour"
         }
       ],
       "minOrder": "Minimum order is 1.5 hours.",
@@ -847,27 +847,27 @@
         "services": [
           {
             "name": "Furniture dry cleaning",
-            "price": "from 200 CZK"
+            "price": "from 200 Kč"
           },
           {
             "name": "Carpet cleaning",
-            "price": "from 120 CZK/m²"
+            "price": "from 120 Kč/m²"
           },
           {
             "name": "Mattress cleaning",
-            "price": "from 400 CZK"
+            "price": "from 400 Kč"
           },
           {
             "name": "Furniture assembly from stores",
-            "price": "from 400 CZK/hour"
+            "price": "from 400 Kč/hour"
           },
           {
             "name": "Painting work",
-            "price": "from 300 CZK/hour"
+            "price": "from 300 Kč/hour"
           },
           {
             "name": "Plumbing work",
-            "price": "from 350 CZK/hour"
+            "price": "from 350 Kč/hour"
           }
         ],
         "title": "Additional Services"
@@ -884,7 +884,7 @@
             "Waste removal"
           ],
           "name": "3+kk/3+1",
-          "price": "From 9800 CZK"
+          "price": "From 9800 Kč"
         },
         "medium": {
           "description": "For medium apartments",
@@ -895,7 +895,7 @@
             "Waste removal"
           ],
           "name": "2+kk/2+1",
-          "price": "From 7500 CZK"
+          "price": "From 7500 Kč"
         },
         "small": {
           "description": "Perfect for small apartments",
@@ -906,7 +906,7 @@
             "Waste removal"
           ],
           "name": "1+kk/1+1",
-          "price": "From 5500 CZK"
+          "price": "From 5500 Kč"
         }
       },
       "subtitle": "We move. We clean. We fix.",
@@ -953,9 +953,9 @@
     },
     "contactSection": {
       "address": "Address",
-      "addressValue": "New York, USA",
+      "addressValue": "Praha, Česká republika",
       "email": "Email",
-      "emailValue": "info@movecleanmafia.com",
+      "emailValue": "info@movecleanmafia.cz",
       "phone": "Phone",
       "subtitle": "We are here for you every day. Don't hesitate to contact us.",
       "title": "Contact Information"
@@ -1030,7 +1030,7 @@
         "details": {
           "address": "Address: [Your Business Address]",
           "dpo": "Data Protection Officer: [Contact information if applicable]",
-          "email": "Email: info@movecleanmafia.com",
+          "email": "Email: info@movecleanmafia.cz",
           "phone": "Phone: +420 774 635 981"
         },
         "title": "12. Contact Information"
@@ -1343,7 +1343,7 @@
       "contactInformation": {
         "address": "Address: [Your Business Address]",
         "company": "MoveCleanMafia",
-        "email": "Email: info@movecleanmafia.com",
+        "email": "Email: info@movecleanmafia.cz",
         "phone": "Phone: +420 774 635 981",
         "title": "11. Contact Information"
       },
@@ -1352,11 +1352,11 @@
         "title": "2. Description of Service"
       },
       "disputeResolution": {
-        "content": "Any disputes arising from these terms or our services will be resolved through negotiation, mediation, or legal proceedings in the United States.",
+        "content": "Any disputes arising from these terms or our services will be resolved through negotiation, mediation, or legal proceedings in the Czech Republic.",
         "title": "9. Dispute Resolution"
       },
       "governingLaw": {
-        "content": "These terms are governed by the laws of the United States. Any legal proceedings will be conducted in US courts.",
+        "content": "These terms are governed by the laws of the Czech Republic. Any legal proceedings will be conducted in Czech courts.",
         "title": "12. Governing Law"
       },
       "intellectualProperty": {
@@ -1388,7 +1388,7 @@
           "title": "Payment:"
         },
         "pricing": {
-          "content": "All prices are quoted in US Dollars (USD) and include taxes unless otherwise stated.",
+          "content": "All prices are quoted in Czech Crowns (Kč) and include taxes unless otherwise stated.",
           "title": "Pricing:"
         },
         "title": "5. Pricing and Payment"
