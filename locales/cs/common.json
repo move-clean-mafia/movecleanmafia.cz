@@ -599,12 +599,12 @@
       },
       "priceFactors": {
         "items": [
-          "Obecná úroveň silného znečištění (prach, skvrny, mastnota, plíseň)",
-          "Vodní kámen a rez",
+          "Celková úroveň silného znečištění (prach, skvrny, mastnota, plíseň)",
+          "Usazeniny vodního kamene a rzi",
           "Silné znečištění digestoře a trouby (mastnota, saze, staré usazeniny)",
-          "Rozhozený odpad",
-          "Zvířecí srst",
-          "Velké množství osobních věcí, které je potřeba před úklidem přesunout nebo uklidit"
+          "Rozházené odpadky",
+          "Chlupy domácích zvířat",
+          "Velké množství osobních věcí, které je třeba před servisem přemístit nebo vyčistit"
         ],
         "title": "Co ovlivňuje cenu úklidu"
       },
