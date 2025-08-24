@@ -847,27 +847,27 @@
         "services": [
           {
             "name": "Chemické čištění nábytku",
-            "price": "od 200 Kč"
+            "price": "dle dohody"
           },
           {
             "name": "Čištění koberců",
-            "price": "od 120 Kč/m²"
+            "price": "dle dohody"
           },
           {
             "name": "Čištění matrací",
-            "price": "od 400 Kč"
+            "price": "dle dohody"
           },
           {
             "name": "Montáž nábytku z obchodů",
-            "price": "od 400 Kč/hod"
+            "price": "dle dohody"
           },
           {
             "name": "Malířské práce",
-            "price": "od 300 Kč/hod"
+            "price": "dle dohody"
           },
           {
             "name": "Instalatérské práce",
-            "price": "od 350 Kč/hod"
+            "price": "dle dohody"
           }
         ],
         "title": "Doplňkové služby"

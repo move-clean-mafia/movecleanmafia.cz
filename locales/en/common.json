@@ -847,27 +847,27 @@
         "services": [
           {
             "name": "Furniture dry cleaning",
-            "price": "from 200 Kč"
+            "price": "upon request"
           },
           {
             "name": "Carpet cleaning",
-            "price": "from 120 Kč/m²"
+            "price": "upon request"
           },
           {
             "name": "Mattress cleaning",
-            "price": "from 400 Kč"
+            "price": "upon request"
           },
           {
             "name": "Furniture assembly from stores",
-            "price": "from 400 Kč/hour"
+            "price": "upon request"
           },
           {
             "name": "Painting work",
-            "price": "from 300 Kč/hour"
+            "price": "upon request"
           },
           {
             "name": "Plumbing work",
-            "price": "from 350 Kč/hour"
+            "price": "upon request"
           }
         ],
         "title": "Additional Services"
