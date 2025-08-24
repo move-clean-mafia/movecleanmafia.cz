@@ -159,6 +159,14 @@ const HomePage = async ({ params }: HomePageProps) => {
 
   const compactServices = [
     {
+      icon: Package2,
+      title: t('services.packages'),
+      description: t('services.packagesDescription'),
+      features: ['Kombinované služby', 'Výhodnější ceny', 'Komplexní řešení'],
+      image: '/images/packing.jpg',
+      imageAlt: 'Komplexní balíčky',
+    },
+    {
       icon: Truck,
       title: t('services.moving'),
       description: t('services.movingDescription'),
@@ -194,14 +202,6 @@ const HomePage = async ({ params }: HomePageProps) => {
       image: '/images/moving.jpg',
       imageAlt: 'Hodinový manžel',
     },
-    {
-      icon: Package2,
-      title: t('services.packages'),
-      description: t('services.packagesDescription'),
-      features: ['Kombinované služby', 'Výhodnější ceny', 'Komplexní řešení'],
-      image: '/images/packing.jpg',
-      imageAlt: 'Komplexní balíčky',
-    },
   ];
 
   return (
@@ -235,18 +235,18 @@ const HomePage = async ({ params }: HomePageProps) => {
 
                 {/* Main Headline */}
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-[#d6b977] animate-text-glow">
-                  {t('hero.title')}
+                  {t('services.packages')}
                 </h1>
 
                 {/* Description */}
                 <p className="text-lg sm:text-xl mt-8 text-white/80 max-w-3xl mx-auto lg:mx-0 font-body">
-                  {t('hero.description')}
+                  {t('services.packagesDescription')}
                 </p>
 
                 {/* CTA Button */}
                 <div className="mt-10">
                   <a
-                    href={`/${locale}/reservation?service=moving`}
+                    href={`/${locale}/reservation?service=packages`}
                     className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
                   >
                     {t('hero.cta')}
