@@ -1,16 +1,7 @@
 import React from 'react';
 import { type SupportedLanguage } from '../lib/i18n';
 import { CardContent } from './ui/card';
-import {
-  Car,
-  Sofa,
-  Bed,
-  Square,
-  PawPrint,
-  Baby,
-  Sparkles,
-  Square as Rug,
-} from 'lucide-react';
+import { Car, Sofa, Bed, Square, Sparkles } from 'lucide-react';
 import ReservationButton from './ui/reservation-button';
 
 interface DryCleaningServicesProps {
@@ -60,95 +51,7 @@ const DryCleaningServices: React.FC<DryCleaningServicesProps> = ({
     other: Sparkles,
   };
 
-  // Icon mapping for specific items
-  const itemIcons = {
-    // Furniture
-    Taburet: Car,
-    Ottoman: Car,
-    Пуфік: Car,
-    'Židle s čalouněním': Car,
-    'Chair with upholstery': Car,
-    "Стілець з м'якою оббивкою": Car,
-    Křeslo: Car,
-    Armchair: Car,
-    Крісло: Car,
-    'Kancelářská počítačová židle': Car,
-    'Office computer chair': Car,
-    "Офісний комп'ютерний стілець": Car,
-
-    // Sofas
-    Dvoumístná: Sofa,
-    '2-seater': Sofa,
-    '2-місний': Sofa,
-    Třímístná: Sofa,
-    '3-seater': Sofa,
-    '3-місний': Sofa,
-    Čtyřmístná: Sofa,
-    '4-seater': Sofa,
-    '4-місний': Sofa,
-    'Pěti a více místná': Sofa,
-    '5-seater and more': Sofa,
-    '5-місний і більше': Sofa,
-    'Kuchyňský rohový gauč': Sofa,
-    'Kitchen corner sofa': Sofa,
-    'Кухонний кутовий диван': Sofa,
-
-    // Beds
-    'Postel bez matrace': Bed,
-    'Bed without mattress': Bed,
-    'Ліжко без матраца': Bed,
-
-    // Mattresses
-    'Jednolůžková (jedna strana)': Square,
-    'Single bed (one side)': Square,
-    'Одномісний (одна сторона)': Square,
-    'Dvoulůžková (jedna strana)': Square,
-    'Double bed (one side)': Square,
-    'Двомісний (одна сторона)': Square,
-
-    // Other
-    'Pelech pro zvířata': PawPrint,
-    'Pet bed': PawPrint,
-    'Лежак тварини': PawPrint,
-    'Dětská autosedačka': Baby,
-    'Child car seat': Baby,
-    'Дитяче автокрісло': Baby,
-    Koberec: Rug,
-    Carpet: Rug,
-    Килим: Rug,
-  };
-
-  const getItemIcon = (itemName: string) => {
-    return itemIcons[itemName as keyof typeof itemIcons] || Sparkles;
-  };
-
-  const renderServiceItem = (item: ServiceItem, index: number) => {
-    const ItemIcon = getItemIcon(item.name);
-
-    return (
-      <div
-        key={index}
-        className="flex flex-col items-center text-center p-4 mafia-card hover:bg-[#d6b977]/10 transition-all duration-200 group cursor-pointer"
-      >
-        {/* Circular Icon Container */}
-        <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mb-3 border-2 border-[#d6b977] shadow-lg group-hover:scale-110 transition-transform duration-200">
-          <ItemIcon className="w-8 h-8 text-black" />
-        </div>
-
-        {/* Service Name */}
-        <h4 className="font-heading font-medium text-white/90 group-hover:text-white transition-colors mb-2 text-sm leading-tight">
-          {item.name}
-        </h4>
-
-        {/* Price Button */}
-        <div className="bg-[#d6b977] text-black font-bold px-4 py-2 rounded-lg text-sm shadow-md group-hover:shadow-lg transition-shadow">
-          {item.price}
-        </div>
-      </div>
-    );
-  };
-
-  const renderCategory = (
+  const renderCategoryTable = (
     categoryKey: keyof typeof categoryIcons,
     category: ServiceCategory,
   ) => {
@@ -157,18 +60,63 @@ const DryCleaningServices: React.FC<DryCleaningServicesProps> = ({
     return (
       <div key={categoryKey} className="space-y-6">
         {/* Category Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-[#d6b977] rounded-xl flex items-center justify-center">
-            <CategoryIcon className="w-6 h-6 text-black" />
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-14 h-14 bg-gradient-to-br from-[#d6b977] to-[#b8945f] rounded-2xl flex items-center justify-center shadow-lg border-2 border-[#d6b977]/30">
+            <CategoryIcon className="w-7 h-7 text-black" />
           </div>
-          <h3 className="text-2xl font-heading font-medium text-[#d6b977]">
-            {category.title}
-          </h3>
+          <div>
+            <h3 className="text-3xl font-heading font-bold text-[#d6b977] leading-tight">
+              {category.title}
+            </h3>
+            <div className="w-16 h-1 bg-gradient-to-r from-[#d6b977] to-transparent mt-2"></div>
+          </div>
         </div>
 
-        {/* Service Items Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          {category.items.map((item, index) => renderServiceItem(item, index))}
+        {/* Services Table */}
+        <div className="overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="bg-gradient-to-r from-[#d6b977]/10 to-[#d6b977]/5 border-b-2 border-[#d6b977]">
+                  <th className="text-left py-5 px-6 font-heading font-bold text-[#d6b977] text-xl">
+                    {t('servicesPage.service') as string}
+                  </th>
+                  <th className="text-right py-5 px-6 font-heading font-bold text-[#d6b977] text-xl">
+                    {t('servicesPage.price') as string}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {category.items.map((item, index) => (
+                  <tr
+                    key={index}
+                    className="border-b border-[#d6b977]/10 hover:bg-[#d6b977]/5 transition-all duration-300 group cursor-pointer"
+                  >
+                    <td className="py-5 px-6 font-body font-medium text-white/90 group-hover:text-white transition-colors duration-300">
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-[#d6b977] rounded-full opacity-60 group-hover:opacity-100 transition-opacity"></div>
+                        <span className="text-lg">{item.name}</span>
+                      </div>
+                    </td>
+                    <td className="py-5 px-6 font-body font-bold text-[#d6b977] text-right group-hover:text-[#d6b977]/90 transition-colors duration-300">
+                      <span className="text-lg">{item.price}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Reservation Button for this category */}
+        <div className="text-right mt-6">
+          <ReservationButton
+            locale={locale}
+            service="dryCleaning"
+            variant="default"
+          >
+            {t('reservation.submitReservation') as string}
+          </ReservationButton>
         </div>
       </div>
     );
@@ -177,36 +125,30 @@ const DryCleaningServices: React.FC<DryCleaningServicesProps> = ({
   return (
     <section className={`bg-black ${className}`}>
       {/* Services Content */}
-      <div className="mafia-card overflow-hidden border border-[#d6b977]/20">
-        <CardContent className="p-8">
-          <div className="space-y-12">
+      <div className="mafia-card overflow-hidden border border-[#d6b977]/20 shadow-2xl">
+        <CardContent className="p-8 md:p-12">
+          <div className="space-y-16">
             {/* Furniture Category */}
-            {renderCategory('furniture', dryCleaningData.categories.furniture)}
+            {renderCategoryTable(
+              'furniture',
+              dryCleaningData.categories.furniture,
+            )}
 
             {/* Sofas Category */}
-            {renderCategory('sofas', dryCleaningData.categories.sofas)}
+            {renderCategoryTable('sofas', dryCleaningData.categories.sofas)}
 
             {/* Beds Category */}
-            {renderCategory('beds', dryCleaningData.categories.beds)}
+            {renderCategoryTable('beds', dryCleaningData.categories.beds)}
 
             {/* Mattresses Category */}
-            {renderCategory(
+            {renderCategoryTable(
               'mattresses',
               dryCleaningData.categories.mattresses,
             )}
 
             {/* Other Category */}
-            {renderCategory('other', dryCleaningData.categories.other)}
+            {renderCategoryTable('other', dryCleaningData.categories.other)}
           </div>
-
-          {/* Reservation Button */}
-          <ReservationButton
-            locale={locale}
-            service="dryCleaning"
-            variant="centered"
-          >
-            {t('reservation.submitReservation') as string}
-          </ReservationButton>
         </CardContent>
       </div>
     </section>
