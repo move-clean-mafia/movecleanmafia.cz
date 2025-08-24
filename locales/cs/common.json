@@ -231,7 +231,7 @@
     "primaryButton": "ZÍSKAT NABÍDKU",
     "secondaryButton": "KONTAKTUJTE NÁS",
     "subtitle": "Nečekejte. Kontaktujte nás nyní a zažijte rozdíl, který může poskytnout pouze to nejlepší.",
-    "title": "PŘIPRAVENI UDĚLAT DOHODU?"
+    "title": "PŘIPRAVENI UDĚLAT NABÍDKU?"
   },
   "detailedServices": {
     "cleaningPackages": {
@@ -496,10 +496,10 @@
           "areas": {
             "bathroom": {
               "items": [
-                "Umýt umyvadlo",
-                "Umýt WC",
-                "Vyleštit všech baterií",
-                "Umýt podlahy"
+                "Umytí umyvadla",
+                "Umytí WC",
+                "Vyleštění všech baterií",
+                "Umytí podlahy"
               ],
               "title": "Koupelna a WC"
             },
