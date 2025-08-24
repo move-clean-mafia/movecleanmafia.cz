@@ -46,11 +46,8 @@ const PackagesServices: React.FC<PackagesServicesProps> = ({
     return (
       <div className="mafia-card border border-[#d6b977]/30 p-6 hover:border-[#d6b977]/50 transition-colors duration-300">
         <div className="text-center mb-6">
-          <div className="w-16 h-16 bg-[#d6b977] rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-2xl font-bold text-black">{size}</span>
-          </div>
           <h4 className="text-xl font-heading font-bold text-[#d6b977] mb-2">
-            {packageData.name}
+            {size}
           </h4>
           <p className="text-sm text-[#d6b977]/80 font-body mb-3">
             {packageData.description}
