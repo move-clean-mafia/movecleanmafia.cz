@@ -1262,20 +1262,20 @@
     ],
     "cleaningLongDescription": "Our cleaning services are available in three sizes to suit your needs",
     "cleaningSizes": {
-      "m": {
-        "description": "This cleaning option is ideal for those who have already done a general cleaning and want to keep their home clean without unnecessary effort.",
-        "subtitle": "For regular maintenance of cleanliness and order",
-        "title": "M size – Regular cleaning"
-      },
       "s": {
-        "description": "This type of cleaning is designed for those who need to clean quickly before a visit or want to relax after a busy day without dealing with mess.",
-        "subtitle": "For quick home refreshment",
-        "title": "S size – Basic cleaning"
+        "title": "S size – Basic Cleaning",
+        "subtitle": "For a quick home refresh",
+        "description": "This service is perfect if you need a fast clean-up before guests arrive or simply want to relax after a busy day without worrying about the mess."
+      },
+      "m": {
+        "title": "M size – Regular Cleaning",
+        "subtitle": "For consistent cleanliness and order",
+        "description": "This service is ideal if you've already done a general cleaning and want to maintain a fresh and tidy home without extra effort."
       },
       "xl": {
-        "description": "Suitable for those who want to have every corner perfectly clean, including hard-to-reach and commonly hidden places.",
-        "subtitle": "Thorough cleaning of the entire apartment from floor to ceiling",
-        "title": "XL size – General cleaning"
+        "title": "XL size – General Cleaning",
+        "subtitle": "Thorough cleaning of your entire home from floor to ceiling",
+        "description": "Perfect for those who want every corner spotless, including hard-to-reach and often overlooked areas."
       }
     },
     "ctaTitle": "Let's Start Working Together",
