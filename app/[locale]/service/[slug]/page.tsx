@@ -335,7 +335,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
       </section>
 
       {/* Hero Section - Mafia Style */}
-      <section className="relative py-20 bg-black overflow-hidden">
+      <section className="relative pt-20 bg-black overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-[#d6b977]/10 rounded-full blur-3xl z-0"></div>
         <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-[#d6b977]/5 rounded-full blur-2xl z-0"></div>
@@ -369,11 +369,6 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
             {/* Cleaning Sizes Section - Only for cleaning service */}
             {service.slug === 'cleaning' && service.cleaningSizes && (
               <div className="mb-12">
-                <h3 className="text-3xl font-heading font-bold text-[#d6b977] mb-8 text-center">
-                  {t('services.cleaning')} -{' '}
-                  {t('services.cleaningLongDescription')}
-                </h3>
-
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {/* S Size */}
                   <div className="mafia-card border border-[#d6b977]/30 p-6 hover:border-[#d6b977]/50 transition-colors duration-300">
@@ -438,7 +433,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
       </section>
 
       {/* Pricing Section - Mafia Style */}
-      <section className="py-20 bg-black">
+      <section className="bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {service.slug === 'furniture-cleaning' ? (
             <DryCleaningServices locale={locale as SupportedLanguage} t={t} />
