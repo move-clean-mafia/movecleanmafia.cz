@@ -148,7 +148,7 @@ export const Header: React.FC = () => {
                       : t('header.openMainMenu')}
                   </span>
                   {isMobileMenuOpen ? (
-                    <X className="h-6 w-6 sm:h-7 sm:w-7" />
+                    <X className="h-8 w-8 sm:h-9 sm:w-9" />
                   ) : (
                     <Menu className="h-6 w-6 sm:h-7 sm:w-7" />
                   )}
@@ -190,7 +190,7 @@ export const Header: React.FC = () => {
                   className="p-3 sm:p-4 rounded-xl text-white hover:text-[#d6b977] hover:bg-[#d6b977]/10 border-2 border-[#d6b977]/30 shadow-lg hover:shadow-xl transition-all duration-300"
                   aria-label={t('header.closeMainMenu')}
                 >
-                  <X className="h-6 w-6 sm:h-7 sm:w-7" />
+                  <X className="h-8 w-8 sm:h-9 sm:w-9" />
                 </button>
               </div>
 
@@ -211,47 +211,35 @@ export const Header: React.FC = () => {
               {/* Spacer to push contact info lower */}
               <div className="flex-1"></div>
 
-              {/* Mobile contact info */}
+              {/* Mobile contact info - In one row without descriptions */}
               <div className="pt-6 border-t-2 border-[#d6b977]/30">
-                <div className="flex flex-col space-y-4 items-center">
+                <div className="flex justify-center space-x-4">
                   <a
                     href={`tel:${t('header.phone1')}`}
-                    className="group flex items-center justify-center space-x-4 hover:bg-[#d6b977]/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-[#d6b977]/50 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    className="group p-4 rounded-xl bg-[#d6b977]/20 hover:bg-[#d6b977]/30 transition-all duration-300 border-2 border-transparent hover:border-[#d6b977]/50 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    aria-label={t('header.phone1')}
                   >
-                    <div className="w-10 h-10 bg-[#d6b977]/20 rounded-full flex items-center justify-center group-hover:bg-[#d6b977]/30 transition-all duration-300">
-                      <Phone className="w-2.5 h-2.5 text-[#d6b977]" />
-                    </div>
-                    <span className="font-heading font-semibold text-base leading-4 tracking-wide text-white">
-                      {t('header.phone1')}
-                    </span>
+                    <Phone className="w-6 h-6 text-[#d6b977]" />
                   </a>
 
                   <a
                     href="https://wa.me/420774635981"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-center space-x-4 hover:bg-green-500/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-green-500/50 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    className="group p-4 rounded-xl bg-green-500/20 hover:bg-green-500/30 transition-all duration-300 border-2 border-transparent hover:border-green-500/50 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    aria-label={t('header.whatsappAriaLabel')}
                   >
-                    <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center group-hover:bg-green-500/30 transition-all duration-300">
-                      <MessageCircle className="w-2.5 h-2.5 text-green-500" />
-                    </div>
-                    <span className="font-heading font-semibold text-base leading-4 tracking-wide text-white">
-                      {t('header.whatsapp')}
-                    </span>
+                    <MessageCircle className="w-6 h-6 text-green-500" />
                   </a>
 
                   <a
                     href="https://www.instagram.com/stehomafia?igsh=MWtxYjZ5OXJzcGt1dw=="
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-center space-x-4 hover:bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-purple-500/50 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    className="group p-4 rounded-xl bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 hover:from-purple-500/30 hover:via-pink-500/30 hover:to-orange-500/30 transition-all duration-300 border-2 border-transparent hover:border-purple-500/50 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    aria-label={t('header.instagramAriaLabel')}
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 rounded-full flex items-center justify-center group-hover:from-purple-500/30 group-hover:via-pink-500/30 group-hover:to-orange-500/30 transition-all duration-300">
-                      <Instagram className="w-2.5 h-2.5 text-purple-400" />
-                    </div>
-                    <span className="font-heading font-semibold text-base leading-4 tracking-wide text-white">
-                      {t('header.instagram')}
-                    </span>
+                    <Instagram className="w-6 h-6 text-purple-400" />
                   </a>
                 </div>
               </div>
