@@ -95,6 +95,19 @@ export const GroupedAdditionalServices: React.FC<
                     </div>
                   ))}
                 </div>
+
+                {/* Reservation Button for each group */}
+                {locale && t && (
+                  <div className="flex justify-end pt-4">
+                    <ReservationButton
+                      locale={locale}
+                      service="cleaning"
+                      className="!px-4 !py-2 !text-sm"
+                    >
+                      {t('reservation.book') as string}
+                    </ReservationButton>
+                  </div>
+                )}
               </CollapsibleContent>
             </div>
           </Collapsible>

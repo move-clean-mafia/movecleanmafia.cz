@@ -529,7 +529,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
           <div>
             <Label
               htmlFor="package"
-              className="text-sm font-inter font-medium text-gray-700"
+              className="text-sm font-body font-medium text-white/90"
             >
               {t('reservation.cleaningPackage')}
             </Label>
@@ -540,19 +540,35 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                 handleInputChange('package', value);
               }}
             >
-              <SelectTrigger className="mt-1 font-inter font-light">
+              <SelectTrigger
+                className={`mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20 ${
+                  hasFieldError('package')
+                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
+                    : ''
+                }`}
+              >
                 <SelectValue
                   placeholder={t('reservation.cleaningPackagePlaceholder')}
                 />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-black border-[#d6b977]/30">
                 {cleaningPackages.map((pkg) => (
-                  <SelectItem key={pkg.value} value={pkg.value}>
+                  <SelectItem
+                    key={pkg.value}
+                    value={pkg.value}
+                    className="text-white hover:bg-[#d6b977]/10"
+                  >
                     {pkg.label}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
+            {hasFieldError('package') && (
+              <div className="mt-1 flex items-center text-sm text-red-400">
+                <AlertCircle className="w-4 h-4 mr-1" />
+                {getFieldError('package')}
+              </div>
+            )}
           </div>
         )}
 
