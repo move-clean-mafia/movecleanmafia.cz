@@ -599,14 +599,14 @@
       },
       "priceFactors": {
         "items": [
-          "General level of heavy contamination (dust, stains, grease, mold)",
-          "Limescale and rust",
+          "Overall level of heavy contamination (dust, stains, grease, mold)",
+          "Limescale and rust buildup",
           "Heavy contamination of hood and oven (grease, soot, old deposits)",
           "Scattered trash",
           "Pet hair",
-          "Large amount of personal items that need to be moved or cleaned before cleaning"
+          "Large amounts of personal items that need to be moved or cleaned before the service"
         ],
-        "title": "What affects the cleaning price"
+        "title": "Factors affecting the cleaning price"
       },
       "subtitle": "Professional cleaning services for your home",
       "title": "Cleaning Packages"
@@ -745,7 +745,7 @@
               "name": "Other work on request"
             }
           ],
-          "title": "Other Household Work"
+          "title": "Other Household Services"
         },
         "painting": {
           "items": [
@@ -803,24 +803,24 @@
             "price": "90 CZK"
           }
         ],
-        "title": "Additional services"
+        "title": "Equipment & Arrangement"
       },
       "additionalServicesList": {
         "items": [
-          "Furniture transport – we safely and carefully transport individual pieces of furniture and complete furnishings.",
-          "Old furniture removal – we rid you of unnecessary equipment from home, office or warehouse.",
-          "Clearing apartments, houses and offices – complete clearing services including waste disposal.",
-          "Transport from shops – we ensure fast and reliable delivery of purchases right to your home."
+          "Furniture Transport – safe and careful transport of individual pieces of furniture or complete furnishings.",
+          "Old Furniture Removal – disposal of unwanted items from your home, office, or warehouse.",
+          "Clearing of Apartments, Houses, and Offices – complete clearing services, including waste disposal.",
+          "Transport from Shops – fast and reliable delivery of your purchases straight to your home."
         ],
         "title": "Additional services we offer:"
       },
       "description": "You relax, we move. Complete service from professionals: from packing to furnishing. Moving with us is simple and comfortable.",
       "includedInPrice": {
         "items": [
-          "We don't charge kilometers not driven in Prague",
-          "No floor surcharges",
-          "We don't charge for connecting and disconnecting washing machine or dishwasher",
-          "We don't charge surcharges for night hours, weekends or holidays"
+          "We don’t charge for kilometers not driven within Prague.",
+          "No floor surcharges.",
+          "We don’t charge for connecting or disconnecting washing machines or dishwashers.",
+          "No surcharges for night hours, weekends, or holidays"
         ],
         "title": "Included in the price:"
       },
@@ -910,7 +910,7 @@
         }
       },
       "subtitle": "We move. We clean. We fix.",
-      "title": "Comprehensive Packages"
+      "title": "Special Service Packages"
     },
     "packingServices": {
       "description": "",
@@ -979,7 +979,7 @@
           "title": "PRECISION"
         }
       },
-      "subtitle": "The principles that guide every job, every client, every detail.",
+      "subtitle": "The principles that guide every job, every client, and every detail.",
       "title": "OUR CODE"
     },
     "pricingAdvantage": {
@@ -1260,7 +1260,7 @@
       "Office spaces",
       "Eco-friendly products"
     ],
-    "cleaningLongDescription": "Our cleaning services are divided into three sizes according to your needs",
+    "cleaningLongDescription": "Our cleaning services are available in three sizes to suit your needs",
     "cleaningSizes": {
       "m": {
         "description": "This cleaning option is ideal for those who have already done a general cleaning and want to keep their home clean without unnecessary effort.",
@@ -1284,7 +1284,7 @@
     "handyman": "Handyman",
     "handymanDescription": "Minor repairs and household maintenance",
     "moving": "Moving",
-    "movingDescription": "Professional moving of apartments, houses and offices with complete service",
+    "movingDescription": "Professional moving of apartments, houses, and offices with full-service support",
     "movingFeatures": [
       "Furniture disassembly",
       "Safe transportation",
@@ -1295,15 +1295,15 @@
     "packagesDescription": "Combined services at competitive prices",
     "packing": "",
     "quality": "Quality",
-    "qualityDescription": "Highest quality services and care for your belongings",
-    "safety": "Safety",
-    "safetyDescription": "Your belongings are safe with our insurance",
+    "qualityDescription": "Quality and care for your belongings",
+    "safety": "Protection",
+    "safetyDescription": "Your belongings are insured",
     "speed": "Speed",
-    "speedDescription": "Efficient and fast execution of all work",
+    "speedDescription": "Fast and efficient service",
     "subtitle": "Complete moving and cleaning services for your home and office",
     "title": "Our Services",
     "whyChooseUs": "Why Choose Us?",
-    "whyChooseUsSubtitle": "Reliable services with years of experience and highest quality"
+    "whyChooseUsSubtitle": "Reliable services backed by years of experience and the highest quality"
   },
   "servicesGrid": {
     "learnMore": "Learn More"
