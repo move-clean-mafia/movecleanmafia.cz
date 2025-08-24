@@ -817,10 +817,10 @@
       "description": "Vy relaxujete, my stěhujeme. Kompletní servis od profesionálů: od zabalení až po vybavení. Stěhování s námi je jednoduché a pohodlné.",
       "includedInPrice": {
         "items": [
-          "Kilometry nejeté v Praze neúčtujeme",
-          "Žádné příplatky za patra",
-          "Připojení a odpojení pračky či myčky neúčtujeme",
-          "Neúčtujeme příplatky za noční hodiny, víkendy ani svátky"
+          "Neúčtujeme kilometry, které nebyly najety v Praze.",
+          "Žádné příplatky za podlahu.",
+          "Neúčtujeme přípojku ani odpojení praček nebo myček nádobí.",
+          "Žádné příplatky za noční hodiny, víkendy nebo svátky."
         ],
         "title": "V ceně je zahrnuto:"
       },
@@ -1229,7 +1229,7 @@
       "spirometry": "",
       "urgent": ""
     },
-    "submitReservation": "Odeslat rezervaci",
+    "submitReservation": "Objednat",
     "submitting": "Odesílání...",
     "subtitle": "Rezervujte naše služby rychle a snadno online",
     "success": {
