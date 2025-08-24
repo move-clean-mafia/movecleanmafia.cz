@@ -1219,7 +1219,7 @@
       "consultation": "",
       "examination": "",
       "followUp": "",
-      "furnitureCleaning": "Furniture Cleaning",
+      "furnitureCleaning": "Dry Cleaning",
       "handyman": "Handyman",
       "moving": "Moving",
       "other": "Other",
@@ -1279,7 +1279,7 @@
       }
     },
     "ctaTitle": "Let's Start Working Together",
-    "furnitureCleaning": "Furniture Cleaning",
+    "furnitureCleaning": "Dry Cleaning",
     "furnitureCleaningDescription": "Professional furniture and carpet cleaning",
     "handyman": "Handyman",
     "handymanDescription": "Minor repairs and household maintenance",
