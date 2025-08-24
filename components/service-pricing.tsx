@@ -178,9 +178,9 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
 
   // Service images mapping
   const serviceImages = {
-    maintenance: '/images/services/service_s.png',
-    general: '/images/services/service_m.png',
-    postRenovation: '/images/services/service_l.png',
+    maintenance: `/images/services/${locale}/service_s.png`,
+    general: `/images/services/${locale}/service_m.png`,
+    postRenovation: `/images/services/${locale}/service_l.png`,
   };
 
   const renderAreaSection = (
