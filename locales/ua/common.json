@@ -937,7 +937,9 @@
     "phone1": "+420 774 635 981",
     "phone2": "+420 777 112 613",
     "whatsapp": "WhatsApp",
-    "whatsappAriaLabel": "Відкрити WhatsApp чат"
+    "whatsappAriaLabel": "Відкрити WhatsApp чат",
+    "instagram": "Instagram",
+    "instagramAriaLabel": "Слідкуйте за нами в Instagram"
   },
   "hero": {
     "badge": "THE MOVE & CLEAN MAFIA",

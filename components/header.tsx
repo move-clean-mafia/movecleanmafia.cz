@@ -4,7 +4,15 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { Phone, Menu, X, Crown, Shield, MessageCircle } from 'lucide-react';
+import {
+  Phone,
+  Menu,
+  X,
+  Crown,
+  Shield,
+  MessageCircle,
+  Instagram,
+} from 'lucide-react';
 import { LanguageSwitcher } from './language-switcher';
 import Logo from './logo';
 
@@ -74,10 +82,10 @@ export const Header: React.FC = () => {
                 {/* Phone Button - Premium Style */}
                 <a
                   href={`tel:${t('header.phone1')}`}
-                  className="group p-3 sm:p-4 rounded-xl bg-gradient-to-br from-[#d6b977] to-[#d6b977]/90 hover:from-[#d6b977]/90 hover:to-[#d6b977] transition-all duration-300 border-2 border-[#d6b977] shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
+                  className="group p-2 sm:p-4 rounded-xl bg-gradient-to-br from-[#d6b977] to-[#d6b977]/90 hover:from-[#d6b977]/90 hover:to-[#d6b977] transition-all duration-300 border-2 border-[#d6b977] shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
                   aria-label={t('header.phone1')}
                 >
-                  <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-black group-hover:scale-110 transition-transform duration-300" />
+                  <Phone className="w-2.5 h-2.5 sm:w-6 sm:h-6 text-black group-hover:scale-110 transition-transform duration-300" />
                 </a>
 
                 {/* WhatsApp Button - Premium Style */}
@@ -85,10 +93,21 @@ export const Header: React.FC = () => {
                   href="https://wa.me/420774635981"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-3 sm:p-4 rounded-xl bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition-all duration-300 border-2 border-green-400 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
+                  className="group p-2 sm:p-4 rounded-xl bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition-all duration-300 border-2 border-green-400 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
                   aria-label={t('header.whatsappAriaLabel')}
                 >
-                  <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:scale-110 transition-transform duration-300" />
+                  <MessageCircle className="w-2.5 h-2.5 sm:w-6 sm:h-6 text-white group-hover:scale-110 transition-transform duration-300" />
+                </a>
+
+                {/* Instagram Button - Premium Style */}
+                <a
+                  href="https://www.instagram.com/stehomafia?igsh=MWtxYjZ5OXJzcGt1dw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-2 sm:p-4 rounded-xl bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 transition-all duration-300 border-2 border-purple-400 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
+                  aria-label={t('header.instagramAriaLabel')}
+                >
+                  <Instagram className="w-2.5 h-2.5 sm:w-6 sm:h-6 text-white group-hover:scale-110 transition-transform duration-300" />
                 </a>
               </div>
 
@@ -200,7 +219,7 @@ export const Header: React.FC = () => {
                     className="group flex items-center justify-center space-x-4 hover:bg-[#d6b977]/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-[#d6b977]/50 shadow-lg hover:shadow-xl transform hover:scale-105"
                   >
                     <div className="w-10 h-10 bg-[#d6b977]/20 rounded-full flex items-center justify-center group-hover:bg-[#d6b977]/30 transition-all duration-300">
-                      <Phone className="w-5 h-5 text-[#d6b977]" />
+                      <Phone className="w-2.5 h-2.5 text-[#d6b977]" />
                     </div>
                     <span className="font-heading font-semibold text-base leading-4 tracking-wide text-white">
                       {t('header.phone1')}
@@ -214,10 +233,24 @@ export const Header: React.FC = () => {
                     className="group flex items-center justify-center space-x-4 hover:bg-green-500/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-green-500/50 shadow-lg hover:shadow-xl transform hover:scale-105"
                   >
                     <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center group-hover:bg-green-500/30 transition-all duration-300">
-                      <MessageCircle className="w-5 h-5 text-green-500" />
+                      <MessageCircle className="w-2.5 h-2.5 text-green-500" />
                     </div>
                     <span className="font-heading font-semibold text-base leading-4 tracking-wide text-white">
                       {t('header.whatsapp')}
+                    </span>
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/stehomafia?igsh=MWtxYjZ5OXJzcGt1dw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-center space-x-4 hover:bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 rounded-xl p-4 transition-all duration-300 w-full max-w-xs border-2 border-transparent hover:border-purple-500/50 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  >
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 rounded-full flex items-center justify-center group-hover:from-purple-500/30 group-hover:via-pink-500/30 group-hover:to-orange-500/30 transition-all duration-300">
+                      <Instagram className="w-2.5 h-2.5 text-purple-400" />
+                    </div>
+                    <span className="font-heading font-semibold text-base leading-4 tracking-wide text-white">
+                      {t('header.instagram')}
                     </span>
                   </a>
                 </div>

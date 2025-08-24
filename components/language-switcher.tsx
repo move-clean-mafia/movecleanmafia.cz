@@ -15,7 +15,6 @@ interface Language {
   code: string;
   name: string;
   nativeName: string;
-  flag: string;
 }
 
 const languages: Language[] = [
@@ -23,19 +22,16 @@ const languages: Language[] = [
     code: 'cs',
     name: 'Czech',
     nativeName: 'Čeština',
-    flag: '🇨🇿',
   },
   {
     code: 'en',
     name: 'English',
     nativeName: 'English',
-    flag: '🇺🇸',
   },
   {
     code: 'ua',
     name: 'Ukrainian',
     nativeName: 'Українська',
-    flag: '🇺🇦',
   },
 ];
 
@@ -81,7 +77,6 @@ export const LanguageSwitcher: React.FC = () => {
             className="flex items-center justify-between px-3 py-2 text-sm cursor-pointer hover:bg-[#d6b977]/10 hover:text-[#d6b977] rounded-lg transition-all duration-300 focus:bg-[#d6b977]/10 focus:text-[#d6b977]"
           >
             <div className="flex items-center">
-              <span className="text-lg mr-3">{language.flag}</span>
               <div className="flex flex-col">
                 <span className="font-medium text-white">
                   {language.nativeName}
