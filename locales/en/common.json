@@ -646,11 +646,11 @@
         "mattresses": {
           "items": [
             {
-              "name": "Single bed (one side)",
+              "name": "Single mattress (one side)",
               "price": "400–600 Kč"
             },
             {
-              "name": "Double bed (one side)",
+              "name": "Double mattress (one side)",
               "price": "800–1000 Kč"
             }
           ],
