@@ -1225,7 +1225,7 @@
       "handyman": "Handyman",
       "moving": "Moving",
       "other": "Other",
-      "packages": "Advantageous Service Packages",
+      "packages": "Special Service Packages",
       "spirometry": "",
       "urgent": ""
     },
@@ -1294,7 +1294,7 @@
       "Assembly at new location",
       "Cargo insurance"
     ],
-    "packages": "Advantageous Service Packages",
+    "packages": "Special Service Packages",
     "packagesDescription": "Combined services at competitive prices",
     "packing": "",
     "quality": "Quality",
