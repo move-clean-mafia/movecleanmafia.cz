@@ -236,7 +236,7 @@ const ContactPage = async ({ params }: ContactPageProps) => {
 
                         {/* Instagram Button */}
                         <a
-                          href="https://www.instagram.com/stehomafia?igsh=MWtxYjZ5OXJzcGt1dw=="
+                          href="https://www.instagram.com/move_clean_mafia"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="group flex flex-col items-center justify-center p-1.5 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-2xl border border-purple-400/30 hover:border-purple-300/50"

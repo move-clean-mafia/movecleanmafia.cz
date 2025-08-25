@@ -101,7 +101,7 @@ export const Header: React.FC = () => {
 
                 {/* Instagram Button - Premium Style */}
                 <a
-                  href="https://www.instagram.com/stehomafia?igsh=MWtxYjZ5OXJzcGt1dw=="
+                  href="https://www.instagram.com/move_clean_mafia"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-2 sm:p-4 rounded-xl bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 transition-all duration-300 border-2 border-purple-400 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
@@ -233,7 +233,7 @@ export const Header: React.FC = () => {
                   </a>
 
                   <a
-                    href="https://www.instagram.com/stehomafia?igsh=MWtxYjZ5OXJzcGt1dw=="
+                    href="https://www.instagram.com/move_clean_mafia"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group p-4 rounded-xl bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 hover:from-purple-500/30 hover:via-pink-500/30 hover:to-orange-500/30 transition-all duration-300 border-2 border-transparent hover:border-purple-500/50 shadow-lg hover:shadow-xl transform hover:scale-105"

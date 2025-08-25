@@ -1,7 +1,7 @@
 import React from 'react';
 import { type SupportedLanguage } from '../lib/i18n';
 import { CardContent } from './ui/card';
-import { Car, Sofa, Bed, Square, Sparkles } from 'lucide-react';
+import { Table, Sofa, Bed, Square, Sparkles } from 'lucide-react';
 import ReservationButton from './ui/reservation-button';
 
 interface DryCleaningServicesProps {
@@ -44,7 +44,7 @@ const DryCleaningServices: React.FC<DryCleaningServicesProps> = ({
 
   // Icon mapping for different categories
   const categoryIcons = {
-    furniture: Car,
+    furniture: Table,
     sofas: Sofa,
     beds: Bed,
     mattresses: Square,

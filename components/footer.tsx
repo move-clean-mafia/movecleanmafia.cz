@@ -149,7 +149,7 @@ export const Footer: React.FC = () => {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="https://www.instagram.com/stehomafia?igsh=MWtxYjZ5OXJzcGt1dw=="
+                    href="https://www.instagram.com/move_clean_mafia/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
