@@ -97,6 +97,17 @@ const HandymanServices: React.FC<HandymanServicesProps> = ({
         <div className="space-y-3">
           {category.items.map((item, index) => renderServiceItem(item, index))}
         </div>
+
+        {/* Reservation Button for this category */}
+        <div className="text-right mt-6">
+          <ReservationButton
+            locale={locale}
+            service="handyman"
+            variant="default"
+          >
+            {t('reservation.submitReservation') as string}
+          </ReservationButton>
+        </div>
       </div>
     );
   };
@@ -138,15 +149,6 @@ const HandymanServices: React.FC<HandymanServicesProps> = ({
             {/* Other Category */}
             {renderCategory('other', handymanData.categories.other)}
           </div>
-
-          {/* Reservation Button */}
-          <ReservationButton
-            locale={locale}
-            service="handyman"
-            variant="centered"
-          >
-            {t('reservation.submitReservation') as string}
-          </ReservationButton>
         </CardContent>
       </div>
     </section>

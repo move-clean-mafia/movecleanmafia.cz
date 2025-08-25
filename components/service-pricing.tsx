@@ -347,6 +347,19 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         {/* Main Services Table */}
         <div className="mb-8">
           {renderSimplePricingTable(movingData.movingServices)}
+
+          {/* Reservation Button under main services table */}
+          {showReservationButton && (
+            <div className="text-right mt-6">
+              <ReservationButton
+                locale={locale}
+                service="moving"
+                variant="default"
+              >
+                {t('reservation.submitReservation') as string}
+              </ReservationButton>
+            </div>
+          )}
         </div>
 
         {/* Minimum Order Notice */}
@@ -384,6 +397,19 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
               {movingData.additionalServices.title}
             </h3>
             {renderSimplePricingTable(movingData.additionalServices.items)}
+
+            {/* Reservation Button under additional services table */}
+            {showReservationButton && (
+              <div className="text-right mt-6">
+                <ReservationButton
+                  locale={locale}
+                  service="moving"
+                  variant="default"
+                >
+                  {t('reservation.submitReservation') as string}
+                </ReservationButton>
+              </div>
+            )}
           </div>
         )}
 
@@ -403,18 +429,20 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
                 </div>
               ))}
             </div>
-          </div>
-        )}
 
-        {/* Reservation Button */}
-        {showReservationButton && (
-          <ReservationButton
-            locale={locale}
-            service="moving"
-            variant="right-aligned"
-          >
-            {t('reservation.submitReservation') as string}
-          </ReservationButton>
+            {/* Reservation Button under additional services list */}
+            {showReservationButton && (
+              <div className="text-right mt-6">
+                <ReservationButton
+                  locale={locale}
+                  service="moving"
+                  variant="default"
+                >
+                  {t('reservation.submitReservation') as string}
+                </ReservationButton>
+              </div>
+            )}
+          </div>
         )}
       </div>
     );
@@ -574,9 +602,24 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         'movingServices' in serviceData &&
         serviceData.movingServices && (
           <div className="mb-8">
-            {serviceType === 'moving'
-              ? renderMovingServices()
-              : renderSimplePricingTable(serviceData.movingServices)}
+            {serviceType === 'moving' ? (
+              renderMovingServices()
+            ) : (
+              <>
+                {renderSimplePricingTable(serviceData.movingServices)}
+                {showReservationButton && (
+                  <div className="text-right mt-6">
+                    <ReservationButton
+                      locale={locale}
+                      service={serviceType}
+                      variant="default"
+                    >
+                      {t('reservation.submitReservation') as string}
+                    </ReservationButton>
+                  </div>
+                )}
+              </>
+            )}
             {serviceType === 'packing' && showReservationButton && (
               <ReservationButton
                 locale={locale}
@@ -594,6 +637,17 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         serviceData.packingServices && (
           <div className="mb-8">
             {renderSimplePricingTable(serviceData.packingServices)}
+            {showReservationButton && (
+              <div className="text-right mt-6">
+                <ReservationButton
+                  locale={locale}
+                  service={serviceType}
+                  variant="default"
+                >
+                  {t('reservation.submitReservation') as string}
+                </ReservationButton>
+              </div>
+            )}
             {showReservationButton && (
               <ReservationButton
                 locale={locale}

@@ -70,6 +70,18 @@ const PackagesServices: React.FC<PackagesServicesProps> = ({
             </div>
           ))}
         </div>
+
+        {/* Reservation Button for this package */}
+        <div className="text-center mt-6">
+          <ReservationButton
+            locale={locale}
+            service="packages"
+            packageType={size}
+            variant="default"
+          >
+            {t('reservation.submitReservation') as string}
+          </ReservationButton>
+        </div>
       </div>
     );
   };
@@ -104,6 +116,17 @@ const PackagesServices: React.FC<PackagesServicesProps> = ({
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Reservation Button for additional services */}
+        <div className="text-center mt-8">
+          <ReservationButton
+            locale={locale}
+            service="packages"
+            variant="default"
+          >
+            {t('reservation.submitReservation') as string}
+          </ReservationButton>
         </div>
       </div>
     );
