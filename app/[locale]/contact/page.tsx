@@ -182,29 +182,6 @@ const ContactPage = async ({ params }: ContactPageProps) => {
                   </div>
                 ))}
 
-                {/* Emergency Contact */}
-                <div className="mafia-card border-red-500/50 group hover-lift">
-                  <div className="flex items-start space-x-4">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-red-500 text-white rounded-full group-hover:scale-110 transition-transform duration-300">
-                      <Phone className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-red-400 mb-3 font-heading">
-                        {t('contact.info.emergency.title')}
-                      </h3>
-                      <p className="text-white/80 font-body mb-3">
-                        {t('contact.info.emergency.subtitle')}
-                      </p>
-                      <a
-                        href={`tel:${t('header.phone1')}`}
-                        className="text-red-400 hover:text-red-300 font-bold transition-colors duration-300 font-body"
-                      >
-                        {t('header.phone1')}
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Social Media */}
                 <div className="mafia-card group hover-lift">
                   <div className="flex items-start space-x-4">
