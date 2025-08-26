@@ -923,6 +923,11 @@
     }
   },
   "footer": {
+    "address": "Address",
+    "addressValue": "Kyjevská 2856, 272 04 Kladno",
+    "companyInfo": "Company Information",
+    "companyName": "TOP GASTRO FOOD s.r.o.",
+    "companyId": "Company ID: 09929045",
     "contactInfo": "Contact Information",
     "cookiePolicy": "Cookie Policy",
     "email": "Email",
@@ -930,6 +935,8 @@
     "instagram": "Instagram",
     "legal": "Legal",
     "phone": "Phone",
+    "phone1Description": "freight transport",
+    "phone2Description": "cleaning, dry cleaning",
     "privacyPolicy": "Privacy Policy",
     "quickLinks": "Quick Links",
     "tagline": "Professional moving and cleaning - your reliability is our priority",

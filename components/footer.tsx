@@ -56,8 +56,11 @@ export const Footer: React.FC = () => {
               </h4>
               <div className="space-y-4">
                 <div>
-                  <p className="text-sm text-white/80 mb-2 font-body">
-                    {t('contact.address')}
+                  <p className="text-sm text-white/80 font-body mb-4">
+                    <span className="font-medium text-[#d6b977]">
+                      {t('footer.address')}:
+                    </span>{' '}
+                    {t('footer.addressValue')}
                   </p>
                   <div className="space-y-1">
                     <p className="text-sm text-white/80 font-body">
@@ -69,7 +72,10 @@ export const Footer: React.FC = () => {
                         className="hover:text-[#d6b977] transition-colors duration-200"
                       >
                         {t('header.phone1')}
-                      </a>
+                      </a>{' '}
+                      <span className="text-white/60">
+                        ({t('footer.phone1Description')})
+                      </span>
                     </p>
                     <p className="text-sm text-white/80 font-body">
                       <a
@@ -77,7 +83,10 @@ export const Footer: React.FC = () => {
                         className="hover:text-[#d6b977] transition-colors duration-200"
                       >
                         {t('header.phone2')}
-                      </a>
+                      </a>{' '}
+                      <span className="text-white/60">
+                        ({t('footer.phone2Description')})
+                      </span>
                     </p>
                     <p className="text-sm text-white/80 font-body">
                       <span className="font-medium text-[#d6b977]">
@@ -158,6 +167,21 @@ export const Footer: React.FC = () => {
                   </a>
                 </li>
               </ul>
+            </div>
+
+            {/* Company Information */}
+            <div>
+              <h4 className="text-sm font-semibold text-[#d6b977] mb-4 font-heading">
+                {t('footer.companyInfo')}
+              </h4>
+              <div className="space-y-2">
+                <p className="text-sm text-white/80 font-body">
+                  {t('footer.companyName')}
+                </p>
+                <p className="text-sm text-white/80 font-body">
+                  {t('footer.companyId')}
+                </p>
+              </div>
             </div>
           </div>
 

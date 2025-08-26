@@ -923,6 +923,11 @@
     }
   },
   "footer": {
+    "address": "Adresa",
+    "addressValue": "Kyjevská 2856, 272 04 Kladno",
+    "companyInfo": "Informace o společnosti",
+    "companyName": "TOP GASTRO FOOD s.r.o.",
+    "companyId": "IČO: 09929045",
     "contactInfo": "Kontaktní informace",
     "cookiePolicy": "Zásady cookies",
     "email": "Email",
@@ -930,10 +935,12 @@
     "instagram": "Instagram",
     "legal": "Právní informace",
     "phone": "Telefon",
+    "phone1Description": "stěhování",
+    "phone2Description": "úklid, chemické čištění",
     "privacyPolicy": "Ochrana osobních údajů",
     "quickLinks": "Užitečné odkazy",
     "tagline": "Profesionální stěhování a úklid - vaše spolehlivost je naší prioritou",
-    "termsOfService": "Podmínky použití"
+    "termsOfService": "Obchodní podmínky"
   },
   "header": {
     "closeMainMenu": "Zavřít hlavní menu",
@@ -1019,7 +1026,7 @@
     "lastUpdated": "Naposledy aktualizováno",
     "relatedPolicies": {
       "cookiePolicy": "Zásady cookies",
-      "termsOfService": "Podmínky použití",
+      "termsOfService": "Obchodní podmínky",
       "title": "Související politiky"
     },
     "sections": {
@@ -1408,6 +1415,6 @@
         "title": "3. Povinnosti uživatele"
       }
     },
-    "title": "Podmínky použití"
+    "title": "Obchodní podmínky"
   }
 }
