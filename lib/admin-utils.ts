@@ -185,12 +185,19 @@ export interface ReservationData {
   phone: string;
 
   // Service Details
-  service: 'moving' | 'cleaning' | 'packing' | 'other';
+  service:
+    | 'moving'
+    | 'cleaning'
+    | 'packing'
+    | 'furniture-cleaning'
+    | 'handyman'
+    | 'packages'
+    | 'other';
   package?: 'maintenance' | 'general' | 'postRenovation';
 
   // Scheduling
   preferredDate: string;
-  preferredTime: 'morning' | 'afternoon' | 'evening';
+  preferredTime: 'morning' | 'afternoon' | 'evening' | 'night';
 
   // Address Information
   pickupAddress?: string;
@@ -232,8 +239,15 @@ export const createReservation = async (
   requestInfo?: { ipAddress?: string; userAgent?: string },
 ): Promise<string> => {
   try {
+    // Filter out undefined values to prevent Firebase errors
+    const cleanReservationData = Object.fromEntries(
+      Object.entries(reservationData).filter(
+        ([_, value]) => value !== undefined,
+      ),
+    );
+
     const reservationToSave = {
-      ...reservationData,
+      ...cleanReservationData,
       status: 'pending' as const,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),

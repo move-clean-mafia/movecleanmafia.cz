@@ -52,9 +52,8 @@ export const isAdmin = (user: User | null): boolean => {
 
   // Add your admin email logic here
   const adminEmails = [
-    'admin@movecleanmafia.cz',
     'vyacheslav.voloshyn@gmail.com',
-    'movecleanmafia@gmail.com',
+    'move.cleanmafia@gmail.com',
   ];
 
   return adminEmails.includes(user.email || '');

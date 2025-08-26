@@ -91,7 +91,7 @@
         "content": "Якщо у вас є будь-які питання щодо нашого використання cookies, будь ласка, зв'яжіться з нами:",
         "details": {
           "address": "Адреса: [Ваша бізнес-адреса]",
-          "email": "Email: info@movecleanmafia.cz",
+          "email": "Email: move.cleanmafia@gmail.com",
           "phone": "Телефон: +420 774 635 981"
         },
         "title": "Зв'яжіться з нами"
@@ -957,7 +957,7 @@
       "address": "Адреса",
       "addressValue": "Praha, Česká republika",
       "email": "Email",
-      "emailValue": "info@movecleanmafia.cz",
+      "emailValue": "move.cleanmafia@gmail.com",
       "phone": "Телефон",
       "subtitle": "Ми тут для вас кожен день. Не соромтеся звертатися до нас.",
       "title": "Контактна інформація"
@@ -1032,7 +1032,7 @@
         "details": {
           "address": "Адреса: [Ваша бізнес-адреса]",
           "dpo": "Посадовець з захисту даних: [Контактна інформація, якщо застосовно]",
-          "email": "Email: info@movecleanmafia.cz",
+          "email": "Email: move.cleanmafia@gmail.com",
           "phone": "Телефон: +420 774 635 981"
         },
         "title": "12. Контактна інформація"
@@ -1346,7 +1346,7 @@
       "contactInformation": {
         "address": "Адреса: [Ваша бізнес-адреса]",
         "company": "MoveCleanMafia",
-        "email": "Email: info@movecleanmafia.cz",
+        "email": "Email: move.cleanmafia@gmail.com",
         "phone": "Телефон: +420 774 635 981",
         "title": "11. Контактна інформація"
       },

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { createReservation } from '../../../lib/admin-utils';
 import { sendReservationNotification } from '../../../lib/telegram';
+import { sendReservationConfirmationEmail } from '../../../lib/email';
 
 // Validation schema matching the client-side schema
 const reservationSchema = z.object({
@@ -9,10 +10,18 @@ const reservationSchema = z.object({
   lastName: z.string().min(2, 'Last name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
   phone: z.string().min(9, 'Phone number must be at least 9 characters'),
-  service: z.enum(['moving', 'cleaning', 'packing', 'other']),
+  service: z.enum([
+    'moving',
+    'cleaning',
+    'packing',
+    'furniture-cleaning',
+    'handyman',
+    'packages',
+    'other',
+  ]),
   package: z.string().optional(),
   date: z.string().min(1, 'Date is required'),
-  time: z.enum(['morning', 'afternoon', 'evening']),
+  time: z.enum(['morning', 'afternoon', 'evening', 'night']),
   pickupAddress: z.string().optional(),
   deliveryAddress: z.string().optional(),
   address: z.string().optional(),
@@ -59,8 +68,15 @@ export async function POST(request: NextRequest) {
       currency: 'CZK' as const,
     };
 
+    // Filter out undefined values to prevent Firebase errors
+    const cleanReservationData = Object.fromEntries(
+      Object.entries(reservationData).filter(
+        ([_, value]) => value !== undefined,
+      ),
+    ) as any;
+
     // Save to Firebase
-    const reservationId = await createReservation(reservationData, {
+    const reservationId = await createReservation(cleanReservationData, {
       ipAddress,
       userAgent,
     });
@@ -91,6 +107,30 @@ export async function POST(request: NextRequest) {
     } catch (telegramError) {
       console.error('❌ [API] Telegram notification failed:', telegramError);
       // Don't fail the entire request if Telegram fails
+    }
+
+    // Send confirmation email to the user
+    try {
+      await sendReservationConfirmationEmail({
+        firstName: reservationData.firstName,
+        lastName: reservationData.lastName,
+        email: reservationData.email,
+        phone: reservationData.phone,
+        service: reservationData.service,
+        package: reservationData.package,
+        preferredDate: reservationData.preferredDate,
+        preferredTime: reservationData.preferredTime,
+        pickupAddress: reservationData.pickupAddress,
+        deliveryAddress: reservationData.deliveryAddress,
+        address: reservationData.address,
+        apartmentSize: reservationData.apartmentSize,
+        message: reservationData.message,
+        locale: reservationData.locale,
+        reservationId,
+      });
+    } catch (emailError) {
+      console.error('❌ [API] Confirmation email failed:', emailError);
+      // Don't fail the entire request if email fails
     }
 
     // Return success response

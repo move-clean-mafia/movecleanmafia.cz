@@ -84,10 +84,10 @@ export const Footer: React.FC = () => {
                         {t('footer.email')}:
                       </span>{' '}
                       <a
-                        href="mailto:info@movecleanmafia.cz"
+                        href="mailto:move.cleanmafia@gmail.com"
                         className="hover:text-[#d6b977] transition-colors duration-200"
                       >
-                        info@movecleanmafia.cz
+                        move.cleanmafia@gmail.com
                       </a>
                     </p>
                   </div>

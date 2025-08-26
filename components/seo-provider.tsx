@@ -90,7 +90,7 @@ const SEOProvider: React.FC<SEOProviderProps> = ({
           : 'Professional moving and cleaning services in Czech Republic',
     url: baseUrl,
     telephone: '+420 774 635 981',
-    email: 'info@movecleanmafia.cz',
+    email: 'move.cleanmafia@gmail.com',
     geo: {
       '@type': 'GeoCoordinates',
       latitude: 50.0755,

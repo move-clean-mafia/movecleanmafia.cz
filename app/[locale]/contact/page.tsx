@@ -69,18 +69,7 @@ const ContactPage = async ({ params }: ContactPageProps) => {
     {
       icon: Mail,
       title: t('contact.info.email'),
-      details: [
-        locale === 'cs'
-          ? 'info@movecleanmafia.cz'
-          : locale === 'ua'
-            ? 'info@movecleanmafia.ua'
-            : 'info@movecleanmafia.com',
-        locale === 'cs'
-          ? 'support@movecleanmafia.cz'
-          : locale === 'ua'
-            ? 'support@movecleanmafia.ua'
-            : 'support@movecleanmafia.com',
-      ],
+      details: ['move.cleanmafia@gmail.com'],
       action: 'mailto',
     },
     {
