@@ -365,7 +365,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
       {/* Service Information - Mafia Style */}
       <section className="bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8">
+          <div className="p-0">
             {/* Cleaning Sizes Section - Only for cleaning service */}
             {service.slug === 'cleaning' && service.cleaningSizes && (
               <div className="mb-12">

@@ -82,10 +82,10 @@ export const Header: React.FC = () => {
                 {/* Phone Button - Premium Style */}
                 <a
                   href={`tel:${t('header.phone1')}`}
-                  className="group p-2 sm:p-4 rounded-xl bg-gradient-to-br from-[#d6b977] to-[#d6b977]/90 hover:from-[#d6b977]/90 hover:to-[#d6b977] transition-all duration-300 border-2 border-[#d6b977] shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
+                  className="group h-9 w-9 md:h-10 md:w-10 rounded-xl bg-gradient-to-br from-[#d6b977] to-[#d6b977]/90 hover:from-[#d6b977]/90 hover:to-[#d6b977] transition-all duration-300 border-2 border-[#d6b977] shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1 flex items-center justify-center"
                   aria-label={t('header.phone1')}
                 >
-                  <Phone className="w-2.5 h-2.5 sm:w-6 sm:h-6 text-black group-hover:scale-110 transition-transform duration-300" />
+                  <Phone className="w-3.5 h-3.5 md:w-4 md:h-4 text-black group-hover:scale-110 transition-transform duration-300" />
                 </a>
 
                 {/* WhatsApp Button - Premium Style */}
@@ -93,10 +93,10 @@ export const Header: React.FC = () => {
                   href="https://wa.me/420774635981"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-2 sm:p-4 rounded-xl bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition-all duration-300 border-2 border-green-400 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
+                  className="group h-9 w-9 md:h-10 md:w-10 rounded-xl bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition-all duration-300 border-2 border-green-400 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1 flex items-center justify-center"
                   aria-label={t('header.whatsappAriaLabel')}
                 >
-                  <MessageCircle className="w-2.5 h-2.5 sm:w-6 sm:h-6 text-white group-hover:scale-110 transition-transform duration-300" />
+                  <MessageCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-white group-hover:scale-110 transition-transform duration-300" />
                 </a>
 
                 {/* Instagram Button - Premium Style */}
@@ -104,10 +104,10 @@ export const Header: React.FC = () => {
                   href="https://www.instagram.com/move_clean_mafia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-2 sm:p-4 rounded-xl bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 transition-all duration-300 border-2 border-purple-400 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
+                  className="group h-9 w-9 md:h-10 md:w-10 rounded-xl bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 transition-all duration-300 border-2 border-purple-400 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1 flex items-center justify-center"
                   aria-label={t('header.instagramAriaLabel')}
                 >
-                  <Instagram className="w-2.5 h-2.5 sm:w-6 sm:h-6 text-white group-hover:scale-110 transition-transform duration-300" />
+                  <Instagram className="w-3.5 h-3.5 md:w-4 md:h-4 text-white group-hover:scale-110 transition-transform duration-300" />
                 </a>
               </div>
 

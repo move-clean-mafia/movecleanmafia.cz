@@ -116,7 +116,7 @@ const HandymanServices: React.FC<HandymanServicesProps> = ({
     <section className={`bg-black ${className}`}>
       {/* Services Content */}
       <div className="mafia-card overflow-hidden border border-[#d6b977]/20">
-        <CardContent className="p-8">
+        <CardContent className="p-0">
           {/* Minimum Order Notice */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 bg-[#d6b977]/10 px-4 py-2 rounded-lg border border-[#d6b977]/30">

@@ -125,7 +125,7 @@ const PackagesServices: React.FC<PackagesServicesProps> = ({
     <section className={`bg-black ${className}`}>
       {/* Services Content */}
       <div className="mafia-card overflow-hidden border border-[#d6b977]/20">
-        <CardContent className="p-8">
+        <CardContent className="p-0">
           {/* Header */}
           <div className="text-center mb-8">
             <h2 className="text-3xl font-heading font-bold text-[#d6b977] mb-4">

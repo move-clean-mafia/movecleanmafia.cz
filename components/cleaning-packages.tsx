@@ -287,7 +287,7 @@ const CleaningPackages: React.FC<CleaningPackagesProps> = ({
 
       {/* Additional Services */}
       <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-        <div className="p-8">
+        <div className="p-0">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-baloo-bhai font-light text-gray-900 mb-4">
               {

@@ -126,7 +126,7 @@ const DryCleaningServices: React.FC<DryCleaningServicesProps> = ({
     <section className={`bg-black ${className}`}>
       {/* Services Content */}
       <div className="mafia-card overflow-hidden border border-[#d6b977]/20 shadow-2xl">
-        <CardContent className="p-8 md:p-12">
+        <CardContent className="p-0">
           <div className="space-y-16">
             {/* Furniture Category */}
             {renderCategoryTable(
