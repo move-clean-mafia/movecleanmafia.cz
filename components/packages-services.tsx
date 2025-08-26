@@ -117,17 +117,6 @@ const PackagesServices: React.FC<PackagesServicesProps> = ({
             </div>
           ))}
         </div>
-
-        {/* Reservation Button for additional services */}
-        <div className="text-center mt-8">
-          <ReservationButton
-            locale={locale}
-            service="packages"
-            variant="default"
-          >
-            {t('reservation.submitReservation') as string}
-          </ReservationButton>
-        </div>
       </div>
     );
   };

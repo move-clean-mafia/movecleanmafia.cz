@@ -22,6 +22,10 @@
         "answer": "Price is set individually according to the scope of work. We offer free price quotes.",
         "question": "What is the price of services?"
       },
+      "payment": {
+        "answer": "Payment is accepted in cash or via mobile terminal after service completion.",
+        "question": "What payment methods do you accept?"
+      },
       "title": "Frequently Asked Questions",
       "weekends": {
         "answer": "Yes, we provide services on weekends and holidays. Contact us for booking.",
@@ -994,7 +998,11 @@
       ],
       "description": "We offer transparent and competitive prices with no hidden fees. Our services are affordable but never compromise on quality.",
       "subtitle": "Quality at a fair price - that's our promise",
-      "title": "COMPETITIVE PRICING"
+      "title": "COMPETITIVE PRICING",
+      "paymentMethods": {
+        "title": "Payment Methods",
+        "description": "Payment is accepted in cash or via mobile terminal."
+      }
     },
     "servicesSection": {
       "subtitle": "Five distinct services, one unbeatable team. We handle everything with the precision and care that sets us apart.",
@@ -1249,7 +1257,11 @@
       "morning": "Morning (8:00-12:00)",
       "night": "Night time (20:00-8:00)"
     },
-    "title": "Online Reservation"
+    "title": "Online Reservation",
+    "paymentInfo": {
+      "title": "Payment Information",
+      "description": "Payment is accepted in cash or via mobile terminal after service completion."
+    }
   },
   "serviceDetail": {
     "backToServices": "Back to Services"
@@ -1387,7 +1399,7 @@
           "title": "Estimates:"
         },
         "payment": {
-          "content": "Payment is due upon completion of services unless otherwise agreed. We accept cash, bank transfer, and card payments.",
+          "content": "Payment is due upon completion of services unless otherwise agreed. We accept cash and payments via mobile terminal.",
           "title": "Payment:"
         },
         "pricing": {

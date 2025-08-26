@@ -322,6 +322,19 @@ const ContactPage = async ({ params }: ContactPageProps) => {
                 </CardDescription>
               </CardContent>
             </div>
+
+            <div className="mafia-card group hover-lift">
+              <CardHeader className="bg-[#d6b977] text-black rounded-t-lg">
+                <CardTitle className="text-lg font-heading font-bold">
+                  {t('contact.faq.payment.question')}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <CardDescription className="text-white/80 font-body">
+                  {t('contact.faq.payment.answer')}
+                </CardDescription>
+              </CardContent>
+            </div>
           </div>
         </div>
       </section>

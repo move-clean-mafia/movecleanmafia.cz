@@ -15,16 +15,20 @@
         "question": "Jsou věci pojištěné?"
       },
       "movingTime": {
-        "answer": "Doba stěhování závisí na velikosti bytu a množství věcí. Obvykle 4-6 hodin.",
+        "answer": "Čas stěhování závisí na velikosti bytu a množství věcí. Obvykle 4-6 hodin.",
         "question": "Jak dlouho trvá stěhování?"
       },
       "pricing": {
-        "answer": "Cena se stanovuje individuálně podle rozsahu práce. Nabízíme bezplatné cenové nabídky.",
+        "answer": "Cena se stanovuje individuálně podle rozsahu práce. Poskytujeme bezplatné cenové nabídky.",
         "question": "Jaká je cena služeb?"
+      },
+      "payment": {
+        "answer": "Platba je možná hotově nebo přes mobilní terminál po dokončení služeb.",
+        "question": "Jaké způsoby platby přijímáte?"
       },
       "title": "Často kladené otázky",
       "weekends": {
-        "answer": "Ano, poskytujeme služby i o víkendech a svátcích. Kontaktujte nás pro rezervaci.",
+        "answer": "Ano, poskytujeme služby také o víkendech a svátcích. Kontaktujte nás pro rezervaci.",
         "question": "Pracujete o víkendech?"
       }
     },
@@ -994,7 +998,11 @@
       ],
       "description": "Nabízíme transparentní a konkurenceschopné ceny bez skrytých poplatků. Naše služby jsou cenově dostupné, ale nikdy nekompromisní v kvalitě.",
       "subtitle": "Kvalita za férovou cenu - to je náš slib",
-      "title": "Nejlepší ceny"
+      "title": "Nejlepší ceny",
+      "paymentMethods": {
+        "title": "Způsoby platby",
+        "description": "Platba je možná hotově nebo přes mobilní terminál."
+      }
     },
     "servicesSection": {
       "subtitle": "Pět odlišných služeb, jeden nepřekonatelný tým. Řešíme vše s precizností a péčí, která nás odlišuje.",
@@ -1214,21 +1222,6 @@
     "service": "Služba",
     "serviceDetails": "Detaily služby",
     "servicePlaceholder": "Vyberte službu",
-    "services": {
-      "allergyTesting": "",
-      "bronchoscopy": "",
-      "cleaning": "Úklid",
-      "consultation": "",
-      "examination": "",
-      "followUp": "",
-      "furnitureCleaning": "Čištění nábytku",
-      "handyman": "Hodinový manžel",
-      "moving": "Stěhování",
-      "other": "Jiné",
-      "packages": "Balíčky služeb",
-      "spirometry": "",
-      "urgent": ""
-    },
     "book": "Rezervovat",
     "submitReservation": "Objednat",
     "submitting": "Odesílání...",
@@ -1249,7 +1242,11 @@
       "morning": "Ráno (8:00-12:00)",
       "night": "Noční čas (20:00-8:00)"
     },
-    "title": "Online rezervace"
+    "title": "Online rezervace",
+    "paymentInfo": {
+      "title": "Informace o platbě",
+      "description": "Platba je možná hotově nebo přes mobilní terminál po dokončení služeb."
+    }
   },
   "serviceDetail": {
     "backToServices": "Zpět na služby"
@@ -1387,7 +1384,7 @@
           "title": "Odhad:"
         },
         "payment": {
-          "content": "Platba je splatná po dokončení služeb, pokud není dohodnuto jinak. Přijímáme hotovost, bankovní převod a platby kartou.",
+          "content": "Platba je splatná po dokončení služeb, pokud není dohodnuto jinak. Přijímáme hotovost a platby přes mobilní terminál.",
           "title": "Platba:"
         },
         "pricing": {

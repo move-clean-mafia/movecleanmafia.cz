@@ -24,6 +24,7 @@ import {
   Droplets,
   Wrench,
   Package2,
+  CreditCard,
 } from 'lucide-react';
 import { CTASection } from '@/components/cta-section';
 
@@ -321,6 +322,21 @@ const HomePage = async ({ params }: HomePageProps) => {
                 </h3>
               </div>
             ))}
+          </div>
+
+          {/* Payment Methods Section */}
+          <div className="mt-16 text-center">
+            <div className="mafia-card border border-[#d6b977]/30 p-8 hover:border-[#d6b977]/50 transition-colors duration-300">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-[#d6b977] text-black rounded-full mb-6">
+                <CreditCard className="w-10 h-10" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#d6b977] mb-4 font-heading">
+                {t('homepage.pricingAdvantage.paymentMethods.title')}
+              </h3>
+              <p className="text-lg text-white/80 font-body max-w-2xl mx-auto">
+                {t('homepage.pricingAdvantage.paymentMethods.description')}
+              </p>
+            </div>
           </div>
         </div>
       </section>
