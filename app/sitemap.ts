@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://movecleanmafia.cz';
-  const currentDate = new Date();
+  const currentDate = new Date().toISOString();
 
   // Define all routes for all languages with detailed metadata
   const routes: Array<{

@@ -10,8 +10,17 @@ Allow: /ua/
 Disallow: /admin/
 Disallow: /api/
 
-# Sitemap location
+# Sitemap location (absolute URL)
+Sitemap: https://movecleanmafia.cz/sitemap.xml
+
+# Additional sitemap for better discovery
 Sitemap: https://movecleanmafia.cz/sitemap.xml
 
 # Crawl-delay for respectful crawling
-Crawl-delay: 1 
+Crawl-delay: 1
+
+# Additional directives for better indexing
+Allow: /images/
+Allow: /favicon/
+Allow: /css/
+Allow: /js/ 
