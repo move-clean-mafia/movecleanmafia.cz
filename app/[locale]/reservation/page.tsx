@@ -40,6 +40,35 @@ export async function generateMetadata({
   return {
     title,
     description,
+    openGraph: {
+      title,
+      description,
+      url: `https://movecleanmafia.cz/${locale}/reservation`,
+      siteName: 'MoveCleanMafia',
+      images: [
+        {
+          url: '/images/logo.png',
+          width: 1024,
+          height: 1024,
+          alt: title,
+        },
+      ],
+      locale: locale === 'cs' ? 'cs_CZ' : locale === 'ua' ? 'uk_UA' : 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/images/logo.png'],
+    },
+    alternates: {
+      canonical: `https://movecleanmafia.cz/${locale}/reservation`,
+      languages: {
+        cs: 'https://movecleanmafia.cz/cs/reservation',
+        en: 'https://movecleanmafia.cz/en/reservation',
+        uk: 'https://movecleanmafia.cz/ua/reservation',
+      },
+    },
   };
 }
 

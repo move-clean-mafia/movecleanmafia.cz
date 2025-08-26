@@ -262,9 +262,9 @@ export async function generateMetadata({
       siteName: 'MoveCleanMafia',
       images: [
         {
-          url: service.image,
-          width: 1200,
-          height: 630,
+          url: '/images/logo.png',
+          width: 1024,
+          height: 1024,
           alt: service.title,
         },
       ],
@@ -274,7 +274,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: getTitle(locale, service.title),
       description: getDescription(locale, service.description),
-      images: [service.image],
+      images: ['/images/logo.png'],
     },
     alternates: {
       canonical: `https://movecleanmafia.cz/${locale}/service/${slug}`,

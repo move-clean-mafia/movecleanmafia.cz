@@ -150,9 +150,9 @@ export const generateMetadata = async ({
       siteName: 'MoveCleanMafia',
       images: [
         {
-          url: '/images/hero.jpg',
-          width: 1200,
-          height: 630,
+          url: '/images/logo.png',
+          width: 1024,
+          height: 1024,
           alt: getTitle(locale),
         },
       ],
@@ -161,7 +161,7 @@ export const generateMetadata = async ({
       card: 'summary_large_image',
       title: getTitle(locale),
       description: getDescription(locale),
-      images: ['/images/hero.jpg'],
+      images: ['/images/logo.png'],
     },
     alternates: {
       canonical: `https://movecleanmafia.cz/${locale}`,

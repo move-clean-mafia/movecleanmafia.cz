@@ -12,8 +12,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }> = [
     // Czech routes
     { route: '/cs', priority: 1.0, changeFrequency: 'weekly' },
-    { route: '/cs/about', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/cs/services', priority: 0.9, changeFrequency: 'weekly' },
+    { route: '/cs/service/moving', priority: 0.8, changeFrequency: 'monthly' },
+    {
+      route: '/cs/service/cleaning',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
+    {
+      route: '/cs/service/furniture-cleaning',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
+    {
+      route: '/cs/service/handyman',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
+    {
+      route: '/cs/service/packages',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
     { route: '/cs/contact', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/cs/reservation', priority: 0.9, changeFrequency: 'weekly' },
     { route: '/cs/privacy', priority: 0.3, changeFrequency: 'yearly' },
@@ -22,8 +42,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // English routes
     { route: '/en', priority: 1.0, changeFrequency: 'weekly' },
-    { route: '/en/about', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/en/services', priority: 0.9, changeFrequency: 'weekly' },
+    { route: '/en/service/moving', priority: 0.8, changeFrequency: 'monthly' },
+    {
+      route: '/en/service/cleaning',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
+    {
+      route: '/en/service/furniture-cleaning',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
+    {
+      route: '/en/service/handyman',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
+    {
+      route: '/en/service/packages',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
     { route: '/en/contact', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/en/reservation', priority: 0.9, changeFrequency: 'weekly' },
     { route: '/en/privacy', priority: 0.3, changeFrequency: 'yearly' },
@@ -32,8 +72,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Ukrainian routes
     { route: '/ua', priority: 1.0, changeFrequency: 'weekly' },
-    { route: '/ua/about', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/ua/services', priority: 0.9, changeFrequency: 'weekly' },
+    { route: '/ua/service/moving', priority: 0.8, changeFrequency: 'monthly' },
+    {
+      route: '/ua/service/cleaning',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
+    {
+      route: '/ua/service/furniture-cleaning',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
+    {
+      route: '/ua/service/handyman',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
+    {
+      route: '/ua/service/packages',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
     { route: '/ua/contact', priority: 0.8, changeFrequency: 'monthly' },
     { route: '/ua/reservation', priority: 0.9, changeFrequency: 'weekly' },
     { route: '/ua/privacy', priority: 0.3, changeFrequency: 'yearly' },

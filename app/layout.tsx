@@ -59,10 +59,10 @@ export const metadata: Metadata = {
     siteName: 'MoveCleanMafia.cz',
     images: [
       {
-        url: '/images/hero.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'MoveCleanMafia - Professional Moving and Cleaning Services',
+        url: '/images/logo.png',
+        width: 1024,
+        height: 1024,
+        alt: 'MoveCleanMafia Logo - Professional Moving and Cleaning Services',
       },
     ],
   },
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     title: 'MoveCleanMafia.cz - Professional Moving & Cleaning Services',
     description:
       'Professional moving and cleaning services for households and businesses in Czech Republic.',
-    images: ['/images/hero.jpg'],
+    images: ['/images/logo.png'],
   },
   icons: {
     icon: [
@@ -170,6 +170,59 @@ export default function RootLayout({
           rel="alternate"
           hrefLang="x-default"
           href="https://movecleanmafia.cz/cs"
+        />
+
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'MoveCleanMafia',
+              description:
+                'Professional moving and cleaning services for households and businesses in Czech Republic',
+              url: 'https://movecleanmafia.cz',
+              telephone: '+420 774 635 981',
+              email: 'move.cleanmafia@gmail.com',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Prague',
+                addressCountry: 'CZ',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 50.0755,
+                longitude: 14.4378,
+              },
+              openingHours: 'Mo-Su 00:00-23:59',
+              priceRange: '$$',
+              serviceArea: {
+                '@type': 'City',
+                name: 'Prague',
+              },
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'Moving and Cleaning Services',
+                itemListElement: [
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Moving Services',
+                    },
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Cleaning Services',
+                    },
+                  },
+                ],
+              },
+            }),
+          }}
         />
       </head>
       <body suppressHydrationWarning>{children}</body>
