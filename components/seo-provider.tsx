@@ -229,6 +229,28 @@ const SEOProvider: React.FC<SEOProviderProps> = ({
 
   return (
     <>
+      {/* Hreflang tags for all supported languages */}
+      <link
+        rel="alternate"
+        hrefLang="cs"
+        href={`https://movecleanmafia.cz/cs${pageUrl ? pageUrl.replace(`https://movecleanmafia.cz/${locale}`, '') : ''}`}
+      />
+      <link
+        rel="alternate"
+        hrefLang="en"
+        href={`https://movecleanmafia.cz/en${pageUrl ? pageUrl.replace(`https://movecleanmafia.cz/${locale}`, '') : ''}`}
+      />
+      <link
+        rel="alternate"
+        hrefLang="uk"
+        href={`https://movecleanmafia.cz/ua${pageUrl ? pageUrl.replace(`https://movecleanmafia.cz/${locale}`, '') : ''}`}
+      />
+      <link
+        rel="alternate"
+        hrefLang="x-default"
+        href={`https://movecleanmafia.cz/en${pageUrl ? pageUrl.replace(`https://movecleanmafia.cz/${locale}`, '') : ''}`}
+      />
+
       {/* Local Business Schema */}
       <Script
         id="local-business-schema"
