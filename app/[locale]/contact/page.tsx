@@ -11,7 +11,6 @@ import {
 import {
   Phone,
   Mail,
-  Clock,
   MessageSquare,
   Crown,
   MessageCircle,
@@ -109,23 +108,6 @@ const ContactPage = async ({ params }: ContactPageProps) => {
       icon: MapPin,
       title: t('footer.address'),
       details: [t('footer.addressValue')],
-      action: null,
-    },
-    {
-      icon: Clock,
-      title: t('contact.info.hours'),
-      details: [
-        locale === 'cs'
-          ? 'Po-Pá: 8:00 - 18:00'
-          : locale === 'ua'
-            ? 'Пн-Пт: 8:00 - 18:00'
-            : 'Mon-Fri: 8:00 - 18:00',
-        locale === 'cs'
-          ? 'So: 9:00 - 15:00'
-          : locale === 'ua'
-            ? 'Сб: 9:00 - 15:00'
-            : 'Sat: 9:00 - 15:00',
-      ],
       action: null,
     },
   ];
