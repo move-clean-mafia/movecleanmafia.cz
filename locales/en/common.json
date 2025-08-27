@@ -384,7 +384,7 @@
             "description": "Professional packing and packaging of your items for safe transport",
             "services": [
               {
-                "name": "Packing items",
+                "name": "Packing service",
                 "price": "450 Kč/hour"
               },
               {
@@ -794,11 +794,11 @@
             "price": "30 Kč/km"
           },
           {
-            "name": "Packing items",
+            "name": "Packing service",
             "price": "450 Kč/hour"
           },
           {
-            "name": "Furnishing & Arrangement",
+            "name": "Equipment & Arrangement",
             "price": "450 Kč/hour"
           },
           {
@@ -806,7 +806,7 @@
             "price": "90 Kč"
           }
         ],
-        "title": "Equipment & Arrangement"
+        "title": "Additional services"
       },
       "additionalServicesList": {
         "items": [
