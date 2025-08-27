@@ -12,6 +12,3 @@ Disallow: /api/
 
 # Sitemap location (absolute URL)
 Sitemap: https://movecleanmafia.cz/sitemap.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1 
