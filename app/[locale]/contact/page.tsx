@@ -280,7 +280,7 @@ const ContactPage = async ({ params }: ContactPageProps) => {
             </h2>
             <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
             <p className="text-xl text-white/80 max-w-3xl mx-auto font-body">
-              Everything you need to know about our services
+              {t('contact.faq.subtitle')}
             </p>
           </div>
 

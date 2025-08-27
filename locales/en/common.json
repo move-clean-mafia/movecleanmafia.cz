@@ -27,6 +27,7 @@
         "question": "What payment methods do you accept?"
       },
       "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about our services",
       "weekends": {
         "answer": "Yes, we provide services on weekends and holidays. Contact us for booking.",
         "question": "Do you work on weekends?"
