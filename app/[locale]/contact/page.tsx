@@ -15,7 +15,6 @@ import {
   Crown,
   MessageCircle,
   Instagram,
-  MapPin,
 } from 'lucide-react';
 import ReservationForm from '../../../components/reservation-form';
 import { CTASection } from '../../../components/cta-section';
@@ -103,12 +102,6 @@ const ContactPage = async ({ params }: ContactPageProps) => {
       title: t('contact.info.email'),
       details: ['move.cleanmafia@gmail.com'],
       action: 'mailto',
-    },
-    {
-      icon: MapPin,
-      title: t('footer.address'),
-      details: [t('footer.addressValue')],
-      action: null,
     },
   ];
 

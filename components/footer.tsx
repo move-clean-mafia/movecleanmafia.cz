@@ -58,48 +58,44 @@ export const Footer: React.FC = () => {
                 <div>
                   <p className="text-sm text-white/80 font-body mb-4">
                     <span className="font-medium text-[#d6b977]">
-                      {t('footer.address')}:
-                    </span>{' '}
-                    {t('footer.addressValue')}
+                      {t('footer.phone')}:
+                    </span>
                   </p>
-                  <div className="space-y-1">
-                    <p className="text-sm text-white/80 font-body">
-                      <span className="font-medium text-[#d6b977]">
-                        {t('footer.phone')}:
-                      </span>{' '}
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
                       <a
                         href="tel:+420774635981"
-                        className="hover:text-[#d6b977] transition-colors duration-200"
+                        className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
                       >
                         {t('header.phone1')}
-                      </a>{' '}
-                      <span className="text-white/60">
+                      </a>
+                      <span className="text-white/60 text-sm">
                         ({t('footer.phone1Description')})
                       </span>
-                    </p>
-                    <p className="text-sm text-white/80 font-body">
+                    </div>
+                    <div className="flex items-center space-x-2">
                       <a
                         href="tel:+420777112613"
-                        className="hover:text-[#d6b977] transition-colors duration-200"
+                        className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
                       >
                         {t('header.phone2')}
-                      </a>{' '}
-                      <span className="text-white/60">
+                      </a>
+                      <span className="text-white/60 text-sm">
                         ({t('footer.phone2Description')})
                       </span>
-                    </p>
-                    <p className="text-sm text-white/80 font-body">
-                      <span className="font-medium text-[#d6b977]">
-                        {t('footer.email')}:
-                      </span>{' '}
-                      <a
-                        href="mailto:move.cleanmafia@gmail.com"
-                        className="hover:text-[#d6b977] transition-colors duration-200"
-                      >
-                        move.cleanmafia@gmail.com
-                      </a>
-                    </p>
+                    </div>
                   </div>
+                  <p className="text-sm text-white/80 font-body mt-4">
+                    <span className="font-medium text-[#d6b977]">
+                      {t('footer.email')}:
+                    </span>{' '}
+                    <a
+                      href="mailto:move.cleanmafia@gmail.com"
+                      className="hover:text-[#d6b977] transition-colors duration-200"
+                    >
+                      move.cleanmafia@gmail.com
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -180,6 +176,12 @@ export const Footer: React.FC = () => {
                 </p>
                 <p className="text-sm text-white/80 font-body">
                   {t('footer.companyId')}
+                </p>
+                <p className="text-sm text-white/80 font-body">
+                  <span className="font-medium text-[#d6b977]">
+                    {t('footer.address')}:
+                  </span>{' '}
+                  {t('footer.addressValue')}
                 </p>
               </div>
             </div>
