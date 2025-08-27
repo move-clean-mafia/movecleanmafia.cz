@@ -164,7 +164,6 @@ export const generateMetadata = async ({
       images: ['/images/logo.png'],
     },
     alternates: {
-      canonical: `https://movecleanmafia.cz/${locale}`,
       languages: {
         cs: 'https://movecleanmafia.cz/cs',
         en: 'https://movecleanmafia.cz/en',

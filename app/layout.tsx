@@ -112,12 +112,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning>
+    <html lang="cs" suppressHydrationWarning>
       <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
-        />
         <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
         <link
           rel="icon"
@@ -139,37 +135,6 @@ export default function RootLayout({
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#6B4F2C" />
         <meta name="theme-color" content="#D6B977" />
-
-        {/* Additional SEO meta tags */}
-        <meta name="author" content="MoveCleanMafia" />
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
-        <meta name="bingbot" content="index, follow" />
-
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://movecleanmafia.cz" />
-
-        {/* Alternate language versions */}
-        <link
-          rel="alternate"
-          hrefLang="cs"
-          href="https://movecleanmafia.cz/cs"
-        />
-        <link
-          rel="alternate"
-          hrefLang="en"
-          href="https://movecleanmafia.cz/en"
-        />
-        <link
-          rel="alternate"
-          hrefLang="ua"
-          href="https://movecleanmafia.cz/ua"
-        />
-        <link
-          rel="alternate"
-          hrefLang="x-default"
-          href="https://movecleanmafia.cz/cs"
-        />
 
         {/* JSON-LD Structured Data */}
         <script

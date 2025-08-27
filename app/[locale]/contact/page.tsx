@@ -32,7 +32,7 @@ export async function generateMetadata({
 
   switch (locale) {
     case 'cs':
-      title = 'Kontakt - MoveCleanMafia.cz';
+      title = 'Kontakt - MoveCleanMafia';
       description =
         'Kontaktujte nás pro bezplatnou konzultaci a cenovou nabídku přepravy a úklidu';
       break;
@@ -42,7 +42,7 @@ export async function generateMetadata({
         "Зв'яжіться з нами для безкоштовної консультації та цінової пропозиції перевезення та прибирання";
       break;
     default:
-      title = 'Contact - MoveCleanMafia.com';
+      title = 'Contact - MoveCleanMafia';
       description =
         'Contact us for a free consultation and price quote for moving and cleaning services';
       break;
