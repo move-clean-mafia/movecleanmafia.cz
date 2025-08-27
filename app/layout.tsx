@@ -42,7 +42,6 @@ export const metadata: Metadata = {
     google: 'tAjavF9M2DplYyPZUChDkwHhQKU7ewlYPJdAGG62nUY',
   },
   alternates: {
-    canonical: 'https://movecleanmafia.cz',
     languages: {
       cs: 'https://movecleanmafia.cz/cs',
       en: 'https://movecleanmafia.cz/en',
@@ -75,6 +74,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: '/favicon/favicon.ico', type: 'image/x-icon' },
       { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
@@ -101,6 +101,8 @@ export const metadata: Metadata = {
     'geo.placename': 'Prague',
     'geo.position': '50.0755;14.4378',
     ICBM: '50.0755, 14.4378',
+    'msapplication-TileColor': '#6B4F2C',
+    'theme-color': '#D6B977',
   },
 };
 
@@ -113,82 +115,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs" suppressHydrationWarning>
-      <head>
-        <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon/favicon-16x16.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicon/apple-touch-icon.png"
-        />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <meta name="msapplication-TileColor" content="#6B4F2C" />
-        <meta name="theme-color" content="#D6B977" />
-
-        {/* JSON-LD Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'LocalBusiness',
-              name: 'MoveCleanMafia',
-              description:
-                'Professional moving and cleaning services for households and businesses in Czech Republic',
-              url: 'https://movecleanmafia.cz',
-              telephone: '+420 774 635 981',
-              email: 'move.cleanmafia@gmail.com',
-              address: {
-                '@type': 'PostalAddress',
-                addressLocality: 'Prague',
-                addressCountry: 'CZ',
-              },
-              geo: {
-                '@type': 'GeoCoordinates',
-                latitude: 50.0755,
-                longitude: 14.4378,
-              },
-              openingHours: 'Mo-Su 00:00-23:59',
-              priceRange: '$$',
-              serviceArea: {
-                '@type': 'City',
-                name: 'Prague',
-              },
-              hasOfferCatalog: {
-                '@type': 'OfferCatalog',
-                name: 'Moving and Cleaning Services',
-                itemListElement: [
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Moving Services',
-                    },
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Cleaning Services',
-                    },
-                  },
-                ],
-              },
-            }),
-          }}
-        />
-      </head>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );

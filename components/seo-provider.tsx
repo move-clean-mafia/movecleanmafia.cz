@@ -256,21 +256,6 @@ const SEOProvider: React.FC<SEOProviderProps> = ({
         }}
       />
 
-      {/* Additional SEO meta tags */}
-      <meta name="author" content="MoveCleanMafia" />
-      <meta name="robots" content="index, follow" />
-      <meta name="googlebot" content="index, follow" />
-      <meta name="bingbot" content="index, follow" />
-
-      {/* Canonical URL */}
-      <link rel="canonical" href={currentUrl} />
-
-      {/* Alternate language versions */}
-      <link rel="alternate" hrefLang="cs" href={`${baseUrl}/cs`} />
-      <link rel="alternate" hrefLang="en" href={`${baseUrl}/en`} />
-      <link rel="alternate" hrefLang="ua" href={`${baseUrl}/ua`} />
-      <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/cs`} />
-
       {children}
     </>
   );

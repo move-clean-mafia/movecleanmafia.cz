@@ -164,6 +164,7 @@ export const generateMetadata = async ({
       images: ['/images/logo.png'],
     },
     alternates: {
+      canonical: `https://movecleanmafia.cz/${locale}`,
       languages: {
         cs: 'https://movecleanmafia.cz/cs',
         en: 'https://movecleanmafia.cz/en',
@@ -190,6 +191,10 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
         />
+        <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#6B4F2C" />
+        <meta name="theme-color" content="#D6B977" />
       </head>
       <body className={`${balooBhai.variable} ${inter.variable} antialiased`}>
         <SEOProvider locale={locale as SupportedLanguage}>
