@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: {
     template: '%s | MoveCleanMafia.cz',
-    default: 'MoveCleanMafia.cz - Professional Moving & Cleaning Services',
+    default: 'MoveCleanMafia.cz - Moving & Cleaning Services',
   },
   description:
     'Professional moving and cleaning services for households and businesses in Czech Republic. Reliable, affordable, and professional moving and cleaning solutions.',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'cs_CZ',
     url: 'https://movecleanmafia.cz',
-    title: 'MoveCleanMafia.cz - Professional Moving & Cleaning Services',
+    title: 'MoveCleanMafia.cz - Moving & Cleaning Services',
     description:
       'Professional moving and cleaning services for households and businesses in Czech Republic. Reliable, affordable, and professional solutions.',
     siteName: 'MoveCleanMafia.cz',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MoveCleanMafia.cz - Professional Moving & Cleaning Services',
+    title: 'MoveCleanMafia.cz - Moving & Cleaning Services',
     description:
       'Professional moving and cleaning services for households and businesses in Czech Republic.',
     images: ['/images/logo.png'],

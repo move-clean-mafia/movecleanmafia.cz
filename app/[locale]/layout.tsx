@@ -52,7 +52,7 @@ export const generateMetadata = async ({
       case 'ua':
         return 'MoveCleanMafia.ua - Професійні перевезення та прибирання';
       default:
-        return 'MoveCleanMafia.com - Professional Moving & Cleaning Services';
+        return 'MoveCleanMafia.com - Moving & Cleaning Services';
     }
   };
 

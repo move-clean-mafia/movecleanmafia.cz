@@ -80,7 +80,7 @@ export async function generateMetadata({
       ];
       break;
     default:
-      title = 'MoveCleanMafia.com - Professional Moving & Cleaning Services';
+      title = 'MoveCleanMafia.com - Moving & Cleaning Services';
       description =
         'Reliable moving and cleaning services for households and businesses in Prague. Professional moving, cleaning and packing with quality guarantee. Call us 24/7.';
       keywords = [
