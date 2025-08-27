@@ -22,6 +22,318 @@ interface ServiceDetailPageProps {
   params: Promise<{ locale: string; slug: string }>;
 }
 
+export async function generateMetadata({
+  params,
+}: ServiceDetailPageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+
+  const getServiceTitle = (slug: string, locale: string): string => {
+    const serviceNames = {
+      cs: {
+        moving: 'Stěhování - MoveCleanMafia.cz',
+        cleaning: 'Úklid - MoveCleanMafia.cz',
+        packing: 'Balení - MoveCleanMafia.cz',
+        'furniture-cleaning': 'Čištění nábytku - MoveCleanMafia.cz',
+        handyman: 'Údržbářské práce - MoveCleanMafia.cz',
+        packages: 'Speciální balíčky - MoveCleanMafia.cz',
+      },
+      ua: {
+        moving: 'Перевезення - MoveCleanMafia.ua',
+        cleaning: 'Прибирання - MoveCleanMafia.ua',
+        packing: 'Пакування - MoveCleanMafia.ua',
+        'furniture-cleaning': 'Чищення меблів - MoveCleanMafia.ua',
+        handyman: 'Побутові послуги - MoveCleanMafia.ua',
+        packages: 'Спеціальні пакети - MoveCleanMafia.ua',
+      },
+      en: {
+        moving: 'Moving Services - MoveCleanMafia.com',
+        cleaning: 'Cleaning Services - MoveCleanMafia.com',
+        packing: 'Packing Services - MoveCleanMafia.com',
+        'furniture-cleaning': 'Furniture Cleaning - MoveCleanMafia.com',
+        handyman: 'Handyman Services - MoveCleanMafia.com',
+        packages: 'Special Packages - MoveCleanMafia.com',
+      },
+    };
+
+    return (
+      serviceNames[locale as keyof typeof serviceNames]?.[
+        slug as keyof typeof serviceNames.cs
+      ] ||
+      serviceNames.en[slug as keyof typeof serviceNames.en] ||
+      'Service - MoveCleanMafia'
+    );
+  };
+
+  const getServiceDescription = (slug: string, locale: string): string => {
+    const serviceDescriptions = {
+      cs: {
+        moving:
+          'Profesionální stěhovací služby v Praze. Spolehlivé stěhování bytů, domů a kanceláří s garancí kvality.',
+        cleaning:
+          'Profesionální úklidové služby v Praze. Úklid bytů, domů a kanceláří s garancí kvality.',
+        packing:
+          'Profesionální balící služby v Praze. Bezpečné balení nábytku a osobních věcí pro stěhování.',
+        'furniture-cleaning':
+          'Profesionální čištění nábytku v Praze. Obnovení vzhledu a hygieny vašeho nábytku.',
+        handyman:
+          'Profesionální údržbářské práce v Praze. Opravy, montáže a údržba pro domácnosti a firmy.',
+        packages:
+          'Speciální balíčky služeb v Praze. Kombinované služby stěhování, úklidu a balení za výhodné ceny.',
+      },
+      ua: {
+        moving:
+          'Професійні перевізні послуги в Празі. Надійне перевезення квартир, будинків та офісів з гарантією якості.',
+        cleaning:
+          'Професійні прибиральні послуги в Празі. Прибирання квартир, будинків та офісів з гарантією якості.',
+        packing:
+          'Професійні пакувальні послуги в Празі. Безпечне пакування меблів та особистих речей для перевезення.',
+        'furniture-cleaning':
+          'Професійне чищення меблів в Празі. Відновлення вигляду та гігієни ваших меблів.',
+        handyman:
+          'Професійні побутові послуги в Празі. Ремонти, монтажі та обслуговування для домогосподарств та компаній.',
+        packages:
+          'Спеціальні пакети послуг в Празі. Комбіновані послуги перевезення, прибирання та пакування за вигідними цінами.',
+      },
+      en: {
+        moving:
+          'Professional moving services in Prague. Reliable moving of apartments, houses and offices with quality guarantee.',
+        cleaning:
+          'Professional cleaning services in Prague. Cleaning of apartments, houses and offices with quality guarantee.',
+        packing:
+          'Professional packing services in Prague. Safe packing of furniture and personal items for moving.',
+        'furniture-cleaning':
+          'Professional furniture cleaning in Prague. Restore the appearance and hygiene of your furniture.',
+        handyman:
+          'Professional handyman services in Prague. Repairs, installations and maintenance for households and businesses.',
+        packages:
+          'Special service packages in Prague. Combined moving, cleaning and packing services at competitive prices.',
+      },
+    };
+
+    return (
+      serviceDescriptions[locale as keyof typeof serviceDescriptions]?.[
+        slug as keyof typeof serviceDescriptions.cs
+      ] ||
+      serviceDescriptions.en[slug as keyof typeof serviceDescriptions.en] ||
+      'Professional services in Prague with quality guarantee.'
+    );
+  };
+
+  const getServiceKeywords = (slug: string, locale: string): string[] => {
+    const baseKeywords = [
+      'moving services Prague',
+      'cleaning services Prague',
+      'packing services Prague',
+      'professional services',
+      'Czech Republic',
+    ];
+
+    const localizedKeywords = {
+      cs: {
+        moving: [
+          'stěhování Praha',
+          'stěhovací služby',
+          'stěhování bytu',
+          'stěhování domu',
+          'stěhování kanceláře',
+        ],
+        cleaning: [
+          'úklid Praha',
+          'úklidové služby',
+          'úklid bytu',
+          'úklid domu',
+          'úklid kanceláře',
+        ],
+        packing: [
+          'balení Praha',
+          'balící služby',
+          'balení nábytku',
+          'balení pro stěhování',
+        ],
+        'furniture-cleaning': [
+          'čištění nábytku Praha',
+          'čištění čalounění',
+          'obnovení nábytku',
+        ],
+        handyman: ['údržbářské práce Praha', 'opravy', 'montáže', 'údržba'],
+        packages: ['balíčky služeb', 'kombinované služby', 'speciální nabídky'],
+      },
+      ua: {
+        moving: [
+          'перевезення Прага',
+          'перевізні послуги',
+          'перевезення квартири',
+          'перевезення будинку',
+          'перевезення офісу',
+        ],
+        cleaning: [
+          'прибирання Прага',
+          'прибиральні послуги',
+          'прибирання квартири',
+          'прибирання будинку',
+          'прибирання офісу',
+        ],
+        packing: [
+          'пакування Прага',
+          'пакувальні послуги',
+          'пакування меблів',
+          'пакування для перевезення',
+        ],
+        'furniture-cleaning': [
+          'чищення меблів Прага',
+          'чищення оббивки',
+          'відновлення меблів',
+        ],
+        handyman: [
+          'побутові послуги Прага',
+          'ремонти',
+          'монтажі',
+          'обслуговування',
+        ],
+        packages: [
+          'пакети послуг',
+          'комбіновані послуги',
+          'спеціальні пропозиції',
+        ],
+      },
+      en: {
+        moving: [
+          'moving Prague',
+          'moving services',
+          'apartment moving',
+          'house moving',
+          'office moving',
+        ],
+        cleaning: [
+          'cleaning Prague',
+          'cleaning services',
+          'apartment cleaning',
+          'house cleaning',
+          'office cleaning',
+        ],
+        packing: [
+          'packing Prague',
+          'packing services',
+          'furniture packing',
+          'moving packing',
+        ],
+        'furniture-cleaning': [
+          'furniture cleaning Prague',
+          'upholstery cleaning',
+          'furniture restoration',
+        ],
+        handyman: [
+          'handyman services Prague',
+          'repairs',
+          'installations',
+          'maintenance',
+        ],
+        packages: ['service packages', 'combined services', 'special offers'],
+      },
+    };
+
+    const serviceKeywords =
+      localizedKeywords[locale as keyof typeof localizedKeywords]?.[
+        slug as keyof typeof localizedKeywords.cs
+      ] ||
+      localizedKeywords.en[slug as keyof typeof localizedKeywords.en] ||
+      [];
+
+    return [...baseKeywords, ...serviceKeywords];
+  };
+
+  const title = getServiceTitle(slug, locale);
+  const description = getServiceDescription(slug, locale);
+  const keywords = getServiceKeywords(slug, locale);
+
+  return {
+    title,
+    description,
+    keywords,
+    openGraph: {
+      type: 'website',
+      title,
+      description,
+      url: `https://movecleanmafia.cz/${locale}/service/${slug}`,
+      siteName: 'MoveCleanMafia',
+      locale: locale === 'cs' ? 'cs_CZ' : locale === 'ua' ? 'uk_UA' : 'en_US',
+      images: [
+        {
+          url: '/images/logo.png',
+          width: 1024,
+          height: 1024,
+          alt: title,
+          type: 'image/png',
+        },
+        {
+          url:
+            slug === 'moving'
+              ? '/images/moving_hp.jpg'
+              : slug === 'cleaning'
+                ? '/images/cleaning_hp.jpg'
+                : slug === 'packing'
+                  ? '/images/packing.jpg'
+                  : '/images/hero.jpg',
+          width: 800,
+          height: 600,
+          alt: `${title} - Professional Services`,
+          type: 'image/jpeg',
+        },
+      ],
+      countryName: 'Czech Republic',
+      emails: ['move.cleanmafia@gmail.com'],
+      phoneNumbers: ['+420774635981'],
+      ttl: 86400,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [
+        slug === 'moving'
+          ? '/images/moving_hp.jpg'
+          : slug === 'cleaning'
+            ? '/images/cleaning_hp.jpg'
+            : slug === 'packing'
+              ? '/images/packing.jpg'
+              : '/images/hero.jpg',
+      ],
+      creator: '@movecleanmafia',
+      site: '@movecleanmafia',
+    },
+    alternates: {
+      canonical: `https://movecleanmafia.cz/${locale}/service/${slug}`,
+      languages: {
+        cs: `https://movecleanmafia.cz/cs/service/${slug}`,
+        en: `https://movecleanmafia.cz/en/service/${slug}`,
+        uk: `https://movecleanmafia.cz/ua/service/${slug}`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    authors: [{ name: 'MoveCleanMafia.cz' }],
+    creator: 'MoveCleanMafia.cz',
+    publisher: 'MoveCleanMafia.cz',
+    category: 'business',
+    classification: 'Business',
+    other: {
+      'geo.region': 'CZ',
+      'geo.placename': 'Prague',
+      'geo.position': '50.0755;14.4378',
+      ICBM: '50.0755, 14.4378',
+    },
+  };
+}
+
 // Service data structure
 interface ServiceData {
   slug: string;
@@ -212,80 +524,6 @@ const getServiceData = (
 
   return services[slug] || null;
 };
-
-export async function generateMetadata({
-  params,
-}: ServiceDetailPageProps): Promise<Metadata> {
-  const { locale, slug } = await params;
-  const { t } = await getTranslation(locale as SupportedLanguage);
-
-  const service = getServiceData(slug, t);
-
-  if (!service) {
-    return {
-      title: 'Service Not Found',
-    };
-  }
-
-  const getTitle = (locale: string, serviceTitle: string): string => {
-    switch (locale) {
-      case 'cs':
-        return `${serviceTitle} - MoveCleanMafia.cz | Profesionální služby v Praze`;
-      case 'ua':
-        return `${serviceTitle} - MoveCleanMafia.ua | Професійні послуги`;
-      default:
-        return `${serviceTitle} - MoveCleanMafia.com | Professional Services`;
-    }
-  };
-
-  const getDescription = (
-    locale: string,
-    serviceDescription: string,
-  ): string => {
-    switch (locale) {
-      case 'cs':
-        return `Profesionální ${serviceDescription.toLowerCase()} v Praze. Spolehlivé služby s garancí kvality a individuálním přístupem.`;
-      case 'ua':
-        return `Професійні ${serviceDescription.toLowerCase()}. Надійні послуги з гарантією якості та індивідуальним підходом.`;
-      default:
-        return `Professional ${serviceDescription.toLowerCase()}. Reliable services with quality guarantee and individual approach.`;
-    }
-  };
-
-  return {
-    title: getTitle(locale, service.title),
-    description: getDescription(locale, service.description),
-    openGraph: {
-      title: getTitle(locale, service.title),
-      description: getDescription(locale, service.description),
-      url: `https://movecleanmafia.cz/${locale}/service/${slug}`,
-      siteName: 'MoveCleanMafia',
-      images: [
-        {
-          url: '/images/logo.png',
-          width: 1024,
-          height: 1024,
-          alt: service.title,
-        },
-      ],
-      locale: locale === 'cs' ? 'cs_CZ' : locale === 'ua' ? 'uk_UA' : 'en_US',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: getTitle(locale, service.title),
-      description: getDescription(locale, service.description),
-      images: ['/images/logo.png'],
-    },
-    alternates: {
-      canonical: `https://movecleanmafia.cz/${locale}/service/${slug}`,
-      languages: {
-        cs: `https://movecleanmafia.cz/cs/service/${slug}`,
-        en: `https://movecleanmafia.cz/en/service/${slug}`,
-        uk: `https://movecleanmafia.cz/ua/service/${slug}`,
-      },
-    },
-  };
-}
 
 export async function generateStaticParams() {
   return [
