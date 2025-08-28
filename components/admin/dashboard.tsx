@@ -77,51 +77,60 @@ export const Dashboard = () => {
       value: stats.total.toString(),
       change: '+12%',
       icon: FileText,
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50',
+      color: 'text-[#d6b977]',
+      bgColor: 'bg-gradient-to-br from-[#d6b977]/20 to-[#d6b977]/10',
     },
     {
       title: 'Pending Requests',
       value: stats.pending.toString(),
       change: '+5%',
       icon: FileText,
-      color: 'text-yellow-600',
-      bgColor: 'bg-yellow-50',
+      color: 'text-[#d6b977]',
+      bgColor: 'bg-gradient-to-br from-[#d6b977]/20 to-[#d6b977]/10',
     },
     {
       title: 'Completed Jobs',
       value: stats.completed.toString(),
       change: '+8%',
       icon: BarChart3,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
+      color: 'text-[#d6b977]',
+      bgColor: 'bg-gradient-to-br from-[#d6b977]/20 to-[#d6b977]/10',
     },
     {
       title: 'In Progress',
       value: stats.inProgress.toString(),
       change: '+3%',
       icon: MessageSquare,
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50',
+      color: 'text-[#d6b977]',
+      bgColor: 'bg-gradient-to-br from-[#d6b977]/20 to-[#d6b977]/10',
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-black border-b-2 border-[#d6b977] shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-baloo-bhai font-light text-gray-900">
+              <div className="h-10 w-1 bg-gradient-to-b from-[#d6b977] to-[#d6b977]/70 rounded-full"></div>
+              <h1 className="text-2xl font-baloo-bhai font-light text-white">
                 Admin Dashboard
               </h1>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-600">
-                Welcome, {user?.email}
+              <span className="text-sm text-gray-300">
+                Welcome,{' '}
+                <span className="text-[#d6b977] font-medium">
+                  {user?.email}
+                </span>
               </span>
-              <Button variant="outline" size="sm" onClick={handleNavigateHome}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleNavigateHome}
+                className="border-[#d6b977] text-[#d6b977] hover:bg-[#d6b977] hover:text-black transition-all duration-300"
+              >
                 <Home className="w-4 h-4 mr-2" />
                 Go to Site
               </Button>
@@ -130,6 +139,7 @@ export const Dashboard = () => {
                 size="sm"
                 onClick={handleLogout}
                 disabled={loading}
+                className="border-red-400 text-red-400 hover:bg-red-400 hover:text-white transition-all duration-300"
               >
                 <LogOut className="w-4 h-4 mr-2" />
                 {loading ? 'Signing out...' : 'Sign Out'}
@@ -144,7 +154,10 @@ export const Dashboard = () => {
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {statsCards.map((stat, index) => (
-            <Card key={index}>
+            <Card
+              key={index}
+              className="border-2 border-[#d6b977]/20 shadow-lg hover:shadow-xl transition-all duration-300 bg-white"
+            >
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
@@ -153,14 +166,18 @@ export const Dashboard = () => {
                     </p>
                     <p className="text-2xl font-bold text-gray-900">
                       {statsLoading ? (
-                        <Loader2 className="w-6 h-6 animate-spin text-brand-primary" />
+                        <Loader2 className="w-6 h-6 animate-spin text-[#d6b977]" />
                       ) : (
                         stat.value
                       )}
                     </p>
-                    <p className="text-sm text-green-600">{stat.change}</p>
+                    <p className="text-sm text-[#d6b977] font-medium">
+                      {stat.change}
+                    </p>
                   </div>
-                  <div className={`p-3 rounded-full ${stat.bgColor}`}>
+                  <div
+                    className={`p-3 rounded-full ${stat.bgColor} border-2 border-[#d6b977]/20`}
+                  >
                     <stat.icon className={`w-6 h-6 ${stat.color}`} />
                   </div>
                 </div>
@@ -176,16 +193,18 @@ export const Dashboard = () => {
 
         {/* Recent Activity */}
         <div className="mt-8">
-          <Card>
+          <Card className="border-2 border-[#d6b977]/20 shadow-lg bg-white">
             <CardHeader>
-              <CardTitle className="text-xl font-baloo-bhai font-light">
+              <CardTitle className="text-xl font-baloo-bhai font-light text-gray-900">
                 Recent Activity
               </CardTitle>
-              <CardDescription>Latest reservations and updates</CardDescription>
+              <CardDescription className="text-gray-600">
+                Latest reservations and updates
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-[#d6b977]/10 to-[#d6b977]/5 rounded-lg border border-[#d6b977]/20">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900">
@@ -197,7 +216,7 @@ export const Dashboard = () => {
                   </div>
                   <span className="text-sm text-gray-500">2 hours ago</span>
                 </div>
-                <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-[#d6b977]/10 to-[#d6b977]/5 rounded-lg border border-[#d6b977]/20">
                   <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-900">
@@ -209,13 +228,15 @@ export const Dashboard = () => {
                   </div>
                   <span className="text-sm text-gray-500">4 hours ago</span>
                 </div>
-                <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-[#d6b977]/10 to-[#d6b977]/5 rounded-lg border border-[#d6b977]/20">
                   <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-gray-900">
+                    <p className="text-sm font-medium text-gray-500">
                       Customer inquiry
                     </p>
-                    <p className="text-sm text-gray-600"></p>
+                    <p className="text-sm text-gray-600">
+                      New inquiry about moving services
+                    </p>
                   </div>
                   <span className="text-sm text-gray-500">6 hours ago</span>
                 </div>

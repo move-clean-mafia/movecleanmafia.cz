@@ -37,11 +37,16 @@ import { ReservationDetailModal } from './reservation-detail-modal';
 import { ReservationForm } from './reservation-form';
 
 const statusColors = {
-  pending: 'bg-yellow-100 text-yellow-800',
-  confirmed: 'bg-blue-100 text-blue-800',
-  in_progress: 'bg-orange-100 text-orange-800',
-  completed: 'bg-green-100 text-green-800',
-  cancelled: 'bg-red-100 text-red-800',
+  pending:
+    'bg-gradient-to-r from-[#d6b977]/20 to-[#d6b977]/10 text-[#d6b977] border border-[#d6b977]/30',
+  confirmed:
+    'bg-gradient-to-r from-blue-100 to-blue-50 text-blue-700 border border-blue-200',
+  in_progress:
+    'bg-gradient-to-r from-orange-100 to-orange-50 text-orange-700 border border-orange-200',
+  completed:
+    'bg-gradient-to-r from-green-100 to-green-50 text-green-700 border border-green-200',
+  cancelled:
+    'bg-gradient-to-r from-red-100 to-red-50 text-red-700 border border-red-200',
 };
 
 const statusLabels = {
@@ -180,12 +185,14 @@ export const BookingsPanel = () => {
 
   if (loading) {
     return (
-      <Card>
+      <Card className="border-2 border-[#d6b977]/20 shadow-lg bg-white">
         <CardHeader>
-          <CardTitle className="text-xl font-baloo-bhai font-light">
+          <CardTitle className="text-xl font-baloo-bhai font-light text-gray-900">
             Recent Bookings
           </CardTitle>
-          <CardDescription>Loading bookings...</CardDescription>
+          <CardDescription className="text-gray-600">
+            Loading bookings...
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex items-center justify-center py-8">
@@ -198,22 +205,29 @@ export const BookingsPanel = () => {
 
   return (
     <>
-      <Card>
+      <Card className="border-2 border-[#d6b977]/20 shadow-lg bg-white">
         <CardHeader>
           <div className="flex justify-between items-center">
             <div>
-              <CardTitle className="text-xl font-baloo-bhai font-light">
+              <CardTitle className="text-xl font-baloo-bhai font-light text-gray-900">
                 Recent Bookings
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="text-gray-600">
                 Manage and view all customer bookings
               </CardDescription>
             </div>
             <div className="flex items-center space-x-3">
-              <Badge variant="secondary" className="text-sm">
+              <Badge
+                variant="secondary"
+                className="text-sm bg-gradient-to-r from-[#d6b977]/20 to-[#d6b977]/10 text-[#d6b977] border border-[#d6b977]/30"
+              >
                 {totalBookings} total bookings
               </Badge>
-              <Button onClick={handleCreateBooking} size="sm">
+              <Button
+                onClick={handleCreateBooking}
+                size="sm"
+                className="bg-gradient-to-r from-[#d6b977] to-[#d6b977]/90 hover:from-[#d6b977]/90 hover:to-[#d6b977] text-black font-semibold border-2 border-[#d6b977] shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              >
                 <Plus className="w-4 h-4 mr-2" />
                 New Booking
               </Button>
@@ -224,7 +238,10 @@ export const BookingsPanel = () => {
           {bookings.length === 0 ? (
             <div className="text-center py-8 text-gray-500">
               <p className="mb-4">No bookings found</p>
-              <Button onClick={handleCreateBooking}>
+              <Button
+                onClick={handleCreateBooking}
+                className="bg-gradient-to-r from-[#d6b977] to-[#d6b977]/90 hover:from-[#d6b977]/90 hover:to-[#d6b977] text-black font-semibold border-2 border-[#d6b977] shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              >
                 <Plus className="w-4 h-4 mr-2" />
                 Create First Booking
               </Button>
@@ -234,13 +251,13 @@ export const BookingsPanel = () => {
               {bookings.map((booking) => (
                 <div
                   key={booking.id}
-                  className="border rounded-lg p-6 hover:bg-gray-50 transition-colors"
+                  className="border-2 border-[#d6b977]/20 rounded-lg p-6 hover:bg-gradient-to-r hover:from-[#d6b977]/5 hover:to-[#d6b977]/10 transition-all duration-300 bg-white"
                 >
                   {/* Header Row */}
                   <div className="flex justify-between items-start mb-4">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
-                        <User className="w-6 h-6 text-white" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#d6b977] to-[#d6b977]/90 rounded-full flex items-center justify-center border-2 border-[#d6b977] shadow-lg">
+                        <User className="w-6 h-6 text-black" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 text-lg">
@@ -271,7 +288,7 @@ export const BookingsPanel = () => {
                           )
                         }
                         disabled={updatingStatus === booking.id}
-                        className="text-sm border rounded px-3 py-1 bg-white"
+                        className="text-sm border-2 border-[#d6b977]/30 rounded px-3 py-1 bg-white focus:border-[#d6b977] focus:ring-[#d6b977] focus:ring-opacity-20 transition-all duration-300"
                       >
                         <option value="pending">Pending</option>
                         <option value="confirmed">Confirmed</option>
@@ -346,10 +363,16 @@ export const BookingsPanel = () => {
                         <span className="text-xs text-gray-500">
                           Created: {formatDate(booking.createdAt)}
                         </span>
-                        <Badge variant="outline" className="text-xs">
+                        <Badge
+                          variant="outline"
+                          className="text-xs border-[#d6b977]/30 text-[#d6b977] bg-[#d6b977]/5"
+                        >
                           {booking.source}
                         </Badge>
-                        <Badge variant="outline" className="text-xs">
+                        <Badge
+                          variant="outline"
+                          className="text-xs border-[#d6b977]/30 text-[#d6b977] bg-[#d6b977]/5"
+                        >
                           {booking.locale.toUpperCase()}
                         </Badge>
                       </div>
@@ -359,7 +382,7 @@ export const BookingsPanel = () => {
                   {/* Message Preview */}
                   {booking.message && (
                     <div className="mb-4">
-                      <div className="bg-gray-50 p-3 rounded-lg">
+                      <div className="bg-gradient-to-r from-[#d6b977]/10 to-[#d6b977]/5 p-3 rounded-lg border border-[#d6b977]/20">
                         <p className="text-sm text-gray-700 line-clamp-2">
                           {booking.message}
                         </p>
@@ -377,6 +400,7 @@ export const BookingsPanel = () => {
                         size="sm"
                         variant="outline"
                         onClick={() => handleViewDetails(booking)}
+                        className="border-[#d6b977] text-[#d6b977] hover:bg-[#d6b977] hover:text-black transition-all duration-300"
                       >
                         <Eye className="w-4 h-4 mr-2" />
                         View Details
@@ -385,6 +409,7 @@ export const BookingsPanel = () => {
                         size="sm"
                         variant="outline"
                         onClick={() => handleEditBooking(booking)}
+                        className="border-[#d6b977] text-[#d6b977] hover:bg-[#d6b977] hover:text-black transition-all duration-300"
                       >
                         <Edit className="w-4 h-4 mr-2" />
                         Edit
@@ -410,6 +435,7 @@ export const BookingsPanel = () => {
                   size="sm"
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
+                  className="border-[#d6b977] text-[#d6b977] hover:bg-[#d6b977] hover:text-black transition-all duration-300"
                 >
                   <ChevronLeft className="w-4 h-4" />
                   Previous
@@ -422,7 +448,11 @@ export const BookingsPanel = () => {
                         variant={currentPage === page ? 'default' : 'outline'}
                         size="sm"
                         onClick={() => handlePageChange(page)}
-                        className="w-8 h-8 p-0"
+                        className={`w-8 h-8 p-0 ${
+                          currentPage === page
+                            ? 'bg-[#d6b977] text-black border-[#d6b977]'
+                            : 'border-[#d6b977] text-[#d6b977] hover:bg-[#d6b977] hover:text-black'
+                        } transition-all duration-300`}
                       >
                         {page}
                       </Button>
@@ -434,6 +464,7 @@ export const BookingsPanel = () => {
                   size="sm"
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
+                  className="border-[#d6b977] text-[#d6b977] hover:bg-[#d6b977] hover:text-black transition-all duration-300"
                 >
                   Next
                   <ChevronRight className="w-4 h-4" />

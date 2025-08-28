@@ -39,11 +39,16 @@ interface ReservationDetailModalProps {
 }
 
 const statusColors = {
-  pending: 'bg-yellow-100 text-yellow-800',
-  confirmed: 'bg-blue-100 text-blue-800',
-  in_progress: 'bg-orange-100 text-orange-800',
-  completed: 'bg-green-100 text-green-800',
-  cancelled: 'bg-red-100 text-red-800',
+  pending:
+    'bg-gradient-to-r from-[#d6b977]/20 to-[#d6b977]/10 text-[#d6b977] border border-[#d6b977]/30',
+  confirmed:
+    'bg-gradient-to-r from-blue-100 to-blue-50 text-blue-700 border border-blue-200',
+  in_progress:
+    'bg-gradient-to-r from-orange-100 to-orange-50 text-orange-700 border border-orange-200',
+  completed:
+    'bg-gradient-to-r from-green-100 to-green-50 text-green-700 border border-green-200',
+  cancelled:
+    'bg-gradient-to-r from-red-100 to-red-50 text-red-700 border border-red-200',
 };
 
 const statusLabels = {

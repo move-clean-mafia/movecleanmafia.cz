@@ -48,15 +48,30 @@ export const resetPassword = async (email: string): Promise<void> => {
 
 // Check if user is admin (you can customize this logic)
 export const isAdmin = (user: User | null): boolean => {
-  if (!user) return false;
+  if (!user) {
+    console.log('Admin check: No user provided');
+    return false;
+  }
 
   // Add your admin email logic here
   const adminEmails = [
     'vyacheslav.voloshyn@gmail.com',
     'move.cleanmafia@gmail.com',
+    'movecleanmafia@gmail.com',
   ];
 
-  return adminEmails.includes(user.email || '');
+  const isUserAdmin = adminEmails.includes(user.email || '');
+
+  // Debug logging (remove in production)
+  console.log('Admin check:', {
+    userEmail: user.email,
+    userUid: user.uid,
+    userDisplayName: user.displayName,
+    adminEmails,
+    isAdmin: isUserAdmin,
+  });
+
+  return isUserAdmin;
 };
 
 // API-based auth utilities for client-side use
