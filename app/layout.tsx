@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://movecleanmafia.cz'),
   title: {
     template: '%s | MoveCleanMafia.cz',
     default: 'MoveCleanMafia.cz - Moving & Cleaning Services',
