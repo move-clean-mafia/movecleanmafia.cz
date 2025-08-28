@@ -34,6 +34,7 @@ const nextConfig: NextConfig = {
   // Configure static file serving for locale files
   async headers() {
     return [
+      // Static assets - long cache duration
       {
         source: '/locales/(.*)',
         headers: [
@@ -43,6 +44,48 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // Images and static assets - long cache duration
+      {
+        source: '/images/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // Favicon and icons - long cache duration
+      {
+        source: '/favicon/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // CSS and JS files - long cache duration with revalidation
+      {
+        source: '/(.*)\\.(css|js)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value:
+              'public, max-age=31536000, s-maxage=86400, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      // Font files - long cache duration
+      {
+        source: '/(.*)\\.(woff|woff2|eot|ttf|otf)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // Sitemap - moderate cache with revalidation
       {
         source: '/sitemap.xml',
         headers: [
@@ -52,10 +95,12 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Cache-Control',
-            value: 'public, max-age=3600, s-maxage=3600',
+            value:
+              'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400',
           },
         ],
       },
+      // Robots.txt - moderate cache with revalidation
       {
         source: '/robots.txt',
         headers: [
@@ -65,7 +110,39 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Cache-Control',
-            value: 'public, max-age=3600, s-maxage=3600',
+            value:
+              'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      // API routes - no cache for dynamic content
+      {
+        source: '/api/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+        ],
+      },
+      // Admin routes - no cache for security
+      {
+        source: '/admin/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+        ],
+      },
+      // HTML pages - moderate cache with revalidation for dynamic content
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value:
+              'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
           },
         ],
       },
