@@ -69,6 +69,25 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // Add headers for better cache control
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, s-maxage=0, must-revalidate',
+          },
+        ],
+      },
+      {
+        source: '/api/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+        ],
+      },
     ];
   },
 

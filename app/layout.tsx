@@ -103,6 +103,10 @@ export const metadata: Metadata = {
     ICBM: '50.0755, 14.4378',
     'msapplication-TileColor': '#6B4F2C',
     'theme-color': '#D6B977',
+    // Add cache control meta tags
+    'Cache-Control': 'no-cache, no-store, must-revalidate',
+    Pragma: 'no-cache',
+    Expires: '0',
   },
 };
 
