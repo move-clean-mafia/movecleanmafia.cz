@@ -291,7 +291,7 @@ const ContactPage = async ({ params }: ContactPageProps) => {
                     {t('reservation.subtitle')}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="p-6">
+                <CardContent className="p-2">
                   <Suspense
                     fallback={
                       <div className="p-4 text-center text-white/60">

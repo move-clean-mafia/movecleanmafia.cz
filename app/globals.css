@@ -32,7 +32,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-  
+
   .dark {
     --background: 0 0% 0%; /* Pure Black */
     --foreground: 0 0% 100%; /* Pure White */
@@ -281,7 +281,8 @@
 
 /* Mafia-themed animations */
 @keyframes goldShimmer {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 5px rgba(214, 185, 119, 0.5);
   }
   50% {
@@ -290,7 +291,8 @@
 }
 
 @keyframes borderGlow {
-  0%, 100% {
+  0%,
+  100% {
     border-color: rgba(214, 185, 119, 0.5);
   }
   50% {
@@ -299,7 +301,8 @@
 }
 
 @keyframes textGlow {
-  0%, 100% {
+  0%,
+  100% {
     text-shadow: 0 0 5px rgba(214, 185, 119, 0.5);
   }
   50% {
@@ -392,7 +395,7 @@
 /* Mafia-themed component styles */
 @layer components {
   .mafia-card {
-    @apply bg-black border border-[#d6b977] rounded-lg p-6 hover:shadow-lg transition-all duration-300;
+    @apply bg-black border border-[#d6b977] rounded-lg p-4 hover:shadow-lg transition-all duration-300;
   }
 
   .mafia-button {
