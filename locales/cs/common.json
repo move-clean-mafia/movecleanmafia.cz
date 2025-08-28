@@ -650,11 +650,11 @@
         "mattresses": {
           "items": [
             {
-              "name": "Jednolůžková (jedna strana)",
+              "name": "Jednolůžko (jedna strana)",
               "price": "400–600 Kč"
             },
             {
-              "name": "Dvoulůžková (jedna strana)",
+              "name": "Dvoulůžko (jedna strana)",
               "price": "800–1000 Kč"
             }
           ],
@@ -754,7 +754,7 @@
         "painting": {
           "items": [
             {
-              "name": "Malování v bytě, domě, garáži a kanceláři:"
+              "name": "Malování v bytě, domě, garáži a kanceláři"
             },
             {
               "name": "Malování stěn a stropů"
