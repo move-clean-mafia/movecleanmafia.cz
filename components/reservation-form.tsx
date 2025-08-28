@@ -56,10 +56,18 @@ const countryCodes = [
 
 // Zod validation schema
 const reservationSchema = z.object({
-  firstName: z.string().min(2, 'First name must be at least 2 characters'),
+  firstName: z.string().min(2, 'firstNameMin'),
   lastName: z.string().optional(),
-  email: z.string().email('Invalid email address').optional().or(z.literal('')),
-  phone: z.string().min(9, 'Phone number must be at least 9 characters'),
+  email: z.string().email('emailInvalid').optional().or(z.literal('')),
+  phone: z
+    .string()
+    .min(9, 'phoneMin')
+    .regex(/^[0-9\s\-()]+$/, 'phoneInvalidFormat')
+    .refine((val) => {
+      const digitsOnly = val.replace(/\D/g, '');
+      const uniqueDigits = new Set(digitsOnly.split(''));
+      return uniqueDigits.size > 1 || digitsOnly.length > 9;
+    }, 'phoneSuspicious'),
   service: z
     .enum([
       'moving',
@@ -303,10 +311,19 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
         const errors: Record<string, string> = {};
         error.errors.forEach((err) => {
           const fieldName = err.path[0] as string;
-          errors[fieldName] = err.message;
+          // Translate validation error messages
+          const errorKey = err.message;
+          errors[fieldName] = t(`reservation.validation.${errorKey}`);
         });
 
         setValidationErrors(errors);
+
+        // Show a general validation error toast
+        toast({
+          title: t('reservation.error.title'),
+          description: t('reservation.validation.general'),
+          variant: 'destructive',
+        });
       }
     }
   };

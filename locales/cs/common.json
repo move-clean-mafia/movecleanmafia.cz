@@ -1,10 +1,10 @@
 {
   "admin": {
     "status": {
-      "cancelled": "",
-      "completed": "",
-      "confirmed": "",
-      "pending": ""
+      "cancelled": "Zrušeno",
+      "completed": "Dokončeno",
+      "confirmed": "Potvrzeno",
+      "pending": "Čeká na potvrzení"
     }
   },
   "contact": {
@@ -1225,10 +1225,25 @@
     "phone": "Telefon *",
     "preferredDate": "Preferované datum",
     "preferredTime": "Preferovaný čas",
-    "selectTime": "",
+    "selectTime": "Vyberte čas",
     "service": "Služba",
     "serviceDetails": "Detaily služby",
     "servicePlaceholder": "Vyberte službu",
+    "services": {
+      "allergyTesting": "",
+      "bronchoscopy": "",
+      "cleaning": "Úklid",
+      "consultation": "",
+      "examination": "",
+      "followUp": "",
+      "furnitureCleaning": "Chemické čistění",
+      "handyman": "Hodinový manžel",
+      "moving": "Stěhování",
+      "other": "Ostatní",
+      "packages": "Výhodné balíčky služeb",
+      "spirometry": "",
+      "urgent": ""
+    },
     "book": "Rezervovat",
     "submitReservation": "Objednat",
     "submitting": "Odesílání...",
@@ -1238,10 +1253,10 @@
       "title": "Rezervace úspěšně odeslána!"
     },
     "timeOptions": {
-      "afternoon": "",
-      "evening": "",
-      "morning": "",
-      "noPreference": ""
+      "afternoon": "Odpoledne",
+      "evening": "Večer",
+      "morning": "Ráno",
+      "noPreference": "Bez preference"
     },
     "timeSlots": {
       "afternoon": "Odpoledne (12:00-16:00)",
@@ -1253,6 +1268,14 @@
     "paymentInfo": {
       "title": "Informace o platbě",
       "description": "Platba je možná hotově nebo přes mobilní terminál po dokončení služeb."
+    },
+    "validation": {
+      "firstNameMin": "Jméno musí mít alespoň 2 znaky",
+      "emailInvalid": "Neplatná emailová adresa",
+      "phoneMin": "Telefonní číslo musí mít alespoň 9 znaků",
+      "phoneInvalidFormat": "Telefonní číslo obsahuje neplatné znaky",
+      "phoneSuspicious": "Telefonní číslo vypadá podezřele, zkontrolujte prosím",
+      "general": "Prosím opravte chyby ve formuláři"
     }
   },
   "serviceDetail": {
@@ -1300,7 +1323,7 @@
     ],
     "packages": "Výhodné balíčky služeb",
     "packagesDescription": "Kombinované služby za výhodnější ceny",
-    "packing": "",
+    "packing": "Balení",
     "quality": "Kvalita",
     "qualityDescription": "Nejvyšší kvalita služeb a péče o vaše věci",
     "safety": "Bezpečnost",
