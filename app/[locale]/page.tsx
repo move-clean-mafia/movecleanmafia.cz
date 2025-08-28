@@ -5,10 +5,8 @@ import { getTranslation } from '../../lib/i18n-server';
 import { type SupportedLanguage } from '../../lib/i18n';
 
 import BenefitsGrid from '../../components/benefits-grid';
-import CompactServicesGrid from '../../components/compact-services-grid';
 
 import {
-  Truck,
   Clock,
   Shield,
   Star,
@@ -20,10 +18,6 @@ import {
   Zap,
   Target,
   Award,
-  Sparkles,
-  Droplets,
-  Wrench,
-  Package2,
   CreditCard,
 } from 'lucide-react';
 import { CTASection } from '@/components/cta-section';
@@ -214,53 +208,6 @@ const HomePage = async ({ params }: HomePageProps) => {
     },
   ];
 
-  const compactServices = [
-    {
-      icon: Package2,
-      title: t('services.packages'),
-      description: t('services.packagesDescription'),
-      features: ['Kombinované služby', 'Výhodnější ceny', 'Komplexní řešení'],
-      image: '/images/packing.jpg',
-      imageAlt: 'Komplexní balíčky',
-    },
-    {
-      icon: Truck,
-      title: t('services.moving'),
-      description: t('services.movingDescription'),
-      features: t('services.movingFeatures') as unknown as string[],
-      image: '/images/moving.jpg',
-      imageAlt: t('homepage.heroImages.moving'),
-    },
-    {
-      icon: Sparkles,
-      title: t('services.cleaning'),
-      description: t('services.cleaningDescription'),
-      features: t('services.cleaningFeatures') as unknown as string[],
-      image: '/images/cleaning.jpg',
-      imageAlt: t('homepage.heroImages.cleaning'),
-    },
-    {
-      icon: Droplets,
-      title: t('services.furnitureCleaning'),
-      description: t('services.furnitureCleaningDescription'),
-      features: [
-        'Chemické čistění nábytku',
-        'Čistění koberců',
-        'Profesionální přístroje',
-      ],
-      image: '/images/cleaning.jpg',
-      imageAlt: 'Chemické čistění',
-    },
-    {
-      icon: Wrench,
-      title: t('services.handyman'),
-      description: t('services.handymanDescription'),
-      features: ['Drobné opravy', 'Montáž nábytku', 'Instalace'],
-      image: '/images/moving.jpg',
-      imageAlt: 'Hodinový manžel',
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section - Mafia Style */}
@@ -335,13 +282,6 @@ const HomePage = async ({ params }: HomePageProps) => {
               {t('homepage.compactServicesSection.subtitle')}
             </p>
           </div>
-
-          <CompactServicesGrid
-            services={compactServices}
-            locale={locale as SupportedLanguage}
-            t={t}
-            useSpecificLinks={true}
-          />
         </div>
       </section>
 
