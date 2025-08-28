@@ -376,7 +376,7 @@
               },
               {
                 "name": "Koberec",
-                "price": "1 m² = 85 Kč"
+                "price": "1 m² = 120 Kč"
               }
             ],
             "title": "Chemické čistění"
@@ -450,8 +450,8 @@
               "items": [
                 "Umytí vany nebo sprchového koutu",
                 "Umytí umyvadla a baterie",
-                "Utřeni prachu z dostupných míst",
-                "Utřeni vypínačů a klik",
+                "Utření prachu z dostupných míst",
+                "Utření vypínačů a klik",
                 "Umytí WC a dezinfekce",
                 "Umytí podlahy"
               ],
@@ -460,13 +460,13 @@
             "kitchen": {
               "items": [
                 "Utření kuchyňské linky z vnější strany (skříňky, obklad, pracovní deska)",
-                "Utřeni prachu z dostupných míst",
-                "Utřeni prachu z elektroniky",
+                "Utření prachu z dostupných míst",
+                "Utření prachu z elektroniky",
                 "Umytí sporáku",
                 "Umytí z vnější strany (trouba, digestoř, mikrovlnná trouba)",
                 "Umytí nádobí do 10 minut",
                 "Umytí dřezu a baterie",
-                "Utřeni vypínačů a klik",
+                "Utření vypínačů a klik",
                 "Umytí podlahy a podlahových lišt",
                 "Vynesení odpadků, výměna sáčku (umyjeme také odpadkový koš)"
               ],
@@ -475,10 +475,10 @@
             "room": {
               "items": [
                 "Umytí zrcadel a skleněných ploch",
-                "Utřeni prachu ze všech dostupných povrchů",
+                "Utření prachu ze všech dostupných povrchů",
                 "Vysátí koberce",
                 "Umytí podlahy a podlahových lišt",
-                "Utřeni vypínačů a klik",
+                "Utření vypínačů a klik",
                 "Výměna ložního prádla a ustlání postele (pokud je připravené na posteli)",
                 "Osvěžení postele a čalouněného nábytku textilním osvěžovačem \"Lenor\"",
                 "Utření prachu z radiátorů (shora)"
@@ -509,12 +509,12 @@
             },
             "kitchen": {
               "items": [
-                "Utřeni prachu z dostupných povrchů",
+                "Utření prachu z dostupných povrchů",
                 "Umytí pracovní desky a kuchyňského obkladu",
                 "Umytí dřezu a baterie",
                 "Umytí sporáku",
                 "Umytí jídelního stolu",
-                "Utřeni prachu z dostupných míst",
+                "Utření prachu z dostupných míst",
                 "Vynesení odpadků a výměna sáčku",
                 "Umytí podlahy"
               ],
@@ -523,8 +523,8 @@
             "room": {
               "items": [
                 "Vyleštění zrcadel",
-                "Utřeni prachu z dostupných povrchů",
-                "Utřeni prachu z elektroniky",
+                "Utření prachu z dostupných povrchů",
+                "Utření prachu z elektroniky",
                 "Vysátí koberce",
                 "Vytírání podlahy a podlahových lišt"
               ],
@@ -577,7 +577,7 @@
             "room": {
               "items": [
                 "Umytí zrcadel a skleněných ploch",
-                "Utřeni prachu ze všech dostupných i těžko dostupných povrchů",
+                "Utření prachu ze všech dostupných i těžko dostupných povrchů",
                 "Umytí radiátorů",
                 "Umytí dveří (vchodových i interiérových)",
                 "Odstranění pavučin",
