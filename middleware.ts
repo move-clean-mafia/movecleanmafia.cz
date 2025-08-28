@@ -39,6 +39,13 @@ const getLocale = (request: NextRequest): string => {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
+  // Handle exact /admin path - redirect to English admin dashboard
+  if (pathname === '/admin') {
+    const url = request.nextUrl.clone();
+    url.pathname = '/en/admin/dashboard';
+    return NextResponse.redirect(url);
+  }
+
   // Add security headers for admin routes
   if (pathname.includes('/admin/') || pathname.includes('/api/admin/')) {
     const response = NextResponse.next();
