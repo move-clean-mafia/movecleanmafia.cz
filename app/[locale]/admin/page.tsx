@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 
 const AdminPage = () => {
-  redirect('/admin/dashboard');
+  redirect('./dashboard');
 };
 
 export default AdminPage;

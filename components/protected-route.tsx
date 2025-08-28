@@ -2,9 +2,10 @@
 
 import React from 'react';
 import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { useAuth } from './auth-provider';
 import { Loader2 } from 'lucide-react';
+import { getLocalizedAdminRoute, getCurrentLocale } from '../lib/i18n';
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -17,16 +18,21 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
 }) => {
   const { user, loading, isAdmin: userIsAdmin } = useAuth();
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!loading) {
       if (!user) {
-        router.push('/admin/login');
+        router.push(
+          getLocalizedAdminRoute('/login', getCurrentLocale(pathname)),
+        );
         return;
       }
 
       if (requireAdmin && !userIsAdmin) {
-        router.push('/admin/login');
+        router.push(
+          getLocalizedAdminRoute('/login', getCurrentLocale(pathname)),
+        );
         return;
       }
     }

@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { useAuth } from '../auth-provider';
 import { signOutUser } from '../../lib/auth';
+import { getLocalizedAdminRoute, getCurrentLocale } from '../../lib/i18n';
 import { Button } from '../ui/button';
 import {
   Card,
@@ -26,6 +27,7 @@ import { getReservationStats } from '../../lib/admin-client';
 export const Dashboard = () => {
   const { user } = useAuth();
   const router = useRouter();
+  const pathname = usePathname();
   const [loading, setLoading] = useState(false);
   const [stats, setStats] = useState({
     total: 0,
@@ -57,7 +59,7 @@ export const Dashboard = () => {
     setLoading(true);
     try {
       await signOutUser();
-      router.push('/admin/login');
+      router.push(getLocalizedAdminRoute('/login', getCurrentLocale(pathname)));
     } catch (error) {
       console.error('Logout error:', error);
     } finally {

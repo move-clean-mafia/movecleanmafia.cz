@@ -72,6 +72,7 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/_next/') ||
     pathname.startsWith('/api/') ||
     pathname.startsWith('/locales/') ||
+    pathname.startsWith('/admin/') ||
     pathname.includes('.') ||
     pathname.includes('previewServiceWorker') ||
     hasLocale

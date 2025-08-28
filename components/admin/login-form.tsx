@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { signIn, isAdmin } from '../../lib/auth';
+import { getLocalizedAdminRoute } from '../../lib/i18n';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
@@ -23,6 +24,7 @@ export const LoginForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,7 +40,9 @@ export const LoginForm = () => {
       }
 
       // Redirect to dashboard on success
-      router.push('/admin/dashboard');
+      router.push(
+        getLocalizedAdminRoute('/dashboard', getCurrentLocale(pathname)),
+      );
     } catch (error: any) {
       setError(error.message || 'Failed to sign in');
     } finally {

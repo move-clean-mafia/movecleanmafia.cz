@@ -16,7 +16,7 @@ const initI18next = async (lng: SupportedLanguage, ns: string | string[]) => {
       ),
     )
     .init({
-      debug: process.env.NODE_ENV === 'development',
+      debug: false, // Disable debug mode to prevent console spam
       supportedLngs: supportedLanguages,
       fallbackLng: defaultLanguage,
       lng,
