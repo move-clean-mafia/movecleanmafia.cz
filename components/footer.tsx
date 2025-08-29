@@ -189,7 +189,16 @@ export const Footer: React.FC = () => {
 
           {/* Bottom Copyright */}
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 border-t border-[#d6b977]/30 pt-6">
-            <div className="text-white/80 text-sm font-body">
+            <div className="flex items-center space-x-4 text-white/80 text-sm font-body">
+              <a
+                href="https://www.vvoloshyn.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#d6b977] transition-colors duration-200"
+              >
+                by V.Voloshyn
+              </a>
+              <span className="text-white/60">|</span>
               <span>© {currentYear} MoveCleanMafia.cz</span>
             </div>
             <div className="text-white/80 text-sm font-body">
