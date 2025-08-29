@@ -112,7 +112,7 @@ const DryCleaningServices: React.FC<DryCleaningServicesProps> = ({
         <div className="text-right mt-6">
           <ReservationButton
             locale={locale}
-            service="furnitureCleaning"
+            service="furniture-cleaning"
             variant="default"
           >
             {t('reservation.submitReservation') as string}

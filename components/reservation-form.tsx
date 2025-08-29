@@ -113,7 +113,9 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
   const packageParam = searchParams.get('package');
 
   // Form state
-  const [selectedService, setSelectedService] = useState(serviceParam || '');
+  const [selectedService, setSelectedService] = useState(
+    serviceParam || 'other',
+  );
   const [selectedPackage, setSelectedPackage] = useState(packageParam || '');
   const [selectedCountryCode, setSelectedCountryCode] = useState('+420'); // Default to Czech Republic
   const [validationErrors, setValidationErrors] = useState<
@@ -124,7 +126,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
     lastName: '',
     email: '',
     phone: '',
-    service: (serviceParam as any) || '',
+    service: (serviceParam as any) || 'other',
     package: packageParam || '',
     date: '',
     time: 'morning',
@@ -152,14 +154,14 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
       // Clear validation errors
       setValidationErrors({});
 
-      // Reset form after successful submission
+      // Reset form after successful submission, but preserve service and package from URL
       setFormData({
         firstName: '',
         lastName: '',
         email: '',
         phone: '',
-        service: 'moving',
-        package: '',
+        service: (serviceParam as any) || 'other',
+        package: packageParam || '',
         date: '',
         time: 'morning',
         pickupAddress: '',
@@ -168,8 +170,8 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
         apartmentSize: '',
         message: '',
       });
-      setSelectedService('');
-      setSelectedPackage('');
+      setSelectedService(serviceParam || 'other');
+      setSelectedPackage(packageParam || '');
       setSelectedCountryCode('+420');
     },
     onError: (error: Error) => {

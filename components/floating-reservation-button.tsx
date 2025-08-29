@@ -18,8 +18,37 @@ const FloatingReservationButton: React.FC<FloatingReservationButtonProps> = ({
   const locale = pathname.split('/')[1] || 'cs';
 
   const handleReservationClick = () => {
-    // Open booking page in new tab
-    window.open(`/${locale}/reservation?service=moving`, '_blank');
+    // Detect service from current pathname
+    let service = 'other'; // default fallback
+
+    if (pathname.includes('/service/')) {
+      // Extract service from service page URLs
+      if (pathname.includes('/service/moving')) {
+        service = 'moving';
+      } else if (pathname.includes('/service/cleaning')) {
+        service = 'cleaning';
+      } else if (pathname.includes('/service/furniture-cleaning')) {
+        service = 'furniture-cleaning';
+      } else if (pathname.includes('/service/handyman')) {
+        service = 'handyman';
+      } else if (pathname.includes('/service/packages')) {
+        service = 'packages';
+      } else {
+        service = 'other';
+      }
+    } else if (pathname.includes('/services')) {
+      // On main services page, default to moving
+      service = 'moving';
+    } else if (pathname.includes('/contact')) {
+      // On contact page, default to other
+      service = 'other';
+    } else if (pathname.includes('/reservation')) {
+      // Already on reservation page, don't redirect
+      return;
+    }
+
+    // Open booking page in new tab with detected service
+    window.open(`/${locale}/reservation?service=${service}`, '_blank');
   };
 
   return (
