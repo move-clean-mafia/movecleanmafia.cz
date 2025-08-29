@@ -475,7 +475,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                     ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
                     : ''
                 }`}
-                placeholder="123 456 789"
+                placeholder="777888999"
                 required
               />
             </div>
