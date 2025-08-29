@@ -851,15 +851,15 @@
         "services": [
           {
             "name": "Furniture dry cleaning",
-            "price": "upon request"
+            "price": "from 200 Kč"
           },
           {
             "name": "Carpet cleaning",
-            "price": "upon request"
+            "price": "from 120 Kč/m²"
           },
           {
             "name": "Mattress cleaning",
-            "price": "upon request"
+            "price": "from 400 Kč"
           },
           {
             "name": "Furniture assembly from stores",
