@@ -1275,6 +1275,7 @@
       "phoneMin": "Telefonní číslo musí mít alespoň 9 znaků",
       "phoneInvalidFormat": "Telefonní číslo obsahuje neplatné znaky",
       "phoneSuspicious": "Telefonní číslo vypadá podezřele, zkontrolujte prosím",
+      "required": "Toto pole je povinné",
       "general": "Prosím opravte chyby ve formuláři"
     }
   },

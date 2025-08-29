@@ -1275,6 +1275,7 @@
       "phoneMin": "Phone number must be at least 9 characters",
       "phoneInvalidFormat": "Phone number contains invalid characters",
       "phoneSuspicious": "Phone number looks suspicious, please check",
+      "required": "This field is required",
       "general": "Please fix the errors in the form"
     }
   },

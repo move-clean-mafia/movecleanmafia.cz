@@ -58,16 +58,8 @@ const countryCodes = [
 const reservationSchema = z.object({
   firstName: z.string().min(2, 'firstNameMin'),
   lastName: z.string().optional(),
-  email: z.string().email('emailInvalid').optional().or(z.literal('')),
-  phone: z
-    .string()
-    .min(9, 'phoneMin')
-    .regex(/^[0-9\s\-()]+$/, 'phoneInvalidFormat')
-    .refine((val) => {
-      const digitsOnly = val.replace(/\D/g, '');
-      const uniqueDigits = new Set(digitsOnly.split(''));
-      return uniqueDigits.size > 1 || digitsOnly.length > 9;
-    }, 'phoneSuspicious'),
+  email: z.string().email('emailInvalid'),
+  phone: z.string().min(9, 'phoneMin'),
   service: z
     .enum([
       'moving',
@@ -79,7 +71,7 @@ const reservationSchema = z.object({
     ])
     .optional(),
   package: z.string().optional(),
-  date: z.string().optional(),
+  date: z.string(),
   time: z.enum(['morning', 'afternoon', 'evening', 'night']).optional(),
   pickupAddress: z.string().optional(),
   deliveryAddress: z.string().optional(),
@@ -289,9 +281,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
         phone: `${selectedCountryCode}${formData.phone}`,
         // Filter out empty optional fields
         lastName: formData.lastName || undefined,
-        email: formData.email || undefined,
         service: formData.service || undefined,
-        date: formData.date || undefined,
         time: formData.time || undefined,
         address: formData.address || undefined,
         apartmentSize: formData.apartmentSize || undefined,
@@ -399,7 +389,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               htmlFor="email"
               className="text-sm font-body font-medium text-white/90"
             >
-              {t('reservation.email')}
+              {t('reservation.email')} *
             </Label>
             <Input
               id="email"
@@ -412,6 +402,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                   : ''
               }`}
               placeholder={t('contact.form.emailPlaceholder')}
+              required
             />
             {hasFieldError('email') && (
               <div className="mt-1 flex items-center text-sm text-red-400">
@@ -596,7 +587,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
               htmlFor="date"
               className="text-sm font-body font-medium text-white/90"
             >
-              {t('reservation.preferredDate')}
+              {t('reservation.preferredDate')} *
             </Label>
             <Input
               id="date"
@@ -609,6 +600,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                   ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
                   : ''
               }`}
+              required
             />
             {hasFieldError('date') && (
               <div className="mt-1 flex items-center text-sm text-red-400">
