@@ -1262,7 +1262,8 @@
       "afternoon": "Odpoledne (12:00-16:00)",
       "evening": "Večer (16:00-20:00)",
       "morning": "Ráno (8:00-12:00)",
-      "night": "Noční čas (20:00-8:00)"
+      "night": "Noční čas (20:00-8:00)",
+      "byAgreement": "Po dohodě"
     },
     "title": "Online rezervace",
     "paymentInfo": {

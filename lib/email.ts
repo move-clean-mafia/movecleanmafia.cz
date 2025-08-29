@@ -475,18 +475,21 @@ const getTimeDisplayName = (time: string, locale: string): string => {
       afternoon: 'Odpoledne (12:00-16:00)',
       evening: 'Večer (16:00-20:00)',
       night: 'Noční čas (20:00-8:00)',
+      'by-agreement': 'Po dohodě',
     },
     en: {
       morning: 'Morning (8:00-12:00)',
       afternoon: 'Afternoon (12:00-16:00)',
       evening: 'Evening (16:00-20:00)',
       night: 'Night time (20:00-8:00)',
+      'by-agreement': 'By agreement',
     },
     ua: {
       morning: 'Ранок (8:00-12:00)',
       afternoon: 'Обід (12:00-16:00)',
       evening: 'Вечір (16:00-20:00)',
       night: 'Нічний час (20:00-8:00)',
+      'by-agreement': 'За домовленістю',
     },
   };
 

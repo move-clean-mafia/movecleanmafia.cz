@@ -72,7 +72,9 @@ const reservationSchema = z.object({
     .optional(),
   package: z.string().optional(),
   date: z.string(),
-  time: z.enum(['morning', 'afternoon', 'evening', 'night']).optional(),
+  time: z
+    .enum(['morning', 'afternoon', 'evening', 'night', 'by-agreement'])
+    .optional(),
   pickupAddress: z.string().optional(),
   deliveryAddress: z.string().optional(),
   address: z.string().optional(),
@@ -241,6 +243,10 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
       value: 'night',
       label: t('reservation.timeSlots.night'),
     },
+    {
+      value: 'by-agreement',
+      label: t('reservation.timeSlots.byAgreement'),
+    },
   ];
 
   const handleInputChange = (
@@ -349,6 +355,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                   : ''
               }`}
               placeholder={t('contact.form.firstNamePlaceholder')}
+              autoComplete="given-name"
               required
             />
             {hasFieldError('firstName') && (
@@ -376,6 +383,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                   : ''
               }`}
               placeholder={t('contact.form.lastNamePlaceholder')}
+              autoComplete="family-name"
             />
             {hasFieldError('lastName') && (
               <div className="mt-1 flex items-center text-sm text-red-400">
@@ -404,6 +412,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                   : ''
               }`}
               placeholder={t('contact.form.emailPlaceholder')}
+              autoComplete="email"
               required
             />
             {hasFieldError('email') && (
@@ -476,6 +485,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                     : ''
                 }`}
                 placeholder="777888999"
+                autoComplete="tel"
                 required
               />
             </div>
@@ -602,6 +612,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
                   ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
                   : ''
               }`}
+              autoComplete="off"
               required
             />
             {hasFieldError('date') && (
@@ -666,6 +677,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
             onChange={(e) => handleInputChange('address', e.target.value)}
             className="mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20"
             placeholder={t('reservation.addressPlaceholder')}
+            autoComplete="street-address"
             rows={3}
           />
         </div>
@@ -685,6 +697,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
             onChange={(e) => handleInputChange('apartmentSize', e.target.value)}
             className="mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20"
             placeholder={t('reservation.apartmentSizePlaceholder')}
+            autoComplete="off"
           />
         </div>
       </div>
@@ -710,6 +723,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
             onChange={(e) => handleInputChange('message', e.target.value)}
             className="mt-1 font-body bg-black border-[#d6b977]/30 text-white placeholder:text-white/50 focus:border-[#d6b977] focus:ring-[#d6b977]/20"
             placeholder={t('reservation.messagePlaceholder')}
+            autoComplete="off"
             rows={4}
           />
         </div>

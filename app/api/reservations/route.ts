@@ -7,21 +7,28 @@ import { sendReservationConfirmationEmail } from '../../../lib/email';
 // Validation schema matching the client-side schema
 const reservationSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
-  lastName: z.string().min(2, 'Last name must be at least 2 characters'),
+  lastName: z
+    .string()
+    .min(2, 'Last name must be at least 2 characters')
+    .optional(),
   email: z.string().email('Invalid email address'),
   phone: z.string().min(9, 'Phone number must be at least 9 characters'),
-  service: z.enum([
-    'moving',
-    'cleaning',
-    'packing',
-    'furniture-cleaning',
-    'handyman',
-    'packages',
-    'other',
-  ]),
+  service: z
+    .enum([
+      'moving',
+      'cleaning',
+      'packing',
+      'furniture-cleaning',
+      'handyman',
+      'packages',
+      'other',
+    ])
+    .optional(),
   package: z.string().optional(),
   date: z.string().min(1, 'Date is required'),
-  time: z.enum(['morning', 'afternoon', 'evening', 'night']),
+  time: z
+    .enum(['morning', 'afternoon', 'evening', 'night', 'by-agreement'])
+    .optional(),
   pickupAddress: z.string().optional(),
   deliveryAddress: z.string().optional(),
   address: z.string().optional(),
@@ -85,13 +92,13 @@ export async function POST(request: NextRequest) {
     const telegramData = {
       id: reservationId,
       firstName: reservationData.firstName,
-      lastName: reservationData.lastName,
+      lastName: reservationData.lastName || '',
       email: reservationData.email,
       phone: reservationData.phone,
-      service: reservationData.service,
+      service: reservationData.service || 'other',
       package: reservationData.package,
       preferredDate: reservationData.preferredDate,
-      preferredTime: reservationData.preferredTime,
+      preferredTime: reservationData.preferredTime || 'morning',
       pickupAddress: reservationData.pickupAddress,
       deliveryAddress: reservationData.deliveryAddress,
       address: reservationData.address,
@@ -116,10 +123,10 @@ export async function POST(request: NextRequest) {
         lastName: reservationData.lastName,
         email: reservationData.email,
         phone: reservationData.phone,
-        service: reservationData.service,
+        service: reservationData.service || 'other',
         package: reservationData.package,
         preferredDate: reservationData.preferredDate,
-        preferredTime: reservationData.preferredTime,
+        preferredTime: reservationData.preferredTime || 'morning',
         pickupAddress: reservationData.pickupAddress,
         deliveryAddress: reservationData.deliveryAddress,
         address: reservationData.address,
