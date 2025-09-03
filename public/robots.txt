@@ -1,13 +1,10 @@
 User-agent: *
 Allow: /
 
-# Allow indexing of all pages
-Allow: /cs/
-Allow: /en/
-Allow: /ua/
-
-# Disallow admin and API routes
 Disallow: /admin/
+Disallow /en/admin
+Disallow /ua/admin
+Disallow /cs/admin
 Disallow: /api/
 
 # Sitemap location (absolute URL)
