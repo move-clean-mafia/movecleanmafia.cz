@@ -2,9 +2,9 @@ User-agent: *
 Allow: /
 
 Disallow: /admin/
-Disallow /en/admin
-Disallow /ua/admin
-Disallow /cs/admin
+Disallow: /en/admin
+Disallow: /ua/admin
+Disallow: /cs/admin
 Disallow: /api/
 
 # Sitemap location (absolute URL)
