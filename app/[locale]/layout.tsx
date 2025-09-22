@@ -205,6 +205,12 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
           content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"
         />
 
+        {/* Canonical URL */}
+        <link
+          rel="canonical"
+          href={`https://movecleanmafia.cz/${paramLocale}`}
+        />
+
         {/* Hreflang tags for all supported languages */}
         <link
           rel="alternate"

@@ -10,6 +10,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const sitemap: MetadataRoute.Sitemap = [];
 
+  // Add root domain with redirect to default locale (English)
+  sitemap.push({
+    url: baseUrl,
+    lastModified: currentDate,
+    changeFrequency: 'daily',
+    priority: 1.0,
+  });
+
   // Add base pages for each locale
   locales.forEach((locale) => {
     basePages.forEach((page) => {
