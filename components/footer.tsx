@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-8">
           {/* Useful Links and Information */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {/* Quick Links */}
             <div>
               <h4 className="text-sm font-semibold text-[#d6b977] mb-4 font-heading">
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <a
-                    href={`/${locale}/services#detailed-services`}
+                    href={`/${locale}/services`}
                     className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
                   >
                     {t('navigation.services')}
@@ -44,6 +44,63 @@ export const Footer: React.FC = () => {
                     className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
                   >
                     {t('navigation.contact')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`/${locale}/reservation`}
+                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
+                  >
+                    {t('navigation.reservation')}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="text-sm font-semibold text-[#d6b977] mb-4 font-heading">
+                {t('footer.ourServices')}
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href={`/${locale}/service/moving`}
+                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
+                  >
+                    {t('services.moving')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`/${locale}/service/cleaning`}
+                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
+                  >
+                    {t('services.cleaning')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`/${locale}/service/furniture-cleaning`}
+                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
+                  >
+                    {t('services.furnitureCleaning')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`/${locale}/service/handyman`}
+                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
+                  >
+                    {t('services.handyman')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`/${locale}/service/packages`}
+                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
+                  >
+                    {t('services.packages')}
                   </a>
                 </li>
               </ul>

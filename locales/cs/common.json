@@ -934,6 +934,7 @@
     "followUs": "Sledujte nás",
     "instagram": "Instagram",
     "legal": "Právní informace",
+    "ourServices": "Naše služby",
     "phone": "Telefon",
     "phone1Description": "stěhování",
     "phone2Description": "úklid, chemické čištění",
@@ -1020,7 +1021,9 @@
     "contact": "Kontakt",
     "prices": "Ceny",
     "home": "Domů",
-    "services": "Služby"
+    "services": "Služby",
+    "reservation": "Rezervace",
+    "viewAllServices": "Zobrazit všechny služby"
   },
   "privacyPolicy": {
     "lastUpdated": "Naposledy aktualizováno",
@@ -1441,5 +1444,11 @@
       }
     },
     "title": "Obchodní podmínky"
+  },
+  "relatedServices": {
+    "title": "Související služby",
+    "subtitle": "Objevte naše další profesionální služby",
+    "learnMore": "Zjistit více",
+    "viewAllServices": "Zobrazit všechny služby"
   }
 }

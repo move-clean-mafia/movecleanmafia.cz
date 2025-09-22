@@ -934,6 +934,7 @@
     "followUs": "Слідкуйте за нами",
     "instagram": "Instagram",
     "legal": "Правова інформація",
+    "ourServices": "Наші послуги",
     "phone": "Телефон",
     "phone1Description": "вантажні перевезення",
     "phone2Description": "прибирання, хімчистка",
@@ -1020,7 +1021,9 @@
     "contact": "Контакти",
     "prices": "Ціни",
     "home": "Головна",
-    "services": "Послуги"
+    "services": "Послуги",
+    "reservation": "Резервація",
+    "viewAllServices": "Переглянути всі послуги"
   },
   "privacyPolicy": {
     "lastUpdated": "Останнє оновлення",
@@ -1441,5 +1444,11 @@
       }
     },
     "title": "Умови використання"
+  },
+  "relatedServices": {
+    "title": "Пов'язані послуги",
+    "subtitle": "Відкрийте наші інші професійні послуги",
+    "learnMore": "Дізнатися більше",
+    "viewAllServices": "Переглянути всі послуги"
   }
 }

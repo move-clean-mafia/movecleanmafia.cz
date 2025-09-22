@@ -934,6 +934,7 @@
     "followUs": "Follow Us",
     "instagram": "Instagram",
     "legal": "Legal",
+    "ourServices": "Our Services",
     "phone": "Phone",
     "phone1Description": "freight transport",
     "phone2Description": "cleaning, dry cleaning",
@@ -1020,7 +1021,9 @@
     "contact": "Contact",
     "prices": "Prices",
     "home": "Home",
-    "services": "Services"
+    "services": "Services",
+    "reservation": "Reservation",
+    "viewAllServices": "View All Services"
   },
   "privacyPolicy": {
     "lastUpdated": "Last updated",
@@ -1441,5 +1444,11 @@
       }
     },
     "title": "Terms of Service"
+  },
+  "relatedServices": {
+    "title": "Related Services",
+    "subtitle": "Discover our other professional services",
+    "learnMore": "Learn More",
+    "viewAllServices": "View All Services"
   }
 }

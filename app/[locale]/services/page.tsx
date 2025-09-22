@@ -6,6 +6,7 @@ import { type SupportedLanguage } from '../../../lib/i18n';
 import CompactServicesGrid from '../../../components/compact-services-grid';
 import { CTASection } from '../../../components/cta-section';
 import ServicePricing from '../../../components/service-pricing';
+import { RelatedServices } from '../../../components/related-services';
 
 import { Truck, Sparkles, Droplets, Wrench, Package2 } from 'lucide-react';
 
@@ -292,6 +293,9 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
           />
         </div>
       </section>
+
+      {/* Related Services Section */}
+      <RelatedServices />
 
       {/* Professional CTA Section */}
       <CTASection locale={locale as SupportedLanguage} t={t} />

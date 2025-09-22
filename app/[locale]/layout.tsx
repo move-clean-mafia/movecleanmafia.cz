@@ -14,6 +14,7 @@ import { Footer } from '../../components/footer';
 import { FloatingReservationButton } from '../../components/floating-reservation-button';
 import { CookieConsent } from '../../components/cookie-consent';
 import { Toaster } from '../../components/ui/toaster';
+import { BreadcrumbsWrapper } from '../../components/breadcrumbs-wrapper';
 import SEOProvider from '../../components/seo-provider';
 import '../globals.css';
 
@@ -278,6 +279,8 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
               <AuthProvider>
                 <div className="min-h-screen bg-brand-light flex flex-col">
                   <Header />
+                  {/* Breadcrumbs - Only show on non-homepage */}
+                  <BreadcrumbsWrapper />
                   <main className="flex-1">{children}</main>
                   <Footer />
                   <Suspense fallback={null}>

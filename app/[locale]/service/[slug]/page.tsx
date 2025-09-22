@@ -17,6 +17,7 @@ import ServicePricing from '../../../../components/service-pricing';
 import DryCleaningServices from '../../../../components/dry-cleaning-services';
 import HandymanServices from '../../../../components/handyman-services';
 import PackagesServices from '../../../../components/packages-services';
+import { RelatedServices } from '../../../../components/related-services';
 
 interface ServiceDetailPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -689,6 +690,9 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
           )}
         </div>
       </section>
+
+      {/* Related Services Section */}
+      <RelatedServices currentService={service.slug} />
 
       {/* Professional CTA Section */}
       <CTASection locale={locale as SupportedLanguage} t={t} />
