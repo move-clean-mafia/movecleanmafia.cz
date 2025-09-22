@@ -125,26 +125,6 @@ interface ServiceSchema {
       category: string;
     }>;
   };
-  review: Array<{
-    '@type': string;
-    reviewRating: {
-      '@type': string;
-      ratingValue: number;
-      bestRating: number;
-    };
-    author: {
-      '@type': string;
-      name: string;
-    };
-    reviewBody: string;
-  }>;
-  aggregateRating: {
-    '@type': string;
-    ratingValue: number;
-    reviewCount: number;
-    bestRating: number;
-    worstRating: number;
-  };
 }
 
 interface FAQSchema {
@@ -461,33 +441,6 @@ const SEOProvider: React.FC<SEOProviderProps> = ({
           category: 'Packing Services',
         },
       ],
-    },
-    review: [
-      {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: 5,
-          bestRating: 5,
-        },
-        author: {
-          '@type': 'Person',
-          name: 'Satisfied Customer',
-        },
-        reviewBody:
-          locale === 'cs'
-            ? 'Výborná služba, profesionální přístup, doporučuji!'
-            : locale === 'ua'
-              ? 'Відмінний сервіс, професійний підхід, рекомендую!'
-              : 'Excellent service, professional approach, highly recommended!',
-      },
-    ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: 4.8,
-      reviewCount: 127,
-      bestRating: 5,
-      worstRating: 1,
     },
   };
 
