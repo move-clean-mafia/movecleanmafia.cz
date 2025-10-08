@@ -46,7 +46,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const services = [
       'moving',
       'cleaning',
-      'packing',
       'furniture-cleaning',
       'handyman',
       'packages',

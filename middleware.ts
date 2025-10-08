@@ -92,7 +92,7 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   url.pathname = `/${locale}${pathname}`;
 
-  const response = NextResponse.redirect(url, { status: 301 });
+  const response = NextResponse.redirect(url, { status: 307 });
 
   // Set locale cookie
   response.cookies.set('locale', locale, {
