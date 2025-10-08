@@ -24,7 +24,7 @@ export async function generateMetadata({
 
   switch (locale) {
     case 'cs':
-      title = 'Služby stěhování a úklidu v Praze | MoveCleanMafia.cz';
+      title = 'Služby stěhování a úklidu v Praze';
       description =
         'Kompletní služby stěhování a úklidu v Praze - stěhování, úklid a balení. Profesionální stěhovací služby, úklidové služby a balící služby s garancí kvality.';
       keywords = [
