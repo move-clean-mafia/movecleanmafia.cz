@@ -178,7 +178,6 @@ export const generateMetadata = async ({
       images: ['/images/logo.png'],
     },
     alternates: {
-      canonical: `https://movecleanmafia.cz/${locale}`,
       languages: {
         cs: 'https://movecleanmafia.cz/cs',
         en: 'https://movecleanmafia.cz/en',
@@ -206,11 +205,7 @@ const LocaleLayout = async ({ children, params }: LocaleLayoutProps) => {
           content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"
         />
 
-        {/* Canonical URL */}
-        <link
-          rel="canonical"
-          href={`https://movecleanmafia.cz/${paramLocale}`}
-        />
+        {/* Canonical URL - will be overridden by individual pages */}
 
         {/* Hreflang tags for all supported languages */}
         <link

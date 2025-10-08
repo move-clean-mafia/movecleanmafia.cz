@@ -34,7 +34,7 @@ export async function generateMetadata({
     case 'cs':
       title = 'Kontakt - MoveCleanMafia';
       description =
-        'Kontaktujte nás pro bezplatnou konzultaci a cenovou nabídku přepravy a úklidu';
+        'Kontaktujte nás pro bezplatnou konzultaci a cenovou nabídku stěhování a úklidu v Praze. Rychlá odpověď, profesionální přístup a transparentní ceny.';
       break;
     case 'ua':
       title = 'Контакти - MoveCleanMafia.ua';

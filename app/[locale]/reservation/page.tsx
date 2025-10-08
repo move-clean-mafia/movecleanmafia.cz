@@ -25,7 +25,8 @@ export async function generateMetadata({
   switch (locale) {
     case 'cs':
       title = 'Rezervace - MoveCleanMafia.cz';
-      description = 'Rezervujte si naše služby přepravy a úklidu online';
+      description =
+        'Rezervujte si naše profesionální služby stěhování a úklidu v Praze online. Rychlé rezervace, transparentní ceny a garance kvality. Kontaktujte nás pro bezplatnou konzultaci!';
       break;
     case 'ua':
       title = 'Резервація - MoveCleanMafia.ua';

@@ -42,7 +42,7 @@ export async function generateMetadata({
 
   switch (locale) {
     case 'cs':
-      title = 'MoveCleanMafia.cz - Profesionální stěhování a úklid v Praze';
+      title = 'Profesionální stěhování a úklid v Praze | MoveCleanMafia.cz';
       description =
         'Spolehlivé služby přepravy a úklidu pro domácnosti a firmy v Praze. Profesionální stěhování, úklid a balení s garancí kvality. Voláme 24/7.';
       keywords = [

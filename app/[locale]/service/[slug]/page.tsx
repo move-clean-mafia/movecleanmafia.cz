@@ -69,17 +69,17 @@ export async function generateMetadata({
     const serviceDescriptions = {
       cs: {
         moving:
-          'Profesionální stěhovací služby v Praze. Spolehlivé stěhování bytů, domů a kanceláří s garancí kvality.',
+          'Profesionální stěhovací služby v Praze. Spolehlivé stěhování bytů, domů a kanceláří s garancí kvality. Rychlé a bezpečné přepravy s pojištěním.',
         cleaning:
-          'Profesionální úklidové služby v Praze. Úklid bytů, domů a kanceláří s garancí kvality.',
+          'Profesionální úklidové služby v Praze. Úklid bytů, domů a kanceláří s garancí kvality. Rychlé a důkladné čištění s ekologickými prostředky.',
         packing:
-          'Profesionální balící služby v Praze. Bezpečné balení nábytku a osobních věcí pro stěhování.',
+          'Profesionální balící služby v Praze. Bezpečné balení nábytku a osobních věcí pro stěhování. Specializované materiály a techniky balení.',
         'furniture-cleaning':
-          'Profesionální čištění nábytku v Praze. Obnovení vzhledu a hygieny vašeho nábytku.',
+          'Profesionální čištění nábytku v Praze. Obnovení vzhledu a hygieny vašeho nábytku. Specializované služby pro různé typy materiálů.',
         handyman:
-          'Profesionální údržbářské práce v Praze. Opravy, montáže a údržba pro domácnosti a firmy.',
+          'Profesionální údržbářské práce v Praze. Opravy, montáže a údržba pro domácnosti a firmy. Rychlé řešení všech technických problémů.',
         packages:
-          'Speciální balíčky služeb v Praze. Kombinované služby stěhování, úklidu a balení za výhodné ceny.',
+          'Speciální balíčky služeb v Praze. Kombinované služby stěhování, úklidu a balení za výhodné ceny. Kompletní řešení pro vaše potřeby.',
       },
       ua: {
         moving:
