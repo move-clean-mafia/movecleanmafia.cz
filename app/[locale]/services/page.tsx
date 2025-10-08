@@ -249,16 +249,6 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       {/* Services Overview - Mafia Style */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#d6b977] mb-6 font-heading animate-text-glow">
-              {t('homepage.servicesSection.title')}
-            </h2>
-            <div className="mafia-divider w-32 h-1 mx-auto mb-8"></div>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed font-body">
-              {t('homepage.servicesSection.subtitle')}
-            </p>
-          </div>
-
           {/* Professional Services Grid */}
           <CompactServicesGrid
             services={services}
