@@ -19,6 +19,7 @@ import {
   Wrench,
   Droplets,
 } from 'lucide-react';
+import { isServiceVisible } from '../lib/service-config';
 import { LanguageSwitcher } from './language-switcher';
 import Logo from './logo';
 
@@ -39,7 +40,7 @@ export const Header: React.FC = () => {
     { key: 'contact', href: `/${locale}/contact` },
   ];
 
-  const serviceItems = [
+  const allServiceItems = [
     {
       key: 'moving',
       href: `/${locale}/service/moving`,
@@ -71,6 +72,11 @@ export const Header: React.FC = () => {
       label: t('services.packages'),
     },
   ];
+
+  // Filter service items based on visibility configuration
+  const serviceItems = allServiceItems.filter((service) =>
+    isServiceVisible(service.key),
+  );
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);

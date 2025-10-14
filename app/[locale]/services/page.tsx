@@ -2,11 +2,13 @@ import React from 'react';
 import { Metadata } from 'next';
 import { getTranslation } from '../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../lib/i18n';
+import { isServiceVisible } from '../../../lib/service-config';
 
 import CompactServicesGrid from '../../../components/compact-services-grid';
 import { CTASection } from '../../../components/cta-section';
 import ServicePricing from '../../../components/service-pricing';
 import { RelatedServices } from '../../../components/related-services';
+import DryCleaningServices from '../../../components/dry-cleaning-services';
 
 import { Truck, Sparkles, Droplets, Wrench, Package2 } from 'lucide-react';
 
@@ -180,8 +182,9 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
   const { locale } = await params;
   const { t } = await getTranslation(locale as SupportedLanguage);
 
-  const services = [
+  const allServices = [
     {
+      slug: 'moving',
       icon: Truck,
       title: t('services.moving'),
       description: t('services.movingDescription'),
@@ -190,6 +193,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       imageAlt: t('services.moving'),
     },
     {
+      slug: 'cleaning',
       icon: Sparkles,
       title: t('services.cleaning'),
       description: t('services.cleaningDescription'),
@@ -198,6 +202,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       imageAlt: t('services.cleaning'),
     },
     {
+      slug: 'furniture-cleaning',
       icon: Droplets,
       title: t('services.furnitureCleaning'),
       description: t('services.furnitureCleaningDescription'),
@@ -210,6 +215,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       imageAlt: 'Chemické čistění',
     },
     {
+      slug: 'handyman',
       icon: Wrench,
       title: t('services.handyman'),
       description: t('services.handymanDescription'),
@@ -218,6 +224,7 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       imageAlt: 'Hodinový manžel',
     },
     {
+      slug: 'packages',
       icon: Package2,
       title: t('services.packages'),
       description: t('services.packagesDescription'),
@@ -226,6 +233,11 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       imageAlt: 'Komplexní balíčky',
     },
   ];
+
+  // Filter services based on visibility configuration
+  const services = allServices.filter((service) =>
+    isServiceVisible(service.slug),
+  );
 
   return (
     <div className="min-h-screen bg-black">
@@ -263,23 +275,36 @@ const ServicesPage = async ({ params }: ServicesPageProps) => {
       {/* Detailed Services Sections - Mafia Style */}
       <section id="detailed-services" className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Moving Services Pricing */}
-          <div id="moving-services" className="mb-16">
-            <ServicePricing
-              locale={locale as SupportedLanguage}
-              t={t}
-              serviceType="moving"
-              showReservationButton={true}
-            />
-          </div>
+          {/* Moving Services Pricing - Only show if visible */}
+          {isServiceVisible('moving') && (
+            <div id="moving-services" className="mb-16">
+              <ServicePricing
+                locale={locale as SupportedLanguage}
+                t={t}
+                serviceType="moving"
+                showReservationButton={true}
+              />
+            </div>
+          )}
 
-          {/* Service Pricing */}
-          <ServicePricing
-            locale={locale as SupportedLanguage}
-            t={t}
-            serviceType="cleaning"
-            showReservationButton={true}
-          />
+          {/* Cleaning Service Pricing - Only show if visible */}
+          {isServiceVisible('cleaning') && (
+            <div className="mb-16">
+              <ServicePricing
+                locale={locale as SupportedLanguage}
+                t={t}
+                serviceType="cleaning"
+                showReservationButton={true}
+              />
+            </div>
+          )}
+
+          {/* Furniture Cleaning (Dry Cleaning) - Only show if visible */}
+          {isServiceVisible('furniture-cleaning') && (
+            <div id="furniture-cleaning-services" className="mb-16">
+              <DryCleaningServices locale={locale as SupportedLanguage} t={t} />
+            </div>
+          )}
         </div>
       </section>
 

@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@tanstack/react-query';
 import { z } from 'zod';
+import { isServiceVisible } from '../lib/service-config';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -199,7 +200,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
     }
   }, [serviceParam, packageParam]);
 
-  const services = [
+  const allServices = [
     { value: 'moving', label: t('reservation.services.moving') },
     { value: 'cleaning', label: t('reservation.services.cleaning') },
     {
@@ -210,6 +211,12 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
     { value: 'packages', label: t('reservation.services.packages') },
     { value: 'other', label: t('reservation.services.other') },
   ];
+
+  // Filter services based on visibility configuration
+  // Always include 'other' option
+  const services = allServices.filter(
+    (service) => service.value === 'other' || isServiceVisible(service.value),
+  );
 
   const cleaningPackages = [
     {

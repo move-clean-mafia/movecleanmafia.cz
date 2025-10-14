@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { getTranslation } from '../../../../lib/i18n-server';
 import { type SupportedLanguage } from '../../../../lib/i18n';
+import { isServiceVisible } from '../../../../lib/service-config';
 import { CTASection } from '@/components/cta-section';
 import ServicePricing from '../../../../components/service-pricing';
 import DryCleaningServices from '../../../../components/dry-cleaning-services';
@@ -523,7 +524,14 @@ const getServiceData = (
     },
   };
 
-  return services[slug] || null;
+  // Check if service exists and is visible
+  const service = services[slug];
+  if (!service) return null;
+
+  // Check if service is visible in configuration
+  if (!isServiceVisible(slug)) return null;
+
+  return service;
 };
 
 export async function generateStaticParams() {

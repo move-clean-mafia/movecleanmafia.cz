@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { usePathname } from 'next/navigation';
 import { Truck, Sparkles, Package2, Wrench, Droplets } from 'lucide-react';
+import { isServiceVisible } from '../lib/service-config';
 
 interface RelatedServicesProps {
   currentService?: string;
@@ -57,9 +58,12 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
     },
   ];
 
-  // Filter out current service and limit to 3 related services
+  // Filter out current service, hidden services, and limit to 3 related services
   const relatedServices = allServices
-    .filter((service) => service.key !== currentService)
+    .filter(
+      (service) =>
+        service.key !== currentService && isServiceVisible(service.key),
+    )
     .slice(0, 3);
 
   if (relatedServices.length === 0) {

@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { getTranslation } from '../../lib/i18n-server';
 import { type SupportedLanguage } from '../../lib/i18n';
+import { isServiceVisible } from '../../lib/service-config';
 
 import BenefitsGrid from '../../components/benefits-grid';
 import CompactServicesGrid from '../../components/compact-services-grid';
@@ -214,8 +215,9 @@ const HomePage = async ({ params }: HomePageProps) => {
     },
   ];
 
-  const compactServices = [
+  const allServices = [
     {
+      slug: 'packages',
       icon: Package2,
       title: t('services.packages'),
       description: t('services.packagesDescription'),
@@ -224,6 +226,7 @@ const HomePage = async ({ params }: HomePageProps) => {
       imageAlt: 'Komplexní balíčky',
     },
     {
+      slug: 'moving',
       icon: Truck,
       title: t('services.moving'),
       description: t('services.movingDescription'),
@@ -232,6 +235,7 @@ const HomePage = async ({ params }: HomePageProps) => {
       imageAlt: t('homepage.heroImages.moving'),
     },
     {
+      slug: 'cleaning',
       icon: Sparkles,
       title: t('services.cleaning'),
       description: t('services.cleaningDescription'),
@@ -240,6 +244,7 @@ const HomePage = async ({ params }: HomePageProps) => {
       imageAlt: t('homepage.heroImages.cleaning'),
     },
     {
+      slug: 'furniture-cleaning',
       icon: Droplets,
       title: t('services.furnitureCleaning'),
       description: t('services.furnitureCleaningDescription'),
@@ -252,6 +257,7 @@ const HomePage = async ({ params }: HomePageProps) => {
       imageAlt: 'Chemické čistění',
     },
     {
+      slug: 'handyman',
       icon: Wrench,
       title: t('services.handyman'),
       description: t('services.handymanDescription'),
@@ -260,6 +266,11 @@ const HomePage = async ({ params }: HomePageProps) => {
       imageAlt: 'Hodinový manžel',
     },
   ];
+
+  // Filter services based on visibility configuration
+  const compactServices = allServices.filter((service) =>
+    isServiceVisible(service.slug),
+  );
 
   return (
     <div className="min-h-screen bg-black">

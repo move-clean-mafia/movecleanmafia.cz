@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { getVisibleServiceSlugs } from '../lib/service-config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://movecleanmafia.cz';
@@ -42,14 +43,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     });
 
-    // Add service detail pages
-    const services = [
-      'moving',
-      'cleaning',
-      'furniture-cleaning',
-      'handyman',
-      'packages',
-    ];
+    // Add service detail pages - only for visible services
+    const services = getVisibleServiceSlugs();
     services.forEach((service) => {
       sitemap.push({
         url: `${baseUrl}/${locale}/service/${service}`,

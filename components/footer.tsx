@@ -3,6 +3,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { usePathname } from 'next/navigation';
+import { isServiceVisible } from '../lib/service-config';
 
 export const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -63,46 +64,56 @@ export const Footer: React.FC = () => {
                 {t('footer.ourServices')}
               </h4>
               <ul className="space-y-2">
-                <li>
-                  <a
-                    href={`/${locale}/service/moving`}
-                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
-                  >
-                    {t('services.moving')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`/${locale}/service/cleaning`}
-                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
-                  >
-                    {t('services.cleaning')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`/${locale}/service/furniture-cleaning`}
-                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
-                  >
-                    {t('services.furnitureCleaning')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`/${locale}/service/handyman`}
-                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
-                  >
-                    {t('services.handyman')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`/${locale}/service/packages`}
-                    className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
-                  >
-                    {t('services.packages')}
-                  </a>
-                </li>
+                {isServiceVisible('moving') && (
+                  <li>
+                    <a
+                      href={`/${locale}/service/moving`}
+                      className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
+                    >
+                      {t('services.moving')}
+                    </a>
+                  </li>
+                )}
+                {isServiceVisible('cleaning') && (
+                  <li>
+                    <a
+                      href={`/${locale}/service/cleaning`}
+                      className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
+                    >
+                      {t('services.cleaning')}
+                    </a>
+                  </li>
+                )}
+                {isServiceVisible('furniture-cleaning') && (
+                  <li>
+                    <a
+                      href={`/${locale}/service/furniture-cleaning`}
+                      className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
+                    >
+                      {t('services.furnitureCleaning')}
+                    </a>
+                  </li>
+                )}
+                {isServiceVisible('handyman') && (
+                  <li>
+                    <a
+                      href={`/${locale}/service/handyman`}
+                      className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
+                    >
+                      {t('services.handyman')}
+                    </a>
+                  </li>
+                )}
+                {isServiceVisible('packages') && (
+                  <li>
+                    <a
+                      href={`/${locale}/service/packages`}
+                      className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
+                    >
+                      {t('services.packages')}
+                    </a>
+                  </li>
+                )}
               </ul>
             </div>
 
