@@ -310,11 +310,11 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ locale }) => {
       submitMutation.mutate(validatedData);
     } catch (error) {
       if (error instanceof z.ZodError) {
-        console.error('Validation errors:', error.errors);
+        console.error('Validation errors:', error);
 
         // Convert Zod errors to field-specific error messages
         const errors: Record<string, string> = {};
-        error.errors.forEach((err) => {
+        error.issues.forEach((err: any) => {
           const fieldName = err.path[0] as string;
           // Translate validation error messages
           const errorKey = err.message;
