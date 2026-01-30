@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { getTranslation } from '../../lib/i18n-server';
 import { type SupportedLanguage } from '../../lib/i18n';
 import { isServiceVisible } from '../../lib/service-config';
@@ -271,33 +272,71 @@ const HomePage = async ({ params }: HomePageProps) => {
   const compactServices = allServices.filter((service) =>
     isServiceVisible(service.slug),
   );
-      {locale === 'cs' && (
+  {
+    locale === 'cs' && (
       <section className="py-24 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-sm uppercase tracking-widest text-[#fddb97]">SLUŻBY</p>
-          <h1 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold">Stěhování a chemické čištění v Praze</h1>
-          <p className="mt-4 text-lg text-white/80">Spolehlivé stěhování bytů, domů i kanceláří a profesionální čištění čalounění a koberců. Rychlé termíny, šetrná manipulace, férová kalkulace.</p>
+          <p className="text-sm uppercase tracking-widest text-[#fddb97]">
+            SLUŻBY
+          </p>
+          <h1 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold">
+            Stěhování a chemické čištění v Praze
+          </h1>
+          <p className="mt-4 text-lg text-white/80">
+            Spolehlivé stěhování bytů, domů i kanceláří a profesionální čištění
+            čalounění a koberců. Rychlé termíny, šetrná manipulace, férová
+            kalkulace.
+          </p>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="p-6 border border-[#fddb97] rounded-lg">
               <h3 className="text-2xl font-bold mb-2">Stěhování / Přeprava</h3>
-              <p className="mb-4">Byty, domy, kanceláře, převoz nábytku. Dodávka + tým dle potřeby.</p>
-              <a href="/cs/moving" className="inline-block px-4 py-2 bg-[#fddb97] text-black font-semibold rounded">Objednat stěhování</a>
+              <p className="mb-4">
+                Byty, domy, kanceláře, převoz nábytku. Dodávka + tým dle
+                potřeby.
+              </p>
+              <Link
+                href="/cs/moving"
+                className="inline-block px-4 py-2 bg-[#fddb97] text-black font-semibold rounded"
+              >
+                Objednat stěhování
+              </Link>
             </div>
             <div className="p-6 border border-[#fddb97] rounded-lg">
-              <h3 className="text-2xl font-bold mb-2">Chemické čištění čalounění</h3>
-              <p className="mb-4">Sedačky, matrace, koberce. Hloubkové čištění a rychlé schnutí.</p>
-              <a href="/cs/cleaning" className="inline-block px-4 py-2 bg-[#fddb97] text-black font-semibold rounded">Objednat čištění</a>
+              <h3 className="text-2xl font-bold mb-2">
+                Chemické čištění čalounění
+              </h3>
+              <p className="mb-4">
+                Sedačky, matrace, koberce. Hloubkové čištění a rychlé schnutí.
+              </p>
+              <Link
+                href="/cs/cleaning"
+                className="inline-block px-4 py-2 bg-[#fddb97] text-black font-semibold rounded"
+              >
+                Objednat čištění
+              </Link>
             </div>
           </div>
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-            <a href="/cs/contact" className="px-6 py-3 bg-[#fddb97] text-black font-bold rounded">Nezávazná poptávka</a>
-            <a href="/cs/reservation" className="px-6 py-3 border border-[#fddb97] text-[#fddb97] font-bold rounded">Online rezervace</a>
+            <Link
+              href="/cs/contact"
+              className="px-6 py-3 bg-[#fddb97] text-black font-bold rounded"
+            >
+              Nezávazná poptávka
+            </Link>
+            <Link
+              href="/cs/reservation"
+              className="px-6 py-3 border border-[#fddb97] text-[#fddb97] font-bold rounded"
+            >
+              Online rezervace
+            </Link>
           </div>
-          <p className="mt-4 text-sm text-white/60">Pojištění • Vlastní dodávky • Termíny 24–48 h</p>
+          <p className="mt-4 text-sm text-white/60">
+            Pojištění • Vlastní dodávky • Termíny 24–48 h
+          </p>
         </div>
       </section>
-    )}
-
+    );
+  }
 
   return (
     <div className="min-h-screen bg-black">
@@ -340,13 +379,13 @@ const HomePage = async ({ params }: HomePageProps) => {
 
                 {/* CTA Button */}
                 <div className="mt-10">
-                  <a
+                  <Link
                     href={`/${locale}/reservation?service=packages`}
                     className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
                   >
                     {t('hero.cta')}
                     <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
