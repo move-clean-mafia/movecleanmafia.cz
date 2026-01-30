@@ -376,7 +376,7 @@
               },
               {
                 "name": "Carpet",
-                "price": "1 m² = 120 Kč"
+                "price": "1 m² = 150 Kč"
               }
             ],
             "title": "Dry Cleaning"
@@ -672,7 +672,7 @@
             },
             {
               "name": "Carpet",
-              "price": "1 m² = 120 Kč"
+              "price": "1 m² = 150 Kč"
             }
           ],
           "title": "Other"
@@ -855,7 +855,7 @@
           },
           {
             "name": "Carpet cleaning",
-            "price": "from 120 Kč/m²"
+            "price": "from 150 Kč/m²"
           },
           {
             "name": "Mattress cleaning",

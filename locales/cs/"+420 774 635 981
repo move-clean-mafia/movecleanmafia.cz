@@ -376,7 +376,7 @@
               },
               {
                 "name": "Koberec",
-                "price": "1 m² = 120 Kč"
+                "price": "1 m² = 150 Kč"
               }
             ],
             "title": "Chemické čistění"
@@ -672,7 +672,7 @@
             },
             {
               "name": "Koberec",
-              "price": "1 m² = 120 Kč"
+              "price": "1 m² = 150 Kč"
             }
           ],
           "title": "Ostatní"
@@ -855,7 +855,7 @@
           },
           {
             "name": "Čištění koberců",
-            "price": "od 120 Kč/m²"
+            "price": "od 150 Kč/m²"
           },
           {
             "name": "Čištění matrací",
