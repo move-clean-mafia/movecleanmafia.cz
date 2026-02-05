@@ -942,17 +942,16 @@
     "quickLinks": "Корисні посилання",
     "tagline": "Професійні перевезення та прибирання - ваша надійність є нашим пріоритетом",
     "termsOfService": "Умови використання"
-  },
   "header": {
-    "closeMainMenu": "Закрити головне меню",
-    "openMainMenu": "Відкрити головне меню",
-   "phone1": "+420 774 635 981",
-   "phone2": "+420 777 112 613",
-    "whatsapp": "WhatsApp",
-    "whatsappAriaLabel": "Відкрити WhatsApp чат",
-    "instagram": "Instagram",
-    "instagramAriaLabel": "Слідкуйте за нами в Instagram"
-  },
+  "closeMainMenu": "Close main menu",
+  "openMainMenu": "Open main menu",
+  "phone1": "+420 774 635 981",
+  "phone2": "+420 777 112 613",
+  "whatsapp": "WhatsApp",
+  "whatsappAriaLabel": "Open WhatsApp chat",
+  "instagram": "Instagram",
+  "instagramAriaLabel": "Follow us on Instagram"
+},
   "hero": {
     "badge": "THE MOVE & CLEAN MAFIA",
     "cta": "ЗАМОВИТИ",
