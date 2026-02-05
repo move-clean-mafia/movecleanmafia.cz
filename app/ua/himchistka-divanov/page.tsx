@@ -58,7 +58,7 @@ export default function HimchistkaDivanovPage() {
         </Link>
 
         <Link
-          href="https://wa.me/420774635981"
+          href="https://wa.me/420777112613"
           className="border border-brand-yellow px-6 py-3 font-semibold rounded"
         >
           WhatsApp
