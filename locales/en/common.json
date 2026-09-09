@@ -996,6 +996,15 @@
         }
       ]
     },
+    "howItWorks": {
+      "title": "How booking works",
+      "subtitle": "Simple, clear and without hidden steps.",
+      "steps": [
+        {"title": "Send us the details", "text": "Choose a service, date and address, or briefly describe what you need."},
+        {"title": "We confirm the price", "text": "We clarify the scope, availability and price with you before confirming."},
+        {"title": "We arrive on time", "text": "We keep the agreed time and complete the work carefully and safely."}
+      ]
+    },
     "heroImages": {
       "cleaning": "Professional cleaning services",
       "moving": "Professional moving services"

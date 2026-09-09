@@ -474,6 +474,27 @@ const HomePage = async ({ params }: HomePageProps) => {
         </div>
       </section>
 
+      {/* How it works */}
+      <section className="py-16 bg-[#0a0a0a] border-y border-[#d6b977]/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#d6b977] font-heading">
+              {t('homepage.howItWorks.title')}
+            </h2>
+            <p className="mt-3 text-white/70 font-body">{t('homepage.howItWorks.subtitle')}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {(t('homepage.howItWorks.steps') as unknown as Array<{ title: string; text: string }>).map((step, index) => (
+              <div key={step.title} className="mafia-card p-6">
+                <div className="text-[#d6b977] text-2xl font-bold mb-4">0{index + 1}</div>
+                <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
+                <p className="text-white/70 leading-relaxed font-body">{step.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Advantage Section - Mafia Style */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

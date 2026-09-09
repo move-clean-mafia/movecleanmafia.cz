@@ -996,6 +996,15 @@
         }
       ]
     },
+    "howItWorks": {
+      "title": "Jak objednávka probíhá",
+      "subtitle": "Jednoduše, bez dlouhého čekání a bez skrytých kroků.",
+      "steps": [
+        {"title": "Pošlete nám údaje", "text": "Vyberte službu, termín a napište adresu nebo základní představu o zakázce."},
+        {"title": "Potvrdíme cenu", "text": "Ozveme se, upřesníme rozsah práce a potvrdíme dostupnost i cenu předem."},
+        {"title": "Přijedeme včas", "text": "Domluvený termín držíme a práci provedeme bezpečně a pečlivě."}
+      ]
+    },
     "heroImages": {
       "cleaning": "Profesionální úklidové služby",
       "moving": "Profesionální stěhovací služby"
