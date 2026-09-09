@@ -8,6 +8,7 @@ import { isServiceVisible } from '../../lib/service-config';
 
 import BenefitsGrid from '../../components/benefits-grid';
 import CompactServicesGrid from '../../components/compact-services-grid';
+import { InstagramGallery } from '../../components/instagram-gallery';
 
 import {
   Truck,
@@ -483,18 +484,7 @@ const HomePage = async ({ params }: HomePageProps) => {
             </h2>
             <p className="mt-3 text-white/70 font-body">{t('homepage.instagram.subtitle')}</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
-            {[
-              ['/images/instagram-work/work-1-v2.jpg', 'https://www.instagram.com/stehomafia/reel/Dbygv9whF6X/'],
-              ['/images/instagram-work/work-2.jpg', 'https://www.instagram.com/stehomafia/p/DW1-nAYjYQ-/'],
-              ['/images/instagram-work/work-3.jpg', 'https://www.instagram.com/stehomafia/p/DWMWYbVDVCo/'],
-            ].map(([image, url]) => (
-              <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="group block w-full max-w-[360px] overflow-hidden rounded-xl border border-[#d6b977]/40 bg-[#111]">
-                <img src={image} alt="MoveCleanMafia — skutečná práce" className="aspect-square w-full object-contain bg-[#111] transition duration-300 group-hover:scale-[1.02]" />
-                <span className="block p-3 text-center text-sm text-[#d6b977]">Instagram @stehomafia →</span>
-              </a>
-            ))}
-          </div>
+          <InstagramGallery />
           <div className="text-center mt-8">
             <a href="https://www.instagram.com/stehomafia/" target="_blank" rel="noopener noreferrer" className="mafia-button inline-flex items-center gap-3">
               {t('homepage.instagram.cta')}
