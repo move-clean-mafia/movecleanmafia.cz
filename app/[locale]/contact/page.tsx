@@ -225,7 +225,7 @@ const ContactPage = async ({ params }: ContactPageProps) => {
                 {/* Social Media */}
                 <div className="mafia-card group hover-lift">
                   <div className="flex items-start space-x-4">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 text-white rounded-full group-hover:scale-110 transition-transform duration-300">
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-[#d6b977] text-black rounded-full group-hover:scale-110 transition-transform duration-300">
                       <Instagram className="w-6 h-6" />
                     </div>
                     <div className="flex-1">
@@ -238,33 +238,33 @@ const ContactPage = async ({ params }: ContactPageProps) => {
                           href="https://wa.me/420725555095"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group flex flex-col items-center justify-center p-1.5 bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-2xl border border-green-400/30 hover:border-green-300/50"
+                          className="group flex flex-col items-center justify-center p-3 bg-[#d6b977]/10 hover:bg-[#d6b977]/20 text-white font-bold rounded-lg transition-all duration-300 hover:-translate-y-0.5 border border-[#d6b977]/50 hover:border-[#d6b977]"
                         >
-                          <div className="w-3 h-3 bg-white/20 rounded-full flex items-center justify-center mb-1 group-hover:bg-white/30 transition-all duration-300">
-                            <MessageCircle className="w-1.5 h-1.5 text-white" />
+                          <div className="w-7 h-7 bg-[#d6b977] text-black rounded-full flex items-center justify-center mb-1.5 transition-all duration-300">
+                            <MessageCircle className="w-4 h-4" />
                           </div>
                           <span className="text-xs font-heading">
                             {t('contact.socialMedia.whatsapp')}
                           </span>
-                          <span className="text-xs text-green-100 mt-0.5 font-body opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className="text-xs text-white/70 mt-0.5 font-body group-hover:text-white transition-colors duration-300">
                             {t('contact.socialMedia.whatsappDescription')}
                           </span>
                         </a>
 
                         {/* Instagram Button */}
                         <a
-                          href="https://www.instagram.com/move_clean_mafia"
+                          href="https://www.instagram.com/stehomafia/"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group flex flex-col items-center justify-center p-1.5 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-2xl border border-purple-400/30 hover:border-purple-300/50"
+                          className="group flex flex-col items-center justify-center p-3 bg-[#d6b977]/10 hover:bg-[#d6b977]/20 text-white font-bold rounded-lg transition-all duration-300 hover:-translate-y-0.5 border border-[#d6b977]/50 hover:border-[#d6b977]"
                         >
-                          <div className="w-3 h-3 bg-white/20 rounded-full flex items-center justify-center mb-1 group-hover:bg-white/30 transition-all duration-300">
-                            <Instagram className="w-1.5 h-1.5 text-white" />
+                          <div className="w-7 h-7 bg-[#d6b977] text-black rounded-full flex items-center justify-center mb-1.5 transition-all duration-300">
+                            <Instagram className="w-4 h-4" />
                           </div>
                           <span className="text-xs font-heading">
                             {t('contact.socialMedia.instagram')}
                           </span>
-                          <span className="text-xs text-purple-100 mt-0.5 font-body opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className="text-xs text-white/70 mt-0.5 font-body group-hover:text-white transition-colors duration-300">
                             {t('contact.socialMedia.instagramDescription')}
                           </span>
                         </a>
