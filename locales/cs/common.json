@@ -379,7 +379,7 @@
                 "price": "1 m² = 150 Kč"
               }
             ],
-            "title": "Chemické čistění"
+            "title": "Chemické čištění"
           },
           {
             "description": "Profesionální balení a zabalení vašich věcí pro bezpečnou přepravu",
@@ -1241,11 +1241,11 @@
       "consultation": "",
       "examination": "",
       "followUp": "",
-      "furnitureCleaning": "Chemické čistění",
+      "furnitureCleaning": "Chemické čištění",
       "handyman": "Hodinový manžel",
       "moving": "Stěhování",
       "other": "Ostatní",
-      "packages": "Stěhování a chemické čistění",
+      "packages": "Stěhování a chemické čištění",
       "spirometry": "",
       "urgent": ""
     },
@@ -1316,8 +1316,8 @@
       }
     },
     "ctaTitle": "Začněme spolupracovat",
-    "furnitureCleaning": "Chemické čistění",
-    "furnitureCleaningDescription": "Profesionální chemické čistění nábytku a koberců",
+    "furnitureCleaning": "Chemické čištění",
+    "furnitureCleaningDescription": "Profesionální chemické čištění nábytku a koberců",
     "handyman": "Hodinový manžel",
     "handymanDescription": "Drobné opravy a údržba domácnosti",
     "moving": "Stěhování",
@@ -1328,8 +1328,8 @@
       "Montáž na novém místě",
       "Pojištění zásilky"
     ],
-    "packages": "Stěhování a chemické čistění",
-    "packagesDescription": "перевозки и хим чистку",
+    "packages": "Stěhování a chemické čištění",
+    "packagesDescription": "Kombinované služby za výhodné ceny",
     "packing": "Balení",
     "quality": "Kvalita",
     "qualityDescription": "Nejvyšší kvalita služeb a péče o vaše věci",
