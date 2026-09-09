@@ -842,7 +842,7 @@
           "price": "1100 Kč/hour"
         }
       ],
-      "minOrder": "Minimum order is 1.5 hours.",
+      "minOrder": "Minimum order is 2 hours.",
       "title": "Moving and Additional Services"
     },
     "packages": {
