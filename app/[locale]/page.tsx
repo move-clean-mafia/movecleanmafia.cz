@@ -2,7 +2,6 @@ import React from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import Script from 'next/script';
 import { getTranslation } from '../../lib/i18n-server';
 import { type SupportedLanguage } from '../../lib/i18n';
 import { isServiceVisible } from '../../lib/service-config';
@@ -486,20 +485,14 @@ const HomePage = async ({ params }: HomePageProps) => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
             {[
-              'https://www.instagram.com/stehomafia/p/DbisSIctd1W/',
-              'https://www.instagram.com/stehomafia/p/DW1-nAYjYQ-/',
-              'https://www.instagram.com/stehomafia/p/DWMWYbVDVCo/',
-            ].map((url) => (
-              <blockquote
-                key={url}
-                className="instagram-media !m-0 !min-w-0 w-full max-w-[360px] bg-white rounded-xl overflow-hidden"
-                data-instgrm-permalink={url}
-                data-instgrm-version="14"
-              >
-                <a href={url} target="_blank" rel="noopener noreferrer">
-                  Instagram @stehomafia
-                </a>
-              </blockquote>
+              ['https://scontent.cdninstagram.com/v/t51.82787-15/762864083_18104929925521789_6602384790484464006_n.jpg?stp=c270.0.811.811a_dst-jpg_e35_s640x640_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=0sJccTac_t4Q7kNvwEjTv6r&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&oh=00_AQKhL8Mk7ELlrJb2I4um1a29Kr3FrlZnQxQzn46Hj-75BQ&oe=6AA7A7C6', 'https://www.instagram.com/stehomafia/p/DbisSIctd1W/'],
+              ['https://scontent.cdninstagram.com/v/t51.82787-15/659958277_18090302177521789_8920774925585920343_n.jpg?stp=c288.0.864.864a_dst-jpg_e35_s640x640_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=bfs2oMRzmr0Q7kNvwGVOYED&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&oh=00_AQKjWhic4nMC3_gexTRrA_Zt__zJQ8cl73vLPBdoyXQ2eA&oe=6AA78AF6', 'https://www.instagram.com/stehomafia/p/DW1-nAYjYQ-/'],
+              ['https://scontent.cdninstagram.com/v/t51.82787-15/655233275_18088356572521789_4768143347769698102_n.jpg?stp=c242.0.728.727a_dst-jpg_e35_s640x640_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=iCICXoWHfLsQ7kNvwFSlRfJ&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&oh=00_AQLyF4LiOZrQ9we2NQiG6UGsV-J7Vi7LjKOQiiVvlCF28Q&oe=6AA77D5A', 'https://www.instagram.com/stehomafia/p/DWMWYbVDVCo/'],
+            ].map(([image, url]) => (
+              <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="group block w-full max-w-[360px] overflow-hidden rounded-xl border border-[#d6b977]/40 bg-[#111]">
+                <img src={image} alt="MoveCleanMafia — skutečná práce" className="aspect-square w-full object-cover transition duration-300 group-hover:scale-105" />
+                <span className="block p-3 text-center text-sm text-[#d6b977]">Instagram @stehomafia →</span>
+              </a>
             ))}
           </div>
           <div className="text-center mt-8">
@@ -509,7 +502,6 @@ const HomePage = async ({ params }: HomePageProps) => {
             </a>
           </div>
         </div>
-        <Script src="https://www.instagram.com/embed.js" strategy="afterInteractive" />
       </section>
 
       {/* How it works */}
