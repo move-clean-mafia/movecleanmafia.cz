@@ -341,7 +341,7 @@ const HomePage = async ({ params }: HomePageProps) => {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section - Mafia Style */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+      <section className="relative min-h-[78vh] flex items-center overflow-hidden bg-black">
         {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0">
           <Image
@@ -352,35 +352,34 @@ const HomePage = async ({ params }: HomePageProps) => {
             priority
           />
           {/* Dark overlay for premium feel */}
-          <div className="absolute inset-0 bg-black/80"></div>
+          <div className="absolute inset-0 bg-black/75"></div>
         </div>
 
         {/* Content Container */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen">
+          <div className="flex flex-col lg:flex-row items-center justify-center min-h-[78vh] py-20">
             {/* Left Side - Text Content */}
             <div className="lg:w-1/2 text-white space-y-8 text-center lg:text-left">
               <div className="animate-fade-in-up">
                 {/* Premium Badge */}
-                <div className="inline-flex items-center px-4 py-2 bg-[#d6b977] text-black font-bold rounded-full mb-6 animate-gold-shimmer">
-                  <Crown className="w-4 h-4 mr-2" />
+                <div className="inline-flex items-center px-4 py-2 border border-[#d6b977]/70 text-[#d6b977] text-sm font-semibold rounded-full mb-6">
                   {t('hero.badge')}
                 </div>
 
                 {/* Main Headline */}
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-[#d6b977] animate-text-glow">
-                  {t('services.packages')}
+                  {t('services.moving')}
                 </h1>
 
                 {/* Description */}
                 <p className="text-lg sm:text-xl mt-8 text-white/80 max-w-3xl mx-auto lg:mx-0 font-body">
-                  {t('services.packagesDescription')}
+                  {t('services.movingDescription')}
                 </p>
 
                 {/* CTA Button */}
                 <div className="mt-10">
                   <Link
-                    href={`/${locale}/reservation?service=packages`}
+                    href={`/${locale}/reservation?service=moving`}
                     className="mafia-button text-lg px-8 py-4 inline-flex items-center group"
                   >
                     {t('hero.cta')}
@@ -396,8 +395,6 @@ const HomePage = async ({ params }: HomePageProps) => {
         </div>
 
         {/* Floating decorative elements */}
-        <div className="absolute top-1/4 left-1/4 w-20 h-20 bg-[#d6b977]/20 rounded-full blur-xl z-20 animate-pulse"></div>
-        <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-[#d6b977]/10 rounded-full blur-xl z-20 animate-pulse"></div>
       </section>
 
       {/* Compact Services Section - Mafia Style */}
