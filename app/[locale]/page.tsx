@@ -422,6 +422,61 @@ const HomePage = async ({ params }: HomePageProps) => {
         </div>
       </section>
 
+      {/* Google Reviews Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#d6b977] mb-5 font-heading">
+              {t('homepage.reviews.title')}
+            </h2>
+            <div className="mafia-divider w-24 h-1 mx-auto mb-6" />
+            <p className="text-lg text-white/75 font-body">
+              {t('homepage.reviews.subtitle')}
+            </p>
+            <div className="mt-5 flex items-center justify-center gap-3 text-[#d6b977]">
+              <span className="text-2xl tracking-wide">★★★★★</span>
+              <span className="text-lg font-semibold">
+                {t('homepage.reviews.ratingLabel')}
+              </span>
+              <span className="text-white/60">·</span>
+              <span className="text-white/75">
+                {t('homepage.reviews.countLabel')}
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {(t('homepage.reviews.items') as unknown as Array<{ author: string; text: string }>).map(
+              (review) => (
+                <article key={review.author} className="mafia-card p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-[#d6b977] tracking-wide">★★★★★</span>
+                    <span className="text-white/70 text-sm font-body">
+                      {review.author}
+                    </span>
+                  </div>
+                  <p className="text-white/85 leading-relaxed font-body">
+                    “{review.text}”
+                  </p>
+                </article>
+              ),
+            )}
+          </div>
+
+          <div className="text-center mt-10">
+            <a
+              href="https://maps.app.goo.gl/4gYBw3KKcmBFNvt97"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mafia-button inline-flex items-center gap-3"
+            >
+              {t('homepage.reviews.readMore')}
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Advantage Section - Mafia Style */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

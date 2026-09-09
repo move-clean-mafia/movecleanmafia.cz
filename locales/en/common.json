@@ -975,6 +975,27 @@
       "subtitle": "We are here for you every day. Don't hesitate to contact us.",
       "title": "Contact Information"
     },
+    "reviews": {
+      "title": "What our clients say",
+      "subtitle": "Verified customer experiences on Google",
+      "ratingLabel": "5.0 out of 5",
+      "countLabel": "16 reviews",
+      "readMore": "Read all reviews on Google",
+      "items": [
+        {
+          "author": "Igor U.",
+          "text": "Pleasant young people. Everything was precise and on time. I recommend them."
+        },
+        {
+          "author": "Alexander D.",
+          "text": "Great service, they respond quickly and help carry everything in."
+        },
+        {
+          "author": "Juliana",
+          "text": "They helped us move furniture, arrived on time, and worked calmly and quickly."
+        }
+      ]
+    },
     "heroImages": {
       "cleaning": "Professional cleaning services",
       "moving": "Professional moving services"

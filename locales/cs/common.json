@@ -975,6 +975,27 @@
       "subtitle": "Jsme tu pro vás každý den. Neváhejte nás kontaktovat.",
       "title": "Kontaktní informace"
     },
+    "reviews": {
+      "title": "Co říkají naši klienti",
+      "subtitle": "Ověřené zkušenosti klientů z Google",
+      "ratingLabel": "5,0 z 5",
+      "countLabel": "16 recenzí",
+      "readMore": "Číst všechny recenze na Google",
+      "items": [
+        {
+          "author": "Igor U.",
+          "text": "Příjemní mladí lidé. Všechno proběhlo přesně a bez zpoždění. Doporučuji."
+        },
+        {
+          "author": "Alexander D.",
+          "text": "Skvělý servis, rychle reagují a pomohou vše vynést."
+        },
+        {
+          "author": "Juliana",
+          "text": "Pomohli nám přestěhovat nábytek, přijeli včas a pracovali klidně a rychle."
+        }
+      ]
+    },
     "heroImages": {
       "cleaning": "Profesionální úklidové služby",
       "moving": "Profesionální stěhovací služby"
