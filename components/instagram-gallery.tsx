@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react';
 
 const items = [
-  ['/images/instagram-work/work-1-v2.jpg', 'https://www.instagram.com/stehomafia/reel/Dbygv9whF6X/'],
-  ['/images/instagram-work/work-2.jpg', 'https://www.instagram.com/stehomafia/p/DW1-nAYjYQ-/'],
-  ['/images/instagram-work/work-3.jpg', 'https://www.instagram.com/stehomafia/p/DWMWYbVDVCo/'],
+  ['/images/instagram-work/work-1-final.jpg', 'https://www.instagram.com/stehomafia/reel/Dct2QPAt1Ci/'],
+  ['/images/instagram-work/work-2-final.jpg', 'https://www.instagram.com/stehomafia/reel/DcE0p3WBrBB/'],
+  ['/images/instagram-work/work-3-final.jpg', 'https://www.instagram.com/stehomafia/reel/DXZnqhIDSXG/'],
 ] as const;
 
 export function InstagramGallery() {
