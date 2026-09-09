@@ -933,7 +933,7 @@
     "email": "Email",
     "followUs": "Sledujte nás",
     "instagram": "Instagram",
-    "relomaxPartner": "Partnerské stěhování a bydlení: Relomax.cz",
+    "relomaxPartner": "Doporučujeme: Relomax.cz",
     "legal": "Právní informace",
     "ourServices": "Naše služby",
     "phone": "Telefon",
@@ -963,7 +963,7 @@
   },
   "homepage": {
     "compactServicesSection": {
-      "subtitle": "Vyberte si z našeho komplexního spektra profesionálních služeb. Každá je navržena tak, aby splňovala vaše specifické potřeby s precizností a péčí, kterou očekáváte od nejlepších.",
+      "subtitle": "Vyberte si z široké nabídky profesionálních služeb. Každou z nich přizpůsobíme vašim potřebám a zajistíme pečlivé provedení.",
       "title": "VŠECHNY NAŠE SLUŽBY"
     },
     "contactSection": {
@@ -1315,7 +1315,7 @@
         "title": "XL size – Generální úklid"
       }
     },
-    "ctaTitle": "Začněme spolupracovat",
+    "ctaTitle": "Objednat službu",
     "furnitureCleaning": "Chemické čištění",
     "furnitureCleaningDescription": "Profesionální chemické čištění nábytku a koberců",
     "handyman": "Hodinový manžel",

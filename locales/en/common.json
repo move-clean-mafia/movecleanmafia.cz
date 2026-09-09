@@ -933,7 +933,7 @@
     "email": "Email",
     "followUs": "Follow Us",
     "instagram": "Instagram",
-    "relomaxPartner": "Our relocation and housing partner: Relomax.cz",
+    "relomaxPartner": "Recommended: Relomax.cz",
     "legal": "Legal",
     "ourServices": "Our Services",
     "phone": "Phone",
@@ -963,7 +963,7 @@
   },
   "homepage": {
     "compactServicesSection": {
-      "subtitle": "Choose from our comprehensive range of professional services. Each one designed to meet your specific needs with the precision and care you expect from the best.",
+      "subtitle": "Choose from a wide range of professional services. We tailor each service to your needs and deliver it with care.",
       "title": "ALL OUR SERVICES"
     },
     "contactSection": {
@@ -1315,7 +1315,7 @@
         "description": "Perfect for those who want every corner spotless, including hard-to-reach and often overlooked areas."
       }
     },
-    "ctaTitle": "Let's Start Working Together",
+    "ctaTitle": "Book a service",
     "furnitureCleaning": "Dry Cleaning",
     "furnitureCleaningDescription": "Professional furniture and carpet cleaning",
     "handyman": "Handyman",
