@@ -485,7 +485,7 @@ const HomePage = async ({ params }: HomePageProps) => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
             {[
-              ['/images/instagram-work/work-1.jpg', 'https://www.instagram.com/stehomafia/reel/Dbygv9whF6X/'],
+              ['/images/instagram-work/work-1-v2.jpg', 'https://www.instagram.com/stehomafia/reel/Dbygv9whF6X/'],
               ['/images/instagram-work/work-2.jpg', 'https://www.instagram.com/stehomafia/p/DW1-nAYjYQ-/'],
               ['/images/instagram-work/work-3.jpg', 'https://www.instagram.com/stehomafia/p/DWMWYbVDVCo/'],
             ].map(([image, url]) => (
