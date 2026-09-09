@@ -28,7 +28,7 @@ export function InstagramGallery() {
               : 'left-[88%] sm:left-[80%] z-10 w-[min(48vw,300px)] -translate-x-1/2 scale-90 opacity-70';
           return (
             <a key={url} href={url} target="_blank" rel="noopener noreferrer" className={`absolute top-0 block overflow-hidden rounded-2xl border border-[#d6b977]/50 bg-[#111] shadow-xl transition-all duration-700 ${classes}`}>
-              <div className="aspect-square w-full bg-[#111] p-3 sm:p-5">
+              <div className="aspect-[9/16] w-full bg-[#111] p-3 sm:p-5">
                 <img src={image} alt="MoveCleanMafia — skutečná práce" className="h-full w-full rounded-xl object-contain" />
               </div>
               <div className="border-t border-[#d6b977]/20 p-3 text-center text-sm text-[#d6b977]">Instagram @stehomafia →</div>
