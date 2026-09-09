@@ -120,12 +120,12 @@ export const Header: React.FC = () => {
               {/* Logo */}
               <Link
                 href={`/${locale}`}
-                className="flex-shrink-0 ml-4 sm:ml-6 lg:ml-8 flex items-center"
+                className="flex-shrink-0 ml-3 sm:ml-6 lg:ml-8 flex items-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16"
               >
                 <Logo
                   width={80}
                   height={32}
-                  className="w-[60px] h-[25px] sm:w-[70px] sm:h-[28px] lg:w-[80px] lg:h-[32px]"
+                  className="w-full h-full"
                   variant="premium"
                 />
               </Link>
@@ -293,7 +293,7 @@ export const Header: React.FC = () => {
                   <Logo
                     width={60}
                     height={24}
-                    className="w-[50px] h-[20px] sm:w-[60px] sm:h-[24px]"
+                    className="w-12 h-12 sm:w-14 sm:h-14"
                     variant="premium"
                   />
                 </div>

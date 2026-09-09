@@ -24,7 +24,7 @@ const Logo: React.FC<LogoProps> = ({
               alt="MoveClean Mafia Logo"
               width={width}
               height={height}
-              className="object-contain w-full h-auto"
+              className="object-contain w-full h-full"
               priority
             />
           </div>
@@ -40,7 +40,7 @@ const Logo: React.FC<LogoProps> = ({
                 alt="MoveClean Mafia Logo"
                 width={width}
                 height={height}
-                className="object-contain w-full h-auto"
+                className="object-contain w-full h-full"
                 priority
               />
             </div>
@@ -57,7 +57,7 @@ const Logo: React.FC<LogoProps> = ({
                 alt="MoveClean Mafia Logo"
                 width={width}
                 height={height}
-                className="object-contain w-full h-auto"
+                className="object-contain w-full h-full"
                 priority
               />
             </div>
