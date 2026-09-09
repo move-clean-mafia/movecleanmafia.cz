@@ -492,10 +492,14 @@ const HomePage = async ({ params }: HomePageProps) => {
             ].map((url) => (
               <blockquote
                 key={url}
-                className="instagram-media !m-0 !min-w-0 w-full max-w-[360px]"
+                className="instagram-media !m-0 !min-w-0 w-full max-w-[360px] bg-white rounded-xl overflow-hidden"
                 data-instgrm-permalink={url}
                 data-instgrm-version="14"
-              />
+              >
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  Instagram @stehomafia
+                </a>
+              </blockquote>
             ))}
           </div>
           <div className="text-center mt-8">
@@ -505,7 +509,7 @@ const HomePage = async ({ params }: HomePageProps) => {
             </a>
           </div>
         </div>
-        <Script src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
+        <Script src="https://www.instagram.com/embed.js" strategy="afterInteractive" />
       </section>
 
       {/* How it works */}
