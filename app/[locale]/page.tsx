@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
 import { getTranslation } from '../../lib/i18n-server';
 import { type SupportedLanguage } from '../../lib/i18n';
 import { isServiceVisible } from '../../lib/service-config';
@@ -472,6 +473,39 @@ const HomePage = async ({ params }: HomePageProps) => {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* Instagram work gallery */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#d6b977] font-heading">
+              {t('homepage.instagram.title')}
+            </h2>
+            <p className="mt-3 text-white/70 font-body">{t('homepage.instagram.subtitle')}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
+            {[
+              'https://www.instagram.com/stehomafia/p/DbisSIctd1W/',
+              'https://www.instagram.com/stehomafia/p/DW1-nAYjYQ-/',
+              'https://www.instagram.com/stehomafia/p/DWMWYbVDVCo/',
+            ].map((url) => (
+              <blockquote
+                key={url}
+                className="instagram-media !m-0 !min-w-0 w-full max-w-[360px]"
+                data-instgrm-permalink={url}
+                data-instgrm-version="14"
+              />
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <a href="https://www.instagram.com/stehomafia/" target="_blank" rel="noopener noreferrer" className="mafia-button inline-flex items-center gap-3">
+              {t('homepage.instagram.cta')}
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+        <Script src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
       </section>
 
       {/* How it works */}
