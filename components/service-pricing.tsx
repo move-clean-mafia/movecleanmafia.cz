@@ -365,7 +365,7 @@ const ServicePricing: React.FC<ServicePricingProps> = ({
         {/* Minimum Order Notice */}
         {movingData.minOrder && (
           <div className="text-center mb-8">
-            <p className="text-sm font-body font-medium text-[#d6b977] bg-[#d6b977]/10 px-4 py-2 rounded-lg inline-block border border-[#d6b977]/30">
+            <p className="text-base md:text-lg font-body font-semibold text-[#d6b977] text-center bg-[#d6b977]/10 px-4 py-2 rounded-lg inline-block border border-[#d6b977]/30">
               {movingData.minOrder}
             </p>
           </div>
