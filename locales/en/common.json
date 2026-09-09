@@ -1020,23 +1020,23 @@
     },
     "pricingAdvantage": {
       "benefits": [
-        "Free price quotes",
-        "No hidden fees",
-        "Transparent pricing",
-        "Discounts for regular clients",
-        "Flexible payment terms"
+        "Moving from 700 CZK/hour",
+        "Minimum booking: 2 hours",
+        "40 CZK/km outside Prague",
+        "No weekend or holiday surcharge",
+        "Cash or card-terminal payment"
       ],
-      "description": "We offer transparent and competitive prices with no hidden fees. Our services are affordable but never compromise on quality.",
-      "subtitle": "Quality at a fair price - that's our promise",
-      "title": "COMPETITIVE PRICING",
+      "description": "You see the pricing before confirming: moving is charged by the hour with a 2-hour minimum. Outside Prague, the distance rate is 40 CZK per kilometre.",
+      "subtitle": "A clear price before you confirm",
+      "title": "What you pay",
       "paymentMethods": {
         "title": "Payment Methods",
         "description": "Payment is accepted in cash or via mobile terminal."
       }
     },
     "servicesSection": {
-      "subtitle": "Five distinct services, one unbeatable team. We handle everything with the precision and care that sets us apart.",
-      "title": "OUR SPECIALTIES"
+      "subtitle": "Choose moving or upholstery and carpet cleaning, send us a few details, and we will confirm the price and availability.",
+      "title": "OUR SERVICES"
     }
   },
   "navigation": {

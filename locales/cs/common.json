@@ -1020,23 +1020,23 @@
     },
     "pricingAdvantage": {
       "benefits": [
-        "Bezplatné cenové nabídky",
-        "Žádné skryté poplatky",
-        "Transparentní kalkulace",
-        "Slevy pro pravidelné klienty",
-        "Flexibilní platební podmínky"
+        "Stěhování od 700 Kč/hod",
+        "Minimální objednávka 2 hodiny",
+        "40 Kč/km mimo Prahu",
+        "Bez příplatku za víkendy a svátky",
+        "Platba hotově nebo terminálem"
       ],
-      "description": "Nabízíme transparentní a konkurenceschopné ceny bez skrytých poplatků. Naše služby jsou cenově dostupné, ale nikdy nekompromisní v kvalitě.",
-      "subtitle": "Kvalita za férovou cenu - to je náš slib",
-      "title": "Nejlepší ceny",
+      "description": "Cenu vidíte předem: stěhování účtujeme podle hodin, minimálně na 2 hodiny. Mimo Prahu účtujeme 40 Kč za kilometr.",
+      "subtitle": "Jasná cena před potvrzením objednávky",
+      "title": "Kolik zaplatíte",
       "paymentMethods": {
         "title": "Způsoby platby",
         "description": "Platba je možná hotově nebo přes mobilní terminál."
       }
     },
     "servicesSection": {
-      "subtitle": "Pět odlišných služeb, jeden nepřekonatelný tým. Řešíme vše s precizností a péčí, která nás odlišuje.",
-      "title": "NAŠE SPECIALITY"
+      "subtitle": "Vyberte si stěhování nebo chemické čištění a pošlete nám několik základních údajů. Ozveme se s potvrzením a cenou.",
+      "title": "NAŠE SLUŽBY"
     }
   },
   "navigation": {
