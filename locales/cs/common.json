@@ -792,7 +792,7 @@
         "items": [
           {
             "name": "Palivo mimo Prahu",
-            "price": "30 Kč/km"
+            "price": "40 Kč/km"
           },
           {
             "name": "Balení věci",
@@ -933,6 +933,7 @@
     "email": "Email",
     "followUs": "Sledujte nás",
     "instagram": "Instagram",
+    "relomaxPartner": "Partnerské stěhování a bydlení: Relomax.cz",
     "legal": "Právní informace",
     "ourServices": "Naše služby",
     "phone": "Telefon",
@@ -946,7 +947,7 @@
   "header": {
     "closeMainMenu": "Zavřít hlavní menu",
     "openMainMenu": "Otevřít hlavní menu",
-    "phone1": "++420 774 635 981",
+    "phone1": "+420 774 635 981",
     "phone2": "+420 777 112 613",
     "whatsapp": "WhatsApp",
     "whatsappAriaLabel": "Otevřít WhatsApp chat",

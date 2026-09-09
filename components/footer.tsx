@@ -222,7 +222,7 @@ export const Footer: React.FC = () => {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="https://www.instagram.com/move_clean_mafia/"
+                    href="https://www.instagram.com/stehomafia/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-white/80 hover:text-[#d6b977] transition-colors duration-200 font-body"
@@ -231,6 +231,23 @@ export const Footer: React.FC = () => {
                   </a>
                 </li>
               </ul>
+            </div>
+
+            {/* Partner */}
+            <div>
+              <h4 className="text-sm font-semibold text-[#d6b977] mb-4 font-heading">
+                Relomax.cz
+              </h4>
+              <p className="text-sm text-white/80 font-body leading-relaxed">
+                <a
+                  href="https://www.relomax.cz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#d6b977] hover:text-white transition-colors duration-200"
+                >
+                  {t('footer.relomaxPartner')}
+                </a>
+              </p>
             </div>
 
             {/* Company Information */}

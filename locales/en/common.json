@@ -792,7 +792,7 @@
         "items": [
           {
             "name": "Fuel outside Prague",
-            "price": "30 Kč/km"
+            "price": "40 Kč/km"
           },
           {
             "name": "Packing service",
@@ -933,6 +933,7 @@
     "email": "Email",
     "followUs": "Follow Us",
     "instagram": "Instagram",
+    "relomaxPartner": "Our relocation and housing partner: Relomax.cz",
     "legal": "Legal",
     "ourServices": "Our Services",
     "phone": "Phone",
@@ -946,7 +947,7 @@
   "header": {
     "closeMainMenu": "Close main menu",
     "openMainMenu": "Open main menu",
-    "phone1""+420 774 635 981",
+    "phone1": "+420 774 635 981",
     "phone2": "+420 777 112 613",
     "whatsapp": "WhatsApp",
     "whatsappAriaLabel": "Open WhatsApp chat",

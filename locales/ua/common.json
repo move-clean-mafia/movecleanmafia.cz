@@ -792,7 +792,7 @@
         "items": [
           {
             "name": "Паливо поза Прагою",
-            "price": "30 Kč/км"
+            "price": "40 Kč/км"
           },
           {
             "name": "Пакування речей",
@@ -933,6 +933,7 @@
     "email": "Email",
     "followUs": "Слідкуйте за нами",
     "instagram": "Instagram",
+    "relomaxPartner": "Наш партнер з переїзду та житла: Relomax.cz",
     "legal": "Правова інформація",
     "ourServices": "Наші послуги",
     "phone": "Телефон",
@@ -942,21 +943,22 @@
     "quickLinks": "Корисні посилання",
     "tagline": "Професійні перевезення та прибирання - ваша надійність є нашим пріоритетом",
     "termsOfService": "Умови використання"
+  },
   "header": {
-  "closeMainMenu": "Close main menu",
-  "openMainMenu": "Open main menu",
-  "phone1": "+420 774 635 981",
-  "phone2": "+420 777 112 613",
-  "whatsapp": "WhatsApp",
-  "whatsappAriaLabel": "Open WhatsApp chat",
-  "instagram": "Instagram",
-  "instagramAriaLabel": "Follow us on Instagram"
-},
+    "closeMainMenu": "Закрити головне меню",
+    "openMainMenu": "Відкрити головне меню",
+    "phone1": "+420 774 635 981",
+    "phone2": "+420 777 112 613",
+    "whatsapp": "WhatsApp",
+    "whatsappAriaLabel": "Відкрити чат WhatsApp",
+    "instagram": "Instagram",
+    "instagramAriaLabel": "Підписатися на нас в Instagram"
+  },
   "hero": {
     "badge": "THE MOVE & CLEAN MAFIA",
     "cta": "ЗАМОВИТИ",
     "description": "Наші ціни конкурентоспроможні та прозорі - якість за справедливу ціну.",
-    "imageAlt": "Професійне переїзд та прибирання",
+    "imageAlt": "Професійні переїзди та прибирання",
     "title": "ПРОПОЗИЦІЯ, ВІД ЯКОЇ НЕ МОЖНА ВІДМОВИТИСЯ"
   },
   "homepage": {
@@ -1050,7 +1052,7 @@
           "address": "Адреса: [Ваша бізнес-адреса]",
           "dpo": "Посадовець з захисту даних: [Контактна інформація, якщо застосовно]",
           "email": "Email: move.cleanmafia@gmail.com",
-         "phone": "Телефон:\n+420 774 635 981 (переїзд)\n+420 777 112 613 (прибирання, хімчистка)"
+          "phone": "Телефон:\n+420 774 635 981 (переїзд)\n+420 777 112 613 (прибирання, хімчистка)"
         },
         "title": "12. Контактна інформація"
       },

@@ -340,7 +340,7 @@ const SEOProvider: React.FC<SEOProviderProps> = ({
     },
     sameAs: [
       'https://www.facebook.com/movecleanmafia',
-      'https://www.instagram.com/movecleanmafia',
+      'https://www.instagram.com/stehomafia/',
     ],
     foundingDate: '2023',
     numberOfEmployees: '10-50',

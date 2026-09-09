@@ -28,12 +28,12 @@ const ReservationButton: React.FC<ReservationButtonProps> = ({
 
   const buttonContent = children || 'Submit Reservation';
 
-  const buttonClasses = `mafia-button text-lg px-8 py-4 inline-flex items-center group ${className}`;
+  const buttonClasses = `mafia-button min-h-12 text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 inline-flex items-center justify-center gap-2 rounded-xl shadow-lg shadow-[#d6b977]/10 hover:shadow-[#d6b977]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6b977] focus-visible:ring-offset-2 focus-visible:ring-offset-black group ${className}`;
 
   const button = (
     <a href={buildHref()} className={buttonClasses}>
       {buttonContent}
-      <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
+      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
     </a>
   );
 
